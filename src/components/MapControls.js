@@ -1,4 +1,5 @@
 import { Euler, EventDispatcher, MOUSE, Plane, Ray, Raycaster, TOUCH, Vector2, Vector3 } from 'three'
+import Hammer from 'hammerjs'
 
 const MapControls = function (object, domElement) {
   this.object = object
@@ -7,17 +8,9 @@ const MapControls = function (object, domElement) {
   // Set to false to disable this control
   this.enabled = true
 
-  // "target" sets the location of focus, where the object orbits around
-  this.target = new Vector3()
-
   // How far you can dolly in and out ( PerspectiveCamera only )
   this.minZoomAngle = 15
   this.maxZoomAngle = 6
-
-  // Set to true to enable damping (inertia)
-  // If damping is enabled, you must call controls.update() in your animation loop
-  this.enableDamping = false
-  this.dampingFactor = 0.05
 
   // This option actually enables dollying in and out; left as "zoom" for backwards compatibility.
   // Set to false to disable zooming
@@ -27,7 +20,6 @@ const MapControls = function (object, domElement) {
   // Set to false to disable panning
   this.enablePan = true
   this.panSpeed = 1.0
-  this.screenSpacePanning = true // if false, pan orthogonal to world-space direction camera.up
 
   // Mouse buttons
   this.mouseButtons = { LEFT: MOUSE.PAN, MIDDLE: MOUSE.DOLLY }
@@ -36,18 +28,15 @@ const MapControls = function (object, domElement) {
   this.touches = { ONE: TOUCH.PAN, TWO: TOUCH.DOLLY_PAN }
 
   // for reset
-  this.target0 = this.target.clone()
   this.position0 = this.object.position.clone()
   this.zoom0 = this.object.zoom
 
   this.saveState = function () {
-    scope.target0.copy(scope.target)
     scope.position0.copy(scope.object.position)
     scope.zoom0 = scope.object.zoom
   }
 
   this.reset = function () {
-    scope.target.copy(scope.target0)
     scope.object.position.copy(scope.position0)
     scope.object.zoom = scope.zoom0
 
@@ -75,6 +64,8 @@ const MapControls = function (object, domElement) {
       return 6 * t ** 5 - 15 * t ** 4 + 10 * t ** 3
     }
 
+    const position = new Vector3()
+
     return function update () {
       calculateIntersections(1e3, scope.maxZoomAngle)
       const tmpA = Math.abs(highIntersection.y - lowIntersection.y) / 512
@@ -84,15 +75,7 @@ const MapControls = function (object, domElement) {
 
       zoom = lerp(zoom, targetZoom, 0.1)
 
-      const position = scope.object.position
-
-      // move target to panned location
-
-      if (scope.enableDamping === true) {
-        scope.target.addScaledVector(panOffset, scope.dampingFactor)
-      } else {
-        scope.target.add(panOffset)
-      }
+      position.copy(scope.object.position)
 
       if (transitionProgress !== null) {
         transitionProgress += 0.02
@@ -109,19 +92,37 @@ const MapControls = function (object, domElement) {
           transitionProgress = null
         }
       } else {
-        position.add(panOffset)
         position.z = lerp(maxZoomHeight, minZoomHeight, zoom)
       }
 
       const angle = lerp(scope.maxZoomAngle, scope.minZoomAngle, zoom)
-      clampPosition(position, angle)
-      scope.object.setRotationFromEuler(new Euler(degToRad * angle, 0, 0, 'XYZ'))
 
-      if (scope.enableDamping === true) {
-        panOffset.multiplyScalar(1 - scope.dampingFactor)
-      } else {
-        panOffset.set(0, 0, 0)
+      if (panning && transitionProgress === null) {
+        if (panUpdated) {
+          scope.object.position.copy(panReference)
+        }
+
+        panEnd.copy(rayCast(panPos.x, panPos.y))
+
+        if (!panUpdated) {
+          panStart.copy(panEnd)
+          panTarget.copy(position)
+          panReference.copy(scope.object.position)
+          panUpdated = true
+        } else {
+          panTarget.add(panDelta.subVectors(panStart, panEnd))
+          panStart.copy(panEnd)
+
+          position.x = lerp(position.x, panTarget.x, 0.5)
+          panTarget.x = lerp(position.x, panTarget.x, 0.95)
+          position.y = lerp(position.y, panTarget.y, 0.5)
+          panTarget.y = lerp(position.y, panTarget.y, 0.95)
+        }
       }
+
+      clampPosition(position, angle)
+      scope.object.position.copy(position)
+      scope.object.setRotationFromEuler(new Euler(degToRad * angle, 0, 0, 'XYZ'))
 
       return false
     }
@@ -145,9 +146,7 @@ const MapControls = function (object, domElement) {
     targetPosition.copy(target)
 
     const targetAngle = lerp(scope.maxZoomAngle, scope.minZoomAngle, t)
-
     const vector = new Vector3(0, 0, -1).applyEuler(new Euler(targetAngle, 0, 0, 'XYZ'))
-
     targetPosition.y += vector.y * targetPosition.z
 
     clampPosition(targetPosition, targetAngle)
@@ -171,7 +170,7 @@ const MapControls = function (object, domElement) {
     DOLLY: 0,
     PAN: 1,
     TOUCH_PAN: 2,
-    TOUCH_DOLLY_PAN: 3
+    TOUCH_DOLLY: 3
   }
 
   let state = STATE.NONE
@@ -191,14 +190,18 @@ const MapControls = function (object, domElement) {
     return a + (b - a) * t
   }
 
-  // current position in spherical coordinates
-  const panOffset = new Vector3()
-
-  const panStart = new Vector2()
-  const panEnd = new Vector2()
-  const panDelta = new Vector2()
+  const panPos = new Vector2()
+  const panReference = new Vector3()
+  const panStart = new Vector3()
+  const panEnd = new Vector3()
+  const panDelta = new Vector3()
+  const panTarget = new Vector3()
+  let panning = false
+  let panUpdated = false
 
   const clickStart = new Vector2()
+  let clickTouches = 0
+  let wasMultiTouch = false
 
   const dollyStart = new Vector2()
   const dollyEnd = new Vector2()
@@ -242,54 +245,19 @@ const MapControls = function (object, domElement) {
     return Math.pow(0.95, scope.zoomSpeed)
   }
 
-  const panLeft = (function () {
-    const v = new Vector3()
+  const rayCaster = new Raycaster()
+  const rayCastClick = new Vector2()
+  const rayCastResult = new Vector3()
 
-    return function panLeft (distance, objectMatrix) {
-      v.setFromMatrixColumn(objectMatrix, 0) // get X column of objectMatrix
-      v.multiplyScalar(-distance)
+  function rayCast (x, y) {
+    const { clientWidth, clientHeight } = scope.domElement
+    rayCastClick.set(x / clientWidth * 2 - 1, 1 - y / clientHeight * 2)
+    rayCaster.setFromCamera(rayCastClick, scope.object)
 
-      panOffset.add(v)
-    }
-  }())
+    rayCaster.ray.origin.copy(scope.object.position)
 
-  const panUp = (function () {
-    const v = new Vector3()
-
-    return function panUp (distance, objectMatrix) {
-      if (scope.screenSpacePanning === true) {
-        v.setFromMatrixColumn(objectMatrix, 1)
-      } else {
-        v.setFromMatrixColumn(objectMatrix, 0)
-        v.crossVectors(scope.object.up, v)
-      }
-
-      v.multiplyScalar(distance)
-
-      panOffset.add(v)
-    }
-  }())
-
-  // deltaX and deltaY are in pixels; right and down are positive
-  const pan = (function () {
-    const offset = new Vector3()
-
-    return function pan (deltaX, deltaY) {
-      const element = scope.domElement
-
-      // perspective
-      const position = scope.object.position
-      offset.copy(position).sub(scope.target)
-      let targetDistance = offset.length()
-
-      // half of the fov is center to top of screen
-      targetDistance *= Math.tan((scope.object.fov / 2) * Math.PI / 180.0)
-
-      // we use only clientHeight here so aspect ratio does not distort speed
-      panLeft(2 * deltaX * targetDistance / element.clientHeight, scope.object.matrix)
-      panUp(2 * deltaY * targetDistance / element.clientHeight, scope.object.matrix)
-    }
-  }())
+    return rayCaster.ray.intersectPlane(plane, rayCastResult)
+  }
 
   function dollyOut (dollyScale) {
     targetZoom = Math.max(0, Math.min(targetZoom - (1 / 30) * dollyScale, 1))
@@ -308,7 +276,9 @@ const MapControls = function (object, domElement) {
   }
 
   function handleMouseDownPan (event) {
-    panStart.set(event.clientX, event.clientY)
+    panPos.set(event.clientX, event.clientY)
+    panUpdated = false
+    panning = true
   }
 
   function handleMouseMoveDolly (event) {
@@ -328,28 +298,21 @@ const MapControls = function (object, domElement) {
   }
 
   function handleMouseMovePan (event) {
-    panEnd.set(event.clientX, event.clientY)
-
-    panDelta.subVectors(panEnd, panStart).multiplyScalar(scope.panSpeed)
-
-    pan(panDelta.x, panDelta.y)
-
-    panStart.copy(panEnd)
-
-    scope.update()
+    panPos.set(event.clientX, event.clientY)
   }
 
   function handleMouseUp (event) {
+    if (event.button === 0) {
+      panning = false
+    }
+
     if (event.button !== 0 || event.clientX !== clickStart.x || event.clientY !== clickStart.y) {
       return
     }
 
-    const rayCaster = new Raycaster()
-    const { clientWidth, clientHeight } = scope.domElement
-    clickStart.set(clickStart.x / clientWidth * 2 - 1, 1 - clickStart.y / clientHeight * 2)
-    rayCaster.setFromCamera(clickStart, scope.object)
-
-    if (rayCaster.ray.intersectPlane(plane, targetPosition) !== null) {
+    const result = rayCast(clickStart.x, clickStart.y)
+    if (result !== null) {
+      targetPosition.copy(result)
       targetPosition.z = lerp(maxZoomHeight, minZoomHeight, 0.7)
 
       scope.dispatchEvent({ type: 'click', position: targetPosition })
@@ -367,78 +330,51 @@ const MapControls = function (object, domElement) {
   }
 
   function handleTouchStartPan (event) {
-    if (event.touches.length === 1) {
-      panStart.set(event.touches[0].pageX, event.touches[0].pageY)
-    } else {
-      const x = 0.5 * (event.touches[0].pageX + event.touches[1].pageX)
-      const y = 0.5 * (event.touches[0].pageY + event.touches[1].pageY)
-
-      panStart.set(x, y)
-    }
-  }
-
-  function handleTouchStartDolly (event) {
-    const dx = event.touches[0].pageX - event.touches[1].pageX
-    const dy = event.touches[0].pageY - event.touches[1].pageY
-
-    const distance = Math.sqrt(dx * dx + dy * dy)
-
-    dollyStart.set(0, distance)
-  }
-
-  function handleTouchStartDollyPan (event) {
-    if (scope.enableZoom) {
-      handleTouchStartDolly(event)
+    if (event.touches.length !== 1) {
+      return
     }
 
-    if (scope.enablePan) {
-      handleTouchStartPan(event)
-    }
+    clickStart.set(event.touches[0].clientX, event.touches[0].clientY)
+    panPos.copy(clickStart)
+    panUpdated = false
+    panning = true
   }
 
   function handleTouchMovePan (event) {
-    if (event.touches.length === 1) {
-      panEnd.set(event.touches[0].pageX, event.touches[0].pageY)
-    } else {
-      const x = 0.5 * (event.touches[0].pageX + event.touches[1].pageX)
-      const y = 0.5 * (event.touches[0].pageY + event.touches[1].pageY)
-
-      panEnd.set(x, y)
+    if (event.touches.length !== 1) {
+      return
     }
 
-    panDelta.subVectors(panEnd, panStart).multiplyScalar(scope.panSpeed)
-
-    pan(panDelta.x, panDelta.y)
-
-    panStart.copy(panEnd)
+    panPos.set(event.touches[0].clientX, event.touches[0].clientY)
   }
 
-  function handleTouchMoveDolly (event) {
-    const dx = event.touches[0].pageX - event.touches[1].pageX
-    const dy = event.touches[0].pageY - event.touches[1].pageY
+  function handleTouchEnd (event) {
+    panning = false
 
-    const distance = Math.sqrt(dx * dx + dy * dy)
-
-    dollyEnd.set(0, distance)
-
-    dollyDelta.set(0, Math.pow(dollyEnd.y / dollyStart.y, scope.zoomSpeed))
-
-    dollyOut(dollyDelta.y)
-
-    dollyStart.copy(dollyEnd)
-  }
-
-  function handleTouchMoveDollyPan (event) {
-    if (scope.enableZoom) {
-      handleTouchMoveDolly(event)
+    if (clickTouches > 1) {
+      wasMultiTouch = true
     }
 
-    if (scope.enablePan) {
-      handleTouchMovePan(event)
-    }
-  }
+    clickTouches -= 1
 
-  function handleTouchEnd (/* event */) {
+    if (clickTouches > 0) {
+      return
+    }
+
+    if (wasMultiTouch) {
+      wasMultiTouch = false
+      return
+    }
+
+    if (event.changedTouches[0].clientX === clickStart.x || event.changedTouches[0].clientY === clickStart.y) {
+      const result = rayCast(clickStart.x, clickStart.y)
+      if (result !== null) {
+        targetPosition.copy(result)
+        targetPosition.z = lerp(maxZoomHeight, minZoomHeight, 0.7)
+
+        scope.dispatchEvent({ type: 'click', position: targetPosition })
+      }
+    }
   }
 
   //
@@ -568,6 +504,8 @@ const MapControls = function (object, domElement) {
       return
     }
 
+    clickTouches += 1
+
     event.preventDefault() // prevent scrolling
 
     switch (event.touches.length) {
@@ -589,21 +527,7 @@ const MapControls = function (object, domElement) {
 
         break
       case 2:
-        switch (scope.touches.TWO) {
-          case TOUCH.DOLLY_PAN:
-            if (scope.enableZoom === false && scope.enablePan === false) {
-              return
-            }
-
-            handleTouchStartDollyPan(event)
-
-            state = STATE.TOUCH_DOLLY_PAN
-
-            break
-          default:
-            state = STATE.NONE
-        }
-
+        state = STATE.DOLLY
         break
       default:
         state = STATE.NONE
@@ -633,16 +557,6 @@ const MapControls = function (object, domElement) {
         scope.update()
 
         break
-      case STATE.TOUCH_DOLLY_PAN:
-        if (scope.enableZoom === false && scope.enablePan === false) {
-          return
-        }
-
-        handleTouchMoveDollyPan(event)
-
-        scope.update()
-
-        break
       default:
         state = STATE.NONE
     }
@@ -666,6 +580,15 @@ const MapControls = function (object, domElement) {
   scope.domElement.addEventListener('touchstart', onTouchStart, false)
   scope.domElement.addEventListener('touchend', onTouchEnd, false)
   scope.domElement.addEventListener('touchmove', onTouchMove, false)
+
+  const hammer = new Hammer.Manager(scope.domElement)
+
+  hammer.add(new Hammer.Pinch())
+
+  hammer.on('pinch', function (event) {
+    const factor = lerp(1, event.scale, 0.5)
+    targetZoom = Math.max(0, Math.min(factor * targetZoom, 1))
+  })
 
   // make sure element can receive keys.
 
