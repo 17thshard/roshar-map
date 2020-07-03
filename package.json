@@ -10,6 +10,7 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "hammerjs": "^2.0.8",
+    "is-mobile": "^2.2.2",
     "three": "^0.118.3",
     "vue": "^2.6.11",
     "vuex": "^3.4.0"

@@ -1,20 +1,28 @@
 <template>
   <div id="app">
-    <img class="logo" src="@/assets/roshar-logo.png" alt="Logo">
-    <Map />
-    <Timeline />
+    <img class="logo" src="@/assets/roshar_logo.png" alt="Logo">
+    <Map
+      :highlight-position="activeEvent !== null ? activeEvent.coordinates : null"
+      :show-shadesmar="activeEvent !== null && activeEvent.shadesmar"
+    />
+    <Scrubber :active-event="activeEvent" @event-selected="activeEvent = $event" />
   </div>
 </template>
 
 <script>
 import Map from '@/components/Map.vue'
-import Timeline from '@/components/Timeline.vue'
+import Scrubber from '@/components/Scrubber.vue'
 
 export default {
   name: 'App',
   components: {
-    Timeline,
+    Scrubber,
     Map
+  },
+  data () {
+    return {
+      activeEvent: null
+    }
   }
 }
 </script>

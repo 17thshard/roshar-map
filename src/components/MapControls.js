@@ -1,5 +1,6 @@
 import { Euler, EventDispatcher, MOUSE, Plane, Ray, Raycaster, TOUCH, Vector2, Vector3 } from 'three'
 import Hammer from 'hammerjs'
+import { lerp, smootherstep } from '@/utils'
 
 const MapControls = function (object, domElement) {
   this.object = object
@@ -52,18 +53,6 @@ const MapControls = function (object, domElement) {
 
   // this method is exposed, but perhaps it would be better if we can make it private...
   this.update = (function () {
-    function smootherstep (t) {
-      if (t <= 0) {
-        return 0
-      }
-
-      if (t >= 1) {
-        return 1
-      }
-
-      return 6 * t ** 5 - 15 * t ** 4 + 10 * t ** 3
-    }
-
     const position = new Vector3()
 
     return function update () {
@@ -71,7 +60,7 @@ const MapControls = function (object, domElement) {
       const tmpA = Math.abs(highIntersection.y - lowIntersection.y) / 512
       const tmpB = Math.max(Math.abs(highIntersection.x), Math.abs(lowIntersection.x)) / 1024 * 2
       maxZoomHeight = 1e3 / Math.max(tmpA, tmpB)
-      minZoomHeight = maxZoomHeight / 5
+      minZoomHeight = maxZoomHeight / 3.5
 
       zoom = lerp(zoom, targetZoom, 0.1)
 
@@ -140,12 +129,11 @@ const MapControls = function (object, domElement) {
     scope.domElement.ownerDocument.removeEventListener('mouseup', onMouseUp, false)
   }
 
-  this.transitionTo = function (target) {
-    const t = Math.max(0, Math.min((target.z - maxZoomHeight) / (minZoomHeight - maxZoomHeight), 1))
-
+  this.transitionTo = function (target, targetZoom) {
     targetPosition.copy(target)
+    targetPosition.z = lerp(maxZoomHeight, minZoomHeight, targetZoom)
 
-    const targetAngle = lerp(scope.maxZoomAngle, scope.minZoomAngle, t)
+    const targetAngle = lerp(scope.maxZoomAngle, scope.minZoomAngle, targetZoom)
     const vector = new Vector3(0, 0, -1).applyEuler(new Euler(targetAngle, 0, 0, 'XYZ'))
     targetPosition.y += vector.y * targetPosition.z
 
@@ -185,10 +173,6 @@ const MapControls = function (object, domElement) {
 
   const startPosition = new Vector3()
   const targetPosition = new Vector3()
-
-  function lerp (a, b, t) {
-    return a + (b - a) * t
-  }
 
   const panPos = new Vector2()
   const panReference = new Vector3()
@@ -312,10 +296,7 @@ const MapControls = function (object, domElement) {
 
     const result = rayCast(clickStart.x, clickStart.y)
     if (result !== null) {
-      targetPosition.copy(result)
-      targetPosition.z = lerp(maxZoomHeight, minZoomHeight, 0.7)
-
-      scope.dispatchEvent({ type: 'click', position: targetPosition })
+      scope.dispatchEvent({ type: 'click', position: result })
     }
   }
 
@@ -369,10 +350,7 @@ const MapControls = function (object, domElement) {
     if (event.changedTouches[0].clientX === clickStart.x || event.changedTouches[0].clientY === clickStart.y) {
       const result = rayCast(clickStart.x, clickStart.y)
       if (result !== null) {
-        targetPosition.copy(result)
-        targetPosition.z = lerp(maxZoomHeight, minZoomHeight, 0.7)
-
-        scope.dispatchEvent({ type: 'click', position: targetPosition })
+        scope.dispatchEvent({ type: 'click', position: result })
       }
     }
   }
