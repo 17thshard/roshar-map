@@ -1,13 +1,36 @@
 <template>
-  <div class="scrubber">
-    <Timeline
-      v-for="(timelineEvents, timeline) in timelines"
-      :key="timeline"
-      :events="timelineEvents"
-      :active-event="activeEvent"
-      :class="`timeline--${timeline}`"
-      @event-selected="$emit('event-selected', $event)"
-    />
+  <div
+    :class="[
+      'scrubber',
+      {
+        'scrubber--left-overflow': leftOverflowVisible,
+        'scrubber--right-overflow': rightOverflowVisible,
+        'scrubber--ready': ready
+      }
+    ]"
+  >
+    <div
+      ref="container"
+      v-dragscroll
+      class="scrubber__container"
+      @mousewheel="scrollHorizontally"
+      @DOMMouseScroll="scrollHorizontally"
+      @scroll="updateOverflow"
+    >
+      <div
+        :style="{ width: `${timelineWidth}px` }"
+        class="scrubber__content"
+      >
+        <Timeline
+          v-for="(timelineEvents, timeline) in timelines"
+          :key="timeline"
+          :events="timelineEvents"
+          :active-event="activeEvent"
+          :class="`timeline--${timeline}`"
+          @event-selected="$emit('event-selected', $event)"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -18,6 +41,13 @@ export default {
   name: 'Scrubber',
   components: { Timeline },
   props: {
+    ready: {
+      type: Boolean
+    },
+    events: {
+      type: Array,
+      required: true
+    },
     activeEvent: {
       type: Object,
       required: false,
@@ -26,63 +56,9 @@ export default {
   },
   data () {
     return {
-      events: [
-        {
-          id: 0,
-          year: 1120,
-          name: 'Dalinar is born',
-          timelines: ['dalinar'],
-          shadesmar: false,
-          coordinates: {
-            x: 769,
-            y: 249
-          }
-        },
-        {
-          id: 1,
-          year: 1153,
-          name: 'Kaladin is born',
-          timelines: ['kaladin'],
-          shadesmar: false,
-          coordinates: {
-            x: 765,
-            y: 188
-          }
-        },
-        {
-          id: 2,
-          year: 1156,
-          name: 'Shallan is born',
-          timelines: ['shallan'],
-          shadesmar: false,
-          coordinates: {
-            x: 642,
-            y: 255
-          }
-        },
-        {
-          id: 3,
-          year: 1163,
-          name: 'Return to the Rift. Evi dies.',
-          timelines: ['dalinar'],
-          shadesmar: false,
-          coordinates: {
-            x: 756,
-            y: 311
-          }
-        },
-        {
-          id: 4,
-          year: 1174,
-          name: 'The gang is in Shadesmar',
-          timelines: ['kaladin', 'shallan'],
-          shadesmar: true,
-          coordinates: {
-            x: 769,
-            y: 249
-          }
-        }
-      ]
+      timelineWidth: 0,
+      leftOverflowVisible: false,
+      rightOverflowVisible: false
     }
   },
   computed: {
@@ -101,6 +77,55 @@ export default {
       })
 
       return result
+    },
+    timespan () {
+      return Math.max(...this.events.map(e => e.year)) - this.events[0].year
+    }
+  },
+  watch: {
+    activeEvent: {
+      handler (event, oldEvent) {
+        if (event === null) {
+          return
+        }
+
+        if (oldEvent && event.id === oldEvent.id) {
+          return
+        }
+
+        this.$nextTick(() => {
+          this.$refs.container.scrollTo({
+            left: event.offset * (14 + 20) + 50 - this.$el.clientWidth / 2,
+            behavior: 'smooth'
+          })
+        })
+      },
+      immediate: true
+    }
+  },
+  mounted () {
+    window.addEventListener('resize', this.onResize)
+    window.addEventListener('resize', this.updateOverflow)
+    this.onResize()
+  },
+  destroyed () {
+    window.removeEventListener('resize', this.onResize)
+    window.removeEventListener('resize', this.updateOverflow)
+  },
+  methods: {
+    onResize () {
+      this.timelineWidth = this.timespan * (14 + 20) + this.$el.clientWidth / 2 + 50
+    },
+    scrollHorizontally (event) {
+      const e = window.event || event
+      const delta = Math.max(-1, Math.min(1, e.wheelDelta || -e.detail))
+      this.$refs.container.scrollLeft += delta * 40
+      e.preventDefault()
+    },
+    updateOverflow () {
+      const { container } = this.$refs
+      this.leftOverflowVisible = container.scrollLeft > 0
+      this.rightOverflowVisible = container.scrollLeft + container.clientWidth < container.scrollWidth
     }
   }
 }
@@ -108,12 +133,60 @@ export default {
 
 <style lang="scss">
 .scrubber {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  background: #F5ECDA url(../assets/paper.png);
   box-sizing: border-box;
-  padding: 1rem 10rem;
+  position: relative;
+  max-height: 0;
+  transition: max-height 1s ease-out;
+  transition-delay: 0.5s;
+
+  &--ready {
+    max-height: 130px;
+  }
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 16px;
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0;
+  }
+
+  &:before {
+    left: 0;
+    background: linear-gradient(90deg, rgba(#63430F, 0.4) 0, rgba(#63430F, 0) 100%);
+  }
+
+  &:after {
+    right: 0;
+    background: linear-gradient(-90deg, rgba(#63430F, 0.4) 0, rgba(#63430F, 0) 100%);
+  }
+
+  &--left-overflow:before {
+    opacity: 1;
+  }
+
+  &--right-overflow:after {
+    opacity: 1;
+  }
+
+  &__container {
+    overflow: hidden;
+    max-width: 100%;
+    cursor: ew-resize;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    position: relative;
+    background: #F5ECDA url(../assets/paper.png);
+    padding: 1rem 0;
+  }
 }
 </style>

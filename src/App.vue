@@ -4,8 +4,17 @@
     <Map
       :highlight-position="activeEvent !== null ? activeEvent.coordinates : null"
       :show-shadesmar="activeEvent !== null && activeEvent.shadesmar"
+      @ready="ready = true"
     />
-    <Scrubber :active-event="activeEvent" @event-selected="activeEvent = $event" />
+    <Scrubber
+      :ready="ready"
+      :events="events"
+      :active-event="activeEvent"
+      @event-selected="activeEvent = $event"
+    />
+    <div v-if="!ready" class="loader">
+      Loading...
+    </div>
   </div>
 </template>
 
@@ -20,8 +29,68 @@ export default {
     Map
   },
   data () {
+    const events = [
+      {
+        id: 0,
+        year: 1120,
+        name: 'Dalinar is born',
+        timelines: ['dalinar'],
+        shadesmar: false,
+        coordinates: {
+          x: 769,
+          y: 249
+        }
+      },
+      {
+        id: 1,
+        year: 1153,
+        name: 'Kaladin is born',
+        timelines: ['kaladin'],
+        shadesmar: false,
+        coordinates: {
+          x: 765,
+          y: 188
+        }
+      },
+      {
+        id: 2,
+        year: 1156,
+        name: 'Shallan is born',
+        timelines: ['shallan'],
+        shadesmar: false,
+        coordinates: {
+          x: 642,
+          y: 255
+        }
+      },
+      {
+        id: 3,
+        year: 1163,
+        name: 'Return to the Rift. Evi dies.',
+        timelines: ['dalinar'],
+        shadesmar: false,
+        coordinates: {
+          x: 756,
+          y: 311
+        }
+      },
+      {
+        id: 4,
+        year: 1174,
+        name: 'The gang is in Shadesmar',
+        timelines: ['kaladin', 'shallan'],
+        shadesmar: true,
+        coordinates: {
+          x: 769,
+          y: 249
+        }
+      }
+    ]
+
     return {
-      activeEvent: null
+      ready: false,
+      events,
+      activeEvent: events[2]
     }
   }
 }
@@ -65,5 +134,17 @@ body {
   @media (max-width: 1080px) {
     width: 151px;
   }
+}
+
+.loader {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  background: black;
+  color: white;
+  text-align: center;
+  z-index: 30;
 }
 </style>

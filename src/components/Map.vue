@@ -54,110 +54,147 @@ export default {
     }
   },
   mounted () {
-    this.camera = new PerspectiveCamera(
-      60,
-      window.innerWidth / window.innerHeight,
-      0.01,
-      1e3
-    )
-    this.camera.position.set(30, -10, 40)
-
     this.renderer = new WebGLRenderer({ antialias: false, alpha: true })
     this.renderer.setPixelRatio(window.devicePixelRatio)
     this.renderer.setSize(window.innerWidth, window.innerHeight)
+    this.renderer.sortObjects = false
 
-    const maxTextureSize = this.renderer.capabilities.maxTextureSize
-    const useHq = maxTextureSize >= 8192 && !isMobile({ tablet: true, featureDetect: true })
-    let webpSupported = false
-    try {
-      webpSupported = document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0
-    } catch (t) {
-      webpSupported = false
-    }
-    const buildTextureUrl = (name, hqAvailable) => {
-      const prefix = hqAvailable && useHq ? 'hq_' : ''
-      return `${process.env.BASE_URL}textures/${prefix}${name}.${webpSupported ? 'webp' : 'png'}`
-    }
+    this.loadTextures().then(this.setupScene).then(() => {
+      this.$el.appendChild(this.renderer.domElement)
 
-    this.controls = new MapControls(this.camera, this.renderer.domElement)
-    this.controls.addEventListener('click', ({ position }) => {
-      this.controls.transitionTo(position, 0.7)
+      this.update()
+
+      this.$emit('ready')
+
+      setTimeout(() => {
+        this.onHighlightPositionChanged(this.highlightPosition)
+        this.onShadesmarChanged(this.showShadesmar)
+      }, 1100)
+
+      this.latestAnimationFrame = requestAnimationFrame(this.update)
     })
-
-    this.highlights = new Group()
-
-    const textureLoader = new TextureLoader()
-    const geo = new PlaneBufferGeometry(2, 2, 1, 1)
-    const mapMaterial = new ShaderMaterial({
-      // language=GLSL
-      vertexShader: `
-        varying vec2 vUv;
-
-        void main() {
-          vUv = uv;
-
-          gl_Position = projectionMatrix * modelViewMatrix * vec4(position * vec3(512, 256, 0), 1.0);
-        }
-      `,
-      fragmentShader,
-      uniforms: {
-        BgTexture: { value: textureLoader.load(buildTextureUrl('map_bg')) },
-        OutlineTexture: { value: textureLoader.load(buildTextureUrl('map', true)) },
-        ShadesmarBgTexture: { value: textureLoader.load(buildTextureUrl('shadesmar_map_bg')) },
-        TransitionTexture: { value: textureLoader.load(buildTextureUrl('transition')) },
-        Transition: { value: this.transitionValue }
-      }
-    })
-
-    const textPattern = textureLoader.load(buildTextureUrl('text_pattern'))
-    textPattern.wrapS = RepeatWrapping
-    textPattern.wrapT = RepeatWrapping
-    textPattern.magFilter = NearestFilter
-
-    const textMaterial = new ShaderMaterial({
-      // language=GLSL
-      vertexShader: `
-        varying vec2 vUv;
-
-        void main() {
-          vUv = uv;
-
-          gl_Position = projectionMatrix * modelViewMatrix * vec4(position * vec3(512, 256, 0), 1.0);
-        }
-      `,
-      fragmentShader: textFragmentShader,
-      uniforms: {
-        Texture: { value: textureLoader.load(buildTextureUrl('map_text', true)) },
-        ShadesmarTexture: { value: textureLoader.load(buildTextureUrl('shadesmar_map_text', true)) },
-        PatternTexture: { value: textPattern },
-        TransitionTexture: { value: textureLoader.load(buildTextureUrl('transition')) },
-        Transition: { value: this.transitionValue }
-      },
-      transparent: true,
-      depthTest: false
-    })
-    this.plane = new Mesh(geo, mapMaterial)
-    this.plane.frustumCulled = false
-
-    this.textPlane = new Mesh(geo, textMaterial)
-    this.textPlane.position.z = 1
-    this.textPlane.frustumCulled = false
-
-    this.scene = new Scene()
-    this.scene.add(this.plane, this.textPlane, this.highlights, new AmbientLight(0x222222))
-
-    this.$el.appendChild(this.renderer.domElement)
-
-    this.onHighlightPositionChanged(this.highlightPosition)
-    this.onShadesmarChanged(this.showShadesmar)
-
-    this.latestAnimationFrame = requestAnimationFrame(this.update)
   },
   destroyed () {
     this.renderer.dispose()
     cancelAnimationFrame(this.latestAnimationFrame)
   },
   methods: {
+    loadTextures () {
+      const textures = {
+        map_bg: {},
+        map: { hqAvailable: true },
+        shadesmar_map_bg: {},
+        transition: {},
+        text_pattern: {},
+        map_text: { hqAvailable: true },
+        shadesmar_map_text: { hqAvailable: true }
+      }
+      const result = {}
+
+      const maxTextureSize = this.renderer.capabilities.maxTextureSize
+      const useHq = maxTextureSize >= 8192 && !isMobile({ tablet: true, featureDetect: true })
+      let webpSupported = false
+      try {
+        webpSupported = document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0
+      } catch (t) {
+        webpSupported = false
+      }
+
+      const textureLoader = new TextureLoader()
+
+      return new Promise((resolve) => {
+        Object.keys(textures).forEach((name) => {
+          const texture = textures[name]
+
+          const prefix = texture.hqAvailable && useHq ? 'hq_' : ''
+          const path = `${process.env.BASE_URL}textures/${prefix}${name}.${webpSupported ? 'webp' : 'png'}`
+
+          textureLoader.load(path, (data) => {
+            texture.loaded = true
+            result[name] = data
+
+            if (Object.keys(textures).every(t => textures[t].loaded === true)) {
+              resolve(result)
+            }
+          })
+        })
+      })
+    },
+    setupScene (textures) {
+      this.camera = new PerspectiveCamera(
+        60,
+        window.innerWidth / window.innerHeight,
+        0.01,
+        1e3
+      )
+      this.camera.position.set(30, -10, 40)
+
+      this.controls = new MapControls(this.camera, this.renderer.domElement)
+      this.controls.addEventListener('click', ({ position }) => {
+        this.controls.transitionTo(position, 0.7)
+      })
+
+      this.highlights = new Group()
+
+      const geo = new PlaneBufferGeometry(2, 2, 1, 1)
+      const mapMaterial = new ShaderMaterial({
+        // language=GLSL
+        vertexShader: `
+        varying vec2 vUv;
+
+        void main() {
+          vUv = uv;
+
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(position * vec3(512, 256, 0), 1.0);
+        }
+      `,
+        fragmentShader,
+        uniforms: {
+          BgTexture: { value: textures.map_bg },
+          OutlineTexture: { value: textures.map },
+          ShadesmarBgTexture: { value: textures.shadesmar_map_bg },
+          TransitionTexture: { value: textures.transition },
+          Transition: { value: this.transitionValue }
+        }
+      })
+
+      const textPattern = textures.text_pattern
+      textPattern.wrapS = RepeatWrapping
+      textPattern.wrapT = RepeatWrapping
+      textPattern.magFilter = NearestFilter
+
+      const textMaterial = new ShaderMaterial({
+        // language=GLSL
+        vertexShader: `
+        varying vec2 vUv;
+
+        void main() {
+          vUv = uv;
+
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(position * vec3(512, 256, 0), 1.0);
+        }
+      `,
+        fragmentShader: textFragmentShader,
+        uniforms: {
+          Texture: { value: textures.map_text },
+          ShadesmarTexture: { value: textures.shadesmar_map_text },
+          PatternTexture: { value: textPattern },
+          TransitionTexture: { value: textures.transition },
+          Transition: { value: this.transitionValue }
+        },
+        transparent: true,
+        depthTest: false
+      })
+      this.plane = new Mesh(geo, mapMaterial)
+      this.plane.frustumCulled = false
+
+      this.textPlane = new Mesh(geo, textMaterial)
+      this.textPlane.position.z = 1
+      this.textPlane.frustumCulled = false
+
+      this.scene = new Scene()
+      this.scene.add(this.plane, this.textPlane, this.highlights, new AmbientLight(0x222222))
+    },
     onHighlightPositionChanged (newPosition) {
       this.highlights.children.forEach(h => h.leave())
 

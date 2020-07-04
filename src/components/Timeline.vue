@@ -47,30 +47,30 @@ export default {
     position: absolute;
     right: 0;
     height: 0.6rem;
-    background: rgba(153, 151, 145, 0.5);
 
     &:before, &:after {
       position: absolute;
       content: '';
       top: 0;
       bottom: 0;
-      left: 100%;
-      width: 10rem;
     }
 
     &:before {
-      width: 1.5rem;
-      left: auto;
-      right: 100%;
+      left: -1.5rem;
+      right: 10rem;
       border-top-left-radius: 0.3rem;
       border-bottom-left-radius: 0.3rem;
+    }
+
+    &:after {
+      width: 10rem;
+      left: auto;
+      right: 0;
     }
   }
 
   @mixin bar($base-color) {
     .timeline__bar {
-      background: $base-color;
-
       &:before {
         background: $base-color;
       }
