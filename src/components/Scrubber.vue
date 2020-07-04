@@ -181,6 +181,10 @@ export default {
 
   &--ready {
     max-height: 130px;
+
+    .scrubber__indicator {
+      opacity: 1;
+    }
   }
 
   &:before, &:after {
@@ -237,6 +241,9 @@ export default {
     bottom: 1.45rem;
     font-size: 0.8rem;
     pointer-events: none;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+    transition-delay: 0.5s;
 
     &:before {
       content: '';

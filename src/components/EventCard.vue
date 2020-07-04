@@ -39,6 +39,7 @@ export default {
   position: absolute;
   bottom: 100%;
   width: 350px;
+  max-width: 90%;
   z-index: 5;
   filter: drop-shadow(0 -0.5rem 1rem rgba(0, 0, 0, 0.5));
   box-sizing: border-box;
@@ -71,9 +72,10 @@ export default {
 
   &__image {
     position: absolute;
-    width: 25%;
+    width: 86px;
     top: -43px;
-    left: 37.5%;
+    left: 50%;
+    margin-left: -43px;
     border-radius: 100%;
     border: 4px solid #F5ECDA;
     box-sizing: border-box;
