@@ -66,12 +66,8 @@ export default {
 
       this.$emit('ready')
 
-      setTimeout(() => {
-        this.onHighlightPositionChanged(this.highlightPosition)
-        this.onShadesmarChanged(this.showShadesmar)
-      }, 1100)
-
-      this.latestAnimationFrame = requestAnimationFrame(this.update)
+      this.onHighlightPositionChanged(this.highlightPosition)
+      this.onShadesmarChanged(this.showShadesmar)
     })
   },
   destroyed () {
@@ -130,9 +126,6 @@ export default {
       this.camera.position.set(30, -10, 40)
 
       this.controls = new MapControls(this.camera, this.renderer.domElement)
-      this.controls.addEventListener('click', ({ position }) => {
-        this.controls.transitionTo(position, 0.7)
-      })
 
       this.highlights = new Group()
 
@@ -215,7 +208,6 @@ export default {
     },
     update (timestamp) {
       this.resizeCanvasToDisplaySize()
-      this.latestAnimationFrame = requestAnimationFrame(this.update)
       this.transitionValue += this.transitionDirection * 0.01
 
       if (this.transitionValue <= 0 || this.transitionValue >= 1) {
@@ -230,6 +222,7 @@ export default {
 
       this.controls.update()
       this.renderer.render(this.scene, this.camera)
+      this.latestAnimationFrame = requestAnimationFrame(this.update)
     },
     resizeCanvasToDisplaySize () {
       const canvas = this.renderer.domElement

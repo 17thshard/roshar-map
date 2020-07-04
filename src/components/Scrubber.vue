@@ -8,27 +8,49 @@
         'scrubber--ready': ready
       }
     ]"
+    @transitionend="$emit('loaded')"
   >
-    <div
-      ref="container"
-      v-dragscroll
-      class="scrubber__container"
-      @mousewheel="scrollHorizontally"
-      @DOMMouseScroll="scrollHorizontally"
-      @scroll="updateOverflow"
-    >
+    <transition name="scrubber__card">
+      <EventCard v-if="activeEvent !== null" :key="`event-${activeEvent.id}`" :event="activeEvent" />
+    </transition>
+    <div class="scrubber__bar">
+      <div class="scrubber__indicator">
+        <span class="scrubber__indicator-year">
+          {{ currentYear }}
+        </span>
+      </div>
       <div
-        :style="{ width: `${timelineWidth}px` }"
-        class="scrubber__content"
+        ref="container"
+        v-dragscroll
+        class="scrubber__container"
+        @mousewheel="scrollHorizontally"
+        @DOMMouseScroll="scrollHorizontally"
+        @scroll="onScroll"
       >
-        <Timeline
-          v-for="(timelineEvents, timeline) in timelines"
-          :key="timeline"
-          :events="timelineEvents"
-          :active-event="activeEvent"
-          :class="`timeline--${timeline}`"
-          @event-selected="$emit('event-selected', $event)"
-        />
+        <div
+          :style="{ width: `${timelineWidth}px` }"
+          class="scrubber__content"
+        >
+          <Timeline
+            v-for="(timelineEvents, timeline) in timelines"
+            :key="timeline"
+            :offset="timelineOffset"
+            :events="timelineEvents"
+            :active-event="activeEvent"
+            :class="`timeline--${timeline}`"
+            @event-selected="$emit('event-selected', $event)"
+          />
+          <div key="years" class="scrubber__years">
+            <span
+              v-for="{ year, offset } in years"
+              :key="year"
+              :style="{ left: `${offset * (14 + 20) + timelineOffset}px` }"
+              class="scrubber__year"
+            >
+              {{ year }}
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -36,10 +58,11 @@
 
 <script>
 import Timeline from '@/components/Timeline.vue'
+import EventCard from '@/components/EventCard.vue'
 
 export default {
   name: 'Scrubber',
-  components: { Timeline },
+  components: { EventCard, Timeline },
   props: {
     ready: {
       type: Boolean
@@ -57,17 +80,19 @@ export default {
   data () {
     return {
       timelineWidth: 0,
+      timelineOffset: 0,
       leftOverflowVisible: false,
-      rightOverflowVisible: false
+      rightOverflowVisible: false,
+      currentYear: 0
     }
   },
   computed: {
     timelines () {
       const result = {
-        general: [],
         dalinar: [],
         kaladin: [],
-        shallan: []
+        shallan: [],
+        general: []
       }
 
       this.events.forEach((event) => {
@@ -80,6 +105,13 @@ export default {
     },
     timespan () {
       return Math.max(...this.events.map(e => e.year)) - this.events[0].year
+    },
+    years () {
+      const minYear = Math.min(...this.events.map(e => e.year))
+      const maxYear = Math.max(...this.events.map(e => e.year))
+      return [...Array(maxYear - minYear).keys()]
+        .map(y => ({ year: y + minYear, offset: y }))
+        .filter(y => y.year % 5 === 0)
     }
   },
   watch: {
@@ -95,7 +127,7 @@ export default {
 
         this.$nextTick(() => {
           this.$refs.container.scrollTo({
-            left: event.offset * (14 + 20) + 50 - this.$el.clientWidth / 2,
+            left: event.offset * (14 + 20),
             behavior: 'smooth'
           })
         })
@@ -114,7 +146,8 @@ export default {
   },
   methods: {
     onResize () {
-      this.timelineWidth = this.timespan * (14 + 20) + this.$el.clientWidth / 2 + 50
+      this.timelineWidth = this.timespan * (14 + 20) + this.$el.clientWidth
+      this.timelineOffset = this.$el.clientWidth / 2
     },
     scrollHorizontally (event) {
       const e = window.event || event
@@ -122,10 +155,15 @@ export default {
       this.$refs.container.scrollLeft += delta * 40
       e.preventDefault()
     },
+    onScroll () {
+      this.updateOverflow()
+      const minYear = Math.min(...this.events.map(e => e.year))
+      this.currentYear = minYear + Math.floor(this.$refs.container.scrollLeft / (14 + 20))
+    },
     updateOverflow () {
       const { container } = this.$refs
-      this.leftOverflowVisible = container.scrollLeft > 0
-      this.rightOverflowVisible = container.scrollLeft + container.clientWidth < container.scrollWidth
+      this.leftOverflowVisible = container.scrollLeft > this.timelineOffset
+      this.rightOverflowVisible = container.scrollLeft + container.clientWidth < container.scrollWidth - this.timelineOffset
     }
   }
 }
@@ -133,6 +171,8 @@ export default {
 
 <style lang="scss">
 .scrubber {
+  display: flex;
+  justify-content: center;
   box-sizing: border-box;
   position: relative;
   max-height: 0;
@@ -149,7 +189,7 @@ export default {
     top: 0;
     bottom: 0;
     width: 16px;
-    z-index: 1;
+    z-index: 15;
     pointer-events: none;
     transition: opacity 0.2s ease-in-out;
     opacity: 0;
@@ -173,10 +213,67 @@ export default {
     opacity: 1;
   }
 
+  &__card {
+    &-enter-active {
+      transition: transform 0.5s ease-out;
+      transition-delay: 1.2s;
+    }
+
+    &-leave-active {
+      transition: transform 0.5s ease-in;
+    }
+
+    &-enter, &-leave-to {
+      transform: translateY(calc(100% + 2rem));
+    }
+  }
+
+  &__indicator {
+    position: absolute;
+    left: 50%;
+    top: -1rem;
+    z-index: 15;
+    transform: translateX(-50%);
+    bottom: 1.45rem;
+    font-size: 0.8rem;
+    pointer-events: none;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 2px;
+      top: 1.5rem;
+      bottom: 0;
+      background: #111;
+      left: 50%;
+      margin-left: -1px;
+      z-index: 14;
+    }
+
+    &-year {
+      display: flex;
+      align-items: center;
+      background: #111;
+      color: #fafafa;
+      padding: 4px 8px;
+      box-sizing: border-box;
+      border-radius: 1rem;
+    }
+  }
+
+  &__bar {
+    max-width: 100%;
+    flex: 1;
+    z-index: 10;
+    transform: translateZ(0);
+    position: relative;
+  }
+
   &__container {
     overflow: hidden;
     max-width: 100%;
     cursor: ew-resize;
+    position: relative;
   }
 
   &__content {
@@ -187,6 +284,18 @@ export default {
     position: relative;
     background: #F5ECDA url(../assets/paper.png);
     padding: 1rem 0;
+  }
+
+  &__years {
+    position: relative;
+    color: rgba(0, 0, 0, 0.7);
+    z-index: 16;
+  }
+
+  &__year {
+    position: absolute;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
   }
 }
 </style>

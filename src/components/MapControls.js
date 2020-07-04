@@ -20,7 +20,6 @@ const MapControls = function (object, domElement) {
 
   // Set to false to disable panning
   this.enablePan = true
-  this.panSpeed = 1.0
 
   // Mouse buttons
   this.mouseButtons = { LEFT: MOUSE.PAN, MIDDLE: MOUSE.DOLLY }
@@ -62,11 +61,13 @@ const MapControls = function (object, domElement) {
       maxZoomHeight = 1e3 / Math.max(tmpA, tmpB)
       minZoomHeight = maxZoomHeight / 3.5
 
-      zoom = lerp(zoom, targetZoom, 0.1)
-
       position.copy(scope.object.position)
 
       if (transitionProgress !== null) {
+        updateTargetPosition()
+
+        startPosition.z = lerp(maxZoomHeight, minZoomHeight, transitionStartZoom)
+
         transitionProgress += 0.02
 
         position.set(
@@ -75,12 +76,13 @@ const MapControls = function (object, domElement) {
           lerp(startPosition.z, targetPosition.z, smootherstep(transitionProgress))
         )
 
-        targetZoom = zoom = Math.max(0, Math.min((position.z - maxZoomHeight) / (minZoomHeight - maxZoomHeight), 1))
+        zoom = Math.max(0, Math.min((position.z - maxZoomHeight) / (minZoomHeight - maxZoomHeight), 1))
 
         if (transitionProgress > 1) {
           transitionProgress = null
         }
       } else {
+        zoom = lerp(zoom, targetZoom, 0.1)
         position.z = lerp(maxZoomHeight, minZoomHeight, zoom)
       }
 
@@ -129,8 +131,8 @@ const MapControls = function (object, domElement) {
     scope.domElement.ownerDocument.removeEventListener('mouseup', onMouseUp, false)
   }
 
-  this.transitionTo = function (target, targetZoom) {
-    targetPosition.copy(target)
+  function updateTargetPosition () {
+    targetPosition.copy(intendedTarget)
     targetPosition.z = lerp(maxZoomHeight, minZoomHeight, targetZoom)
 
     const targetAngle = lerp(scope.maxZoomAngle, scope.minZoomAngle, targetZoom)
@@ -138,6 +140,15 @@ const MapControls = function (object, domElement) {
     targetPosition.y += vector.y * targetPosition.z
 
     clampPosition(targetPosition, targetAngle)
+  }
+
+  this.transitionTo = function (target, newZoom) {
+    transitionStartZoom = zoom
+    targetZoom = newZoom
+    intendedTarget.copy(target)
+
+    updateTargetPosition()
+
     startPosition.copy(scope.object.position)
 
     transitionProgress = 0
@@ -170,9 +181,11 @@ const MapControls = function (object, domElement) {
   let maxZoomHeight = 300
 
   let transitionProgress = null
+  let transitionStartZoom = 0
 
   const startPosition = new Vector3()
   const targetPosition = new Vector3()
+  const intendedTarget = new Vector3()
 
   const panPos = new Vector2()
   const panReference = new Vector3()

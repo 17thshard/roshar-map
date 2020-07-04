@@ -1,12 +1,12 @@
 <template>
   <div class="timeline">
-    <div :style="{ left: `${barOffset * (14 + 20) + 50}px` }" class="timeline__bar" />
+    <div :style="{ left: `${barOffset * (14 + 20) + offset}px` }" class="timeline__bar" />
     <template v-for="event in events">
       <button
         :key="event.id"
         :title="event.name"
         :class="['timeline__event', { 'timeline__event--active': activeEvent !== null && activeEvent.id === event.id }]"
-        :style="{ left: `${event.offset * (14 + 20) + 50}px` }"
+        :style="{ left: `${event.offset * (14 + 20) + offset}px` }"
         @click="$emit('event-selected', event)"
       />
     </template>
@@ -17,6 +17,10 @@
 export default {
   name: 'Timeline',
   props: {
+    offset: {
+      type: Number,
+      required: true
+    },
     events: {
       type: Array,
       required: true
@@ -108,6 +112,7 @@ export default {
     margin: 0 0 0 -0.5em;
     box-sizing: border-box;
     border: 0.5em solid;
+    z-index: 15;
 
     @mixin diamond($base-color) {
       border-top-color: lighten($base-color, 10%);
