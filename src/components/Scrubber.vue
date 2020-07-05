@@ -16,7 +16,7 @@
     <div class="scrubber__bar">
       <div class="scrubber__indicator">
         <span class="scrubber__indicator-year">
-          {{ currentYear }}
+          {{ currentDate }}
         </span>
       </div>
       <div
@@ -44,7 +44,7 @@
             <span
               v-for="{ year, offset } in years"
               :key="year"
-              :style="{ left: `${offset * (14 + 20) + timelineOffset}px` }"
+              :style="{ left: `${offset + timelineOffset}px` }"
               class="scrubber__year"
             >
               {{ year }}
@@ -59,6 +59,7 @@
 <script>
 import Timeline from '@/components/Timeline.vue'
 import EventCard from '@/components/EventCard.vue'
+import { lerp } from '@/utils'
 
 export default {
   name: 'Scrubber',
@@ -83,7 +84,7 @@ export default {
       timelineOffset: 0,
       leftOverflowVisible: false,
       rightOverflowVisible: false,
-      currentYear: 0
+      currentDate: '1174'
     }
   },
   computed: {
@@ -96,22 +97,53 @@ export default {
       }
 
       this.events.forEach((event) => {
-        // eslint-disable-next-line no-param-reassign
-        event.offset = event.year - this.events[0].year
         event.timelines.forEach(t => result[t].push(event))
       })
 
       return result
     },
-    timespan () {
-      return Math.max(...this.events.map(e => e.year)) - this.events[0].year
-    },
     years () {
-      const minYear = Math.min(...this.events.map(e => e.year))
-      const maxYear = Math.max(...this.events.map(e => e.year))
-      return [...Array(maxYear - minYear).keys()]
-        .map(y => ({ year: y + minYear, offset: y }))
-        .filter(y => y.year % 5 === 0)
+      let lastYear = null
+      let lastOffset = 0
+      const years = []
+
+      this.events.forEach((event) => {
+        const year = event.date[0]
+
+        if (lastYear !== null && year !== lastYear) {
+          const diff = year - lastYear
+
+          let filler = 1
+
+          if (diff >= 1000) {
+            filler = 5
+          } else if (diff >= 200) {
+            filler = 3
+          } else if (diff >= 100) {
+            filler = 2
+          }
+
+          const yearsBetween = [...Array(filler).keys()]
+            .map(i => Math.trunc(lastYear + (i + 1) * diff / (filler + 1)))
+
+          years.push(
+            ...[...new Set(yearsBetween)]
+              .map(y => ({
+                year: y,
+                offset: lerp(lastOffset, event.offset, (y - lastYear) / diff)
+              }))
+          )
+        }
+
+        if (year !== lastYear) {
+          years.push({ year, offset: event.offset })
+        }
+
+        lastYear = event.date[0]
+        lastOffset = event.offset
+      })
+
+      return years
     }
   },
   watch: {
@@ -127,7 +159,7 @@ export default {
 
         this.$nextTick(() => {
           this.$refs.container.scrollTo({
-            left: event.offset * (14 + 20),
+            left: event.offset,
             behavior: 'smooth'
           })
         })
@@ -146,7 +178,7 @@ export default {
   },
   methods: {
     onResize () {
-      this.timelineWidth = this.timespan * (14 + 20) + this.$el.clientWidth
+      this.timelineWidth = Math.max(...this.events.map(e => e.offset)) + this.$el.clientWidth
       this.timelineOffset = this.$el.clientWidth / 2
     },
     scrollHorizontally (event) {
@@ -157,8 +189,43 @@ export default {
     },
     onScroll () {
       this.updateOverflow()
-      const minYear = Math.min(...this.events.map(e => e.year))
-      this.currentYear = minYear + Math.floor(this.$refs.container.scrollLeft / (14 + 20))
+
+      const scroll = this.$refs.container.scrollLeft
+      const endIndex = this.events.findIndex(event => event.offset >= scroll)
+
+      if (endIndex === 0) {
+        this.currentDate = this.events[0].date[0].toString()
+
+        if (this.events[0].date[0] === this.events[1].date[0]) {
+          this.currentDate += this.events[0].date[1]
+        }
+      } else {
+        const start = this.events[endIndex - 1]
+        const end = this.events[endIndex]
+        const nextEnd = this.events[endIndex + 1]
+
+        let dateBit = 0
+
+        if (start.date[0] === end.date[0]) {
+          dateBit = 1
+          this.currentDate = `${start.date[0]}.`
+        } else {
+          this.currentDate = ''
+        }
+
+        if (scroll <= start.offset + 0.5) {
+          this.currentDate += start.date[dateBit].toString()
+        } else if (scroll >= end.offset - 0.5) {
+          this.currentDate += end.date[dateBit].toString()
+
+          if (nextEnd !== undefined && nextEnd.date[0] === end.date[0]) {
+            this.currentDate = `${end.date[0]}.${end.date[1]}`
+          }
+        } else {
+          const t = (scroll - start.offset) / (end.offset - start.offset)
+          this.currentDate += Math.trunc(lerp(start.date[dateBit], end.date[dateBit], t)).toString()
+        }
+      }
     },
     updateOverflow () {
       const { container } = this.$refs

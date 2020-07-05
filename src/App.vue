@@ -31,9 +31,8 @@ export default {
   data () {
     const events = [
       {
-        id: 0,
-        year: 1110,
-        name: 'The Shattering',
+        date: [-10000],
+        name: 'Shattering of Adonalsium',
         timelines: ['general'],
         shadesmar: false,
         specialEffect: 'shattering',
@@ -44,8 +43,63 @@ export default {
         }
       },
       {
-        id: 1,
+        date: [-8000],
+        name: 'Human Exodus from Ashyn',
+        timelines: ['general'],
+        shadesmar: false,
+        coordinates: {
+          x: 512,
+          y: 256,
+          zoom: 0
+        }
+      },
+      {
+        date: [-3300],
+        name: 'The Last Desolation',
+        timelines: ['general'],
+        shadesmar: false,
+        coordinates: {
+          x: 512,
+          y: 256,
+          zoom: 0
+        }
+      },
+      {
+        date: [-800],
+        name: 'The False Desolation',
+        timelines: ['general'],
+        shadesmar: false,
+        coordinates: {
+          x: 512,
+          y: 256,
+          zoom: 0
+        }
+      },
+      {
+        date: [650],
+        name: 'End of the Hierocracy',
+        timelines: ['general'],
+        shadesmar: false,
+        coordinates: {
+          x: 512,
+          y: 256,
+          zoom: 0
+        }
+      },
+      {
+        date: [975],
+        name: 'End of the Hierocracy',
+        timelines: ['general'],
+        shadesmar: false,
+        coordinates: {
+          x: 512,
+          y: 256,
+          zoom: 0
+        }
+      },
+      {
         year: 1120,
+        date: [1120],
         name: 'Dalinar is born',
         timelines: ['dalinar'],
         shadesmar: false,
@@ -55,8 +109,7 @@ export default {
         }
       },
       {
-        id: 2,
-        year: 1153,
+        date: [1153],
         name: 'Kaladin is born',
         image: 'kaladin.jpg',
         timelines: ['kaladin'],
@@ -67,8 +120,7 @@ export default {
         }
       },
       {
-        id: 3,
-        year: 1156,
+        date: [1156],
         name: 'Shallan is born',
         timelines: ['shallan'],
         shadesmar: false,
@@ -78,8 +130,7 @@ export default {
         }
       },
       {
-        id: 4,
-        year: 1163,
+        date: [1163],
         name: 'Return to the Rift. Evi dies.',
         timelines: ['dalinar'],
         shadesmar: false,
@@ -89,8 +140,37 @@ export default {
         }
       },
       {
-        id: 5,
-        year: 1174,
+        date: [1169, 1],
+        name: 'Taravangian visits the Nightwatcher',
+        timelines: ['general'],
+        shadesmar: false,
+        coordinates: {
+          x: 756,
+          y: 311
+        }
+      },
+      {
+        date: [1169, 4],
+        name: 'Tien dies',
+        timelines: ['kaladin'],
+        shadesmar: false,
+        coordinates: {
+          x: 756,
+          y: 311
+        }
+      },
+      {
+        date: [1169, 10],
+        name: 'Lin Davar accused of murder',
+        timelines: ['general'],
+        shadesmar: false,
+        coordinates: {
+          x: 756,
+          y: 311
+        }
+      },
+      {
+        date: [1174],
         name: 'The gang is in Shadesmar',
         timelines: ['kaladin', 'shallan'],
         shadesmar: true,
@@ -99,7 +179,20 @@ export default {
           y: 249
         }
       }
-    ]
+    ].map((event, index) => ({ ...event, id: index }))
+
+    let lastEvent = null
+    let runningOffset = 0
+    events.forEach((event) => {
+      if (lastEvent !== null) {
+        runningOffset += this.calculateNextOffset(event, lastEvent)
+      }
+
+      // eslint-disable-next-line no-param-reassign
+      event.offset = runningOffset
+
+      lastEvent = event
+    })
 
     return {
       ready: false,
@@ -117,6 +210,21 @@ export default {
       setTimeout(() => {
         this.mapTransitions = true
       }, 200)
+    },
+    calculateNextOffset (event, lastEvent) {
+      if (event.date[0] - lastEvent.date[0] >= 100) {
+        return 500
+      }
+
+      if (event.date[0] - lastEvent.date[0] >= 5) {
+        return 200
+      }
+
+      if (event.date[0] - lastEvent.date[0] >= 1) {
+        return (event.date[0] - lastEvent.date[0]) * 44
+      }
+
+      return 34
     }
   }
 }

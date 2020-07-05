@@ -1,12 +1,12 @@
 <template>
   <div class="timeline">
-    <div :style="{ left: `${barOffset * (14 + 20) + offset}px` }" class="timeline__bar" />
+    <div :style="{ left: `${barOffset + offset}px` }" class="timeline__bar" />
     <template v-for="event in events">
       <button
         :key="event.id"
         :title="event.name"
         :class="['timeline__event', { 'timeline__event--active': activeEvent !== null && activeEvent.id === event.id }]"
-        :style="{ left: `${event.offset * (14 + 20) + offset}px` }"
+        :style="{ left: `${event.offset + offset}px` }"
         @click="$emit('event-selected', event)"
       />
     </template>
