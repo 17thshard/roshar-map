@@ -2,8 +2,7 @@
   <div id="app">
     <img class="logo" src="@/assets/roshar_logo.png" alt="Logo">
     <Map
-      :highlight-position="activeEvent !== null && mapTransitions ? activeEvent.coordinates : null"
-      :show-shadesmar="activeEvent !== null && mapTransitions && activeEvent.shadesmar"
+      :active-event="mapTransitions ? activeEvent : null"
       @ready="onReady"
     />
     <Scrubber
@@ -34,12 +33,14 @@ export default {
       {
         id: 0,
         year: 1110,
-        name: 'Blargh',
+        name: 'The Shattering',
         timelines: ['general'],
         shadesmar: false,
+        specialEffect: 'shattering',
         coordinates: {
-          x: 769,
-          y: 249
+          x: 512,
+          y: 256,
+          zoom: 0
         }
       },
       {

@@ -15,12 +15,13 @@ const State = {
 }
 
 export default class Highlight extends Group {
-  constructor (x, y) {
+  constructor (x, y, size) {
     super()
     this.position.set(x, y, 1)
     this.frustumCulled = false
     this.opacity = 0
     this.state = State.ENTERING
+    this.size = size !== undefined ? size : 0.2
 
     this.init()
   }
@@ -128,7 +129,7 @@ export default class Highlight extends Group {
       `,
       uniforms: {
         Time: { value: 0 },
-        Size: { value: 0.2 },
+        Size: { value: this.size },
         Scale: { value: 1 },
         Opacity: { value: 0 },
         Frequency: { value: 4 },

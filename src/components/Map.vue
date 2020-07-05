@@ -17,22 +17,22 @@ import {
   Vector3,
   WebGLRenderer
 } from 'three'
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
 import isMobile from 'is-mobile'
 import MapControls from '@/components/MapControls'
 import Highlight from '@/components/Highlight'
 import fragmentShader from '@/components/mapFragmentShader'
 import textFragmentShader from '@/components/mapTextFragmentShader'
+import ShatteringPass from '@/components/ShatteringPass'
 
 export default {
   name: 'Map',
   props: {
-    highlightPosition: {
+    activeEvent: {
       type: Object,
       required: false,
       default: () => null
-    },
-    showShadesmar: {
-      type: Boolean
     }
   },
   data () {
@@ -42,15 +42,8 @@ export default {
     }
   },
   watch: {
-    highlightPosition: {
-      handler (newPosition) {
-        this.onHighlightPositionChanged(newPosition)
-      }
-    },
-    showShadesmar: {
-      handler (shouldShow) {
-        this.onShadesmarChanged(shouldShow)
-      }
+    activeEvent (event, oldEvent) {
+      this.onEventChanged(event, oldEvent)
     }
   },
   mounted () {
@@ -59,6 +52,8 @@ export default {
     this.renderer.setSize(window.innerWidth, window.innerHeight)
     this.renderer.sortObjects = false
 
+    this.composer = new EffectComposer(this.renderer)
+
     this.loadTextures().then(this.setupScene).then(() => {
       this.$el.appendChild(this.renderer.domElement)
 
@@ -66,8 +61,7 @@ export default {
 
       this.$emit('ready')
 
-      this.onHighlightPositionChanged(this.highlightPosition)
-      this.onShadesmarChanged(this.showShadesmar)
+      this.onEventChanged(this.activeEvent, null)
     })
   },
   destroyed () {
@@ -130,17 +124,17 @@ export default {
       this.highlights = new Group()
 
       const geo = new PlaneBufferGeometry(2, 2, 1, 1)
-      const mapMaterial = new ShaderMaterial({
+      this.mapMaterial = new ShaderMaterial({
         // language=GLSL
         vertexShader: `
-        varying vec2 vUv;
+          varying vec2 vUv;
 
-        void main() {
-          vUv = uv;
+          void main() {
+            vUv = uv;
 
-          gl_Position = projectionMatrix * modelViewMatrix * vec4(position * vec3(512, 256, 0), 1.0);
-        }
-      `,
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position * vec3(512, 256, 0), 1.0);
+          }
+        `,
         fragmentShader,
         uniforms: {
           BgTexture: { value: textures.map_bg },
@@ -159,14 +153,14 @@ export default {
       const textMaterial = new ShaderMaterial({
         // language=GLSL
         vertexShader: `
-        varying vec2 vUv;
+          varying vec2 vUv;
 
-        void main() {
-          vUv = uv;
+          void main() {
+            vUv = uv;
 
-          gl_Position = projectionMatrix * modelViewMatrix * vec4(position * vec3(512, 256, 0), 1.0);
-        }
-      `,
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position * vec3(512, 256, 0), 1.0);
+          }
+        `,
         fragmentShader: textFragmentShader,
         uniforms: {
           Texture: { value: textures.map_text },
@@ -178,7 +172,7 @@ export default {
         transparent: true,
         depthTest: false
       })
-      this.plane = new Mesh(geo, mapMaterial)
+      this.plane = new Mesh(geo, this.mapMaterial)
       this.plane.frustumCulled = false
 
       this.textPlane = new Mesh(geo, textMaterial)
@@ -187,24 +181,29 @@ export default {
 
       this.scene = new Scene()
       this.scene.add(this.plane, this.textPlane, this.highlights, new AmbientLight(0x222222))
-    },
-    onHighlightPositionChanged (newPosition) {
-      this.highlights.children.forEach(h => h.leave())
 
-      if (newPosition === null) {
+      this.composer.addPass(new RenderPass(this.scene, this.camera))
+      this.shatteringPass = new ShatteringPass()
+      this.composer.addPass(this.shatteringPass)
+    },
+    onEventChanged (event, oldEvent) {
+      this.highlights.children.forEach(h => h.leave())
+      this.transitionDirection = event !== null && event.shadesmar ? 1 : -2
+
+      if (event !== null && event.specialEffect === 'shattering') {
+        this.shatteringPass.enter()
+      } else if (oldEvent !== null && oldEvent.specialEffect === 'shattering') {
+        this.shatteringPass.leave()
+      }
+
+      if (event === null) {
         return
       }
 
+      const newPosition = event.coordinates
       const target = new Vector3(newPosition.x - 512, 256 - newPosition.y, 0)
-      this.highlights.add(new Highlight(target.x, target.y))
-      this.controls.transitionTo(target, 0.7)
-    },
-    onShadesmarChanged (shouldShow) {
-      if (shouldShow) {
-        this.transitionDirection = 1
-      } else {
-        this.transitionDirection = -2
-      }
+      this.highlights.add(new Highlight(target.x, target.y, event.specialEffect === 'shattering' ? 10 : undefined))
+      this.controls.transitionTo(target, newPosition.zoom !== undefined ? newPosition.zoom : 0.7)
     },
     update (timestamp) {
       this.resizeCanvasToDisplaySize()
@@ -215,13 +214,13 @@ export default {
         this.transitionDirection = 0
       }
 
-      this.plane.material.uniforms.Transition.value = this.transitionValue
+      this.mapMaterial.uniforms.Transition.value = this.transitionValue
       this.textPlane.material.uniforms.Transition.value = this.transitionValue
 
       this.highlights.children.forEach(h => h.update(this.camera, timestamp))
 
       this.controls.update()
-      this.renderer.render(this.scene, this.camera)
+      this.composer.render()
       this.latestAnimationFrame = requestAnimationFrame(this.update)
     },
     resizeCanvasToDisplaySize () {
