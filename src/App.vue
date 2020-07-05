@@ -21,6 +21,7 @@
 <script>
 import Map from '@/components/Map.vue'
 import Scrubber from '@/components/Scrubber.vue'
+import { arraysEqual } from '@/utils'
 
 export default {
   name: 'App',
@@ -171,6 +172,7 @@ export default {
       },
       {
         date: [-3300],
+        tieBreaker: 1,
         name: 'Blublub',
         timelines: ['dalinar'],
         shadesmar: false,
@@ -195,18 +197,28 @@ export default {
         let j = 0
 
         for (let i = 0; i < a.date.length; i++) {
-          if (j === b.date.length - 1 && b.date[j] < a.date[i]) {
-            return 1
+          if (j === b.date.length - 1 && b.date[j] !== a.date[i]) {
+            return a.date[i] - b.date[j]
           }
 
-          if (a.date[i] < b.date[j]) {
-            return -1
+          if (a.date[i] !== b.date[j]) {
+            return a.date[i] - b.date[j]
           }
 
           j += 1
         }
 
-        return j === b.date.length - 1 ? 0 : -1
+        if (j !== b.date.length) {
+          return -1
+        }
+
+        if (a.tieBreaker !== undefined && b.tieBreaker !== undefined) {
+          return a.tieBreaker - b.tieBreaker
+        } else if (a.tieBreaker !== undefined) {
+          return 1
+        }
+
+        return -1
       }).map((event, index) => ({ ...event, id: index }))
 
     let lastEvent = null
@@ -240,7 +252,7 @@ export default {
       }, 200)
     },
     calculateNextOffset (event, lastEvent) {
-      if (event.date.length === lastEvent.date.length && event.date.every((d, i) => lastEvent.date[i] === d)) {
+      if (arraysEqual(event.date, lastEvent.date) && event.tieBreaker === lastEvent.tieBreaker) {
         return 0
       }
 

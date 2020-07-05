@@ -59,7 +59,7 @@
 <script>
 import Timeline from '@/components/Timeline.vue'
 import EventCard from '@/components/EventCard.vue'
-import { lerp } from '@/utils'
+import { arraysEqual, lerp } from '@/utils'
 
 export default {
   name: 'Scrubber',
@@ -212,33 +212,42 @@ export default {
         const end = this.events[endIndex]
         const nextEnd = this.events[endIndex + 1]
 
-        let dateBit = 0
+        let date = []
 
-        if (start.date[0] === end.date[0]) {
-          dateBit = 1
-          this.currentDate = `${start.date[0]}.`
-        } else {
-          this.currentDate = ''
+        if (arraysEqual(start.date, end.date)) {
+          this.currentDate = this.formatDate(start.date)
+          return
+        }
+
+        let dateBit = 0
+        while (start.date[dateBit] === end.date[dateBit]) {
+          date.push(start.date[dateBit])
+          dateBit += 1
         }
 
         if (scroll <= start.offset + 0.5) {
-          this.currentDate += start.date[dateBit].toString()
+          date.push(start.date[dateBit])
         } else if (scroll >= end.offset - 0.5) {
-          this.currentDate += end.date[dateBit].toString()
+          date.push(end.date[dateBit])
 
           if (nextEnd !== undefined && nextEnd.date[0] === end.date[0]) {
-            this.currentDate = `${end.date[0]}.${end.date[1]}`
+            date = end.date
           }
         } else {
           const t = (scroll - start.offset) / (end.offset - start.offset)
-          this.currentDate += Math.trunc(lerp(start.date[dateBit], end.date[dateBit], t)).toString()
+          date.push(Math.trunc(lerp(start.date[dateBit], end.date[dateBit], t)))
         }
+
+        this.currentDate = this.formatDate(date)
       }
     },
     updateOverflow () {
       const { container } = this.$refs
       this.leftOverflowVisible = container.scrollLeft > this.timelineOffset
       this.rightOverflowVisible = container.scrollLeft + container.clientWidth < container.scrollWidth - this.timelineOffset
+    },
+    formatDate (date) {
+      return date.join('.')
     }
   }
 }
