@@ -170,6 +170,17 @@ export default {
         }
       },
       {
+        date: [-3300],
+        name: 'Blublub',
+        timelines: ['dalinar'],
+        shadesmar: false,
+        coordinates: {
+          x: 512,
+          y: 256,
+          zoom: 0
+        }
+      },
+      {
         date: [1174],
         name: 'The gang is in Shadesmar',
         timelines: ['kaladin', 'shallan'],
@@ -179,7 +190,24 @@ export default {
           y: 249
         }
       }
-    ].map((event, index) => ({ ...event, id: index }))
+    ].sort(
+      (a, b) => {
+        let j = 0
+
+        for (let i = 0; i < a.date.length; i++) {
+          if (j === b.date.length - 1 && b.date[j] < a.date[i]) {
+            return 1
+          }
+
+          if (a.date[i] < b.date[j]) {
+            return -1
+          }
+
+          j += 1
+        }
+
+        return j === b.date.length - 1 ? 0 : -1
+      }).map((event, index) => ({ ...event, id: index }))
 
     let lastEvent = null
     let runningOffset = 0
@@ -212,6 +240,10 @@ export default {
       }, 200)
     },
     calculateNextOffset (event, lastEvent) {
+      if (event.date.length === lastEvent.date.length && event.date.every((d, i) => lastEvent.date[i] === d)) {
+        return 0
+      }
+
       if (event.date[0] - lastEvent.date[0] >= 100) {
         return 500
       }
@@ -221,10 +253,10 @@ export default {
       }
 
       if (event.date[0] - lastEvent.date[0] >= 1) {
-        return (event.date[0] - lastEvent.date[0]) * 44
+        return (event.date[0] - lastEvent.date[0]) * 60
       }
 
-      return 34
+      return 50
     }
   }
 }

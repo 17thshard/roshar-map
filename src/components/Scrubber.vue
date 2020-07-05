@@ -191,16 +191,24 @@ export default {
       this.updateOverflow()
 
       const scroll = this.$refs.container.scrollLeft
-      const endIndex = this.events.findIndex(event => event.offset >= scroll)
+      let endIndex = this.events.findIndex(event => event.offset >= scroll)
+      const prevIndex = endIndex - 1
 
-      if (endIndex === 0) {
+      while (
+        this.events[endIndex + 1] !== undefined &&
+        this.events[endIndex + 1].offset === this.events[endIndex].offset
+      ) {
+        endIndex += 1
+      }
+
+      if (prevIndex === -1) {
         this.currentDate = this.events[0].date[0].toString()
 
         if (this.events[0].date[0] === this.events[1].date[0]) {
           this.currentDate += this.events[0].date[1]
         }
       } else {
-        const start = this.events[endIndex - 1]
+        const start = this.events[prevIndex]
         const end = this.events[endIndex]
         const nextEnd = this.events[endIndex + 1]
 
