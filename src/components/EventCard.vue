@@ -105,7 +105,7 @@ export default {
 
   &__text {
     font-size: 0.8rem;
-    padding: 0.5rem 0.5rem 0;
+    padding: 0.5rem 0.5rem 1rem;
   }
 }
 </style>

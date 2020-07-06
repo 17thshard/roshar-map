@@ -11,6 +11,7 @@
       :active-event="activeEvent"
       @loaded="onScrubberLoaded"
       @event-selected="activeEvent = $event"
+      @goto-event="gotoEvent"
     />
     <div v-if="!ready" class="loader">
       Loading...
@@ -172,7 +173,6 @@ export default {
       },
       {
         date: [-3300],
-        tieBreaker: 1,
         name: 'Blublub',
         timelines: ['dalinar'],
         shadesmar: false,
@@ -269,6 +269,9 @@ export default {
       }
 
       return 50
+    },
+    gotoEvent (id) {
+      this.activeEvent = this.events[Math.max(0, Math.min(id, this.events.length - 1))]
     }
   }
 }

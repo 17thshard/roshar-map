@@ -15,9 +15,17 @@
     </transition>
     <div class="scrubber__bar">
       <div class="scrubber__indicator">
-        <span class="scrubber__indicator-year">
-          {{ currentDate }}
-        </span>
+        <div class="scrubber__indicator-actions">
+          <button class="scrubber__indicator-button scrubber__indicator-button--prev" title="Previous Event" @click="gotoEvent(-1)">
+            Previous
+          </button>
+          <span class="scrubber__indicator-year">
+            {{ currentDate }}
+          </span>
+          <button class="scrubber__indicator-button scrubber__indicator-button--next" title="Next Event" @click="gotoEvent(1)">
+            Next
+          </button>
+        </div>
       </div>
       <div
         ref="container"
@@ -38,7 +46,7 @@
             :events="timelineEvents"
             :active-event="activeEvent"
             :class="`timeline--${timeline}`"
-            @event-selected="$emit('event-selected', $event)"
+            @event-selected="selectEvent"
           />
           <div key="years" class="scrubber__years">
             <span
@@ -157,12 +165,7 @@ export default {
           return
         }
 
-        this.$nextTick(() => {
-          this.$refs.container.scrollTo({
-            left: event.offset,
-            behavior: 'smooth'
-          })
-        })
+        this.scrollToEvent(event)
       },
       immediate: true
     }
@@ -194,10 +197,7 @@ export default {
       let endIndex = this.events.findIndex(event => event.offset >= scroll)
       const prevIndex = endIndex - 1
 
-      while (
-        this.events[endIndex + 1] !== undefined &&
-        this.events[endIndex + 1].offset === this.events[endIndex].offset
-      ) {
+      while (this.events[endIndex + 1] !== undefined && this.events[endIndex + 1].offset === this.events[endIndex].offset) {
         endIndex += 1
       }
 
@@ -248,6 +248,53 @@ export default {
     },
     formatDate (date) {
       return date.join('.')
+    },
+    gotoEvent (dir) {
+      const scroll = this.$refs.container.scrollLeft
+
+      const gotoAndScroll = (id) => {
+        this.$emit('goto-event', id)
+        this.scrollToEvent()
+      }
+
+      if (this.activeEvent !== null && Math.abs(this.activeEvent.offset - scroll) <= 0.5) {
+        gotoAndScroll(this.activeEvent.id + dir)
+
+        return
+      }
+
+      const endIndex = this.events.findIndex(event => event.offset >= scroll)
+      const prevIndex = endIndex - 1
+
+      if (prevIndex === -1) {
+        gotoAndScroll(dir)
+      } else {
+        const start = this.events[prevIndex]
+        const end = this.events[endIndex]
+
+        if (scroll <= start.offset + 0.5) {
+          gotoAndScroll(start.id)
+        } else if (scroll >= end.offset - 0.5) {
+          gotoAndScroll(end.id)
+        } else if (dir < 0) {
+          gotoAndScroll(start.id)
+        } else if (dir > 0) {
+          gotoAndScroll(end.id)
+        }
+      }
+    },
+    selectEvent (event) {
+      this.$emit('event-selected', event)
+      this.scrollToEvent(event)
+    },
+    scrollToEvent (event) {
+      this.$nextTick(() => {
+        const scrollTarget = event !== undefined ? event : this.activeEvent
+        this.$refs.container.scrollTo({
+          left: scrollTarget.offset,
+          behavior: 'smooth'
+        })
+      })
     }
   }
 }
@@ -318,11 +365,14 @@ export default {
 
   &__indicator {
     position: absolute;
-    left: 50%;
     top: -1rem;
-    z-index: 15;
-    transform: translateX(-50%);
+    left: 0;
+    right: 0;
     bottom: 1.45rem;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     font-size: 0.8rem;
     pointer-events: none;
     opacity: 0;
@@ -339,6 +389,81 @@ export default {
       left: 50%;
       margin-left: -1px;
       z-index: 14;
+      font-family: inherit;
+    }
+
+    &-button {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      appearance: none;
+      border: none;
+      background: #111;
+      color: rgba(#fafafa, 0.0);
+      line-height: 1.5;
+      font-size: 1em;
+      padding: 4px 0;
+      margin: 0;
+      font-family: 'Lora', serif;
+      cursor: pointer;
+      outline: none;
+      overflow: hidden;
+      max-width: 1rem;
+      box-sizing: border-box;
+      transition: color 0.5s ease-in-out, padding 0.5s ease-in-out, max-width 0.5s ease-in-out;
+
+      &:before {
+        position: absolute;
+        width: 0.5rem;
+        height: 0.5rem;
+        box-sizing: border-box;
+        content: '';
+        border-top: 2px solid #fafafa;
+        border-left: 2px solid #fafafa;
+        transform-origin: 50% 50%;
+      }
+
+      &--prev {
+        justify-content: flex-start;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        right: 100%;
+        padding-left: 1rem;
+
+        &:before {
+          left: 0.5rem;
+          transform: rotate(-45deg);
+        }
+
+        @media (pointer: coarse) {
+          padding-left: 1.5rem;
+
+          &:before {
+            left: 0.75rem;
+          }
+        }
+      }
+
+      &--next {
+        justify-content: flex-end;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        left: 100%;
+        padding-right: 1rem;
+
+        &:before {
+          right: 0.5rem;
+          transform: rotate(135deg);
+        }
+
+        @media (pointer: coarse) {
+          padding-right: 1.5rem;
+
+          &:before {
+            right: 0.75rem;
+          }
+        }
+      }
     }
 
     &-year {
@@ -348,7 +473,30 @@ export default {
       color: #fafafa;
       padding: 4px 8px;
       box-sizing: border-box;
-      border-radius: 1rem;
+      line-height: 1.5;
+    }
+
+    &-actions {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      pointer-events: auto;
+
+      @media (any-hover: hover) {
+        &:hover .scrubber__indicator-button {
+          max-width: 5rem;
+          color: rgba(#fafafa, 1.0);
+
+          &--prev {
+            padding-left: 1.25rem;
+          }
+
+          &--next {
+            padding-right: 1.25rem;
+          }
+        }
+      }
     }
   }
 
