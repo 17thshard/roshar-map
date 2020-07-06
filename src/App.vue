@@ -89,7 +89,7 @@ export default {
       },
       {
         date: [975],
-        name: 'End of the Hierocracy',
+        name: 'Scouring of Amia',
         timelines: ['general'],
         shadesmar: false,
         coordinates: {

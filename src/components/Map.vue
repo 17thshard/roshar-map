@@ -202,7 +202,7 @@ export default {
 
       const newPosition = event.coordinates
       const target = new Vector3(newPosition.x - 512, 256 - newPosition.y, 0)
-      this.highlights.add(new Highlight(target.x, target.y, event.specialEffect === 'shattering' ? 10 : undefined))
+      this.highlights.add(new Highlight(target.x, target.y, event.specialEffect === 'shattering' ? 2 : undefined))
       this.controls.transitionTo(target, newPosition.zoom !== undefined ? newPosition.zoom : 0.7)
     },
     update (timestamp) {
