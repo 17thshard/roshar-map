@@ -4,7 +4,6 @@
 
 <script>
 import {
-  AmbientLight,
   Group,
   Mesh,
   NearestFilter,
@@ -156,13 +155,13 @@ export default {
       this.textPlane.frustumCulled = false
 
       this.scene = new Scene()
-      this.scene.add(this.plane, this.textPlane, this.highlights, new AmbientLight(0x222222))
+      this.scene.add(this.plane, this.textPlane, this.highlights)
 
       this.composer.addPass(new RenderPass(this.scene, this.camera))
       this.shatteringPass = new ShatteringPass()
       this.composer.addPass(this.shatteringPass)
 
-      this.hoverTexture = await this.textureManager.loadData('map_text', true, 'b')
+      this.hoverTexture = await this.textureManager.loadData('hover_text', false, 'b')
     },
     onEventChanged (event, oldEvent) {
       this.highlights.children.forEach(h => h.leave())

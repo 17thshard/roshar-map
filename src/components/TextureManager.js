@@ -42,7 +42,7 @@ export default class TextureManager {
 
   loadData (name, hqAvailable, channelsToKeep) {
     const channels = {}
-    channelsToKeep.split().forEach((c) => {
+    channelsToKeep.split('').forEach((c) => {
       channels[c] = channelsToKeep.indexOf(c)
     })
 

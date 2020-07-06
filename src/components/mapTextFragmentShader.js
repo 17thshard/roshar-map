@@ -23,15 +23,17 @@ export default `
 
     float alpha = smoothstep(aa + 2.0 / 255., 0., value) / (1. + .5 * maxGrad);
     vec4 col = vec4(1., .92, .5, alpha);
+    vec3 innerGlowColor = vec3(146. / 255., 93. / 255., 43. / 255.);
 
     if (hovered) {
       outerGlowSize *= 2.0;
-      col = vec4(1., 1., .6, alpha);
+      col = vec4(20. / 255., 143. / 255., 218. / 255., alpha);
+      innerGlowColor = vec3(.5, .81, 1.);
     }
 
     float innerGlow = smoothstep(-innerGlowSize / 255. - aa, .0, value);
     if (value < .0) {
-      col = mix(col, vec4(146. / 255., 93. / 255., 43. / 255., 1.), innerGlow * 0.5 * (innerGlow + (1. - innerGlow) * noise));
+      col = mix(col, vec4(innerGlowColor, 1.), innerGlow * 0.5 * (innerGlow + (1. - innerGlow) * noise));
     }
 
     float outerGlow = smoothstep(aa + outerGlowSize / 255., .0 / 255., value);
