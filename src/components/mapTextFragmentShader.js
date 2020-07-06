@@ -15,13 +15,19 @@ export default `
   uniform highp sampler2D PatternTexture;
   uniform highp sampler2D TransitionTexture;
   uniform highp float Transition;
+  uniform highp float HoveredItem;
 
-  vec4 Sample(float base, float noise, float innerGlowSize, float outerGlowSize, float strokeSize, float maxGrad) {
+  vec4 Sample(float base, bool hovered, float noise, float innerGlowSize, float outerGlowSize, float strokeSize, float maxGrad) {
     float value = base - 0.5;
     float aa = maxGrad / 24.;
 
     float alpha = smoothstep(aa + 2.0 / 255., 0., value) / (1. + .5 * maxGrad);
-    vec4 col = vec4(1.0, .92, .5, alpha);
+    vec4 col = vec4(1., .92, .5, alpha);
+
+    if (hovered) {
+      outerGlowSize *= 2.0;
+      col = vec4(1., 1., .6, alpha);
+    }
 
     float innerGlow = smoothstep(-innerGlowSize / 255. - aa, .0, value);
     if (value < .0) {
@@ -63,10 +69,15 @@ export default `
     highp float maxGrad = max(maxGrad2.x, maxGrad2.y);
     
     float noise = texture2D(PatternTexture, vUv * vec2(16., 8.)).r;
+    
+    vec4 map = texture2D(Texture, vUv);
+    
+    bool hovered = HoveredItem > .0 && map.b * 255. == HoveredItem;
 
-    vec4 texel1Large = Sample(texture2D(Texture, vUv).r, noise, 24., 37., 3., maxGrad);
-    vec4 texel1Small = Sample(texture2D(Texture, vUv).g, noise, 12., 18., 2., maxGrad);
+    vec4 texel1Large = Sample(map.r, hovered, noise, 24., 37., 3., maxGrad);
+    vec4 texel1Small = Sample(map.g, hovered, noise, 12., 18., 2., maxGrad);    
     vec4 texel1 = vec4(mix(texel1Large.rgb, texel1Small.rgb, texel1Small.a), texel1Large.a + texel1Small.a);
+    
     vec4 texel2 = SampleShadesmar(noise, vUv, maxGrad);
 
     vec4 transitionTexel = texture2D(TransitionTexture, vUv);

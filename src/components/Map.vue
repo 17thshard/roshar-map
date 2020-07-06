@@ -13,18 +13,17 @@ import {
   RepeatWrapping,
   Scene,
   ShaderMaterial,
-  TextureLoader,
   Vector3,
   WebGLRenderer
 } from 'three'
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
-import isMobile from 'is-mobile'
 import MapControls from '@/components/MapControls'
 import Highlight from '@/components/Highlight'
 import fragmentShader from '@/components/mapFragmentShader'
 import textFragmentShader from '@/components/mapTextFragmentShader'
 import ShatteringPass from '@/components/ShatteringPass'
+import TextureManager from '@/components/TextureManager'
 
 export default {
   name: 'Map',
@@ -52,17 +51,21 @@ export default {
     this.renderer.setSize(window.innerWidth, window.innerHeight)
     this.renderer.sortObjects = false
 
+    this.textureManager = new TextureManager(this.renderer)
+
     this.composer = new EffectComposer(this.renderer)
 
-    this.loadTextures().then(this.setupScene).then(() => {
-      this.$el.appendChild(this.renderer.domElement)
+    this.loadTextures()
+      .then(this.setupScene)
+      .then(() => {
+        this.$el.appendChild(this.renderer.domElement)
 
-      this.update()
+        this.update()
 
-      this.$emit('ready')
+        this.$emit('ready')
 
-      this.onEventChanged(this.activeEvent, null)
-    })
+        this.onEventChanged(this.activeEvent, null)
+      })
   },
   destroyed () {
     this.renderer.dispose()
@@ -79,38 +82,10 @@ export default {
         map_text: { hqAvailable: true },
         shadesmar_map_text: { hqAvailable: true }
       }
-      const result = {}
 
-      const maxTextureSize = this.renderer.capabilities.maxTextureSize
-      const useHq = maxTextureSize >= 8192 && !isMobile({ tablet: true, featureDetect: true })
-      let webpSupported = false
-      try {
-        webpSupported = document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0
-      } catch (t) {
-        webpSupported = false
-      }
-
-      const textureLoader = new TextureLoader()
-
-      return new Promise((resolve) => {
-        Object.keys(textures).forEach((name) => {
-          const texture = textures[name]
-
-          const prefix = texture.hqAvailable && useHq ? 'hq_' : ''
-          const path = `${process.env.BASE_URL}textures/${prefix}${name}.${webpSupported ? 'webp' : 'png'}`
-
-          textureLoader.load(path, (data) => {
-            texture.loaded = true
-            result[name] = data
-
-            if (Object.keys(textures).every(t => textures[t].loaded === true)) {
-              resolve(result)
-            }
-          })
-        })
-      })
+      return this.textureManager.load(textures)
     },
-    setupScene (textures) {
+    async setupScene (textures) {
       this.camera = new PerspectiveCamera(
         60,
         window.innerWidth / window.innerHeight,
@@ -167,7 +142,8 @@ export default {
           ShadesmarTexture: { value: textures.shadesmar_map_text },
           PatternTexture: { value: textPattern },
           TransitionTexture: { value: textures.transition },
-          Transition: { value: this.transitionValue }
+          Transition: { value: this.transitionValue },
+          HoveredItem: { value: 0 }
         },
         transparent: true,
         depthTest: false
@@ -185,6 +161,8 @@ export default {
       this.composer.addPass(new RenderPass(this.scene, this.camera))
       this.shatteringPass = new ShatteringPass()
       this.composer.addPass(this.shatteringPass)
+
+      this.hoverTexture = await this.textureManager.loadData('map_text', true, 'b')
     },
     onEventChanged (event, oldEvent) {
       this.highlights.children.forEach(h => h.leave())
@@ -214,12 +192,24 @@ export default {
         this.transitionDirection = 0
       }
 
-      this.mapMaterial.uniforms.Transition.value = this.transitionValue
-      this.textPlane.material.uniforms.Transition.value = this.transitionValue
-
       this.highlights.children.forEach(h => h.update(this.camera, timestamp))
 
       this.controls.update()
+
+      this.mapMaterial.uniforms.Transition.value = this.transitionValue
+      this.textPlane.material.uniforms.Transition.value = this.transitionValue
+
+      const hoverX = Math.trunc((this.controls.textHoverPosition.x + 512) * this.hoverTexture.width / 1024)
+      const hoverY = Math.trunc((256 - this.controls.textHoverPosition.y) * this.hoverTexture.height / 512)
+      const hoveredItem = this.hoverTexture.data[hoverY * this.hoverTexture.width + hoverX]
+      if (hoveredItem !== undefined && hoveredItem > 0) {
+        this.textPlane.material.uniforms.HoveredItem.value = hoveredItem
+        document.body.style.cursor = 'pointer'
+      } else {
+        this.textPlane.material.uniforms.HoveredItem.value = 0
+        document.body.style.cursor = 'initial'
+      }
+
       this.composer.render()
       this.latestAnimationFrame = requestAnimationFrame(this.update)
     },

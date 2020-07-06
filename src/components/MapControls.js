@@ -27,6 +27,8 @@ const MapControls = function (object, domElement) {
   // Touch fingers
   this.touches = { ONE: TOUCH.PAN, TWO: TOUCH.DOLLY_PAN }
 
+  this.textHoverPosition = new Vector2()
+
   // for reset
   this.position0 = this.object.position.clone()
   this.zoom0 = this.object.zoom
@@ -49,6 +51,7 @@ const MapControls = function (object, domElement) {
   }
 
   const plane = new Plane(new Vector3(0, 0, 1))
+  const textPlane = new Plane(new Vector3(0, 0, 1), 1)
 
   // this method is exposed, but perhaps it would be better if we can make it private...
   this.update = (function () {
@@ -109,6 +112,11 @@ const MapControls = function (object, domElement) {
           position.y = lerp(position.y, panTarget.y, 0.5)
           panTarget.y = lerp(position.y, panTarget.y, 0.95)
         }
+      }
+
+      const rayResult = rayCast(mousePosition.x, mousePosition.y, true)
+      if (rayResult !== null) {
+        scope.textHoverPosition.set(rayResult.x, rayResult.y)
       }
 
       clampPosition(position, angle)
@@ -200,6 +208,8 @@ const MapControls = function (object, domElement) {
   let clickTouches = 0
   let wasMultiTouch = false
 
+  const mousePosition = new Vector2()
+
   const dollyStart = new Vector2()
   const dollyEnd = new Vector2()
   const dollyDelta = new Vector2()
@@ -246,14 +256,14 @@ const MapControls = function (object, domElement) {
   const rayCastClick = new Vector2()
   const rayCastResult = new Vector3()
 
-  function rayCast (x, y) {
+  function rayCast (x, y, text) {
     const { clientWidth, clientHeight } = scope.domElement
     rayCastClick.set(x / clientWidth * 2 - 1, 1 - y / clientHeight * 2)
     rayCaster.setFromCamera(rayCastClick, scope.object)
 
     rayCaster.ray.origin.copy(scope.object.position)
 
-    return rayCaster.ray.intersectPlane(plane, rayCastResult)
+    return rayCaster.ray.intersectPlane(text ? textPlane : plane, rayCastResult)
   }
 
   function dollyOut (dollyScale) {
@@ -460,6 +470,14 @@ const MapControls = function (object, domElement) {
     }
   }
 
+  function updateMousePos (event) {
+    if (scope.enabled === false) {
+      return
+    }
+
+    mousePosition.set(event.clientX, event.clientY)
+  }
+
   function onMouseUp (event) {
     if (scope.enabled === false) {
       return
@@ -567,6 +585,7 @@ const MapControls = function (object, domElement) {
 
   scope.domElement.addEventListener('mousedown', onMouseDown, false)
   scope.domElement.addEventListener('wheel', onMouseWheel, false)
+  scope.domElement.addEventListener('mousemove', updateMousePos, false)
 
   scope.domElement.addEventListener('touchstart', onTouchStart, false)
   scope.domElement.addEventListener('touchend', onTouchEnd, false)
