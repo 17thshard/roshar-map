@@ -16,8 +16,9 @@ export default `
   uniform highp sampler2D TransitionTexture;
   uniform highp float Transition;
   uniform highp float HoveredItem;
+  uniform highp float ActiveItem;
 
-  vec4 Sample(float base, bool hovered, float noise, float innerGlowSize, float outerGlowSize, float strokeSize, float maxGrad) {
+  vec4 Sample(float base, bool highlight, float noise, float innerGlowSize, float outerGlowSize, float strokeSize, float maxGrad) {
     float value = base - 0.5;
     float aa = maxGrad / 24.;
 
@@ -25,7 +26,7 @@ export default `
     vec4 col = vec4(1., .92, .5, alpha);
     vec3 innerGlowColor = vec3(146. / 255., 93. / 255., 43. / 255.);
 
-    if (hovered) {
+    if (highlight) {
       outerGlowSize *= 2.0;
       col = vec4(20. / 255., 143. / 255., 218. / 255., alpha);
       innerGlowColor = vec3(.5, .81, 1.);
@@ -74,10 +75,11 @@ export default `
     
     vec4 map = texture2D(Texture, vUv);
     
-    bool hovered = HoveredItem > .0 && map.b * 255. == HoveredItem;
+    float hoverValue = map.b * 255.;
+    bool highlight = (HoveredItem > .0 && hoverValue == HoveredItem) || (ActiveItem > .0 && hoverValue == ActiveItem);
 
-    vec4 texel1Large = Sample(map.r, hovered, noise, 24., 37., 3., maxGrad);
-    vec4 texel1Small = Sample(map.g, hovered, noise, 12., 18., 2., maxGrad);    
+    vec4 texel1Large = Sample(map.r, highlight, noise, 24., 37., 3., maxGrad);
+    vec4 texel1Small = Sample(map.g, highlight, noise, 12., 18., 2., maxGrad);    
     vec4 texel1 = vec4(mix(texel1Large.rgb, texel1Small.rgb, texel1Small.a), texel1Large.a + texel1Small.a);
     
     vec4 texel2 = SampleShadesmar(noise, vUv, maxGrad);

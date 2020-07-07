@@ -31,6 +31,11 @@ export default {
       type: Object,
       required: false,
       default: () => null
+    },
+    activeLocation: {
+      type: [Number, null],
+      required: false,
+      default: () => null
     }
   },
   data () {
@@ -94,6 +99,9 @@ export default {
       this.camera.position.set(30, -10, 40)
 
       this.controls = new MapControls(this.camera, this.renderer.domElement)
+      this.controls.addEventListener('click', ({ position }) => {
+        this.$emit('location-selected', this.queryHover(position.x, position.y))
+      })
 
       this.highlights = new Group()
 
@@ -142,7 +150,8 @@ export default {
           PatternTexture: { value: textPattern },
           TransitionTexture: { value: textures.transition },
           Transition: { value: this.transitionValue },
-          HoveredItem: { value: 0 }
+          HoveredItem: { value: 0 },
+          ActiveItem: { value: 0 }
         },
         transparent: true,
         depthTest: false
@@ -198,10 +207,8 @@ export default {
       this.mapMaterial.uniforms.Transition.value = this.transitionValue
       this.textPlane.material.uniforms.Transition.value = this.transitionValue
 
-      const hoverX = Math.trunc((this.controls.textHoverPosition.x + 512) * this.hoverTexture.width / 1024)
-      const hoverY = Math.trunc((256 - this.controls.textHoverPosition.y) * this.hoverTexture.height / 512)
-      const hoveredItem = this.hoverTexture.data[hoverY * this.hoverTexture.width + hoverX]
-      if (hoveredItem !== undefined && hoveredItem > 0) {
+      const hoveredItem = this.queryHover(this.controls.textHoverPosition.x, this.controls.textHoverPosition.y)
+      if (hoveredItem !== null) {
         this.textPlane.material.uniforms.HoveredItem.value = hoveredItem
         document.body.style.cursor = 'pointer'
       } else {
@@ -209,8 +216,25 @@ export default {
         document.body.style.cursor = 'initial'
       }
 
+      this.textPlane.material.uniforms.ActiveItem.value = this.activeLocation !== null ? this.activeLocation : 0
+
       this.composer.render()
       this.latestAnimationFrame = requestAnimationFrame(this.update)
+    },
+    queryHover (x, y) {
+      if (this.hoverTexture === undefined) {
+        return null
+      }
+
+      const hoverX = Math.trunc((x + 512) * this.hoverTexture.width / 1024)
+      const hoverY = Math.trunc((256 - y) * this.hoverTexture.height / 512)
+
+      const hoveredItem = this.hoverTexture.data[hoverY * this.hoverTexture.width + hoverX]
+      if (hoveredItem === undefined || hoveredItem <= 0) {
+        return null
+      }
+
+      return hoveredItem
     },
     resizeCanvasToDisplaySize () {
       const canvas = this.renderer.domElement

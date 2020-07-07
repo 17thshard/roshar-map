@@ -317,7 +317,7 @@ const MapControls = function (object, domElement) {
       return
     }
 
-    const result = rayCast(clickStart.x, clickStart.y)
+    const result = rayCast(clickStart.x, clickStart.y, true)
     if (result !== null) {
       scope.dispatchEvent({ type: 'click', position: result })
     }
@@ -371,7 +371,7 @@ const MapControls = function (object, domElement) {
     }
 
     if (event.changedTouches[0].clientX === clickStart.x || event.changedTouches[0].clientY === clickStart.y) {
-      const result = rayCast(clickStart.x, clickStart.y)
+      const result = rayCast(clickStart.x, clickStart.y, true)
       if (result !== null) {
         scope.dispatchEvent({ type: 'click', position: result })
       }

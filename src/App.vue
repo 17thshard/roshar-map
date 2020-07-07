@@ -3,13 +3,15 @@
     <img class="logo" src="@/assets/roshar_logo.png" alt="Logo">
     <Map
       :active-event="mapTransitions ? activeEvent : null"
+      :active-location="activeLocation"
       @ready="onReady"
+      @location-selected="selectLocation"
     />
     <Scrubber
       :ready="ready"
       :active-event="activeEvent"
       @loaded="onScrubberLoaded"
-      @event-selected="activeEvent = $event"
+      @event-selected="selectEvent"
     />
     <Settings />
     <transition name="loading__fade">
@@ -36,7 +38,8 @@ export default {
     return {
       ready: false,
       mapTransitions: false,
-      activeEvent: null
+      activeEvent: null,
+      activeLocation: null
     }
   },
   methods: {
@@ -48,6 +51,14 @@ export default {
       setTimeout(() => {
         this.mapTransitions = true
       }, 1000)
+    },
+    selectEvent (event) {
+      this.activeEvent = event
+      this.activeLocation = null
+    },
+    selectLocation (location) {
+      this.activeLocation = location
+      this.activeEvent = null
     }
   }
 }
