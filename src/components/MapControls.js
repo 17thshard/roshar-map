@@ -478,6 +478,14 @@ const MapControls = function (object, domElement) {
     mousePosition.set(event.clientX, event.clientY)
   }
 
+  function resetMousePos () {
+    if (scope.enabled === false) {
+      return
+    }
+
+    mousePosition.set(-512, -256)
+  }
+
   function onMouseUp (event) {
     if (scope.enabled === false) {
       return
@@ -585,7 +593,9 @@ const MapControls = function (object, domElement) {
 
   scope.domElement.addEventListener('mousedown', onMouseDown, false)
   scope.domElement.addEventListener('wheel', onMouseWheel, false)
+  scope.domElement.addEventListener('mouseover', updateMousePos, false)
   scope.domElement.addEventListener('mousemove', updateMousePos, false)
+  scope.domElement.addEventListener('mouseleave', resetMousePos, false)
 
   scope.domElement.addEventListener('touchstart', onTouchStart, false)
   scope.domElement.addEventListener('touchend', onTouchEnd, false)

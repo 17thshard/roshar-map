@@ -7,6 +7,7 @@
         :title="event.name"
         :class="['timeline__event', { 'timeline__event--active': activeEvent !== null && activeEvent.id === event.id }]"
         :style="{ left: `${event.offset + offset}px` }"
+        :disabled="isDisabled(event)"
         @click="$emit('event-selected', event)"
       />
     </template>
@@ -14,6 +15,8 @@
 </template>
 
 <script>
+import { mapGetters, mapState } from 'vuex'
+
 export default {
   name: 'Timeline',
   props: {
@@ -34,7 +37,9 @@ export default {
   computed: {
     barOffset () {
       return Math.min(...this.events.map(e => e.offset))
-    }
+    },
+    ...mapState(['filter']),
+    ...mapGetters(['isDisabled'])
   }
 }
 </script>
@@ -121,18 +126,24 @@ export default {
       border-right-color: $base-color;
     }
 
-    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, font-size 0.2s ease-in-out;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, font-size 0.2s ease-in-out, opacity 0.2s ease-in-out;
     @include diamond(#9dc2ec);
     box-shadow: 0 0 0 #21a5ec;
 
     transform-origin: 50% 50%;
     transform: rotate(45deg);
 
-    &--active, &:hover {
+    &--active:not(:disabled), &:not(:disabled):hover {
       @include diamond(#bcd4ea);
       box-shadow: 0 0 1em #61b8ef;
       font-size: 1.1rem;
       cursor: pointer;
+    }
+
+    &:disabled {
+      cursor: default !important;
+      pointer-events: none;
+      opacity: 0.5;
     }
 
     &:after {

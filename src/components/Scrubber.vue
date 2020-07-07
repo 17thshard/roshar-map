@@ -65,6 +65,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Timeline from '@/components/Timeline.vue'
 import EventCard from '@/components/EventCard.vue'
 import { arraysEqual, lerp } from '@/utils'
@@ -75,10 +76,6 @@ export default {
   props: {
     ready: {
       type: Boolean
-    },
-    events: {
-      type: Array,
-      required: true
     },
     activeEvent: {
       type: Object,
@@ -96,16 +93,22 @@ export default {
     }
   },
   computed: {
+    ...mapState(['events', 'filter']),
     timelines () {
-      const result = {
-        dalinar: [],
-        kaladin: [],
-        shallan: [],
-        general: []
-      }
+      const result = this.filter.breakoutTags.reduce((acc, t) => ({ ...acc, [t]: [] }), {})
+
+      result.general = []
 
       this.events.forEach((event) => {
-        event.timelines.forEach(t => result[t].push(event))
+        const breakoutPositions = this.filter.breakoutTags.filter(t => event.tags.includes(t))
+
+        breakoutPositions.forEach((t) => {
+          result[t].push(event)
+        })
+
+        if (breakoutPositions.length < event.tags.length) {
+          result.general.push(event)
+        }
       })
 
       return result
@@ -174,6 +177,7 @@ export default {
     window.addEventListener('resize', this.onResize)
     window.addEventListener('resize', this.updateOverflow)
     this.onResize()
+    this.onScroll()
   },
   destroyed () {
     window.removeEventListener('resize', this.onResize)
@@ -253,8 +257,16 @@ export default {
       const scroll = this.$refs.container.scrollLeft
 
       const gotoAndScroll = (id) => {
-        this.$emit('goto-event', id)
-        this.scrollToEvent()
+        let index = Math.max(0, Math.min(id, this.events.length - 1))
+        while (index > 0 && index < this.events.length - 1 && this.$store.getters.isDisabled(this.events[index])) {
+          index += dir
+        }
+
+        if (this.$store.getters.isDisabled(this.events[index])) {
+          return
+        }
+
+        this.selectEvent(this.events[index])
       }
 
       if (this.activeEvent !== null && Math.abs(this.activeEvent.offset - scroll) <= 0.5) {

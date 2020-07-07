@@ -106,7 +106,7 @@ export default {
           void main() {
             vUv = uv;
 
-            gl_Position = projectionMatrix * modelViewMatrix * vec4(position * vec3(512, 256, 0), 1.0);
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position * vec3(512, 256, 1.0), 1.0);
           }
         `,
         fragmentShader,
@@ -132,7 +132,7 @@ export default {
           void main() {
             vUv = uv;
 
-            gl_Position = projectionMatrix * modelViewMatrix * vec4(position * vec3(512, 256, 0), 1.0);
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position * vec3(512, 256, 1.0), 1.0);
           }
         `,
         fragmentShader: textFragmentShader,

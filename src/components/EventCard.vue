@@ -43,7 +43,7 @@ export default {
   z-index: 5;
   filter: drop-shadow(0 -0.5rem 1rem rgba(0, 0, 0, 0.5));
   box-sizing: border-box;
-  color: #1f1b17;
+  color: #242629;
   transition: all 0.2s ease-in-out;
 
   &--image {

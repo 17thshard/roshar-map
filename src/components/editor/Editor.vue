@@ -24,8 +24,8 @@
         <circle
           v-for="(point, pointIndex) in polygon.points"
           :key="`polygon${index}-point${pointIndex}`"
-          :cx="point.x"
-          :cy="point.y"
+          :cx="point.x / xScale"
+          :cy="point.y / yScale"
           :class="newPolygon === polygon && pointIndex === 0 ? 'editor__surface-point--first' : undefined"
           :r="5 / zoom"
           @click="clickPoint($event, polygon, index, pointIndex)"
@@ -66,15 +66,19 @@ import TextureManager from '@/components/TextureManager'
 export default {
   name: 'Editor',
   data () {
+    const polygons = window.localStorage.editorPolygons !== undefined ? JSON.parse(window.localStorage.editorPolygons) : []
+
     return {
-      polygons: window.localStorage.editorPolygons !== undefined ? JSON.parse(window.localStorage.editorPolygons) : [],
+      polygons,
       newPolygon: null,
       selectedPolygon: null,
       draggedPoint: null,
       zoom: 1,
       offset: { x: 0, y: 0 },
       panning: 0,
-      panStart: null
+      panStart: null,
+      xScale: 1,
+      yScale: 1
     }
   },
   watch: {
@@ -90,7 +94,7 @@ export default {
     },
     offset: {
       handler ({ x, y }) {
-        this.camera.position.set(x * (1024 / this.$refs.surface.clientWidth), y * (512 / this.$refs.surface.clientHeight), 0)
+        this.camera.position.set(x * this.xScale, y * this.yScale, 0)
         this.camera.updateProjectionMatrix()
       },
       deep: true
@@ -173,6 +177,8 @@ export default {
       this.latestAnimationFrame = requestAnimationFrame(this.update)
     },
     resizeCanvasToDisplaySize () {
+      this.xScale = 1024 / this.$refs.surface.clientWidth
+      this.yScale = 512 / this.$refs.surface.clientHeight
       const canvas = this.renderer.domElement
       // look up the size the canvas is being displayed
       const width = canvas.clientWidth
@@ -304,7 +310,7 @@ export default {
       this.panning = false
     },
     buildPolygonPoints (polygon) {
-      return polygon.points.map(p => `${p.x},${p.y}`).join(' ')
+      return polygon.points.map(p => `${p.x / this.xScale},${p.y / this.yScale}`).join(' ')
     },
     onZoom (event) {
       const e = window.event || event
@@ -313,16 +319,16 @@ export default {
     },
     transform (x, y) {
       return {
-        x: (this.$refs.surface.clientWidth / 2 + (x - this.$refs.surface.clientWidth / 2) / this.zoom) + this.offset.x,
-        y: (this.$refs.surface.clientHeight / 2 + (y - this.$refs.surface.clientHeight / 2) / this.zoom) - this.offset.y
+        x: ((this.$refs.surface.clientWidth / 2 + (x - this.$refs.surface.clientWidth / 2) / this.zoom) + this.offset.x) * this.xScale,
+        y: ((this.$refs.surface.clientHeight / 2 + (y - this.$refs.surface.clientHeight / 2) / this.zoom) - this.offset.y) * this.yScale
       }
     },
     sortPolygonsById () {
       this.polygons.sort((a, b) => a.id - b.id)
     },
     async renderPng (polygons, width, height, overlay) {
-      const xScale = (width / this.$refs.surface.clientWidth)
-      const yScale = (height / this.$refs.surface.clientHeight)
+      const xScale = width / 1024
+      const yScale = height / 512
       const svgString = `
       <svg xmlns='http://www.w3.org/2000/svg' shape-rendering="crispEdges" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
         ${
