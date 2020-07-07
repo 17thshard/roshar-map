@@ -82,9 +82,10 @@ export default {
     border-radius: 2rem;
     padding: 0.75rem 1.5rem;
     cursor: pointer;
-    transition: background 0.2s ease-in-out, left 0.5s ease-in-out, margin-left 0.5s ease-in-out;
+    transition: background 0.2s ease-in-out, left 0.5s ease-in-out, margin-left 0.5s ease-in-out, box-shadow 0.2s ease-in-out;
     color: #242629;
     pointer-events: auto;
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.5);
 
     &:hover, &:active, &:focus {
       background: saturate(darken(#F5ECDA, 10%), 5%);
@@ -156,8 +157,9 @@ export default {
   &--active .settings__button {
     background: rgba(#F5ECDA, 0) !important;
     cursor: default !important;
-    left: 2rem;
+    left: 1.5rem;
     margin-left: -2rem;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   }
 }
 </style>

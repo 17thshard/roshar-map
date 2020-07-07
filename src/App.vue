@@ -12,9 +12,9 @@
       @event-selected="activeEvent = $event"
     />
     <Settings />
-    <div v-if="!ready" class="loader">
-      Loading...
-    </div>
+    <transition name="loading__fade">
+      <LoadingIndicator v-if="!ready" />
+    </transition>
   </div>
 </template>
 
@@ -22,10 +22,12 @@
 import Map from '@/components/Map.vue'
 import Scrubber from '@/components/Scrubber.vue'
 import Settings from '@/components/Settings.vue'
+import LoadingIndicator from '@/components/LoadingIndicator.vue'
 
 export default {
   name: 'App',
   components: {
+    LoadingIndicator,
     Settings,
     Scrubber,
     Map
@@ -45,7 +47,7 @@ export default {
     onScrubberLoaded () {
       setTimeout(() => {
         this.mapTransitions = true
-      }, 200)
+      }, 1000)
     }
   }
 }
@@ -97,15 +99,13 @@ button {
   }
 }
 
-.loader {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  top: 0;
-  right: 0;
-  background: black;
-  color: white;
-  text-align: center;
-  z-index: 100;
+.loading__fade {
+  &-leave-active {
+    transition: opacity 0.5s ease-in;
+  }
+
+  &-leave-to {
+    opacity: 0;
+  }
 }
 </style>

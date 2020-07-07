@@ -535,12 +535,15 @@ export default {
     position: relative;
     background: #F5ECDA url(../assets/paper.png);
     padding: 1rem 0;
+    min-height: 60px;
   }
 
   &__years {
-    position: relative;
+    position: absolute;
     color: rgba(0, 0, 0, 0.7);
     z-index: 16;
+    height: 1rem;
+    bottom: 0;
   }
 
   &__year {
