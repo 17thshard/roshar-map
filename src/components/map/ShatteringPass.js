@@ -1,7 +1,7 @@
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass'
 import { TextureLoader } from 'three'
 import cracks from '@/assets/shattering.jpg'
-import { clamp01 } from '@/utils'
+import { clamp01 } from '@/utils.js'
 
 export default class ShatteringPass extends ShaderPass {
   constructor () {

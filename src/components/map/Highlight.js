@@ -6,7 +6,7 @@ import {
   ShaderMaterial,
   Vector3
 } from 'three'
-import { clamp01 } from '@/utils'
+import { clamp01 } from '@/utils.js'
 
 const State = {
   ENTERING: 0,

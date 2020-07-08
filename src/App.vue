@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <img class="logo" src="@/assets/roshar_logo.png" alt="Logo">
     <Map
       :active-event="mapTransitions ? activeEvent : null"
       :active-location="activeLocation"
@@ -13,6 +12,7 @@
       @loaded="onScrubberLoaded"
       @event-selected="selectEvent"
     />
+    <Info />
     <Settings />
     <transition name="loading__fade">
       <LoadingIndicator v-if="!ready" />
@@ -21,14 +21,16 @@
 </template>
 
 <script>
-import Map from '@/components/Map.vue'
+import Map from '@/components/map/Map.vue'
 import Scrubber from '@/components/Scrubber.vue'
 import Settings from '@/components/Settings.vue'
 import LoadingIndicator from '@/components/LoadingIndicator.vue'
+import Info from '@/components/Info.vue'
 
 export default {
   name: 'App',
   components: {
+    Info,
     LoadingIndicator,
     Settings,
     Scrubber,
@@ -96,18 +98,6 @@ body {
 
 button {
   font-family: 'Lora', serif;
-}
-
-.logo {
-  position: absolute;
-  top: 2rem;
-  left: 1rem;
-  width: 302px;
-  z-index: 20;
-
-  @media (max-width: 1080px) {
-    width: 151px;
-  }
 }
 
 .loading__fade {

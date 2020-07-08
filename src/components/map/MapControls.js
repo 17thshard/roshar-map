@@ -1,6 +1,6 @@
 import { Euler, EventDispatcher, MOUSE, Plane, Ray, Raycaster, TOUCH, Vector2, Vector3 } from 'three'
 import Hammer from 'hammerjs'
-import { lerp, smootherstep } from '@/utils'
+import { lerp, smootherstep } from '@/utils.js'
 
 const MapControls = function (object, domElement) {
   this.object = object

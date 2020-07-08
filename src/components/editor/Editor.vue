@@ -39,10 +39,13 @@
         <button @click="sortPolygonsById">
           Sort by ID
         </button>
-        <button @click="renderPng(polygons, 8192, 4096, true)">
-          Save overlayed
+        <button @click="renderPng(polygons, 'map_text')">
+          Save LQ
         </button>
-        <button @click="renderPng(polygons, 1024, 512)">
+        <button @click="renderPng(polygons, 'hq_map_text')">
+          Save HQ
+        </button>
+        <button @click="renderPng(polygons)">
           Save hover
         </button>
       </li>
@@ -61,7 +64,7 @@
 <script>
 import { Mesh, OrthographicCamera, PlaneBufferGeometry, Scene, ShaderMaterial, WebGLRenderer } from 'three'
 import textFragmentShader from '@/components/editor/editorTextFragmentShader'
-import TextureManager from '@/components/TextureManager'
+import TextureManager from '@/components/map/TextureManager.js'
 
 export default {
   name: 'Editor',
@@ -326,7 +329,11 @@ export default {
     sortPolygonsById () {
       this.polygons.sort((a, b) => a.id - b.id)
     },
-    async renderPng (polygons, width, height, overlay) {
+    async renderPng (polygons, base) {
+      const { width, height, data: baseData } = base !== undefined
+        ? (await this.textureManager.loadData(base, false, 'rgba'))
+        : undefined
+
       const xScale = width / 1024
       const yScale = height / 512
       const svgString = `
@@ -347,20 +354,18 @@ export default {
       const ctx = canvas.getContext('2d')
       const img = new Image()
 
-      const baseData = overlay ? (await this.textureManager.loadData('hq_map_text', false, 'rgba')).data : undefined
-
       img.onload = function () {
         ctx.clearRect(0, 0, width, height)
         ctx.drawImage(img, 0, 0)
         const hoverData = ctx.getImageData(0, 0, width, height).data
 
-        if (overlay) {
+        if (base !== undefined) {
           for (let i = 0; i < hoverData.length / 4; i++) {
             baseData[i * 4 + 2] = hoverData[i * 4 + 2]
           }
         }
 
-        if (overlay) {
+        if (base !== undefined) {
           ctx.clearRect(0, 0, width, height)
           ctx.putImageData(new ImageData(baseData, width, height), 0, 0)
         }
@@ -370,9 +375,11 @@ export default {
         document.body.appendChild(a)
         a.style = 'display: none'
         a.href = png
-        a.download = `${overlay ? 'overlay' : 'hover'}.png`
+        a.download = `${base !== undefined ? base : 'hover'}.png`
         a.click()
         window.URL.revokeObjectURL(png)
+
+        a.remove()
         canvas.remove()
       }
       img.src = `data:image/svg+xml;base64,${window.btoa(svgString)}`
@@ -466,6 +473,10 @@ export default {
       padding: 0.5rem;
 
       &:first-child {
+        button:first-child {
+          grid-column: 1 / span 3;
+        }
+
         grid-template-columns: auto auto auto;
       }
     }

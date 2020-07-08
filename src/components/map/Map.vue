@@ -17,13 +17,13 @@ import {
 } from 'three'
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
-import MapControls from '@/components/MapControls'
-import Highlight from '@/components/Highlight'
-import fragmentShader from '@/components/mapFragmentShader'
-import textFragmentShader from '@/components/mapTextFragmentShader'
-import ShatteringPass from '@/components/ShatteringPass'
-import TextureManager from '@/components/TextureManager'
-import { clamp01 } from '@/utils'
+import MapControls from '@/components/map/MapControls.js'
+import Highlight from '@/components/map/Highlight.js'
+import fragmentShader from '@/components/map/mapFragmentShader.js'
+import textFragmentShader from '@/components/map/mapTextFragmentShader.js'
+import ShatteringPass from '@/components/map/ShatteringPass.js'
+import TextureManager from '@/components/map/TextureManager.js'
+import { clamp01 } from '@/utils.js'
 
 export default {
   name: 'Map',
