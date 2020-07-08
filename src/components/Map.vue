@@ -23,6 +23,7 @@ import fragmentShader from '@/components/mapFragmentShader'
 import textFragmentShader from '@/components/mapTextFragmentShader'
 import ShatteringPass from '@/components/ShatteringPass'
 import TextureManager from '@/components/TextureManager'
+import { clamp01 } from '@/utils'
 
 export default {
   name: 'Map',
@@ -41,7 +42,9 @@ export default {
   data () {
     return {
       transitionValue: 0,
-      transitionDirection: 0
+      transitionDirection: 0,
+      textHoverProgress: 0,
+      textActiveProgress: 0
     }
   },
   watch: {
@@ -100,6 +103,7 @@ export default {
 
       this.controls = new MapControls(this.camera, this.renderer.domElement)
       this.controls.addEventListener('click', ({ position }) => {
+        this.textActiveProgress = 1
         this.$emit('location-selected', this.queryHover(position.x, position.y))
       })
 
@@ -151,7 +155,9 @@ export default {
           TransitionTexture: { value: textures.transition },
           Transition: { value: this.transitionValue },
           HoveredItem: { value: 0 },
-          ActiveItem: { value: 0 }
+          ActiveItem: { value: 0 },
+          HoverProgress: { value: 0 },
+          ActiveProgress: { value: 0 }
         },
         transparent: true,
         depthTest: false
@@ -196,7 +202,7 @@ export default {
       this.transitionValue += this.transitionDirection * 0.01
 
       if (this.transitionValue <= 0 || this.transitionValue >= 1) {
-        this.transitionValue = Math.max(0, Math.min(this.transitionValue, 1))
+        this.transitionValue = clamp01(this.transitionValue)
         this.transitionDirection = 0
       }
 
@@ -208,15 +214,36 @@ export default {
       this.textPlane.material.uniforms.Transition.value = this.transitionValue
 
       const hoveredItem = this.queryHover(this.controls.textHoverPosition.x, this.controls.textHoverPosition.y)
+
+      this.textHoverProgress = clamp01(this.textHoverProgress + (hoveredItem !== null ? 0.1 : -0.1))
+
+      if (hoveredItem !== this.lastHoveredItem && hoveredItem !== null) {
+        this.textHoverProgress = 0
+        this.lastHoveredItem = hoveredItem
+      } else if (hoveredItem !== this.lastHoveredItem && hoveredItem === null && this.textHoverProgress === 0) {
+        this.lastHoveredItem = null
+      }
+
+      this.textPlane.material.uniforms.HoveredItem.value = this.lastHoveredItem !== null ? this.lastHoveredItem : 0
+      this.textPlane.material.uniforms.HoverProgress.value = this.textHoverProgress
+
       if (hoveredItem !== null) {
-        this.textPlane.material.uniforms.HoveredItem.value = hoveredItem
         document.body.style.cursor = 'pointer'
       } else {
-        this.textPlane.material.uniforms.HoveredItem.value = 0
         document.body.style.cursor = 'initial'
       }
 
-      this.textPlane.material.uniforms.ActiveItem.value = this.activeLocation !== null ? this.activeLocation : 0
+      this.textActiveProgress = clamp01(this.textActiveProgress + (this.activeLocation !== null ? 0.0 : -0.1))
+
+      if (this.activeLocation !== this.lastActiveLocation && this.activeLocation !== null) {
+        this.textActiveProgress = 1
+        this.lastActiveLocation = this.activeLocation
+      } else if (this.activeLocation !== this.lastActiveLocation && this.activeLocation === null && this.textActiveProgress === 0) {
+        this.lastActiveLocation = null
+      }
+
+      this.textPlane.material.uniforms.ActiveItem.value = this.lastActiveLocation !== null ? this.lastActiveLocation : 0
+      this.textPlane.material.uniforms.ActiveProgress.value = this.textActiveProgress
 
       this.composer.render()
       this.latestAnimationFrame = requestAnimationFrame(this.update)

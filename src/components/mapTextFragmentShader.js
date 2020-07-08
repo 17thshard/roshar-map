@@ -17,8 +17,10 @@ export default `
   uniform highp float Transition;
   uniform highp float HoveredItem;
   uniform highp float ActiveItem;
+  uniform highp float HoverProgress;
+  uniform highp float ActiveProgress;
 
-  vec4 Sample(float base, bool highlight, float noise, float innerGlowSize, float outerGlowSize, float strokeSize, float maxGrad) {
+  vec4 Sample(float base, bool highlight, float highlightProgress, float noise, float innerGlowSize, float outerGlowSize, float strokeSize, float maxGrad) {
     float value = base - 0.5;
     float aa = maxGrad / 24.;
 
@@ -27,9 +29,9 @@ export default `
     vec3 innerGlowColor = vec3(146. / 255., 93. / 255., 43. / 255.);
 
     if (highlight) {
-      outerGlowSize *= 2.0;
-      col = vec4(20. / 255., 143. / 255., 218. / 255., alpha);
-      innerGlowColor = vec3(.5, .81, 1.);
+      outerGlowSize += highlightProgress * outerGlowSize;
+      col = mix(col, vec4(20. / 255., 143. / 255., 218. / 255., alpha), highlightProgress);
+      innerGlowColor = mix(innerGlowColor, vec3(.5, .81, 1.), highlightProgress);
     }
 
     float innerGlow = smoothstep(-innerGlowSize / 255. - aa, .0, value);
@@ -70,18 +72,24 @@ export default `
   void main() {
     highp vec2 maxGrad2 = fwidth(vUv * vec2(1024, 512));
     highp float maxGrad = max(maxGrad2.x, maxGrad2.y);
-    
-    float noise = texture2D(PatternTexture, vUv * vec2(16., 8.)).r;
-    
-    vec4 map = texture2D(Texture, vUv);
-    
-    float hoverValue = map.b * 255.;
-    bool highlight = (HoveredItem > .0 && hoverValue == HoveredItem) || (ActiveItem > .0 && hoverValue == ActiveItem);
 
-    vec4 texel1Large = Sample(map.r, highlight, noise, 24., 37., 3., maxGrad);
-    vec4 texel1Small = Sample(map.g, highlight, noise, 12., 18., 2., maxGrad);    
-    vec4 texel1 = vec4(mix(texel1Large.rgb, texel1Small.rgb, texel1Small.a), texel1Large.a + texel1Small.a);
+    float noise = texture2D(PatternTexture, vUv * vec2(16., 8.)).r;
+
+    vec4 map = texture2D(Texture, vUv);
+
+    float hoverValue = map.b * 255.;
+    bool highlight = HoveredItem > .0 && hoverValue == HoveredItem;
+    float highlightProgress = HoverProgress;
     
+    if (ActiveItem > .0 && hoverValue == ActiveItem) {
+      highlight = true;
+      highlightProgress = ActiveProgress;
+    }
+
+    vec4 texel1Large = Sample(map.r, highlight, highlightProgress, noise, 24., 37., 3., maxGrad);
+    vec4 texel1Small = Sample(map.g, highlight, highlightProgress, noise, 12., 18., 2., maxGrad);
+    vec4 texel1 = vec4(mix(texel1Large.rgb, texel1Small.rgb, texel1Small.a), texel1Large.a + texel1Small.a);
+
     vec4 texel2 = SampleShadesmar(noise, vUv, maxGrad);
 
     vec4 transitionTexel = texture2D(TransitionTexture, vUv);
