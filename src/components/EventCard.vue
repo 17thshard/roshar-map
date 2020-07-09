@@ -1,6 +1,9 @@
 <template>
   <div
-    :class="['event-card', { 'event-card--image': event.image !== undefined }]"
+    :class="[
+      'event-card',
+      { 'event-card--image': event.image !== undefined, 'event-card--details-visible': $store.state.details !== null }
+    ]"
   >
     <div class="event-card__content">
       <div
@@ -12,7 +15,7 @@
         {{ event.name }}
       </h2>
       <div class="event-card__text">
-        Event description <a href="#" @click.prevent="$store.commit('showDetails')">Read more</a>
+        Event description <a href="#" @click.prevent="showDetails">Read more</a>
       </div>
     </div>
   </div>
@@ -47,6 +50,11 @@ export default {
       }
 
       return styles
+    },
+    showDetails () {
+      const image = this.event.image !== undefined ? this.event.image.file : undefined
+
+      this.$store.commit('showDetails', { type: 'event', title: this.event.name, image })
     }
   }
 }
@@ -63,6 +71,11 @@ export default {
   box-sizing: border-box;
   color: #242629;
   transition: all 0.2s ease-in-out;
+  opacity: 1;
+
+  &--details-visible {
+    opacity: 0;
+  }
 
   &--image {
     .event-card__content {

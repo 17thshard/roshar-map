@@ -279,17 +279,17 @@ const MapControls = function (object, domElement) {
   //
 
   function handleMouseDownDolly (event) {
-    dollyStart.set(event.clientX, event.clientY)
+    dollyStart.set(event.offsetX, event.offsetY)
   }
 
   function handleMouseDownPan (event) {
-    panPos.set(event.clientX, event.clientY)
+    panPos.set(event.offsetX, event.offsetY)
     panUpdated = false
     panning = true
   }
 
   function handleMouseMoveDolly (event) {
-    dollyEnd.set(event.clientX, event.clientY)
+    dollyEnd.set(event.offsetX, event.offsetY)
 
     dollyDelta.subVectors(dollyEnd, dollyStart)
 
@@ -305,7 +305,7 @@ const MapControls = function (object, domElement) {
   }
 
   function handleMouseMovePan (event) {
-    panPos.set(event.clientX, event.clientY)
+    panPos.set(event.offsetX, event.offsetY)
   }
 
   function handleMouseUp (event) {
@@ -313,7 +313,7 @@ const MapControls = function (object, domElement) {
       panning = false
     }
 
-    if (event.button !== 0 || event.clientX !== clickStart.x || event.clientY !== clickStart.y) {
+    if (event.button !== 0 || event.offsetX !== clickStart.x || event.offsetY !== clickStart.y) {
       return
     }
 
@@ -338,7 +338,9 @@ const MapControls = function (object, domElement) {
       return
     }
 
-    clickStart.set(event.touches[0].clientX, event.touches[0].clientY)
+    const { x: clientX, y: clientY } = scope.domElement.getBoundingClientRect()
+
+    clickStart.set(event.touches[0].clientX - clientX, event.touches[0].clientY - clientY)
     panPos.copy(clickStart)
     panUpdated = false
     panning = true
@@ -349,7 +351,9 @@ const MapControls = function (object, domElement) {
       return
     }
 
-    panPos.set(event.touches[0].clientX, event.touches[0].clientY)
+    const { x: clientX, y: clientY } = scope.domElement.getBoundingClientRect()
+
+    panPos.set(event.touches[0].clientX - clientX, event.touches[0].clientY - clientY)
   }
 
   function handleTouchEnd (event) {
@@ -370,7 +374,11 @@ const MapControls = function (object, domElement) {
       return
     }
 
-    if (event.changedTouches[0].clientX === clickStart.x || event.changedTouches[0].clientY === clickStart.y) {
+    const { x: clientX, y: clientY } = scope.domElement.getBoundingClientRect()
+    const offsetX = event.changedTouches[0].clientX - clientX
+    const offsetY = event.changedTouches[0].clientY - clientY
+
+    if (offsetX === clickStart.x || offsetY === clickStart.y) {
       const result = rayCast(clickStart.x, clickStart.y, true)
       if (result !== null) {
         scope.dispatchEvent({ type: 'click', position: result })
@@ -399,7 +407,7 @@ const MapControls = function (object, domElement) {
     switch (event.button) {
       case 0:
         mouseAction = scope.mouseButtons.LEFT
-        clickStart.set(event.clientX, event.clientY)
+        clickStart.set(event.offsetX, event.offsetY)
         break
       case 1:
         mouseAction = scope.mouseButtons.MIDDLE
@@ -475,7 +483,7 @@ const MapControls = function (object, domElement) {
       return
     }
 
-    mousePosition.set(event.clientX, event.clientY)
+    mousePosition.set(event.offsetX, event.offsetY)
   }
 
   function resetMousePos () {

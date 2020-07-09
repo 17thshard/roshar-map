@@ -17,26 +17,20 @@ import {
 } from 'three'
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
-import MapControls from '@/components/map/MapControls.js'
-import Highlight from '@/components/map/Highlight.js'
-import fragmentShader from '@/components/map/mapFragmentShader.js'
-import textFragmentShader from '@/components/map/mapTextFragmentShader.js'
-import ShatteringPass from '@/components/map/ShatteringPass.js'
-import TextureManager from '@/components/map/TextureManager.js'
-import { clamp01 } from '@/utils.js'
+import { mapState } from 'vuex'
+import MapControls from '@/components/map/MapControls'
+import Highlight from '@/components/map/Highlight'
+import fragmentShader from '@/components/map/mapFragmentShader'
+import textFragmentShader from '@/components/map/mapTextFragmentShader'
+import ShatteringPass from '@/components/map/ShatteringPass'
+import TextureManager from '@/components/map/TextureManager'
+import { clamp01 } from '@/utils'
 
 export default {
   name: 'Map',
   props: {
-    activeEvent: {
-      type: Object,
-      required: false,
-      default: () => null
-    },
-    activeLocation: {
-      type: [Number, null],
-      required: false,
-      default: () => null
+    transitions: {
+      type: Boolean
     }
   },
   data () {
@@ -45,6 +39,12 @@ export default {
       transitionDirection: 0,
       textHoverProgress: 0,
       textActiveProgress: 0
+    }
+  },
+  computed: {
+    ...mapState(['activeLocation']),
+    activeEvent () {
+      return this.transitions ? this.$store.state.activeEvent : null
     }
   },
   watch: {
@@ -105,7 +105,7 @@ export default {
       this.controls.addEventListener('click', ({ position }) => {
         if (this.transitionValue === 0) {
           this.textActiveProgress = 1
-          this.$emit('location-selected', this.queryHover(position.x, position.y))
+          this.$store.commit('selectLocation', this.queryHover(position.x, position.y))
         }
       })
 
@@ -296,6 +296,7 @@ export default {
   position: relative;
   height: 100%;
   flex: 1;
+  min-height: 0;
 
   canvas {
     width: 100% !important;

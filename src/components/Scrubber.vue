@@ -76,11 +76,6 @@ export default {
   props: {
     ready: {
       type: Boolean
-    },
-    activeEvent: {
-      type: Object,
-      required: false,
-      default: () => null
     }
   },
   data () {
@@ -93,7 +88,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['events', 'filter']),
+    ...mapState(['events', 'filter', 'activeEvent']),
     timelines () {
       const result = this.filter.breakoutTags.reduce((acc, t) => ({ ...acc, [t]: [] }), {})
 
@@ -174,19 +169,26 @@ export default {
     }
   },
   mounted () {
-    window.addEventListener('resize', this.onResize)
-    window.addEventListener('resize', this.updateOverflow)
-    this.onResize()
+    this.update()
     this.onScroll()
   },
   destroyed () {
-    window.removeEventListener('resize', this.onResize)
-    window.removeEventListener('resize', this.updateOverflow)
+    cancelAnimationFrame(this.lastAnimationRequest)
   },
   methods: {
+    update () {
+      if (this.lastWidth !== this.$el.clientWidth) {
+        this.onResize()
+      }
+
+      this.lastWidth = this.$el.clientWidth
+
+      this.lastAnimationRequest = requestAnimationFrame(this.update)
+    },
     onResize () {
       this.timelineWidth = Math.max(...this.events.map(e => e.offset)) + this.$el.clientWidth
       this.timelineOffset = this.$el.clientWidth / 2
+      this.updateOverflow()
     },
     scrollHorizontally (event) {
       const e = window.event || event
@@ -296,7 +298,7 @@ export default {
       }
     },
     selectEvent (event) {
-      this.$emit('event-selected', event)
+      this.$store.commit('selectEvent', event)
       this.scrollToEvent(event)
     },
     scrollToEvent (event) {

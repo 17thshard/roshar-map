@@ -1,21 +1,15 @@
 <template>
-  <div id="app">
-    <div class="map-container">
-      <Map
-        :active-event="mapTransitions ? activeEvent : null"
-        :active-location="activeLocation"
-        @ready="onReady"
-        @location-selected="selectLocation"
-      />
-      <transition name="details">
-        <Details v-if="$store.state.details !== null" />
-      </transition>
-    </div>
+  <div id="app" :class="{ 'app--details': $store.state.details !== null }">
+    <Map
+      :transitions="mapTransitions"
+      @ready="onReady"
+    />
+    <transition name="details">
+      <Details v-if="$store.state.details !== null" :key="$store.state.details.title" />
+    </transition>
     <Scrubber
       :ready="ready"
-      :active-event="activeEvent"
       @loaded="onScrubberLoaded"
-      @event-selected="selectEvent"
     />
     <Info />
     <Settings />
@@ -46,32 +40,18 @@ export default {
   data () {
     return {
       ready: false,
-      mapTransitions: false,
-      activeEvent: null,
-      activeLocation: null
+      mapTransitions: false
     }
   },
   methods: {
     onReady () {
       this.ready = true
-      this.activeEvent = this.$store.state.events.find(event => event.tags.includes('kaladin'))
+      this.$store.commit('selectEvent', this.$store.state.events.find(event => event.tags.includes('kaladin')))
     },
     onScrubberLoaded () {
       setTimeout(() => {
         this.mapTransitions = true
       }, 1000)
-    },
-    selectEvent (event) {
-      this.activeEvent = event
-      this.activeLocation = null
-    },
-    selectLocation (location) {
-      this.activeLocation = location
-      this.activeEvent = null
-
-      if (location !== null) {
-        this.$store.commit('showDetails')
-      }
     }
   }
 }
@@ -105,14 +85,13 @@ body {
   flex-direction: column;
   align-items: stretch;
   color: #242629;
-}
+  transition: padding-left 0.5s ease-in-out;
+  box-sizing: border-box;
 
-.map-container {
-  flex: 1;
-  min-height: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  &.app--details {
+    padding-left: 225px;
+    transition-delay: 0.3s;
+  }
 }
 
 button {

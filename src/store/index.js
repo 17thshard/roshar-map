@@ -203,7 +203,19 @@ const events = [
     }
 
     return -1
-  }).map((event, index) => ({ ...event, id: index }))
+  }).map((event, index) => ({ ...event, id: index, type: 'event' }))
+
+const locations = {
+  4: {
+    type: 'location',
+    title: 'Kharbranth',
+    image: 'kharbranth.jpg'
+  },
+  22: {
+    type: 'location',
+    title: 'Kholinar'
+  }
+}
 
 let lastEvent = null
 let runningOffset = 0
@@ -218,40 +230,60 @@ events.forEach((event) => {
   lastEvent = event
 })
 
+const mutations = {
+  selectEvent (state, event) {
+    state.activeEvent = event
+    mutations.closeDetails(state)
+  },
+  selectLocation (state, location) {
+    state.activeLocation = location
+    state.activeEvent = null
+
+    if (location !== null && state.locations[location] !== undefined) {
+      mutations.showDetails(state, state.locations[location])
+    }
+  },
+  showDetails (state, details) {
+    state.details = details
+  },
+  closeDetails (state) {
+    if (state.activeLocation !== null) {
+      state.activeLocation = null
+    }
+    state.details = null
+  },
+  toggleTag (state, tag) {
+    if (state.filter.tags === null) {
+      state.filter.tags = [tag]
+    } else {
+      const index = state.filter.tags.indexOf(tag)
+
+      if (index === -1) {
+        state.filter.tags.push(tag)
+      } else {
+        state.filter.tags.splice(index, 1)
+      }
+    }
+
+    if (state.filter.tags.length === 0) {
+      state.filter.tags = null
+    }
+  }
+}
+
 export default new Vuex.Store({
   state: {
     events,
+    locations,
+    activeEvent: null,
+    activeLocation: null,
     details: null,
     filter: {
       tags: null,
       breakoutTags: []
     }
   },
-  mutations: {
-    showDetails (state) {
-      state.details = {}
-    },
-    closeDetails (state) {
-      state.details = null
-    },
-    toggleTag (state, tag) {
-      if (state.filter.tags === null) {
-        state.filter.tags = [tag]
-      } else {
-        const index = state.filter.tags.indexOf(tag)
-
-        if (index === -1) {
-          state.filter.tags.push(tag)
-        } else {
-          state.filter.tags.splice(index, 1)
-        }
-      }
-
-      if (state.filter.tags.length === 0) {
-        state.filter.tags = null
-      }
-    }
-  },
+  mutations,
   getters: {
     isDisabled (state) {
       return (event) => {
