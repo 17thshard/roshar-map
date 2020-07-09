@@ -101,7 +101,14 @@ const events = [
   {
     date: [1153],
     name: 'Kaladin is born',
-    image: 'kaladin.jpg',
+    image: {
+      file: 'kaladin.jpg',
+      offset: {
+        x: '90%',
+        y: '0'
+      },
+      size: '150%'
+    },
     tags: ['kaladin'],
     shadesmar: false,
     coordinates: {
@@ -214,12 +221,19 @@ events.forEach((event) => {
 export default new Vuex.Store({
   state: {
     events,
+    details: null,
     filter: {
       tags: null,
       breakoutTags: []
     }
   },
   mutations: {
+    showDetails (state) {
+      state.details = {}
+    },
+    closeDetails (state) {
+      state.details = null
+    },
     toggleTag (state, tag) {
       if (state.filter.tags === null) {
         state.filter.tags = [tag]

@@ -1,17 +1,18 @@
 <template>
-  <div :class="['event-card', { 'event-card--image': event.image !== undefined }]">
+  <div
+    :class="['event-card', { 'event-card--image': event.image !== undefined }]"
+  >
     <div class="event-card__content">
-      <img
+      <div
         v-if="event.image !== undefined"
-        :src="`${imageBaseUrl}/${event.image}`"
-        :alt="event.name"
+        :style="buildImageStyles(event.image)"
         class="event-card__image"
-      >
+      />
       <h2 class="event-card__name">
         {{ event.name }}
       </h2>
       <div class="event-card__text">
-        Event description
+        Event description <a href="#" @click.prevent="$store.commit('showDetails')">Read more</a>
       </div>
     </div>
   </div>
@@ -30,6 +31,23 @@ export default {
     imageBaseUrl () {
       return `${process.env.BASE_URL}events`
     }
+  },
+  methods: {
+    buildImageStyles (image) {
+      const styles = {
+        backgroundImage: `url(${this.imageBaseUrl}/${image.file})`
+      }
+
+      if (image.offset !== undefined) {
+        styles.backgroundPosition = `${image.offset.x} ${image.offset.y}`
+      }
+
+      if (image.size !== undefined) {
+        styles.backgroundSize = image.size
+      }
+
+      return styles
+    }
   }
 }
 </script>
@@ -38,7 +56,7 @@ export default {
 .event-card {
   position: absolute;
   bottom: 100%;
-  width: 350px;
+  width: 400px;
   max-width: 90%;
   z-index: 5;
   filter: drop-shadow(0 -0.5rem 1rem rgba(0, 0, 0, 0.5));
@@ -48,7 +66,7 @@ export default {
 
   &--image {
     .event-card__content {
-      padding-top: 3rem;
+      padding-top: 4rem;
     }
   }
 
@@ -61,7 +79,29 @@ export default {
     top: 0;
     bottom: 0;
     background: #F5ECDA url(../assets/paper.png);
-    clip-path: polygon(1rem 0, calc(100% - 1rem) 0, 100% 1rem, 100% 100%, 0 100%, 0 1rem);
+    clip-path: polygon(
+        1rem 0,
+        calc(100% - 1rem) 0,
+        100% 1rem,
+        100% 100%,
+        100% 100%,
+        0 100%,
+        0 100%,
+        0 1rem
+    );
+  }
+
+  &-enter-active {
+    transition: transform 0.5s ease-out;
+    transition-delay: 1.2s;
+  }
+
+  &-leave-active {
+    transition: transform 0.5s ease-in;
+  }
+
+  &-enter, &-leave-to {
+    transform: translateY(calc(100% + 2rem));
   }
 
   &__content {
@@ -72,10 +112,11 @@ export default {
 
   &__image {
     position: absolute;
-    width: 86px;
-    top: -43px;
+    width: 120px;
+    height: 120px;
+    top: -60px;
     left: 50%;
-    margin-left: -43px;
+    margin-left: -60px;
     border-radius: 100%;
     border: 4px solid #F5ECDA;
     box-sizing: border-box;
@@ -83,6 +124,7 @@ export default {
     animation: event-card__image-enter 0.5s ease-out;
     animation-delay: 1.5s;
     animation-fill-mode: forwards;
+    background-size: 100%;
 
     @keyframes event-card__image-enter {
       0% {
@@ -96,7 +138,7 @@ export default {
   }
 
   &__name {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 600;
     font-variant: small-caps;
     margin: 0;
@@ -104,8 +146,9 @@ export default {
   }
 
   &__text {
-    font-size: 0.8rem;
-    padding: 0.5rem 0.5rem 1rem;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0.5rem 0.5rem 2rem;
   }
 }
 </style>

@@ -10,7 +10,7 @@
     ]"
     @transitionend="$emit('loaded')"
   >
-    <transition name="scrubber__card">
+    <transition name="event-card">
       <EventCard v-if="activeEvent !== null" :key="`event-${activeEvent.id}`" :event="activeEvent" />
     </transition>
     <div class="scrubber__bar">
@@ -358,21 +358,6 @@ export default {
 
   &--right-overflow:after {
     opacity: 1;
-  }
-
-  &__card {
-    &-enter-active {
-      transition: transform 0.5s ease-out;
-      transition-delay: 1.2s;
-    }
-
-    &-leave-active {
-      transition: transform 0.5s ease-in;
-    }
-
-    &-enter, &-leave-to {
-      transform: translateY(calc(100% + 2rem));
-    }
   }
 
   &__indicator {

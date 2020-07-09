@@ -332,7 +332,7 @@ export default {
     async renderPng (polygons, base) {
       const { width, height, data: baseData } = base !== undefined
         ? (await this.textureManager.loadData(base, false, 'rgba'))
-        : undefined
+        : { width: 1024, height: 512 }
 
       const xScale = width / 1024
       const yScale = height / 512

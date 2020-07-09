@@ -103,8 +103,10 @@ export default {
 
       this.controls = new MapControls(this.camera, this.renderer.domElement)
       this.controls.addEventListener('click', ({ position }) => {
-        this.textActiveProgress = 1
-        this.$emit('location-selected', this.queryHover(position.x, position.y))
+        if (this.transitionValue === 0) {
+          this.textActiveProgress = 1
+          this.$emit('location-selected', this.queryHover(position.x, position.y))
+        }
       })
 
       this.highlights = new Group()
@@ -213,6 +215,20 @@ export default {
       this.mapMaterial.uniforms.Transition.value = this.transitionValue
       this.textPlane.material.uniforms.Transition.value = this.transitionValue
 
+      if (this.transitionValue === 0) {
+        this.updateTextHighlights()
+      }
+
+      this.textPlane.material.uniforms.HoveredItem.value = this.lastHoveredItem !== null ? this.lastHoveredItem : 0
+      this.textPlane.material.uniforms.HoverProgress.value = this.textHoverProgress
+
+      this.textPlane.material.uniforms.ActiveItem.value = this.lastActiveLocation !== null ? this.lastActiveLocation : 0
+      this.textPlane.material.uniforms.ActiveProgress.value = this.textActiveProgress
+
+      this.composer.render()
+      this.latestAnimationFrame = requestAnimationFrame(this.update)
+    },
+    updateTextHighlights () {
       const hoveredItem = this.queryHover(this.controls.textHoverPosition.x, this.controls.textHoverPosition.y)
 
       this.textHoverProgress = clamp01(this.textHoverProgress + (hoveredItem !== null ? 0.1 : -0.1))
@@ -223,9 +239,6 @@ export default {
       } else if (hoveredItem !== this.lastHoveredItem && hoveredItem === null && this.textHoverProgress === 0) {
         this.lastHoveredItem = null
       }
-
-      this.textPlane.material.uniforms.HoveredItem.value = this.lastHoveredItem !== null ? this.lastHoveredItem : 0
-      this.textPlane.material.uniforms.HoverProgress.value = this.textHoverProgress
 
       if (hoveredItem !== null) {
         document.body.style.cursor = 'pointer'
@@ -241,12 +254,6 @@ export default {
       } else if (this.activeLocation !== this.lastActiveLocation && this.activeLocation === null && this.textActiveProgress === 0) {
         this.lastActiveLocation = null
       }
-
-      this.textPlane.material.uniforms.ActiveItem.value = this.lastActiveLocation !== null ? this.lastActiveLocation : 0
-      this.textPlane.material.uniforms.ActiveProgress.value = this.textActiveProgress
-
-      this.composer.render()
-      this.latestAnimationFrame = requestAnimationFrame(this.update)
     },
     queryHover (x, y) {
       if (this.hoverTexture === undefined) {
@@ -287,8 +294,8 @@ export default {
   align-items: stretch;
   justify-content: stretch;
   position: relative;
+  height: 100%;
   flex: 1;
-  min-height: 0;
 
   canvas {
     width: 100% !important;

@@ -6,8 +6,8 @@
     <transition name="info__content">
       <div v-if="active" class="info__content">
         <div class="info__logo">
-          <button class="info__close" title="Close Menu">
-            <XIcon @click="active = false" />
+          <button class="info__close" title="Close Menu" @click="active = false">
+            <XIcon />
           </button>
         </div>
         <h3>Filters</h3>

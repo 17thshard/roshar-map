@@ -1,11 +1,16 @@
 <template>
   <div id="app">
-    <Map
-      :active-event="mapTransitions ? activeEvent : null"
-      :active-location="activeLocation"
-      @ready="onReady"
-      @location-selected="selectLocation"
-    />
+    <div class="map-container">
+      <Map
+        :active-event="mapTransitions ? activeEvent : null"
+        :active-location="activeLocation"
+        @ready="onReady"
+        @location-selected="selectLocation"
+      />
+      <transition name="details">
+        <Details v-if="$store.state.details !== null" />
+      </transition>
+    </div>
     <Scrubber
       :ready="ready"
       :active-event="activeEvent"
@@ -26,10 +31,12 @@ import Scrubber from '@/components/Scrubber.vue'
 import Settings from '@/components/Settings.vue'
 import LoadingIndicator from '@/components/LoadingIndicator.vue'
 import Info from '@/components/Info.vue'
+import Details from '@/components/Details.vue'
 
 export default {
   name: 'App',
   components: {
+    Details,
     Info,
     LoadingIndicator,
     Settings,
@@ -61,6 +68,10 @@ export default {
     selectLocation (location) {
       this.activeLocation = location
       this.activeEvent = null
+
+      if (location !== null) {
+        this.$store.commit('showDetails')
+      }
     }
   }
 }
@@ -94,6 +105,14 @@ body {
   flex-direction: column;
   align-items: stretch;
   color: #242629;
+}
+
+.map-container {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 button {

@@ -6,8 +6,8 @@
     </button>
     <transition name="settings__content">
       <div v-if="active" class="settings__content">
-        <button class="settings__close" title="Close Settings">
-          <XIcon @click="active = false" />
+        <button class="settings__close" title="Close Settings" @click="active = false">
+          <XIcon />
         </button>
         <h3>Filters</h3>
         <ul>
