@@ -98,6 +98,7 @@ export default `
 
       float t = 3. * atan(mapPos.x, mapPos.y);
       float perturbation = 0.5 * (sin(t) + cos(3.3 * t) + sin(0.7 * t)) + sin(4. * Time + t) * 0.5;
+      float spiritualPerturbation = 0.5 * (sin(0.9 * t + 2.) + cos(3.3 * 0.9 * t + 1.) + sin(0.7 * 0.9 * t + 1.5)) + sin(3. * Time + t) * 0.7;
       
       float transitionValue = smoothstep(0.0, 1.0, PerpTransition);
       
@@ -108,7 +109,7 @@ export default `
       perpendicularityColor = mix(
         perpendicularityColor,
         vec4(252. / 255., 228. / 255., 124. / 255., 1.),
-        smoothstep((10.0 + perturbation - 6.0) * transitionValue, (10.0 + perturbation + 2.) * transitionValue, distance)
+        smoothstep((10.0 + spiritualPerturbation - 6.0) * transitionValue, (10.0 + spiritualPerturbation + 2.) * transitionValue, distance)
       );
 
       color = mix(
