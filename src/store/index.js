@@ -38,9 +38,8 @@ const events = [
     tags: ['general'],
     shadesmar: false,
     coordinates: {
-      x: 512,
-      y: 256,
-      zoom: 0
+      x: 290.2,
+      y: 260.8
     }
   },
   {
@@ -82,9 +81,8 @@ const events = [
     tags: ['general'],
     shadesmar: false,
     coordinates: {
-      x: 512,
-      y: 256,
-      zoom: 0
+      x: 195.8,
+      y: 294.2
     }
   },
   {
@@ -94,8 +92,8 @@ const events = [
     tags: ['dalinar'],
     shadesmar: false,
     coordinates: {
-      x: 769,
-      y: 249
+      x: 738.8,
+      y: 250.5
     }
   },
   {
@@ -112,8 +110,8 @@ const events = [
     tags: ['kaladin'],
     shadesmar: false,
     coordinates: {
-      x: 765,
-      y: 188
+      x: 734.7,
+      y: 196.8
     }
   },
   {
@@ -122,8 +120,8 @@ const events = [
     tags: ['shallan'],
     shadesmar: false,
     coordinates: {
-      x: 642,
-      y: 255
+      x: 627.5,
+      y: 256.1
     }
   },
   {
@@ -132,8 +130,8 @@ const events = [
     tags: ['dalinar'],
     shadesmar: false,
     coordinates: {
-      x: 756,
-      y: 311
+      x: 727,
+      y: 305
     }
   },
   {
@@ -142,8 +140,8 @@ const events = [
     tags: ['general'],
     shadesmar: false,
     coordinates: {
-      x: 756,
-      y: 311
+      x: 484.5,
+      y: 332.4
     }
   },
   {
@@ -152,8 +150,8 @@ const events = [
     tags: ['kaladin'],
     shadesmar: false,
     coordinates: {
-      x: 756,
-      y: 311
+      x: 704.6,
+      y: 208.8
     }
   },
   {
@@ -162,8 +160,8 @@ const events = [
     tags: ['general'],
     shadesmar: false,
     coordinates: {
-      x: 756,
-      y: 311
+      x: 627.5,
+      y: 256.1
     }
   },
   {
@@ -172,8 +170,8 @@ const events = [
     tags: ['kaladin', 'shallan'],
     shadesmar: true,
     coordinates: {
-      x: 769,
-      y: 249
+      x: 738.8,
+      y: 250.5
     }
   }
 ].sort(

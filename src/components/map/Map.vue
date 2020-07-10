@@ -103,6 +103,7 @@ export default {
 
       this.controls = new MapControls(this.camera, this.renderer.domElement)
       this.controls.addEventListener('click', ({ position }) => {
+        console.log(position.x + 512, 256 - position.y)
         if (this.transitionValue === 0) {
           this.textActiveProgress = 1
           this.$store.commit('selectLocation', this.queryHover(position.x, position.y))
