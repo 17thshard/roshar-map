@@ -46,7 +46,7 @@ export default {
   methods: {
     onReady () {
       this.ready = true
-      this.$store.commit('selectEvent', this.$store.state.events.find(event => event.tags.includes('kaladin')))
+      this.$store.commit('selectEvent', this.$store.state.events[this.$store.state.events.length - 1])
     },
     onScrubberLoaded () {
       setTimeout(() => {

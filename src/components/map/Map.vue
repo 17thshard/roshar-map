@@ -134,6 +134,7 @@ export default {
           Transition: { value: this.transitionValue },
           PerpTransition: { value: this.perpendicularityTransition },
           PerpLocation: { value: new Vector2() },
+          PerpPeriod: { value: 3.05355 },
           Time: { value: 0 }
         }
       })

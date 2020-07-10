@@ -5,6 +5,7 @@ export default `
   #endif
 
   #define ALPHA .65
+  #define PI 3.141592653589793
 
   float threshold = 0.1;
 
@@ -17,6 +18,7 @@ export default `
   uniform highp float Transition;
   uniform highp float PerpTransition;
   uniform highp vec2 PerpLocation;
+  uniform highp float PerpPeriod;
   uniform highp float Time;
 
   float wave(float maxGrad, float value, float threshold, float opacity) {
@@ -79,6 +81,13 @@ export default `
 
     return vec4(col, 1);
   }
+  
+  vec2 perturbations(float t) {
+    return vec2(
+      0.5 * (sin(t) + cos(3.3 * t) + sin(0.7 * t)) + sin(4. * Time + t) * 0.5,
+      0.5 * (sin(0.9 * t + 2.) + cos(3.3 * 0.9 * t + 1.) + sin(0.7 * 0.9 * t + 1.5)) + sin(3. * Time + t) * 0.7
+    );
+  }
 
   void main() {
     highp vec2 maxGrad2 = fwidth(vUv * vec2(1024, 512));
@@ -96,9 +105,14 @@ export default `
     if (PerpTransition > 0.) {
       vec2 mapPos = (vUv * vec2(1024, 512) - vec2(512, 256)) - PerpLocation;
 
-      float t = 3. * atan(mapPos.x, mapPos.y);
-      float perturbation = 0.5 * (sin(t) + cos(3.3 * t) + sin(0.7 * t)) + sin(4. * Time + t) * 0.5;
-      float spiritualPerturbation = 0.5 * (sin(0.9 * t + 2.) + cos(3.3 * 0.9 * t + 1.) + sin(0.7 * 0.9 * t + 1.5)) + sin(3. * Time + t) * 0.7;
+      float angle = atan(mapPos.x, mapPos.y);
+      vec2 perturbation = perturbations(PerpPeriod * angle);
+
+      if (angle < -3.05 || angle > 3.05) {
+        vec2 leftPerturbation = perturbations(PerpPeriod * 3.05);
+        vec2 rightPerturbation = perturbations(PerpPeriod * -3.05);
+        perturbation = mix(leftPerturbation, rightPerturbation, smoothstep(0., PI - 3.05, mod(angle + 2. * PI, 2. * PI) - 3.05));
+      }
       
       float transitionValue = smoothstep(0.0, 1.0, PerpTransition);
       
@@ -109,13 +123,13 @@ export default `
       perpendicularityColor = mix(
         perpendicularityColor,
         vec4(252. / 255., 228. / 255., 124. / 255., 1.),
-        smoothstep((10.0 + spiritualPerturbation - 6.0) * transitionValue, (10.0 + spiritualPerturbation + 2.) * transitionValue, distance)
+        smoothstep((10.0 + perturbation.y - 6.0) * transitionValue, (10.0 + perturbation.y + 2.) * transitionValue, distance)
       );
 
       color = mix(
         color,
         perpendicularityColor,
-        (1. - smoothstep((10.0 + perturbation) * transitionValue, (10.0 + perturbation + 2.) * transitionValue, distance))
+        (1. - smoothstep((10.0 + perturbation.x) * transitionValue, (10.0 + perturbation.x + 2.) * transitionValue, distance))
       );
     }
 
