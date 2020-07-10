@@ -11,7 +11,7 @@ import {
   PlaneBufferGeometry,
   RepeatWrapping,
   Scene,
-  ShaderMaterial,
+  ShaderMaterial, Vector2,
   Vector3,
   WebGLRenderer
 } from 'three'
@@ -38,7 +38,9 @@ export default {
       transitionValue: 0,
       transitionDirection: 0,
       textHoverProgress: 0,
-      textActiveProgress: 0
+      textActiveProgress: 0,
+      perpendicularityTransition: 0,
+      perpendicularityTransitionDirection: 0
     }
   },
   computed: {
@@ -103,7 +105,6 @@ export default {
 
       this.controls = new MapControls(this.camera, this.renderer.domElement)
       this.controls.addEventListener('click', ({ position }) => {
-        console.log(position.x + 512, 256 - position.y)
         if (this.transitionValue === 0) {
           this.textActiveProgress = 1
           this.$store.commit('selectLocation', this.queryHover(position.x, position.y))
@@ -130,7 +131,10 @@ export default {
           OutlineTexture: { value: textures.map },
           ShadesmarBgTexture: { value: textures.shadesmar_map_bg },
           TransitionTexture: { value: textures.transition },
-          Transition: { value: this.transitionValue }
+          Transition: { value: this.transitionValue },
+          PerpTransition: { value: this.perpendicularityTransition },
+          PerpLocation: { value: new Vector2() },
+          Time: { value: 0 }
         }
       })
 
@@ -185,6 +189,8 @@ export default {
       this.highlights.children.forEach(h => h.leave())
       this.transitionDirection = event !== null && event.shadesmar ? 1 : -2
 
+      this.perpendicularityTransitionDirection = event !== null && event.perpendicularity ? 1 : -1
+
       if (event !== null && event.specialEffect === 'shattering') {
         this.shatteringPass.enter()
       } else if (oldEvent !== null && oldEvent.specialEffect === 'shattering') {
@@ -199,6 +205,10 @@ export default {
       const target = new Vector3(newPosition.x - 512, 256 - newPosition.y, 0)
       this.highlights.add(new Highlight(target.x, target.y, event.specialEffect === 'shattering' ? 2 : undefined))
       this.controls.transitionTo(target, newPosition.zoom !== undefined ? newPosition.zoom : 0.7)
+
+      if (event.perpendicularity) {
+        this.mapMaterial.uniforms.PerpLocation.value.set(target.x, target.y)
+      }
     },
     update (timestamp) {
       this.resizeCanvasToDisplaySize()
@@ -209,9 +219,19 @@ export default {
         this.transitionDirection = 0
       }
 
+      this.perpendicularityTransition += this.perpendicularityTransitionDirection * 0.05
+
+      if (this.perpendicularityTransition <= 0 || this.perpendicularityTransition >= 1) {
+        this.perpendicularityTransition = clamp01(this.perpendicularityTransition)
+        this.perpendicularityTransitionDirection = 0
+      }
+
       this.highlights.children.forEach(h => h.update(this.camera, timestamp))
 
       this.controls.update()
+
+      this.mapMaterial.uniforms.PerpTransition.value = this.perpendicularityTransition
+      this.mapMaterial.uniforms.Time.value = timestamp / 1000
 
       this.mapMaterial.uniforms.Transition.value = this.transitionValue
       this.textPlane.material.uniforms.Transition.value = this.transitionValue

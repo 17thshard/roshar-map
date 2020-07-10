@@ -15,6 +15,9 @@ export default `
   uniform highp sampler2D ShadesmarBgTexture;
   uniform highp sampler2D TransitionTexture;
   uniform highp float Transition;
+  uniform highp float PerpTransition;
+  uniform highp vec2 PerpLocation;
+  uniform highp float Time;
 
   float wave(float maxGrad, float value, float threshold, float opacity) {
     float waveDist = abs(value - threshold / 255. - 0.5);
@@ -87,7 +90,34 @@ export default `
     vec4 transitionTexel = texture2D(TransitionTexture, vUv);
     float r = Transition * (1.0 + threshold * 2.0) - threshold;
     float mixf = clamp((transitionTexel.r - r) * (1.0 / threshold), 0.0, 1.0);
+    
+    vec4 color = mix(texel1, texel2, 1.0 - mixf);
 
-    gl_FragColor = mix(texel1, texel2, 1.0 - mixf);
+    if (PerpTransition > 0.) {
+      vec2 mapPos = (vUv * vec2(1024, 512) - vec2(512, 256)) - PerpLocation;
+
+      float t = 3. * atan(mapPos.x, mapPos.y);
+      float perturbation = 0.5 * (sin(t) + cos(3.3 * t) + sin(0.7 * t)) + sin(4. * Time + t) * 0.5;
+      
+      float transitionValue = smoothstep(0.0, 1.0, PerpTransition);
+      
+      vec4 perpendicularityColor = mix(texel1, texel2, mixf);
+      
+      float distance = length(mapPos);
+
+      perpendicularityColor = mix(
+        perpendicularityColor,
+        vec4(252. / 255., 228. / 255., 124. / 255., 1.),
+        smoothstep((10.0 + perturbation - 6.0) * transitionValue, (10.0 + perturbation + 2.) * transitionValue, distance)
+      );
+
+      color = mix(
+        color,
+        perpendicularityColor,
+        (1. - smoothstep((10.0 + perturbation) * transitionValue, (10.0 + perturbation + 2.) * transitionValue, distance))
+      );
+    }
+
+    gl_FragColor = color;
   }
 `

@@ -173,6 +173,52 @@ const events = [
       x: 738.8,
       y: 250.5
     }
+  },
+  {
+    date: [1174, 1],
+    name: 'Dalinar opens Honor\'s Perpendicularity',
+    tags: ['dalinar'],
+    perpendicularity: false,
+    tieBreaker: 0,
+    coordinates: {
+      x: 597.5,
+      y: 419.3
+    }
+  },
+  {
+    date: [1174, 1],
+    name: 'Dalinar opens Honor\'s Perpendicularity',
+    tags: ['dalinar'],
+    perpendicularity: true,
+    tieBreaker: 1,
+    coordinates: {
+      x: 597.5,
+      y: 419.3
+    }
+  },
+  {
+    date: [1174, 1],
+    name: 'Dalinar opens Honor\'s Perpendicularity',
+    tags: ['dalinar'],
+    perpendicularity: false,
+    shadesmar: true,
+    tieBreaker: 2,
+    coordinates: {
+      x: 597.5,
+      y: 419.3
+    }
+  },
+  {
+    date: [1174, 1],
+    name: 'Dalinar opens Honor\'s Perpendicularity',
+    tags: ['dalinar'],
+    perpendicularity: true,
+    shadesmar: true,
+    tieBreaker: 3,
+    coordinates: {
+      x: 597.5,
+      y: 419.3
+    }
   }
 ].sort(
   (a, b) => {
