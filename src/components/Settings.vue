@@ -12,7 +12,7 @@
         <h3>Filters</h3>
         <ul>
           <li v-for="tag in tags" :key="tag">
-            <input type="checkbox" :checked="filter.tags !== null && filter.tags.includes(tag)" @input="toggleTag(tag)"> {{ tag }}
+            <input type="checkbox" :checked="filter.tags !== null && filter.tags.includes(tag)" @input="toggleTagBreakout(tag)"> {{ tag }}
           </li>
         </ul>
       </div>
@@ -29,7 +29,12 @@ export default {
   components: { SlidersIcon, XIcon },
   data () {
     return {
-      active: false
+      active: false,
+      tagGroups: {
+        characters: {
+          name: 'Characters'
+        }
+      }
     }
   },
   computed: {
@@ -47,6 +52,9 @@ export default {
   methods: {
     toggleTag (tag) {
       this.$store.commit('toggleTag', tag)
+    },
+    toggleTagBreakout (tag) {
+      this.$store.commit('toggleTagBreakout', tag)
     }
   }
 }

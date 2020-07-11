@@ -1,6 +1,6 @@
 <template>
-  <div class="timeline">
-    <div :style="{ left: `${barOffset + offset}px` }" class="timeline__bar" />
+  <transition-group tag="div" name="timeline__event" class="timeline">
+    <div key="bar" :style="{ left: `${barOffset + offset}px` }" class="timeline__bar" />
     <template v-for="event in events">
       <button
         :key="event.id"
@@ -11,7 +11,7 @@
         @click="$emit('event-selected', event)"
       />
     </template>
-  </div>
+  </transition-group>
 </template>
 
 <script>
@@ -90,9 +90,7 @@ export default {
     }
   }
 
-  &--general {
-    @include bar(rgba(153, 151, 145, 0.5));
-  }
+  @include bar(rgba(153, 151, 145, 0.5));
 
   &--dalinar {
     @include bar(rgba(#ebc965, 0.75));
@@ -154,6 +152,14 @@ export default {
       top: -0.5em;
       bottom: -0.5em;
       box-shadow: inset 0 0 0.5em #21a5ec;
+    }
+
+    &-enter-active, &-leave-active {
+      transition: opacity 1s;
+    }
+
+    &-enter, &-leave-to {
+      opacity: 0;
     }
   }
 

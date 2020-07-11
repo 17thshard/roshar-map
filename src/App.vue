@@ -7,10 +7,9 @@
     <transition name="details">
       <Details v-if="$store.state.details !== null" :key="$store.state.details.title" />
     </transition>
-    <Scrubber
-      :ready="ready"
-      @loaded="onScrubberLoaded"
-    />
+    <transition name="scrubber" duration="1500" @after-enter="onScrubberLoaded">
+      <Scrubber v-if="ready" />
+    </transition>
     <Info />
     <Settings />
     <transition name="loading__fade">
@@ -49,9 +48,7 @@ export default {
       this.$store.commit('selectEvent', this.$store.state.events[this.$store.state.events.length - 1])
     },
     onScrubberLoaded () {
-      setTimeout(() => {
-        this.mapTransitions = true
-      }, 1000)
+      this.mapTransitions = true
     }
   }
 }

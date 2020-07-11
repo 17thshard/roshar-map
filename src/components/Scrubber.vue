@@ -4,11 +4,10 @@
       'scrubber',
       {
         'scrubber--left-overflow': leftOverflowVisible,
-        'scrubber--right-overflow': rightOverflowVisible,
-        'scrubber--ready': ready
+        'scrubber--right-overflow': rightOverflowVisible
       }
     ]"
-    @transitionend="$emit('loaded')"
+    :style="{ '--max-height': `${contentHeight}px` }"
   >
     <transition name="event-card">
       <EventCard v-if="activeEvent !== null" :key="`event-${activeEvent.id}`" :event="activeEvent" />
@@ -35,17 +34,20 @@
         @DOMMouseScroll="scrollHorizontally"
         @scroll="onScroll"
       >
-        <div
-          :style="{ width: `${timelineWidth}px` }"
+        <transition-group
+          ref="timelineContainer"
+          tag="div"
+          name="scrubber__timeline"
+          :style="{ width: `${timelineWidth}px`, height: `${contentHeight}px` }"
           class="scrubber__content"
         >
           <Timeline
-            v-for="(timelineEvents, timeline) in timelines"
-            :key="timeline"
+            v-for="(timelineEvents, tag) in timelines"
+            :key="tag"
             :offset="timelineOffset"
             :events="timelineEvents"
             :active-event="activeEvent"
-            :class="`timeline--${timeline}`"
+            :class="['scrubber__timeline', `timeline--${tag}`]"
             @event-selected="selectEvent"
           />
           <div key="years" class="scrubber__years">
@@ -58,7 +60,7 @@
               {{ year }}
             </span>
           </div>
-        </div>
+        </transition-group>
       </div>
     </div>
   </div>
@@ -73,11 +75,6 @@ import { arraysEqual, lerp } from '@/utils'
 export default {
   name: 'Scrubber',
   components: { EventCard, Timeline },
-  props: {
-    ready: {
-      type: Boolean
-    }
-  },
   data () {
     return {
       timelineWidth: 0,
@@ -89,10 +86,13 @@ export default {
   },
   computed: {
     ...mapState(['events', 'filter', 'activeEvent']),
+    contentHeight () {
+      return Math.max(92, Object.keys(this.timelines).length * 24 + 32)
+    },
     timelines () {
       const result = this.filter.breakoutTags.reduce((acc, t) => ({ ...acc, [t]: [] }), {})
 
-      result.general = []
+      result.all = []
 
       this.events.forEach((event) => {
         const breakoutPositions = this.filter.breakoutTags.filter(t => event.tags.includes(t))
@@ -102,7 +102,7 @@ export default {
         })
 
         if (breakoutPositions.length < event.tags.length) {
-          result.general.push(event)
+          result.all.push(event)
         }
       })
 
@@ -153,22 +153,23 @@ export default {
     }
   },
   watch: {
-    activeEvent: {
-      handler (event, oldEvent) {
-        if (event === null) {
-          return
-        }
+    activeEvent (event, oldEvent) {
+      if (event === null) {
+        return
+      }
 
-        if (oldEvent && event.id === oldEvent.id) {
-          return
-        }
+      if (oldEvent && event.id === oldEvent.id) {
+        return
+      }
 
-        this.scrollToEvent(event)
-      },
-      immediate: true
+      this.scrollToEvent(event)
     }
   },
   mounted () {
+    if (this.activeEvent !== null) {
+      setTimeout(() => this.scrollToEvent(this.activeEvent), 1500)
+    }
+
     this.update()
     this.onScroll()
   },
@@ -320,12 +321,27 @@ export default {
   justify-content: center;
   box-sizing: border-box;
   position: relative;
-  max-height: 0;
-  transition: max-height 1s ease-out;
-  transition-delay: 0.5s;
 
-  &--ready {
-    max-height: 130px;
+  &-enter-active {
+    transition: max-height 1s ease-out;
+    transition-delay: 0.5s;
+
+    .scrubber__indicator {
+      transition: opacity 1s ease-out;
+      transition-delay: 0.5s;
+    }
+  }
+
+  &-enter {
+    max-height: 0;
+
+    .scrubber__indicator {
+      opacity: 0;
+    }
+  }
+
+  &-enter-to {
+    max-height: var(--max-height);
 
     .scrubber__indicator {
       opacity: 1;
@@ -374,9 +390,6 @@ export default {
     align-items: flex-start;
     font-size: 0.8rem;
     pointer-events: none;
-    opacity: 0;
-    transition: opacity 1s ease-out;
-    transition-delay: 0.5s;
 
     &:before {
       content: '';
@@ -522,7 +535,24 @@ export default {
     position: relative;
     background: #F5ECDA url(../assets/paper.png);
     padding: 1rem 0;
-    min-height: 60px;
+    min-height: 92px;
+    box-sizing: border-box;
+    transition: height 0.5s ease-in-out;
+  }
+
+  &__timeline {
+    transition: all 0.5s ease-in-out;
+
+    &-leave-active {
+      left: 0;
+      right: 0;
+      position: absolute;
+    }
+
+    &-enter, &-leave-to {
+      opacity: 0;
+      transform: translateY(30px);
+    }
   }
 
   &__years {

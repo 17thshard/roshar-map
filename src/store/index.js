@@ -312,6 +312,15 @@ const mutations = {
     if (state.filter.tags.length === 0) {
       state.filter.tags = null
     }
+  },
+  toggleTagBreakout (state, tag) {
+    const index = state.filter.breakoutTags.indexOf(tag)
+
+    if (index === -1) {
+      state.filter.breakoutTags.push(tag)
+    } else {
+      state.filter.breakoutTags.splice(index, 1)
+    }
   }
 }
 
