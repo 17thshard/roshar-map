@@ -21,8 +21,8 @@
                   <input :id="`tag--${tag}`" type="checkbox" :checked="!filter.tags.includes(tag)" @input="toggleTag(tag)">
                   <span class="settings__tag-check" />
                   {{ $t(`tags.${tag}`) }}
-                  <a v-if="!filter.separateTags.includes(tag)" href="#" @click.prevent="enableTagSeparation(tag)">Display separately</a>
                 </label>
+                <a v-if="!filter.separateTags.includes(tag)" href="#" @click.prevent="enableTagSeparation(tag)">Display separately</a>
               </li>
             </ul>
           </template>
@@ -229,11 +229,21 @@ export default {
     list-style-type: none;
     margin: 0.5rem 0;
 
+    li {
+      display: flex;
+      align-items: center;
+      padding: 0.25rem 0 0.25rem 0.2rem;
+
+      a {
+        margin-left: auto;
+        color: #242629;
+      }
+    }
+
     label {
       cursor: pointer;
       display: flex;
       align-items: center;
-      padding: 0.25rem 0 0.25rem 0.2rem;
 
       input {
         display: none;
@@ -301,11 +311,6 @@ export default {
         &:before {
           @include diamond(#e0efff);
         }
-      }
-
-      a {
-        margin-left: auto;
-        color: #242629;
       }
     }
   }

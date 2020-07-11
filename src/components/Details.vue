@@ -10,7 +10,7 @@
       class="details__scroller"
       :ops="{
         vuescroll: { wheelScrollDuration: 400 },
-        bar: { background: '#45423d', opacity: 0.5, size: '0.5rem' },
+        bar: { background: '#482d00', opacity: 0.5, size: '0.5rem' },
         rail: { size: '0.5rem', gutterOfSide: '0' }
       }"
     >
