@@ -100,6 +100,9 @@
             white,
             and have become synonymous around Roshar as the colors of surgeons, medicine, and healing.
           </p>
+          <a href="https://coppermind.net" class="details__read-more">
+            <span>More on the Coppermind</span>
+          </a>
         </div>
       </div>
     </Scrollbar>
@@ -337,6 +340,56 @@ export default {
     left: 0;
     right: 0;
     height: 1px;
+  }
+
+  @mixin diamond($base-color) {
+    border-left-color: lighten($base-color, 10%);
+    border-top-color: saturate(lighten($base-color, 20%), 10%);
+    border-right-color: lighten($base-color, 15%);
+    border-bottom-color: $base-color;
+  }
+
+  &__read-more {
+    display: block;
+    text-align: center;
+    border: 2px solid #0f3562;
+    text-transform: uppercase;
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.25rem;
+    padding: 0.75rem 1rem;
+    position: relative;
+    border-radius: 3px;
+    margin: 0 1rem;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      transform: scaleY(0);
+      transform-origin: 0 100%;
+      background: #0f3562;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    span {
+      position: relative;
+      z-index: 2;
+    }
+
+    &:hover, &:active, &:focus {
+      color: #f6f8fa;
+
+      &:before {
+        transform: scaleY(1);
+      }
+    }
   }
 }
 </style>

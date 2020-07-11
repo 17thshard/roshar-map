@@ -17,12 +17,18 @@
             </h4>
             <ul :key="`${category}-tags?`" class="settings__tag-list">
               <li v-for="tag in tags" :key="tag">
-                <label :for="`tag--${tag}`">
-                  <input :id="`tag--${tag}`" type="checkbox" :checked="!filter.tags.includes(tag)" @input="toggleTag(tag)">
-                  <span class="settings__tag-check" />
-                  {{ $t(`tags.${tag}`) }}
-                </label>
-                <a v-if="!filter.separateTags.includes(tag)" href="#" @click.prevent="enableTagSeparation(tag)">Display separately</a>
+                <div :class="['settings__options', `settings__options--${buildTagState(tag)}`]">
+                  <button class="settings__options-button" title="Enable" @click="enableTag(tag)">
+                    <EyeIcon size="1x" />
+                  </button>
+                  <button class="settings__options-button" title="Display separately" @click="enableTagSeparation(tag)">
+                    <GitBranchIcon size="1x" />
+                  </button>
+                  <button class="settings__options-button" title="Disable" @click="disableTag(tag)">
+                    <EyeOffIcon size="1x" />
+                  </button>
+                </div>
+                {{ $t(`tags.${tag}`) }}
               </li>
             </ul>
           </template>
@@ -64,12 +70,12 @@
 
 <script>
 import Draggable from 'vuedraggable'
-import { SlidersIcon, XIcon } from 'vue-feather-icons'
+import { EyeIcon, EyeOffIcon, GitBranchIcon, SlidersIcon, XIcon } from 'vue-feather-icons'
 import { mapState } from 'vuex'
 
 export default {
   name: 'Settings',
-  components: { SlidersIcon, XIcon, Draggable },
+  components: { SlidersIcon, XIcon, EyeIcon, EyeOffIcon, GitBranchIcon, Draggable },
   data () {
     return {
       active: false,
@@ -96,8 +102,18 @@ export default {
     }
   },
   methods: {
-    toggleTag (tag) {
-      this.$store.commit('toggleTag', tag)
+    buildTagState (tag) {
+      if (this.separateTags.includes(tag)) {
+        return 'separate'
+      }
+
+      return this.filter.tags.includes(tag) ? 'disabled' : 'enabled'
+    },
+    enableTag (tag) {
+      this.$store.commit('enableTag', tag)
+    },
+    disableTag (tag) {
+      this.$store.commit('disableTag', tag)
     },
     enableTagSeparation (tag) {
       this.$store.commit('enableTagSeparation', tag)
@@ -232,86 +248,65 @@ export default {
     li {
       display: flex;
       align-items: center;
-      padding: 0.25rem 0 0.25rem 0.2rem;
+      padding: 0.25rem 0;
+    }
+  }
 
-      a {
-        margin-left: auto;
-        color: #242629;
+  &__options {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    margin-right: 0.5rem;
+    clip-path: polygon(0.25rem 0, calc(100% - 0.25rem) 0, 100% 0.25rem, 100% calc(100% - 0.25rem), calc(100% - 0.25rem) 100%, 0.25rem 100%, 0 calc(100% - 0.25rem), 0 0.25rem);
+
+    &-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      appearance: none;
+      outline: none;
+      box-sizing: border-box;
+      border: none;
+      background: none;
+      margin: 0;
+      padding: 0.4rem 0.5rem;
+      color: #f6f8fa;
+      background: desaturate(#0f3562, 10%);
+      width: 30px;
+
+      .feather {
+        position: relative;
+        z-index: 1;
+      }
+
+      &:hover, &:active, &:focus {
+        background: lighten(#0f3562, 5%);
       }
     }
 
-    label {
-      cursor: pointer;
-      display: flex;
-      align-items: center;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 30px;
+      top: 0;
+      bottom: 0;
+      background: lighten(#0f3562, 10%);
+      z-index: 0;
+      transition: left 0.3s ease-in-out;
+      pointer-events: none;
+    }
 
-      input {
-        display: none;
-      }
+    &--enabled:after {
+      left: 0;
+    }
 
-      @mixin diamond($base-color) {
-        border-top-color: lighten($base-color, 10%);
-        border-left-color: saturate(lighten($base-color, 20%), 10%);
-        border-bottom-color: lighten($base-color, 15%);
-        border-right-color: $base-color;
-      }
+    &--separate:after {
+      left: 30px;
+    }
 
-      .settings__tag-check {
-        display: block;
-        margin-right: 0.5rem;
-        width: 1rem;
-        height: 1rem;
-        background: darken(#F5ECDA, 30%);
-        padding: 0.125rem;
-        box-sizing: border-box;
-        position: relative;
-        transform-origin: 50% 50%;
-        transform: rotate(45deg);
-
-        &:before {
-          display: block;
-          content: '';
-          width: 0.75rem;
-          height: 0.75rem;
-          box-sizing: border-box;
-          border: 0.375rem solid;
-
-          @include diamond(#9dc2ec);
-        }
-
-        &:after {
-          content: '';
-          position: absolute;
-          left: 0.125rem;
-          top: 0.125rem;
-          width: 0.75rem;
-          height: 0.75rem;
-          box-shadow: inset 0 0 0.3rem #21a5ec;
-        }
-
-        &:before, &:after {
-          opacity: 0;
-          transition: border-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
-        }
-      }
-
-      &:hover .settings__tag-check {
-        &:before, &:after {
-          opacity: 0.5;
-        }
-      }
-
-      input:checked + .settings__tag-check {
-        &:before, &:after {
-          opacity: 1;
-        }
-      }
-
-      &:hover input:checked + .settings__tag-check {
-        &:before {
-          @include diamond(#e0efff);
-        }
-      }
+    &--disabled:after {
+      left: 60px;
     }
   }
 

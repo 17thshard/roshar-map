@@ -296,16 +296,25 @@ const mutations = {
     }
     state.details = null
   },
-  toggleTag (state, tag) {
+  enableTag (state, tag) {
     const index = state.filter.tags.indexOf(tag)
 
-    if (index === -1) {
-      state.filter.tags.push(tag)
-    } else {
+    if (index !== -1) {
       state.filter.tags.splice(index, 1)
     }
+
+    mutations.disableTagSeparation(state, tag)
+  },
+  disableTag (state, tag) {
+    if (!state.filter.tags.includes(tag)) {
+      state.filter.tags.push(tag)
+    }
+
+    mutations.disableTagSeparation(state, tag)
   },
   enableTagSeparation (state, tag) {
+    mutations.enableTag(state, tag)
+
     if (!state.filter.separateTags.includes(tag)) {
       state.filter.separateTags.push(tag)
     }
