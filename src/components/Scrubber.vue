@@ -90,12 +90,12 @@ export default {
       return Math.max(92, Object.keys(this.timelines).length * 24 + 32)
     },
     timelines () {
-      const result = this.filter.breakoutTags.reduce((acc, t) => ({ ...acc, [t]: [] }), {})
+      const result = this.filter.separateTags.reduce((acc, t) => ({ ...acc, [t]: [] }), {})
 
       result.all = []
 
       this.events.forEach((event) => {
-        const breakoutPositions = this.filter.breakoutTags.filter(t => event.tags.includes(t))
+        const breakoutPositions = this.filter.separateTags.filter(t => event.tags.includes(t))
 
         breakoutPositions.forEach((t) => {
           result[t].push(event)
@@ -254,7 +254,7 @@ export default {
       this.rightOverflowVisible = container.scrollLeft + container.clientWidth < container.scrollWidth - this.timelineOffset
     },
     formatDate (date) {
-      return date.join('.')
+      return date.filter(n => !Number.isNaN(n)).join('.')
     },
     gotoEvent (dir) {
       const scroll = this.$refs.container.scrollLeft

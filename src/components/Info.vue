@@ -1,5 +1,5 @@
 <template>
-  <section :class="['info', { 'info--active': active }]">
+  <div :class="['info', { 'info--active': active }]">
     <button class="info__button" title="Menu" @click="active = true">
       <MenuIcon size="1x" />
     </button>
@@ -10,15 +10,13 @@
             <XIcon />
           </button>
         </div>
-        <h3>Filters</h3>
       </div>
     </transition>
-  </section>
+  </div>
 </template>
 
 <script>
 import { MenuIcon, XIcon } from 'vue-feather-icons'
-import { mapState } from 'vuex'
 
 export default {
   name: 'Info',
@@ -26,23 +24,6 @@ export default {
   data () {
     return {
       active: false
-    }
-  },
-  computed: {
-    ...mapState(['events', 'filter']),
-    tags () {
-      const set = new Set()
-
-      this.events.forEach((event) => {
-        event.tags.forEach(t => set.add(t))
-      })
-
-      return [...set.values()]
-    }
-  },
-  methods: {
-    toggleTag (tag) {
-      this.$store.commit('toggleTag', tag)
     }
   }
 }

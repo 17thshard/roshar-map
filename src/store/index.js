@@ -297,30 +297,28 @@ const mutations = {
     state.details = null
   },
   toggleTag (state, tag) {
-    if (state.filter.tags === null) {
-      state.filter.tags = [tag]
-    } else {
-      const index = state.filter.tags.indexOf(tag)
-
-      if (index === -1) {
-        state.filter.tags.push(tag)
-      } else {
-        state.filter.tags.splice(index, 1)
-      }
-    }
-
-    if (state.filter.tags.length === 0) {
-      state.filter.tags = null
-    }
-  },
-  toggleTagBreakout (state, tag) {
-    const index = state.filter.breakoutTags.indexOf(tag)
+    const index = state.filter.tags.indexOf(tag)
 
     if (index === -1) {
-      state.filter.breakoutTags.push(tag)
+      state.filter.tags.push(tag)
     } else {
-      state.filter.breakoutTags.splice(index, 1)
+      state.filter.tags.splice(index, 1)
     }
+  },
+  enableTagSeparation (state, tag) {
+    if (!state.filter.separateTags.includes(tag)) {
+      state.filter.separateTags.push(tag)
+    }
+  },
+  disableTagSeparation (state, tag) {
+    const index = state.filter.separateTags.indexOf(tag)
+
+    if (index !== -1) {
+      state.filter.separateTags.splice(index, 1)
+    }
+  },
+  updateSeparateTags (state, tags) {
+    state.filter.separateTags = tags
   }
 }
 
@@ -332,15 +330,15 @@ export default new Vuex.Store({
     activeLocation: null,
     details: null,
     filter: {
-      tags: null,
-      breakoutTags: []
+      tags: [],
+      separateTags: []
     }
   },
   mutations,
   getters: {
     isDisabled (state) {
       return (event) => {
-        return state.filter.tags !== null ? !state.filter.tags.some(t => event.tags.includes(t)) : false
+        return state.filter.tags.some(t => event.tags.includes(t))
       }
     }
   }

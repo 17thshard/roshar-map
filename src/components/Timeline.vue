@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from 'vuex'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'Timeline',
@@ -38,7 +38,6 @@ export default {
     barOffset () {
       return Math.min(...this.events.map(e => e.offset))
     },
-    ...mapState(['filter']),
     ...mapGetters(['isDisabled'])
   }
 }
