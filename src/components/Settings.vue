@@ -6,33 +6,46 @@
     </button>
     <transition name="settings__content">
       <div v-if="active" class="settings__content">
+        <div :class="['settings__bar', { 'settings__bar--active': scrolled }]" />
+
         <button class="settings__close" title="Close Settings" @click="active = false">
           <XIcon />
         </button>
-        <section>
-          <h3>Filters</h3>
-          <template v-for="(tags, category) in tagCategories">
-            <h4 :key="category">
-              {{ $t(`tagCategories.${category}`) }}
-            </h4>
-            <ul :key="`${category}-tags?`" class="settings__tag-list">
-              <li v-for="tag in tags" :key="tag">
-                <div :class="['settings__options', `settings__options--${buildTagState(tag)}`]">
-                  <button class="settings__options-button" title="Enable" @click="enableTag(tag)">
-                    <EyeIcon size="1x" />
-                  </button>
-                  <button class="settings__options-button" title="Display separately" @click="enableTagSeparation(tag)">
-                    <GitBranchIcon size="1x" />
-                  </button>
-                  <button class="settings__options-button" title="Disable" @click="disableTag(tag)">
-                    <EyeOffIcon size="1x" />
-                  </button>
-                </div>
-                {{ $t(`tags.${tag}`) }}
-              </li>
-            </ul>
-          </template>
-        </section>
+
+        <Scrollbar
+          class="settings__scroller"
+          :ops="{
+            vuescroll: { wheelScrollDuration: 400 },
+            bar: { background: '#482d00', opacity: 0.5, size: '0.5rem' },
+            rail: { size: '0.5rem', gutterOfSide: '0' }
+          }"
+          @handle-scroll="onScroll"
+        >
+          <section class="settings__filters" :style="{ paddingBottom: `${separateHeight + 56}px` }">
+            <h3>Filters</h3>
+            <template v-for="(tags, category) in tagCategories">
+              <h4 :key="category">
+                {{ $t(`tagCategories.${category}`) }}
+              </h4>
+              <ul :key="`${category}-tags?`" class="settings__tag-list">
+                <li v-for="tag in tags" :key="tag">
+                  <div :class="['settings__options', `settings__options--${buildTagState(tag)}`]">
+                    <button class="settings__options-button" title="Enable" @click="enableTag(tag)">
+                      <EyeIcon size="1x" />
+                    </button>
+                    <button class="settings__options-button" title="Display separately" @click="enableTagSeparation(tag)">
+                      <GitBranchIcon size="1x" />
+                    </button>
+                    <button class="settings__options-button" title="Disable" @click="disableTag(tag)">
+                      <EyeOffIcon size="1x" />
+                    </button>
+                  </div>
+                  {{ $t(`tags.${tag}`) }}
+                </li>
+              </ul>
+            </template>
+          </section>
+        </Scrollbar>
 
         <section class="settings__separate-timelines-container">
           <h3>
@@ -69,16 +82,18 @@
 </template>
 
 <script>
+import Scrollbar from 'vuescroll/dist/vuescroll-native'
 import Draggable from 'vuedraggable'
 import { EyeIcon, EyeOffIcon, GitBranchIcon, SlidersIcon, XIcon } from 'vue-feather-icons'
 import { mapState } from 'vuex'
 
 export default {
   name: 'Settings',
-  components: { SlidersIcon, XIcon, EyeIcon, EyeOffIcon, GitBranchIcon, Draggable },
+  components: { SlidersIcon, XIcon, EyeIcon, EyeOffIcon, GitBranchIcon, Draggable, Scrollbar },
   data () {
     return {
       active: false,
+      scrolled: false,
       tagCategories: {
         tags: ['general'],
         characters: ['dalinar', 'kaladin', 'shallan'],
@@ -102,6 +117,9 @@ export default {
     }
   },
   methods: {
+    onScroll (event) {
+      this.scrolled = event.process > 0
+    },
     buildTagState (tag) {
       if (this.separateTags.includes(tag)) {
         return 'separate'
@@ -175,7 +193,6 @@ export default {
     background: #F5ECDA url(../assets/paper.png);
     right: 0;
     left: 0;
-    padding: 5rem 1rem 2rem;
     box-sizing: border-box;
     top: 0;
     bottom: 0;
@@ -184,6 +201,8 @@ export default {
     clip-path: circle(100vh at 5.5rem 3.25rem);
     font-size: 14px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 
     &-enter-active, &-leave-active {
       transition: clip-path 0.5s ease-in-out, transform 0.5s ease-in-out;
@@ -238,6 +257,32 @@ export default {
     left: 1.5rem;
     margin-left: -2rem;
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+
+  &__bar {
+    height: 5rem;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.2s ease-in-out;
+
+    &--active {
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  &__scroller {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    min-height: 0;
+    max-height: 100%;
+  }
+
+  &__filters {
+    padding: 0 1rem 2rem;
+    width: 350px;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   &__tag-list {
@@ -329,6 +374,7 @@ export default {
       padding: 1rem 0.5rem 0;
       background: #F5ECDA url(../assets/paper.png);
       box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+      z-index: 2;
     }
   }
 

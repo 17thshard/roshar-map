@@ -237,6 +237,8 @@ export default {
       this.mapMaterial.uniforms.Transition.value = this.transitionValue
       this.textPlane.material.uniforms.Transition.value = this.transitionValue
 
+      document.body.style.cursor = 'initial'
+
       if (this.transitionValue === 0) {
         this.updateTextHighlights()
       }
@@ -264,8 +266,6 @@ export default {
 
       if (hoveredItem !== null) {
         document.body.style.cursor = 'pointer'
-      } else {
-        document.body.style.cursor = 'initial'
       }
 
       this.textActiveProgress = clamp01(this.textActiveProgress + (this.activeLocation !== null ? 0.0 : -0.1))
