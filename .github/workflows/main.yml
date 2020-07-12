@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  default:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo Build started
+
+  build-conditions:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master' && contains(github.event.head_commit.message, '[docker-push]')
+
+    steps:
+      - run: echo Build conditions are met
+
+  build-node:
+    runs-on: ubuntu-latest
+    needs: build-conditions
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Publish app
+        uses: craftech-io/package-action@v3.1.0
+        with:
+          tags: latest
+          access_token: ${{ secrets.GITHUB_TOKEN }}
+
