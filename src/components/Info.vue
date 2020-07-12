@@ -1,9 +1,9 @@
 <template>
-  <div :class="['info', { 'info--active': active }]">
+  <div :class="['info', { 'info--active': active, 'info--leave-active': leaveActive }]">
     <button class="info__button" title="Menu" @click="active = true">
       <MenuIcon size="1x" />
     </button>
-    <transition name="info__content">
+    <transition name="info__content" @before-leave="leaveActive = true" @after-leave="leaveActive = false">
       <div v-if="active" class="info__content">
         <div class="info__logo">
           <button class="info__close" title="Close Menu" @click="active = false">
@@ -23,7 +23,8 @@ export default {
   components: { MenuIcon, XIcon },
   data () {
     return {
-      active: false
+      active: false,
+      leaveActive: false
     }
   }
 }
@@ -32,11 +33,11 @@ export default {
 <style lang="scss">
 .info {
   position: fixed;
-  left: 0;
+  right: 0;
   top: 0;
   bottom: 0;
   pointer-events: none;
-  z-index: 50;
+  z-index: 60;
   width: 350px;
   max-width: 100%;
 
@@ -44,7 +45,7 @@ export default {
     display: flex;
     align-items: center;
     position: absolute;
-    left: 2rem;
+    right: 2rem;
     top: 2rem;
     font-size: 1rem;
     line-height: 1;
@@ -52,12 +53,12 @@ export default {
     outline: none;
     box-sizing: border-box;
     border: none;
-    z-index: 51;
+    z-index: 71;
     background: #F5ECDA;
     border-radius: 2rem;
     padding: 0.75rem 0.75rem;
     cursor: pointer;
-    transition: background 0.2s ease-in-out, opacity 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     color: #242629;
     pointer-events: auto;
     box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.5);
@@ -67,8 +68,20 @@ export default {
     }
   }
 
+  &--active &__button {
+    cursor: default !important;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  &--active, &--leave-active {
+    z-index: 70;
+  }
+
   &__content {
-    z-index: 50;
+    z-index: 61;
     position: absolute;
     background: #F5ECDA url(../assets/paper.png);
     right: 0;
@@ -79,23 +92,19 @@ export default {
     bottom: 0;
     pointer-events: auto;
     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
-    clip-path: circle(100vh at 4rem 3.25rem);
     font-size: 14px;
 
     &-enter-active, &-leave-active {
       transition: clip-path 0.5s ease-in-out, transform 0.5s ease-in-out;
+      z-index: 70;
     }
 
-    &-enter {
-      clip-path: circle(1px at 4rem 3.25rem);
+    &-enter, &-leave-to {
+      clip-path: circle(1px at calc(100% - 3.25rem) 3.25rem);
     }
 
-    &-enter-to {
-      clip-path: circle(100vh at 4rem 3.25rem);
-    }
-
-    &-leave-to {
-      clip-path: circle(1px at 4rem 3.25rem);
+    &-enter-to, &-leave {
+      clip-path: circle(100vh at calc(100% - 3.25rem) 3.25rem);
     }
 
     h3 {
@@ -135,17 +144,6 @@ export default {
 
     &:hover, &:active, &:focus {
       color: #ffad00;
-    }
-  }
-
-  &--active {
-    z-index: 60;
-
-    .info__button {
-      cursor: default !important;
-      box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-      pointer-events: none;
-      opacity: 0;
     }
   }
 }

@@ -192,7 +192,7 @@ export default {
     transition: transform 0.75s ease-in, opacity 0.75s ease-in;
   }
 
-  &-leave-from {
+  &-leave {
     transform: translateX(0);
   }
 
