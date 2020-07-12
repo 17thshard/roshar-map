@@ -303,7 +303,7 @@ export default {
 
   &__image {
     width: 100%;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 50px));
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 14%));
     opacity: 1;
   }
 

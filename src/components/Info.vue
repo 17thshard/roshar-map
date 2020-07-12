@@ -3,12 +3,19 @@
     <button class="info__button" title="Menu" @click="active = true">
       <MenuIcon size="1x" />
     </button>
-    <transition name="info__content" @before-leave="leaveActive = true" @after-leave="leaveActive = false">
-      <div v-if="active" class="info__content">
+    <transition name="info__wrapper" @before-leave="leaveActive = true" @after-leave="leaveActive = false">
+      <div v-if="active" class="info__wrapper">
         <div class="info__logo">
           <button class="info__close" title="Close Menu" @click="active = false">
             <XIcon />
           </button>
+        </div>
+        <div class="info__content">
+          <div class="info__socials">
+            <a class="info__social" href="https://github.com/Palanaeum/roshar-map" target="_blank">
+              <GithubIcon />
+            </a>
+          </div>
         </div>
       </div>
     </transition>
@@ -16,11 +23,11 @@
 </template>
 
 <script>
-import { MenuIcon, XIcon } from 'vue-feather-icons'
+import { GithubIcon, MenuIcon, XIcon } from 'vue-feather-icons'
 
 export default {
   name: 'Info',
-  components: { MenuIcon, XIcon },
+  components: { GithubIcon, MenuIcon, XIcon },
   data () {
     return {
       active: false,
@@ -80,13 +87,12 @@ export default {
     z-index: 70;
   }
 
-  &__content {
+  &__wrapper {
     z-index: 61;
     position: absolute;
     background: #F5ECDA url(../assets/paper.png);
     right: 0;
     left: 0;
-    padding: 2rem 1rem 2rem;
     box-sizing: border-box;
     top: 0;
     bottom: 0;
@@ -116,17 +122,14 @@ export default {
   }
 
   &__logo {
-    position: absolute;
-    left: 0;
-    top: 0;
     width: 100%;
-    height: 200px;
+    padding-bottom: 57%;
     background-color: #1c1d26;
     background-image: url('../assets/roshar_logo.png');
     background-repeat: no-repeat;
     background-size: 90%;
     background-position: 50% 50%;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 50px));
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 14%));
   }
 
   &__close {
@@ -144,6 +147,56 @@ export default {
 
     &:hover, &:active, &:focus {
       color: #ffad00;
+    }
+  }
+
+  &__content {
+    padding: 2rem 1rem 2rem;
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    color: #0f3562;
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid #0f3562;
+    border-radius: 100%;
+    transition: all 0.2s ease-in-out;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      background: #0f3562;
+      transform-origin: 0 100%;
+      z-index: 0;
+      transition: transform 0.2s ease-in-out;
+      transform: scaleY(0);
+    }
+
+    &:hover, &:focus, &:active {
+      color: #f6f8fa;
+
+      &:before {
+        transform: scaleY(1);
+      }
+    }
+
+    .feather {
+      position: relative;
+      z-index: 1;
     }
   }
 }
