@@ -43,16 +43,21 @@ export default {
 
   &__icon {
     position: relative;
-    width: 25%;
     box-sizing: border-box;
     padding: 1rem;
+    width: 600px;
+    max-width: 95%;
+
+    @media (max-height: 640px) {
+      width: calc(100vh - 50px);
+    }
 
     &:before {
       content: '';
       display: block;
       width: 100%;
       background: repeating-linear-gradient(
-          -55deg,
+          -65deg,
           rgba(#cfddf1, 0.5) 0%,
           rgba(#cfddf1, 0.5) 47%,
           rgba(#cfddf1, 1) 50%,
@@ -61,7 +66,7 @@ export default {
       ) 330% 0;
       padding-bottom: 100%;
       clip-path: url(#loading-indicator__clipping);
-      animation: loading-indicator__icon 3s linear infinite;
+      animation: loading-indicator__icon 2s linear infinite;
       background-size: 200% 200%;
     }
 
