@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import baseEvents from '@/store/events.json'
+import locations from '@/store/locations.json'
 
 Vue.use(Vuex)
 
@@ -49,17 +50,9 @@ const events = baseEvents.sort(
     return -1
   }).map((event, index) => ({ ...event, index }))
 
-const locations = {
-  4: {
-    type: 'location',
-    id: 'kharbranth',
-    image: 'kharbranth.jpg'
-  },
-  22: {
-    type: 'location',
-    id: 'kholinar'
-  }
-}
+Object.keys(locations).forEach((id) => {
+  locations[id].type = 'location'
+})
 
 let lastEvent = null
 let runningOffset = 0

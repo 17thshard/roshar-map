@@ -10,8 +10,8 @@
         "stop-display-separately": "No longer display separately",
         "previous-event": "Previous Event",
         "next-event": "Next Event",
-        "previous": "Previous Event",
-        "next": "Next Event"
+        "previous": "Previous",
+        "next": "Next"
     },
     "tagCategories": {
         "tags": "Tags",
@@ -33,5 +33,33 @@
         "shattering": {
             "name": "Shattering of Adonalsium"
         }
+    },
+    "locations": {
+        "alethkar": { "name": "Alethkar" },
+        "jah-keved": { "name": "Jah Keved" },
+        "herdaz": { "name": "Herdaz" },
+        "kharbranth": { "name": "Kharbranth" },
+        "thaylenah": { "name": "Thaylenah" },
+        "azir": { "name": "Azir" },
+        "shinovar": { "name": "Shinovar" },
+        "aimia": { "name": "Aimia" },
+        "iri": { "name": "Iri" },
+        "rira": { "name": "Rira" },
+        "reshi-isles": { "name": "Reshi Isles" },
+        "urithiru": { "name": "Urithiru" },
+        "shattered-plains": { "name": "The Shattered Plains" },
+        "tashikk": { "name": "Tashikk" },
+        "emul": { "name": "Emul" },
+        "tukar": { "name": "Tukar" },
+        "marat": { "name": "Marat" },
+        "liafor": { "name": "Liafor" },
+        "babatharnam": { "name": "Babatharnam" },
+        "marabethia": { "name": "Marabethia" },
+        "purelake": { "name": "Purelake" },
+        "kholinar": { "name": "Kholinar" },
+        "rathalas": { "name": "Rathalas" },
+        "new-natanatan": { "name": "New Natanatan" },
+        "thaylen-city": { "name": "Thaylen City" },
+        "valley": { "name": "The Valley" }
     }
 }

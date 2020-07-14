@@ -125,7 +125,7 @@ export default {
   computed: {
     ...mapState(['details']),
     imageUrl () {
-      return `${process.env.BASE_URL}${this.details.type}s/${this.details.image}`
+      return `${process.env.BASE_URL}img/${this.details.type}s/${this.details.image}`
     }
   },
   mounted () {

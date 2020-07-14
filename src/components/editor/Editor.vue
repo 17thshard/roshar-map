@@ -22,6 +22,10 @@
         <button @click="saveLocations">
           Save
         </button>
+
+        <button @click="exportLocations">
+          Export
+        </button>
       </div>
 
       <div class="editor__file">
@@ -99,15 +103,21 @@
       >
         <input v-model="location.id" type="number" min="1" max="255" aria-label="Area ID">
         <input v-model="location.name" type="text" aria-label="Area name">
-        <button @click="locations.splice(index, 1)">
+        <button @click="deleteLocation(index)">
           Delete
         </button>
       </li>
     </ul>
-    <ul v-else-if="mode === 'events'" class="editor__event-list">
+    <ul v-else-if="mode === 'events'" class="editor__event-list" @click.self="selectedEvent = null">
       <li>
         <button @click="sortEvents">
           Sort
+        </button>
+        <button @click="addEvent">
+          New
+        </button>
+        <button @click="selectedEvent = null">
+          Clear selection
         </button>
       </li>
       <li
@@ -126,14 +136,13 @@
           </span>
         </span>
         <span>{{ event.id }}</span>
-        <button @click.stop="events.splice(index, 1)">
+        <button @click.stop="deleteEvent(index)">
           Delete
         </button>
       </li>
     </ul>
     <EventProperties
       v-if="mode === 'events' && selectedEvent !== null"
-      :key="`${selectedEvent.date.join('.')}.${selectedEvent.tieBreaker}`"
       :event="selectedEvent"
     />
   </div>
@@ -346,6 +355,7 @@ export default {
       const fileReader = new FileReader()
       fileReader.onload = () => {
         this.locations = JSON.parse(fileReader.result)
+        this.selectedLocation = null
         this.mode = 'locations'
       }
       fileReader.readAsText(event.target.files[0])
@@ -356,6 +366,19 @@ export default {
     saveLocations () {
       saveAs(
         new Blob([JSON.stringify(this.locations, undefined, 4)], { type: 'application/json;charset=utf-8' }),
+        'locations-editable.json'
+      )
+    },
+    exportLocations () {
+      const exportLocations = [...this.locations].sort((a, b) => a.id - b.id).reduce((acc, location) => ({
+        ...acc,
+        [location.id]: {
+          id: location.name
+        }
+      }), {})
+
+      saveAs(
+        new Blob([JSON.stringify(exportLocations, undefined, 4)], { type: 'application/json;charset=utf-8' }),
         'locations.json'
       )
     },
@@ -367,6 +390,7 @@ export default {
       const fileReader = new FileReader()
       fileReader.onload = () => {
         this.events = JSON.parse(fileReader.result)
+        this.selectedEvent = null
         this.mode = 'events'
       }
       fileReader.readAsText(event.target.files[0])
@@ -380,6 +404,18 @@ export default {
         'events.json'
       )
     },
+    addEvent () {
+      this.selectedEvent = { id: 'new-event', date: [1170], tags: [], coordinates: { x: 0, y: 0 } }
+      this.events.push(this.selectedEvent)
+    },
+    deleteEvent (index) {
+      this.selectedEvent = null
+      this.events.splice(index, 1)
+    },
+    deleteLocation (index) {
+      this.selectedLocation = null
+      this.locations.splice(index, 1)
+    },
     click (event) {
       if (this.draggedPoint !== null || event.altKey || this.panning || event.button === 1) {
         return
@@ -390,7 +426,7 @@ export default {
 
       if (this.mode === 'events') {
         if (this.selectedEvent !== null) {
-          this.selectedEvent.coordinates = { x, y }
+          this.selectedEvent.coordinates = { x: Number.parseFloat(x.toFixed(1)), y: Number.parseFloat(y.toFixed(1)) }
         }
 
         return
@@ -783,11 +819,17 @@ export default {
       cursor: pointer;
 
       &:first-child {
-        button:first-child {
-          grid-column: 1 / span 3;
+        cursor: default;
+        pointer-events: none;
+        grid-template-columns: auto auto;
+
+        button {
+          pointer-events: auto;
         }
 
-        grid-template-columns: auto auto auto;
+        button:first-child {
+          grid-column: 1 / span 2;
+        }
       }
 
       input[type='text']:first-child {

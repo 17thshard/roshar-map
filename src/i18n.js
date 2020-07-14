@@ -5,9 +5,10 @@ import messages from '@/lang/en.json'
 Vue.use(VueI18n)
 
 export const i18n = new VueI18n({
-  locale: 'en', // set locale
-  fallbackLocale: 'en',
-  messages: { en: messages } // set locale messages
+  locale: 'en-US',
+  fallbackLocale: 'en-US',
+  messages: { en: messages },
+  silentFallbackWarn: true
 })
 
 const loadedLanguages = ['en'] // our default language that is preloaded
@@ -18,15 +19,15 @@ function setI18nLanguage (lang) {
   return lang
 }
 
-export function loadLanguageAsync (lang) {
+export function loadLanguageAsync (lang, locale) {
   // If the same language
-  if (i18n.locale === lang) {
-    return Promise.resolve(setI18nLanguage(lang))
+  if (i18n.locale === locale) {
+    return Promise.resolve(setI18nLanguage(locale))
   }
 
-  // If the language was already loaded
-  if (loadedLanguages.includes(lang)) {
-    return Promise.resolve(setI18nLanguage(lang))
+  // If the locale was already loaded
+  if (loadedLanguages.includes(locale)) {
+    return Promise.resolve(setI18nLanguage(locale))
   }
 
   // If the language hasn't been loaded yet
@@ -34,7 +35,7 @@ export function loadLanguageAsync (lang) {
     (messages) => {
       i18n.setLocaleMessage(lang, messages.default)
       loadedLanguages.push(lang)
-      return setI18nLanguage(lang)
+      return setI18nLanguage(locale)
     }
   )
 }

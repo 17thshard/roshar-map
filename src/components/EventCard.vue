@@ -32,7 +32,7 @@ export default {
   },
   computed: {
     imageBaseUrl () {
-      return `${process.env.BASE_URL}events`
+      return `${process.env.BASE_URL}img/events`
     }
   },
   methods: {

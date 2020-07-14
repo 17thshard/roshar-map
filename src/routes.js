@@ -7,15 +7,31 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   routes: [
     {
-      path: '/:lang'
+      path: '/:locale'
     }
   ]
 })
 
-router.beforeEach((to, from, next) => {
-  const lang = to.params.lang || 'en'
+async function loadLanguage (locale) {
+  const parts = locale.split('-', 3)
 
-  loadLanguageAsync(lang).then(() => next())
+  for (let i = 3; i > 0; i--) {
+    try {
+      await loadLanguageAsync(parts.slice(0, i).join('-'), locale)
+
+      return
+    } catch {
+      // Only fail on the very last try
+    }
+  }
+
+  throw new Error('Could not find any locale')
+}
+
+router.beforeEach((to, from, next) => {
+  const locale = to.params.locale || 'en'
+
+  loadLanguage(locale).then(() => next()).catch(() => next('/en-US'))
 })
 
 export { router }

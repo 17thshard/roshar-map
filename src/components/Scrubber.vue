@@ -101,7 +101,7 @@ export default {
           result[t].push(event)
         })
 
-        if (breakoutPositions.length < event.tags.length) {
+        if (breakoutPositions.length < event.tags.length || event.tags.length === 0) {
           result.all.push(event)
         }
       })
@@ -134,6 +134,7 @@ export default {
 
           years.push(
             ...[...new Set(yearsBetween)]
+              .filter(y => y !== year && y !== lastYear)
               .map(y => ({
                 year: y,
                 offset: lerp(lastOffset, event.offset, (y - lastYear) / diff)
@@ -145,7 +146,7 @@ export default {
           years.push({ year, offset: event.offset })
         }
 
-        lastYear = event.date[0]
+        lastYear = year
         lastOffset = event.offset
       })
 
@@ -423,6 +424,7 @@ export default {
       max-width: 1rem;
       box-sizing: border-box;
       transition: color 0.5s ease-in-out, padding 0.5s ease-in-out, max-width 0.5s ease-in-out;
+      white-space: nowrap;
 
       &:before {
         position: absolute;

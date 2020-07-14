@@ -154,7 +154,12 @@ export default {
   },
   computed: {
     imageBaseUrl () {
-      return `${process.env.BASE_URL}events`
+      return `${process.env.BASE_URL}img/events`
+    }
+  },
+  watch: {
+    event (newEvent) {
+      this.dateText = newEvent.date.join('.')
     }
   },
   methods: {

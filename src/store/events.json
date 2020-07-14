@@ -30,6 +30,17 @@
         }
     },
     {
+        "id": "founding-knights-radiant",
+        "date": [
+            -6000
+        ],
+        "tags": [],
+        "coordinates": {
+            "x": 486.1,
+            "y": 317.6
+        }
+    },
+    {
         "id": "last-desolation",
         "date": [
             -3300
@@ -103,6 +114,50 @@
         }
     },
     {
+        "id": "conquest-of-alethkar",
+        "date": [
+            1139
+        ],
+        "tags": [],
+        "coordinates": {
+            "x": 720.9,
+            "y": 276.8
+        }
+    },
+    {
+        "id": "dalinar-wins-oathbringer",
+        "date": [
+            1141
+        ],
+        "tags": [],
+        "coordinates": {
+            "x": 727,
+            "y": 304.8
+        }
+    },
+    {
+        "id": "gavilar-coronation",
+        "date": [
+            1145
+        ],
+        "tags": [],
+        "coordinates": {
+            "x": 738.7,
+            "y": 250.3
+        }
+    },
+    {
+        "id": "adolin-birth",
+        "date": [
+            1150
+        ],
+        "tags": [],
+        "coordinates": {
+            "x": 738.7,
+            "y": 250.3
+        }
+    },
+    {
         "id": "kaladin-birth",
         "date": [
             1153
@@ -139,6 +194,17 @@
         }
     },
     {
+        "id": "surgeon-training-begins",
+        "date": [
+            1162
+        ],
+        "tags": [],
+        "coordinates": {
+            "x": 734.7,
+            "y": 196.8
+        }
+    },
+    {
         "id": "evi-death",
         "date": [
             1163
@@ -150,6 +216,90 @@
         "coordinates": {
             "x": 727,
             "y": 305
+        }
+    },
+    {
+        "id": "szeth-named-truthless",
+        "date": [
+            1166,
+            3
+        ],
+        "tags": [],
+        "coordinates": {
+            "x": 293.2,
+            "y": 263.9
+        }
+    },
+    {
+        "id": "discovery-of-parshendi",
+        "date": [
+            1166,
+            8
+        ],
+        "tags": [],
+        "coordinates": {
+            "x": 754.2,
+            "y": 352.1
+        }
+    },
+    {
+        "id": "roshone-arrival",
+        "date": [
+            1166,
+            10
+        ],
+        "tags": [],
+        "coordinates": {
+            "x": 734.7,
+            "y": 196.8
+        }
+    },
+    {
+        "id": "shallan-kills-mother",
+        "date": [
+            1167,
+            9
+        ],
+        "tags": [],
+        "coordinates": {
+            "x": 627.5,
+            "y": 256.1
+        }
+    },
+    {
+        "id": "gavilar-assassination",
+        "date": [
+            1167,
+            10
+        ],
+        "tags": [],
+        "coordinates": {
+            "x": 738.6,
+            "y": 250.3
+        }
+    },
+    {
+        "id": "dalinar-nightwatcher",
+        "date": [
+            1168,
+            7
+        ],
+        "tags": [],
+        "coordinates": {
+            "x": 484.9,
+            "y": 332.6
+        }
+    },
+    {
+        "id": "kaladin-joins-army",
+        "date": [
+            1168,
+            10
+        ],
+        "tags": [],
+        "coordinates": {
+            "x": 734.7,
+            "y": 196.8
         }
     },
     {
@@ -198,6 +348,54 @@
         }
     },
     {
+        "id": "kaladin-kills-helaran",
+        "date": [
+            1172,
+            9
+        ],
+        "tags": [],
+        "coordinates": {
+            "x": 704.6,
+            "y": 208.8
+        }
+    },
+    {
+        "id": "shallan-kills-father",
+        "date": [
+            1172,
+            10
+        ],
+        "tags": [],
+        "coordinates": {
+            "x": 627.5,
+            "y": 256.1
+        }
+    },
+    {
+        "id": "shallan-arrives-in-kharbranth",
+        "date": [
+            1173,
+            6
+        ],
+        "tags": [],
+        "coordinates": {
+            "x": 577.9,
+            "y": 375.4
+        }
+    },
+    {
+        "id": "taravangian-acquires-oathstone",
+        "date": [
+            1173,
+            7
+        ],
+        "tags": [],
+        "coordinates": {
+            "x": 589.2,
+            "y": 286.3
+        }
+    },
+    {
         "id": "the-gang-is-in-shadesmar",
         "date": [
             1174
@@ -221,61 +419,10 @@
         "tags": [
             "dalinar"
         ],
-        "perpendicularity": false,
-        "coordinates": {
-            "x": 597.5,
-            "y": 419.3
-        },
-        "tieBreaker": 0
-    },
-    {
-        "id": "dalinar-opens-honors-perpendicularity",
-        "date": [
-            1174,
-            1
-        ],
-        "tags": [
-            "dalinar"
-        ],
         "perpendicularity": true,
         "coordinates": {
             "x": 597.5,
             "y": 419.3
-        },
-        "tieBreaker": 1
-    },
-    {
-        "id": "dalinar-opens-honors-perpendicularity",
-        "date": [
-            1174,
-            1
-        ],
-        "tags": [
-            "dalinar"
-        ],
-        "shadesmar": true,
-        "perpendicularity": false,
-        "coordinates": {
-            "x": 597.5,
-            "y": 419.3
-        },
-        "tieBreaker": 2
-    },
-    {
-        "id": "dalinar-opens-honors-perpendicularity",
-        "date": [
-            1174,
-            1
-        ],
-        "tags": [
-            "dalinar"
-        ],
-        "shadesmar": true,
-        "perpendicularity": true,
-        "coordinates": {
-            "x": 597.5,
-            "y": 419.3
-        },
-        "tieBreaker": 3
+        }
     }
 ]

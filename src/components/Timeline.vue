@@ -4,7 +4,7 @@
     <template v-for="event in events">
       <button
         :key="event.id"
-        :title="event.name"
+        :title="$t(`events.${event.id}.name`)"
         :class="['timeline__event', { 'timeline__event--active': activeEvent !== null && activeEvent.id === event.id }]"
         :style="{ left: `${event.offset + offset}px` }"
         :disabled="isDisabled(event)"

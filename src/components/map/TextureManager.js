@@ -13,7 +13,7 @@ export default class TextureManager {
   }
 
   buildPath (prefix, name) {
-    return `${process.env.BASE_URL}textures/${prefix}${name}.${this.webpSupported ? 'webp' : 'png'}`
+    return `${process.env.BASE_URL}img/textures/${prefix}${name}.${this.webpSupported ? 'webp' : 'png'}`
   }
 
   load (textures) {
