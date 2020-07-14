@@ -1,8 +1,8 @@
 <template>
   <div :class="['details', { 'details--image': details.image !== undefined }]">
     <div :class="['details__bar', { 'details__bar--visible': showBar }]">
-      <h2>{{ details.title }}</h2>
-      <button class="details__close" title="Close" @click="$store.commit('closeDetails')">
+      <h2>{{ $t(`${details.type}s.${details.id}.name`) }}</h2>
+      <button class="details__close" :title="$t('ui.close')" @click="$store.commit('closeDetails')">
         <XIcon />
       </button>
     </div>
@@ -15,10 +15,10 @@
       }"
     >
       <div class="details__content">
-        <img v-if="details.image !== undefined" class="details__image" :src="imageUrl" :alt="details.title">
+        <img v-if="details.image !== undefined" class="details__image" :src="imageUrl" :alt="$t(`${details.type}s.${details.id}.name`)">
         <div class="details__text">
           <div ref="intersectionGuard" class="details__intersection-guard" />
-          <h2>{{ details.title }}</h2>
+          <h2>{{ $t(`${details.type}s.${details.id}.name`) }}</h2>
           <p>
             Kharbranth, City of Bells, is an independent city-state on Roshar, ruled by King Taravangian. It is one of the five Vorin
             nations

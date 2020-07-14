@@ -1,10 +1,46 @@
 <template>
   <div class="editor">
-    <svg
+    <div class="editor__menu">
+      <img src="@/assets/roshar_logo.png" alt="Logo">
+      Mode:
+      <label for="editor__mode--locations">
+        <input id="editor__mode--locations" v-model="mode" type="radio" value="locations">
+        Locations
+      </label>
+      <label for="editor__mode--events">
+        <input id="editor__mode--events" v-model="mode" type="radio" value="events">
+        Events
+      </label>
+
+      <div class="editor__file">
+        <label for="editor__file--locations">
+          Locations file:
+        </label>
+
+        <input id="editor__file--locations" type="file" @change="loadLocations">
+
+        <button @click="saveLocations">
+          Save
+        </button>
+      </div>
+
+      <div class="editor__file">
+        <label for="editor__file--events">
+          Events file:
+        </label>
+
+        <input id="editor__file--events" type="file" @change="loadEvents">
+
+        <button @click="saveEvents">
+          Save
+        </button>
+      </div>
+    </div>
+    <div
       ref="surface"
-      :style="{ transform: `scale(${zoom}, ${zoom}) translate(${-offset.x}px, ${offset.y}px)`, '--zoom': zoom }"
       class="editor__surface"
-      @click="edit"
+      :style="{ transform: `scale(${zoom}, ${zoom}) translate(${-offset.x}px, ${offset.y}px)`, '--zoom': zoom }"
+      @click="click"
       @mousedown="startPan"
       @mousemove="drag"
       @mouseup="endDrag"
@@ -12,69 +48,133 @@
       @mousewheel="onZoom"
       @DOMMouseScroll="onZoom"
     >
-      <template
-        v-for="(polygon, index) in polygons"
-      >
-        <polygon
-          :key="`polygon${index}`"
-          :points="buildPolygonPoints(polygon)"
-          :class="selectedPolygon === polygon ? 'editor__surface-polygon--selected' : undefined"
-          @click="clickPolygon($event, polygon, index)"
-        />
-        <circle
-          v-for="(point, pointIndex) in polygon.points"
-          :key="`polygon${index}-point${pointIndex}`"
-          :cx="point.x / xScale"
-          :cy="point.y / yScale"
-          :class="newPolygon === polygon && pointIndex === 0 ? 'editor__surface-point--first' : undefined"
-          :r="5 / zoom"
-          @click="clickPoint($event, polygon, index, pointIndex)"
-          @mousedown="startDrag($event, point)"
-        />
-      </template>
-    </svg>
+      <svg v-if="mode === 'locations'">
+        <template
+          v-for="(polygon, index) in locations"
+        >
+          <polygon
+            :key="`polygon${index}`"
+            :points="buildPolygonPoints(polygon)"
+            :class="selectedLocation === polygon ? 'editor__surface-polygon--selected' : undefined"
+            @click="clickPolygon($event, polygon, index)"
+          />
+          <circle
+            v-for="(point, pointIndex) in polygon.points"
+            :key="`polygon${index}-point${pointIndex}`"
+            :cx="point.x / xScale"
+            :cy="point.y / yScale"
+            :class="newLocation === polygon && pointIndex === 0 ? 'editor__surface-point--first' : undefined"
+            :r="5 / zoom"
+            @click="clickPoint($event, polygon, index, pointIndex)"
+            @mousedown="startDrag($event, point)"
+          />
+        </template>
+      </svg>
+      <div
+        v-if="mode === 'events' && selectedEvent !== null"
+        class="editor__selected-event"
+        :style="{ left: `${selectedEvent.coordinates.x / xScale}px`, top: `${selectedEvent.coordinates.y / yScale}px` }"
+      />
+    </div>
     <canvas ref="referenceCanvas" class="editor__reference" width="1024" height="512" />
-    <ul class="editor__list">
+    <ul v-if="mode === 'locations'" class="editor__location-list">
       <li>
         <button @click="sortPolygonsById">
           Sort by ID
         </button>
-        <button @click="renderPng(polygons, 'map_text')">
+        <button @click="renderPng(locations, 'map_text')">
           Save LQ
         </button>
-        <button @click="renderPng(polygons, 'hq_map_text')">
+        <button @click="renderPng(locations, 'hq_map_text')">
           Save HQ
         </button>
-        <button @click="renderPng(polygons)">
+        <button @click="renderPng(locations)">
           Save hover
         </button>
       </li>
       <li
-        v-for="(polygon, index) in polygons"
-        :key="`polygon${index}`"
-        :class="selectedPolygon === polygon ? 'editor__list-item--selected' : undefined"
+        v-for="(location, index) in locations"
+        :key="`location${index}`"
+        :class="selectedLocation === location ? 'editor__location-list-item--selected' : undefined"
       >
-        <input v-model="polygon.id" type="number" min="1" max="255" aria-label="Area ID">
-        <input v-model="polygon.name" type="text" aria-label="Area name">
+        <input v-model="location.id" type="number" min="1" max="255" aria-label="Area ID">
+        <input v-model="location.name" type="text" aria-label="Area name">
+        <button @click="locations.splice(index, 1)">
+          Delete
+        </button>
       </li>
     </ul>
+    <ul v-else-if="mode === 'events'" class="editor__event-list">
+      <li>
+        <button @click="sortEvents">
+          Sort
+        </button>
+      </li>
+      <li
+        v-for="(event, index) in events"
+        :key="`event${index}`"
+        :class="selectedEvent === event ? 'editor__event-list-item--selected' : undefined"
+        @click="selectedEvent = event"
+      >
+        <span class="editor__event-list-date">
+          <span class="editor__event-list-date-year">
+            {{ event.date[0] }}
+          </span>
+          {{ event.date.length > 1 ? '.' : '' }}
+          <span v-if="event.date.length > 1" class="editor__event-list-date-rest">
+            {{ event.date.slice(1).join('.') }}
+          </span>
+        </span>
+        <span>{{ event.id }}</span>
+        <button @click.stop="events.splice(index, 1)">
+          Delete
+        </button>
+      </li>
+    </ul>
+    <EventProperties
+      v-if="mode === 'events' && selectedEvent !== null"
+      :key="`${selectedEvent.date.join('.')}.${selectedEvent.tieBreaker}`"
+      :event="selectedEvent"
+    />
   </div>
 </template>
 
 <script>
-import { Mesh, OrthographicCamera, PlaneBufferGeometry, Scene, ShaderMaterial, WebGLRenderer } from 'three'
+/* eslint-disable no-param-reassign */
+
+import { Mesh, OrthographicCamera, PlaneBufferGeometry, Scene, ShaderMaterial, Vector2, WebGLRenderer } from 'three'
+import mapFragmentShader from '@/components/map/mapFragmentShader'
 import textFragmentShader from '@/components/editor/editorTextFragmentShader'
-import TextureManager from '@/components/map/TextureManager.js'
+import TextureManager from '@/components/map/TextureManager'
+import EventProperties from '@/components/editor/EventProperties.vue'
+
+function saveAs (blob, name) {
+  const a = document.createElement('a')
+
+  a.download = name
+  a.rel = 'noopener' // tabnabbing
+
+  // Support blobs
+  a.href = URL.createObjectURL(blob)
+  setTimeout(function () {
+    URL.revokeObjectURL(a.href)
+  }, 4e4) // 40s
+  setTimeout(function () {
+    a.click()
+  }, 0)
+}
 
 export default {
   name: 'Editor',
+  components: { EventProperties },
   data () {
-    const polygons = window.localStorage.editorPolygons !== undefined ? JSON.parse(window.localStorage.editorPolygons) : []
-
     return {
-      polygons,
-      newPolygon: null,
-      selectedPolygon: null,
+      mode: 'events',
+      locations: [],
+      events: [],
+      newLocation: null,
+      selectedLocation: null,
+      selectedEvent: null,
       draggedPoint: null,
       zoom: 1,
       offset: { x: 0, y: 0 },
@@ -85,12 +185,6 @@ export default {
     }
   },
   watch: {
-    polygons: {
-      handler (value) {
-        window.localStorage.editorPolygons = JSON.stringify(value)
-      },
-      deep: true
-    },
     zoom (value) {
       this.camera.zoom = value
       this.camera.updateProjectionMatrix()
@@ -107,6 +201,7 @@ export default {
     this.renderer = new WebGLRenderer({ antialias: false, alpha: true })
     this.renderer.setPixelRatio(window.devicePixelRatio)
     this.renderer.setSize(window.innerWidth, window.innerHeight)
+    this.renderer.setClearColor(0x000000)
     this.renderer.sortObjects = false
 
     this.textureManager = new TextureManager(this.renderer)
@@ -128,6 +223,10 @@ export default {
   methods: {
     loadTextures () {
       const textures = {
+        map_bg: {},
+        map: { hqAvailable: true },
+        shadesmar_map_bg: {},
+        transition: {},
         map_text: { hqAvailable: true },
         shadesmar_map_text: { hqAvailable: true }
       }
@@ -145,6 +244,33 @@ export default {
       )
 
       const geo = new PlaneBufferGeometry(2, 2, 1, 1)
+
+      const mapMaterial = new ShaderMaterial({
+        // language=GLSL
+        vertexShader: `
+          varying vec2 vUv;
+
+          void main() {
+            vUv = uv;
+
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position * vec3(512, 256, 0), 1.0);
+          }
+        `,
+        fragmentShader: mapFragmentShader,
+        uniforms: {
+          BgTexture: { value: textures.map_bg },
+          OutlineTexture: { value: textures.map },
+          ShadesmarBgTexture: { value: textures.shadesmar_map_bg },
+          TransitionTexture: { value: textures.transition },
+          Transition: { value: 0 },
+          PerpTransition: { value: 0 },
+          PerpLocation: { value: new Vector2() },
+          PerpPeriod: { value: 3.05355 },
+          Time: { value: 0 }
+        },
+        transparent: true,
+        depthTest: false
+      })
 
       const textMaterial = new ShaderMaterial({
         // language=GLSL
@@ -166,15 +292,33 @@ export default {
         depthTest: false
       })
 
+      this.mapPlane = new Mesh(geo, mapMaterial)
+      this.mapPlane.position.z = 0
+      this.mapPlane.frustumCulled = false
+
       this.textPlane = new Mesh(geo, textMaterial)
       this.textPlane.position.z = 0
       this.textPlane.frustumCulled = false
 
       this.scene = new Scene()
-      this.scene.add(this.textPlane)
+      this.scene.add(this.mapPlane, this.textPlane)
     },
-    update () {
+    update (timestamp) {
       this.resizeCanvasToDisplaySize()
+
+      this.mapPlane.material.uniforms.Time.value = timestamp / 1000
+
+      if (this.selectedEvent !== null) {
+        this.mapPlane.material.uniforms.Transition.value = this.selectedEvent.shadesmar ? 1 : 0
+        this.mapPlane.material.uniforms.PerpTransition.value = this.selectedEvent.perpendicularity ? 1 : 0
+        this.mapPlane.material.uniforms.PerpLocation.value.set(
+          this.selectedEvent.coordinates.x - 512,
+          256 - this.selectedEvent.coordinates.y
+        )
+      } else {
+        this.mapPlane.material.uniforms.Transition.value = 0
+        this.mapPlane.material.uniforms.PerpTransition.value = 0
+      }
 
       this.renderer.render(this.scene, this.camera)
       this.latestAnimationFrame = requestAnimationFrame(this.update)
@@ -194,26 +338,77 @@ export default {
         // update any render target sizes here
       }
     },
-    edit (event) {
+    loadLocations (event) {
+      if (event.target.files.length === 0) {
+        return
+      }
+
+      const fileReader = new FileReader()
+      fileReader.onload = () => {
+        this.locations = JSON.parse(fileReader.result)
+        this.mode = 'locations'
+      }
+      fileReader.readAsText(event.target.files[0])
+
+      // eslint-disable-next-line no-param-reassign
+      event.target.value = ''
+    },
+    saveLocations () {
+      saveAs(
+        new Blob([JSON.stringify(this.locations, undefined, 4)], { type: 'application/json;charset=utf-8' }),
+        'locations.json'
+      )
+    },
+    loadEvents (event) {
+      if (event.target.files.length === 0) {
+        return
+      }
+
+      const fileReader = new FileReader()
+      fileReader.onload = () => {
+        this.events = JSON.parse(fileReader.result)
+        this.mode = 'events'
+      }
+      fileReader.readAsText(event.target.files[0])
+
+      // eslint-disable-next-line no-param-reassign
+      event.target.value = ''
+    },
+    saveEvents () {
+      saveAs(
+        new Blob([JSON.stringify(this.events, undefined, 4)], { type: 'application/json;charset=utf-8' }),
+        'events.json'
+      )
+    },
+    click (event) {
       if (this.draggedPoint !== null || event.altKey || this.panning || event.button === 1) {
         return
       }
 
       const { clientX, clientY, shiftKey } = event
       const { x, y } = this.transform(clientX, clientY)
-      if (this.newPolygon !== null) {
-        this.newPolygon.points.push({ x, y })
+
+      if (this.mode === 'events') {
+        if (this.selectedEvent !== null) {
+          this.selectedEvent.coordinates = { x, y }
+        }
+
+        return
+      }
+
+      if (this.newLocation !== null) {
+        this.newLocation.points.push({ x, y })
 
         if (shiftKey) {
-          this.newPolygon = null
+          this.newLocation = null
         }
-      } else if (this.selectedPolygon !== null && shiftKey) {
-        this.selectedPolygon.points.push({ x, y })
-      } else if (this.selectedPolygon !== null) {
-        this.selectedPolygon = null
+      } else if (this.selectedLocation !== null && shiftKey) {
+        this.selectedLocation.points.push({ x, y })
+      } else if (this.selectedLocation !== null) {
+        this.selectedLocation = null
       } else {
-        this.newPolygon = { name: 'New Area', id: 1, points: [{ x, y }] }
-        this.polygons.push(this.newPolygon)
+        this.newLocation = { name: 'New Area', id: Math.max(...this.locations.map(l => l.id)), points: [{ x, y }] }
+        this.locations.push(this.newLocation)
       }
     },
     clickPolygon (event, polygon, index) {
@@ -222,23 +417,23 @@ export default {
       }
 
       if (event.ctrlKey) {
-        this.polygons.splice(index, 1)
+        this.locations.splice(index, 1)
 
-        if (polygon === this.selectedPolygon) {
-          this.selectedPolygon = null
+        if (polygon === this.selectedLocation) {
+          this.selectedLocation = null
         }
 
-        if (polygon === this.newPolygon) {
-          this.newPolygon = null
+        if (polygon === this.newLocation) {
+          this.newLocation = null
         }
       }
 
-      if (this.newPolygon !== null) {
+      if (this.newLocation !== null) {
         return
       }
 
       if (!event.ctrlKey) {
-        this.selectedPolygon = polygon
+        this.selectedLocation = polygon
       }
 
       event.preventDefault()
@@ -249,20 +444,20 @@ export default {
         return
       }
 
-      if (!event.ctrlKey && polygon === this.newPolygon && pointIndex === 0) {
-        this.newPolygon = null
+      if (!event.ctrlKey && polygon === this.newLocation && pointIndex === 0) {
+        this.newLocation = null
       } else if (event.ctrlKey) {
         polygon.points.splice(pointIndex, 1)
 
         if (polygon.points.length === 0) {
-          this.polygons.splice(polygonIndex, 1)
+          this.locations.splice(polygonIndex, 1)
 
-          if (this.newPolygon === polygon) {
-            this.newPolygon = null
+          if (this.newLocation === polygon) {
+            this.newLocation = null
           }
 
-          if (this.selectedPolygon === polygon) {
-            this.selectedPolygon = null
+          if (this.selectedLocation === polygon) {
+            this.selectedLocation = null
           }
         }
       }
@@ -271,7 +466,7 @@ export default {
       event.stopPropagation()
     },
     startDrag (event, point) {
-      if (this.newPolygon !== null || event.altKey || event.button === 1) {
+      if (this.newLocation !== null || event.altKey || event.button === 1) {
         return
       }
 
@@ -326,8 +521,39 @@ export default {
         y: ((this.$refs.surface.clientHeight / 2 + (y - this.$refs.surface.clientHeight / 2) / this.zoom) - this.offset.y) * this.yScale
       }
     },
+    sortEvents () {
+      this.events.sort(
+        (a, b) => {
+          let j = 0
+
+          for (let i = 0; i < a.date.length; i++) {
+            if (j === b.date.length - 1 && b.date[j] !== a.date[i]) {
+              return a.date[i] - b.date[j]
+            }
+
+            if (a.date[i] !== b.date[j]) {
+              return a.date[i] - b.date[j]
+            }
+
+            j += 1
+          }
+
+          if (j !== b.date.length) {
+            return -1
+          }
+
+          if (a.tieBreaker !== undefined && b.tieBreaker !== undefined) {
+            return a.tieBreaker - b.tieBreaker
+          } else if (a.tieBreaker !== undefined) {
+            return 1
+          }
+
+          return -1
+        }
+      )
+    },
     sortPolygonsById () {
-      this.polygons.sort((a, b) => a.id - b.id)
+      this.locations.sort((a, b) => a.id - b.id)
     },
     async renderPng (polygons, base) {
       const { width, height, data: baseData } = base !== undefined
@@ -399,6 +625,47 @@ export default {
   right: 0;
   left: 0;
   padding-bottom: 50%;
+  font-family: sans-serif;
+
+  &__menu {
+    position: absolute;
+    top: 0;
+    height: 100px;
+    left: 0;
+    right: 0;
+    background: #848d97;
+    z-index: 11;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    padding: 1rem 0.5rem;
+    display: flex;
+    align-items: center;
+
+    img {
+      max-height: 100%;
+      margin-right: 0.5rem;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+
+      input {
+        padding: 0;
+        margin: 0 0.25rem 0 0.5rem;
+      }
+    }
+  }
+
+  &__file {
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+
+    label {
+      margin-right: 0.5rem;
+    }
+  }
 
   canvas {
     width: 100% !important;
@@ -417,6 +684,11 @@ export default {
     z-index: 1;
     position: absolute;
     transform-origin: 50% 50%;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
 
     polygon {
       stroke: #0f3562;
@@ -453,22 +725,24 @@ export default {
     }
   }
 
-  &__list {
+  &__location-list {
     list-style-type: none;
     position: absolute;
-    top: 0;
+    top: 100px;
     left: 0;
     bottom: 0;
     width: 350px;
-    background: #ccc;
+    background: #848d97;
     overflow-y: auto;
     margin: 0;
-    padding: 0;
     z-index: 10;
+    box-sizing: border-box;
+    padding: 1rem 0 0;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
 
     li {
       display: grid;
-      grid-template-columns: auto 1fr;
+      grid-template-columns: auto 1fr auto;
       grid-gap: 0.5rem;
       padding: 0.5rem;
 
@@ -486,12 +760,93 @@ export default {
     }
   }
 
+  &__event-list {
+    list-style-type: none;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    bottom: 0;
+    width: 350px;
+    background: #848d97;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    margin: 0;
+    z-index: 10;
+    box-sizing: border-box;
+    padding: 1rem 0 0;
+
+    li {
+      display: grid;
+      grid-template-columns: 70px minmax(0, 1fr) auto;
+      grid-gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+
+      &:first-child {
+        button:first-child {
+          grid-column: 1 / span 3;
+        }
+
+        grid-template-columns: auto auto auto;
+      }
+
+      input[type='text']:first-child {
+        width: 50px;
+      }
+    }
+
+    &-item--selected {
+      color: #fafafa;
+      background: #0f3562;
+    }
+
+    &-date {
+      display: flex;
+
+      &-year {
+        width: 50px;
+        text-align: right;
+      }
+
+      &-rest {
+        text-align: left;
+      }
+    }
+  }
+
+  &__selected-event {
+    position: absolute;
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-left: -0.375rem;
+    margin-top: -0.375rem;
+    background: red;
+    box-sizing: border-box;
+    border-radius: 100%;
+  }
+
   canvas.editor__reference {
     position: absolute;
     bottom: 0;
     right: 0;
     width: 1024px !important;
     height: 512px !important;
+  }
+
+  &__input--invalid {
+    outline: 2px solid red !important;
+  }
+
+  .event-properties {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    margin: 0;
+    z-index: 10;
+    background: #848d97;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
   }
 }
 </style>

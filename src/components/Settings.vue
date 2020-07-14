@@ -2,14 +2,14 @@
   <div :class="['settings', { 'settings--active': active }]">
     <button class="settings__button" @click="open">
       <SlidersIcon size="1x" />
-      Filters
+      {{ $t('ui.filters') }}
     </button>
     <transition name="settings__content">
       <div v-if="active" class="settings__content">
         <div :class="['settings__bar', { 'settings__bar--active': scrolled }]">
           <h2>Filters</h2>
 
-          <button class="settings__close" title="Close Settings" @click="active = false">
+          <button class="settings__close" :title="$t('ui.close')" @click="active = false">
             <XIcon />
           </button>
         </div>
@@ -31,13 +31,13 @@
               <ul :key="`${category}-tags?`" class="settings__tag-list">
                 <li v-for="tag in tags" :key="tag">
                   <div :class="['settings__options', `settings__options--${buildTagState(tag)}`]">
-                    <button class="settings__options-button" title="Enable" @click="enableTag(tag)">
+                    <button class="settings__options-button" :title="$t('ui.enable')" @click="enableTag(tag)">
                       <EyeIcon size="1x" />
                     </button>
-                    <button class="settings__options-button" title="Display separately" @click="enableTagSeparation(tag)">
+                    <button class="settings__options-button" :title="$t('ui.display-separately')" @click="enableTagSeparation(tag)">
                       <GitBranchIcon size="1x" />
                     </button>
-                    <button class="settings__options-button" title="Disable" @click="disableTag(tag)">
+                    <button class="settings__options-button" :title="$t('ui.disable')" @click="disableTag(tag)">
                       <EyeOffIcon size="1x" />
                     </button>
                   </div>
@@ -50,7 +50,7 @@
 
         <section class="settings__separate-timelines-container">
           <h3>
-            Separate timelines
+            {{ $t('ui.separate-timelines') }}
           </h3>
           <Draggable
             v-model="separateTags"
@@ -70,7 +70,11 @@
               <li v-for="tag in separateTags" :key="tag" class="settings__separate-timeline">
                 <span class="settings__separate-timeline-drag-handle" />
                 {{ $t(`tags.${tag}`) }}
-                <button class="settings__separate-timeline-delete" title="No longer display separately" @click="disableTagSeparation(tag)">
+                <button
+                  class="settings__separate-timeline-delete"
+                  :title="$t('ui.stop-display-separately')"
+                  @click="disableTagSeparation(tag)"
+                >
                   <XIcon />
                 </button>
               </li>
@@ -98,7 +102,7 @@ export default {
       tagCategories: {
         tags: ['general'],
         characters: ['dalinar', 'kaladin', 'shallan'],
-        books: ['wok', 'wor', 'ob', 'ed', 'row']
+        books: ['wok', 'wor', 'ed', 'ob', 'row']
       },
       draggingSeparates: false
     }

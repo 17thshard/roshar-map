@@ -12,7 +12,7 @@
         class="event-card__image"
       />
       <h2 class="event-card__name">
-        {{ event.name }}
+        {{ $t(`events.${event.id}.name`) }}
       </h2>
       <div class="event-card__text">
         Event description <a href="#" @click.prevent="showDetails">Read more</a>
@@ -42,11 +42,11 @@ export default {
       }
 
       if (image.offset !== undefined) {
-        styles.backgroundPosition = `${image.offset.x} ${image.offset.y}`
+        styles.backgroundPosition = `${image.offset.x}% ${image.offset.y}%`
       }
 
       if (image.size !== undefined) {
-        styles.backgroundSize = image.size
+        styles.backgroundSize = `${image.size}%`
       }
 
       return styles
@@ -54,7 +54,7 @@ export default {
     showDetails () {
       const image = this.event.image !== undefined ? this.event.image.file : undefined
 
-      this.$store.commit('showDetails', { type: 'event', title: this.event.name, image })
+      this.$store.commit('showDetails', { type: 'event', id: this.event.id, image })
     }
   }
 }

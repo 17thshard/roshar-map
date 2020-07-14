@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import baseEvents from '@/store/events.json'
 
 Vue.use(Vuex)
 
@@ -19,208 +20,7 @@ function calculateNextOffset (event, lastEvent) {
   return 50
 }
 
-const events = [
-  {
-    date: [-10000],
-    name: 'Shattering of Adonalsium',
-    tags: ['general'],
-    shadesmar: false,
-    specialEffect: 'shattering',
-    coordinates: {
-      x: 512,
-      y: 256,
-      zoom: 0
-    }
-  },
-  {
-    date: [-8000],
-    name: 'Human Exodus from Ashyn',
-    tags: ['general'],
-    shadesmar: false,
-    coordinates: {
-      x: 290.2,
-      y: 260.8
-    }
-  },
-  {
-    date: [-3300],
-    name: 'The Last Desolation',
-    tags: ['general'],
-    shadesmar: false,
-    coordinates: {
-      x: 512,
-      y: 256,
-      zoom: 0
-    }
-  },
-  {
-    date: [-800],
-    name: 'The False Desolation',
-    tags: ['general'],
-    shadesmar: false,
-    coordinates: {
-      x: 512,
-      y: 256,
-      zoom: 0
-    }
-  },
-  {
-    date: [650],
-    name: 'End of the Hierocracy',
-    tags: ['general'],
-    shadesmar: false,
-    coordinates: {
-      x: 512,
-      y: 256,
-      zoom: 0
-    }
-  },
-  {
-    date: [975],
-    name: 'Scouring of Amia',
-    tags: ['general'],
-    shadesmar: false,
-    coordinates: {
-      x: 195.8,
-      y: 294.2
-    }
-  },
-  {
-    year: 1120,
-    date: [1120],
-    name: 'Dalinar is born',
-    tags: ['dalinar'],
-    shadesmar: false,
-    coordinates: {
-      x: 738.8,
-      y: 250.5
-    }
-  },
-  {
-    date: [1153],
-    name: 'Kaladin is born',
-    image: {
-      file: 'kaladin.jpg',
-      offset: {
-        x: '90%',
-        y: '0'
-      },
-      size: '150%'
-    },
-    tags: ['kaladin'],
-    shadesmar: false,
-    coordinates: {
-      x: 734.7,
-      y: 196.8
-    }
-  },
-  {
-    date: [1156],
-    name: 'Shallan is born',
-    tags: ['shallan'],
-    shadesmar: false,
-    coordinates: {
-      x: 627.5,
-      y: 256.1
-    }
-  },
-  {
-    date: [1163],
-    name: 'Return to the Rift. Evi dies.',
-    tags: ['dalinar'],
-    shadesmar: false,
-    coordinates: {
-      x: 727,
-      y: 305
-    }
-  },
-  {
-    date: [1169, 1],
-    name: 'Taravangian visits the Nightwatcher',
-    tags: ['general'],
-    shadesmar: false,
-    coordinates: {
-      x: 484.5,
-      y: 332.4
-    }
-  },
-  {
-    date: [1169, 4],
-    name: 'Tien dies',
-    tags: ['kaladin'],
-    shadesmar: false,
-    coordinates: {
-      x: 704.6,
-      y: 208.8
-    }
-  },
-  {
-    date: [1169, 10],
-    name: 'Lin Davar accused of murder',
-    tags: ['general'],
-    shadesmar: false,
-    coordinates: {
-      x: 627.5,
-      y: 256.1
-    }
-  },
-  {
-    date: [1174],
-    name: 'The gang is in Shadesmar',
-    tags: ['kaladin', 'shallan'],
-    shadesmar: true,
-    coordinates: {
-      x: 738.8,
-      y: 250.5
-    }
-  },
-  {
-    date: [1174, 1],
-    name: 'Dalinar opens Honor\'s Perpendicularity',
-    tags: ['dalinar'],
-    perpendicularity: false,
-    tieBreaker: 0,
-    coordinates: {
-      x: 597.5,
-      y: 419.3
-    }
-  },
-  {
-    date: [1174, 1],
-    name: 'Dalinar opens Honor\'s Perpendicularity',
-    tags: ['dalinar'],
-    perpendicularity: true,
-    tieBreaker: 1,
-    coordinates: {
-      x: 597.5,
-      y: 419.3
-    }
-  },
-  {
-    date: [1174, 1],
-    name: 'Dalinar opens Honor\'s Perpendicularity',
-    tags: ['dalinar'],
-    perpendicularity: false,
-    shadesmar: true,
-    tieBreaker: 2,
-    coordinates: {
-      x: 597.5,
-      y: 419.3
-    }
-  },
-  {
-    date: [1174, 1],
-    name: 'Dalinar opens Honor\'s Perpendicularity',
-    tags: ['dalinar'],
-    perpendicularity: true,
-    shadesmar: true,
-    tieBreaker: 3,
-    coordinates: {
-      x: 597.5,
-      y: 419.3
-    }
-  }
-].sort(
+const events = baseEvents.sort(
   (a, b) => {
     let j = 0
 
@@ -247,17 +47,17 @@ const events = [
     }
 
     return -1
-  }).map((event, index) => ({ ...event, id: index, type: 'event' }))
+  }).map((event, index) => ({ ...event, index }))
 
 const locations = {
   4: {
     type: 'location',
-    title: 'Kharbranth',
+    id: 'kharbranth',
     image: 'kharbranth.jpg'
   },
   22: {
     type: 'location',
-    title: 'Kholinar'
+    id: 'kholinar'
   }
 }
 

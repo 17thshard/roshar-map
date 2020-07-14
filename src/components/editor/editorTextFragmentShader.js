@@ -17,7 +17,7 @@ export default `
     float aa = maxGrad / 24.;
 
     float alpha = smoothstep(aa + 2.0 / 255., 0., value) / (1. + .5 * maxGrad);
-    vec4 col = vec4(0.1, .1, .1, alpha);
+    vec4 col = vec4(0.9, .9, .9, alpha);
 
     float outerGlow = smoothstep(aa + 2. * outerGlowSize / 255., .0 / 255., value);
     if (value > .0) {

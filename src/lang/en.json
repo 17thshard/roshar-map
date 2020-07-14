@@ -1,0 +1,37 @@
+{
+    "ui": {
+        "menu": "Menu",
+        "filters": "Filters",
+        "close": "Close",
+        "separate-timelines": "Separate timelines",
+        "enable": "Enable",
+        "disable": "Disable",
+        "display-separately": "Display separately",
+        "stop-display-separately": "No longer display separately",
+        "previous-event": "Previous Event",
+        "next-event": "Next Event",
+        "previous": "Previous Event",
+        "next": "Next Event"
+    },
+    "tagCategories": {
+        "tags": "Tags",
+        "characters": "Characters",
+        "books": "Books"
+    },
+    "tags": {
+        "general": "General",
+        "dalinar": "Dalinar",
+        "kaladin": "Kaladin",
+        "shallan": "Shallan",
+        "wok": "The Way of Kings",
+        "wor": "Words of Radiance",
+        "ed": "Edgedancer",
+        "ob": "Oathbringer",
+        "row": "Rhythm of War"
+    },
+    "events": {
+        "shattering": {
+            "name": "Shattering of Adonalsium"
+        }
+    }
+}

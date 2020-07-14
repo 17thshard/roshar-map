@@ -15,14 +15,14 @@
     <div class="scrubber__bar">
       <div class="scrubber__indicator">
         <div class="scrubber__indicator-actions">
-          <button class="scrubber__indicator-button scrubber__indicator-button--prev" title="Previous Event" @click="gotoEvent(-1)">
-            Previous
+          <button class="scrubber__indicator-button scrubber__indicator-button--prev" :title="$t('ui.previous-event')" @click="gotoEvent(-1)">
+            {{ $t('ui.previous') }}
           </button>
           <span class="scrubber__indicator-year">
             {{ currentDate }}
           </span>
-          <button class="scrubber__indicator-button scrubber__indicator-button--next" title="Next Event" @click="gotoEvent(1)">
-            Next
+          <button class="scrubber__indicator-button scrubber__indicator-button--next" :title="$t('ui.next-event')" @click="gotoEvent(1)">
+            {{ $t('ui.next') }}
           </button>
         </div>
       </div>
@@ -273,7 +273,7 @@ export default {
       }
 
       if (this.activeEvent !== null && Math.abs(this.activeEvent.offset - scroll) <= 0.5) {
-        gotoAndScroll(this.activeEvent.id + dir)
+        gotoAndScroll(this.activeEvent.index + dir)
 
         return
       }
@@ -288,13 +288,13 @@ export default {
         const end = this.events[endIndex]
 
         if (scroll <= start.offset + 0.5) {
-          gotoAndScroll(start.id)
+          gotoAndScroll(start.index)
         } else if (scroll >= end.offset - 0.5) {
-          gotoAndScroll(end.id)
+          gotoAndScroll(end.index)
         } else if (dir < 0) {
-          gotoAndScroll(start.id)
+          gotoAndScroll(start.index)
         } else if (dir > 0) {
-          gotoAndScroll(end.id)
+          gotoAndScroll(end.index)
         }
       }
     },

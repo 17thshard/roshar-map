@@ -1,0 +1,281 @@
+[
+    {
+        "id": "shattering",
+        "date": [
+            -10000
+        ],
+        "tags": [
+            "general"
+        ],
+        "shadesmar": false,
+        "specialEffect": "shattering",
+        "coordinates": {
+            "x": 512,
+            "y": 256,
+            "zoom": 0
+        }
+    },
+    {
+        "id": "ashyn-exodus",
+        "date": [
+            -8000
+        ],
+        "tags": [
+            "general"
+        ],
+        "shadesmar": false,
+        "coordinates": {
+            "x": 290.2,
+            "y": 260.8
+        }
+    },
+    {
+        "id": "last-desolation",
+        "date": [
+            -3300
+        ],
+        "tags": [
+            "general"
+        ],
+        "shadesmar": false,
+        "coordinates": {
+            "x": 512,
+            "y": 256,
+            "zoom": 0
+        }
+    },
+    {
+        "id": "false-desolation",
+        "date": [
+            -800
+        ],
+        "tags": [
+            "general"
+        ],
+        "shadesmar": false,
+        "coordinates": {
+            "x": 512,
+            "y": 256,
+            "zoom": 0
+        }
+    },
+    {
+        "id": "end-of-hierocracy",
+        "date": [
+            650
+        ],
+        "tags": [
+            "general"
+        ],
+        "shadesmar": false,
+        "coordinates": {
+            "x": 512,
+            "y": 256,
+            "zoom": 0
+        }
+    },
+    {
+        "id": "scouring-of-amia",
+        "date": [
+            975
+        ],
+        "tags": [
+            "general"
+        ],
+        "shadesmar": false,
+        "coordinates": {
+            "x": 195.8,
+            "y": 294.2
+        }
+    },
+    {
+        "id": "dalinar-birth",
+        "date": [
+            1120
+        ],
+        "tags": [
+            "dalinar"
+        ],
+        "shadesmar": false,
+        "coordinates": {
+            "x": 738.8,
+            "y": 250.5
+        }
+    },
+    {
+        "id": "kaladin-birth",
+        "date": [
+            1153
+        ],
+        "tags": [
+            "kaladin"
+        ],
+        "shadesmar": false,
+        "coordinates": {
+            "x": 734.7,
+            "y": 196.8
+        },
+        "image": {
+            "file": "kaladin.jpg",
+            "offset": {
+                "x": 90,
+                "y": 0
+            },
+            "size": 150
+        }
+    },
+    {
+        "id": "shallan-birth",
+        "date": [
+            1156
+        ],
+        "tags": [
+            "shallan"
+        ],
+        "shadesmar": false,
+        "coordinates": {
+            "x": 627.5,
+            "y": 256.1
+        }
+    },
+    {
+        "id": "evi-death",
+        "date": [
+            1163
+        ],
+        "tags": [
+            "dalinar"
+        ],
+        "shadesmar": false,
+        "coordinates": {
+            "x": 727,
+            "y": 305
+        }
+    },
+    {
+        "id": "taravangian-nightwatcher",
+        "date": [
+            1169,
+            1
+        ],
+        "tags": [
+            "general"
+        ],
+        "shadesmar": false,
+        "coordinates": {
+            "x": 484.5,
+            "y": 332.4
+        }
+    },
+    {
+        "id": "tien-death",
+        "date": [
+            1169,
+            4
+        ],
+        "tags": [
+            "kaladin"
+        ],
+        "shadesmar": false,
+        "coordinates": {
+            "x": 704.6,
+            "y": 208.8
+        }
+    },
+    {
+        "id": "lin-davar-murder",
+        "date": [
+            1169,
+            10
+        ],
+        "tags": [
+            "general"
+        ],
+        "shadesmar": false,
+        "coordinates": {
+            "x": 627.5,
+            "y": 256.1
+        }
+    },
+    {
+        "id": "the-gang-is-in-shadesmar",
+        "date": [
+            1174
+        ],
+        "tags": [
+            "kaladin",
+            "shallan"
+        ],
+        "shadesmar": true,
+        "coordinates": {
+            "x": 738.8,
+            "y": 250.5
+        }
+    },
+    {
+        "id": "dalinar-opens-honors-perpendicularity",
+        "date": [
+            1174,
+            1
+        ],
+        "tags": [
+            "dalinar"
+        ],
+        "perpendicularity": false,
+        "coordinates": {
+            "x": 597.5,
+            "y": 419.3
+        },
+        "tieBreaker": 0
+    },
+    {
+        "id": "dalinar-opens-honors-perpendicularity",
+        "date": [
+            1174,
+            1
+        ],
+        "tags": [
+            "dalinar"
+        ],
+        "perpendicularity": true,
+        "coordinates": {
+            "x": 597.5,
+            "y": 419.3
+        },
+        "tieBreaker": 1
+    },
+    {
+        "id": "dalinar-opens-honors-perpendicularity",
+        "date": [
+            1174,
+            1
+        ],
+        "tags": [
+            "dalinar"
+        ],
+        "shadesmar": true,
+        "perpendicularity": false,
+        "coordinates": {
+            "x": 597.5,
+            "y": 419.3
+        },
+        "tieBreaker": 2
+    },
+    {
+        "id": "dalinar-opens-honors-perpendicularity",
+        "date": [
+            1174,
+            1
+        ],
+        "tags": [
+            "dalinar"
+        ],
+        "shadesmar": true,
+        "perpendicularity": true,
+        "coordinates": {
+            "x": 597.5,
+            "y": 419.3
+        },
+        "tieBreaker": 3
+    }
+]

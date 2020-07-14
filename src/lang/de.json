@@ -1,0 +1,37 @@
+{
+    "ui": {
+        "menu": "Menü",
+        "filters": "Filter",
+        "close": "Schließen",
+        "separate-timelines": "Separate Zeitlinien",
+        "enable": "Anzeigen",
+        "disable": "Ausblenden",
+        "display-separately": "Gesondert anzeigen",
+        "stop-display-separately": "Nicht mehr gesondert anzeigen",
+        "previous-event": "Voriges Ereignis",
+        "next-event": "Nächstes Ereignis",
+        "previous": "Voriges",
+        "next": "Nächstes"
+    },
+    "tagCategories": {
+        "tags": "Tags",
+        "characters": "Charaktere",
+        "books": "Bücher"
+    },
+    "tags": {
+        "general": "Allgemein",
+        "dalinar": "Dalinar",
+        "kaladin": "Kaladin",
+        "shallan": "Schallan",
+        "wok": "Der Weg der Könige & Der Pfad der Winde",
+        "wor": "Die Worte des Lichts & Die Stürme des Zorns",
+        "ed": "Die Tänzerin am Abgrund",
+        "ob": "Der Ruf der Klingen & Die Splitter der Macht",
+        "row": "Rhythm of War"
+    },
+    "events": {
+        "shattering": {
+            "name": "Shattering of Adonalsium"
+        }
+    }
+}

@@ -1,12 +1,12 @@
 <template>
   <div :class="['info', { 'info--active': active, 'info--leave-active': leaveActive }]">
-    <button class="info__button" title="Menu" @click="active = true">
+    <button class="info__button" :title="$t('ui.menu')" @click="active = true">
       <MenuIcon size="1x" />
     </button>
     <transition name="info__wrapper" @before-leave="leaveActive = true" @after-leave="leaveActive = false">
       <div v-if="active" class="info__wrapper">
         <div class="info__logo">
-          <button class="info__close" title="Close Menu" @click="active = false">
+          <button class="info__close" :title="$t('ui.close')" @click="active = false">
             <XIcon />
           </button>
         </div>
