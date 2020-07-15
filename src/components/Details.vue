@@ -26,7 +26,7 @@
             target="_blank"
             class="details__read-more"
           >
-            <span>More on the Coppermind</span>
+            {{ $t('ui.coppermind') }}
           </a>
         </section>
       </div>
@@ -213,7 +213,8 @@ export default {
 
   &__content {
     background: #F5ECDA url(../assets/paper.png);
-    width: 100%;
+    width: 450px;
+    max-width: 100%;
   }
 
   .__rail-is-vertical {
@@ -222,14 +223,13 @@ export default {
 
   .__panel {
     z-index: 60 !important;
-    width: 100%;
   }
 
   .__view {
     z-index: 60 !important;
     display: flex;
     align-items: stretch;
-    width: 100%;
+    width: auto !important;
   }
 
   &__image {
@@ -247,11 +247,13 @@ export default {
     position: relative;
     padding: 1rem 2rem 4rem;
     text-align: justify;
+    line-height: 1.75;
 
     h2 {
       margin-bottom: 1.5rem;
       padding-right: 4rem;
       text-align: left;
+      line-height: normal;
     }
   }
 
@@ -293,33 +295,14 @@ export default {
     border-radius: 3px;
     margin: 0 1rem;
     transition: all 0.3s ease-in-out;
-    overflow: hidden;
-
-    &:before {
-      content: '';
-      position: absolute;
-      z-index: 1;
-      transform: scaleY(0);
-      transform-origin: 0 100%;
-      background: #0f3562;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    span {
-      position: relative;
-      z-index: 2;
-    }
+    background-image: linear-gradient(0deg, #0f3562 0%, #0f3562 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0;
+    background-position: 50% 100%;
 
     &:hover, &:active, &:focus {
       color: #f6f8fa;
-
-      &:before {
-        transform: scaleY(1);
-      }
+      background-size: 100% 100%;
     }
   }
 }

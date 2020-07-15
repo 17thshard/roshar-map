@@ -169,6 +169,7 @@ export default {
     text-align: center;
     font-size: 1rem;
     padding: 0.5rem 0.5rem 2rem;
+    line-height: 1.5;
   }
 }
 </style>

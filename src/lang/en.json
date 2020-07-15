@@ -3,6 +3,7 @@
         "menu": "Menu",
         "filters": "Filters",
         "close": "Close",
+        "back": "Back",
         "separate-timelines": "Separate timelines",
         "enable": "Enable",
         "disable": "Disable",
@@ -11,7 +12,11 @@
         "previous-event": "Previous Event",
         "next-event": "Next Event",
         "previous": "Previous",
-        "next": "Next"
+        "next": "Next",
+        "coppermind": "More on the Coppermind",
+        "welcome": "Welcome to the inofficial interactive map and timeline of Brandon Sanderson's *The Stormlight Archive* series of books!",
+        "language": "Language",
+        "disclaimer": "Disclaimer"
     },
     "tagCategories": {
         "tags": "Tags",
