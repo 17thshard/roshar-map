@@ -11,6 +11,10 @@
         <input id="editor__mode--events" v-model="mode" type="radio" value="events">
         Events
       </label>
+      <label for="editor__mode--tags">
+        <input id="editor__mode--tags" v-model="mode" type="radio" value="tags">
+        Tags
+      </label>
 
       <div class="editor__file">
         <label for="editor__file--locations">
@@ -37,6 +41,25 @@
 
         <button @click="saveEvents">
           Save
+        </button>
+      </div>
+
+      <div class="editor__file">
+        <label for="editor__selected-language">Edited Language</label>
+        <select id="editor__selected-language" v-model="selectedLanguage">
+          <option :value="null">
+            None
+          </option>
+          <option v-for="language in availableLanguages" :key="language" :value="language">
+            {{ language }}
+          </option>
+        </select>
+
+        <label for="editor__selected-language">Override with</label>
+        <input id="editor__file--language" :disabled="selectedLanguage === null" type="file" @change="loadLanguage">
+
+        <button @click="saveLanguages">
+          Save languages
         </button>
       </div>
     </div>
@@ -81,7 +104,7 @@
       />
     </div>
     <canvas ref="referenceCanvas" class="editor__reference" width="1024" height="512" />
-    <ul v-if="mode === 'locations'" class="editor__location-list">
+    <ul v-if="mode === 'locations'" class="editor__location-list" @click.self="selectedLocation = null">
       <li>
         <button @click="sortPolygonsById">
           Sort by ID
@@ -101,8 +124,8 @@
         :key="`location${index}`"
         :class="selectedLocation === location ? 'editor__location-list-item--selected' : undefined"
       >
-        <input v-model="location.id" type="number" min="1" max="255" aria-label="Area ID">
-        <input v-model="location.name" type="text" aria-label="Area name">
+        <span>{{ location.id }}</span>
+        <span>{{ location.name }}</span>
         <button @click="deleteLocation(index)">
           Delete
         </button>
@@ -124,7 +147,7 @@
         v-for="(event, index) in events"
         :key="`event${index}`"
         :class="selectedEvent === event ? 'editor__event-list-item--selected' : undefined"
-        @click="selectedEvent = event"
+        @click="selectEvent(event)"
       >
         <span class="editor__event-list-date">
           <span class="editor__event-list-date-year">
@@ -141,9 +164,88 @@
         </button>
       </li>
     </ul>
-    <EventProperties
+    <div v-else-if="mode === 'tags'" class="editor__tags" @click.self="selectedTag = null">
+      <div class="editor__tags-actions">
+        <label for="editor__file--tags">
+          Override with
+        </label>
+
+        <input id="editor__file--tags" type="file" @change="loadTags">
+        <button @click="saveTags">
+          Save
+        </button>
+      </div>
+      <h2>Categories</h2>
+      <ul class="editor__tags-categories">
+        <li>
+          <button @click="addTagCategory">
+            New
+          </button>
+          <button @click="selectedTag = null">
+            Clear selection
+          </button>
+        </li>
+        <li
+          v-for="(tagCategory, index) in Object.keys(tagCategories)"
+          :key="`tagCategory${index}`"
+          :class="selectedTag === tagCategory && categorySelected ? 'editor__tags-item--selected' : undefined"
+          @click="selectTag(tagCategory, true)"
+        >
+          <span>{{ tagCategory }}</span>
+          <button @click.stop="deleteTagCategory(tagCategory)">
+            Delete
+          </button>
+        </li>
+      </ul>
+      <h2>Tags</h2>
+      <ul class="editor__tags-list">
+        <li
+          v-for="(tag, index) in availableTags"
+          :key="`tag${index}`"
+          :class="{
+            'editor__tags-item--selected': selectedTag === tag && !categorySelected,
+            'editor__tags-list-item--invalid': !hasTagCategory(tag)
+          }"
+          @click="selectTag(tag, false)"
+        >
+          {{ tag }}
+        </li>
+      </ul>
+    </div>
+    <template
       v-if="mode === 'events' && selectedEvent !== null"
-      :event="selectedEvent"
+    >
+      <EventProperties
+        :key="selectedEventKey"
+        :event="selectedEvent"
+        :selected-language="selectedLanguage"
+        :languages="loadedLanguages"
+        :available-tags="availableTags"
+      />
+      <EventPreview
+        :key="`preview${selectedEventKey}`"
+        :event="selectedEvent"
+        :selected-language="selectedLanguage"
+        :languages="loadedLanguages"
+      />
+    </template>
+
+    <LocationProperties
+      v-if="mode === 'locations' && selectedLocation !== null"
+      :key="selectedLocationKey"
+      :location="selectedLocation"
+      :selected-language="selectedLanguage"
+      :languages="loadedLanguages"
+    />
+
+    <TagProperties
+      v-if="mode === 'tags' && selectedTag !== null"
+      :key="selectedTagKey"
+      :tag="selectedTag"
+      :category="categorySelected"
+      :tag-categories="tagCategories"
+      :selected-language="selectedLanguage"
+      :languages="loadedLanguages"
     />
   </div>
 </template>
@@ -156,6 +258,11 @@ import mapFragmentShader from '@/components/map/mapFragmentShader'
 import textFragmentShader from '@/components/editor/editorTextFragmentShader'
 import TextureManager from '@/components/map/TextureManager'
 import EventProperties from '@/components/editor/EventProperties.vue'
+import EventPreview from '@/components/editor/EventPreview.vue'
+import baseEvents from '@/store/events.json'
+import tagCategories from '@/store/tags.json'
+import LocationProperties from '@/components/editor/LocationProperties.vue'
+import TagProperties from '@/components/editor/TagProperties.vue'
 
 function saveAs (blob, name) {
   const a = document.createElement('a')
@@ -175,22 +282,49 @@ function saveAs (blob, name) {
 
 export default {
   name: 'Editor',
-  components: { EventProperties },
+  components: { TagProperties, LocationProperties, EventPreview, EventProperties },
   data () {
     return {
       mode: 'events',
       locations: [],
-      events: [],
+      events: baseEvents,
       newLocation: null,
       selectedLocation: null,
+      selectedLocationKey: null,
       selectedEvent: null,
+      selectedEventKey: null,
+      selectedTag: null,
+      selectedTagKey: null,
+      categorySelected: false,
       draggedPoint: null,
       zoom: 1,
       offset: { x: 0, y: 0 },
       panning: 0,
       panStart: null,
       xScale: 1,
-      yScale: 1
+      yScale: 1,
+      availableLanguages: ['en', 'de'],
+      loadedLanguages: {},
+      selectedLanguage: null,
+      locationsDirty: false,
+      eventsDirty: false,
+      languagesDirty: false,
+      tagsDirty: false,
+      languagesLoaded: false,
+      tagCategories
+    }
+  },
+  computed: {
+    dirty () {
+      return this.locationsDirty || this.eventsDirty || this.languagesDirty || this.tagsDirty
+    },
+    availableTags () {
+      const set = new Set()
+      this.events.forEach((event) => {
+        event.tags.forEach(t => set.add(t))
+      })
+
+      return [...set]
     }
   },
   watch: {
@@ -204,9 +338,54 @@ export default {
         this.camera.updateProjectionMatrix()
       },
       deep: true
+    },
+    loadedLanguages: {
+      handler () {
+        if (!this.languagesLoaded) {
+          return
+        }
+
+        this.languagesDirty = true
+      },
+      deep: true
+    },
+    locations: {
+      handler () {
+        this.locationsDirty = true
+      },
+      deep: true
+    },
+    events: {
+      handler () {
+        this.eventsDirty = true
+      },
+      deep: true
+    },
+    tagCategories: {
+      handler () {
+        this.tagsDirty = true
+      },
+      deep: true
+    },
+    dirty (isDirty) {
+      if (isDirty && !document.title.startsWith('(*)')) {
+        document.title = `(*) ${document.title}`
+      } else if (!isDirty && document.title.startsWith('(*)')) {
+        document.title = document.title.substring(4)
+      }
     }
   },
+  created () {
+    Promise.all(this.availableLanguages.map(lang =>
+      import(/* webpackChunkName: "lang-[request]" */ '@/lang/' + lang + '.json').then((messages) => {
+        this.$set(this.loadedLanguages, lang, messages.default)
+      }))).then(() => {
+      this.languagesLoaded = true
+    })
+  },
   mounted () {
+    window.addEventListener('beforeunload', this.onLeave)
+
     this.renderer = new WebGLRenderer({ antialias: false, alpha: true })
     this.renderer.setPixelRatio(window.devicePixelRatio)
     this.renderer.setSize(window.innerWidth, window.innerHeight)
@@ -226,10 +405,16 @@ export default {
       })
   },
   destroyed () {
+    window.removeEventListener('beforeunload', this.onLeave)
     this.renderer.dispose()
     cancelAnimationFrame(this.latestAnimationFrame)
   },
   methods: {
+    onLeave (event) {
+      if (this.dirty) {
+        event.returnValue = 'Are you sure you want to leave?'
+      }
+    },
     loadTextures () {
       const textures = {
         map_bg: {},
@@ -368,12 +553,15 @@ export default {
         new Blob([JSON.stringify(this.locations, undefined, 4)], { type: 'application/json;charset=utf-8' }),
         'locations-editable.json'
       )
+      this.locationsDirty = false
     },
     exportLocations () {
       const exportLocations = [...this.locations].sort((a, b) => a.id - b.id).reduce((acc, location) => ({
         ...acc,
         [location.id]: {
-          id: location.name
+          id: location.name,
+          image: location.image,
+          coppermind: location.coppermind
         }
       }), {})
 
@@ -403,6 +591,53 @@ export default {
         new Blob([JSON.stringify(this.events, undefined, 4)], { type: 'application/json;charset=utf-8' }),
         'events.json'
       )
+      this.eventsDirty = false
+    },
+    loadLanguage (event) {
+      if (event.target.files.length === 0) {
+        return
+      }
+
+      const fileReader = new FileReader()
+      fileReader.onload = () => {
+        this.loadedLanguages[this.selectedLanguage] = JSON.parse(fileReader.result)
+      }
+      fileReader.readAsText(event.target.files[0])
+
+      // eslint-disable-next-line no-param-reassign
+      event.target.value = ''
+    },
+    saveLanguages () {
+      Object.keys(this.loadedLanguages).forEach((lang) => {
+        saveAs(
+          new Blob([JSON.stringify(this.loadedLanguages[lang], undefined, 4)], { type: 'application/json;charset=utf-8' }),
+          `${lang}.json`
+        )
+      })
+
+      this.languagesDirty = false
+    },
+    loadTags (event) {
+      if (event.target.files.length === 0) {
+        return
+      }
+
+      const fileReader = new FileReader()
+      fileReader.onload = () => {
+        this.tagCategories = JSON.parse(fileReader.result)
+        this.selectedTag = null
+      }
+      fileReader.readAsText(event.target.files[0])
+
+      // eslint-disable-next-line no-param-reassign
+      event.target.value = ''
+    },
+    saveTags () {
+      saveAs(
+        new Blob([JSON.stringify(this.tagCategories, undefined, 4)], { type: 'application/json;charset=utf-8' }),
+        'tags.json'
+      )
+      this.tagsDirty = false
     },
     addEvent () {
       this.selectedEvent = { id: 'new-event', date: [1170], tags: [], coordinates: { x: 0, y: 0 } }
@@ -415,6 +650,25 @@ export default {
     deleteLocation (index) {
       this.selectedLocation = null
       this.locations.splice(index, 1)
+    },
+    selectEvent (event) {
+      this.selectedEventKey = Date.now()
+      this.selectedEvent = event
+    },
+    addTagCategory () {
+      const name = window.prompt('New category name')
+
+      if (name !== null && this.tagCategories[name] === undefined) {
+        this.$set(this.tagCategories, name, [])
+      }
+    },
+    selectTag (tag, category) {
+      this.selectedTagKey = Date.now()
+      this.selectedTag = tag
+      this.categorySelected = category
+    },
+    deleteTagCategory (category) {
+      this.$delete(this.tagCategories, category)
     },
     click (event) {
       if (this.draggedPoint !== null || event.altKey || this.panning || event.button === 1) {
@@ -447,7 +701,7 @@ export default {
         this.locations.push(this.newLocation)
       }
     },
-    clickPolygon (event, polygon, index) {
+    clickPolygon (event, location, index) {
       if (this.draggedPoint !== null) {
         return
       }
@@ -455,11 +709,11 @@ export default {
       if (event.ctrlKey) {
         this.locations.splice(index, 1)
 
-        if (polygon === this.selectedLocation) {
+        if (location === this.selectedLocation) {
           this.selectedLocation = null
         }
 
-        if (polygon === this.newLocation) {
+        if (location === this.newLocation) {
           this.newLocation = null
         }
       }
@@ -469,7 +723,8 @@ export default {
       }
 
       if (!event.ctrlKey) {
-        this.selectedLocation = polygon
+        this.selectedLocationKey = Date.now()
+        this.selectedLocation = location
       }
 
       event.preventDefault()
@@ -645,12 +900,17 @@ export default {
         canvas.remove()
       }
       img.src = `data:image/svg+xml;base64,${window.btoa(svgString)}`
+    },
+    hasTagCategory (tag) {
+      return Object.values(this.tagCategories).some(tags => tags.includes(tag))
     }
   }
 }
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap');
+
 .editor {
   display: flex;
   align-items: stretch;
@@ -698,8 +958,12 @@ export default {
     align-items: center;
     margin: 0 1rem;
 
-    label {
+    label, select, input, button {
       margin-right: 0.5rem;
+    }
+
+    input {
+      width: 150px;
     }
   }
 
@@ -792,7 +1056,8 @@ export default {
     }
 
     &-item--selected {
-      background: red;
+      color: #fafafa;
+      background: #0f3562;
     }
   }
 
@@ -831,10 +1096,6 @@ export default {
           grid-column: 1 / span 2;
         }
       }
-
-      input[type='text']:first-child {
-        width: 50px;
-      }
     }
 
     &-item--selected {
@@ -853,6 +1114,81 @@ export default {
       &-rest {
         text-align: left;
       }
+    }
+  }
+
+  &__tags {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    bottom: 0;
+    width: 350px;
+    background: #848d97;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    margin: 0;
+    z-index: 10;
+    box-sizing: border-box;
+    padding: 1rem 0 0;
+
+    h2 {
+      margin: 0;
+      padding: 0 1rem;
+    }
+
+    &-actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 0.5rem;
+      padding: 0 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    &-categories {
+      list-style-type: none;
+      padding: 0;
+      margin: 0 0 1rem;
+
+      li {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+
+        &:first-child {
+          cursor: default;
+          pointer-events: none;
+          grid-template-columns: auto;
+
+          button {
+            pointer-events: auto;
+          }
+        }
+      }
+    }
+
+    &-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0.5rem 0 1rem;
+
+      li {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+      }
+
+      &-item--invalid {
+        color: red;
+      }
+    }
+
+    &-item--selected {
+      color: #fafafa;
+      background: #0f3562;
     }
   }
 
@@ -879,7 +1215,7 @@ export default {
     outline: 2px solid red !important;
   }
 
-  .event-properties {
+  .event-properties, .location-properties, .tag-properties {
     position: absolute;
     top: 100px;
     right: 0;

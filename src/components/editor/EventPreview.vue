@@ -1,25 +1,21 @@
 <template>
   <div
     :class="[
-      'event-card',
-      { 'event-card--image': event.image !== undefined, 'event-card--details-visible': $store.state.details !== null }
+      'event-preview',
+      { 'event-preview--image': event.image !== undefined, 'event-preview--details-visible': $store.state.details !== null }
     ]"
   >
-    <div class="event-card__content">
+    <div class="event-preview__content">
       <div
         v-if="event.image !== undefined"
         :style="buildImageStyles(event.image)"
-        class="event-card__image"
+        class="event-preview__image"
       />
-      <h2 class="event-card__name">
-        {{ $t(`events.${event.id}.name`) }}
+      <h2 class="event-preview__name">
+        {{ displayName }}
       </h2>
-      <Markdown
-        :content="$te(`events.${event.id}.blurb`, 'en') ? $t(`events.${event.id}.blurb`) : ''"
-        :inline="true"
-        class="event-card__text"
-      >
-        <a v-if="event.details === true" href="#" @click.prevent="showDetails">Read more</a>
+      <Markdown class="event-preview__text" :content="displayBlurb" :inline="true">
+        <span v-if="event.details === true">Read more</span>
       </Markdown>
     </div>
   </div>
@@ -29,10 +25,19 @@
 import Markdown from '@/components/Markdown.vue'
 
 export default {
-  name: 'EventCard',
+  name: 'EventPreview',
   components: { Markdown },
   props: {
     event: {
+      type: Object,
+      required: true
+    },
+    selectedLanguage: {
+      type: [String, null],
+      required: false,
+      default: () => null
+    },
+    languages: {
       type: Object,
       required: true
     }
@@ -40,6 +45,15 @@ export default {
   computed: {
     imageBaseUrl () {
       return `${process.env.BASE_URL}img/events`
+    },
+    selectedMessages () {
+      return this.selectedLanguage !== null ? this.languages[this.selectedLanguage] : null
+    },
+    displayName () {
+      return this.selectedMessages?.events?.[this.event.id]?.name ?? this.event.id
+    },
+    displayBlurb () {
+      return this.selectedMessages?.events?.[this.event.id]?.blurb ?? ''
     }
   },
   methods: {
@@ -57,35 +71,35 @@ export default {
       }
 
       return styles
-    },
-    showDetails () {
-      const image = this.event.image !== undefined ? this.event.image.file : undefined
-
-      this.$store.commit('showDetails', { type: 'event', id: this.event.id, image, coppermind: this.event.coppermind })
     }
   }
 }
 </script>
 
 <style lang="scss">
-.event-card {
+.event-preview {
   position: absolute;
-  bottom: 100%;
+  bottom: 0;
+  left: 50%;
+  z-index: 10;
+  margin-left: -200px;
   width: 400px;
   max-width: 90%;
-  z-index: 5;
   filter: drop-shadow(0 -0.5rem 1rem rgba(0, 0, 0, 0.5));
   box-sizing: border-box;
   color: #242629;
   transition: all 0.2s ease-in-out;
   opacity: 1;
+  font-family: 'Lora', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   &--details-visible {
     opacity: 0;
   }
 
   &--image {
-    .event-card__content {
+    .event-preview__content {
       padding-top: 4rem;
     }
   }
@@ -98,7 +112,7 @@ export default {
     right: 0;
     top: 0;
     bottom: 0;
-    background: #F5ECDA url(../assets/paper.png);
+    background: #F5ECDA url(../../assets/paper.png);
     clip-path: polygon(
         1rem 0,
         calc(100% - 1rem) 0,
@@ -140,21 +154,7 @@ export default {
     border-radius: 100%;
     border: 4px solid #F5ECDA;
     box-sizing: border-box;
-    opacity: 0;
-    animation: event-card__image-enter 0.5s ease-out;
-    animation-delay: 1.5s;
-    animation-fill-mode: forwards;
     background-size: 100%;
-
-    @keyframes event-card__image-enter {
-      0% {
-        opacity: 0;
-      }
-
-      100% {
-        opacity: 1;
-      }
-    }
   }
 
   &__name {

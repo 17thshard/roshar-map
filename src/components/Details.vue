@@ -16,94 +16,19 @@
     >
       <div class="details__content">
         <img v-if="details.image !== undefined" class="details__image" :src="imageUrl" :alt="$t(`${details.type}s.${details.id}.name`)">
-        <div class="details__text">
+        <section class="details__text">
           <div ref="intersectionGuard" class="details__intersection-guard" />
           <h2>{{ $t(`${details.type}s.${details.id}.name`) }}</h2>
-          <p>
-            Kharbranth, City of Bells, is an independent city-state on Roshar, ruled by King Taravangian. It is one of the five Vorin
-            nations
-            and home to the Palanaeum, the largest library on Roshar. Kharbranth is known for the quality of its hospitals, and people
-            come
-            from all over the world to study medicine from Kharbranth's surgeons. The Kharbranthian royal colors are burnt orange and
-            white,
-            and have become synonymous around Roshar as the colors of surgeons, medicine, and healing.
-          </p>
-          <p>
-            Kharbranth, City of Bells, is an independent city-state on Roshar, ruled by King Taravangian. It is one of the five Vorin
-            nations
-            and home to the Palanaeum, the largest library on Roshar. Kharbranth is known for the quality of its hospitals, and people
-            come
-            from all over the world to study medicine from Kharbranth's surgeons. The Kharbranthian royal colors are burnt orange and
-            white,
-            and have become synonymous around Roshar as the colors of surgeons, medicine, and healing.
-          </p>
-          <p>
-            Kharbranth, City of Bells, is an independent city-state on Roshar, ruled by King Taravangian. It is one of the five Vorin
-            nations
-            and home to the Palanaeum, the largest library on Roshar. Kharbranth is known for the quality of its hospitals, and people
-            come
-            from all over the world to study medicine from Kharbranth's surgeons. The Kharbranthian royal colors are burnt orange and
-            white,
-            and have become synonymous around Roshar as the colors of surgeons, medicine, and healing.
-          </p>
-          <p>
-            Kharbranth, City of Bells, is an independent city-state on Roshar, ruled by King Taravangian. It is one of the five Vorin
-            nations
-            and home to the Palanaeum, the largest library on Roshar. Kharbranth is known for the quality of its hospitals, and people
-            come
-            from all over the world to study medicine from Kharbranth's surgeons. The Kharbranthian royal colors are burnt orange and
-            white,
-            and have become synonymous around Roshar as the colors of surgeons, medicine, and healing.
-          </p>
-          <p>
-            Kharbranth, City of Bells, is an independent city-state on Roshar, ruled by King Taravangian. It is one of the five Vorin
-            nations
-            and home to the Palanaeum, the largest library on Roshar. Kharbranth is known for the quality of its hospitals, and people
-            come
-            from all over the world to study medicine from Kharbranth's surgeons. The Kharbranthian royal colors are burnt orange and
-            white,
-            and have become synonymous around Roshar as the colors of surgeons, medicine, and healing.
-          </p>
-          <p>
-            Kharbranth, City of Bells, is an independent city-state on Roshar, ruled by King Taravangian. It is one of the five Vorin
-            nations
-            and home to the Palanaeum, the largest library on Roshar. Kharbranth is known for the quality of its hospitals, and people
-            come
-            from all over the world to study medicine from Kharbranth's surgeons. The Kharbranthian royal colors are burnt orange and
-            white,
-            and have become synonymous around Roshar as the colors of surgeons, medicine, and healing.
-          </p>
-          <p>
-            Kharbranth, City of Bells, is an independent city-state on Roshar, ruled by King Taravangian. It is one of the five Vorin
-            nations
-            and home to the Palanaeum, the largest library on Roshar. Kharbranth is known for the quality of its hospitals, and people
-            come
-            from all over the world to study medicine from Kharbranth's surgeons. The Kharbranthian royal colors are burnt orange and
-            white,
-            and have become synonymous around Roshar as the colors of surgeons, medicine, and healing.
-          </p>
-          <p>
-            Kharbranth, City of Bells, is an independent city-state on Roshar, ruled by King Taravangian. It is one of the five Vorin
-            nations
-            and home to the Palanaeum, the largest library on Roshar. Kharbranth is known for the quality of its hospitals, and people
-            come
-            from all over the world to study medicine from Kharbranth's surgeons. The Kharbranthian royal colors are burnt orange and
-            white,
-            and have become synonymous around Roshar as the colors of surgeons, medicine, and healing.
-          </p>
-          <p>
-            Kharbranth, City of Bells, is an independent city-state on Roshar, ruled by King Taravangian. It is one of the five Vorin
-            nations
-            and home to the Palanaeum, the largest library on Roshar. Kharbranth is known for the quality of its hospitals, and people
-            come
-            from all over the world to study medicine from Kharbranth's surgeons. The Kharbranthian royal colors are burnt orange and
-            white,
-            and have become synonymous around Roshar as the colors of surgeons, medicine, and healing.
-          </p>
-          <a href="https://coppermind.net" class="details__read-more">
+          <Markdown :content="$t(`${details.type}s.${details.id}.details`)" tag="article" />
+          <a
+            v-if="details.coppermind !== undefined"
+            :href="`https://coppermind.net/wiki/${details.coppermind}`"
+            target="_blank"
+            class="details__read-more"
+          >
             <span>More on the Coppermind</span>
           </a>
-        </div>
+        </section>
       </div>
     </Scrollbar>
   </div>
@@ -113,10 +38,11 @@
 import Scrollbar from 'vuescroll/dist/vuescroll-native'
 import { XIcon } from 'vue-feather-icons'
 import { mapState } from 'vuex'
+import Markdown from '@/components/Markdown.vue'
 
 export default {
   name: 'Details',
-  components: { XIcon, Scrollbar },
+  components: { Markdown, XIcon, Scrollbar },
   data () {
     return {
       showBar: false
@@ -287,6 +213,7 @@ export default {
 
   &__content {
     background: #F5ECDA url(../assets/paper.png);
+    width: 100%;
   }
 
   .__rail-is-vertical {
@@ -295,10 +222,14 @@ export default {
 
   .__panel {
     z-index: 60 !important;
+    width: 100%;
   }
 
   .__view {
     z-index: 60 !important;
+    display: flex;
+    align-items: stretch;
+    width: 100%;
   }
 
   &__image {

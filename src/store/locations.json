@@ -1,6 +1,7 @@
 {
     "1": {
-        "id": "alethkar"
+        "id": "alethkar",
+        "coppermind": "Alethkar"
     },
     "2": {
         "id": "jah-keved"
@@ -9,7 +10,8 @@
         "id": "herdaz"
     },
     "4": {
-        "id": "kharbranth"
+        "id": "kharbranth",
+        "image": "kharbranth.jpg"
     },
     "5": {
         "id": "thaylenah"

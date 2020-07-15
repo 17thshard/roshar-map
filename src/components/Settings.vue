@@ -91,6 +91,7 @@ import Scrollbar from 'vuescroll/dist/vuescroll-native'
 import Draggable from 'vuedraggable'
 import { EyeIcon, EyeOffIcon, GitBranchIcon, SlidersIcon, XIcon } from 'vue-feather-icons'
 import { mapState } from 'vuex'
+import tagCategories from '@/store/tags.json'
 
 export default {
   name: 'Settings',
@@ -99,11 +100,7 @@ export default {
     return {
       active: false,
       scrolled: false,
-      tagCategories: {
-        tags: ['general'],
-        characters: ['dalinar', 'kaladin', 'shallan'],
-        books: ['wok', 'wor', 'ed', 'ob', 'row']
-      },
+      tagCategories,
       draggingSeparates: false
     }
   },
