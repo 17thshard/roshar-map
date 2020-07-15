@@ -102,6 +102,13 @@
         class="editor__selected-event"
         :style="{ left: `${selectedEvent.coordinates.x / xScale}px`, top: `${selectedEvent.coordinates.y / yScale}px` }"
       />
+      <div
+        v-if="mode === 'events' && selectedEvent === null && markerPosition !== null"
+        class="editor__marker"
+        :style="{ left: `${markerPosition.x / xScale}px`, top: `${markerPosition.y / yScale}px` }"
+      >
+        {{ `(${markerPosition.x}, ${markerPosition.y})` }}
+      </div>
     </div>
     <canvas ref="referenceCanvas" class="editor__reference" width="1024" height="512" />
     <ul v-if="mode === 'locations'" class="editor__location-list" @click.self="selectedLocation = null">
@@ -311,7 +318,8 @@ export default {
       languagesDirty: false,
       tagsDirty: false,
       languagesLoaded: false,
-      tagCategories
+      tagCategories,
+      markerPosition: null
     }
   },
   computed: {
@@ -681,6 +689,8 @@ export default {
       if (this.mode === 'events') {
         if (this.selectedEvent !== null) {
           this.selectedEvent.coordinates = { x: Number.parseFloat(x.toFixed(1)), y: Number.parseFloat(y.toFixed(1)) }
+        } else {
+          this.markerPosition = { x: Number.parseFloat(x.toFixed(1)), y: Number.parseFloat(y.toFixed(1)) }
         }
 
         return
@@ -1201,6 +1211,37 @@ export default {
     background: red;
     box-sizing: border-box;
     border-radius: 100%;
+  }
+
+  &__marker {
+    position: absolute;
+    pointer-events: none;
+    color: white;
+    text-shadow: rgb(0, 0, 0) 2px 0 0, rgb(0, 0, 0) 1.75517px 0.958851px 0, rgb(0, 0, 0) 1.0806px 1.68294px 0, rgb(0, 0, 0) 0.141474px 1.99499px 0, rgb(0, 0, 0) -0.832294px 1.81859px 0px, rgb(0, 0, 0) -1.60229px 1.19694px 0px, rgb(0, 0, 0) -1.97998px 0.28224px 0px, rgb(0, 0, 0) -1.87291px -0.701566px 0px, rgb(0, 0, 0) -1.30729px -1.5136px 0px, rgb(0, 0, 0) -0.421592px -1.95506px 0px, rgb(0, 0, 0) 0.567324px -1.91785px 0px, rgb(0, 0, 0) 1.41734px -1.41108px 0px, rgb(0, 0, 0) 1.92034px -0.558831px 0px;
+    padding: 0.5rem;
+    filter: drop-shadow(0 0 0.25rem rgba(0, 0, 0, 1.0));
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      background: red;
+    }
+
+    &:before {
+      left: -1rem;
+      width: 2rem;
+      height: 2px;
+      top: 0;
+      margin-top: -1px;
+    }
+
+    &:after {
+      top: -1rem;
+      margin-left: -1px;
+      left: 0;
+      height: 2rem;
+      width: 2px;
+    }
   }
 
   canvas.editor__reference {
