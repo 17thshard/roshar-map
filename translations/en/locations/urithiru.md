@@ -1,0 +1,2 @@
+# Urithiru
+Details
