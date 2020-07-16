@@ -67,6 +67,11 @@
       </div>
 
       <div class="event-properties__checkboxes">
+        <label for="event-properties__circa">
+          <input id="event-properties__circa" v-model="event.circa" type="checkbox">
+
+          Circa
+        </label>
         <label for="event-properties__shadesmar">
           <input id="event-properties__shadesmar" v-model="event.shadesmar" type="checkbox">
 

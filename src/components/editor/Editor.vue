@@ -2,6 +2,7 @@
   <div class="editor">
     <div class="editor__menu">
       <img src="@/assets/roshar_logo.png" alt="Logo">
+      <button @click="save">Save to disk</button>
       Mode:
       <label for="editor__mode--locations">
         <input id="editor__mode--locations" v-model="mode" type="radio" value="locations">
@@ -17,34 +18,6 @@
       </label>
 
       <div class="editor__file">
-        <label for="editor__file--locations">
-          Locations file:
-        </label>
-
-        <input id="editor__file--locations" type="file" @change="loadLocations">
-
-        <button @click="saveLocations">
-          Save
-        </button>
-
-        <button @click="exportLocations">
-          Export
-        </button>
-      </div>
-
-      <div class="editor__file">
-        <label for="editor__file--events">
-          Events file:
-        </label>
-
-        <input id="editor__file--events" type="file" @change="loadEvents">
-
-        <button @click="saveEvents">
-          Save
-        </button>
-      </div>
-
-      <div class="editor__file">
         <label for="editor__selected-language">Edited Language</label>
         <select id="editor__selected-language" v-model="selectedLanguage">
           <option :value="null">
@@ -57,10 +30,6 @@
 
         <label for="editor__selected-language">Override with</label>
         <input id="editor__file--language" :disabled="selectedLanguage === null" type="file" @change="loadLanguage">
-
-        <button @click="saveLanguages">
-          Save languages
-        </button>
       </div>
     </div>
     <div
@@ -113,6 +82,10 @@
     <canvas ref="referenceCanvas" class="editor__reference" width="1024" height="512" />
     <ul v-if="mode === 'locations'" class="editor__location-list" @click.self="selectedLocation = null">
       <li>
+        <label for="editor__file--locations">
+          Override with
+        </label>
+        <input id="editor__file--locations" type="file" @change="loadLocations">
         <button @click="sortPolygonsById">
           Sort by ID
         </button>
@@ -130,16 +103,22 @@
         v-for="(location, index) in locations"
         :key="`location${index}`"
         :class="selectedLocation === location ? 'editor__location-list-item--selected' : undefined"
+        @click="selectLocation(location)"
       >
         <span>{{ location.id }}</span>
         <span>{{ location.name }}</span>
-        <button @click="deleteLocation(index)">
+        <button @click.stop="deleteLocation(index)">
           Delete
         </button>
       </li>
     </ul>
     <ul v-else-if="mode === 'events'" class="editor__event-list" @click.self="selectedEvent = null">
       <li>
+        <label for="editor__file--events">
+          Override with
+        </label>
+
+        <input id="editor__file--events" type="file" @change="loadEvents">
         <button @click="sortEvents">
           Sort
         </button>
@@ -178,9 +157,6 @@
         </label>
 
         <input id="editor__file--tags" type="file" @change="loadTags">
-        <button @click="saveTags">
-          Save
-        </button>
       </div>
       <h2>Categories</h2>
       <ul class="editor__tags-categories">
@@ -261,11 +237,13 @@
 /* eslint-disable no-param-reassign */
 
 import { Mesh, OrthographicCamera, PlaneBufferGeometry, Scene, ShaderMaterial, Vector2, WebGLRenderer } from 'three'
+import Zip from 'jszip'
 import mapFragmentShader from '@/components/map/mapFragmentShader'
 import textFragmentShader from '@/components/editor/editorTextFragmentShader'
 import TextureManager from '@/components/map/TextureManager'
 import EventProperties from '@/components/editor/EventProperties.vue'
 import EventPreview from '@/components/editor/EventPreview.vue'
+import baseLocations from '@/store/locations.json'
 import baseEvents from '@/store/events.json'
 import tagCategories from '@/store/tags.json'
 import LocationProperties from '@/components/editor/LocationProperties.vue'
@@ -293,7 +271,7 @@ export default {
   data () {
     return {
       mode: 'events',
-      locations: [],
+      locations: baseLocations,
       events: baseEvents,
       newLocation: null,
       selectedLocation: null,
@@ -540,6 +518,27 @@ export default {
         // update any render target sizes here
       }
     },
+    save () {
+      const zip = new Zip()
+      const srcDir = zip.folder('src')
+
+      const storeDir = srcDir.folder('store')
+      storeDir.file('locations.json', JSON.stringify(this.locations, undefined, 4))
+      storeDir.file('events.json', JSON.stringify(this.events, undefined, 4))
+      storeDir.file('tags.json', JSON.stringify(this.tagCategories, undefined, 4))
+
+      const langDir = srcDir.folder('lang')
+      Object.keys(this.loadedLanguages).forEach((lang) => {
+        langDir.file(`${lang}.json`, JSON.stringify(this.loadedLanguages[lang], undefined, 4))
+      })
+
+      zip.generateAsync({ type: 'uint8array' }).then((data) => {
+        saveAs(
+          new Blob([data], { type: 'application/zip' }),
+          'data.zip'
+        )
+      })
+    },
     loadLocations (event) {
       if (event.target.files.length === 0) {
         return
@@ -555,28 +554,6 @@ export default {
 
       // eslint-disable-next-line no-param-reassign
       event.target.value = ''
-    },
-    saveLocations () {
-      saveAs(
-        new Blob([JSON.stringify(this.locations, undefined, 4)], { type: 'application/json;charset=utf-8' }),
-        'locations-editable.json'
-      )
-      this.locationsDirty = false
-    },
-    exportLocations () {
-      const exportLocations = [...this.locations].sort((a, b) => a.id - b.id).reduce((acc, location) => ({
-        ...acc,
-        [location.id]: {
-          id: location.name,
-          image: location.image,
-          coppermind: location.coppermind
-        }
-      }), {})
-
-      saveAs(
-        new Blob([JSON.stringify(exportLocations, undefined, 4)], { type: 'application/json;charset=utf-8' }),
-        'locations.json'
-      )
     },
     loadEvents (event) {
       if (event.target.files.length === 0) {
@@ -594,13 +571,6 @@ export default {
       // eslint-disable-next-line no-param-reassign
       event.target.value = ''
     },
-    saveEvents () {
-      saveAs(
-        new Blob([JSON.stringify(this.events, undefined, 4)], { type: 'application/json;charset=utf-8' }),
-        'events.json'
-      )
-      this.eventsDirty = false
-    },
     loadLanguage (event) {
       if (event.target.files.length === 0) {
         return
@@ -614,16 +584,6 @@ export default {
 
       // eslint-disable-next-line no-param-reassign
       event.target.value = ''
-    },
-    saveLanguages () {
-      Object.keys(this.loadedLanguages).forEach((lang) => {
-        saveAs(
-          new Blob([JSON.stringify(this.loadedLanguages[lang], undefined, 4)], { type: 'application/json;charset=utf-8' }),
-          `${lang}.json`
-        )
-      })
-
-      this.languagesDirty = false
     },
     loadTags (event) {
       if (event.target.files.length === 0) {
@@ -639,13 +599,6 @@ export default {
 
       // eslint-disable-next-line no-param-reassign
       event.target.value = ''
-    },
-    saveTags () {
-      saveAs(
-        new Blob([JSON.stringify(this.tagCategories, undefined, 4)], { type: 'application/json;charset=utf-8' }),
-        'tags.json'
-      )
-      this.tagsDirty = false
     },
     addEvent () {
       this.selectedEvent = { id: 'new-event', date: [1170], tags: [], coordinates: { x: 0, y: 0 } }
@@ -733,12 +686,15 @@ export default {
       }
 
       if (!event.ctrlKey) {
-        this.selectedLocationKey = Date.now()
-        this.selectedLocation = location
+        this.selectLocation(location)
       }
 
       event.preventDefault()
       event.stopPropagation()
+    },
+    selectLocation (location) {
+      this.selectedLocationKey = Date.now()
+      this.selectedLocation = location
     },
     clickPoint (event, polygon, polygonIndex, pointIndex) {
       if (this.draggedPoint !== null) {
@@ -947,6 +903,10 @@ export default {
     display: flex;
     align-items: center;
 
+    button:first-of-type {
+      margin-right: 1rem;
+    }
+
     img {
       max-height: 100%;
       margin-right: 0.5rem;
@@ -1054,14 +1014,15 @@ export default {
       display: grid;
       grid-template-columns: auto 1fr auto;
       grid-gap: 0.5rem;
-      padding: 0.5rem;
+      padding: 0.5rem 1rem;
 
       &:first-child {
-        button:first-child {
+        grid-template-columns: auto auto auto;
+        padding-top: 0;
+
+        button:first-of-type, input, label {
           grid-column: 1 / span 3;
         }
-
-        grid-template-columns: auto auto auto;
       }
     }
 
@@ -1097,12 +1058,13 @@ export default {
         cursor: default;
         pointer-events: none;
         grid-template-columns: auto auto;
+        padding-top: 0;
 
         button {
           pointer-events: auto;
         }
 
-        button:first-child {
+        button:first-of-type, label, input {
           grid-column: 1 / span 2;
         }
       }
