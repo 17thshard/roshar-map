@@ -810,7 +810,7 @@ export default {
       <svg xmlns='http://www.w3.org/2000/svg' shape-rendering="crispEdges" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
         ${
         locations.filter(l => l.points !== undefined).map(locations =>
-          `<polygon fill="#${Number.parseInt(locations.id, 10).toString(16).padStart(6, '0')}" points="${
+          `<polygon fill="#${Number.parseInt(locations.mapId, 10).toString(16).padStart(6, '0')}" points="${
             locations.points.map(p => `${(p.x * xScale).toFixed(5)},${(p.y * yScale).toFixed(5)}`).join(' ')
           }"></polygon>`
         ).join('\n')

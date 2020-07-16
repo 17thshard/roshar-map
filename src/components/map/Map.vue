@@ -93,7 +93,7 @@ export default {
   methods: {
     loadTextures () {
       const textures = {
-        map_bg: {},
+        map_bg: { hqWebpAvailable: true },
         map: { hqAvailable: true },
         shadesmar_map_bg: {},
         transition: {},

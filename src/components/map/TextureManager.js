@@ -5,11 +5,18 @@ export default class TextureManager {
   constructor (renderer) {
     const maxTextureSize = renderer.capabilities.maxTextureSize
     this.useHq = maxTextureSize >= 8192 && !isMobile({ tablet: true, featureDetect: true })
-    try {
-      this.webpSupported = document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0
-    } catch (t) {
-      this.webpSupported = false
-    }
+    this.webpPromise = new Promise((resolve) => {
+      const img = new Image()
+      img.onload = () => {
+        this.webpSupported = true
+        resolve()
+      }
+      img.onerror = () => {
+        this.webpSupported = false
+        resolve()
+      }
+      img.src = 'data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAACyAgCdASoCAAEALmk0mk0iIiIiIgBoSygABc6zbAAA/v56QAAAAA=='
+    })
   }
 
   buildPath (prefix, name) {
@@ -21,11 +28,11 @@ export default class TextureManager {
 
     const textureLoader = new TextureLoader()
 
-    return new Promise((resolve) => {
+    return this.webpPromise.then(() => new Promise((resolve) => {
       Object.keys(textures).forEach((name) => {
         const texture = textures[name]
 
-        const prefix = texture.hqAvailable && this.useHq ? 'hq_' : ''
+        const prefix = (texture.hqAvailable || (texture.hqWebpAvailable && this.webpSupported)) && this.useHq ? 'hq_' : ''
         const path = this.buildPath(prefix, name)
 
         textureLoader.load(path, (data) => {
@@ -37,7 +44,7 @@ export default class TextureManager {
           }
         })
       })
-    })
+    }))
   }
 
   loadData (name, hqAvailable, channelsToKeep) {
@@ -48,7 +55,7 @@ export default class TextureManager {
 
     const channelNames = Object.keys(channels)
 
-    return new Promise((resolve) => {
+    return this.webpPromise.then(() => new Promise((resolve) => {
       const image = new Image()
 
       image.onload = () => {
@@ -86,6 +93,6 @@ export default class TextureManager {
       }
 
       image.src = this.buildPath(hqAvailable && this.useHq ? 'hq_' : '', name)
-    })
+    }))
   }
 }
