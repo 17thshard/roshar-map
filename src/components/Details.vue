@@ -397,6 +397,7 @@ export default {
         height: 100%;
         object-fit: cover;
         background: #0f3562;
+        transition: transform 0.2s linear;
       }
 
       &:hover, &:active, &:focus {
@@ -419,18 +420,8 @@ export default {
         }
 
         .details__related-link-image, .details__related-link-placeholder {
-          animation: details__related-link-grow 5s linear;
-          animation-fill-mode: forwards;
-        }
-
-        @keyframes details__related-link-grow {
-          0% {
-            transform: scale(1)
-          }
-
-          100% {
-            transform: scale(2)
-          }
+          transition-duration: 5s;
+          transform: scale(2);
         }
       }
     }
