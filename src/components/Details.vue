@@ -133,7 +133,7 @@ export default {
   left: 0;
   top: 0;
   bottom: 0;
-  z-index: 60;
+  z-index: 80;
   width: 450px;
   max-width: 100%;
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
