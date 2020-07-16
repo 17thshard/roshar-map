@@ -6,8 +6,9 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "dumpLangFiles": "node ./bin/dump-lang-files.js",
-    "compileLangJsons": "node ./bin/compile-lang-jsons.js"
+    "dumpTranslations": "node ./bin/dump-translations.js",
+    "validateTranslations": "node ./bin/validate-translations.js",
+    "compileLangJsons": "node ./bin/validate-translations.js && node ./bin/compile-lang-jsons.js"
   },
   "dependencies": {
     "@johmun/vue-tags-input": "^2.1.0",

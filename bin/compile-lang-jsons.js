@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 const fs = require('fs')
 
-const destPath = './build/translations'
+const destPath = './build/lang'
 
 fs.mkdirSync(destPath, { recursive: true })
 
@@ -37,7 +37,7 @@ function handleLang (lang) {
 }
 
 function buildLangEntries (lang, type, parser) {
-  const dirPath = `./lang/${lang}/${type}`
+  const dirPath = `./translations/${lang}/${type}`
 
   if (!fs.existsSync(dirPath)) {
     return undefined
