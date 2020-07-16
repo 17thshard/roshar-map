@@ -38,7 +38,8 @@
         "coordinates": {
             "x": 486.1,
             "y": 317.6
-        }
+        },
+        "hideMarker": true
     },
     {
         "id": "last-desolation",
@@ -49,6 +50,7 @@
             "general"
         ],
         "shadesmar": false,
+        "hideMarker": true,
         "coordinates": {
             "x": 512,
             "y": 256,
@@ -64,6 +66,7 @@
             "general"
         ],
         "shadesmar": false,
+        "hideMarker": true,
         "coordinates": {
             "x": 512,
             "y": 256,
@@ -79,6 +82,7 @@
             "general"
         ],
         "shadesmar": false,
+        "hideMarker": true,
         "coordinates": {
             "x": 512,
             "y": 256,
@@ -155,7 +159,8 @@
         "coordinates": {
             "x": 738.7,
             "y": 250.3
-        }
+        },
+        "details": true
     },
     {
         "id": "kaladin-birth",

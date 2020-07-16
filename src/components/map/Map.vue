@@ -11,13 +11,13 @@ import {
   PlaneBufferGeometry,
   RepeatWrapping,
   Scene,
-  ShaderMaterial, Vector2,
+  ShaderMaterial,
+  Vector2,
   Vector3,
   WebGLRenderer
 } from 'three'
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
-import { mapState } from 'vuex'
 import MapControls from '@/components/map/MapControls'
 import Highlight from '@/components/map/Highlight'
 import fragmentShader from '@/components/map/mapFragmentShader'
@@ -44,7 +44,9 @@ export default {
     }
   },
   computed: {
-    ...mapState(['activeLocation']),
+    activeLocation () {
+      return this.$route.name === 'location' ? this.$store.state.locationMapping[this.$route.params.id] : null
+    },
     activeEvent () {
       return this.transitions ? this.$store.state.activeEvent : null
     }
@@ -52,6 +54,13 @@ export default {
   watch: {
     activeEvent (event, oldEvent) {
       this.onEventChanged(event, oldEvent)
+    },
+    activeLocation (location) {
+      if (location !== null) {
+        const newPosition = location.coordinates
+        const target = new Vector3(newPosition.x - 512, 256 - newPosition.y, 0)
+        this.controls.transitionTo(target, newPosition.zoom !== undefined ? newPosition.zoom : 0.7)
+      }
     }
   },
   mounted () {
@@ -107,7 +116,11 @@ export default {
       this.controls.addEventListener('click', ({ position }) => {
         if (this.transitionValue === 0) {
           this.textActiveProgress = 1
-          this.$store.commit('selectLocation', this.queryHover(position.x, position.y))
+          const location = this.queryHover(position.x, position.y)
+
+          if (location !== null && (this.activeLocation === null || location !== this.activeLocation.mapId)) {
+            this.$router.push(`/${this.$route.params.locale}/locations/${this.$store.state.locationsByMapId[location].id}`)
+          }
         }
       })
 
@@ -204,7 +217,11 @@ export default {
 
       const newPosition = event.coordinates
       const target = new Vector3(newPosition.x - 512, 256 - newPosition.y, 0)
-      this.highlights.add(new Highlight(target.x, target.y, event.specialEffect === 'shattering' ? 2 : undefined))
+
+      if (event.hideMarker !== true) {
+        this.highlights.add(new Highlight(target.x, target.y, event.specialEffect === 'shattering' ? 2 : undefined))
+      }
+
       this.controls.transitionTo(target, newPosition.zoom !== undefined ? newPosition.zoom : 0.7)
 
       if (event.perpendicularity) {

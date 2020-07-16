@@ -50,16 +50,6 @@ const events = baseEvents.sort(
     return -1
   }).map((event, index) => ({ ...event, index }))
 
-const locations = baseLocations.sort((a, b) => a.id - b.id).reduce((acc, location) => ({
-  ...acc,
-  [location.id]: {
-    type: 'location',
-    id: location.name,
-    image: location.image,
-    coppermind: location.coppermind
-  }
-}), {})
-
 let lastEvent = null
 let runningOffset = 0
 events.forEach((event) => {
@@ -73,27 +63,27 @@ events.forEach((event) => {
   lastEvent = event
 })
 
+const eventMapping = events.reduce((acc, event) => ({
+  ...acc,
+  [event.id]: event
+}), {})
+
+const locationMapping = baseLocations.reduce((acc, location) => ({
+  ...acc,
+  [location.id]: { type: 'location', ...location }
+}), {})
+
+const locationsByMapId = Object.values(locationMapping).filter(location => location.mapId !== undefined).reduce((acc, location) => ({
+  ...acc,
+  [location.mapId]: location
+}), {})
+
 const mutations = {
   selectEvent (state, event) {
     state.activeEvent = event
-    mutations.closeDetails(state)
   },
-  selectLocation (state, location) {
-    state.activeLocation = location
+  unselectEvent (state) {
     state.activeEvent = null
-
-    if (location !== null && state.locations[location] !== undefined) {
-      mutations.showDetails(state, state.locations[location])
-    }
-  },
-  showDetails (state, details) {
-    state.details = details
-  },
-  closeDetails (state) {
-    if (state.activeLocation !== null) {
-      state.activeLocation = null
-    }
-    state.details = null
   },
   enableTag (state, tag) {
     const index = state.filter.tags.indexOf(tag)
@@ -133,10 +123,10 @@ const mutations = {
 export default new Vuex.Store({
   state: {
     events,
-    locations,
+    eventMapping,
+    locationMapping,
+    locationsByMapId,
     activeEvent: null,
-    activeLocation: null,
-    details: null,
     filter: {
       tags: [],
       separateTags: []

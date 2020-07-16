@@ -2,7 +2,9 @@
   <div class="editor">
     <div class="editor__menu">
       <img src="@/assets/roshar_logo.png" alt="Logo">
-      <button @click="save">Save to disk</button>
+      <button @click="save">
+        Save to disk
+      </button>
       Mode:
       <label for="editor__mode--locations">
         <input id="editor__mode--locations" v-model="mode" type="radio" value="locations">
@@ -46,30 +48,34 @@
     >
       <svg v-if="mode === 'locations'">
         <template
-          v-for="(polygon, index) in locations"
+          v-for="(locations, index) in locations.filter(l => l.points !== undefined)"
         >
           <polygon
             :key="`polygon${index}`"
-            :points="buildPolygonPoints(polygon)"
-            :class="selectedLocation === polygon ? 'editor__surface-polygon--selected' : undefined"
-            @click="clickPolygon($event, polygon, index)"
+            :points="buildPolygonPoints(locations)"
+            :class="selectedLocation === locations ? 'editor__surface-polygon--selected' : undefined"
+            @click="clickLocationPolygon(locations, $event)"
           />
           <circle
-            v-for="(point, pointIndex) in polygon.points"
+            v-for="(point, pointIndex) in locations.points"
             :key="`polygon${index}-point${pointIndex}`"
             :cx="point.x / xScale"
             :cy="point.y / yScale"
-            :class="newLocation === polygon && pointIndex === 0 ? 'editor__surface-point--first' : undefined"
             :r="5 / zoom"
-            @click="clickPoint($event, polygon, index, pointIndex)"
+            @click="clickPoint($event, locations, index, pointIndex)"
             @mousedown="startDrag($event, point)"
           />
         </template>
       </svg>
       <div
         v-if="mode === 'events' && selectedEvent !== null"
-        class="editor__selected-event"
+        class="editor__dot"
         :style="{ left: `${selectedEvent.coordinates.x / xScale}px`, top: `${selectedEvent.coordinates.y / yScale}px` }"
+      />
+      <div
+        v-if="mode === 'locations' && selectedLocation !== null"
+        class="editor__dot"
+        :style="{ left: `${selectedLocation.coordinates.x / xScale}px`, top: `${selectedLocation.coordinates.y / yScale}px` }"
       />
       <div
         v-if="mode === 'events' && selectedEvent === null && markerPosition !== null"
@@ -86,9 +92,17 @@
           Override with
         </label>
         <input id="editor__file--locations" type="file" @change="loadLocations">
-        <button @click="sortPolygonsById">
-          Sort by ID
+        <button @click="sortLocationsByMapId">
+          Sort by Map ID
         </button>
+        <div class="editor__location-list-actions">
+          <button @click="addLocation">
+            New
+          </button>
+          <button @click="selectedEvent = null">
+            Clear selection
+          </button>
+        </div>
         <button @click="renderPng(locations, 'map_text')">
           Save LQ
         </button>
@@ -105,8 +119,8 @@
         :class="selectedLocation === location ? 'editor__location-list-item--selected' : undefined"
         @click="selectLocation(location)"
       >
+        <span>{{ location.mapId }}</span>
         <span>{{ location.id }}</span>
-        <span>{{ location.name }}</span>
         <button @click.stop="deleteLocation(index)">
           Delete
         </button>
@@ -269,7 +283,6 @@ export default {
       mode: 'events',
       locations: baseLocations,
       events: baseEvents,
-      newLocation: null,
       selectedLocation: null,
       selectedLocationKey: null,
       selectedEvent: null,
@@ -533,6 +546,9 @@ export default {
           new Blob([data], { type: 'application/zip' }),
           'data.zip'
         )
+        this.locationsDirty = false
+        this.eventsDirty = false
+        this.languagesDirty = false
       })
     },
     loadLocations (event) {
@@ -604,6 +620,10 @@ export default {
       this.selectedEvent = null
       this.events.splice(index, 1)
     },
+    addLocation () {
+      this.selectedLocation = { id: 'new-location', coordinates: { x: 0, y: 0 } }
+      this.locations.push(this.selectedLocation)
+    },
     deleteLocation (index) {
       this.selectedLocation = null
       this.locations.splice(index, 1)
@@ -632,7 +652,7 @@ export default {
         return
       }
 
-      const { clientX, clientY, shiftKey } = event
+      const { clientX, clientY, shiftKey, ctrlKey } = event
       const { x, y } = this.transform(clientX, clientY)
 
       if (this.mode === 'events') {
@@ -645,81 +665,38 @@ export default {
         return
       }
 
-      if (this.newLocation !== null) {
-        this.newLocation.points.push({ x, y })
-
-        if (shiftKey) {
-          this.newLocation = null
-        }
-      } else if (this.selectedLocation !== null && shiftKey) {
+      if (this.selectedLocation !== null && this.selectedLocation.mapId !== undefined && shiftKey) {
         this.selectedLocation.points.push({ x, y })
-      } else if (this.selectedLocation !== null) {
-        this.selectedLocation = null
-      } else {
-        this.newLocation = { name: 'New Area', id: Math.max(...this.locations.map(l => l.id)), points: [{ x, y }] }
-        this.locations.push(this.newLocation)
+      } else if (this.selectedLocation !== null && ctrlKey) {
+        this.selectedLocation.coordinates = { x: Number.parseFloat(x.toFixed(1)), y: Number.parseFloat(y.toFixed(1)) }
       }
     },
-    clickPolygon (event, location, index) {
-      if (this.draggedPoint !== null) {
-        return
-      }
-
+    clickLocationPolygon (location, event) {
       if (event.ctrlKey) {
-        this.locations.splice(index, 1)
-
-        if (location === this.selectedLocation) {
-          this.selectedLocation = null
-        }
-
-        if (location === this.newLocation) {
-          this.newLocation = null
-        }
-      }
-
-      if (this.newLocation !== null) {
         return
       }
 
-      if (!event.ctrlKey) {
-        this.selectLocation(location)
-      }
-
-      event.preventDefault()
+      this.selectedLocation = location
       event.stopPropagation()
     },
     selectLocation (location) {
       this.selectedLocationKey = Date.now()
       this.selectedLocation = location
     },
-    clickPoint (event, polygon, polygonIndex, pointIndex) {
+    clickPoint (event, location, locationIndex, pointIndex) {
       if (this.draggedPoint !== null) {
         return
       }
 
-      if (!event.ctrlKey && polygon === this.newLocation && pointIndex === 0) {
-        this.newLocation = null
-      } else if (event.ctrlKey) {
-        polygon.points.splice(pointIndex, 1)
-
-        if (polygon.points.length === 0) {
-          this.locations.splice(polygonIndex, 1)
-
-          if (this.newLocation === polygon) {
-            this.newLocation = null
-          }
-
-          if (this.selectedLocation === polygon) {
-            this.selectedLocation = null
-          }
-        }
+      if (event.ctrlKey) {
+        location.points.splice(pointIndex, 1)
       }
 
       event.preventDefault()
       event.stopPropagation()
     },
     startDrag (event, point) {
-      if (this.newLocation !== null || event.altKey || event.button === 1) {
+      if (event.altKey || event.button === 1) {
         return
       }
 
@@ -805,10 +782,24 @@ export default {
         }
       )
     },
-    sortPolygonsById () {
-      this.locations.sort((a, b) => a.id - b.id)
+    sortLocationsByMapId () {
+      this.locations.sort((a, b) => {
+        if (a.mapId === undefined && b.mapId === undefined) {
+          return 0
+        }
+
+        if (a.mapId === undefined && b.mapId !== undefined) {
+          return 1
+        }
+
+        if (a.mapId !== undefined && b.mapId === undefined) {
+          return -1
+        }
+
+        return a.mapId - b.mapId
+      })
     },
-    async renderPng (polygons, base) {
+    async renderPng (locations, base) {
       const { width, height, data: baseData } = base !== undefined
         ? (await this.textureManager.loadData(base, false, 'rgba'))
         : { width: 1024, height: 512 }
@@ -818,9 +809,9 @@ export default {
       const svgString = `
       <svg xmlns='http://www.w3.org/2000/svg' shape-rendering="crispEdges" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
         ${
-        polygons.map(polygon =>
-          `<polygon fill="#${Number.parseInt(polygon.id, 10).toString(16).padStart(6, '0')}" points="${
-            polygon.points.map(p => `${(p.x * xScale).toFixed(5)},${(p.y * yScale).toFixed(5)}`).join(' ')
+        locations.filter(l => l.points !== undefined).map(locations =>
+          `<polygon fill="#${Number.parseInt(locations.id, 10).toString(16).padStart(6, '0')}" points="${
+            locations.points.map(p => `${(p.x * xScale).toFixed(5)},${(p.y * yScale).toFixed(5)}`).join(' ')
           }"></polygon>`
         ).join('\n')
       }
@@ -1017,10 +1008,17 @@ export default {
         grid-template-columns: auto auto auto;
         padding-top: 0;
 
-        button:first-of-type, input, label {
+        & > button:first-of-type, input, label {
           grid-column: 1 / span 3;
         }
       }
+    }
+
+    &-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 0.5rem;
+      grid-column: 1 / span 3;
     }
 
     &-item--selected {
@@ -1054,7 +1052,7 @@ export default {
       &:first-child {
         cursor: default;
         pointer-events: none;
-        grid-template-columns: auto auto;
+        grid-template-columns: 1fr 1fr;
         padding-top: 0;
 
         button {
@@ -1128,7 +1126,7 @@ export default {
         &:first-child {
           cursor: default;
           pointer-events: none;
-          grid-template-columns: auto;
+          grid-template-columns: 1fr 1fr;
 
           button {
             pointer-events: auto;
@@ -1161,7 +1159,7 @@ export default {
     }
   }
 
-  &__selected-event {
+  &__dot {
     position: absolute;
     width: 0.75rem;
     height: 0.75rem;

@@ -2,9 +2,9 @@
   <div :class="['details', { 'details--image': details.image !== undefined }]">
     <div :class="['details__bar', { 'details__bar--visible': showBar }]">
       <h2>{{ $t(`${details.type}s.${details.id}.name`) }}</h2>
-      <button class="details__close" :title="$t('ui.close')" @click="$store.commit('closeDetails')">
+      <router-link class="details__close" :title="$t('ui.close')" :to="`/${$route.params.locale}`">
         <XIcon />
-      </button>
+      </router-link>
     </div>
     <Scrollbar
       class="details__scroller"
@@ -37,19 +37,23 @@
 <script>
 import Scrollbar from 'vuescroll/dist/vuescroll-native'
 import { XIcon } from 'vue-feather-icons'
-import { mapState } from 'vuex'
 import Markdown from '@/components/Markdown.vue'
 
 export default {
   name: 'Details',
   components: { Markdown, XIcon, Scrollbar },
+  props: {
+    details: {
+      type: Object,
+      required: true
+    }
+  },
   data () {
     return {
       showBar: false
     }
   },
   computed: {
-    ...mapState(['details']),
     imageUrl () {
       return `${process.env.BASE_URL}img/${this.details.type}s/${this.details.image}`
     }

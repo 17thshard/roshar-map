@@ -3,4 +3,4 @@
 Blurb
 
 ## Details
-Adolin was born in 1120, like the good lad that he is
+Adolin was born in 1120, like the good lad that he is. He was born in #[Kholinar](locations/kholinar) by the way!

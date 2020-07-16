@@ -25,7 +25,14 @@
       <input id="event-properties__id" v-model="event.id" type="text">
 
       <div class="event-properties__coordinates">
-        <h3>Coordinates</h3>
+        <h3>
+          Coordinates
+          <label for="event-properties__hide-marker">
+            <input id="event-properties__hide-marker" v-model="event.hideMarker" type="checkbox">
+
+            Hide marker
+          </label>
+        </h3>
 
         <label for="event-properties__coordinates--x">X</label>
         <input
@@ -181,21 +188,6 @@ export default {
   computed: {
     imageBaseUrl () {
       return `${process.env.BASE_URL}img/events`
-    }
-  },
-  watch: {
-    event (newEvent) {
-      this.dateText = newEvent.date.join('.')
-    },
-    'event.id' (newId, oldId) {
-      Object.keys(this.languages).forEach((lang) => {
-        const language = this.languages[lang]
-
-        if (language.events !== undefined && language.events[oldId] !== undefined) {
-          language.events[newId] = { ...(language.events[newId] || {}), ...language.events[oldId] }
-          this.$delete(language.events, oldId)
-        }
-      })
     }
   },
   methods: {

@@ -1,7 +1,11 @@
 [
     {
-        "name": "alethkar",
-        "id": 1,
+        "id": "alethkar",
+        "mapId": 1,
+        "coordinates": {
+            "x": 718.9,
+            "y": 277.2
+        },
         "points": [
             {
                 "x": 649.2607208629308,
@@ -39,8 +43,12 @@
         "coppermind": "Alethkar"
     },
     {
-        "name": "jah-keved",
-        "id": "2",
+        "id": "jah-keved",
+        "mapId": 2,
+        "coordinates": {
+            "x": 621.1,
+            "y": 245.3
+        },
         "points": [
             {
                 "x": 570.191002367798,
@@ -137,8 +145,12 @@
         ]
     },
     {
-        "name": "herdaz",
-        "id": "3",
+        "id": "herdaz",
+        "mapId": 3,
+        "coordinates": {
+            "x": 690.6,
+            "y": 183.5
+        },
         "points": [
             {
                 "x": 657.0734017363851,
@@ -171,8 +183,12 @@
         ]
     },
     {
-        "name": "kharbranth",
-        "id": "4",
+        "id": "kharbranth",
+        "mapId": 4,
+        "coordinates": {
+            "x": 577.9,
+            "y": 375.1
+        },
         "points": [
             {
                 "x": 576.6566692975533,
@@ -194,8 +210,12 @@
         "image": "kharbranth.jpg"
     },
     {
-        "name": "thaylenah",
-        "id": "5",
+        "id": "thaylenah",
+        "mapId": 5,
+        "coordinates": {
+            "x": 610,
+            "y": 426
+        },
         "points": [
             {
                 "x": 572.2115232833465,
@@ -244,8 +264,12 @@
         ]
     },
     {
-        "name": "azir",
-        "id": "6",
+        "id": "azir",
+        "mapId": 6,
+        "coordinates": {
+            "x": 414.8,
+            "y": 303.2
+        },
         "points": [
             {
                 "x": 391.57695343330704,
@@ -282,8 +306,12 @@
         ]
     },
     {
-        "name": "shinovar",
-        "id": "7",
+        "id": "shinovar",
+        "mapId": 7,
+        "coordinates": {
+            "x": 291.2,
+            "y": 261.8
+        },
         "points": [
             {
                 "x": 268.99868455669565,
@@ -352,8 +380,12 @@
         ]
     },
     {
-        "name": "aimia",
-        "id": "8",
+        "id": "aimia",
+        "mapId": 8,
+        "coordinates": {
+            "x": 190.7,
+            "y": 319.3
+        },
         "points": [
             {
                 "x": 183.1938963430676,
@@ -418,8 +450,12 @@
         ]
     },
     {
-        "name": "iri",
-        "id": "9",
+        "id": "iri",
+        "mapId": 9,
+        "coordinates": {
+            "x": 335.4,
+            "y": 179.9
+        },
         "points": [
             {
                 "x": 315.47066561431205,
@@ -504,8 +540,12 @@
         ]
     },
     {
-        "name": "rira",
-        "id": "10",
+        "id": "rira",
+        "mapId": 10,
+        "coordinates": {
+            "x": 401.3,
+            "y": 165.4
+        },
         "points": [
             {
                 "x": 372.7861089187056,
@@ -562,8 +602,12 @@
         ]
     },
     {
-        "name": "reshi-isles",
-        "id": "11",
+        "id": "reshi-isles",
+        "mapId": 11,
+        "coordinates": {
+            "x": 510.4,
+            "y": 120.8
+        },
         "points": [
             {
                 "x": 425.01657458563534,
@@ -592,8 +636,12 @@
         ]
     },
     {
-        "name": "reshi-isles",
-        "id": "11",
+        "id": "reshi-isles",
+        "mapId": 11,
+        "coordinates": {
+            "x": 509.6,
+            "y": 120.8
+        },
         "points": [
             {
                 "x": 530.2857142857143,
@@ -618,8 +666,12 @@
         ]
     },
     {
-        "name": "urithiru",
-        "id": "12",
+        "id": "urithiru",
+        "mapId": 12,
+        "coordinates": {
+            "x": 484.9,
+            "y": 313.1
+        },
         "points": [
             {
                 "x": 472.22460254820163,
@@ -648,8 +700,12 @@
         ]
     },
     {
-        "name": "shattered-plains",
-        "id": "13",
+        "id": "shattered-plains",
+        "mapId": 13,
+        "coordinates": {
+            "x": 768,
+            "y": 364.6
+        },
         "points": [
             {
                 "x": 749.6806103656933,
@@ -686,8 +742,12 @@
         ]
     },
     {
-        "name": "tashikk",
-        "id": "14",
+        "id": "tashikk",
+        "mapId": 14,
+        "coordinates": {
+            "x": 378.4,
+            "y": 350.1
+        },
         "points": [
             {
                 "x": 356.5545908971323,
@@ -708,8 +768,12 @@
         ]
     },
     {
-        "name": "emul",
-        "id": "15",
+        "id": "emul",
+        "mapId": 15,
+        "coordinates": {
+            "x": 439.3,
+            "y": 342.4
+        },
         "points": [
             {
                 "x": 448.8250460405157,
@@ -750,8 +814,12 @@
         ]
     },
     {
-        "name": "tukar",
-        "id": "16",
+        "id": "tukar",
+        "mapId": 16,
+        "coordinates": {
+            "x": 411.4,
+            "y": 381.6
+        },
         "points": [
             {
                 "x": 389.82583530649833,
@@ -796,8 +864,12 @@
         ]
     },
     {
-        "name": "marat",
-        "id": "17",
+        "id": "marat",
+        "mapId": 17,
+        "coordinates": {
+            "x": 479.3,
+            "y": 373.3
+        },
         "points": [
             {
                 "x": 456.3144435674823,
@@ -842,8 +914,12 @@
         ]
     },
     {
-        "name": "liafor",
-        "id": "18",
+        "id": "liafor",
+        "mapId": 18,
+        "coordinates": {
+            "x": 335.6,
+            "y": 345.2
+        },
         "points": [
             {
                 "x": 319.96969218626674,
@@ -888,8 +964,12 @@
         ]
     },
     {
-        "name": "babatharnam",
-        "id": "19",
+        "id": "babatharnam",
+        "mapId": 19,
+        "coordinates": {
+            "x": 388.5,
+            "y": 224.6
+        },
         "points": [
             {
                 "x": 354.93817416469346,
@@ -918,8 +998,12 @@
         ]
     },
     {
-        "name": "marabethia",
-        "id": "20",
+        "id": "marabethia",
+        "mapId": 20,
+        "coordinates": {
+            "x": 469.6,
+            "y": 228.2
+        },
         "points": [
             {
                 "x": 442.4940805051302,
@@ -964,8 +1048,12 @@
         ]
     },
     {
-        "name": "purelake",
-        "id": "21",
+        "id": "purelake",
+        "mapId": 21,
+        "coordinates": {
+            "x": 463.1,
+            "y": 251
+        },
         "points": [
             {
                 "x": 427.6769271244409,
@@ -1030,8 +1118,12 @@
         ]
     },
     {
-        "name": "kholinar",
-        "id": "22",
+        "id": "kholinar",
+        "mapId": 22,
+        "coordinates": {
+            "x": 738.7,
+            "y": 250.3
+        },
         "points": [
             {
                 "x": 711.4927650618258,
@@ -1076,8 +1168,12 @@
         ]
     },
     {
-        "name": "rathalas",
-        "id": "23",
+        "id": "rathalas",
+        "mapId": 23,
+        "coordinates": {
+            "x": 726.9,
+            "y": 304.8
+        },
         "points": [
             {
                 "x": 717.9314917127072,
@@ -1102,8 +1198,12 @@
         ]
     },
     {
-        "name": "new-natanatan",
-        "id": "24",
+        "id": "new-natanatan",
+        "mapId": 24,
+        "coordinates": {
+            "x": 832.1,
+            "y": 371.7
+        },
         "points": [
             {
                 "x": 806.5919494869771,
@@ -1124,8 +1224,12 @@
         ]
     },
     {
-        "name": "thaylen-city",
-        "id": "25",
+        "id": "thaylen-city",
+        "mapId": 25,
+        "coordinates": {
+            "x": 596.9,
+            "y": 419.2
+        },
         "points": [
             {
                 "x": 559.9267561168114,
@@ -1174,8 +1278,12 @@
         ]
     },
     {
-        "name": "valley",
-        "id": "26",
+        "id": "valley",
+        "mapId": 26,
+        "coordinates": {
+            "x": 482.5,
+            "y": 328.8
+        },
         "points": [
             {
                 "x": 468.35674822415154,

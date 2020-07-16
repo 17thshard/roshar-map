@@ -22,13 +22,13 @@ events.forEach((event) => {
 
 const locations = JSON.parse(fs.readFileSync('./src/store/locations.json', 'utf8'))
 locations.forEach((location) => {
-  const path = `./translations/en/locations/${location.name}.md`
+  const path = `./translations/en/locations/${location.id}.md`
 
   if (fs.existsSync(path)) {
     return
   }
 
-  fs.writeFileSync(path, `# ${location.name}\nDetails\n`)
+  fs.writeFileSync(path, `# ${location.id}\nDetails\n`)
 
-  console.log(`Created new translation file for location ${location.name}`)
+  console.log(`Created new translation file for location ${location.id}`)
 })

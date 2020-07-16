@@ -2,7 +2,7 @@
 const fs = require('fs')
 
 const events = JSON.parse(fs.readFileSync('./src/store/events.json', 'utf8')).map(e => e.id)
-const locations = JSON.parse(fs.readFileSync('./src/store/locations.json', 'utf8')).map(l => l.name)
+const locations = JSON.parse(fs.readFileSync('./src/store/locations.json', 'utf8')).map(l => l.id)
 
 let errors = false
 

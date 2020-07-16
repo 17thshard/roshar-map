@@ -1,11 +1,11 @@
 <template>
-  <div id="app" :class="{ 'app--details': $store.state.details !== null }">
+  <div id="app" :class="{ 'app--details': details !== null }">
     <Map
       :transitions="mapTransitions"
       @ready="onReady"
     />
     <transition name="details">
-      <Details v-if="$store.state.details !== null" :key="$store.state.details.title" />
+      <Details v-if="details !== null" :key="details.id" :details="details" />
     </transition>
     <transition name="scrubber" duration="1500" @after-enter="onScrubberLoaded">
       <Scrubber v-if="ready" />
@@ -42,10 +42,40 @@ export default {
       mapTransitions: false
     }
   },
+  computed: {
+    details () {
+      if (this.$route.name === 'event') {
+        const event = this.$store.state.eventMapping[this.$route.params.id]
+
+        return event !== undefined ? { type: 'event', ...event } : null
+      } else if (this.$route.name === 'location') {
+        const location = this.$store.state.locationMapping[this.$route.params.id]
+
+        return location !== undefined ? location : null
+      }
+
+      return null
+    }
+  },
+  watch: {
+    '$store.state.activeEvent' (newEvent) {
+      if (newEvent === null || this.$route.name === 'root') {
+        return
+      }
+
+      if (this.$route.name === 'event' && this.$route.params.id === newEvent.id) {
+        return
+      }
+
+      this.$router.replace(`/${this.$route.params.locale}`)
+    }
+  },
   methods: {
     onReady () {
       this.ready = true
-      this.$store.commit('selectEvent', this.$store.state.events[this.$store.state.events.length - 1])
+      if (this.$route.name === 'root') {
+        this.$store.commit('selectEvent', this.$store.state.events[this.$store.state.events.length - 1])
+      }
     },
     onScrubberLoaded () {
       this.mapTransitions = true

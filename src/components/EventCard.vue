@@ -2,7 +2,7 @@
   <div
     :class="[
       'event-card',
-      { 'event-card--image': event.image !== undefined, 'event-card--details-visible': $store.state.details !== null }
+      { 'event-card--image': event.image !== undefined, 'event-card--details-visible': $route.name === 'event' }
     ]"
   >
     <div class="event-card__content">
@@ -19,7 +19,9 @@
         :inline="true"
         class="event-card__text"
       >
-        <a v-if="event.details === true" href="#" @click.prevent="showDetails">Read more</a>
+        <router-link v-if="event.details === true" :to="`/${$route.params.locale}/events/${event.id}`" class="event-card__read-more">
+          Read more
+        </router-link>
       </Markdown>
     </div>
   </div>
@@ -57,11 +59,6 @@ export default {
       }
 
       return styles
-    },
-    showDetails () {
-      const image = this.event.image !== undefined ? this.event.image.file : undefined
-
-      this.$store.commit('showDetails', { type: 'event', id: this.event.id, image, coppermind: this.event.coppermind })
     }
   }
 }
@@ -78,10 +75,9 @@ export default {
   box-sizing: border-box;
   color: #242629;
   transition: all 0.2s ease-in-out;
-  opacity: 1;
 
   &--details-visible {
-    opacity: 0;
+    transform: translateY(calc(100% - 2rem))
   }
 
   &--image {
@@ -170,6 +166,11 @@ export default {
     font-size: 1rem;
     padding: 0.5rem 0.5rem 2rem;
     line-height: 1.5;
+  }
+
+  &__read-more {
+    color: inherit;
+    font-size: 0.9em;
   }
 }
 </style>
