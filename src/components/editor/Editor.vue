@@ -201,8 +201,6 @@
       <EventProperties
         :key="selectedEventKey"
         :event="selectedEvent"
-        :selected-language="selectedLanguage"
-        :languages="loadedLanguages"
         :available-tags="availableTags"
       />
       <EventPreview
@@ -217,8 +215,6 @@
       v-if="mode === 'locations' && selectedLocation !== null"
       :key="selectedLocationKey"
       :location="selectedLocation"
-      :selected-language="selectedLanguage"
-      :languages="loadedLanguages"
     />
 
     <TagProperties
@@ -1015,6 +1011,7 @@ export default {
       grid-template-columns: auto 1fr auto;
       grid-gap: 0.5rem;
       padding: 0.5rem 1rem;
+      cursor: pointer;
 
       &:first-child {
         grid-template-columns: auto auto auto;

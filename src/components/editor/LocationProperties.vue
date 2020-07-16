@@ -8,20 +8,6 @@
       <label for="location-properties__slug">Slug</label>
       <input id="location-properties__slug" v-model="location.name" type="text">
 
-      <template v-if="selectedLanguage !== null">
-        <label for="location-properties__name">Name</label>
-        <input
-          id="location-properties__name"
-          :value="displayName"
-          type="text"
-          @input="updateLangProperty('name', $event)"
-        >
-      </template>
-
-      <button @click="startEditDetails">
-        Edit Details
-      </button>
-
       <label for="location-properties__image">Image</label>
       <input
         id="location-properties__image"
@@ -40,64 +26,21 @@
         @input="update('coppermind', $event)"
       >
     </div>
-
-    <div v-if="editingDetails" class="location-properties__details-editor">
-      <div class="location-properties__details-editor-content">
-        <textarea v-model="editedDetails" aria-label="Details" />
-        <Markdown class="location-properties__details-editor-preview" :content="editedDetails" />
-
-        <div class="location-properties__details-editor-buttons">
-          <button @click="editingDetails = false">
-            Cancel
-          </button>
-          <button @click="saveDetails">
-            Save
-          </button>
-        </div>
-      </div>
-    </div>
   </section>
 </template>
 
 <script>
-import Markdown from '@/components/Markdown.vue'
-
 export default {
   name: 'LocationProperties',
-  components: { Markdown },
   props: {
     location: {
       type: Object,
       required: true
-    },
-    selectedLanguage: {
-      type: [String, null],
-      required: false,
-      default: () => null
-    },
-    languages: {
-      type: Object,
-      required: true
-    }
-  },
-  data () {
-    return {
-      editingDetails: false,
-      editedDetails: ''
     }
   },
   computed: {
     imageBaseUrl () {
       return `${process.env.BASE_URL}img/locations`
-    },
-    selectedMessages () {
-      return this.selectedLanguage !== null ? this.languages[this.selectedLanguage] : null
-    },
-    displayName () {
-      return this.selectedMessages?.locations?.[this.location.name]?.name ?? ''
-    },
-    displayDetails () {
-      return this.selectedMessages?.locations?.[this.location.name]?.details ?? ''
     }
   },
   watch: {
@@ -113,27 +56,6 @@ export default {
     }
   },
   methods: {
-    updateLangProperty (property, { target: { value } }) {
-      const trimmed = value.trim()
-
-      if (this.selectedMessages.locations === undefined) {
-        this.selectedMessages.locations = {}
-      }
-
-      if (this.selectedMessages.locations[this.location.name] === undefined) {
-        this.selectedMessages.locations[this.location.name] = {}
-      }
-
-      if (trimmed.length === 0) {
-        this.$delete(this.selectedMessages.locations[this.location.name], property)
-      } else {
-        this.$set(this.selectedMessages.locations[this.location.name], property, trimmed)
-      }
-
-      if (Object.keys(this.selectedMessages.locations[this.location.name]).length === 0) {
-        this.$delete(this.selectedMessages.locations, this.location.name)
-      }
-    },
     update (property, { target: { value } }) {
       const trimmed = value.trim()
 
@@ -143,14 +65,6 @@ export default {
       }
 
       this.$set(this.location, property, trimmed)
-    },
-    startEditDetails () {
-      this.editedDetails = this.displayDetails
-      this.editingDetails = true
-    },
-    saveDetails () {
-      this.updateLangProperty('details', { target: { value: this.editedDetails } })
-      this.editingDetails = false
     }
   }
 }
@@ -191,65 +105,6 @@ export default {
 
   &__checkboxes {
     grid-column: 1 / span 2;
-  }
-
-  &__details-editor {
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    &-content {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      grid-template-rows: 1fr auto;
-      width: 40%;
-      height: 50%;
-    }
-
-    textarea, &-preview {
-      box-sizing: border-box;
-      padding: 20px;
-      border: none;
-      resize: none;
-      outline: none;
-    }
-
-    textarea {
-      font-size: 14px;
-      font-family: "Monaco", courier, monospace;
-      border-right: 1px solid #ccc;
-      background-color: #f6f6f6;
-    }
-
-    &-preview {
-      font-family: 'Lora', serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      background: #F5ECDA url(../../assets/paper.png);
-      width: 350px;
-      overflow-y: auto;
-      color: #242629;
-      text-align: justify;
-    }
-
-    &-buttons {
-      grid-column: 1 / span 2;
-      text-align: right;
-      padding: 0.5rem;
-      border-top: 1px solid #ccc;
-      background-color: #d2d2d2;
-
-      button {
-        margin: 0 0.25rem;
-      }
-    }
   }
 }
 </style>
