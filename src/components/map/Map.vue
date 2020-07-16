@@ -45,7 +45,7 @@ export default {
   },
   computed: {
     activeLocation () {
-      return this.$route.name === 'location' ? this.$store.state.locationMapping[this.$route.params.id] : null
+      return this.transitions && this.$route.name === 'location' ? this.$store.state.mappings.location[this.$route.params.id] : null
     },
     activeEvent () {
       return this.transitions ? this.$store.state.activeEvent : null
@@ -59,6 +59,7 @@ export default {
       if (location !== null) {
         const newPosition = location.coordinates
         const target = new Vector3(newPosition.x - 512, 256 - newPosition.y, 0)
+
         this.controls.transitionTo(target, newPosition.zoom !== undefined ? newPosition.zoom : 0.7)
       }
     }
@@ -289,7 +290,7 @@ export default {
 
       if (this.activeLocation !== this.lastActiveLocation && this.activeLocation !== null) {
         this.textActiveProgress = 1
-        this.lastActiveLocation = this.activeLocation
+        this.lastActiveLocation = this.activeLocation.mapId
       } else if (this.activeLocation !== this.lastActiveLocation && this.activeLocation === null && this.textActiveProgress === 0) {
         this.lastActiveLocation = null
       }

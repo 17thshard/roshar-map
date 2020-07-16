@@ -1,7 +1,7 @@
 <template>
   <div :class="['details', { 'details--image': details.image !== undefined }]">
     <div :class="['details__bar', { 'details__bar--visible': showBar }]">
-      <h2>{{ $t(`${details.type}s.${details.id}.name`) }}</h2>
+      <h2>{{ $t(`${details.type}.${details.id}.name`) }}</h2>
       <router-link class="details__close" :title="$t('ui.close')" :to="`/${$route.params.locale}`">
         <XIcon />
       </router-link>
@@ -15,11 +15,11 @@
       }"
     >
       <div class="details__content">
-        <img v-if="details.image !== undefined" class="details__image" :src="imageUrl" :alt="$t(`${details.type}s.${details.id}.name`)">
+        <img v-if="details.image !== undefined" class="details__image" :src="imageUrl" :alt="$t(`${details.type}.${details.id}.name`)">
         <section class="details__text">
           <div ref="intersectionGuard" class="details__intersection-guard" />
-          <h2>{{ $t(`${details.type}s.${details.id}.name`) }}</h2>
-          <Markdown :content="$t(`${details.type}s.${details.id}.details`)" tag="article" />
+          <h2>{{ $t(`${details.type}.${details.id}.name`) }}</h2>
+          <Markdown :content="$t(`${details.type}.${details.id}.details`)" tag="article" />
           <a
             v-if="details.coppermind !== undefined"
             :href="`https://coppermind.net/wiki/${details.coppermind}`"
@@ -55,7 +55,7 @@ export default {
   },
   computed: {
     imageUrl () {
-      return `${process.env.BASE_URL}img/${this.details.type}s/${this.details.image}`
+      return `${process.env.BASE_URL}img/${this.details.type}/${this.details.image}`
     }
   },
   mounted () {
@@ -259,6 +259,22 @@ export default {
       text-align: left;
       line-height: normal;
     }
+
+    a {
+      display: inline-block;
+      color: inherit;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+      background-image: linear-gradient(0deg, #0f3562 0%, #0f3562 100%);
+      background-repeat: no-repeat;
+      background-size: 100% 3px;
+      background-position: 50% 100%;
+
+      &:hover, &:active, &:focus {
+        color: #f6f8fa;
+        background-size: 100% 100%;
+      }
+    }
   }
 
   &--image {
@@ -301,12 +317,12 @@ export default {
     transition: all 0.3s ease-in-out;
     background-image: linear-gradient(0deg, #0f3562 0%, #0f3562 100%);
     background-repeat: no-repeat;
-    background-size: 100% 0;
+    background-size: 100% 0 !important;
     background-position: 50% 100%;
 
     &:hover, &:active, &:focus {
       color: #f6f8fa;
-      background-size: 100% 100%;
+      background-size: 100% 100% !important;
     }
   }
 }

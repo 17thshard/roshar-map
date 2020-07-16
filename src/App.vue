@@ -44,14 +44,10 @@ export default {
   },
   computed: {
     details () {
-      if (this.$route.name === 'event') {
-        const event = this.$store.state.eventMapping[this.$route.params.id]
+      if (this.mapTransitions && this.$route.meta.details) {
+        const entry = this.$store.state.mappings[this.$route.name][this.$route.params.id]
 
-        return event !== undefined ? { type: 'event', ...event } : null
-      } else if (this.$route.name === 'location') {
-        const location = this.$store.state.locationMapping[this.$route.params.id]
-
-        return location !== undefined ? location : null
+        return entry !== undefined ? entry : null
       }
 
       return null

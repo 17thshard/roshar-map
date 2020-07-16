@@ -3,6 +3,8 @@ const fs = require('fs')
 
 const events = JSON.parse(fs.readFileSync('./src/store/events.json', 'utf8')).map(e => e.id)
 const locations = JSON.parse(fs.readFileSync('./src/store/locations.json', 'utf8')).map(l => l.id)
+const characters = JSON.parse(fs.readFileSync('./src/store/characters.json', 'utf8')).map(l => l.id)
+const misc = JSON.parse(fs.readFileSync('./src/store/misc.json', 'utf8')).map(l => l.id)
 
 let errors = false
 
@@ -25,6 +27,8 @@ function checkLang (lang) {
 
   checkLangFiles(lang, 'events', events)
   checkLangFiles(lang, 'locations', locations)
+  checkLangFiles(lang, 'characters', characters)
+  checkLangFiles(lang, 'misc', misc)
 }
 
 function checkLangFiles (lang, type, reference) {
@@ -38,7 +42,7 @@ function checkLangFiles (lang, type, reference) {
     const entryId = entry.name.substring(0, entry.name.lastIndexOf('.md'))
 
     if (!reference.includes(entryId)) {
-      console.error(`Found ${type} translation for unknown ID '${entryId}' in locale '${lang}'`)
+      console.error(`Found translation for unknown ${type} entry '${entryId}' in locale '${lang}'`)
       errors = true
     }
   })

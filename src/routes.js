@@ -5,45 +5,52 @@ import store from '@/store'
 
 Vue.use(VueRouter)
 
+const detailRoutes = [
+  {
+    name: 'event',
+    path: 'events',
+    specialAction: event => store.commit('selectEvent', event)
+  },
+  {
+    name: 'location',
+    path: 'locations',
+    specialAction: () => store.commit('unselectEvent')
+  },
+  {
+    name: 'character',
+    path: 'characters',
+    specialAction: () => store.commit('unselectEvent')
+  },
+  {
+    name: 'misc',
+    path: 'misc',
+    specialAction: () => store.commit('unselectEvent')
+  }
+]
+
 const router = new VueRouter({
   routes: [
     {
       name: 'root',
       path: '/:locale',
-      children: [
-        {
-          name: 'event',
-          path: 'events/:id',
-          beforeEnter (to, from, next) {
-            const event = store.state.eventMapping[to.params.id]
-
-            if (to.params.id === undefined || event === undefined) {
-              next(false)
-              return
-            }
-
-            store.commit('selectEvent', event)
-
-            next()
-          }
+      children: detailRoutes.map(({ name, path, specialAction }) => ({
+        name,
+        path: `${path}/:id`,
+        meta: {
+          details: true
         },
-        {
-          name: 'location',
-          path: 'locations/:id',
-          beforeEnter (to, from, next) {
-            const location = store.state.locationMapping[to.params.id]
+        beforeEnter (to, from, next) {
+          const entry = store.state.mappings[name][to.params.id]
 
-            if (to.params.id === undefined || location === undefined) {
-              next(false)
-              return
-            }
-
-            store.commit('unselectEvent')
-
-            next()
+          if (to.params.id === undefined || entry === undefined) {
+            next(false)
+            return
           }
+
+          specialAction(entry)
+          next()
         }
-      ]
+      }))
     }
   ]
 })

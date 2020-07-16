@@ -20,15 +20,21 @@ events.forEach((event) => {
   console.log(`Created new translation file for event ${event.id}`)
 })
 
-const locations = JSON.parse(fs.readFileSync('./src/store/locations.json', 'utf8'))
-locations.forEach((location) => {
-  const path = `./translations/en/locations/${location.id}.md`
+function dump (type) {
+  const entries = JSON.parse(fs.readFileSync(`./src/store/${type}.json`, 'utf8'))
+  entries.forEach((entry) => {
+    const path = `./translations/en/${type}/${entry.id}.md`
 
-  if (fs.existsSync(path)) {
-    return
-  }
+    if (fs.existsSync(path)) {
+      return
+    }
 
-  fs.writeFileSync(path, `# ${location.id}\nDetails\n`)
+    fs.writeFileSync(path, `# ${entry.id}\nDetails\n`)
 
-  console.log(`Created new translation file for location ${location.id}`)
-})
+    console.log(`Created new translation file for ${type} entry ${entry.id}`)
+  })
+}
+
+dump('locations')
+dump('characters')
+dump('misc')

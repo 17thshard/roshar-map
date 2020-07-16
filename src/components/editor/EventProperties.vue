@@ -23,6 +23,11 @@
 
       <label for="event-properties__id">ID</label>
       <input id="event-properties__id" v-model="event.id" type="text">
+      <label for="event-properties__has-details">
+        <input id="event-properties__has-details" v-model="event.details" type="checkbox">
+
+        Has Details
+      </label>
 
       <div class="event-properties__coordinates">
         <h3>
@@ -91,6 +96,14 @@
         @tags-changed="newTags => event.tags = newTags.map(t => t.text)"
       />
 
+      <label for="event-properties__coppermind">Coppermind Article</label>
+      <input
+        id="event-properties__coppermind"
+        :value="event.coppermind"
+        type="text"
+        @input="update('coppermind', $event)"
+      >
+
       <div class="event-properties__image">
         <h3>Image</h3>
 
@@ -154,11 +167,6 @@
           </div>
         </template>
       </div>
-      <label for="event-properties__has-details">
-        <input id="event-properties__has-details" v-model="event.details" type="checkbox">
-
-        Details
-      </label>
     </div>
   </section>
 </template>
@@ -266,6 +274,16 @@ export default {
       }
 
       return styles
+    },
+    update (property, { target: { value } }) {
+      const trimmed = value.trim()
+
+      if (trimmed.length === 0) {
+        this.$delete(this.location, property)
+        return
+      }
+
+      this.$set(this.event, property, trimmed)
     }
   }
 }

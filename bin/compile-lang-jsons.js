@@ -27,7 +27,9 @@ function handleLang (lang) {
   const messages = JSON.parse(fs.readFileSync(path, 'utf8'))
 
   messages.events = buildLangEntries(lang, 'events', parseEventFile)
-  messages.locations = buildLangEntries(lang, 'locations', parseLocationFile)
+  messages.locations = buildLangEntries(lang, 'locations', parseStandardFile)
+  messages.characters = buildLangEntries(lang, 'characters', parseStandardFile)
+  messages.misc = buildLangEntries(lang, 'misc', parseStandardFile)
 
   const langDestPath = `${destPath}/${lang}.json`
 
@@ -50,15 +52,15 @@ function buildLangEntries (lang, type, parser) {
   fs.readdirSync(dirPath, { withFileTypes: true }).filter(e => e.isFile() && e.name.endsWith('.md')).forEach((entry) => {
     const entryId = entry.name.substring(0, entry.name.lastIndexOf('.md'))
 
-    result[entryId] = parser(lang, entryId, fs.readFileSync(`${dirPath}/${entry.name}`, 'utf8'))
+    result[entryId] = parser(lang, type, entryId, fs.readFileSync(`${dirPath}/${entry.name}`, 'utf8'))
   })
 
   return result
 }
 
-function parseEventFile (lang, id, content) {
+function parseEventFile (lang, type, id, content) {
   if (!content.startsWith('#')) {
-    console.error(`Translation of event ${id} for locale '${lang}' does not start with name as Markdown heading`)
+    console.error(`Translation of events entry ${id} for locale '${lang}' does not start with name as Markdown heading`)
     process.exit(1)
   }
 
@@ -72,9 +74,9 @@ function parseEventFile (lang, id, content) {
   return { name, blurb, details }
 }
 
-function parseLocationFile (lang, id, content) {
+function parseStandardFile (lang, type, id, content) {
   if (!content.startsWith('#')) {
-    console.error(`Translation of location ${id} for locale '${lang}' does not start with name as Markdown heading`)
+    console.error(`Translation of ${type} entry ${id} for locale '${lang}' does not start with name as Markdown heading`)
     process.exit(1)
   }
 

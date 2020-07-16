@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import baseEvents from '@/store/events.json'
 import baseLocations from '@/store/locations.json'
+import baseCharacters from '@/store/characters.json'
+import baseMisc from '@/store/misc.json'
 
 Vue.use(Vuex)
 
@@ -63,17 +65,29 @@ events.forEach((event) => {
   lastEvent = event
 })
 
-const eventMapping = events.reduce((acc, event) => ({
+const mappings = {}
+
+mappings.event = events.reduce((acc, event) => ({
   ...acc,
-  [event.id]: event
+  [event.id]: { type: 'events', ...event }
 }), {})
 
-const locationMapping = baseLocations.reduce((acc, location) => ({
+mappings.location = baseLocations.reduce((acc, location) => ({
   ...acc,
-  [location.id]: { type: 'location', ...location }
+  [location.id]: { type: 'locations', ...location }
 }), {})
 
-const locationsByMapId = Object.values(locationMapping).filter(location => location.mapId !== undefined).reduce((acc, location) => ({
+mappings.character = baseCharacters.reduce((acc, character) => ({
+  ...acc,
+  [character.id]: { type: 'characters', ...character }
+}), {})
+
+mappings.misc = baseMisc.reduce((acc, entry) => ({
+  ...acc,
+  [entry.id]: { type: 'misc', ...entry }
+}), {})
+
+const locationsByMapId = Object.values(mappings.location).filter(location => location.mapId !== undefined).reduce((acc, location) => ({
   ...acc,
   [location.mapId]: location
 }), {})
@@ -123,9 +137,8 @@ const mutations = {
 export default new Vuex.Store({
   state: {
     events,
-    eventMapping,
-    locationMapping,
     locationsByMapId,
+    mappings,
     activeEvent: null,
     filter: {
       tags: [],
