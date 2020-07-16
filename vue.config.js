@@ -5,6 +5,10 @@ module.exports = {
     msTileColor: '#0f3562',
     manifestOptions: {
       background_color: '#0f3562'
+    },
+    workboxOptions: {
+      skipWaiting: true,
+      clientsClaim: true
     }
   }
 }

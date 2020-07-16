@@ -121,6 +121,8 @@ export default {
 
           if (location !== null && (this.activeLocation === null || location !== this.activeLocation.mapId)) {
             this.$router.push(`/${this.$route.params.locale}/locations/${this.$store.state.locationsByMapId[location].id}`)
+          } else if (location === null && this.$route.name !== 'root') {
+            this.$router.push(`/${this.$route.params.locale}`)
           }
         }
       })
