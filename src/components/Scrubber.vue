@@ -417,7 +417,7 @@ export default {
       font-size: 1em;
       padding: 4px 0;
       margin: 0;
-      font-family: 'Lora', serif;
+      font-family: 'Libre Baskerville', serif;
       cursor: pointer;
       outline: none;
       overflow: hidden;

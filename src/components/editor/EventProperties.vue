@@ -23,11 +23,6 @@
 
       <label for="event-properties__id">ID</label>
       <input id="event-properties__id" v-model="event.id" type="text">
-      <label for="event-properties__has-details">
-        <input id="event-properties__has-details" v-model="event.details" type="checkbox">
-
-        Has Details
-      </label>
 
       <div class="event-properties__coordinates">
         <h3>

@@ -2,7 +2,7 @@
   <div
     :class="[
       'event-card',
-      { 'event-card--image': event.image !== undefined, 'event-card--details-visible': $route.name === 'event' }
+      { 'event-card--image': event.image !== undefined, 'event-card--details-visible': $route.name === 'events' }
     ]"
   >
     <div class="event-card__content">
@@ -19,7 +19,7 @@
         :inline="true"
         class="event-card__text"
       >
-        <router-link v-if="event.details === true" :to="`/${$route.params.locale}/events/${event.id}`" class="event-card__read-more">
+        <router-link :to="`/${$route.params.locale}/events/${event.id}`" class="event-card__read-more">
           Read more
         </router-link>
       </Markdown>

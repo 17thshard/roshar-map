@@ -7,23 +7,19 @@ Vue.use(VueRouter)
 
 const detailRoutes = [
   {
-    name: 'event',
-    path: 'events',
+    name: 'events',
     specialAction: event => store.commit('selectEvent', event)
   },
   {
-    name: 'location',
-    path: 'locations',
+    name: 'locations',
     specialAction: () => store.commit('unselectEvent')
   },
   {
-    name: 'character',
-    path: 'characters',
+    name: 'characters',
     specialAction: () => store.commit('unselectEvent')
   },
   {
     name: 'misc',
-    path: 'misc',
     specialAction: () => store.commit('unselectEvent')
   }
 ]
@@ -35,7 +31,7 @@ const router = new VueRouter({
       path: '/:locale',
       children: detailRoutes.map(({ name, path, specialAction }) => ({
         name,
-        path: `${path}/:id`,
+        path: `${name}/:id`,
         meta: {
           details: true
         },

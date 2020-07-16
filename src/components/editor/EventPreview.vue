@@ -90,7 +90,7 @@ export default {
   color: #242629;
   transition: all 0.2s ease-in-out;
   opacity: 1;
-  font-family: 'Lora', serif;
+  font-family: 'Libre Baskerville', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 

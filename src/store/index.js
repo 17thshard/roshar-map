@@ -67,17 +67,17 @@ events.forEach((event) => {
 
 const mappings = {}
 
-mappings.event = events.reduce((acc, event) => ({
+mappings.events = events.reduce((acc, event) => ({
   ...acc,
   [event.id]: { type: 'events', ...event }
 }), {})
 
-mappings.location = baseLocations.reduce((acc, location) => ({
+mappings.locations = baseLocations.reduce((acc, location) => ({
   ...acc,
   [location.id]: { type: 'locations', ...location }
 }), {})
 
-mappings.character = baseCharacters.reduce((acc, character) => ({
+mappings.characters = baseCharacters.reduce((acc, character) => ({
   ...acc,
   [character.id]: { type: 'characters', ...character }
 }), {})
@@ -87,7 +87,7 @@ mappings.misc = baseMisc.reduce((acc, entry) => ({
   [entry.id]: { type: 'misc', ...entry }
 }), {})
 
-const locationsByMapId = Object.values(mappings.location).filter(location => location.mapId !== undefined).reduce((acc, location) => ({
+const locationsByMapId = Object.values(mappings.locations).filter(location => location.mapId !== undefined).reduce((acc, location) => ({
   ...acc,
   [location.mapId]: location
 }), {})

@@ -2,6 +2,7 @@
 const fs = require('fs')
 
 const events = JSON.parse(fs.readFileSync('./src/store/events.json', 'utf8'))
+fs.mkdirSync(`./translations/en/events`, { recursive: true })
 events.forEach((event) => {
   const path = `./translations/en/events/${event.id}.md`
 
@@ -9,19 +10,14 @@ events.forEach((event) => {
     return
   }
 
-  let data = `# ${event.id}\nBlurb\n`
-
-  if (event.details) {
-    data += '\n## Details\nDetails\n'
-  }
-
-  fs.writeFileSync(path, data)
+  fs.writeFileSync(path, `# ${event.id}\nBlurb\n\n## Details\nDetails\n`)
 
   console.log(`Created new translation file for event ${event.id}`)
 })
 
 function dump (type) {
   const entries = JSON.parse(fs.readFileSync(`./src/store/${type}.json`, 'utf8'))
+  fs.mkdirSync(`./translations/en/${type}`, { recursive: true })
   entries.forEach((entry) => {
     const path = `./translations/en/${type}/${entry.id}.md`
 
