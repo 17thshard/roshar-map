@@ -6,13 +6,12 @@ const LINK_HREF_AND_TITLE = '\\s*<?((?:\\([^)]*\\)|[^\\s\\\\]|\\\\.)*?)>?(?:\\s+
 
 const rules = {
   paragraph: markdown.defaultRules.paragraph,
+  blockQuote: markdown.defaultRules.blockQuote,
   newline: markdown.defaultRules.newline,
   escape: markdown.defaultRules.escape,
   em: markdown.defaultRules.em,
   strong: markdown.defaultRules.strong,
   u: markdown.defaultRules.u,
-  br: markdown.defaultRules.br,
-  text: markdown.defaultRules.text,
   internalLink: {
     order: markdown.defaultRules.link.order - 1,
     match: markdown.inlineRegex(new RegExp(
@@ -26,7 +25,9 @@ const rules = {
       }
     }
   },
-  link: markdown.defaultRules.link
+  link: markdown.defaultRules.link,
+  br: markdown.defaultRules.br,
+  text: markdown.defaultRules.text
 }
 
 const parser = markdown.parserFor(rules)

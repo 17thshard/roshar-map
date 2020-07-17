@@ -1,2 +1,2 @@
-# taravangian
+# Taravangian
 Details

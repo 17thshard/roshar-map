@@ -66,7 +66,15 @@
             { "x": 611.1402262562483, "y": 384.57248092607205 },
             { "x": 611.5443304393581, "y": 375.8168902920284 }
         ],
-        "image": "kharbranth.jpg"
+        "image": {
+            "file": "kharbranth.jpg",
+            "credits": "by [Grant M. Hansen](https://coppermind.net/wiki/Coppermind:Artists/Grant_M._Hansen)"
+        },
+        "related": [
+            "characters/taravangian",
+            "misc/diagram"
+        ],
+        "coppermind": "Kharbranth"
     },
     {
         "id": "thaylenah",

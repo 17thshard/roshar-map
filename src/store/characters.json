@@ -1,6 +1,8 @@
 [
     {
         "id": "taravangian",
-        "image": "taravangian.jpg"
+        "image": {
+            "file": "taravangian.jpg"
+        }
     }
 ]

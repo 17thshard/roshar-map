@@ -1,11 +1,12 @@
 <template>
   <div :class="['details', { 'details--image': details.image !== undefined }]">
-    <div :class="['details__bar', { 'details__bar--visible': showBar }]">
-      <h2>{{ $t(`${details.type}.${details.id}.name`) }}</h2>
-      <router-link class="details__close" :title="$t('ui.close')" :to="`/${$route.params.locale}`">
-        <XIcon />
-      </router-link>
-    </div>
+    <router-link
+      :class="['details__close', { 'details__close--opaque': reachedHeading }]"
+      :title="$t('ui.close')"
+      :to="`/${$route.params.locale}`"
+    >
+      <XIcon />
+    </router-link>
     <Scrollbar
       class="details__scroller"
       :ops="{
@@ -15,10 +16,15 @@
       }"
     >
       <div class="details__content">
-        <img v-if="details.image !== undefined" class="details__image" :src="imageUrl" :alt="$t(`${details.type}.${details.id}.name`)">
+        <figure v-if="details.image !== undefined" class="details__image">
+          <img :src="imageUrl" :alt="$t(`${details.type}.${details.id}.name`)">
+          <Markdown :content="details.image.credits || 'Credits have to be set!'" tag="figcaption" inline />
+        </figure>
         <section class="details__text">
           <div ref="intersectionGuard" class="details__intersection-guard" />
-          <h2>{{ $t(`${details.type}.${details.id}.name`) }}</h2>
+          <h2 class="details__title">
+            {{ $t(`${details.type}.${details.id}.name`) }}
+          </h2>
           <Markdown :content="$t(`${details.type}.${details.id}.details`)" tag="article" />
           <a
             v-if="details.coppermind !== undefined"
@@ -70,14 +76,12 @@ export default {
   },
   data () {
     return {
-      showBar: false
+      reachedHeading: false
     }
   },
   computed: {
     imageUrl () {
-      const fileName = typeof this.details.image === 'string' ? this.details.image : this.details.image.file
-
-      return `${process.env.BASE_URL}img/${this.details.type}/${fileName}`
+      return `${process.env.BASE_URL}img/${this.details.type}/${this.details.image.file}`
     },
     related () {
       if (this.details.related === undefined) {
@@ -97,8 +101,7 @@ export default {
 
         let image
         if (linkDetails.image !== undefined) {
-          image = typeof linkDetails.image === 'string' ? linkDetails.image : linkDetails.image.file
-          image = `${process.env.BASE_URL}img/${type}/${image}`
+          image = `${process.env.BASE_URL}img/${type}/${linkDetails.image.file}`
         }
 
         return {
@@ -113,7 +116,7 @@ export default {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          this.showBar = entry.intersectionRatio < 1
+          this.reachedHeading = entry.intersectionRatio < 1
         })
       },
       {
@@ -134,7 +137,7 @@ export default {
   top: 0;
   bottom: 0;
   z-index: 80;
-  width: 450px;
+  width: 500px;
   max-width: 100%;
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
   overflow: hidden;
@@ -181,65 +184,36 @@ export default {
     transform: translateX(-100%);
   }
 
-  h2 {
-    font-size: 2rem;
-    font-variant: small-caps;
-    margin: 0;
-  }
-
-  &__bar {
+  .details__close {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 62;
-    display: flex;
-    align-items: center;
+    top: 1rem;
+    right: 1rem;
+    margin-left: auto;
+    cursor: pointer;
+    appearance: none;
+    outline: none;
     box-sizing: border-box;
-    padding: 1rem 1rem 1rem 2rem;
+    border: none;
+    background: none;
+    transition: color 0.2s ease-in-out, background 0.2s ease-in-out, box-shadow 0.5s ease-in-out;
+    z-index: 63;
+    color: #242629;
+    pointer-events: auto;
+    border-radius: 100%;
     background: rgba(#F5ECDA, .0);
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    pointer-events: none;
-    transition: background 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    padding: 0.25rem;
+    line-height: 1;
+    display: flex;
 
-    h2 {
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-      padding-right: 3rem;
-      word-break: break-word;
+    &:hover, &:active, &:focus {
+      color: #ffad00 !important;
     }
 
-    .details__close {
-      margin-left: auto;
-      cursor: pointer;
-      appearance: none;
-      outline: none;
-      box-sizing: border-box;
-      border: none;
-      background: none;
-      transition: color 0.2s ease-in-out, opacity 0.5s ease-in-out;
-      z-index: 63;
-      color: #242629;
-      pointer-events: auto;
-      height: 24px;
-
-      &:hover, &:active, &:focus {
-        color: #ffad00 !important;
-      }
-    }
-
-    &--visible {
+    &--opaque {
+      color: #242629 !important;
       background: #F5ECDA;
       box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
-      pointer-events: auto;
-
-      h2 {
-        opacity: 1;
-      }
-
-      .details__close {
-        color: #242629 !important;
-      }
     }
   }
 
@@ -269,9 +243,29 @@ export default {
 
   &__content {
     background: #F5ECDA url(../assets/paper.png);
-    width: 450px;
+    width: 500px;
     max-width: 100%;
     padding-bottom: 4rem;
+
+    @media (max-width: 1920px) {
+      font-size: 14px;
+    }
+
+    .markdown a {
+      display: inline-block;
+      color: inherit;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+      background-image: linear-gradient(0deg, #0f3562 0%, #0f3562 100%);
+      background-repeat: no-repeat;
+      background-size: 100% 0.1em;
+      background-position: 50% 100%;
+
+      &:hover, &:active, &:focus {
+        color: #f6f8fa;
+        background-size: 100% 100%;
+      }
+    }
   }
 
   .__rail-is-vertical {
@@ -290,9 +284,29 @@ export default {
   }
 
   &__image {
+    position: relative;
     width: 100%;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 2rem));
     opacity: 1;
+    margin: 0;
+    padding: 0;
+
+    img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), 0 100%);
+    }
+
+    figcaption {
+      max-width: 50%;
+      z-index: 2;
+      text-align: right;
+      font-size: 0.8rem;
+      color: lighten(#1c1d26, 30%);
+      margin-top: -0.75rem;
+      margin-left: auto;
+      padding-right: 2rem;
+    }
   }
 
   &__text {
@@ -302,32 +316,47 @@ export default {
     opacity: 1;
     transform: translateY(0);
     position: relative;
-    padding: 1rem 2rem;
+    padding: 2rem 3rem 1rem;
     text-align: justify;
-    line-height: 1.75;
+    line-height: 1.9;
 
-    h2 {
-      margin-bottom: 1.5rem;
-      padding-right: 4rem;
-      text-align: left;
-      line-height: normal;
-    }
+    blockquote {
+      position: relative;
+      font-size: 1.2em;
+      line-height: 1.7;
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+      font-style: italic;
 
-    a {
-      display: inline-block;
-      color: inherit;
-      text-decoration: none;
-      transition: all 0.2s ease-in-out;
-      background-image: linear-gradient(0deg, #0f3562 0%, #0f3562 100%);
-      background-repeat: no-repeat;
-      background-size: 100% 3px;
-      background-position: 50% 100%;
+      &:before {
+        content: '“';
+        position: absolute;
+        left: -1.7rem;
+        top: 0.5rem;
+        line-height: 1;
+        font-size: 3rem;
+        color: lighten(#1c1d26, 40%);
+      }
 
-      &:hover, &:active, &:focus {
-        color: #f6f8fa;
-        background-size: 100% 100%;
+      &:after {
+        content: '”';
+        position: absolute;
+        right: -1rem;
+        bottom: -1.5rem;
+        line-height: 1;
+        font-size: 3rem;
+        color: lighten(#1c1d26, 40%);
       }
     }
+  }
+
+  &__title {
+    font-variant: small-caps;
+    font-size: 2em;
+    margin: 0;
+    line-height: normal;
+    text-align: left;
   }
 
   &__related {
@@ -338,7 +367,7 @@ export default {
     max-width: 100%;
     opacity: 1;
     transform: translateY(0);
-    padding: 1rem 1.5rem;
+    padding: 1rem 2.5rem;
 
     h3 {
       width: 100%;
@@ -350,7 +379,7 @@ export default {
 
     &-link {
       text-align: center;
-      font-size: 1rem;
+      font-size: 1em;
       width: 115px;
       max-width: 100%;
       margin: 0.5rem;
@@ -433,7 +462,7 @@ export default {
     }
 
     .details__text {
-      margin-top: -2rem;
+      padding-top: 1rem;
     }
   }
 
@@ -459,7 +488,7 @@ export default {
     text-transform: uppercase;
     color: inherit;
     text-decoration: none;
-    font-size: 1.25rem;
+    font-size: 1.2em;
     padding: 0.75rem 1rem;
     position: relative;
     border-radius: 3px;

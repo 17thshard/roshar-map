@@ -36,6 +36,9 @@
               <a href="https://coppermind.net" target="_blank">The Coppermind</a>
             </nav>
             <footer class="info__footer">
+              <div class="info__credits">
+                Map art by Spenser Farnes (Stoneward13)
+              </div>
               <div class="info__socials">
                 <a class="info__social" href="https://twitter.com/17thShard" target="_blank" title="Twitter">
                   <TwitterIcon />
@@ -227,65 +230,55 @@ export default {
     background: rgba(#F5ECDA, 0);
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     z-index: 65;
-    transition: background 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
     box-sizing: border-box;
     padding: 1rem;
-
-    &--opaque {
-      background: rgba(#F5ECDA, 1);
-      box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
-      pointer-events: auto;
-    }
   }
 
-  &__back {
+  &__back, &__close {
     cursor: pointer;
     appearance: none;
     outline: none;
     box-sizing: border-box;
     border: none;
     background: none;
-    transition: all 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out, background 0.2s ease-in-out;
     color: #242629;
     z-index: 65;
     opacity: 0;
     pointer-events: none;
+    border-radius: 100%;
+    background: rgba(#F5ECDA, .0);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    padding: 0.25rem;
+    line-height: 1;
+    display: flex;
 
     &--active {
       opacity: 1;
-      transition-delay: 0.5s;
+      transition-delay: 0.5s, 0s, 0s, 0s;
       pointer-events: auto;
     }
 
     &:hover, &:active, &:focus {
-      color: #ffad00;
+      color: #ffad00 !important;
     }
   }
 
   &__close {
-    margin-left: auto;
-    cursor: pointer;
-    appearance: none;
-    outline: none;
-    box-sizing: border-box;
-    border: none;
-    background: none;
-    transition: color 0.2s ease-in-out;
     color: #F5ECDA;
-    z-index: 65;
+    margin-left: auto;
+    opacity: 1;
     pointer-events: auto;
 
     &--dark {
       color: #242629;
     }
-
-    &:hover, &:active, &:focus {
-      color: #ffad00;
-    }
   }
 
-  &__bar--opaque &__close {
+  &__bar--opaque &__close, &__bar--opaque &__back {
     color: #242629;
+    background: #F5ECDA;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
   }
 
   &__scroller {
@@ -425,6 +418,13 @@ export default {
     width: 100%;
     box-sizing: border-box;
     padding: 0 1rem;
+  }
+
+  &__credits {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+    color: lighten(#1c1d26, 30%);
   }
 
   &__socials {

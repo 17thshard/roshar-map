@@ -635,7 +635,16 @@
         "tags": [
             "twok",
             "kaladin"
-        ]
+        ],
+        "image": {
+            "file": "kaladin.jpg",
+            "credits": "by [Exmakina](https://coppermind.net/wiki/Coppermind:Artists/Exmakina)",
+            "offset": {
+                "x": 90,
+                "y": 0
+            },
+            "size": 150
+        }
     },
     {
         "id": "kaladin-strung-up",

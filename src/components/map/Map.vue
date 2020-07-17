@@ -45,7 +45,7 @@ export default {
   },
   computed: {
     activeLocation () {
-      return this.transitions && this.$route.name === 'location' ? this.$store.state.mappings.locations[this.$route.params.id] : null
+      return this.transitions && this.$route.name === 'locations' ? this.$store.state.mappings.locations[this.$route.params.id] : null
     },
     activeEvent () {
       return this.transitions ? this.$store.state.activeEvent : null

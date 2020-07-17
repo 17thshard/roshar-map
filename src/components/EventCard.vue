@@ -16,7 +16,7 @@
       </h2>
       <Markdown
         :content="$te(`events.${event.id}.blurb`, 'en') ? $t(`events.${event.id}.blurb`) : ''"
-        :inline="true"
+        inline
         class="event-card__text"
       >
         <router-link :to="`/${$route.params.locale}/events/${event.id}`" class="event-card__read-more">
@@ -75,6 +75,10 @@ export default {
   box-sizing: border-box;
   color: #242629;
   transition: all 0.2s ease-in-out;
+
+  @media (max-width: 1920px) {
+    font-size: 14px;
+  }
 
   &--details-visible {
     transform: translateY(calc(100% - 2rem))
@@ -154,7 +158,7 @@ export default {
   }
 
   &__name {
-    font-size: 1.5rem;
+    font-size: 1.5em;
     font-weight: 600;
     font-variant: small-caps;
     margin: 0;
@@ -163,7 +167,7 @@ export default {
 
   &__text {
     text-align: center;
-    font-size: 1rem;
+    font-size: 1em;
     padding: 1rem 1rem 2rem;
     line-height: 1.5;
   }
