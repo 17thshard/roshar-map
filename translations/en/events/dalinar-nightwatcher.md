@@ -1,2 +1,0 @@
-# dalinar-nightwatcher
-Blurb

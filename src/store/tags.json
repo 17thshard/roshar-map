@@ -1,5 +1,21 @@
 {
     "tags": [ "general" ],
-    "characters": [ "dalinar", "kaladin", "shallan" ],
-    "books": [ "wok", "wor", "ed", "ob", "row" ]
+    "characters": [
+        "dalinar",
+        "kaladin",
+        "shallan",
+        "szeth",
+        "adolin",
+        "renarin",
+        "lift",
+        "jasnah",
+        "rysn",
+        "navani",
+        "eshonai",
+        "venli",
+        "taravangian",
+        "wit",
+        "moash"
+    ],
+    "books": [ "twok", "wor", "ed", "ob", "row" ]
 }

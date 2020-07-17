@@ -68,7 +68,7 @@ export default {
 .event-card {
   position: absolute;
   bottom: 100%;
-  width: 400px;
+  width: 450px;
   max-width: 90%;
   z-index: 5;
   filter: drop-shadow(0 -0.5rem 1rem rgba(0, 0, 0, 0.5));
@@ -164,7 +164,7 @@ export default {
   &__text {
     text-align: center;
     font-size: 1rem;
-    padding: 0.5rem 0.5rem 2rem;
+    padding: 1rem 1rem 2rem;
     line-height: 1.5;
   }
 

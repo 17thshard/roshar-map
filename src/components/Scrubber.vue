@@ -15,7 +15,11 @@
     <div class="scrubber__bar">
       <div class="scrubber__indicator">
         <div class="scrubber__indicator-actions">
-          <button class="scrubber__indicator-button scrubber__indicator-button--prev" :title="$t('ui.previous-event')" @click="gotoEvent(-1)">
+          <button
+            class="scrubber__indicator-button scrubber__indicator-button--prev"
+            :title="$t('ui.previous-event')"
+            @click="gotoEvent(-1)"
+          >
             {{ $t('ui.previous') }}
           </button>
           <span class="scrubber__indicator-year">
@@ -209,12 +213,11 @@ export default {
         endIndex += 1
       }
 
-      if (prevIndex === -1) {
-        this.currentDate = this.events[0].date[0].toString()
+      let circa = false
 
-        if (this.events[0].date[0] === this.events[1].date[0]) {
-          this.currentDate += this.events[0].date[1]
-        }
+      if (prevIndex === -1) {
+        this.currentDate = this.formatDate(this.events[0].date)
+        circa = this.events[0].circa
       } else {
         const start = this.events[prevIndex]
         const end = this.events[endIndex]
@@ -224,6 +227,15 @@ export default {
 
         if (arraysEqual(start.date, end.date)) {
           this.currentDate = this.formatDate(start.date)
+
+          if (
+            (scroll <= start.offset + 0.5 && start.circa === true) ||
+            (scroll >= end.offset - 0.5 && end.circa === true) ||
+            (start.circa === true && end.circa === true)
+          ) {
+            this.currentDate = this.$t('ui.circa', { date: this.currentDate })
+          }
+
           return
         }
 
@@ -235,18 +247,25 @@ export default {
 
         if (scroll <= start.offset + 0.5) {
           date.push(start.date[dateBit])
+          circa = start.circa
         } else if (scroll >= end.offset - 0.5) {
           date.push(end.date[dateBit])
 
           if (nextEnd !== undefined && nextEnd.date[0] === end.date[0]) {
             date = end.date
           }
+
+          circa = end.circa
         } else {
           const t = (scroll - start.offset) / (end.offset - start.offset)
           date.push(Math.trunc(lerp(start.date[dateBit], end.date[dateBit], t)))
         }
 
         this.currentDate = this.formatDate(date)
+      }
+
+      if (circa === true) {
+        this.currentDate = this.$t('ui.circa', { date: this.currentDate })
       }
     },
     updateOverflow () {

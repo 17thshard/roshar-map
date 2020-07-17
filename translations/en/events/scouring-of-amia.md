@@ -1,2 +1,0 @@
-# scouring-of-amia
-Blurb

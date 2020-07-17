@@ -144,7 +144,7 @@ const MapControls = function (object, domElement) {
     targetPosition.z = lerp(maxZoomHeight, minZoomHeight, targetZoom)
 
     const targetAngle = lerp(scope.maxZoomAngle, scope.minZoomAngle, targetZoom)
-    const vector = new Vector3(0, 0, -1).applyEuler(new Euler(targetAngle, 0, 0, 'XYZ'))
+    const vector = new Vector3(0, 0, 1).applyEuler(new Euler(targetAngle * degToRad, 0, 0, 'XYZ'))
     targetPosition.y += vector.y * targetPosition.z
 
     clampPosition(targetPosition, targetAngle)

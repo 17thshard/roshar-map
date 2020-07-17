@@ -1,2 +1,0 @@
-# evi-death
-Blurb

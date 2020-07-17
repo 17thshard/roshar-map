@@ -121,6 +121,7 @@ export default {
   },
   methods: {
     open () {
+      this.scrolled = {}
       this.subPage = null
       this.active = true
     },

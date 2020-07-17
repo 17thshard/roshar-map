@@ -70,7 +70,7 @@ export default {
     onReady () {
       this.ready = true
       if (this.$route.name === 'root') {
-        this.$store.commit('selectEvent', this.$store.state.events[this.$store.state.events.length - 1])
+        this.$store.commit('selectEvent', this.$store.state.mappings.events['kaladin-joins-bridge-four'])
       }
     },
     onScrubberLoaded () {

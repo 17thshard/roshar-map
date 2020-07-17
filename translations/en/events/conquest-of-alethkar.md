@@ -1,2 +1,0 @@
-# conquest-of-alethkar
-Blurb

@@ -1,2 +1,0 @@
-# surgeon-training-begins
-Blurb

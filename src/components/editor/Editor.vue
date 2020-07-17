@@ -133,6 +133,9 @@
         </label>
 
         <input id="editor__file--events" type="file" @change="loadEvents">
+        <button @click="saveEvents">
+          Save
+        </button>
         <button @click="sortEvents">
           Sort
         </button>
@@ -582,6 +585,10 @@ export default {
 
       // eslint-disable-next-line no-param-reassign
       event.target.value = ''
+    },
+    saveEvents () {
+      saveAs(new Blob([JSON.stringify(this.events, undefined, 4)], { type: 'application/json' }), 'events.json')
+      this.eventsDirty = false
     },
     loadLanguage (event) {
       if (event.target.files.length === 0) {
@@ -1059,7 +1066,7 @@ export default {
           pointer-events: auto;
         }
 
-        button:first-of-type, label, input {
+        button:first-of-type, button:nth-of-type(2), label, input {
           grid-column: 1 / span 2;
         }
       }

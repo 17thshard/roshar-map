@@ -1,2 +1,0 @@
-# shallan-kills-father
-Blurb

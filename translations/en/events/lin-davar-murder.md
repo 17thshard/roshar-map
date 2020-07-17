@@ -1,2 +1,0 @@
-# lin-davar-murder
-Blurb

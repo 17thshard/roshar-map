@@ -1,2 +1,0 @@
-# taravangian-acquires-oathstone
-Blurb

@@ -1,2 +1,0 @@
-# last-desolation
-Blurb

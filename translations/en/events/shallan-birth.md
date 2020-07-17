@@ -1,2 +1,0 @@
-# shallan-birth
-Blurb

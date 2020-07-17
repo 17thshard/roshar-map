@@ -1,2 +1,0 @@
-# gavilar-coronation
-Blurb

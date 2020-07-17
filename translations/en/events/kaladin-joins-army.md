@@ -1,2 +1,0 @@
-# kaladin-joins-army
-Blurb

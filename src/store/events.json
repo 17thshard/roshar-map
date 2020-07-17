@@ -1,226 +1,314 @@
 [
     {
-        "id": "shattering",
+        "id": "roshars-creation",
         "date": [
-            -10000
+            -20000
         ],
-        "tags": [
-            "general"
-        ],
-        "shadesmar": false,
-        "specialEffect": "shattering",
+        "circa": true,
         "coordinates": {
             "x": 512,
             "y": 256,
             "zoom": 0
-        }
+        },
+        "tags": [],
+        "hideMarker": true
+    },
+    {
+        "id": "shattering-of-adonalsium",
+        "date": [
+            -10000
+        ],
+        "circa": true,
+        "coordinates": {
+            "x": 512,
+            "y": 256,
+            "zoom": 0
+        },
+        "tags": [],
+        "hideMarker": true,
+        "specialEffect": "shattering"
     },
     {
         "id": "ashyn-exodus",
         "date": [
             -8000
         ],
-        "tags": [
-            "general"
-        ],
-        "shadesmar": false,
+        "circa": true,
         "coordinates": {
-            "x": 290.2,
-            "y": 260.8
-        }
+            "x": 293.8,
+            "y": 264.3
+        },
+        "tags": []
     },
     {
-        "id": "founding-knights-radiant",
+        "id": "the-first-desolation",
         "date": [
-            -6000
+            -7990
         ],
-        "tags": [ ],
+        "circa": true,
         "coordinates": {
-            "x": 486.1,
-            "y": 317.6
+            "x": 512,
+            "y": 256,
+            "zoom": 0
         },
+        "tags": [],
         "hideMarker": true
     },
     {
-        "id": "last-desolation",
+        "id": "founding-of-the-knights-radiant-and-urithiru",
+        "date": [
+            -6000
+        ],
+        "circa": true,
+        "coordinates": {
+            "x": 512,
+            "y": 256,
+            "zoom": 0
+        },
+        "tags": [],
+        "hideMarker": true
+    },
+    {
+        "id": "the-lost-legion",
+        "date": [
+            -3301
+        ],
+        "circa": true,
+        "coordinates": {
+            "x": 767.7,
+            "y": 363.3
+        },
+        "tags": []
+    },
+    {
+        "id": "the-last-desolation",
         "date": [
             -3300
         ],
-        "tags": [
-            "general"
-        ],
-        "shadesmar": false,
-        "hideMarker": true,
+        "circa": true,
         "coordinates": {
             "x": 512,
             "y": 256,
             "zoom": 0
-        }
+        },
+        "tags": [
+            "twok"
+        ],
+        "hideMarker": true
     },
     {
-        "id": "false-desolation",
+        "id": "the-recreance",
+        "date": [
+            -801
+        ],
+        "circa": true,
+        "coordinates": {
+            "x": 512,
+            "y": 256,
+            "zoom": 0
+        },
+        "tags": [],
+        "hideMarker": true
+    },
+    {
+        "id": "the-false-desolation",
         "date": [
             -800
         ],
-        "tags": [
-            "general"
-        ],
-        "shadesmar": false,
-        "hideMarker": true,
+        "circa": true,
         "coordinates": {
             "x": 512,
             "y": 256,
             "zoom": 0
-        }
+        },
+        "tags": [],
+        "hideMarker": true
     },
     {
-        "id": "end-of-hierocracy",
+        "id": "the-war-of-loss",
         "date": [
-            650
+            675
         ],
-        "tags": [
-            "general"
-        ],
-        "shadesmar": false,
-        "hideMarker": true,
+        "circa": true,
         "coordinates": {
-            "x": 512,
-            "y": 256,
-            "zoom": 0
-        }
+            "x": 719.8,
+            "y": 275.9
+        },
+        "tags": []
     },
     {
-        "id": "scouring-of-amia",
+        "id": "scouring-of-aimia",
         "date": [
             975
         ],
-        "tags": [
-            "general"
-        ],
-        "shadesmar": false,
+        "circa": true,
         "coordinates": {
-            "x": 195.8,
-            "y": 294.2
-        }
+            "x": 196.6,
+            "y": 294.3
+        },
+        "tags": []
     },
     {
-        "id": "dalinar-birth",
+        "id": "dalinar-is-born",
         "date": [
             1120
         ],
+        "coordinates": {
+            "x": 738.6,
+            "y": 250.3
+        },
         "tags": [
             "dalinar"
-        ],
-        "shadesmar": false,
-        "coordinates": {
-            "x": 738.8,
-            "y": 250.5
-        }
+        ]
     },
     {
-        "id": "conquest-of-alethkar",
+        "id": "kholin-conquest-of-alethkar-begins",
         "date": [
             1139
         ],
-        "tags": [ ],
         "coordinates": {
-            "x": 720.9,
-            "y": 276.8
-        }
+            "x": 719.7,
+            "y": 275.5,
+            "zoom": 0.5
+        },
+        "tags": [
+            "ob",
+            "dalinar"
+        ]
     },
     {
         "id": "dalinar-wins-oathbringer",
         "date": [
             1141
         ],
-        "tags": [ ],
         "coordinates": {
-            "x": 727,
-            "y": 304.8
-        }
+            "x": 726.8,
+            "y": 304.7
+        },
+        "tags": [
+            "ob",
+            "dalinar"
+        ]
     },
     {
-        "id": "gavilar-coronation",
+        "id": "lurnip-famine",
+        "date": [
+            1143
+        ],
+        "coordinates": {
+            "x": 439.1,
+            "y": 342.6
+        },
+        "tags": []
+    },
+    {
+        "id": "unification-of-alethkar",
         "date": [
             1145
         ],
-        "tags": [ ],
         "coordinates": {
             "x": 738.7,
-            "y": 250.3
-        }
+            "y": 250.4
+        },
+        "tags": [
+            "ob",
+            "dalinar"
+        ]
     },
     {
-        "id": "adolin-birth",
+        "id": "adolin-is-born",
         "date": [
             1150
         ],
-        "tags": [ ],
         "coordinates": {
-            "x": 738.7,
+            "x": 738.6,
             "y": 250.3
-        }
+        },
+        "tags": [
+            "ob",
+            "dalinar",
+            "adolin"
+        ]
     },
     {
-        "id": "kaladin-birth",
+        "id": "kaladin-is-born",
         "date": [
             1153
         ],
+        "coordinates": {
+            "x": 734,
+            "y": 196.5
+        },
         "tags": [
             "kaladin"
-        ],
-        "shadesmar": false,
-        "coordinates": {
-            "x": 734.7,
-            "y": 196.8
-        },
-        "image": {
-            "file": "kaladin.jpg",
-            "offset": {
-                "x": 90,
-                "y": 0
-            },
-            "size": 150
-        }
+        ]
     },
     {
-        "id": "shallan-birth",
+        "id": "renarin-is-born",
+        "date": [
+            1154
+        ],
+        "coordinates": {
+            "x": 738.6,
+            "y": 250.4
+        },
+        "tags": [
+            "renarin"
+        ]
+    },
+    {
+        "id": "shallan-is-born",
         "date": [
             1156
         ],
+        "coordinates": {
+            "x": 627.8,
+            "y": 253.6
+        },
         "tags": [
             "shallan"
-        ],
-        "shadesmar": false,
-        "coordinates": {
-            "x": 627.5,
-            "y": 256.1
-        }
+        ]
     },
     {
-        "id": "surgeon-training-begins",
+        "id": "lift-is-born",
+        "date": [
+            1160
+        ],
+        "coordinates": {
+            "x": 367.3,
+            "y": 115.7
+        },
+        "tags": [
+            "lift"
+        ]
+    },
+    {
+        "id": "kaladin-begins-training",
         "date": [
             1162
         ],
-        "tags": [ ],
         "coordinates": {
-            "x": 734.7,
-            "y": 196.8
-        }
+            "x": 734.1,
+            "y": 196.4
+        },
+        "tags": [
+            "twok",
+            "kaladin"
+        ]
     },
     {
-        "id": "evi-death",
+        "id": "return-to-the-rift",
         "date": [
             1163
         ],
-        "tags": [
-            "dalinar"
-        ],
-        "shadesmar": false,
         "coordinates": {
-            "x": 727,
+            "x": 726.8,
             "y": 305
-        }
+        },
+        "tags": [
+            "ob",
+            "dalinar"
+        ]
     },
     {
         "id": "szeth-named-truthless",
@@ -228,208 +316,1634 @@
             1166,
             3
         ],
-        "tags": [ ],
         "coordinates": {
-            "x": 293.2,
+            "x": 293.5,
             "y": 263.9
-        }
+        },
+        "tags": [
+            "szeth"
+        ],
+        "tieBreaker": 0
     },
     {
-        "id": "discovery-of-parshendi",
+        "id": "wistiow-dies",
+        "date": [
+            1166,
+            3
+        ],
+        "coordinates": {
+            "x": 734.1,
+            "y": 196.5
+        },
+        "tags": [
+            "twok",
+            "kaladin"
+        ],
+        "tieBreaker": 1
+    },
+    {
+        "id": "the-parshendi-discovered",
         "date": [
             1166,
             8
         ],
-        "tags": [ ],
         "coordinates": {
-            "x": 754.2,
-            "y": 352.1
-        }
+            "x": 760.7,
+            "y": 346.6
+        },
+        "tags": [
+            "dalinar"
+        ]
     },
     {
-        "id": "roshone-arrival",
+        "id": "roshone-arrives-in-hearthstone",
         "date": [
             1166,
             10
         ],
-        "tags": [ ],
         "coordinates": {
-            "x": 734.7,
-            "y": 196.8
-        }
+            "x": 734,
+            "y": 196.4
+        },
+        "tags": [
+            "twok",
+            "kaladin"
+        ]
     },
     {
-        "id": "shallan-kills-mother",
+        "id": "shallan-kills-her-mother",
         "date": [
             1167,
             9
         ],
-        "tags": [ ],
         "coordinates": {
-            "x": 627.5,
-            "y": 256.1
-        }
+            "x": 627.3,
+            "y": 254.6
+        },
+        "tags": [
+            "wor",
+            "shallan"
+        ]
     },
     {
-        "id": "gavilar-assassination",
+        "id": "the-eightys-war",
         "date": [
             1167,
             10
         ],
-        "tags": [ ],
         "coordinates": {
-            "x": 738.6,
-            "y": 250.3
-        }
+            "x": 427,
+            "y": 362.5
+        },
+        "tags": [],
+        "tieBreaker": 0
     },
     {
-        "id": "dalinar-nightwatcher",
+        "id": "gavilars-assassination",
+        "date": [
+            1167,
+            10
+        ],
+        "coordinates": {
+            "x": 738.7,
+            "y": 250.4
+        },
+        "tags": [
+            "twok",
+            "wor",
+            "ob",
+            "dalinar"
+        ],
+        "tieBreaker": 1
+    },
+    {
+        "id": "dalinar-visits-the-nightwatcher",
         "date": [
             1168,
             7
         ],
-        "tags": [ ],
         "coordinates": {
-            "x": 484.9,
-            "y": 332.6
-        }
+            "x": 484.1,
+            "y": 334.2
+        },
+        "tags": [
+            "ob",
+            "dalinar"
+        ]
     },
     {
-        "id": "kaladin-joins-army",
+        "id": "kaladin-joins-the-army",
         "date": [
             1168,
             10
         ],
-        "tags": [ ],
         "coordinates": {
-            "x": 734.7,
-            "y": 196.8
-        }
+            "x": 734,
+            "y": 196.3
+        },
+        "tags": [
+            "twok",
+            "kaladin"
+        ]
     },
     {
-        "id": "taravangian-nightwatcher",
+        "id": "taravangian-visits-the-nightwatcher",
         "date": [
             1169,
             1
         ],
-        "tags": [
-            "general"
-        ],
-        "shadesmar": false,
         "coordinates": {
-            "x": 484.5,
-            "y": 332.4
+            "x": 484.1,
+            "y": 333.8
         },
-        "related": [ "characters/taravangian", "locations/valley" ]
+        "tags": []
     },
     {
-        "id": "tien-death",
+        "id": "tien-dies",
         "date": [
             1169,
             4
         ],
-        "tags": [
-            "kaladin"
-        ],
-        "shadesmar": false,
         "coordinates": {
-            "x": 704.6,
-            "y": 208.8
-        }
+            "x": 715.4,
+            "y": 200.3
+        },
+        "tags": [
+            "twok",
+            "kaladin"
+        ]
     },
     {
-        "id": "lin-davar-murder",
+        "id": "lin-davar-accused-of-murder",
         "date": [
             1169,
             10
         ],
-        "tags": [
-            "general"
-        ],
-        "shadesmar": false,
         "coordinates": {
-            "x": 627.5,
-            "y": 256.1
-        }
+            "x": 628.8,
+            "y": 254
+        },
+        "tags": [
+            "wor",
+            "shallan"
+        ]
     },
     {
-        "id": "kaladin-kills-helaran",
+        "id": "gavinor-is-born",
+        "date": [
+            1170,
+            2
+        ],
+        "coordinates": {
+            "x": 738.7,
+            "y": 250.4
+        },
+        "tags": []
+    },
+    {
+        "id": "shallan-meets-wit",
+        "date": [
+            1170,
+            6
+        ],
+        "coordinates": {
+            "x": 628.2,
+            "y": 254.9
+        },
+        "tags": [
+            "wor",
+            "shallan"
+        ]
+    },
+    {
+        "id": "kaladin-becomes-a-slave",
         "date": [
             1172,
             9
         ],
-        "tags": [ ],
         "coordinates": {
-            "x": 704.6,
-            "y": 208.8
-        }
+            "x": 714.7,
+            "y": 199.6
+        },
+        "tags": [
+            "twok",
+            "kaladin"
+        ]
     },
     {
-        "id": "shallan-kills-father",
+        "id": "rysn-in-shinovar",
         "date": [
             1172,
             10
         ],
-        "tags": [ ],
         "coordinates": {
-            "x": 627.5,
-            "y": 256.1
-        }
+            "x": 319.4,
+            "y": 294.2
+        },
+        "tags": [
+            "twok",
+            "rysn"
+        ],
+        "tieBreaker": 0
     },
     {
-        "id": "shallan-arrives-in-kharbranth",
+        "id": "shallan-kills-her-father",
+        "date": [
+            1172,
+            10
+        ],
+        "coordinates": {
+            "x": 628.1,
+            "y": 254.7
+        },
+        "tags": [
+            "wor",
+            "shallan"
+        ],
+        "tieBreaker": 1
+    },
+    {
+        "id": "oroden-is-born",
+        "date": [
+            1173,
+            1
+        ],
+        "coordinates": {
+            "x": 734.1,
+            "y": 196.3
+        },
+        "tags": []
+    },
+    {
+        "id": "rysn-in-the-reshi-isles",
+        "date": [
+            1173,
+            5
+        ],
+        "coordinates": {
+            "x": 510,
+            "y": 121.3
+        },
+        "tags": [
+            "wor",
+            "rysn"
+        ]
+    },
+    {
+        "id": "shallan-becomes-jasnahs-ward",
         "date": [
             1173,
             6
         ],
-        "tags": [
-            "shallan"
-        ],
         "coordinates": {
-            "x": 577.9,
-            "y": 375.4
-        }
+            "x": 578,
+            "y": 375.2
+        },
+        "tags": [
+            "twok",
+            "shallan",
+            "jasnah"
+        ]
     },
     {
-        "id": "taravangian-acquires-oathstone",
+        "id": "szeths-killing-spree-begins",
         "date": [
             1173,
             7
         ],
-        "tags": [ ],
         "coordinates": {
-            "x": 589.2,
-            "y": 286.3
-        }
-    },
-    {
-        "id": "the-gang-is-in-shadesmar",
-        "date": [
-            1174
-        ],
+            "x": 590,
+            "y": 286.2
+        },
         "tags": [
-            "kaladin",
-            "shallan"
-        ],
-        "shadesmar": true,
-        "coordinates": {
-            "x": 738.8,
-            "y": 250.5
-        }
+            "twok",
+            "szeth"
+        ]
     },
     {
-        "id": "dalinar-opens-honors-perpendicularity",
+        "id": "kaladin-joins-bridge-four",
         "date": [
-            1174,
+            1173,
+            7,
+            9,
+            3
+        ],
+        "coordinates": {
+            "x": 759,
+            "y": 358.4
+        },
+        "tags": [
+            "twok",
+            "kaladin"
+        ]
+    },
+    {
+        "id": "kaladin-strung-up",
+        "date": [
+            1173,
+            8,
+            5,
+            3
+        ],
+        "coordinates": {
+            "x": 759.1,
+            "y": 358.8
+        },
+        "tags": [
+            "twok",
+            "kaladin"
+        ]
+    },
+    {
+        "id": "chasmfiend-hunt-disaster",
+        "date": [
+            1173,
+            8,
+            7,
+            3
+        ],
+        "coordinates": {
+            "x": 763.6,
+            "y": 363.5
+        },
+        "tags": [
+            "twok",
+            "dalinar",
+            "adolin"
+        ]
+    },
+    {
+        "id": "bridge-four-begins-training",
+        "date": [
+            1173,
+            8,
+            8,
+            3
+        ],
+        "coordinates": {
+            "x": 760.1,
+            "y": 358.1
+        },
+        "tags": [
+            "twok",
+            "kaladin"
+        ]
+    },
+    {
+        "id": "dalinar-decides-to-abdicate",
+        "date": [
+            1173,
+            8,
+            9,
+            4
+        ],
+        "coordinates": {
+            "x": 760.2,
+            "y": 358.4
+        },
+        "tags": [
+            "twok",
+            "dalinar",
+            "adolin",
+            "navani"
+        ]
+    },
+    {
+        "id": "shallan-draws-a-cryptic",
+        "date": [
+            1173,
+            8,
+            10,
+            3
+        ],
+        "coordinates": {
+            "x": 577.8,
+            "y": 375.3
+        },
+        "tags": [
+            "twok",
+            "shallan",
+            "jasnah"
+        ]
+    },
+    {
+        "id": "dalinar-and-sadeas-begin-joint-bridge-runs",
+        "date": [
+            1173,
+            9,
+            1,
             1
         ],
+        "coordinates": {
+            "x": 759.8,
+            "y": 358.1
+        },
         "tags": [
+            "twok",
+            "dalinar",
+            "adolin",
+            "kaladin"
+        ]
+    },
+    {
+        "id": "szeth-assassinates-hanavanar",
+        "date": [
+            1173,
+            9,
+            1,
+            4
+        ],
+        "coordinates": {
+            "x": 609.7,
+            "y": 334.5
+        },
+        "tags": [
+            "twok",
+            "szeth"
+        ]
+    },
+    {
+        "id": "the-lesson",
+        "date": [
+            1173,
+            9,
+            2,
+            4
+        ],
+        "coordinates": {
+            "x": 577.9,
+            "y": 375.1
+        },
+        "tags": [
+            "twok",
+            "shallan",
+            "jasnah"
+        ]
+    },
+    {
+        "id": "kaladin-surgebinds",
+        "date": [
+            1173,
+            9,
+            3,
+            1
+        ],
+        "coordinates": {
+            "x": 762.8,
+            "y": 361.6
+        },
+        "tags": [
+            "twok",
+            "kaladin"
+        ]
+    },
+    {
+        "id": "vision-revelation",
+        "date": [
+            1173,
+            9,
+            4,
+            4
+        ],
+        "coordinates": {
+            "x": 760.8,
+            "y": 358.2
+        },
+        "tags": [
+            "twok",
+            "dalinar",
+            "adolin",
+            "navani"
+        ]
+    },
+    {
+        "id": "shallan-visits-shadesmar",
+        "date": [
+            1173,
+            9,
+            5,
+            3
+        ],
+        "coordinates": {
+            "x": 577.8,
+            "y": 375.2
+        },
+        "tags": [
+            "twok",
+            "shallan",
+            "jasnah"
+        ],
+        "shadesmar": true
+    },
+    {
+        "id": "shallan-confronts-jasnah",
+        "date": [
+            1173,
+            9,
+            6,
+            1
+        ],
+        "coordinates": {
+            "x": 578,
+            "y": 375.3
+        },
+        "tags": [
+            "twok",
+            "shallan",
+            "jasnah"
+        ]
+    },
+    {
+        "id": "battle-of-the-tower",
+        "date": [
+            1173,
+            9,
+            6,
+            4
+        ],
+        "coordinates": {
+            "x": 761.8,
+            "y": 360.2
+        },
+        "tags": [
+            "twok",
+            "kaladin",
+            "dalinar",
+            "adolin"
+        ]
+    },
+    {
+        "id": "shallan-sees-pattern",
+        "date": [
+            1173,
+            9,
+            6,
+            5
+        ],
+        "coordinates": {
+            "x": 643.9,
+            "y": 413.5
+        },
+        "tags": [
+            "wor",
+            "shallan"
+        ]
+    },
+    {
+        "id": "taln-arrives-in-kholinar",
+        "date": [
+            1173,
+            9,
+            7,
+            5
+        ],
+        "coordinates": {
+            "x": 738.6,
+            "y": 250.3
+        },
+        "tags": [
+            "twok"
+        ]
+    },
+    {
+        "id": "everstorm-countdown",
+        "date": [
+            1173,
+            9,
+            8,
+            1
+        ],
+        "coordinates": {
+            "x": 760.7,
+            "y": 358.6
+        },
+        "tags": [
+            "wor",
+            "dalinar",
+            "kaladin",
+            "adolin",
+            "renarin"
+        ]
+    },
+    {
+        "id": "winds-pleasure-attacked",
+        "date": [
+            1173,
+            9,
+            8,
+            3
+        ],
+        "coordinates": {
+            "x": 731,
+            "y": 432.7
+        },
+        "tags": [
+            "wor",
+            "shallan",
+            "jasnah"
+        ]
+    },
+    {
+        "id": "amarams-arrival",
+        "date": [
+            1173,
+            9,
+            8,
+            4
+        ],
+        "coordinates": {
+            "x": 759.1,
+            "y": 357.3
+        },
+        "tags": [
+            "wor",
+            "dalinar",
+            "kaladin"
+        ]
+    },
+    {
+        "id": "shallan-joins-tvlakvs-caravan",
+        "date": [
+            1173,
+            9,
+            8,
+            5
+        ],
+        "coordinates": {
+            "x": 733.7,
+            "y": 412.5
+        },
+        "tags": [
+            "wor"
+        ]
+    },
+    {
+        "id": "adolin-begins-dueling",
+        "date": [
+            1173,
+            9,
+            9,
+            5
+        ],
+        "coordinates": {
+            "x": 759.3,
+            "y": 357.3
+        },
+        "tags": [
+            "wor",
+            "adolin"
+        ]
+    },
+    {
+        "id": "shallan-recruits-deserters",
+        "date": [
+            1173,
+            9,
+            10,
+            1
+        ],
+        "coordinates": {
+            "x": 736.9,
+            "y": 385.6
+        },
+        "tags": [
+            "wor",
+            "shallan"
+        ]
+    },
+    {
+        "id": "boots",
+        "date": [
+            1173,
+            10,
+            2,
+            3
+        ],
+        "coordinates": {
+            "x": 754.9,
+            "y": 368.4
+        },
+        "tags": [
+            "wor",
+            "shallan",
+            "kaladin"
+        ]
+    },
+    {
+        "id": "eshonai-adopts-stormform",
+        "date": [
+            1173,
+            10,
+            2,
+            5
+        ],
+        "coordinates": {
+            "x": 767.7,
+            "y": 363.7
+        },
+        "tags": [
+            "wor",
+            "eshonai"
+        ],
+        "tieBreaker": 0
+    },
+    {
+        "id": "szeth-attacks-dalinar",
+        "date": [
+            1173,
+            10,
+            2,
+            5
+        ],
+        "coordinates": {
+            "x": 760,
+            "y": 357.4
+        },
+        "tags": [
+            "wor",
+            "dalinar",
+            "kaladin",
+            "adolin",
+            "renarin"
+        ],
+        "tieBreaker": 1
+    },
+    {
+        "id": "shallan-kills-tyn",
+        "date": [
+            1173,
+            10,
+            2,
+            5
+        ],
+        "coordinates": {
+            "x": 753,
+            "y": 368.9
+        },
+        "tags": [
+            "wor",
+            "shallan"
+        ],
+        "tieBreaker": 2
+    },
+    {
+        "id": "shallan-meets-ghostbloods",
+        "date": [
+            1173,
+            10,
+            3,
+            1
+        ],
+        "coordinates": {
+            "x": 758.3,
+            "y": 360.3
+        },
+        "tags": [
+            "wor",
+            "shallan"
+        ]
+    },
+    {
+        "id": "meeting-with-graves",
+        "date": [
+            1173,
+            10,
+            3,
+            5
+        ],
+        "coordinates": {
+            "x": 759.4,
+            "y": 357.7
+        },
+        "tags": [
+            "wor",
+            "kaladin"
+        ]
+    },
+    {
+        "id": "disadvantaged-duel",
+        "date": [
+            1173,
+            10,
+            4,
+            5
+        ],
+        "coordinates": {
+            "x": 759,
+            "y": 357.4
+        },
+        "tags": [
+            "wor",
+            "dalinar",
+            "kaladin",
+            "adolin",
+            "renarin",
+            "shallan",
+            "navani"
+        ]
+    },
+    {
+        "id": "eshonai-seizes-control",
+        "date": [
+            1173,
+            10,
+            6,
+            1
+        ],
+        "coordinates": {
+            "x": 767.9,
+            "y": 363.7
+        },
+        "tags": [
+            "wor",
+            "eshonai"
+        ],
+        "tieBreaker": 0
+    },
+    {
+        "id": "lift-saves-gawx",
+        "date": [
+            1173,
+            10,
+            6,
+            1
+        ],
+        "coordinates": {
+            "x": 414.5,
+            "y": 331.5
+        },
+        "tags": [
+            "wor",
+            "lift"
+        ],
+        "tieBreaker": 1
+    },
+    {
+        "id": "shallan-meets-taln",
+        "date": [
+            1173,
+            10,
+            6,
+            4
+        ],
+        "coordinates": {
+            "x": 759,
+            "y": 356.9
+        },
+        "tags": [
+            "wor",
+            "shallan"
+        ]
+    },
+    {
+        "id": "taravangian-crowned-king-of-jah-keved",
+        "date": [
+            1173,
+            10,
+            7,
+            2
+        ],
+        "coordinates": {
+            "x": 609.7,
+            "y": 334.5
+        },
+        "tags": [
+            "wor",
+            "taravangian",
+            "szeth"
+        ]
+    },
+    {
+        "id": "shallan-and-kaladin-in-the-chasms",
+        "date": [
+            1173,
+            10,
+            8,
+            4
+        ],
+        "coordinates": {
+            "x": 762.8,
+            "y": 360
+        },
+        "tags": [
+            "wor",
+            "kaladin",
+            "shallan"
+        ]
+    },
+    {
+        "id": "battle-of-narak-and-the-everstorm",
+        "date": [
+            1173,
+            10,
+            10,
+            3
+        ],
+        "coordinates": {
+            "x": 768,
+            "y": 363.6
+        },
+        "tags": [
+            "wor",
+            "dalinar",
+            "kaladin",
+            "adolin",
+            "renarin",
+            "shallan",
+            "navani"
+        ]
+    },
+    {
+        "id": "urithiru-rediscovered",
+        "date": [
+            1173,
+            10,
+            10,
+            4
+        ],
+        "coordinates": {
+            "x": 486.1,
+            "y": 318.3
+        },
+        "tags": [
+            "wor",
+            "dalinar",
+            "kaladin",
+            "adolin",
+            "renarin",
+            "shallan",
+            "navani"
+        ]
+    },
+    {
+        "id": "adolin-murders-sadeas",
+        "date": [
+            1174,
+            1,
+            1,
+            3
+        ],
+        "coordinates": {
+            "x": 486.1,
+            "y": 318.5
+        },
+        "tags": [
+            "wor",
+            "adolin"
+        ]
+    },
+    {
+        "id": "jasnah-returns-from-shadesmar",
+        "date": [
+            1174,
+            1,
+            1,
+            4
+        ],
+        "coordinates": {
+            "x": 785.8,
+            "y": 307
+        },
+        "tags": [
+            "wor",
+            "jasnah",
+            "wit"
+        ]
+    },
+    {
+        "id": "lift-saves-the-stump",
+        "date": [
+            1174,
+            1,
+            1,
+            5
+        ],
+        "coordinates": {
+            "x": 400.3,
+            "y": 337.7
+        },
+        "tags": [
+            "ed",
+            "lift"
+        ]
+    },
+    {
+        "id": "dalinar-and-navani-are-married",
+        "date": [
+            1174,
+            1,
+            2,
+            1
+        ],
+        "coordinates": {
+            "x": 486.3,
+            "y": 318.5
+        },
+        "tags": [
+            "ob",
+            "dalinar",
+            "navani",
+            "adolin",
+            "renarin"
+        ]
+    },
+    {
+        "id": "kaladin-in-hearthstone",
+        "date": [
+            1174,
+            1,
+            2,
+            2
+        ],
+        "coordinates": {
+            "x": 734.3,
+            "y": 196.5
+        },
+        "tags": [
+            "ob",
+            "kaladin"
+        ]
+    },
+    {
+        "id": "murders-in-urithiru",
+        "date": [
+            1174,
+            1,
+            2,
+            3
+        ],
+        "coordinates": {
+            "x": 486.3,
+            "y": 318.5
+        },
+        "tags": [
+            "ob",
+            "adolin",
+            "shallan",
+            "renarin",
+            "dalinar"
+        ]
+    },
+    {
+        "id": "kaladin-joins-a-group-of-singers",
+        "date": [
+            1174,
+            1,
+            3,
+            1
+        ],
+        "coordinates": {
+            "x": 730.6,
+            "y": 201.7
+        },
+        "tags": [
+            "ob",
+            "kaladin"
+        ]
+    },
+    {
+        "id": "shallan-visits-the-breakaway",
+        "date": [
+            1174,
+            1,
+            4,
+            1
+        ],
+        "coordinates": {
+            "x": 486.3,
+            "y": 318.7
+        },
+        "tags": [
+            "ob",
+            "shallan"
+        ]
+    },
+    {
+        "id": "taravangian-arrives-in-urithiru",
+        "date": [
+            1174,
+            1,
+            4,
+            3
+        ],
+        "coordinates": {
+            "x": 486.1,
+            "y": 318.7
+        },
+        "tags": [
+            "ob",
+            "taravangian",
             "dalinar"
         ],
-        "perpendicularity": true,
+        "tieBreaker": 0
+    },
+    {
+        "id": "shallan-discovers-the-midnight-essence",
+        "date": [
+            1174,
+            1,
+            4,
+            3
+        ],
         "coordinates": {
-            "x": 597.5,
-            "y": 419.3
-        }
+            "x": 486.1,
+            "y": 318.5
+        },
+        "tags": [
+            "ob",
+            "shallan"
+        ],
+        "tieBreaker": 1
+    },
+    {
+        "id": "re-shephir-driven-from-urithiru",
+        "date": [
+            1174,
+            1,
+            5,
+            2
+        ],
+        "coordinates": {
+            "x": 486.3,
+            "y": 318.5
+        },
+        "tags": [
+            "ob",
+            "shallan",
+            "adolin",
+            "renarin"
+        ],
+        "tieBreaker": 0
+    },
+    {
+        "id": "kaladin-leaves-alethkar",
+        "date": [
+            1174,
+            1,
+            5,
+            2
+        ],
+        "coordinates": {
+            "x": 719.5,
+            "y": 226.2
+        },
+        "tags": [
+            "ob",
+            "kaladin"
+        ],
+        "tieBreaker": 1
+    },
+    {
+        "id": "moash-and-graves-attacked",
+        "date": [
+            1174,
+            1,
+            5,
+            2
+        ],
+        "coordinates": {
+            "x": 740.1,
+            "y": 375.1
+        },
+        "tags": [
+            "ob",
+            "moash"
+        ],
+        "tieBreaker": 2
+    },
+    {
+        "id": "bridge-four-begins-training-squires",
+        "date": [
+            1174,
+            1,
+            6,
+            1
+        ],
+        "coordinates": {
+            "x": 486.3,
+            "y": 318.3
+        },
+        "tags": [
+            "ob",
+            "kaladin"
+        ]
+    },
+    {
+        "id": "shallan-recruits-ishnah",
+        "date": [
+            1174,
+            1,
+            7,
+            1
+        ],
+        "coordinates": {
+            "x": 486.3,
+            "y": 318.5
+        },
+        "tags": [
+            "ob",
+            "shallan"
+        ]
+    },
+    {
+        "id": "venli-is-claimed-by-odium",
+        "date": [
+            1174,
+            1,
+            7,
+            4
+        ],
+        "coordinates": {
+            "x": 762.3,
+            "y": 360.2
+        },
+        "tags": [
+            "ob",
+            "venli"
+        ]
+    },
+    {
+        "id": "renarin-discovers-the-gemstone-library",
+        "date": [
+            1174,
+            1,
+            9,
+            1
+        ],
+        "coordinates": {
+            "x": 486.1,
+            "y": 318.3
+        },
+        "tags": [
+            "ob",
+            "renarin",
+            "jasnah",
+            "navani"
+        ]
+    },
+    {
+        "id": "odium-appears-to-dalinar",
+        "date": [
+            1174,
+            1,
+            9,
+            3
+        ],
+        "coordinates": {
+            "x": 486.1,
+            "y": 318.3
+        },
+        "tags": [
+            "ob",
+            "dalinar"
+        ]
+    },
+    {
+        "id": "oathgate-to-thaylen-city-opened",
+        "date": [
+            1174,
+            1,
+            9,
+            4
+        ],
+        "coordinates": {
+            "x": 597.3,
+            "y": 419.2
+        },
+        "tags": [
+            "ob",
+            "dalinar"
+        ]
+    },
+    {
+        "id": "moash-travels-to-kholinar",
+        "date": [
+            1174,
+            1,
+            10,
+            1
+        ],
+        "coordinates": {
+            "x": 726.6,
+            "y": 236.7
+        },
+        "tags": [
+            "ob",
+            "moash"
+        ]
+    },
+    {
+        "id": "elhokars-team-arrive-in-kholinar",
+        "date": [
+            1174,
+            1,
+            10,
+            2
+        ],
+        "coordinates": {
+            "x": 738.7,
+            "y": 250.4
+        },
+        "tags": [
+            "ob",
+            "kaladin",
+            "adolin",
+            "shallan"
+        ],
+        "tieBreaker": 0
+    },
+    {
+        "id": "dalinar-travels-to-azimir",
+        "date": [
+            1174,
+            1,
+            10,
+            2
+        ],
+        "coordinates": {
+            "x": 414.4,
+            "y": 331.5
+        },
+        "tags": [
+            "ob",
+            "dalinar"
+        ],
+        "tieBreaker": 1
+    },
+    {
+        "id": "moash-arrives-outside-kholinar",
+        "date": [
+            1174,
+            1,
+            10,
+            4
+        ],
+        "coordinates": {
+            "x": 738.9,
+            "y": 250.4
+        },
+        "tags": [
+            "ob",
+            "moash"
+        ]
+    },
+    {
+        "id": "kaladin-meets-highmarshal-azure",
+        "date": [
+            1174,
+            1,
+            10,
+            5
+        ],
+        "coordinates": {
+            "x": 512,
+            "y": 256
+        },
+        "tags": [
+            "ob",
+            "kaladin"
+        ]
+    },
+    {
+        "id": "shallan-attends-the-revel",
+        "date": [
+            1174,
+            2,
+            3,
+            2
+        ],
+        "coordinates": {
+            "x": 738.7,
+            "y": 250.4
+        },
+        "tags": [
+            "ob",
+            "shallan"
+        ]
+    },
+    {
+        "id": "battle-of-kholinar",
+        "date": [
+            1174,
+            2,
+            3,
+            3
+        ],
+        "coordinates": {
+            "x": 738.7,
+            "y": 250.4
+        },
+        "tags": [
+            "ob",
+            "kaladin",
+            "adolin",
+            "shallan",
+            "moash"
+        ],
+        "tieBreaker": 0
+    },
+    {
+        "id": "trapped-in-shadesmar",
+        "date": [
+            1174,
+            2,
+            3,
+            3
+        ],
+        "coordinates": {
+            "x": 738.9,
+            "y": 250.6
+        },
+        "tags": [
+            "ob",
+            "kaladin",
+            "adolin",
+            "shallan"
+        ],
+        "tieBreaker": 1,
+        "shadesmar": true
+    },
+    {
+        "id": "riinos-lighthouse",
+        "date": [
+            1174,
+            2,
+            4,
+            1
+        ],
+        "coordinates": {
+            "x": 731,
+            "y": 258.6
+        },
+        "tags": [
+            "ob",
+            "kaladin",
+            "adolin",
+            "shallan"
+        ],
+        "tieBreaker": 0,
+        "shadesmar": true
+    },
+    {
+        "id": "first-meeting-of-monarchs",
+        "date": [
+            1174,
+            2,
+            4,
+            1
+        ],
+        "coordinates": {
+            "x": 486.3,
+            "y": 318.3
+        },
+        "tags": [
+            "ob",
+            "navani"
+        ],
+        "tieBreaker": 1
+    },
+    {
+        "id": "szeth-joins-the-skybreakers",
+        "date": [
+            1174,
+            2,
+            4,
+            5
+        ],
+        "coordinates": {
+            "x": 467.1,
+            "y": 251
+        },
+        "tags": [
+            "ob",
+            "szeth"
+        ]
+    },
+    {
+        "id": "stop-in-celebrant",
+        "date": [
+            1174,
+            2,
+            5,
+            5
+        ],
+        "coordinates": {
+            "x": 712.6,
+            "y": 321.8
+        },
+        "tags": [
+            "ob",
+            "kaladin",
+            "adolin",
+            "shallan"
+        ],
+        "tieBreaker": 0,
+        "shadesmar": true
+    },
+    {
+        "id": "dalinar-confronts-the-thrill-in-vedenar",
+        "date": [
+            1174,
+            2,
+            5,
+            5
+        ],
+        "coordinates": {
+            "x": 609.8,
+            "y": 334.7
+        },
+        "tags": [
+            "ob",
+            "dalinar"
+        ],
+        "tieBreaker": 1
+    },
+    {
+        "id": "venli-relocated-to-marat",
+        "date": [
+            1174,
+            2,
+            6,
+            5
+        ],
+        "coordinates": {
+            "x": 480.1,
+            "y": 383.6
+        },
+        "tags": [
+            "ob",
+            "venli"
+        ]
+    },
+    {
+        "id": "the-battle-of-thaylen-field",
+        "date": [
+            1174,
+            2,
+            7,
+            5
+        ],
+        "coordinates": {
+            "x": 597.3,
+            "y": 419.2
+        },
+        "tags": [
+            "ob"
+        ],
+        "tieBreaker": 0,
+        "perpendicularity": true
+    },
+    {
+        "id": "moash-kills-jezrien",
+        "date": [
+            1174,
+            2,
+            7,
+            5
+        ],
+        "coordinates": {
+            "x": 738.9,
+            "y": 250.6
+        },
+        "tags": [
+            "ob",
+            "moash"
+        ],
+        "tieBreaker": 1
+    },
+    {
+        "id": "jasnah-crowned",
+        "date": [
+            1174,
+            2,
+            9,
+            5
+        ],
+        "coordinates": {
+            "x": 485.9,
+            "y": 318.5
+        },
+        "tags": [
+            "ob",
+            "jasnah"
+        ]
+    },
+    {
+        "id": "shallan-and-adolin-wedding",
+        "date": [
+            1174,
+            2,
+            10,
+            5
+        ],
+        "coordinates": {
+            "x": 486.1,
+            "y": 318.5
+        },
+        "tags": [
+            "ob",
+            "shallan",
+            "adolin"
+        ]
     }
 ]

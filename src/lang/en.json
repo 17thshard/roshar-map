@@ -1,5 +1,6 @@
 {
     "ui": {
+        "circa": "ca. {date}",
         "menu": "Menu",
         "filters": "Filters",
         "close": "Close",
@@ -30,7 +31,7 @@
         "dalinar": "Dalinar",
         "kaladin": "Kaladin",
         "shallan": "Shallan",
-        "wok": "The Way of Kings",
+        "twok": "The Way of Kings",
         "wor": "Words of Radiance",
         "ed": "Edgedancer",
         "ob": "Oathbringer",

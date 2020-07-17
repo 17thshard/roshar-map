@@ -1,2 +1,0 @@
-# dalinar-birth
-Blurb

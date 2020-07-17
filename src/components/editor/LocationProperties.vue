@@ -5,12 +5,12 @@
       <label for="location-properties__slug">ID</label>
       <input id="location-properties__slug" v-model="location.id" type="text">
 
-      <div class="event-properties__coordinates">
+      <div class="location-coordinates__coordinates">
         <h3>Coordinates</h3>
 
-        <label for="event-properties__coordinates--x">X</label>
+        <label for="location-coordinates__coordinates--x">X</label>
         <input
-          id="event-properties__coordinates--x"
+          id="location-coordinates__coordinates--x"
           v-model.number="location.coordinates.x"
           type="number"
           min="0"
@@ -18,14 +18,25 @@
           step="any"
         >
 
-        <label for="event-properties__coordinates--y">Y</label>
+        <label for="location-coordinates__coordinates--y">Y</label>
         <input
-          id="event-properties__coordinates--y"
+          id="location-coordinates__coordinates--y"
           v-model.number="location.coordinates.y"
           type="number"
           min="0"
           max="512"
           step="any"
+        >
+
+        <label for="event-properties__coordinates--zoom">Zoom</label>
+        <input
+          id="event-properties__coordinates--zoom"
+          :value="location.coordinates.zoom"
+          type="number"
+          min="0"
+          max="1"
+          step="any"
+          @input="updateZoom"
         >
       </div>
 
@@ -90,6 +101,16 @@ export default {
         this.$set(this.location, 'points', [])
       }
     },
+    updateZoom ({ target: { value } }) {
+      const trimmed = value.trim()
+
+      if (trimmed.length === 0) {
+        this.$delete(this.location.coordinates, 'zoom')
+        return
+      }
+
+      this.$set(this.location.coordinates, 'zoom', Number.parseFloat(trimmed))
+    },
     update (property, { target: { value } }) {
       const trimmed = value.trim()
 
@@ -139,6 +160,31 @@ export default {
 
   &__checkboxes {
     grid-column: 1 / span 2;
+  }
+
+  &__coordinates {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+    grid-column: 1 / span 2;
+    align-items: center;
+    grid-gap: 0.5rem;
+
+    h3, h4 {
+      margin: 0;
+      grid-column: 1 / span 6;
+    }
+
+    input[type="number"] {
+      width: auto;
+    }
+
+    &--units {
+      grid-template-columns: auto minmax(0, 1fr) auto auto minmax(0, 1fr) auto;
+
+      h3, h4 {
+        grid-column: 1 / span 6;
+      }
+    }
   }
 }
 </style>

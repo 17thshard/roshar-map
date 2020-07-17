@@ -53,6 +53,17 @@
           max="512"
           step="any"
         >
+
+        <label for="event-properties__coordinates--zoom">Zoom</label>
+        <input
+          id="event-properties__coordinates--zoom"
+          :value="event.coordinates.zoom"
+          type="number"
+          min="0"
+          max="1"
+          step="any"
+          @input="updateZoom"
+        >
       </div>
 
       <div class="event-properties__checkboxes">
@@ -209,6 +220,16 @@ export default {
 
       this.$set(this.event, 'tieBreaker', Number.parseInt(trimmed, 10))
     },
+    updateZoom ({ target: { value } }) {
+      const trimmed = value.trim()
+
+      if (trimmed.length === 0) {
+        this.$delete(this.event.coordinates, 'zoom')
+        return
+      }
+
+      this.$set(this.event.coordinates, 'zoom', Number.parseFloat(trimmed))
+    },
     updateImageFile ({ target: { value } }) {
       const trimmed = value.trim()
 
@@ -310,14 +331,14 @@ export default {
 
   &__coordinates {
     display: grid;
-    grid-template-columns: auto minmax(0, 1fr) auto minmax(0, 1fr);
+    grid-template-columns: auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
     grid-column: 1 / span 2;
     align-items: center;
     grid-gap: 0.5rem;
 
     h3, h4 {
       margin: 0;
-      grid-column: 1 / span 4;
+      grid-column: 1 / span 6;
     }
 
     input[type="number"] {

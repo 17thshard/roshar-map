@@ -1,2 +1,0 @@
-# discovery-of-parshendi
-Blurb

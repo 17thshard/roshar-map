@@ -1,2 +1,0 @@
-# founding-knights-radiant
-Blurb

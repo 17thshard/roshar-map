@@ -1,2 +1,0 @@
-# taravangian-nightwatcher
-Blurb

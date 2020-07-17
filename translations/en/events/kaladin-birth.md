@@ -1,2 +1,0 @@
-# kaladin-birth
-Blurb
