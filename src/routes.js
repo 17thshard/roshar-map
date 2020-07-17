@@ -71,7 +71,7 @@ router.beforeEach((to, from, next) => {
   const locale = to.params.locale
 
   if (locale === undefined) {
-    next('/en')
+    next('/en-US')
     return
   }
 

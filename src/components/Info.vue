@@ -5,12 +5,14 @@
     </button>
     <transition name="info__wrapper" @before-leave="leaveActive = true" @after-leave="leaveActive = false">
       <div v-if="active" class="info__wrapper">
-        <button :class="['info__back', { 'info__back--active': subPage !== null }]" :title="$t('ui.back')" @click="subPage = null">
-          <ChevronLeftIcon />
-        </button>
-        <button :class="['info__close', { 'info__close--dark': subPage !== null }]" :title="$t('ui.close')" @click="active = false">
-          <XIcon />
-        </button>
+        <div :class="['info__bar', { 'info__bar--opaque': scrolled[subPage === null ? 'root' : subPage] === true }]">
+          <button :class="['info__back', { 'info__back--active': subPage !== null }]" :title="$t('ui.back')" @click="subPage = null">
+            <ChevronLeftIcon />
+          </button>
+          <button :class="['info__close', { 'info__close--dark': subPage !== null }]" :title="$t('ui.close')" @click="active = false">
+            <XIcon />
+          </button>
+        </div>
         <Scrollbar
           :class="['info__scroller', 'info__scroller--root', { 'info__scroller--inactive': subPage !== null }]"
           :ops="{
@@ -18,12 +20,13 @@
             bar: { background: '#482d00', opacity: 0.5, size: '0.5rem' },
             rail: { size: '0.5rem', gutterOfSide: '0' }
           }"
+          @handle-scroll="onScroll(null, $event)"
         >
           <div class="info__content">
             <div class="info__logo" />
             <Markdown :content="$t('ui.welcome')" class="info__text" />
             <nav class="info__menu">
-              <a href="https://brandonsanderson.com" target="_blank">
+              <a href="#" target="_blank" @click.prevent="subPage = 'language'">
                 {{ $t('ui.language') }}
               </a>
               <a href="#" target="_blank" @click.prevent="subPage = 'disclaimer'">
@@ -61,15 +64,38 @@
           </div>
         </Scrollbar>
         <Scrollbar
+          :class="['info__scroller', 'info__scroller--language', { 'info__scroller--active': subPage === 'language' }]"
+          :ops="{
+            vuescroll: { wheelScrollDuration: 400 },
+            bar: { background: '#482d00', opacity: 0.5, size: '0.5rem' },
+            rail: { size: '0.5rem', gutterOfSide: '0' }
+          }"
+          @handle-scroll="onScroll('language', $event)"
+        >
+          <div class="info__content">
+            <h2>{{ $t('ui.languageHeading') }}</h2>
+            <nav class="info__menu">
+              <router-link to="/en-US">
+                English
+              </router-link>
+              <router-link to="/de-DE">
+                Deutsch
+              </router-link>
+            </nav>
+          </div>
+        </Scrollbar>
+        <Scrollbar
           :class="['info__scroller', 'info__scroller--disclaimer', { 'info__scroller--active': subPage === 'disclaimer' }]"
           :ops="{
             vuescroll: { wheelScrollDuration: 400 },
             bar: { background: '#482d00', opacity: 0.5, size: '0.5rem' },
             rail: { size: '0.5rem', gutterOfSide: '0' }
           }"
+          @handle-scroll="onScroll('disclaimer', $event)"
         >
           <div class="info__content">
-            <Markdown :content="$t('ui.welcome')" class="info__text" />
+            <h2>{{ $t('ui.disclaimer') }}</h2>
+            <Markdown :content="$t('ui.disclaimerText')" class="info__text" />
           </div>
         </Scrollbar>
       </div>
@@ -89,13 +115,17 @@ export default {
     return {
       active: false,
       leaveActive: false,
-      subPage: null
+      subPage: null,
+      scrolled: {}
     }
   },
   methods: {
     open () {
       this.subPage = null
       this.active = true
+    },
+    onScroll (page, event) {
+      this.$set(this.scrolled, page === null ? 'root' : page, event.process > 0)
     }
   }
 }
@@ -185,10 +215,29 @@ export default {
     }
   }
 
-  &__back {
+  &__bar {
+    display: flex;
+    align-items: center;
     position: absolute;
-    top: 1.5rem;
-    left: 1rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    background: rgba(#F5ECDA, 0);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    z-index: 65;
+    transition: background 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    box-sizing: border-box;
+    padding: 1rem;
+
+    &--opaque {
+      background: rgba(#F5ECDA, 1);
+      box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+      pointer-events: auto;
+    }
+  }
+
+  &__back {
     cursor: pointer;
     appearance: none;
     outline: none;
@@ -199,10 +248,12 @@ export default {
     color: #242629;
     z-index: 65;
     opacity: 0;
+    pointer-events: none;
 
     &--active {
       opacity: 1;
       transition-delay: 0.5s;
+      pointer-events: auto;
     }
 
     &:hover, &:active, &:focus {
@@ -211,9 +262,7 @@ export default {
   }
 
   &__close {
-    position: absolute;
-    top: 1.5rem;
-    right: 1rem;
+    margin-left: auto;
     cursor: pointer;
     appearance: none;
     outline: none;
@@ -223,6 +272,7 @@ export default {
     transition: color 0.2s ease-in-out;
     color: #F5ECDA;
     z-index: 65;
+    pointer-events: auto;
 
     &--dark {
       color: #242629;
@@ -231,6 +281,10 @@ export default {
     &:hover, &:active, &:focus {
       color: #ffad00;
     }
+  }
+
+  &__bar--opaque &__close {
+    color: #242629;
   }
 
   &__scroller {
@@ -279,20 +333,6 @@ export default {
     }
   }
 
-  &__content {
-    display: grid;
-    grid-template-rows: auto auto 1fr auto;
-    flex-shrink: 0;
-    width: 350px;
-    max-width: 100%;
-    padding-bottom: 2rem;
-    background: #F5ECDA url(../assets/paper.png);
-  }
-
-  &__scroller.hasVBar &__content {
-    padding-bottom: 3.5rem;
-  }
-
   .__rail-is-vertical {
     z-index: 61 !important;
   }
@@ -306,6 +346,28 @@ export default {
     display: flex;
     align-items: stretch;
     width: auto !important;
+  }
+
+  &__content {
+    flex-shrink: 0;
+    width: 350px;
+    max-width: 100%;
+    padding-bottom: 2rem;
+    background: #F5ECDA url(../assets/paper.png);
+
+    h2 {
+      padding: 0 2rem;
+      margin: 4rem 0 0;
+    }
+  }
+
+  &__scroller--root &__content {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+  }
+
+  &__scroller.hasVBar &__content {
+    padding-bottom: 3.5rem;
   }
 
   &__logo {
@@ -322,9 +384,13 @@ export default {
   }
 
   &__text {
-    padding: 2rem 2rem 0;
+    padding: 0 2rem;
     text-align: justify;
     line-height: 1.75;
+  }
+
+  &__scroller--root &__text {
+    padding-top: 2rem;
   }
 
   &__menu {
@@ -339,6 +405,15 @@ export default {
       color: #242629;
       text-decoration: none;
       margin: 0.5rem 0;
+      background-image: linear-gradient(0deg, #242629 0%, #242629 100%);
+      background-repeat: no-repeat;
+      background-position: 50% 100%;
+      background-size: 0 3px;
+      transition: background-size 0.2s ease-in-out;
+
+      &:hover, &:active, &:focus, .info__menu-item--active {
+        background-size: 100% 3px;
+      }
     }
   }
 
