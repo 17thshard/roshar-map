@@ -8,7 +8,21 @@ module.exports = {
     },
     workboxOptions: {
       skipWaiting: true,
-      clientsClaim: true
+      clientsClaim: true,
+      exclude: ['index.html'],
+      runtimeCaching: [
+        {
+          urlPattern: new RegExp('/$'),
+          handler: ({ event }) => {
+            // eslint-disable-next-line no-undef
+            const strategy = new workbox.strategies.NetworkFirst()
+            return strategy.makeRequest({
+              request: '/index.html',
+              event
+            })
+          }
+        }
+      ]
     }
   }
 }
