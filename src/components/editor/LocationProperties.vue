@@ -5,12 +5,12 @@
       <label for="location-properties__slug">ID</label>
       <input id="location-properties__slug" v-model="location.id" type="text">
 
-      <div class="location-coordinates__coordinates">
+      <div class="location-properties__coordinates">
         <h3>Coordinates</h3>
 
-        <label for="location-coordinates__coordinates--x">X</label>
+        <label for="location-properties__coordinates--x">X</label>
         <input
-          id="location-coordinates__coordinates--x"
+          id="location-properties__coordinates--x"
           v-model.number="location.coordinates.x"
           type="number"
           min="0"
@@ -18,9 +18,9 @@
           step="any"
         >
 
-        <label for="location-coordinates__coordinates--y">Y</label>
+        <label for="location-properties__coordinates--y">Y</label>
         <input
-          id="location-coordinates__coordinates--y"
+          id="location-properties__coordinates--y"
           v-model.number="location.coordinates.y"
           type="number"
           min="0"
@@ -28,9 +28,9 @@
           step="any"
         >
 
-        <label for="event-properties__coordinates--zoom">Zoom</label>
+        <label for="location-properties__coordinates--zoom">Zoom</label>
         <input
-          id="event-properties__coordinates--zoom"
+          id="location-properties__coordinates--zoom"
           :value="location.coordinates.zoom"
           type="number"
           min="0"
@@ -53,12 +53,20 @@
       <label for="location-properties__image">Image</label>
       <input
         id="location-properties__image"
-        :value="location.image"
+        :value="location.image !== undefined ? location.image.file : undefined"
         type="text"
-        @input="update('image', $event)"
+        @input="updateImageFile"
       >
 
-      <img v-if="location.image !== undefined" :src="`${imageBaseUrl}/${location.image}`" :alt="location.name">
+      <label for="location-properties__image--credits">Image Credits</label>
+      <input
+        v-if="location.image !== undefined"
+        id="location-properties__image--credits"
+        v-model="location.image.credits"
+        type="text"
+      >
+
+      <img v-if="location.image !== undefined" :src="`${imageBaseUrl}/${location.image.file}`" :alt="location.id">
 
       <label for="location-properties__coppermind">Coppermind Article</label>
       <input
@@ -110,6 +118,20 @@ export default {
       }
 
       this.$set(this.location.coordinates, 'zoom', Number.parseFloat(trimmed))
+    },
+    updateImageFile ({ target: { value } }) {
+      const trimmed = value.trim()
+
+      if (trimmed.length === 0) {
+        this.location.image = undefined
+        return
+      }
+
+      if (this.location.image === undefined) {
+        this.location.image = {}
+      }
+
+      this.location.image.file = trimmed
     },
     update (property, { target: { value } }) {
       const trimmed = value.trim()

@@ -17,15 +17,15 @@
     >
       <div class="details__content">
         <figure v-if="details.image !== undefined" class="details__image">
-          <img :src="imageUrl" :alt="$t(`${details.type}.${details.id}.name`)">
+          <img :src="imageUrl" :alt="$t(`${baseTranslationKey}.name`)">
           <Markdown :content="details.image.credits || 'Credits have to be set!'" tag="figcaption" inline />
         </figure>
         <section class="details__text">
           <div ref="intersectionGuard" class="details__intersection-guard" />
           <h2 class="details__title">
-            {{ $t(`${details.type}.${details.id}.name`) }}
+            {{ $t(`${baseTranslationKey}.name`) }}
           </h2>
-          <Markdown :content="$t(`${details.type}.${details.id}.details`)" tag="article" />
+          <Markdown :content="text" tag="article" />
           <a
             v-if="details.coppermind !== undefined"
             :href="`https://coppermind.net/wiki/${details.coppermind}`"
@@ -82,6 +82,16 @@ export default {
   computed: {
     imageUrl () {
       return `${process.env.BASE_URL}img/${this.details.type}/${this.details.image.file}`
+    },
+    baseTranslationKey () {
+      return `${this.details.type}.${this.details.id}`
+    },
+    text () {
+      if (!this.$te(`${this.baseTranslationKey}.details`, 'en') && this.$te(`${this.baseTranslationKey}.blurb`, 'en')) {
+        return this.$t(`${this.baseTranslationKey}.blurb`)
+      }
+
+      return this.$t(`${this.baseTranslationKey}.details`)
     },
     related () {
       if (this.details.related === undefined) {

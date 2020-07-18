@@ -20,7 +20,7 @@
         class="event-card__text"
       >
         <router-link :to="`/${$route.params.locale}/events/${event.id}`" class="event-card__read-more">
-          Read more
+          More...
         </router-link>
       </Markdown>
     </div>

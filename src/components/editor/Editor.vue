@@ -92,6 +92,9 @@
           Override with
         </label>
         <input id="editor__file--locations" type="file" @change="loadLocations">
+        <button @click="saveLocations">
+          Save
+        </button>
         <button @click="sortLocationsByMapId">
           Sort by Map ID
         </button>
@@ -570,6 +573,10 @@ export default {
       // eslint-disable-next-line no-param-reassign
       event.target.value = ''
     },
+    saveLocations () {
+      saveAs(new Blob([JSON.stringify(this.locations, undefined, 4)], { type: 'application/json' }), 'locations.json')
+      this.locationsDirty = false
+    },
     loadEvents (event) {
       if (event.target.files.length === 0) {
         return
@@ -1015,7 +1022,7 @@ export default {
         grid-template-columns: auto auto auto;
         padding-top: 0;
 
-        & > button:first-of-type, input, label {
+        & > button:first-of-type, & > button:nth-of-type(2), input, label {
           grid-column: 1 / span 3;
         }
       }

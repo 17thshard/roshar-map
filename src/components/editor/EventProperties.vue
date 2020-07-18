@@ -122,6 +122,12 @@
         >
 
         <template v-if="event.image !== undefined">
+          <label for="event-properties__image--credits">Credits</label>
+          <input
+            id="event-properties__image--credits"
+            v-model="event.image.credits"
+            type="text"
+          >
           <div class="event-properties__image-preview-container">
             <div
               :style="buildImageStyles(event.image)"
