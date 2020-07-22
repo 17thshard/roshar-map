@@ -12,7 +12,7 @@ module.exports = {
       exclude: ['index.html'],
       runtimeCaching: [
         {
-          urlPattern: new RegExp('/$'),
+          urlPattern: /^$|^\/$|\/#.*$/,
           handler: 'NetworkFirst'
         }
       ]
