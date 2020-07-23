@@ -463,6 +463,9 @@ export default {
           PerpPeriod: { value: 3.05355 },
           Time: { value: 0 }
         },
+        extensions: {
+          derivatives: true
+        },
         transparent: true,
         depthTest: false
       })
@@ -482,6 +485,9 @@ export default {
         uniforms: {
           Texture: { value: textures.map_text },
           ShadesmarTexture: { value: textures.shadesmar_map_text }
+        },
+        extensions: {
+          derivatives: true
         },
         transparent: true,
         depthTest: false

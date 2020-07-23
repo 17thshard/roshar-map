@@ -152,6 +152,9 @@ export default {
           PerpLocation: { value: new Vector2() },
           PerpPeriod: { value: 3.05355 },
           Time: { value: 0 }
+        },
+        extensions: {
+          derivatives: true
         }
       })
 
@@ -182,6 +185,9 @@ export default {
           ActiveItem: { value: 0 },
           HoverProgress: { value: 0 },
           ActiveProgress: { value: 0 }
+        },
+        extensions: {
+          derivatives: true
         },
         transparent: true,
         depthTest: false
