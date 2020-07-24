@@ -140,7 +140,7 @@ export default {
     &:disabled {
       cursor: default !important;
       pointer-events: none;
-      opacity: 0.5;
+      opacity: 0.2;
     }
 
     &:after {
