@@ -1,8 +1,8 @@
 # build stage
-FROM node:10 as build-stage
+FROM node:14.5-alpine as build-stage
 COPY ./ /app
 WORKDIR /app
-RUN yarn install && yarn run compileLangJsons && cp /app/build/lang/* /app/src/lang && yarn run build
+RUN yarn install && yarn run convertTextures && yarn run compileLangJsons && cp /app/build/lang/* /app/src/lang && yarn run build
 
 FROM nginx:stable-alpine
 RUN mkdir /app
