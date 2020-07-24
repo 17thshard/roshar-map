@@ -26,7 +26,7 @@ Promise.all(Object.keys(textures).flatMap((name) => {
   return imagemin(files, {
     destination: basePath,
     plugins: [
-      imageminZopfli()
+      imageminZopfli({ more: true })
     ]
   }).then(() => {
     // eslint-disable-next-line no-console
