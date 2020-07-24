@@ -1,8 +1,9 @@
 const imagemin = require('imagemin')
 const imageminWebp = require('imagemin-webp')
+const imageminZopfli = require('imagemin-zopfli')
 
 const textures = {
-  map_bg: { hqWebpAvailable: true, lossy: true },
+  map_bg: { lossy: true },
   map: { hqAvailable: true },
   shadesmar_map_bg: { lossy: true },
   transition: {},
@@ -24,12 +25,27 @@ Promise.all(Object.keys(textures).flatMap((name) => {
 
   return imagemin(files, {
     destination: basePath,
-    plugins: [imageminWebp({ quality: texture.lossy === true ? 90 : 100, lossless: texture.lossy !== true })]
+    plugins: [
+      imageminZopfli()
+    ]
+  }).then(() => {
+    // eslint-disable-next-line no-console
+    console.log(`Optimized PNGs for texture '${name}'`)
+
+    return imagemin(files, {
+      destination: basePath,
+      plugins: [
+        imageminWebp({ quality: texture.lossy === true ? 90 : 100, lossless: texture.lossy !== true })
+      ]
+    })
+  }).then(() => {
+    // eslint-disable-next-line no-console
+    console.log(`Converted texture '${name}' to WEBP`)
   })
 })).catch((error) => {
   // eslint-disable-next-line no-console
   console.error(error)
 }).then(() => {
   // eslint-disable-next-line no-console
-  console.log('All textures converted successfully')
+  console.log('All textures optimized and converted successfully')
 })
