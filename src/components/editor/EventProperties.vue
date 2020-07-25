@@ -240,12 +240,12 @@ export default {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.event.image = undefined
+        this.$delete(this.event, 'image')
         return
       }
 
       if (this.event.image === undefined) {
-        this.event.image = {}
+        this.$set(this.event, 'image', {})
       }
 
       this.event.image.file = trimmed

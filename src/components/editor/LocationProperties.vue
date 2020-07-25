@@ -58,7 +58,7 @@
         @input="updateImageFile"
       >
 
-      <label for="location-properties__image--credits">Image Credits</label>
+      <label v-if="location.image !== undefined" for="location-properties__image--credits">Image Credits</label>
       <input
         v-if="location.image !== undefined"
         id="location-properties__image--credits"
@@ -123,12 +123,12 @@ export default {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.location.image = undefined
+        this.$delete(this.location, 'image')
         return
       }
 
       if (this.location.image === undefined) {
-        this.location.image = {}
+        this.$set(this.location, 'image', {})
       }
 
       this.location.image.file = trimmed
