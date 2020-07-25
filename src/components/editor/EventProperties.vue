@@ -102,6 +102,26 @@
         @tags-changed="newTags => event.tags = newTags.map(t => t.text)"
       />
 
+      <label>Related</label>
+      <VueTagsInput
+        v-model="newLink"
+        :tags="(event.related || []).map(t => ({ text: t }))"
+        :autocomplete-items="linkAutocompletions"
+        add-only-from-autocomplete
+        placeholder="Add Link"
+        @tags-changed="newLinks => $set(event, 'related', newLinks.map(t => t.text))"
+      />
+
+      <span>Linked to by</span>
+      <ul class="event-properties__linked">
+        <li v-if="linked.length === 0">
+          Nothing
+        </li>
+        <li v-for="item in linked" :key="item">
+          {{ item }}
+        </li>
+      </ul>
+
       <label for="event-properties__coppermind">Coppermind Article</label>
       <input
         id="event-properties__coppermind"
@@ -197,17 +217,30 @@ export default {
     availableTags: {
       type: Array,
       required: true
+    },
+    linked: {
+      type: Array,
+      required: false,
+      default: () => []
+    },
+    linkables: {
+      type: Array,
+      required: true
     }
   },
   data () {
     return {
       dateText: this.event.date.join('.'),
-      newTag: ''
+      newTag: '',
+      newLink: ''
     }
   },
   computed: {
     imageBaseUrl () {
       return `${process.env.BASE_URL}img/events`
+    },
+    linkAutocompletions () {
+      return this.linkables.filter(l => l.startsWith(this.newLink) && l !== `events/${this.event.id}`).map(l => ({ text: l }))
     }
   },
   methods: {
@@ -402,6 +435,11 @@ export default {
         margin-left: 0.25rem;
       }
     }
+  }
+
+  &__linked {
+    padding: 0;
+    margin: 0;
   }
 }
 </style>

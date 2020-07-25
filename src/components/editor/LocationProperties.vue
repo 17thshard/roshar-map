@@ -50,6 +50,26 @@
         @input="updateMapId"
       >
 
+      <label>Related</label>
+      <VueTagsInput
+        v-model="newLink"
+        :tags="(location.related || []).map(t => ({ text: t }))"
+        :autocomplete-items="linkAutocompletions"
+        add-only-from-autocomplete
+        placeholder="Add Link"
+        @tags-changed="newLinks => $set(location, 'related', newLinks.map(t => t.text))"
+      />
+
+      <span>Linked to by</span>
+      <ul class="location-properties__linked">
+        <li v-if="linked.length === 0">
+          Nothing
+        </li>
+        <li v-for="item in linked" :key="item">
+          {{ item }}
+        </li>
+      </ul>
+
       <label for="location-properties__image">Image</label>
       <input
         id="location-properties__image"
@@ -80,17 +100,37 @@
 </template>
 
 <script>
+import VueTagsInput from '@johmun/vue-tags-input'
+
 export default {
   name: 'LocationProperties',
+  components: { VueTagsInput },
   props: {
     location: {
       type: Object,
       required: true
+    },
+    linked: {
+      type: Array,
+      required: false,
+      default: () => []
+    },
+    linkables: {
+      type: Array,
+      required: true
+    }
+  },
+  data () {
+    return {
+      newLink: ''
     }
   },
   computed: {
     imageBaseUrl () {
       return `${process.env.BASE_URL}img/locations`
+    },
+    linkAutocompletions () {
+      return this.linkables.filter(l => l.startsWith(this.newLink) && l !== `locations/${this.location.id}`).map(l => ({ text: l }))
     }
   },
   methods: {
@@ -207,6 +247,11 @@ export default {
         grid-column: 1 / span 6;
       }
     }
+  }
+
+  &__linked {
+    padding: 0;
+    margin: 0;
   }
 }
 </style>

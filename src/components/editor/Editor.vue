@@ -14,6 +14,14 @@
         <input id="editor__mode--events" v-model="mode" type="radio" value="events">
         Events
       </label>
+      <label for="editor__mode--characters">
+        <input id="editor__mode--characters" v-model="mode" type="radio" value="characters">
+        Characters
+      </label>
+      <label for="editor__mode--misc">
+        <input id="editor__mode--misc" v-model="mode" type="radio" value="misc">
+        Misc
+      </label>
       <label for="editor__mode--tags">
         <input id="editor__mode--tags" v-model="mode" type="radio" value="tags">
         Tags
@@ -124,7 +132,7 @@
       >
         <span>{{ location.mapId }}</span>
         <span>{{ location.id }}</span>
-        <button @click.stop="deleteLocation(index)">
+        <button :disabled="isLinked('locations', location.id)" @click.stop="deleteLocation(index)">
           Delete
         </button>
       </li>
@@ -165,7 +173,65 @@
           </span>
         </span>
         <span>{{ event.id }}</span>
-        <button @click.stop="deleteEvent(index)">
+        <button :disabled="isLinked('events', event.id)" @click.stop="deleteEvent(index)">
+          Delete
+        </button>
+      </li>
+    </ul>
+    <ul v-else-if="mode === 'characters'" class="editor__character-list" @click.self="selectedCharacter = null">
+      <li>
+        <label for="editor__file--characters">
+          Override with
+        </label>
+
+        <input id="editor__file--characters" type="file" @change="loadCharacters">
+        <button @click="saveCharacters">
+          Save
+        </button>
+        <button @click="addCharacter">
+          New
+        </button>
+        <button @click="selectedCharacter = null">
+          Clear selection
+        </button>
+      </li>
+      <li
+        v-for="(character, index) in characters"
+        :key="`character${index}`"
+        :class="selectedCharacter === character ? 'editor__character-list-item--selected' : undefined"
+        @click="selectCharacter(character)"
+      >
+        <span>{{ character.id }}</span>
+        <button :disabled="isLinked('characters', character.id)" @click.stop="deleteCharacter(index)">
+          Delete
+        </button>
+      </li>
+    </ul>
+    <ul v-else-if="mode === 'misc'" class="editor__misc-list" @click.self="selectedMisc = null">
+      <li>
+        <label for="editor__file--misc">
+          Override with
+        </label>
+
+        <input id="editor__file--misc" type="file" @change="loadMisc">
+        <button @click="saveMisc">
+          Save
+        </button>
+        <button @click="addMisc">
+          New
+        </button>
+        <button @click="selectedMisc = null">
+          Clear selection
+        </button>
+      </li>
+      <li
+        v-for="(miscEntry, index) in misc"
+        :key="`misc${index}`"
+        :class="selectedMisc === miscEntry ? 'editor__misc-list-item--selected' : undefined"
+        @click="selectMisc(miscEntry)"
+      >
+        <span>{{ miscEntry.id }}</span>
+        <button :disabled="isLinked('misc', miscEntry.id)" @click.stop="deleteMisc(index)">
           Delete
         </button>
       </li>
@@ -222,6 +288,8 @@
         :key="selectedEventKey"
         :event="selectedEvent"
         :available-tags="availableTags"
+        :linked="relatedIndex[`events/${selectedEvent.id}`]"
+        :linkables="linkables"
       />
       <EventPreview
         :key="`preview${selectedEventKey}`"
@@ -235,6 +303,24 @@
       v-if="mode === 'locations' && selectedLocation !== null"
       :key="selectedLocationKey"
       :location="selectedLocation"
+      :linked="relatedIndex[`locations/${selectedLocation.id}`]"
+      :linkables="linkables"
+    />
+
+    <CharacterProperties
+      v-if="mode === 'characters' && selectedCharacter !== null"
+      :key="selectedCharacterKey"
+      :character="selectedCharacter"
+      :linked="relatedIndex[`characters/${selectedCharacter.id}`]"
+      :linkables="linkables"
+    />
+
+    <MiscProperties
+      v-if="mode === 'misc' && selectedMisc !== null"
+      :key="selectedMiscKey"
+      :misc="selectedMisc"
+      :linked="relatedIndex[`misc/${selectedMisc.id}`]"
+      :linkables="linkables"
     />
 
     <TagProperties
@@ -253,16 +339,21 @@
 /* eslint-disable no-param-reassign */
 
 import { Mesh, OrthographicCamera, PlaneBufferGeometry, Scene, ShaderMaterial, Vector2, WebGLRenderer } from 'three'
+import DeepDiff from 'deep-diff'
 import Zip from 'jszip'
 import mapFragmentShader from '@/components/map/mapFragmentShader'
 import textFragmentShader from '@/components/editor/editorTextFragmentShader'
 import TextureManager from '@/components/map/TextureManager'
 import EventProperties from '@/components/editor/EventProperties.vue'
 import EventPreview from '@/components/editor/EventPreview.vue'
-import baseLocations from '@/store/locations.json'
-import baseEvents from '@/store/events.json'
-import tagCategories from '@/store/tags.json'
+import originalLocations from '@/store/locations.json'
+import originalEvents from '@/store/events.json'
+import originalCharacters from '@/store/characters.json'
+import originalMisc from '@/store/misc.json'
+import originalTagCategories from '@/store/tags.json'
 import LocationProperties from '@/components/editor/LocationProperties.vue'
+import CharacterProperties from '@/components/editor/CharacterProperties.vue'
+import MiscProperties from '@/components/editor/MiscProperties.vue'
 import TagProperties from '@/components/editor/TagProperties.vue'
 
 function saveAs (blob, name) {
@@ -283,16 +374,22 @@ function saveAs (blob, name) {
 
 export default {
   name: 'Editor',
-  components: { TagProperties, LocationProperties, EventPreview, EventProperties },
+  components: { TagProperties, LocationProperties, EventPreview, EventProperties, CharacterProperties, MiscProperties },
   data () {
     return {
       mode: 'events',
-      locations: baseLocations,
-      events: baseEvents,
+      locations: JSON.parse(JSON.stringify(originalLocations)),
+      events: JSON.parse(JSON.stringify(originalEvents)),
+      characters: JSON.parse(JSON.stringify(originalCharacters)),
+      misc: JSON.parse(JSON.stringify(originalMisc)),
       selectedLocation: null,
       selectedLocationKey: null,
       selectedEvent: null,
       selectedEventKey: null,
+      selectedCharacter: null,
+      selectedCharacterKey: null,
+      selectedMisc: null,
+      selectedMiscKey: null,
       selectedTag: null,
       selectedTagKey: null,
       categorySelected: false,
@@ -308,16 +405,18 @@ export default {
       selectedLanguage: null,
       locationsDirty: false,
       eventsDirty: false,
+      charactersDirty: false,
+      miscDirty: false,
       languagesDirty: false,
       tagsDirty: false,
       languagesLoaded: false,
-      tagCategories,
+      tagCategories: JSON.parse(JSON.stringify(originalTagCategories)),
       markerPosition: null
     }
   },
   computed: {
     dirty () {
-      return this.locationsDirty || this.eventsDirty || this.languagesDirty || this.tagsDirty
+      return this.locationsDirty || this.eventsDirty || this.charactersDirty || this.miscDirty || this.languagesDirty || this.tagsDirty
     },
     availableTags () {
       const set = new Set()
@@ -326,6 +425,36 @@ export default {
       })
 
       return [...set]
+    },
+    linkables () {
+      return [
+        ...this.locations.map(l => `locations/${l.id}`),
+        ...this.events.map(e => `events/${e.id}`),
+        ...this.characters.map(c => `characters/${c.id}`),
+        ...this.misc.map(m => `misc/${m.id}`)
+      ]
+    },
+    relatedIndex () {
+      const result = {}
+
+      function buildIndex (type, items) {
+        items.forEach((item) => {
+          (item.related ?? []).forEach((relatedItem) => {
+            if (result[relatedItem] === undefined) {
+              result[relatedItem] = []
+            }
+
+            result[relatedItem].push(`${type}/${item.id}`)
+          })
+        })
+      }
+
+      buildIndex('locations', this.locations)
+      buildIndex('events', this.events)
+      buildIndex('characters', this.characters)
+      buildIndex('misc', this.misc)
+
+      return result
     }
   },
   watch: {
@@ -351,29 +480,44 @@ export default {
       deep: true
     },
     locations: {
-      handler () {
-        this.locationsDirty = true
+      handler (value) {
+        this.locationsDirty = DeepDiff(originalLocations, value) !== undefined
       },
       deep: true
     },
     events: {
-      handler () {
-        this.eventsDirty = true
+      handler (value) {
+        this.eventsDirty = DeepDiff(originalEvents, value) !== undefined
+      },
+      deep: true
+    },
+    characters: {
+      handler (value) {
+        this.charactersDirty = DeepDiff(originalCharacters, value) !== undefined
+      },
+      deep: true
+    },
+    misc: {
+      handler (value) {
+        this.miscDirty = DeepDiff(originalMisc, value) !== undefined
       },
       deep: true
     },
     tagCategories: {
-      handler () {
-        this.tagsDirty = true
+      handler (value) {
+        this.tagsDirty = DeepDiff(originalTagCategories, value) !== undefined
       },
       deep: true
     },
-    dirty (isDirty) {
-      if (isDirty && !document.title.startsWith('(*)')) {
-        document.title = `(*) ${document.title}`
-      } else if (!isDirty && document.title.startsWith('(*)')) {
-        document.title = document.title.substring(4)
-      }
+    dirty: {
+      handler (isDirty) {
+        if (isDirty && !document.title.startsWith('(*)')) {
+          document.title = `(*) ${document.title}`
+        } else if (!isDirty && document.title.startsWith('(*)')) {
+          document.title = document.title.substring(4)
+        }
+      },
+      immediate: true
     }
   },
   created () {
@@ -546,6 +690,8 @@ export default {
       const storeDir = srcDir.folder('store')
       storeDir.file('locations.json', JSON.stringify(this.locations, undefined, 4))
       storeDir.file('events.json', JSON.stringify(this.events, undefined, 4))
+      storeDir.file('characters.json', JSON.stringify(this.characters, undefined, 4))
+      storeDir.file('misc.json', JSON.stringify(this.misc, undefined, 4))
       storeDir.file('tags.json', JSON.stringify(this.tagCategories, undefined, 4))
 
       const langDir = srcDir.folder('lang')
@@ -560,7 +706,10 @@ export default {
         )
         this.locationsDirty = false
         this.eventsDirty = false
+        this.charactersDirty = false
+        this.miscDirty = false
         this.languagesDirty = false
+        this.tagsDirty = false
       })
     },
     loadLocations (event) {
@@ -602,6 +751,46 @@ export default {
     saveEvents () {
       saveAs(new Blob([JSON.stringify(this.events, undefined, 4)], { type: 'application/json' }), 'events.json')
       this.eventsDirty = false
+    },
+    loadCharacters (event) {
+      if (event.target.files.length === 0) {
+        return
+      }
+
+      const fileReader = new FileReader()
+      fileReader.onload = () => {
+        this.characters = JSON.parse(fileReader.result)
+        this.selectedEvent = null
+        this.mode = 'characters'
+      }
+      fileReader.readAsText(event.target.files[0])
+
+      // eslint-disable-next-line no-param-reassign
+      event.target.value = ''
+    },
+    saveCharacters () {
+      saveAs(new Blob([JSON.stringify(this.characters, undefined, 4)], { type: 'application/json' }), 'characters.json')
+      this.charactersDirty = false
+    },
+    loadMisc (event) {
+      if (event.target.files.length === 0) {
+        return
+      }
+
+      const fileReader = new FileReader()
+      fileReader.onload = () => {
+        this.misc = JSON.parse(fileReader.result)
+        this.selectedEvent = null
+        this.mode = 'misc'
+      }
+      fileReader.readAsText(event.target.files[0])
+
+      // eslint-disable-next-line no-param-reassign
+      event.target.value = ''
+    },
+    saveMisc () {
+      saveAs(new Blob([JSON.stringify(this.misc, undefined, 4)], { type: 'application/json' }), 'misc.json')
+      this.miscDirty = false
     },
     loadLanguage (event) {
       if (event.target.files.length === 0) {
@@ -651,6 +840,30 @@ export default {
     selectEvent (event) {
       this.selectedEventKey = Date.now()
       this.selectedEvent = event
+    },
+    addCharacter () {
+      this.selectedCharacter = { id: 'new-character', related: [] }
+      this.characters.push(this.selectedCharacter)
+    },
+    deleteCharacter (index) {
+      this.selectedCharacter = null
+      this.characters.splice(index, 1)
+    },
+    selectCharacter (character) {
+      this.selectedCharacterKey = Date.now()
+      this.selectedCharacter = character
+    },
+    addMisc () {
+      this.selectedMisc = { id: 'new-misc', related: [] }
+      this.misc.push(this.selectedMisc)
+    },
+    deleteMisc (index) {
+      this.selectedMisc = null
+      this.misc.splice(index, 1)
+    },
+    selectMisc (misc) {
+      this.selectedMiscKey = Date.now()
+      this.selectedMisc = misc
     },
     addTagCategory () {
       const name = window.prompt('New category name')
@@ -876,6 +1089,9 @@ export default {
     },
     hasTagCategory (tag) {
       return Object.values(this.tagCategories).some(tags => tags.includes(tag))
+    },
+    isLinked (type, id) {
+      return this.relatedIndex[`${type}/${id}`] !== undefined && this.relatedIndex[`${type}/${id}`].length > 0
     }
   }
 }
@@ -1104,6 +1320,94 @@ export default {
     }
   }
 
+  &__character-list {
+    list-style-type: none;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    bottom: 0;
+    width: 350px;
+    background: #848d97;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    margin: 0;
+    z-index: 10;
+    box-sizing: border-box;
+    padding: 1rem 0 0;
+
+    li {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      grid-gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+
+      &:first-child {
+        cursor: default;
+        pointer-events: none;
+        grid-template-columns: 1fr 1fr;
+        padding-top: 0;
+
+        button {
+          pointer-events: auto;
+        }
+
+        button:first-of-type, label, input {
+          grid-column: 1 / span 2;
+        }
+      }
+    }
+
+    &-item--selected {
+      color: #fafafa;
+      background: #0f3562;
+    }
+  }
+
+  &__misc-list {
+    list-style-type: none;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    bottom: 0;
+    width: 350px;
+    background: #848d97;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    margin: 0;
+    z-index: 10;
+    box-sizing: border-box;
+    padding: 1rem 0 0;
+
+    li {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      grid-gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+
+      &:first-child {
+        cursor: default;
+        pointer-events: none;
+        grid-template-columns: 1fr 1fr;
+        padding-top: 0;
+
+        button {
+          pointer-events: auto;
+        }
+
+        button:first-of-type, label, input {
+          grid-column: 1 / span 2;
+        }
+      }
+    }
+
+    &-item--selected {
+      color: #fafafa;
+      background: #0f3562;
+    }
+  }
+
   &__tags {
     position: absolute;
     top: 100px;
@@ -1233,7 +1537,7 @@ export default {
     outline: 2px solid red !important;
   }
 
-  .event-properties, .location-properties, .tag-properties {
+  .event-properties, .location-properties, .character-properties, .misc-properties, .tag-properties {
     position: absolute;
     top: 100px;
     right: 0;
