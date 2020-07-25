@@ -55,14 +55,23 @@
             @event-selected="selectEvent"
           />
           <div key="years" class="scrubber__years">
-            <span
-              v-for="{ year, offset } in years"
-              :key="year"
-              :style="{ left: `${offset + timelineOffset}px` }"
-              class="scrubber__year"
-            >
-              {{ year }}
-            </span>
+            <template v-for="{ year, offset, months, singleEvent } in years">
+              <span
+                :key="year"
+                :style="{ left: `${offset + timelineOffset}px` }"
+                class="scrubber__year"
+              >
+                {{ year }}
+              </span>
+              <span
+                v-for="{ month, offset: monthOffset } in months.slice(singleEvent ? 1 : 0).filter(m => m.display && (offset + m.offset) <= maxEventOffset)"
+                :key="`${year}.${month}`"
+                :style="{ left: `${offset + timelineOffset + monthOffset}px` }"
+                class="scrubber__month"
+              >
+                {{ $t(`numbers[${month}]`) }}
+              </span>
+            </template>
           </div>
         </transition-group>
       </div>
@@ -74,7 +83,7 @@
 import { mapState } from 'vuex'
 import Timeline from '@/components/Timeline.vue'
 import EventCard from '@/components/EventCard.vue'
-import { arraysEqual, lerp } from '@/utils'
+import { lerp } from '@/utils'
 
 export default {
   name: 'Scrubber',
@@ -89,9 +98,9 @@ export default {
     }
   },
   computed: {
-    ...mapState(['events', 'filter', 'activeEvent']),
+    ...mapState(['events', 'filter', 'activeEvent', 'years']),
     contentHeight () {
-      return Math.max(92, Object.keys(this.timelines).length * 24 + 32)
+      return Math.max(92, Object.keys(this.timelines).length * 24 + 48)
     },
     timelines () {
       const result = this.filter.separateTags.reduce((acc, t) => ({ ...acc, [t]: [] }), {})
@@ -112,49 +121,8 @@ export default {
 
       return result
     },
-    years () {
-      let lastYear = null
-      let lastOffset = 0
-      const years = []
-
-      this.events.forEach((event) => {
-        const year = event.date[0]
-
-        if (lastYear !== null && year !== lastYear) {
-          const diff = year - lastYear
-
-          let filler = 1
-
-          if (diff >= 1000) {
-            filler = 5
-          } else if (diff >= 200) {
-            filler = 3
-          } else if (diff >= 100) {
-            filler = 2
-          }
-
-          const yearsBetween = [...Array(filler).keys()]
-            .map(i => Math.trunc(lastYear + (i + 1) * diff / (filler + 1)))
-
-          years.push(
-            ...[...new Set(yearsBetween)]
-              .filter(y => y !== year && y !== lastYear)
-              .map(y => ({
-                year: y,
-                offset: lerp(lastOffset, event.offset, (y - lastYear) / diff)
-              }))
-          )
-        }
-
-        if (year !== lastYear) {
-          years.push({ year, offset: event.offset })
-        }
-
-        lastYear = year
-        lastOffset = event.offset
-      })
-
-      return years
+    maxEventOffset () {
+      return Math.max(...this.events.map(e => e.offset))
     }
   },
   watch: {
@@ -194,80 +162,62 @@ export default {
       this.lastAnimationRequest = requestAnimationFrame(this.update)
     },
     onResize () {
-      this.timelineWidth = Math.max(...this.events.map(e => e.offset)) + this.$el.clientWidth
+      this.timelineWidth = this.maxEventOffset + this.$el.clientWidth
       this.timelineOffset = this.$el.clientWidth / 2
       this.updateOverflow()
     },
     scrollHorizontally (event) {
       const e = window.event || event
       const delta = Math.max(-1, Math.min(1, e.wheelDelta || -e.detail))
-      this.$refs.container.scrollLeft += delta * 40
+      this.$refs.container.scrollLeft -= delta * 40
       e.preventDefault()
     },
     onScroll () {
       this.updateOverflow()
 
       const scroll = this.$refs.container.scrollLeft
-      let endIndex = this.events.findIndex(event => event.offset >= scroll)
-      const prevIndex = endIndex - 1
+      const event = this.events.find(event => Math.abs(event.offset - scroll) < 0.5)
+      if (event !== undefined) {
+        this.currentDate = this.formatDate(event.date)
 
-      while (this.events[endIndex + 1] !== undefined && this.events[endIndex + 1].offset === this.events[endIndex].offset) {
-        endIndex += 1
+        if (event.circa) {
+          this.currentDate = this.$t('ui.circa', { date: this.currentDate })
+        }
+
+        return
       }
 
-      let circa = false
+      let endIndex = this.years.findIndex(year => year.offset >= scroll)
+      if (endIndex === -1) {
+        endIndex = this.years.length
+      }
 
-      if (prevIndex === -1) {
-        this.currentDate = this.formatDate(this.events[0].date)
-        circa = this.events[0].circa
+      const start = this.years[Math.max(endIndex - 1, 0)]
+      const startEndOffset = start.offset + start.size
+
+      if (!start.singleEvent && scroll <= startEndOffset) {
+        const localScroll = scroll - start.offset
+
+        let endMonthIndex = start.months.findIndex(month => month.offset >= localScroll)
+        if (endMonthIndex === -1) {
+          endMonthIndex = start.months.length
+        }
+        const startMonth = start.months[endMonthIndex - 1]
+        const endMonth = endMonthIndex < start.months.length
+          ? start.months[endMonthIndex]
+          : { month: startMonth.month, offset: start.size }
+
+        const displayMonth = lerp(
+          startMonth.month,
+          endMonth.month,
+          (localScroll - startMonth.offset) / (endMonth.offset - startMonth.offset)
+        )
+
+        this.currentDate = this.formatDate([start.year, Math.trunc(displayMonth) + 1])
       } else {
-        const start = this.events[prevIndex]
-        const end = this.events[endIndex]
-        const nextEnd = this.events[endIndex + 1]
-
-        let date = []
-
-        if (arraysEqual(start.date, end.date)) {
-          this.currentDate = this.formatDate(start.date)
-
-          if (
-            (scroll <= start.offset + 0.5 && start.circa === true) ||
-            (scroll >= end.offset - 0.5 && end.circa === true) ||
-            (start.circa === true && end.circa === true)
-          ) {
-            this.currentDate = this.$t('ui.circa', { date: this.currentDate })
-          }
-
-          return
-        }
-
-        let dateBit = 0
-        while (start.date[dateBit] === end.date[dateBit]) {
-          date.push(start.date[dateBit])
-          dateBit += 1
-        }
-
-        if (scroll <= start.offset + 0.5) {
-          date.push(start.date[dateBit])
-          circa = start.circa
-        } else if (scroll >= end.offset - 0.5) {
-          date.push(end.date[dateBit])
-
-          if (nextEnd !== undefined && nextEnd.date[0] === end.date[0]) {
-            date = end.date
-          }
-
-          circa = end.circa
-        } else {
-          const t = (scroll - start.offset) / (end.offset - start.offset)
-          date.push(Math.trunc(lerp(start.date[dateBit], end.date[dateBit], t)))
-        }
-
-        this.currentDate = this.formatDate(date)
-      }
-
-      if (circa === true) {
-        this.currentDate = this.$t('ui.circa', { date: this.currentDate })
+        const end = this.years[endIndex]
+        const lerpOffset = start.singleEvent ? start.offset : startEndOffset
+        this.currentDate = Math.trunc(lerp(start.year + 1, end.year, (scroll - lerpOffset) / (end.offset - lerpOffset)))
       }
     },
     updateOverflow () {
@@ -405,7 +355,7 @@ export default {
     top: -1rem;
     left: 0;
     right: 0;
-    bottom: 1.45rem;
+    bottom: 2.45rem;
     z-index: 15;
     display: flex;
     justify-content: center;
@@ -557,7 +507,7 @@ export default {
     align-items: stretch;
     position: relative;
     background: #F5ECDA url(../assets/paper.png);
-    padding: 1rem 0;
+    padding: 1rem 0 2rem;
     min-height: 92px;
     box-sizing: border-box;
     transition: height 0.5s ease-in-out;
@@ -586,10 +536,14 @@ export default {
     bottom: 0;
   }
 
-  &__year {
+  &__year, &__month {
     position: absolute;
     transform: translateX(-50%);
     font-size: 0.7rem;
+  }
+
+  &__month {
+    bottom: 1rem;
   }
 }
 </style>

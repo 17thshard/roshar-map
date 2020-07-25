@@ -115,7 +115,7 @@ export default {
       }
     },
     separateHeight () {
-      return Math.max(92, (this.separateTags.length + 1) * 24 + 32)
+      return Math.max(92, (this.separateTags.length + 1) * 24 + 48)
     }
   },
   methods: {
@@ -380,7 +380,7 @@ export default {
     position: relative;
     transition: height 0.5s ease-in-out;
     box-sizing: border-box;
-    padding: 1rem 0 calc(24px + 1rem);
+    padding: 1rem 0 calc(24px + 2rem);
 
     &-container {
       position: absolute;

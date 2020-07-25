@@ -7,21 +7,10 @@ import baseMisc from '@/store/misc.json'
 
 Vue.use(Vuex)
 
-function calculateNextOffset (event, lastEvent) {
-  if (event.date[0] - lastEvent.date[0] >= 100) {
-    return 500
-  }
-
-  if (event.date[0] - lastEvent.date[0] >= 5) {
-    return 200
-  }
-
-  if (event.date[0] - lastEvent.date[0] >= 1) {
-    return (event.date[0] - lastEvent.date[0]) * 60
-  }
-
-  return 50
-}
+const YEAR_LENGTH = 10 // Always in months
+const TIMELINE_YEAR_DISTANCE = 100
+const TIMELINE_BASE_DISTANCE = 60
+const TIMELINE_TIE_DISTANCE = 40
 
 const events = baseEvents.sort(
   (a, b) => {
@@ -50,20 +39,106 @@ const events = baseEvents.sort(
     }
 
     return -1
-  }).map((event, index) => ({ ...event, index }))
+  }).map((event, index) => ({
+  ...event,
+  month: (event.date[1] ?? 1) - 1,
+  index
+}))
 
-let lastEvent = null
-let runningOffset = 0
+const groupedEvents = {}
+
 events.forEach((event) => {
-  if (lastEvent !== null) {
-    runningOffset += calculateNextOffset(event, lastEvent)
+  if (groupedEvents[event.date[0]] === undefined) {
+    groupedEvents[event.date[0]] = []
   }
 
-  // eslint-disable-next-line no-param-reassign
-  event.offset = runningOffset
-
-  lastEvent = event
+  groupedEvents[event.date[0]].push(event)
 })
+
+const years = []
+
+let lastYear = null
+let runningOffset = 0
+Object.keys(groupedEvents).sort((a, b) => Number.parseInt(a) - Number.parseInt(b)).forEach((y) => {
+  const year = Number.parseInt(y)
+  runningOffset += lastYear !== null ? calculateYearDistance(year, lastYear.year) : 0
+  lastYear = populateYear(year, runningOffset, groupedEvents[y])
+  years.push(lastYear)
+  runningOffset += lastYear.size
+})
+
+function populateYear (year, baseOffset, events) {
+  let localOffset = 0
+
+  let proportionalLength = 50
+  let minDifference = Number.POSITIVE_INFINITY
+  if (events.length > 1) {
+    let lastEvent = null
+
+    events.forEach((event) => {
+      if (lastEvent !== null && event.month !== lastEvent.month) {
+        minDifference = Math.min(minDifference, event.month - lastEvent.month)
+      }
+
+      lastEvent = event
+    })
+
+    minDifference = Math.max(1, minDifference)
+
+    proportionalLength = Math.ceil(TIMELINE_BASE_DISTANCE * YEAR_LENGTH / minDifference)
+  }
+
+  const eventsPerMonth = {}
+  events.forEach((event) => {
+    if (eventsPerMonth[event.month] === undefined) {
+      eventsPerMonth[event.month] = []
+    }
+
+    eventsPerMonth[event.month].push(event)
+  })
+
+  const months = []
+
+  new Array(10).fill(undefined)
+    .map((_, i) => i)
+    .forEach((month) => {
+      months.push({
+        month,
+        offset: localOffset + (month / YEAR_LENGTH) * proportionalLength,
+        display: minDifference > 1 ? eventsPerMonth[month] !== undefined : true
+      })
+
+      const eventGroup = eventsPerMonth[month]
+      if (eventGroup === undefined) {
+        return
+      }
+
+      eventGroup.forEach((event) => {
+        // eslint-disable-next-line no-param-reassign
+        event.offset = baseOffset + localOffset + (month / YEAR_LENGTH) * proportionalLength
+
+        localOffset += eventGroup.length > 1 ? TIMELINE_TIE_DISTANCE : 0
+      })
+    })
+
+  return { year, offset: baseOffset, size: proportionalLength + localOffset + 10, singleEvent: events.length === 1, months }
+}
+
+function calculateYearDistance (year, lastYear) {
+  if (year - lastYear >= 100) {
+    return 5 * TIMELINE_YEAR_DISTANCE
+  }
+
+  if (year - lastYear >= 5) {
+    return 2 * TIMELINE_YEAR_DISTANCE
+  }
+
+  if (year - lastYear > 1) {
+    return (year - lastYear) * TIMELINE_YEAR_DISTANCE
+  }
+
+  return 0
+}
 
 const mappings = {}
 
@@ -137,6 +212,7 @@ const mutations = {
 export default new Vuex.Store({
   state: {
     events,
+    years,
     locationsByMapId,
     mappings,
     activeEvent: null,
