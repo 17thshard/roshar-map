@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+const childProcess = require('child_process')
 const imagemin = require('imagemin')
 const imageminWebp = require('imagemin-webp')
 const imageminZopfli = require('imagemin-zopfli')
@@ -10,7 +12,8 @@ const textures = {
   text_pattern: {},
   map_text: { hqAvailable: true },
   shadesmar_map_text: { hqAvailable: true },
-  hover_text: {}
+  hover_text: {},
+  factions: { hqAvailable: true }
 }
 
 const basePath = './public/img/textures'
@@ -23,29 +26,34 @@ Promise.all(Object.keys(textures).flatMap((name) => {
     files.push(`${basePath}/hq_${name}.png`)
   }
 
-  return imagemin(files, {
+  const changedFiles = files.filter(path => childProcess.execSync(`git status -s ${path}`).toString().length > 0)
+
+  if (changedFiles.length === 0) {
+    console.log(`Files for texture '${name}' haven't changed, ignoring...`)
+    return
+  }
+
+  console.log(`Optimizing and converting texture '${name}'...`)
+
+  return imagemin(changedFiles, {
     destination: basePath,
     plugins: [
       imageminZopfli({ more: true })
     ]
   }).then(() => {
-    // eslint-disable-next-line no-console
     console.log(`Optimized PNGs for texture '${name}'`)
 
-    return imagemin(files, {
+    return imagemin(changedFiles, {
       destination: basePath,
       plugins: [
         imageminWebp({ quality: texture.lossy === true ? 90 : 100, lossless: texture.lossy !== true })
       ]
     })
   }).then(() => {
-    // eslint-disable-next-line no-console
     console.log(`Converted texture '${name}' to WEBP`)
   })
 })).catch((error) => {
-  // eslint-disable-next-line no-console
   console.error(error)
 }).then(() => {
-  // eslint-disable-next-line no-console
   console.log('All textures optimized and converted successfully')
 })

@@ -25,6 +25,7 @@ import textFragmentShader from '@/components/map/mapTextFragmentShader'
 import ShatteringPass from '@/components/map/ShatteringPass'
 import TextureManager from '@/components/map/TextureManager'
 import { clamp01 } from '@/utils'
+import Factions from '@/components/map/Factions.js'
 
 export default {
   name: 'Map',
@@ -99,7 +100,8 @@ export default {
         transition: {},
         text_pattern: {},
         map_text: { hqAvailable: true },
-        shadesmar_map_text: { hqAvailable: true }
+        shadesmar_map_text: { hqAvailable: true },
+        factions: { hqAvailable: true }
       }
 
       return this.textureManager.load(textures)
@@ -151,6 +153,7 @@ export default {
           PerpTransition: { value: this.perpendicularityTransition },
           PerpLocation: { value: new Vector2() },
           PerpPeriod: { value: 3.05355 },
+          DimTransition: { value: 0 },
           Time: { value: 0 }
         },
         extensions: {
@@ -192,6 +195,7 @@ export default {
         transparent: true,
         depthTest: false
       })
+
       this.plane = new Mesh(geo, this.mapMaterial)
       this.plane.frustumCulled = false
 
@@ -199,8 +203,10 @@ export default {
       this.textPlane.position.z = 1
       this.textPlane.frustumCulled = false
 
+      this.factions = new Factions(textures.factions)
+
       this.scene = new Scene()
-      this.scene.add(this.plane, this.textPlane, this.highlights)
+      this.scene.add(this.plane, this.textPlane, this.highlights, this.factions)
 
       this.composer.addPass(new RenderPass(this.scene, this.camera))
       this.shatteringPass = new ShatteringPass()
@@ -218,6 +224,12 @@ export default {
         this.shatteringPass.enter()
       } else if (oldEvent !== null && oldEvent.specialEffect === 'shattering') {
         this.shatteringPass.leave()
+      }
+
+      if (event !== null && event.specialEffect === 'factions') {
+        this.factions.enter()
+      } else if (oldEvent !== null && oldEvent.specialEffect === 'factions') {
+        this.factions.leave()
       }
 
       if (event === null) {
@@ -254,10 +266,12 @@ export default {
       }
 
       this.highlights.children.forEach(h => h.update(this.camera, timestamp))
+      this.factions.update(this.camera, timestamp)
 
       this.controls.update()
 
       this.mapMaterial.uniforms.PerpTransition.value = this.perpendicularityTransition
+      this.mapMaterial.uniforms.DimTransition.value = this.factions.t
       this.mapMaterial.uniforms.Time.value = timestamp / 1000
 
       this.mapMaterial.uniforms.Transition.value = this.transitionValue

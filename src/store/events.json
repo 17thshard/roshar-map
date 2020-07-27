@@ -1954,5 +1954,24 @@
             "shallan",
             "adolin"
         ]
+    },
+    {
+        "id": "state-of-the-world",
+        "specialEffect": "factions",
+        "date": [
+            1174,
+            2,
+            10,
+            6
+        ],
+        "coordinates": {
+            "x": 486.1,
+            "y": 318.5
+        },
+        "tags": [
+            "ob",
+            "shallan",
+            "dalinar"
+        ]
     }
 ]

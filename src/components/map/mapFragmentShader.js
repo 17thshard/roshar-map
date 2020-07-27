@@ -19,6 +19,7 @@ export default `
   uniform highp float PerpTransition;
   uniform highp vec2 PerpLocation;
   uniform highp float PerpPeriod;
+  uniform highp float DimTransition;
   uniform highp float Time;
 
   float wave(float maxGrad, float value, float threshold, float opacity) {
@@ -133,6 +134,6 @@ export default `
       );
     }
 
-    gl_FragColor = color;
+    gl_FragColor = mix(vec4(.0, .0, .0, 1.), color, .5 + .5 * (1. - DimTransition));
   }
 `
