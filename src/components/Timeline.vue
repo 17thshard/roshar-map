@@ -55,6 +55,7 @@ export default {
     position: absolute;
     right: 0;
     height: 0.6rem;
+    z-index: 14;
 
     &:before, &:after {
       position: absolute;

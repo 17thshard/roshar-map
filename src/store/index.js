@@ -7,7 +7,8 @@ import baseMisc from '@/store/misc.json'
 
 Vue.use(Vuex)
 
-const TIMELINE_YEAR_DISTANCE = 100
+const DETAIL_CUTOFF_YEAR = 1173
+const TIMELINE_YEAR_DISTANCE = 50
 const TIMELINE_TIE_DISTANCE = 30
 
 const events = baseEvents.sort(
@@ -90,7 +91,7 @@ function populateYear (year, baseOffset, events) {
       months.push({
         month,
         offset: localOffset,
-        display: year >= 1173
+        display: year >= DETAIL_CUTOFF_YEAR
       })
 
       const eventGroup = eventsPerMonth[month]
@@ -129,7 +130,7 @@ function populateYear (year, baseOffset, events) {
           })
       }
 
-      localOffset += eventGroup !== undefined ? 60 : 40
+      localOffset += eventGroup !== undefined ? 60 : (year >= DETAIL_CUTOFF_YEAR ? 60 : 5)
     })
 
   return { year, offset: baseOffset, size: (events.length > 1 ? localOffset : 50) + 10, singleEvent: events.length === 1, months }

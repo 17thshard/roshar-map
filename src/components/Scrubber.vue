@@ -67,7 +67,7 @@
                 v-for="{ month, offset: monthOffset } in months.slice(singleEvent ? 1 : 0).filter(m => m.display && (offset + m.offset) <= maxEventOffset)"
                 :key="`${year}.${month}`"
                 :style="{ left: `${offset + timelineOffset + monthOffset}px` }"
-                class="scrubber__month"
+                :class="['scrubber__month', `scrubber__month--${month}`]"
               >
                 {{ $t(`numbers[${month}]`) }}
               </span>
@@ -100,7 +100,7 @@ export default {
   computed: {
     ...mapState(['events', 'filter', 'activeEvent', 'years']),
     contentHeight () {
-      return Math.max(92, Object.keys(this.timelines).length * 24 + 48)
+      return Math.max(92, Object.keys(this.timelines).length * 24 + 64)
     },
     timelines () {
       const result = this.filter.separateTags.reduce((acc, t) => ({ ...acc, [t]: [] }), {})
@@ -507,7 +507,7 @@ export default {
     align-items: stretch;
     position: relative;
     background: #F5ECDA url(../assets/paper.png);
-    padding: 1rem 0 2rem;
+    padding: 1rem 0 3rem;
     min-height: 92px;
     box-sizing: border-box;
     transition: height 0.5s ease-in-out;
@@ -531,7 +531,7 @@ export default {
   &__years {
     position: absolute;
     color: rgba(0, 0, 0, 0.7);
-    z-index: 16;
+    z-index: 10;
     height: 1rem;
     bottom: 0;
   }
@@ -540,10 +540,35 @@ export default {
     position: absolute;
     transform: translateX(-50%);
     font-size: 0.7rem;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      width: 2px;
+      bottom: 2rem;
+      background-color: #999791;
+      transform: translateX(-50%);
+      top: calc(-1 * var(--max-height));
+    }
   }
 
   &__month {
     bottom: 1rem;
+    background: #F5ECDA;
+
+    &:before {
+      background-color: transparent;
+      background-image: linear-gradient(to bottom, #999791 50%, transparent 50%);
+      background-position: left top;
+      background-repeat: repeat-y;
+      background-size: 2px 15px;
+      bottom: 1rem;
+    }
+
+    &--0:before {
+      display: none;
+    }
   }
 }
 </style>
