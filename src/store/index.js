@@ -7,10 +7,8 @@ import baseMisc from '@/store/misc.json'
 
 Vue.use(Vuex)
 
-const YEAR_LENGTH = 10 // Always in months
 const TIMELINE_YEAR_DISTANCE = 100
-const TIMELINE_BASE_DISTANCE = 60
-const TIMELINE_TIE_DISTANCE = 40
+const TIMELINE_TIE_DISTANCE = 30
 
 const events = baseEvents.sort(
   (a, b) => {
@@ -70,31 +68,18 @@ Object.keys(groupedEvents).sort((a, b) => Number.parseInt(a) - Number.parseInt(b
 function populateYear (year, baseOffset, events) {
   let localOffset = 0
 
-  let proportionalLength = 50
-  let minDifference = Number.POSITIVE_INFINITY
-  if (events.length > 1) {
-    let lastEvent = null
-
-    events.forEach((event) => {
-      if (lastEvent !== null && event.month !== lastEvent.month) {
-        minDifference = Math.min(minDifference, event.month - lastEvent.month)
-      }
-
-      lastEvent = event
-    })
-
-    minDifference = Math.max(1, minDifference)
-
-    proportionalLength = Math.ceil(TIMELINE_BASE_DISTANCE * YEAR_LENGTH / minDifference)
-  }
-
   const eventsPerMonth = {}
   events.forEach((event) => {
     if (eventsPerMonth[event.month] === undefined) {
-      eventsPerMonth[event.month] = []
+      eventsPerMonth[event.month] = {}
     }
 
-    eventsPerMonth[event.month].push(event)
+    const week = (event.date[2] ?? 1) - 1
+    if (eventsPerMonth[event.month][week] === undefined) {
+      eventsPerMonth[event.month][week] = []
+    }
+
+    eventsPerMonth[event.month][week].push(event)
   })
 
   const months = []
@@ -104,24 +89,50 @@ function populateYear (year, baseOffset, events) {
     .forEach((month) => {
       months.push({
         month,
-        offset: localOffset + (month / YEAR_LENGTH) * proportionalLength,
-        display: minDifference > 1 ? eventsPerMonth[month] !== undefined : true
+        offset: localOffset,
+        display: year >= 1173
       })
 
       const eventGroup = eventsPerMonth[month]
-      if (eventGroup === undefined) {
-        return
+      if (eventGroup !== undefined) {
+        const weeks = Object.keys(eventGroup)
+        let weekSize = 50
+        let emptyWeekSize = 5
+
+        if (weeks.length === 1) {
+          const singleWeekEvents = eventGroup[weeks[0]]
+
+          // If some event in the single week actually is precise to it, put it further apart
+          if (singleWeekEvents.some(event => event.date[2] !== undefined)) {
+            weekSize = 5
+          } else {
+            weekSize = 0
+            emptyWeekSize = 0
+          }
+        }
+
+        new Array(10).fill(undefined)
+          .map((_, i) => i)
+          .forEach((week) => {
+            const weekEvents = eventGroup[week]
+
+            if (weekEvents !== undefined) {
+              eventGroup[week].forEach((event) => {
+                // eslint-disable-next-line no-param-reassign
+                event.offset = baseOffset + localOffset
+
+                localOffset += weekEvents.length > 1 ? TIMELINE_TIE_DISTANCE : 0
+              })
+            }
+
+            localOffset += weekEvents !== undefined ? weekSize : emptyWeekSize
+          })
       }
 
-      eventGroup.forEach((event) => {
-        // eslint-disable-next-line no-param-reassign
-        event.offset = baseOffset + localOffset + (month / YEAR_LENGTH) * proportionalLength
-
-        localOffset += eventGroup.length > 1 ? TIMELINE_TIE_DISTANCE : 0
-      })
+      localOffset += eventGroup !== undefined ? 60 : 40
     })
 
-  return { year, offset: baseOffset, size: proportionalLength + localOffset + 10, singleEvent: events.length === 1, months }
+  return { year, offset: baseOffset, size: (events.length > 1 ? localOffset : 50) + 10, singleEvent: events.length === 1, months }
 }
 
 function calculateYearDistance (year, lastYear) {
