@@ -18,16 +18,17 @@ import {
 } from 'three'
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
+import { mapState } from 'vuex'
 import MapControls from '@/components/map/MapControls'
-import Highlight from '@/components/map/Highlight'
+import Highlight from '@/components/map/layers/Highlight'
 import fragmentShader from '@/components/map/mapFragmentShader'
 import textFragmentShader from '@/components/map/mapTextFragmentShader'
-import oathgateTextFragmentShader from '@/components/map/oathgateTextFragmentShader'
 import ShatteringPass from '@/components/map/ShatteringPass'
 import TextureManager from '@/components/map/TextureManager'
 import { clamp01 } from '@/utils'
-import Factions from '@/components/map/Factions'
-import OathgateLine from '@/components/map/OathgateLine'
+import Factions from '@/components/map/layers/Factions'
+import Oathgates from '@/components/map/layers/Oathgates'
+import Shadesmar from '@/components/map/layers/Shadesmar'
 
 export default {
   name: 'Map',
@@ -38,15 +39,18 @@ export default {
   },
   data () {
     return {
-      transitionValue: 0,
-      transitionDirection: 0,
       textHoverProgress: 0,
       textActiveProgress: 0,
       perpendicularityTransition: 0,
-      perpendicularityTransitionDirection: 0
+      perpendicularityTransitionDirection: 0,
+      dimmingProgress: 0,
+      dimmingProgressDirection: 0,
+      textOpacity: 1,
+      textOpacityDirection: 0
     }
   },
   computed: {
+    ...mapState(['layersActive']),
     activeLocation () {
       return this.transitions && this.$route.name === 'locations' ? this.$store.state.mappings.locations[this.$route.params.id] : null
     },
@@ -65,6 +69,18 @@ export default {
 
         this.controls.transitionTo(target, newPosition.zoom !== undefined ? newPosition.zoom : 0.7)
       }
+    },
+    layersActive: {
+      handler (layersActive) {
+        Object.keys(layersActive).forEach((layer) => {
+          if (layersActive[layer]) {
+            this.enterLayer(layer)
+          } else if (!layersActive[layer] && !this.isLayerActivatedByEvent(layer)) {
+            this.leaveLayer(layer)
+          }
+        })
+      },
+      deep: true
     }
   },
   mounted () {
@@ -120,7 +136,7 @@ export default {
 
       this.controls = new MapControls(this.camera, this.renderer.domElement)
       this.controls.addEventListener('click', ({ position }) => {
-        if (this.transitionValue === 0) {
+        if (!this.layers.shadesmar.enabled) {
           this.textActiveProgress = 1
           const location = this.queryHover(position.x, position.y)
 
@@ -152,11 +168,11 @@ export default {
           OutlineTexture: { value: textures.map },
           ShadesmarBgTexture: { value: textures.shadesmar_map_bg },
           TransitionTexture: { value: textures.transition },
-          Transition: { value: this.transitionValue },
-          PerpTransition: { value: this.perpendicularityTransition },
+          Transition: { value: 0 },
+          PerpTransition: { value: 0 },
           PerpLocation: { value: new Vector2() },
           PerpPeriod: { value: 3.05355 },
-          DimTransition: { value: 0 },
+          DimTransition: { value: this.dimmingProgress },
           Time: { value: 0 }
         },
         extensions: {
@@ -164,10 +180,9 @@ export default {
         }
       })
 
-      const textPattern = textures.text_pattern
-      textPattern.wrapS = RepeatWrapping
-      textPattern.wrapT = RepeatWrapping
-      textPattern.magFilter = NearestFilter
+      textures.text_pattern.wrapS = RepeatWrapping
+      textures.text_pattern.wrapT = RepeatWrapping
+      textures.text_pattern.magFilter = NearestFilter
 
       const textMaterial = new ShaderMaterial({
         // language=GLSL
@@ -184,14 +199,14 @@ export default {
         uniforms: {
           Texture: { value: textures.map_text },
           ShadesmarTexture: { value: textures.shadesmar_map_text },
-          PatternTexture: { value: textPattern },
+          PatternTexture: { value: textures.text_pattern },
           TransitionTexture: { value: textures.transition },
-          Transition: { value: this.transitionValue },
+          Transition: { value: 0 },
           HoveredItem: { value: 0 },
           ActiveItem: { value: 0 },
           HoverProgress: { value: 0 },
           ActiveProgress: { value: 0 },
-          Opacity: { value: 0.5 }
+          Opacity: { value: this.textOpacity }
         },
         extensions: {
           derivatives: true
@@ -207,56 +222,14 @@ export default {
       this.textPlane.position.z = 1
       this.textPlane.frustumCulled = false
 
-      this.factions = new Factions(textures.factions)
-      this.oathgates = new Group()
-
-      const oathgateLocations = [
-        new Vector2(367.2 - 512, 256 - 115.3),
-        new Vector2(449.2 - 512, 256 - 156.7),
-        new Vector2(197 - 512, 256 - 286.8),
-        new Vector2(293.8 - 512, 256 - 264.3),
-        new Vector2(397.4 - 512, 256 - 245.4),
-        new Vector2(414.3 - 512, 256 - 331.5),
-        new Vector2(597.5 - 512, 256 - 419.6),
-        new Vector2(609.8 - 512, 256 - 334.5),
-        new Vector2(768 - 512, 256 - 364.2),
-        new Vector2(738.7 - 512, 256 - 250.6)
-      ]
-
-      const urithiruPosition = new Vector2(486.1 - 512, 256 - 318.5)
-
-      this.oathgates.add(
-        ...oathgateLocations.flatMap(l => [new OathgateLine(l, urithiruPosition), new Highlight(l.x, l.y, 0.3)]),
-        new Highlight(urithiruPosition.x, urithiruPosition.y, 0.3)
-      )
-
-      this.oathgateText = new Mesh(geo, new ShaderMaterial({
-        // language=GLSL
-        vertexShader: `
-          varying vec2 vUv;
-
-          void main() {
-            vUv = uv;
-
-            gl_Position = projectionMatrix * modelViewMatrix * vec4(position * vec3(512, 256, 1.0), 1.0);
-          }
-        `,
-        fragmentShader: oathgateTextFragmentShader,
-        uniforms: {
-          Texture: { value: textures.oathgate_text },
-          PatternTexture: { value: textPattern },
-          Opacity: { value: 1 }
-        },
-        extensions: {
-          derivatives: true
-        },
-        transparent: true,
-        depthTest: false
-      }))
-      this.oathgateText.frustumCulled = false
+      this.layers = {
+        shadesmar: new Shadesmar(),
+        oathgates: new Oathgates(textures),
+        factions: new Factions(textures.factions)
+      }
 
       this.scene = new Scene()
-      this.scene.add(this.plane, this.textPlane, this.highlights, this.oathgates, this.oathgateText, this.factions)
+      this.scene.add(this.plane, this.textPlane, this.highlights, this.layers.factions, this.layers.oathgates)
 
       this.composer.addPass(new RenderPass(this.scene, this.camera))
       this.shatteringPass = new ShatteringPass()
@@ -266,9 +239,14 @@ export default {
     },
     onEventChanged (event, oldEvent) {
       this.highlights.children.forEach(h => h.leave())
-      this.transitionDirection = event !== null && event.shadesmar ? 1 : -2
 
       this.perpendicularityTransitionDirection = event !== null && event.perpendicularity ? 1 : -1
+
+      if (event !== null && event.shadesmar) {
+        this.enterLayer('shadesmar')
+      } else if (oldEvent !== null && oldEvent.shadesmar && !this.layersActive.shadesmar) {
+        this.leaveLayer('shadesmar')
+      }
 
       if (event !== null && event.specialEffect === 'shattering') {
         this.shatteringPass.enter()
@@ -277,9 +255,9 @@ export default {
       }
 
       if (event !== null && event.specialEffect === 'factions') {
-        this.factions.enter()
-      } else if (oldEvent !== null && oldEvent.specialEffect === 'factions') {
-        this.factions.leave()
+        this.enterLayer('factions')
+      } else if (oldEvent !== null && oldEvent.specialEffect === 'factions' && !this.layersActive.factions) {
+        this.leaveLayer('factions')
       }
 
       if (event === null) {
@@ -301,12 +279,6 @@ export default {
     },
     update (timestamp) {
       this.resizeCanvasToDisplaySize()
-      this.transitionValue += this.transitionDirection * 0.01
-
-      if (this.transitionValue <= 0 || this.transitionValue >= 1) {
-        this.transitionValue = clamp01(this.transitionValue)
-        this.transitionDirection = 0
-      }
 
       this.perpendicularityTransition += this.perpendicularityTransitionDirection * 0.05
 
@@ -315,22 +287,36 @@ export default {
         this.perpendicularityTransitionDirection = 0
       }
 
+      this.dimmingProgress += this.dimmingProgressDirection * 0.05
+
+      if (this.dimmingProgress <= 0 || this.dimmingProgress >= 1) {
+        this.dimmingProgress = clamp01(this.dimmingProgress)
+        this.dimmingProgressDirection = 0
+      }
+
+      this.textOpacity += this.textOpacityDirection * 0.05
+
+      if (this.textOpacity <= 0 || this.textOpacity >= 1) {
+        this.textOpacity = clamp01(this.textOpacity)
+        this.textOpacityDirection = 0
+      }
+
       this.highlights.children.forEach(h => h.update(this.camera, timestamp))
-      this.oathgates.children.forEach(h => h.update(this.camera, timestamp))
-      this.factions.update(this.camera, timestamp)
+      Object.values(this.layers).forEach(h => h.update(this.camera, timestamp))
 
       this.controls.update()
 
       this.mapMaterial.uniforms.PerpTransition.value = this.perpendicularityTransition
-      this.mapMaterial.uniforms.DimTransition.value = this.factions.t
+      this.mapMaterial.uniforms.DimTransition.value = this.dimmingProgress
       this.mapMaterial.uniforms.Time.value = timestamp / 1000
 
-      this.mapMaterial.uniforms.Transition.value = this.transitionValue
-      this.textPlane.material.uniforms.Transition.value = this.transitionValue
+      this.mapMaterial.uniforms.Transition.value = this.layers.shadesmar.progress
+      this.textPlane.material.uniforms.Transition.value = this.layers.shadesmar.progress
+      this.textPlane.material.uniforms.Opacity.value = this.textOpacity
 
       document.body.style.cursor = 'initial'
 
-      if (this.transitionValue === 0) {
+      if (!this.layers.shadesmar.enabled) {
         this.updateTextHighlights()
       }
 
@@ -396,6 +382,49 @@ export default {
         this.camera.updateProjectionMatrix()
         // update any render target sizes here
       }
+    },
+    enterLayer (layer) {
+      const layerData = this.layers[layer]
+
+      if (layerData.enabled) {
+        return
+      }
+
+      layerData.enter()
+
+      if (layerData.dimming) {
+        this.dimmingProgressDirection = 1
+      }
+    },
+    leaveLayer (layer) {
+      const layerData = this.layers[layer]
+
+      if (!layerData.enabled) {
+        return
+      }
+
+      layerData.leave()
+
+      if (layerData.dimming && Object.keys(this.layersActive)
+        .filter(l => l !== layer)
+        .every(l => this.layers[l].dimming ? !this.layersActive[l] : true)) {
+        this.dimmingProgressDirection = -1
+      }
+    },
+    isLayerActivatedByEvent (layer) {
+      if (this.activeEvent === null) {
+        return false
+      }
+
+      if (layer === 'shadesmar') {
+        return this.activeEvent.shadesmar
+      }
+
+      if (layer === 'factions') {
+        return this.activeEvent.specialEffect === 'factions'
+      }
+
+      return false
     }
   }
 }

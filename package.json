@@ -63,17 +63,7 @@
       "parser": "babel-eslint"
     },
     "rules": {
-      "no-param-reassign": [
-        "error",
-        {
-          "props": true,
-          "ignorePropertyModificationsFor": [
-            "state",
-            "config",
-            "element"
-          ]
-        }
-      ]
+      "no-param-reassign": "off"
     }
   },
   "browserslist": [

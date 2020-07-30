@@ -23,6 +23,18 @@
           }"
           @handle-scroll="onScroll"
         >
+          <div>
+            <label v-for="(layerActive, layer) in $store.state.layersActive" :key="layer" :for="`settings__layer--${layer}`">
+              <input
+                :id="`settings__layer--${layer}`"
+                type="checkbox"
+                :checked="layerActive"
+                @input="$store.commit('toggleLayer', { layer, value: $event.target.checked })"
+              >
+              {{ $t(`layers.${layer}`) }}
+            </label>
+          </div>
+
           <section class="settings__filters" :style="{ paddingBottom: `${separateHeight + 56}px` }">
             <template v-for="(tags, category) in tagCategories">
               <h4 :key="category">

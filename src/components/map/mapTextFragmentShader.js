@@ -58,11 +58,11 @@ export default `
 
     vec4 col = vec4(59. / 255., 138. / 255., 189. / 255., alpha);
 
-    col = mix(col, vec4(1., 1., 1., 1.), noise * 0.35);
+    col = mix(col, vec4(1., 1., 1., Opacity), noise * 0.35);
 
     float outerGlow = smoothstep(aa + 50. / 255., 8. / 255., value);
     if (value > .0) {
-      col = vec4(.0, .0, .0, outerGlow);
+      col = vec4(.0, .0, .0, outerGlow * Opacity);
     }
 
     return col;

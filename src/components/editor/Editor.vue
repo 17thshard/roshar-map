@@ -336,8 +336,6 @@
 </template>
 
 <script>
-/* eslint-disable no-param-reassign */
-
 import { Mesh, OrthographicCamera, PlaneBufferGeometry, Scene, ShaderMaterial, Vector2, WebGLRenderer } from 'three'
 import DeepDiff from 'deep-diff'
 import Zip from 'jszip'
@@ -725,7 +723,6 @@ export default {
       }
       fileReader.readAsText(event.target.files[0])
 
-      // eslint-disable-next-line no-param-reassign
       event.target.value = ''
     },
     saveLocations () {
@@ -745,7 +742,6 @@ export default {
       }
       fileReader.readAsText(event.target.files[0])
 
-      // eslint-disable-next-line no-param-reassign
       event.target.value = ''
     },
     saveEvents () {
@@ -765,7 +761,6 @@ export default {
       }
       fileReader.readAsText(event.target.files[0])
 
-      // eslint-disable-next-line no-param-reassign
       event.target.value = ''
     },
     saveCharacters () {
@@ -785,7 +780,6 @@ export default {
       }
       fileReader.readAsText(event.target.files[0])
 
-      // eslint-disable-next-line no-param-reassign
       event.target.value = ''
     },
     saveMisc () {
@@ -803,7 +797,6 @@ export default {
       }
       fileReader.readAsText(event.target.files[0])
 
-      // eslint-disable-next-line no-param-reassign
       event.target.value = ''
     },
     loadTags (event) {
@@ -818,7 +811,6 @@ export default {
       }
       fileReader.readAsText(event.target.files[0])
 
-      // eslint-disable-next-line no-param-reassign
       event.target.value = ''
     },
     addEvent () {

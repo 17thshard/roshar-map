@@ -15,8 +15,8 @@ export default `
     float aa = maxGrad / 24.;
 
     float alpha = smoothstep(aa + 2.0 / 255., 0., value) / (1. + .5 * maxGrad) * Opacity;
-    vec4 col = vec4(1., .92, .5, alpha);
-    vec3 innerGlowColor = vec3(146. / 255., 93. / 255., 43. / 255.);
+    vec4 col = vec4(236. / 255., 138. / 255., 55. / 255., alpha);
+    vec3 innerGlowColor = vec3(213. / 255., 106. / 255., 15. / 255.);
 
     float innerGlow = smoothstep(-innerGlowSize / 255. - aa, .0, value);
     if (value < .0) {
@@ -30,7 +30,7 @@ export default `
 
     float stroke = smoothstep(aa * 0.5 + strokeSize / 255., 0., abs(value - 1. / 255.)) / (1. + maxGrad);
 
-    col = mix(col, vec4(87. / 255., 79. / 255., 70. / 255., Opacity), stroke);
+    col = mix(col, vec4(innerGlowColor, Opacity), stroke);
 
     return col;
   }
@@ -42,6 +42,6 @@ export default `
     float noise = texture2D(PatternTexture, vUv * vec2(16., 8.)).r;
     vec4 map = texture2D(Texture, vUv);
 
-    gl_FragColor = Sample(map.r, noise, 24., 37., 3., maxGrad);
+    gl_FragColor = Sample(map.r, noise, 24., 60., 10., maxGrad);
   }
 `

@@ -119,7 +119,6 @@ function populateYear (year, baseOffset, events) {
 
             if (weekEvents !== undefined) {
               eventGroup[week].forEach((event) => {
-                // eslint-disable-next-line no-param-reassign
                 event.offset = baseOffset + localOffset
 
                 localOffset += weekEvents.length > 1 ? TIMELINE_TIE_DISTANCE : 0
@@ -218,6 +217,9 @@ const mutations = {
   },
   updateSeparateTags (state, tags) {
     state.filter.separateTags = tags
+  },
+  toggleLayer (state, { layer, value }) {
+    state.layersActive[layer] = value
   }
 }
 
@@ -231,6 +233,11 @@ export default new Vuex.Store({
     filter: {
       tags: [],
       separateTags: []
+    },
+    layersActive: {
+      shadesmar: false,
+      oathgates: false,
+      factions: false
     }
   },
   mutations,

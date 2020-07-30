@@ -1,16 +1,19 @@
 import { AdditiveBlending, Group, Mesh, PlaneBufferGeometry, ShaderMaterial } from 'three'
-import factionsFragmentShader from '@/components/map/factionsFragmentShader'
-import { clamp01 } from '@/utils.js'
+import factionsFragmentShader from '@/components/map/layers/factionsFragmentShader'
+import { clamp01 } from '@/utils'
 
 export default class Factions extends Group {
   constructor (texture) {
     super()
+
     this.position.set(0, 0, 1)
     this.frustumCulled = false
 
     this.enabled = false
     this.entering = true
     this.t = 0
+
+    this.dimming = true
 
     this.init(texture)
   }
