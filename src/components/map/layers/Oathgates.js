@@ -1,5 +1,5 @@
 import { Group, Mesh, PlaneBufferGeometry, ShaderMaterial, Vector2 } from 'three'
-import { clamp01 } from '@/utils'
+import { clamp01, inverseLerp } from '@/utils'
 import oathgateTextFragmentShader from '@/components/map/layers/oathgateTextFragmentShader'
 import OathgateLine from '@/components/map/layers/OathgateLine'
 import Highlight from '@/components/map/layers/Highlight'
@@ -13,7 +13,7 @@ export default class Oathgates extends Group {
 
     this.enabled = false
     this.entering = true
-    this.t = 0
+    this.progress = 0
 
     this.dimming = true
 
@@ -89,20 +89,25 @@ export default class Oathgates extends Group {
       return
     }
 
-    if (this.t <= 1) {
-      this.t = clamp01(this.t + (this.entering ? 0.05 : -0.05))
+    if (this.progress <= 1) {
+      this.progress = clamp01(this.progress + (this.entering ? 0.01 : -0.01))
     }
 
-    if (!this.entering && this.t <= 0) {
+    if (!this.entering && this.progress <= 0) {
       this.enabled = false
-      this.t = 0
+      this.progress = 0
     }
 
     this.gates.children.forEach((child) => {
-      child.opacity = this.t
+      if (child.name === 'line') {
+        child.opacity = this.entering ? inverseLerp(0.3, 1, this.progress) : inverseLerp(0.7, 1, this.progress)
+      } else {
+        child.opacity = this.entering ? inverseLerp(0, 0.3, this.progress) : inverseLerp(0.3, 0.6, this.progress)
+      }
+
       child.update(camera, timestamp)
     })
 
-    this.textPlane.material.uniforms.Opacity.value = this.t
+    this.textPlane.material.uniforms.Opacity.value = this.entering ? inverseLerp(0, 0.3, this.progress) : inverseLerp(0.3, 0.6, this.progress)
   }
 }

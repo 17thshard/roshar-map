@@ -72,13 +72,7 @@ export default {
     },
     layersActive: {
       handler (layersActive) {
-        Object.keys(layersActive).forEach((layer) => {
-          if (layersActive[layer]) {
-            this.enterLayer(layer)
-          } else if (!layersActive[layer] && !this.isLayerActivatedByEvent(layer)) {
-            this.leaveLayer(layer)
-          }
-        })
+        this.updateLayers(layersActive)
       },
       deep: true
     }
@@ -98,6 +92,7 @@ export default {
       .then(() => {
         this.$el.appendChild(this.renderer.domElement)
 
+        this.updateLayers(this.layersActive)
         this.update()
 
         this.$emit('ready')
@@ -386,10 +381,6 @@ export default {
     enterLayer (layer) {
       const layerData = this.layers[layer]
 
-      if (layerData.enabled) {
-        return
-      }
-
       layerData.enter()
 
       if (layerData.dimming) {
@@ -399,10 +390,6 @@ export default {
     leaveLayer (layer) {
       const layerData = this.layers[layer]
 
-      if (!layerData.enabled) {
-        return
-      }
-
       layerData.leave()
 
       if (layerData.dimming && Object.keys(this.layersActive)
@@ -410,6 +397,15 @@ export default {
         .every(l => this.layers[l].dimming ? !this.layersActive[l] : true)) {
         this.dimmingProgressDirection = -1
       }
+    },
+    updateLayers (layersActive) {
+      Object.keys(layersActive).forEach((layer) => {
+        if (layersActive[layer]) {
+          this.enterLayer(layer)
+        } else if (!layersActive[layer] && !this.isLayerActivatedByEvent(layer)) {
+          this.leaveLayer(layer)
+        }
+      })
     },
     isLayerActivatedByEvent (layer) {
       if (this.activeEvent === null) {

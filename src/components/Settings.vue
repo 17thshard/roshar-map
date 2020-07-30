@@ -2,12 +2,12 @@
   <div :class="['settings', { 'settings--active': active }]">
     <button class="settings__button" @click="open">
       <SlidersIcon size="1x" />
-      {{ $t('ui.filters') }}
+      {{ $t('ui.settings') }}
     </button>
     <transition name="settings__content">
       <div v-if="active" class="settings__content">
         <div :class="['settings__bar', { 'settings__bar--active': scrolled }]">
-          <h2>Filters</h2>
+          <h2>{{ $t('ui.settings') }}</h2>
 
           <button class="settings__close" :title="$t('ui.close')" @click="active = false">
             <XIcon />
@@ -23,19 +23,27 @@
           }"
           @handle-scroll="onScroll"
         >
-          <div>
-            <label v-for="(layerActive, layer) in $store.state.layersActive" :key="layer" :for="`settings__layer--${layer}`">
+          <section class="settings__layers">
+            <h3>{{ $t('ui.layers') }}</h3>
+            <label
+              v-for="(layerActive, layer) in $store.state.layersActive"
+              :key="layer"
+              :for="`settings__layer--${layer}`"
+              class="settings__layer"
+            >
               <input
                 :id="`settings__layer--${layer}`"
                 type="checkbox"
                 :checked="layerActive"
                 @input="$store.commit('toggleLayer', { layer, value: $event.target.checked })"
               >
+              <span class="settings__layer-check" />
               {{ $t(`layers.${layer}`) }}
             </label>
-          </div>
+          </section>
 
           <section class="settings__filters" :style="{ paddingBottom: `${separateHeight + 56}px` }">
+            <h3>{{ $t('ui.filters') }}</h3>
             <template v-for="(tags, category) in tagCategories">
               <h4 :key="category">
                 {{ $t(`tagCategories.${category}`) }}
@@ -306,11 +314,55 @@ export default {
     max-height: 100%;
   }
 
-  &__filters {
+  &__filters, &__layers {
     padding: 0 1rem 2rem;
     width: 350px;
     max-width: 100%;
     box-sizing: border-box;
+  }
+
+  &__layers {
+    padding-bottom: 1rem;
+  }
+
+  &__layer {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0.25rem 0;
+
+    input {
+      display: none;
+    }
+
+    &-check {
+      display: block;
+      margin-right: 0.5rem;
+      width: 1rem;
+      height: 1rem;
+      background: darken(#F5ECDA, 30%);
+      padding: 0.25rem;
+      box-sizing: border-box;
+      position: relative;
+
+      &:after {
+        display: block;
+        content: '';
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        background: #0a3972;
+        transform-origin: 50% 50%;
+        transform: rotate(45deg) scale(0);
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+
+    input:checked + &-check:after {
+      opacity: 1;
+      transform: rotate(45deg) scale(1);
+    }
   }
 
   &__tag-list {

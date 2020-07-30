@@ -10,6 +10,8 @@ import {
 export default class OathgateLine extends Group {
   constructor (start, end) {
     super()
+    this.name = 'line'
+
     this.position.set((start.x + end.x) / 2, (start.y + end.y) / 2, 1)
     this.frustumCulled = false
 
@@ -115,7 +117,7 @@ export default class OathgateLine extends Group {
 
         void main(void) {
           vec4 c = stormlight(vUv * 2. - 1.);
-          c.a *= Opacity * smoothstep(0., 10. / Length, vUv.x);
+          c.a *= smoothstep(0., 10. / Length, vUv.x) * smoothstep(0., vUv.x, Opacity);
           c.rgb *= c.a;
           gl_FragColor = c;
         }

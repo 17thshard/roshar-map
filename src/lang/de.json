@@ -1,6 +1,8 @@
 {
     "ui": {
         "menu": "Menü",
+        "settings": "Einstellungen",
+        "layers": "Ebenen",
         "filters": "Filter",
         "close": "Schließen",
         "back": "Zurück",

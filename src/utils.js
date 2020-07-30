@@ -18,6 +18,6 @@ export function clamp01 (t) {
   return Math.max(0, Math.min(t, 1))
 }
 
-export function arraysEqual (a, b) {
-  return a.length === b.length && a.every((v, i) => v === b[i])
+export function inverseLerp (a, b, value) {
+  return clamp01((value - a) / (b - a))
 }
