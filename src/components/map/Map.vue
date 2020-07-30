@@ -22,10 +22,12 @@ import MapControls from '@/components/map/MapControls'
 import Highlight from '@/components/map/Highlight'
 import fragmentShader from '@/components/map/mapFragmentShader'
 import textFragmentShader from '@/components/map/mapTextFragmentShader'
+import oathgateTextFragmentShader from '@/components/map/oathgateTextFragmentShader'
 import ShatteringPass from '@/components/map/ShatteringPass'
 import TextureManager from '@/components/map/TextureManager'
 import { clamp01 } from '@/utils'
-import Factions from '@/components/map/Factions.js'
+import Factions from '@/components/map/Factions'
+import OathgateLine from '@/components/map/OathgateLine'
 
 export default {
   name: 'Map',
@@ -101,7 +103,8 @@ export default {
         text_pattern: {},
         map_text: { hqAvailable: true },
         shadesmar_map_text: { hqAvailable: true },
-        factions: { hqAvailable: true }
+        factions: { hqAvailable: true },
+        oathgate_text: { hqAvailable: true }
       }
 
       return this.textureManager.load(textures)
@@ -187,7 +190,8 @@ export default {
           HoveredItem: { value: 0 },
           ActiveItem: { value: 0 },
           HoverProgress: { value: 0 },
-          ActiveProgress: { value: 0 }
+          ActiveProgress: { value: 0 },
+          Opacity: { value: 0.5 }
         },
         extensions: {
           derivatives: true
@@ -204,9 +208,55 @@ export default {
       this.textPlane.frustumCulled = false
 
       this.factions = new Factions(textures.factions)
+      this.oathgates = new Group()
+
+      const oathgateLocations = [
+        new Vector2(367.2 - 512, 256 - 115.3),
+        new Vector2(449.2 - 512, 256 - 156.7),
+        new Vector2(197 - 512, 256 - 286.8),
+        new Vector2(293.8 - 512, 256 - 264.3),
+        new Vector2(397.4 - 512, 256 - 245.4),
+        new Vector2(414.3 - 512, 256 - 331.5),
+        new Vector2(597.5 - 512, 256 - 419.6),
+        new Vector2(609.8 - 512, 256 - 334.5),
+        new Vector2(768 - 512, 256 - 364.2),
+        new Vector2(738.7 - 512, 256 - 250.6)
+      ]
+
+      const urithiruPosition = new Vector2(486.1 - 512, 256 - 318.5)
+
+      this.oathgates.add(
+        ...oathgateLocations.flatMap(l => [new OathgateLine(l, urithiruPosition), new Highlight(l.x, l.y, 0.3)]),
+        new Highlight(urithiruPosition.x, urithiruPosition.y, 0.3)
+      )
+
+      this.oathgateText = new Mesh(geo, new ShaderMaterial({
+        // language=GLSL
+        vertexShader: `
+          varying vec2 vUv;
+
+          void main() {
+            vUv = uv;
+
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position * vec3(512, 256, 1.0), 1.0);
+          }
+        `,
+        fragmentShader: oathgateTextFragmentShader,
+        uniforms: {
+          Texture: { value: textures.oathgate_text },
+          PatternTexture: { value: textPattern },
+          Opacity: { value: 1 }
+        },
+        extensions: {
+          derivatives: true
+        },
+        transparent: true,
+        depthTest: false
+      }))
+      this.oathgateText.frustumCulled = false
 
       this.scene = new Scene()
-      this.scene.add(this.plane, this.textPlane, this.highlights, this.factions)
+      this.scene.add(this.plane, this.textPlane, this.highlights, this.oathgates, this.oathgateText, this.factions)
 
       this.composer.addPass(new RenderPass(this.scene, this.camera))
       this.shatteringPass = new ShatteringPass()
@@ -266,6 +316,7 @@ export default {
       }
 
       this.highlights.children.forEach(h => h.update(this.camera, timestamp))
+      this.oathgates.children.forEach(h => h.update(this.camera, timestamp))
       this.factions.update(this.camera, timestamp)
 
       this.controls.update()

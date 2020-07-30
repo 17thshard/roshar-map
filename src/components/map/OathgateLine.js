@@ -3,31 +3,23 @@ import {
   Group,
   Mesh,
   PlaneBufferGeometry,
-  ShaderMaterial,
+  ShaderMaterial, Vector2,
   Vector3
 } from 'three'
-import { clamp01 } from '@/utils.js'
 
-const State = {
-  ENTERING: 0,
-  VISIBLE: 1,
-  LEAVING: 2
-}
-
-export default class Highlight extends Group {
-  constructor (x, y, size) {
+export default class OathgateLine extends Group {
+  constructor (start, end) {
     super()
-    this.position.set(x, y, 1)
+    this.position.set((start.x + end.x) / 2, (start.y + end.y) / 2, 1)
     this.frustumCulled = false
-    this.opacity = 0
-    this.state = State.ENTERING
-    this.size = size !== undefined ? size : 0.2
+    const ref = new Vector2()
+    ref.subVectors(end, start)
 
-    this.init()
+    this.init(ref.length(), ref.angle())
   }
 
-  init () {
-    const geo = new PlaneBufferGeometry(1, 1, 1, 1)
+  init (length, angle) {
+    const geo = new PlaneBufferGeometry(length, 10, 1, 1)
     const mat = new ShaderMaterial({
       // language=GLSL
       vertexShader: `
@@ -37,9 +29,9 @@ export default class Highlight extends Group {
         uniform float Scale;
 
         void main() {
-          vUv = uv * 2. - 1.;
+          vUv = uv;
 
-          gl_Position = projectionMatrix * modelViewMatrix * vec4(position * Scale * Size, 1.0);
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
         }
       `,
       // language=GLSL
@@ -48,6 +40,7 @@ export default class Highlight extends Group {
         precision highp float;
         #endif
 
+        uniform float Length;
         uniform float Frequency;
         uniform float TemporalFrequency;
         uniform float Opacity;
@@ -57,6 +50,7 @@ export default class Highlight extends Group {
         uniform float Time;
         uniform float Brightness;
         uniform float WhitePoint;
+        uniform float Seed;
         uniform vec3 Color;
 
         varying vec2 vUv;
@@ -87,14 +81,14 @@ export default class Highlight extends Group {
 
         vec4 stormlight(in vec2 p)
         {
-          float l = length(p);
+          float l = abs(p.y);
           float a = (1. - l) * 3.;
           //make sure to not clip the quad
           a -= Bias;
 
-          vec3 coord = vec3(atan(p.x, p.y)/6.2832+.5, length(p)*.2, .5);
+          vec3 coord = vec3(p.x, p.y * .2, .5);
           float power = 1.;
-          float t = Time * TemporalFrequency;
+          float t = Time * TemporalFrequency + Seed * 200.;
           for (int i = 1; i <= 3; i++)
           {
             power *= 2.;
@@ -104,11 +98,8 @@ export default class Highlight extends Group {
 
           //bright ring around dimmed ring
           float d3 = 0.02;
-          float d2 = InnerRingThickness + d3;
+          float d2 = InnerRingThickness;
           a += smoothstep(d3, 0., l - d2) * 0.25;
-
-          d2 = InnerRingThickness * 1.5 + d3;
-          a += smoothstep(d3, 0., abs(l - d2)) * 0.25;
 
           a *= Brightness;
 
@@ -120,17 +111,16 @@ export default class Highlight extends Group {
         }
 
         void main(void) {
-          vec4 c = stormlight(vUv);
-          c.a *= Opacity;
+          vec4 c = stormlight(vUv * 2. - 1.);
+          c.a *= Opacity * smoothstep(0., 10. / Length, vUv.x);
           c.rgb *= c.a;
           gl_FragColor = c;
         }
       `,
       uniforms: {
         Time: { value: 0 },
-        Size: { value: this.size },
-        Scale: { value: 1 },
-        Opacity: { value: 0 },
+        Length: { value: length },
+        Opacity: { value: 1 },
         Frequency: { value: 4 },
         TemporalFrequency: { value: 0.25 },
         Bias: { value: 0.4 },
@@ -138,7 +128,8 @@ export default class Highlight extends Group {
         InnerRingThickness: { value: 0.1 },
         Brightness: { value: 1 },
         WhitePoint: { value: 3 },
-        Color: { value: new Vector3(15 / 255, 53 / 255, 98 / 255) }
+        Color: { value: new Vector3(15 / 255, 53 / 255, 98 / 255) },
+        Seed: { value: angle + length }
       },
       depthTest: false,
       premultipliedAlpha: true,
@@ -147,30 +138,16 @@ export default class Highlight extends Group {
     })
 
     this.plane = new Mesh(geo, mat)
+    this.plane.rotation.set(0, 0, angle)
     this.plane.frustumCulled = false
 
     this.add(this.plane)
   }
 
   leave () {
-    this.state = State.LEAVING
   }
 
   update (camera, timestamp) {
-    if (this.state !== State.VISIBLE) {
-      this.opacity = clamp01(this.opacity + (this.state === State.ENTERING ? 1 / 30 : -1 / 30))
-    }
-
-    if (this.state === State.ENTERING && this.opacity >= 1) {
-      this.state = State.VISIBLE
-    } else if (this.state === State.LEAVING && this.opacity <= 0) {
-      this.parent.remove(this)
-    }
-
-    const scale = camera.position.distanceTo(this.position)
-
     this.plane.material.uniforms.Time.value = timestamp / 1000
-    this.plane.material.uniforms.Scale.value = scale
-    this.plane.material.uniforms.Opacity.value = this.opacity
   }
 }

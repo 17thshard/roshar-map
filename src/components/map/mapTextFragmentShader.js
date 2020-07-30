@@ -4,8 +4,6 @@ export default `
   precision mediump float;
   #endif
 
-  #define ALPHA .65
-
   float threshold = 0.1;
 
   varying highp vec2 vUv;
@@ -19,15 +17,16 @@ export default `
   uniform highp float ActiveItem;
   uniform highp float HoverProgress;
   uniform highp float ActiveProgress;
+  uniform highp float Opacity;
 
   vec4 Sample(float base, bool highlight, float highlightProgress, float noise, float innerGlowSize, float outerGlowSize, float strokeSize, float maxGrad) {
     float value = base - 0.5;
     float aa = maxGrad / 24.;
 
-    float alpha = smoothstep(aa + 2.0 / 255., 0., value) / (1. + .5 * maxGrad);
+    float alpha = smoothstep(aa + 2.0 / 255., 0., value) / (1. + .5 * maxGrad) * Opacity;
     vec4 col = vec4(1., .92, .5, alpha);
     vec3 innerGlowColor = vec3(146. / 255., 93. / 255., 43. / 255.);
-
+    
     if (highlight) {
       outerGlowSize += highlightProgress * outerGlowSize;
       col = mix(col, vec4(20. / 255., 143. / 255., 218. / 255., alpha), highlightProgress);
@@ -36,17 +35,17 @@ export default `
 
     float innerGlow = smoothstep(-innerGlowSize / 255. - aa, .0, value);
     if (value < .0) {
-      col = mix(col, vec4(innerGlowColor, 1.), innerGlow * 0.5 * (innerGlow + (1. - innerGlow) * noise));
+      col = mix(col, vec4(innerGlowColor, Opacity), innerGlow * 0.5 * (innerGlow + (1. - innerGlow) * noise));
     }
 
     float outerGlow = smoothstep(aa + outerGlowSize / 255., .0 / 255., value);
     if (value > .0) {
-      col = vec4(.0, .0, .0, .35 * outerGlow);
+      col = vec4(.0, .0, .0, .35 * outerGlow * Opacity);
     }
 
     float stroke = smoothstep(aa * 0.5 + strokeSize / 255., 0., abs(value - 1. / 255.)) / (1. + maxGrad);
 
-    col = mix(col, vec4(87. / 255., 79. / 255., 70. / 255., 1.), stroke);
+    col = mix(col, vec4(87. / 255., 79. / 255., 70. / 255., Opacity), stroke);
 
     return col;
   }
@@ -55,7 +54,7 @@ export default `
     float value = texture2D(ShadesmarTexture, vUv).r - 0.5;
     float aa = maxGrad / 24.;
 
-    float alpha = smoothstep(aa + 2.0 / 255., 0., value) / (1. + .5 * maxGrad);
+    float alpha = smoothstep(aa + 2.0 / 255., 0., value) / (1. + .5 * maxGrad) * Opacity;
 
     vec4 col = vec4(59. / 255., 138. / 255., 189. / 255., alpha);
 
@@ -80,7 +79,7 @@ export default `
     float hoverValue = map.b * 255.;
     bool highlight = HoveredItem > .0 && hoverValue == HoveredItem;
     float highlightProgress = HoverProgress;
-    
+
     if (ActiveItem > .0 && hoverValue == ActiveItem) {
       highlight = true;
       highlightProgress = ActiveProgress;
