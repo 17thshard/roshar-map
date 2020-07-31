@@ -9,7 +9,7 @@
         <div :class="['settings__bar', { 'settings__bar--active': scrolled }]">
           <h2>{{ $t('ui.settings') }}</h2>
 
-          <button class="settings__close" :title="$t('ui.close')" @click="active = false">
+          <button class="settings__close" :title="$t('ui.close')" @click="close">
             <XIcon />
           </button>
         </div>
@@ -142,6 +142,11 @@ export default {
     open () {
       this.active = true
       this.scrolled = false
+      this.$emit('open')
+    },
+    close () {
+      this.active = false
+      this.$emit('close')
     },
     onScroll (event) {
       this.scrolled = event.process > 0

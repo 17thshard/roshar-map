@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :class="{ 'app--details': details !== null }">
+  <div id="app" :class="{ 'app--details': details !== null, 'app--sidebar-active': sidebarActive }">
     <Map
       :transitions="mapTransitions"
       @ready="onReady"
@@ -10,8 +10,8 @@
     <transition name="scrubber" duration="1500" @after-enter="onScrubberLoaded">
       <Scrubber v-if="ready" />
     </transition>
-    <Info />
-    <Settings />
+    <Info @open="sidebarActive = true" @close="sidebarActive = false" />
+    <Settings @open="sidebarActive = true" @close="sidebarActive = false" />
     <transition name="loading__fade">
       <LoadingIndicator v-if="!ready" />
     </transition>
@@ -39,7 +39,8 @@ export default {
   data () {
     return {
       ready: false,
-      mapTransitions: false
+      mapTransitions: false,
+      sidebarActive: false
     }
   },
   computed: {
@@ -108,12 +109,17 @@ body {
   flex-direction: column;
   align-items: stretch;
   color: #242629;
-  transition: padding-left 0.5s ease-in-out;
+  transition: padding 0.5s ease-in-out;
   box-sizing: border-box;
 
   &.app--details {
     padding-left: 225px;
     transition-delay: 0.3s;
+  }
+
+  &.app--sidebar-active {
+    padding-right: 225px;
+    transition-delay: 0.1s;
   }
 }
 

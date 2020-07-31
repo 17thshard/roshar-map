@@ -25,7 +25,7 @@ import fragmentShader from '@/components/map/mapFragmentShader'
 import textFragmentShader from '@/components/map/mapTextFragmentShader'
 import ShatteringPass from '@/components/map/ShatteringPass'
 import TextureManager from '@/components/map/TextureManager'
-import { clamp01 } from '@/utils'
+import { clamp01, lerp } from '@/utils'
 import Factions from '@/components/map/layers/Factions'
 import Oathgates from '@/components/map/layers/Oathgates'
 import Shadesmar from '@/components/map/layers/Shadesmar'
@@ -44,9 +44,7 @@ export default {
       perpendicularityTransition: 0,
       perpendicularityTransitionDirection: 0,
       dimmingProgress: 0,
-      dimmingProgressDirection: 0,
-      textOpacity: 1,
-      textOpacityDirection: 0
+      dimmingProgressDirection: 0
     }
   },
   computed: {
@@ -201,7 +199,7 @@ export default {
           ActiveItem: { value: 0 },
           HoverProgress: { value: 0 },
           ActiveProgress: { value: 0 },
-          Opacity: { value: this.textOpacity }
+          Opacity: { value: 1 }
         },
         extensions: {
           derivatives: true
@@ -289,13 +287,6 @@ export default {
         this.dimmingProgressDirection = 0
       }
 
-      this.textOpacity += this.textOpacityDirection * 0.05
-
-      if (this.textOpacity <= 0 || this.textOpacity >= 1) {
-        this.textOpacity = clamp01(this.textOpacity)
-        this.textOpacityDirection = 0
-      }
-
       this.highlights.children.forEach(h => h.update(this.camera, timestamp))
       Object.values(this.layers).forEach(h => h.update(this.camera, timestamp))
 
@@ -307,7 +298,7 @@ export default {
 
       this.mapMaterial.uniforms.Transition.value = this.layers.shadesmar.progress
       this.textPlane.material.uniforms.Transition.value = this.layers.shadesmar.progress
-      this.textPlane.material.uniforms.Opacity.value = this.textOpacity
+      this.textPlane.material.uniforms.Opacity.value = lerp(0.5, 1, 1 - this.dimmingProgress)
 
       document.body.style.cursor = 'initial'
 

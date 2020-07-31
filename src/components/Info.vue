@@ -9,7 +9,7 @@
           <button :class="['info__back', { 'info__back--active': subPage !== null }]" :title="$t('ui.back')" @click="subPage = null">
             <ChevronLeftIcon />
           </button>
-          <button :class="['info__close', { 'info__close--dark': subPage !== null }]" :title="$t('ui.close')" @click="active = false">
+          <button :class="['info__close', { 'info__close--dark': subPage !== null }]" :title="$t('ui.close')" @click="close">
             <XIcon />
           </button>
         </div>
@@ -127,6 +127,11 @@ export default {
       this.scrolled = {}
       this.subPage = null
       this.active = true
+      this.$emit('open')
+    },
+    close () {
+      this.active = false
+      this.$emit('close')
     },
     onScroll (page, event) {
       this.$set(this.scrolled, page === null ? 'root' : page, event.process > 0)

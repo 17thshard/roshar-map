@@ -56,21 +56,21 @@
     >
       <svg v-if="mode === 'locations'">
         <template
-          v-for="(locations, index) in locations.filter(l => l.points !== undefined)"
+          v-for="(location, index) in locations.filter(l => l.points !== undefined)"
         >
           <polygon
             :key="`polygon${index}`"
-            :points="buildPolygonPoints(locations)"
-            :class="selectedLocation === locations ? 'editor__surface-polygon--selected' : undefined"
-            @click="clickLocationPolygon(locations, $event)"
+            :points="buildPolygonPoints(location)"
+            :class="selectedLocation === location ? 'editor__surface-polygon--selected' : undefined"
+            @click="clickLocationPolygon(location, $event)"
           />
           <circle
-            v-for="(point, pointIndex) in locations.points"
+            v-for="(point, pointIndex) in location.points"
             :key="`polygon${index}-point${pointIndex}`"
             :cx="point.x / xScale"
             :cy="point.y / yScale"
             :r="5 / zoom"
-            @click="clickPoint($event, locations, index, pointIndex)"
+            @click="clickPoint($event, location, index, pointIndex)"
             @mousedown="startDrag($event, point)"
           />
         </template>
