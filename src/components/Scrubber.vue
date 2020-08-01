@@ -55,7 +55,7 @@
             @event-selected="selectEvent"
           />
           <div key="years" class="scrubber__years">
-            <template v-for="{ year, offset, months, singleEvent } in years">
+            <template v-for="{ year, offset, months, singleEvent } in years.filter(year => year.display)">
               <span
                 :key="year"
                 :style="{ left: `${offset + timelineOffset}px` }"
@@ -176,7 +176,7 @@ export default {
       this.updateOverflow()
 
       const scroll = this.$refs.container.scrollLeft
-      const event = this.events.find(event => Math.abs(event.offset - scroll) < 0.5)
+      const event = this.events.find(event => Math.abs(event.offset - scroll) <= 1)
       if (event !== undefined) {
         this.currentDate = this.formatDate(event.date)
 

@@ -4,6 +4,7 @@ import baseEvents from '@/store/events.json'
 import baseLocations from '@/store/locations.json'
 import baseCharacters from '@/store/characters.json'
 import baseMisc from '@/store/misc.json'
+import { inverseLerp } from '@/utils'
 
 Vue.use(Vuex)
 
@@ -55,13 +56,45 @@ events.forEach((event) => {
 })
 
 const years = []
+const ANCHOR_YEARS = [-20000, -10000, -5000, -1000, 1, 1000, 1120, 1130, 1140, 1150, 1160, 1165]
+const eventYears = Object.keys(groupedEvents).map(k => Number.parseInt(k)).sort((a, b) => a - b)
 
-let lastYear = null
 let runningOffset = 0
-Object.keys(groupedEvents).sort((a, b) => Number.parseInt(a) - Number.parseInt(b)).forEach((y) => {
-  const year = Number.parseInt(y)
-  runningOffset += lastYear !== null ? calculateYearDistance(year, lastYear.year) : 0
-  lastYear = populateYear(year, runningOffset, groupedEvents[y])
+ANCHOR_YEARS.forEach((year, index) => {
+  if (groupedEvents[year] !== undefined) {
+    const yearData = populateYear(year, runningOffset, groupedEvents[year])
+    years.push(yearData)
+    runningOffset += yearData.size
+  } else {
+    years.push({ year, display: true, offset: runningOffset, size: 50, singleEvent: true, months: [] })
+    runningOffset += 50
+  }
+
+  const nextYear = ANCHOR_YEARS[index + 1]
+  const distance = nextYear !== undefined ? calculateYearDistance(nextYear, year) : 0
+  let localOffset = 0
+
+  eventYears.filter(y => nextYear !== undefined && y > year && y < nextYear).forEach((eventYear) => {
+    const yearData = populateYear(
+      eventYear,
+      runningOffset + localOffset + Math.trunc(distance * inverseLerp(year, nextYear, eventYear)),
+      groupedEvents[eventYear]
+    )
+    yearData.display = false
+
+    years.push(yearData)
+
+    localOffset += yearData.size
+  })
+
+  runningOffset += distance + localOffset
+})
+
+let lastYear = { year: ANCHOR_YEARS[ANCHOR_YEARS.length - 1] }
+eventYears.filter(y => y > lastYear.year).forEach((year) => {
+  runningOffset += calculateYearDistance(year, lastYear.year)
+  lastYear = populateYear(year, runningOffset, groupedEvents[year])
+
   years.push(lastYear)
   runningOffset += lastYear.size
 })
@@ -132,12 +165,19 @@ function populateYear (year, baseOffset, events) {
       localOffset += eventGroup !== undefined ? 60 : (year >= DETAIL_CUTOFF_YEAR ? 60 : 5)
     })
 
-  return { year, offset: baseOffset, size: (events.length > 1 ? localOffset : 50) + 10, singleEvent: events.length === 1, months }
+  return {
+    year,
+    display: true,
+    offset: baseOffset,
+    size: (events.length > 1 ? localOffset : year > ANCHOR_YEARS[ANCHOR_YEARS.length - 1] ? 50 : 30) + 10,
+    singleEvent: events.length === 1,
+    months
+  }
 }
 
 function calculateYearDistance (year, lastYear) {
   if (year - lastYear >= 100) {
-    return 5 * TIMELINE_YEAR_DISTANCE
+    return 8 * TIMELINE_YEAR_DISTANCE
   }
 
   if (year - lastYear >= 5) {
