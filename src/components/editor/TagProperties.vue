@@ -86,9 +86,9 @@ export default {
       }
 
       if (trimmed.length === 0) {
-        this.$delete(this.selectedMessages.languageNamespace, this.tag)
+        this.$delete(this.languageNamespace, this.tag)
       } else {
-        this.$set(this.selectedMessages.languageNamespace, this.tag, trimmed)
+        this.$set(this.languageNamespace, this.tag, trimmed)
       }
     },
     reassignTag (event) {
