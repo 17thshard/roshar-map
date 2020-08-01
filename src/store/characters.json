@@ -2,8 +2,8 @@
     {
         "id": "taravangian",
         "image": {
-            "file": "Taravangian_by_stinkypanda.jpg",
-            "credits": "by [stinkypanda](https://coppermind.net/wiki/Coppermind:Artists/stinkypanda)"
+            "file": "Taravangian_as_the_Wheel_of_Fortune_Orientation_1.jpg",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
         },
         "coppermind": "Taravangian"
     },
@@ -12,10 +12,11 @@
         "related": [
             "characters/gavilar",
             "characters/adolin",
-            "characters/renarin"
+            "characters/renarin",
+            "characters/navani"
         ],
         "image": {
-            "file": "Dalinar.jpg",
+            "file": "Dalinar_-_IV._The_Emperor_.jpg",
             "credits": "by [Exmakina](https://coppermind.net/wiki/Coppermind:Artists/Exmakina)"
         },
         "coppermind": "Dalinar_Kholin"
@@ -23,7 +24,10 @@
     {
         "id": "gavilar",
         "related": [
-            "characters/dalinar"
+            "characters/dalinar",
+            "characters/navani",
+            "characters/elhokar",
+            "characters/jasnah"
         ],
         "image": {
             "file": "King_Gavilar.jpg",
@@ -35,11 +39,12 @@
         "id": "adolin",
         "related": [
             "characters/dalinar",
-            "characters/renarin"
+            "characters/renarin",
+            "characters/shallan"
         ],
         "image": {
-            "file": "Adolin.jpg",
-            "credits": "by [Exmakina](https://coppermind.net/wiki/Coppermind:Artists/Exmakina)"
+            "file": "Adolin.jpgAdolin_-_VIII._Strength_.jpg",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
         },
         "coppermind": "Adolin_Kholin"
     },
@@ -47,8 +52,8 @@
         "id": "kaladin",
         "related": [],
         "image": {
-            "file": "Kaladin_and_Syl.jpg",
-            "credits": "by [Exmakina](https://coppermind.net/wiki/Coppermind:Artists/Exmakina)"
+            "file": "Kaladin_-_XI_Justice_.jpg",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
         },
         "coppermind": "Kaladin"
     },
@@ -58,9 +63,123 @@
             "characters/dalinar",
             "characters/adolin"
         ],
-        "coppermind": "by [Exmakina](https://coppermind.net/wiki/Coppermind:Artists/Exmakina)",
+        "coppermind": "Renarin_Kholin",
         "image": {
-            "file": "Renarin_paint_portrait.png"
+            "file": "Renarin_-_XVIII._The_Moon_.jpg",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
         }
+    },
+    {
+        "id": "navani",
+        "related": [],
+        "image": {
+            "file": "Navani_-_III._The_Empress.png",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
+        },
+        "coppermind": "Navani_Kholin"
+    },
+    {
+        "id": "elhokar",
+        "related": [
+            "characters/gavilar",
+            "characters/jasnah",
+            "characters/navani"
+        ],
+        "image": {
+            "file": "Elhokar_-_V._Hierophant.jpg",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
+        },
+        "coppermind": "Elhokar_Kholin"
+    },
+    {
+        "id": "jasnah",
+        "related": [
+            "characters/gavilar",
+            "characters/navani",
+            "characters/elhokar"
+        ],
+        "image": {
+            "file": "Jasnah_-_II._The_High_Priestess_.jpg",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
+        },
+        "coppermind": "Jasnah_Kholin"
+    },
+    {
+        "id": "shallan",
+        "related": [
+            "characters/adolin"
+        ],
+        "image": {
+            "file": "Shallan_-_I._The_Magician_.jpg",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
+        },
+        "coppermind": "Shallan"
+    },
+    {
+        "id": "eshonai",
+        "related": [
+            "characters/venli"
+        ],
+        "coppermind": "Eshonai",
+        "image": {
+            "file": "Eshonai_-_XIII._Death.jpg",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
+        }
+    },
+    {
+        "id": "venli",
+        "related": [
+            "characters/eshonai"
+        ],
+        "image": {
+            "file": "Venli_-_XVI._The_Tower_.jpg",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
+        },
+        "coppermind": "Venlil"
+    },
+    {
+        "id": "lift",
+        "related": [],
+        "image": {
+            "file": "Lift_-_VII._The_Chariot_.jpg",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
+        },
+        "coppermind": "Lift"
+    },
+    {
+        "id": "moash",
+        "related": [],
+        "image": {
+            "file": "Moash_-_IX._Hermit.jpg",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
+        },
+        "coppermind": "Moash"
+    },
+    {
+        "id": "odium",
+        "related": [],
+        "image": {
+            "file": "Odium_-_XV_the_Devil.jpg",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
+        },
+        "coppermind": "Odium"
+    },
+    {
+        "id": "szeth",
+        "related": [],
+        "image": {
+            "file": "Szeth_-_XX._Judgement_.jpg",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
+        },
+        "coppermind": "Szeth"
+    },
+    {
+        "id": "wit",
+        "related": [],
+        "image": {
+            "file": "Wit-Fool_by_taratjah.jpg",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
+        },
+        "coppermind": "Hoid"
     }
 ]
