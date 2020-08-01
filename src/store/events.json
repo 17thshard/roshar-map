@@ -129,23 +129,6 @@
         "coppermind": "Last_Desolation"
     },
     {
-        "id": "the-recreance",
-        "date": [
-            -800
-        ],
-        "circa": true,
-        "coordinates": {
-            "x": 512,
-            "y": 256,
-            "zoom": 0
-        },
-        "tags": [
-            "history"
-        ],
-        "hideMarker": true,
-        "coppermind": "Day_of_Recreance"
-    },
-    {
         "id": "the-false-desolation",
         "date": [
             -801
@@ -161,6 +144,23 @@
         ],
         "hideMarker": true,
         "coppermind": "False_Desolation"
+    },
+    {
+        "id": "the-recreance",
+        "date": [
+            -800
+        ],
+        "circa": true,
+        "coordinates": {
+            "x": 512,
+            "y": 256,
+            "zoom": 0
+        },
+        "tags": [
+            "history"
+        ],
+        "hideMarker": true,
+        "coppermind": "Day_of_Recreance"
     },
     {
         "id": "the-war-of-loss",
@@ -212,7 +212,7 @@
         ],
         "coppermind": "Dalinar",
         "image": {
-            "file": "Dalinar.jpg",
+            "file": "Dalinar_-_IV._The_Emperor_.jpg",
             "credits": "by [Exmakina](https://coppermind.net/wiki/Coppermind:Artists/Exmakina)"
         }
     },
@@ -255,7 +255,8 @@
         },
         "coppermind": "Oathbringer_(Shardblade)",
         "related": [
-            "locations/rathalas"
+            "locations/rathalas",
+            "characters/dalinar"
         ]
     },
     {
@@ -269,7 +270,8 @@
         },
         "tags": [
             "history"
-        ]
+        ],
+        "coppermind": "Emul#War_and_Famine_.28.7E1153-1174.29"
     },
     {
         "id": "unification-of-alethkar",
@@ -284,7 +286,12 @@
             "ob",
             "dalinar",
             "history"
-        ]
+        ],
+        "coppermind": "Alethkar#History",
+        "image": {
+            "file": "Alethkar_Color.jpg",
+            "credits": "by [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)"
+        }
     },
     {
         "id": "adolin-is-born",
@@ -302,9 +309,12 @@
         ],
         "coppermind": "Adolin_Kholin",
         "image": {
-            "file": "Adolin.jpg",
+            "file": "Adolin.jpgAdolin_-_VIII._Strength_.jpg",
             "credits": "by [Exmakina](https://coppermind.net/wiki/Coppermind:Artists/Exmakina)"
-        }
+        },
+        "related": [
+            "characters/adolin"
+        ]
     },
     {
         "id": "kaladin-is-born",
@@ -319,12 +329,13 @@
             "kaladin"
         ],
         "image": {
-            "file": "Kaladin_and_Syl.jpg",
+            "file": "Kaladin_-_XI_Justice_.jpg",
             "credits": "by [Exmakina](https://coppermind.net/wiki/Coppermind:Artists/Exmakina)"
         },
         "coppermind": "Kaladin",
         "related": [
-            "locations/hearthstone"
+            "locations/hearthstone",
+            "characters/kaladin"
         ]
     },
     {
@@ -341,9 +352,12 @@
         ],
         "coppermind": "Renarin_Kholin",
         "image": {
-            "file": "Renarin_paint_portrait.png",
+            "file": "Renarin_-_XVIII._The_Moon_.jpg",
             "credits": "by [Exmakina](https://coppermind.net/wiki/Coppermind:Artists/Exmakina)"
-        }
+        },
+        "related": [
+            "characters/renarin"
+        ]
     },
     {
         "id": "shallan-is-born",
@@ -356,6 +370,14 @@
         },
         "tags": [
             "shallan"
+        ],
+        "image": {
+            "file": "Shallan_-_I._The_Magician_.jpg",
+            "credits": "by [Exmakina](https://coppermind.net/wiki/Coppermind:Artists/Exmakina)"
+        },
+        "coppermind": "Shallan",
+        "related": [
+            "characters/shallan"
         ]
     },
     {
@@ -369,6 +391,14 @@
         },
         "tags": [
             "lift"
+        ],
+        "image": {
+            "file": "Lift_-_VII._The_Chariot_.jpg",
+            "credits": "by [Exmakina](https://coppermind.net/wiki/Coppermind:Artists/Exmakina)"
+        },
+        "coppermind": "Lift",
+        "related": [
+            "characters/lift"
         ]
     },
     {
@@ -383,6 +413,9 @@
         "tags": [
             "twok",
             "kaladin"
+        ],
+        "related": [
+            "locations/hearthstone"
         ]
     },
     {
