@@ -1,5 +1,9 @@
 <template>
-  <div class="map" />
+  <div class="map">
+    <transition name="map__factions-legend">
+      <FactionsLegend v-if="layers.factions.t > 0.5" class="map__factions-legend" />
+    </transition>
+  </div>
 </template>
 
 <script>
@@ -29,9 +33,11 @@ import { clamp01, lerp } from '@/utils'
 import Factions from '@/components/map/layers/Factions'
 import Oathgates from '@/components/map/layers/Oathgates'
 import Shadesmar from '@/components/map/layers/Shadesmar'
+import FactionsLegend from '@/components/map/layers/FactionsLegend.vue'
 
 export default {
   name: 'Map',
+  components: { FactionsLegend },
   props: {
     transitions: {
       type: Boolean
@@ -44,7 +50,8 @@ export default {
       perpendicularityTransition: 0,
       perpendicularityTransitionDirection: 0,
       dimmingProgress: 0,
-      dimmingProgressDirection: 0
+      dimmingProgressDirection: 0,
+      layers: {}
     }
   },
   computed: {
@@ -83,7 +90,7 @@ export default {
     this.loadTextures()
       .then(this.setupScene)
       .then(() => {
-        this.$el.appendChild(this.renderer.domElement)
+        this.$el.prepend(this.renderer.domElement)
 
         this.updateLayers(this.layersActive)
         this.update()
@@ -456,6 +463,25 @@ export default {
     pointer-events: none;
     box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.6);
     z-index: 10;
+  }
+
+  &__factions-legend {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    z-index: 11;
+
+    &-enter-active, &-leave-active {
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    &-enter, &-leave-to {
+      opacity: 0;
+    }
+
+    &-enter-to, &-leave {
+      opacity: 1;
+    }
   }
 }
 </style>
