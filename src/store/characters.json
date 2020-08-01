@@ -2,7 +2,65 @@
     {
         "id": "taravangian",
         "image": {
-            "file": "taravangian.jpg"
+            "file": "Taravangian_by_stinkypanda.jpg",
+            "credits": "by [stinkypanda](https://coppermind.net/wiki/Coppermind:Artists/stinkypanda)"
+        },
+        "coppermind": "Taravangian"
+    },
+    {
+        "id": "dalinar",
+        "related": [
+            "characters/gavilar",
+            "characters/adolin",
+            "characters/renarin"
+        ],
+        "image": {
+            "file": "Dalinar.jpg",
+            "credits": "by [Exmakina](https://coppermind.net/wiki/Coppermind:Artists/Exmakina)"
+        },
+        "coppermind": "Dalinar_Kholin"
+    },
+    {
+        "id": "gavilar",
+        "related": [
+            "characters/dalinar"
+        ],
+        "image": {
+            "file": "King_Gavilar.jpg",
+            "credits": "by [Grant M. Hansen](https://coppermind.net/wiki/Coppermind:Artists/Grant_M._Hansen)"
+        },
+        "coppermind": "Gavilar_Kholin"
+    },
+    {
+        "id": "adolin",
+        "related": [
+            "characters/dalinar",
+            "characters/renarin"
+        ],
+        "image": {
+            "file": "Adolin.jpg",
+            "credits": "by [Exmakina](https://coppermind.net/wiki/Coppermind:Artists/Exmakina)"
+        },
+        "coppermind": "Adolin_Kholin"
+    },
+    {
+        "id": "kaladin",
+        "related": [],
+        "image": {
+            "file": "Kaladin_and_Syl.jpg",
+            "credits": "by [Exmakina](https://coppermind.net/wiki/Coppermind:Artists/Exmakina)"
+        },
+        "coppermind": "Kaladin"
+    },
+    {
+        "id": "renarin",
+        "related": [
+            "characters/dalinar",
+            "characters/adolin"
+        ],
+        "coppermind": "by [Exmakina](https://coppermind.net/wiki/Coppermind:Artists/Exmakina)",
+        "image": {
+            "file": "Renarin_paint_portrait.png"
         }
     }
 ]
