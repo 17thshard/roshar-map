@@ -60,13 +60,8 @@ export default {
     activeEvent (event, oldEvent) {
       this.onEventChanged(event, oldEvent)
     },
-    activeLocation (location) {
-      if (location !== null) {
-        const newPosition = location.coordinates
-        const target = new Vector3(newPosition.x - 512, 256 - newPosition.y, 0)
-
-        this.controls.transitionTo(target, newPosition.zoom !== undefined ? newPosition.zoom : 0.7)
-      }
+    activeLocation (location, oldLocation) {
+      this.onLocationChanged(location, oldLocation)
     },
     layersActive: {
       handler (layersActive) {
@@ -96,6 +91,7 @@ export default {
         this.$emit('ready')
 
         this.onEventChanged(this.activeEvent, null)
+        this.onLocationChanged(this.activeLocation, null)
       })
   },
   destroyed () {
@@ -129,15 +125,13 @@ export default {
 
       this.controls = new MapControls(this.camera, this.renderer.domElement)
       this.controls.addEventListener('click', ({ position }) => {
-        if (!this.layers.shadesmar.enabled) {
-          this.textActiveProgress = 1
-          const location = this.queryHover(position.x, position.y)
+        this.textActiveProgress = 1
+        const location = this.queryHover(position.x, position.y)
 
-          if (location !== null && (this.activeLocation === null || location !== this.activeLocation.mapId)) {
-            this.$router.push(`/${this.$route.params.locale}/locations/${this.$store.state.locationsByMapId[location].id}`)
-          } else if (location === null && this.$route.name !== 'root') {
-            this.$router.push(`/${this.$route.params.locale}`)
-          }
+        if (location !== null && (this.activeLocation === null || location !== this.activeLocation.mapId)) {
+          this.$router.push(`/${this.$route.params.locale}/locations/${this.$store.state.locationsByMapId[location].id}`)
+        } else if (location === null && this.$route.name !== 'root') {
+          this.$router.push(`/${this.$route.params.locale}`)
         }
       })
 
@@ -228,7 +222,7 @@ export default {
       this.shatteringPass = new ShatteringPass()
       this.composer.addPass(this.shatteringPass)
 
-      this.hoverTexture = await this.textureManager.loadData('hover_text', false, 'b')
+      this.hoverTexture = await this.textureManager.loadData('hover_text', false, 'gb')
     },
     onEventChanged (event, oldEvent) {
       this.highlights.children.forEach(h => h.leave())
@@ -270,6 +264,22 @@ export default {
         this.mapMaterial.uniforms.PerpLocation.value.set(target.x, target.y)
       }
     },
+    onLocationChanged (location, oldLocation) {
+      if (location !== null && location.shadesmar) {
+        this.enterLayer('shadesmar')
+      } else if (oldLocation !== null && oldLocation.shadesmar && !this.layersActive.shadesmar) {
+        this.leaveLayer('shadesmar')
+      }
+
+      if (location === null) {
+        return
+      }
+
+      const newPosition = location.coordinates
+      const target = new Vector3(newPosition.x - 512, 256 - newPosition.y, 0)
+
+      this.controls.transitionTo(target, newPosition.zoom !== undefined ? newPosition.zoom : 0.7)
+    },
     update (timestamp) {
       this.resizeCanvasToDisplaySize()
 
@@ -302,9 +312,7 @@ export default {
 
       document.body.style.cursor = 'initial'
 
-      if (!this.layers.shadesmar.enabled) {
-        this.updateTextHighlights()
-      }
+      this.updateTextHighlights()
 
       this.textPlane.material.uniforms.HoveredItem.value = this.lastHoveredItem !== null ? this.lastHoveredItem : 0
       this.textPlane.material.uniforms.HoverProgress.value = this.textHoverProgress
@@ -348,7 +356,7 @@ export default {
       const hoverX = Math.trunc((x + 512) * this.hoverTexture.width / 1024)
       const hoverY = Math.trunc((256 - y) * this.hoverTexture.height / 512)
 
-      const hoveredItem = this.hoverTexture.data[hoverY * this.hoverTexture.width + hoverX]
+      const hoveredItem = this.hoverTexture.data[(hoverY * this.hoverTexture.width + hoverX) * 2 + (this.layers.shadesmar.enabled ? 0 : 1)]
       if (hoveredItem === undefined || hoveredItem <= 0) {
         return null
       }
@@ -393,14 +401,14 @@ export default {
       Object.keys(layersActive).forEach((layer) => {
         if (layersActive[layer]) {
           this.enterLayer(layer)
-        } else if (!layersActive[layer] && !this.isLayerActivatedByEvent(layer)) {
+        } else if (!layersActive[layer] && !this.isLayerActivatedByEntry(layer)) {
           this.leaveLayer(layer)
         }
       })
     },
-    isLayerActivatedByEvent (layer) {
+    isLayerActivatedByEntry (layer) {
       if (this.activeEvent === null) {
-        return false
+        return layer === 'shadesmar' && this.activeLocation !== null ? this.activeLocation.shadesmar : false
       }
 
       if (layer === 'shadesmar') {

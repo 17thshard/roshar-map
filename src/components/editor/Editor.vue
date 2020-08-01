@@ -56,7 +56,7 @@
     >
       <svg v-if="mode === 'locations'">
         <template
-          v-for="(location, index) in locations.filter(l => l.points !== undefined)"
+          v-for="(location, index) in locations.filter(l => l.points !== undefined && (selectedLocation !== null && selectedLocation.shadesmar ? l.shadesmar : l.shadesmar !== true))"
         >
           <polygon
             :key="`polygon${index}`"
@@ -114,11 +114,17 @@
             Clear selection
           </button>
         </div>
-        <button @click="renderPng(locations, 'map_text')">
+        <button @click="renderPng(locations.filter(l => l.shadesmar !== true), 'map_text')">
           Save LQ
         </button>
-        <button @click="renderPng(locations, 'hq_map_text')">
+        <button @click="renderPng(locations.filter(l => l.shadesmar !== true), 'hq_map_text')">
           Save HQ
+        </button>
+        <button @click="renderPng(locations.filter(l => l.shadesmar), 'shadesmar_map_text')">
+          Save Shadesmar LQ
+        </button>
+        <button @click="renderPng(locations.filter(l => l.shadesmar), 'hq_shadesmar_map_text')">
+          Save Shadesmar HQ
         </button>
         <button @click="renderPng(locations)">
           Save hover
@@ -626,7 +632,8 @@ export default {
         fragmentShader: textFragmentShader,
         uniforms: {
           Texture: { value: textures.map_text },
-          ShadesmarTexture: { value: textures.shadesmar_map_text }
+          ShadesmarTexture: { value: textures.shadesmar_map_text },
+          Shadesmar: { value: false }
         },
         extensions: {
           derivatives: true
@@ -651,15 +658,20 @@ export default {
 
       this.mapPlane.material.uniforms.Time.value = timestamp / 1000
 
-      if (this.selectedEvent !== null) {
+      if (this.selectedEvent !== null && this.mode === 'events') {
         this.mapPlane.material.uniforms.Transition.value = this.selectedEvent.shadesmar ? 1 : 0
+        this.textPlane.material.uniforms.Shadesmar.value = this.selectedEvent.shadesmar
         this.mapPlane.material.uniforms.PerpTransition.value = this.selectedEvent.perpendicularity ? 1 : 0
         this.mapPlane.material.uniforms.PerpLocation.value.set(
           this.selectedEvent.coordinates.x - 512,
           256 - this.selectedEvent.coordinates.y
         )
+      } else if (this.selectedLocation !== null && this.mode === 'locations') {
+        this.mapPlane.material.uniforms.Transition.value = this.selectedLocation.shadesmar ? 1 : 0
+        this.textPlane.material.uniforms.Shadesmar.value = this.selectedLocation.shadesmar
       } else {
         this.mapPlane.material.uniforms.Transition.value = 0
+        this.textPlane.material.uniforms.Shadesmar.value = false
         this.mapPlane.material.uniforms.PerpTransition.value = 0
       }
 
@@ -1034,11 +1046,17 @@ export default {
       const svgString = `
       <svg xmlns='http://www.w3.org/2000/svg' shape-rendering="crispEdges" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
         ${
-        locations.filter(l => l.points !== undefined).map(locations =>
-          `<polygon fill="#${Number.parseInt(locations.mapId, 10).toString(16).padStart(6, '0')}" points="${
-            locations.points.map(p => `${(p.x * xScale).toFixed(5)},${(p.y * yScale).toFixed(5)}`).join(' ')
+        locations.filter(l => l.points !== undefined).map((location) => {
+          let hexId = Number.parseInt(location.mapId, 10).toString(16)
+
+          if (location.shadesmar && base === undefined) {
+            hexId = `${hexId}00`
+          }
+
+          return `<polygon fill="#${hexId.padStart(6, '0')}" points="${
+            location.points.map(p => `${(p.x * xScale).toFixed(5)},${(p.y * yScale).toFixed(5)}`).join(' ')
           }"></polygon>`
-        ).join('\n')
+        }).join('\n')
       }
       </svg>
       `
@@ -1070,7 +1088,7 @@ export default {
         document.body.appendChild(a)
         a.style = 'display: none'
         a.href = png
-        a.download = `${base !== undefined ? base : 'hover'}.png`
+        a.download = `${base !== undefined ? base : 'hover_text'}.png`
         a.click()
         window.URL.revokeObjectURL(png)
 
@@ -1233,11 +1251,11 @@ export default {
       cursor: pointer;
 
       &:first-child {
-        grid-template-columns: auto auto auto;
+        grid-template-columns: auto auto;
         padding-top: 0;
 
-        & > button:first-of-type, & > button:nth-of-type(2), input, label {
-          grid-column: 1 / span 3;
+        & > button:first-of-type, & > button:nth-of-type(2), input, label, & > button:last-of-type {
+          grid-column: 1 / span 2;
         }
       }
     }
@@ -1246,7 +1264,7 @@ export default {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-gap: 0.5rem;
-      grid-column: 1 / span 3;
+      grid-column: 1 / span 2;
     }
 
     &-item--selected {

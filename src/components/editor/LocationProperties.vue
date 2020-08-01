@@ -40,6 +40,19 @@
         >
       </div>
 
+      <div class="location-properties__checkboxes">
+        <label for="location-properties__shadesmar">
+          <input
+            id="location-properties__shadesmar"
+            :checked="location.shadesmar"
+            type="checkbox"
+            @input="$event.target.checked ? $set(location, 'shadesmar', true) : $delete(location, 'shadesmar')"
+          >
+
+          Shadesmar
+        </label>
+      </div>
+
       <label for="location-properties__id">Map ID</label>
       <input
         id="location-properties__id"
