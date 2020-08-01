@@ -1,5 +1,8 @@
 {
-    "tags": [ "general" ],
+    "tags": [
+        "general",
+        "history"
+    ],
     "characters": [
         "dalinar",
         "kaladin",
@@ -17,5 +20,11 @@
         "wit",
         "moash"
     ],
-    "books": [ "twok", "wor", "ed", "ob", "row" ]
+    "books": [
+        "twok",
+        "wor",
+        "ed",
+        "ob",
+        "row"
+    ]
 }

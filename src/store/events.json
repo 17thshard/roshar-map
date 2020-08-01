@@ -10,8 +10,11 @@
             "y": 256,
             "zoom": 0
         },
-        "tags": [],
-        "hideMarker": true
+        "tags": [
+            "history"
+        ],
+        "hideMarker": true,
+        "coppermind": "Roshar#Creation_and_Early_Inhabitants"
     },
     {
         "id": "shattering-of-adonalsium",
@@ -24,9 +27,12 @@
             "y": 256,
             "zoom": 0
         },
-        "tags": [],
+        "tags": [
+            "history"
+        ],
         "hideMarker": true,
-        "specialEffect": "shattering"
+        "specialEffect": "shattering",
+        "coppermind": "Shattering"
     },
     {
         "id": "ashyn-exodus",
@@ -38,7 +44,11 @@
             "x": 293.8,
             "y": 264.3
         },
-        "tags": []
+        "tags": [
+            "history"
+        ],
+        "hideMarker": false,
+        "coppermind": "Roshar#The_Expulsion_and_Early_Interactions"
     },
     {
         "id": "the-first-desolation",
@@ -51,8 +61,11 @@
             "y": 256,
             "zoom": 0
         },
-        "tags": [],
-        "hideMarker": true
+        "tags": [
+            "history"
+        ],
+        "hideMarker": true,
+        "coppermind": "Desolation#The_First_Desolation"
     },
     {
         "id": "founding-of-the-knights-radiant-and-urithiru",
@@ -61,15 +74,24 @@
         ],
         "circa": true,
         "coordinates": {
-            "x": 512,
-            "y": 256,
-            "zoom": 0
+            "x": 485.5,
+            "y": 317.9
         },
-        "tags": [],
-        "hideMarker": true
+        "tags": [
+            "history"
+        ],
+        "hideMarker": false,
+        "coppermind": "Knights_Radiant#History",
+        "image": {
+            "file": "First_Ideal_poster.jpg",
+            "credits": "by [Rebecca Sorge](https://coppermind.net/wiki/Coppermind:Artists/Rebecca_Sorge)"
+        },
+        "related": [
+            "locations/urithiru"
+        ]
     },
     {
-        "id": "the-lost-legion",
+        "id": "the-last-legion",
         "date": [
             -3301
         ],
@@ -78,7 +100,11 @@
             "x": 767.7,
             "y": 363.3
         },
-        "tags": []
+        "tags": [],
+        "coppermind": "Listener#The_Last_Legion_and_Abandoning_of_the_Gods",
+        "related": [
+            "locations/shattered-plains"
+        ]
     },
     {
         "id": "the-last-desolation",
@@ -92,26 +118,18 @@
             "zoom": 0
         },
         "tags": [
-            "twok"
+            "twok",
+            "history"
         ],
-        "hideMarker": true
+        "hideMarker": true,
+        "image": {
+            "file": "Broken_Oath_by_Antti_Hakosaari.jpg",
+            "credits": "by [Antti Hakosaari](https://coppermind.net/wiki/Coppermind:Artists/Antti_Hakosaari)"
+        },
+        "coppermind": "Last_Desolation"
     },
     {
         "id": "the-recreance",
-        "date": [
-            -801
-        ],
-        "circa": true,
-        "coordinates": {
-            "x": 512,
-            "y": 256,
-            "zoom": 0
-        },
-        "tags": [],
-        "hideMarker": true
-    },
-    {
-        "id": "the-false-desolation",
         "date": [
             -800
         ],
@@ -121,8 +139,28 @@
             "y": 256,
             "zoom": 0
         },
-        "tags": [],
-        "hideMarker": true
+        "tags": [
+            "history"
+        ],
+        "hideMarker": true,
+        "coppermind": "Day_of_Recreance"
+    },
+    {
+        "id": "the-false-desolation",
+        "date": [
+            -801
+        ],
+        "circa": true,
+        "coordinates": {
+            "x": 512,
+            "y": 256,
+            "zoom": 0
+        },
+        "tags": [
+            "history"
+        ],
+        "hideMarker": true,
+        "coppermind": "False_Desolation"
     },
     {
         "id": "the-war-of-loss",
@@ -134,7 +172,10 @@
             "x": 719.8,
             "y": 275.9
         },
-        "tags": []
+        "tags": [
+            "history"
+        ],
+        "coppermind": "War_of_Loss"
     },
     {
         "id": "scouring-of-aimia",
@@ -146,7 +187,13 @@
             "x": 196.6,
             "y": 294.3
         },
-        "tags": []
+        "tags": [
+            "history"
+        ],
+        "coppermind": "Scouring_of_Aimia",
+        "related": [
+            "locations/aimia"
+        ]
     },
     {
         "id": "dalinar-is-born",
@@ -154,12 +201,20 @@
             1120
         ],
         "coordinates": {
-            "x": 738.6,
-            "y": 250.3
+            "x": 738.3,
+            "y": 249.9
         },
         "tags": [
             "dalinar"
-        ]
+        ],
+        "related": [
+            "characters/dalinar"
+        ],
+        "coppermind": "Dalinar",
+        "image": {
+            "file": "Dalinar.jpg",
+            "credits": "by [Exmakina](https://coppermind.net/wiki/Coppermind:Artists/Exmakina)"
+        }
     },
     {
         "id": "kholin-conquest-of-alethkar-begins",
@@ -174,7 +229,12 @@
         "tags": [
             "ob",
             "dalinar"
-        ]
+        ],
+        "related": [
+            "characters/dalinar",
+            "characters/gavilar"
+        ],
+        "coppermind": "Gavilar_Kholin#Unification_of_Alethkar"
     },
     {
         "id": "dalinar-wins-oathbringer",
@@ -188,6 +248,14 @@
         "tags": [
             "ob",
             "dalinar"
+        ],
+        "image": {
+            "file": "Act_of_Mercy_by_Xabi_Gaztelua.jpg",
+            "credits": "by [Xabi Gaztelua](https://www.instagram.com/p/CCjmcd5Damu/)"
+        },
+        "coppermind": "Oathbringer_(Shardblade)",
+        "related": [
+            "locations/rathalas"
         ]
     },
     {
@@ -199,7 +267,9 @@
             "x": 439.1,
             "y": 342.6
         },
-        "tags": []
+        "tags": [
+            "history"
+        ]
     },
     {
         "id": "unification-of-alethkar",
@@ -212,7 +282,8 @@
         },
         "tags": [
             "ob",
-            "dalinar"
+            "dalinar",
+            "history"
         ]
     },
     {
@@ -228,7 +299,12 @@
             "ob",
             "dalinar",
             "adolin"
-        ]
+        ],
+        "coppermind": "Adolin_Kholin",
+        "image": {
+            "file": "Adolin.jpg",
+            "credits": "by [Exmakina](https://coppermind.net/wiki/Coppermind:Artists/Exmakina)"
+        }
     },
     {
         "id": "kaladin-is-born",
@@ -241,6 +317,14 @@
         },
         "tags": [
             "kaladin"
+        ],
+        "image": {
+            "file": "Kaladin_and_Syl.jpg",
+            "credits": "by [Exmakina](https://coppermind.net/wiki/Coppermind:Artists/Exmakina)"
+        },
+        "coppermind": "Kaladin",
+        "related": [
+            "locations/hearthstone"
         ]
     },
     {
@@ -254,7 +338,12 @@
         },
         "tags": [
             "renarin"
-        ]
+        ],
+        "coppermind": "Renarin_Kholin",
+        "image": {
+            "file": "Renarin_paint_portrait.png",
+            "credits": "by [Exmakina](https://coppermind.net/wiki/Coppermind:Artists/Exmakina)"
+        }
     },
     {
         "id": "shallan-is-born",
