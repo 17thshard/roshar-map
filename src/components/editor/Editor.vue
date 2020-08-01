@@ -1053,13 +1053,15 @@ export default {
             hexId = `${hexId}00`
           }
 
-          return `<polygon fill="#${hexId.padStart(6, '0')}" points="${
+          return `<polygon fill="#${hexId.padStart(6, '0')}" style="mix-blend-mode: screen" points="${
             location.points.map(p => `${(p.x * xScale).toFixed(5)},${(p.y * yScale).toFixed(5)}`).join(' ')
           }"></polygon>`
         }).join('\n')
       }
       </svg>
       `
+
+      console.log(svgString)
 
       const canvas = document.createElement('canvas')
       canvas.width = width

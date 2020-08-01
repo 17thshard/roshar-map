@@ -50,21 +50,21 @@ export default `
     return col;
   }
 
-  vec4 SampleShadesmar(float base, bool highlight, float highlightProgress, float noise, vec2 vUv, float maxGrad) {
+  vec4 SampleShadesmar(float base, bool highlight, float highlightProgress, float noise, float outerGlowStart, float outerGlowSize, float outerGlowAlpha, float maxGrad) {
     float value = base - 0.5;
     float aa = maxGrad / 24.;
 
-    float alpha = smoothstep(aa + 2.0 / 255., 0., value) / (1. + .5 * maxGrad) * Opacity;
+    float alpha = smoothstep(aa + 1.0 / 255., 0., value) / (1. + .5 * maxGrad) * Opacity;
 
     vec4 col = vec4(59. / 255., 138. / 255., 189. / 255., alpha);
     
     if (highlight) {
-      col = mix(col, vec4(236. / 255., 138. / 255., 55. / 255., alpha), highlightProgress);
+      col = mix(col, vec4(213. / 255., 106. / 255., 15. / 255., alpha), highlightProgress);
     }
 
     col = mix(col, vec4(1., 1., 1., Opacity), noise * 0.35);
 
-    float outerGlow = smoothstep(aa + 50. / 255., 8. / 255., value);
+    float outerGlow = smoothstep(aa + outerGlowSize / 255., outerGlowStart / 255., value) * outerGlowAlpha;
     if (value > .0) {
       col = vec4(.0, .0, .0, outerGlow * Opacity);
     }
@@ -94,8 +94,8 @@ export default `
     vec4 texel1Small = Sample(map.g, highlight, highlightProgress, noise, 12., 18., 2., maxGrad);
     vec4 texel1 = vec4(mix(texel1Large.rgb, texel1Small.rgb, texel1Small.a), texel1Large.a + texel1Small.a);
 
-    vec4 texel2Large = SampleShadesmar(shadesmarMap.r, highlight, highlightProgress, noise, vUv, maxGrad);
-    vec4 texel2Small= SampleShadesmar(shadesmarMap.g, highlight, highlightProgress, noise, vUv, maxGrad);
+    vec4 texel2Large = SampleShadesmar(shadesmarMap.r, highlight, highlightProgress, noise, 8., 50., 1., maxGrad);
+    vec4 texel2Small= SampleShadesmar(shadesmarMap.g, highlight, highlightProgress, noise, 0., 25., 0.8, maxGrad);
     vec4 texel2 = vec4(mix(texel2Large.rgb, texel2Small.rgb, texel2Small.a), texel2Large.a + texel2Small.a);
 
     vec4 transitionTexel = texture2D(TransitionTexture, vUv);
