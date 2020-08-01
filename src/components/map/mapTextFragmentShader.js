@@ -50,13 +50,17 @@ export default `
     return col;
   }
 
-  vec4 SampleShadesmar(float noise, vec2 vUv, float maxGrad) {
-    float value = texture2D(ShadesmarTexture, vUv).r - 0.5;
+  vec4 SampleShadesmar(float base, bool highlight, float highlightProgress, float noise, vec2 vUv, float maxGrad) {
+    float value = base - 0.5;
     float aa = maxGrad / 24.;
 
     float alpha = smoothstep(aa + 2.0 / 255., 0., value) / (1. + .5 * maxGrad) * Opacity;
 
     vec4 col = vec4(59. / 255., 138. / 255., 189. / 255., alpha);
+    
+    if (highlight) {
+      col = mix(col, vec4(236. / 255., 138. / 255., 55. / 255., alpha), highlightProgress);
+    }
 
     col = mix(col, vec4(1., 1., 1., Opacity), noise * 0.35);
 
@@ -75,8 +79,9 @@ export default `
     float noise = texture2D(PatternTexture, vUv * vec2(16., 8.)).r;
 
     vec4 map = texture2D(Texture, vUv);
+    vec4 shadesmarMap = texture2D(ShadesmarTexture, vUv);
 
-    float hoverValue = map.b * 255.;
+    float hoverValue = Transition > 0.5 ? shadesmarMap.b * 255. : map.b * 255.;
     bool highlight = HoveredItem > .0 && hoverValue == HoveredItem;
     float highlightProgress = HoverProgress;
 
@@ -89,7 +94,9 @@ export default `
     vec4 texel1Small = Sample(map.g, highlight, highlightProgress, noise, 12., 18., 2., maxGrad);
     vec4 texel1 = vec4(mix(texel1Large.rgb, texel1Small.rgb, texel1Small.a), texel1Large.a + texel1Small.a);
 
-    vec4 texel2 = SampleShadesmar(noise, vUv, maxGrad);
+    vec4 texel2Large = SampleShadesmar(shadesmarMap.r, highlight, highlightProgress, noise, vUv, maxGrad);
+    vec4 texel2Small= SampleShadesmar(shadesmarMap.g, highlight, highlightProgress, noise, vUv, maxGrad);
+    vec4 texel2 = vec4(mix(texel2Large.rgb, texel2Small.rgb, texel2Small.a), texel2Large.a + texel2Small.a);
 
     vec4 transitionTexel = texture2D(TransitionTexture, vUv);
     float r = Transition * (1.0 + threshold * 2.0) - threshold;

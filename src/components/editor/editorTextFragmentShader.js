@@ -27,8 +27,8 @@ export default `
     return col;
   }
 
-  vec4 SampleShadesmar(vec2 vUv, float maxGrad) {
-    float value = texture2D(ShadesmarTexture, vUv).r - 0.5;
+  vec4 SampleShadesmar(float base, float maxGrad) {
+    float value = base - 0.5;
     float aa = maxGrad / 24.;
 
     float alpha = smoothstep(aa + 2.0 / 255., 0., value) / (1. + .5 * maxGrad);
@@ -48,18 +48,16 @@ export default `
     highp float maxGrad = max(maxGrad2.x, maxGrad2.y);
     
     vec4 map = texture2D(Texture, vUv);
+    vec4 shadesmarMap = texture2D(ShadesmarTexture, vUv);
 
     vec4 texel1Large = Sample(map.r, 37., maxGrad);
     vec4 texel1Small = Sample(map.g, 18., maxGrad);    
     vec4 texel1 = vec4(mix(texel1Large.rgb, texel1Small.rgb, texel1Small.a), texel1Large.a + texel1Small.a);
-    
-    vec4 texel2 = SampleShadesmar(vUv, maxGrad);
-    
-    vec4 texel = texel1;
-    if (Shadesmar) {
-      texel = texel2;
-    }
 
-    gl_FragColor = texel;
+    vec4 texel2Large = SampleShadesmar(shadesmarMap.r, maxGrad);
+    vec4 texel2Small = SampleShadesmar(shadesmarMap.g, maxGrad);
+    vec4 texel2 = vec4(mix(texel2Large.rgb, texel2Large.rgb, texel2Small.a), texel2Large.a + texel2Small.a);
+
+    gl_FragColor = Shadesmar ? texel2 : texel1;
   }
 `
