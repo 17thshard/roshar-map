@@ -1,0 +1,2 @@
+# kadrix
+Details

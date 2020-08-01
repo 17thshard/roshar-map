@@ -1,0 +1,2 @@
+# ru-parat
+Details

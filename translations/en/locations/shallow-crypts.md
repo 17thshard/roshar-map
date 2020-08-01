@@ -1,0 +1,2 @@
+# shallow-crypts
+Details
