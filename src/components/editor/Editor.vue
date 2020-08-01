@@ -1061,8 +1061,6 @@ export default {
       </svg>
       `
 
-      console.log(svgString)
-
       const canvas = document.createElement('canvas')
       canvas.width = width
       canvas.height = height
