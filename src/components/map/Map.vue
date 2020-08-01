@@ -1,7 +1,7 @@
 <template>
   <div class="map">
     <transition name="map__factions-legend">
-      <FactionsLegend v-if="layers.factions.t > 0.5" class="map__factions-legend" />
+      <FactionsLegend v-if="layers.factions !== undefined && layers.factions.t > 0.5" class="map__factions-legend" />
     </transition>
   </div>
 </template>
@@ -137,8 +137,12 @@ export default {
 
         if (location !== null && (this.activeLocation === null || location !== this.activeLocation.mapId)) {
           this.$router.push(`/${this.$route.params.locale}/locations/${this.$store.state.locationsByMapId[location].id}`)
-        } else if (location === null && this.$route.name !== 'root') {
-          this.$router.push(`/${this.$route.params.locale}`)
+        } else if (location === null) {
+          if (this.$route.name !== 'root') {
+            this.$router.push(`/${this.$route.params.locale}`)
+          } else {
+            this.$store.commit('unselectEvent')
+          }
         }
       })
 
