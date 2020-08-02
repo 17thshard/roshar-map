@@ -1,5 +1,25 @@
 [
     {
-        "id": "diagram"
+        "id": "diagram",
+        "related": [
+            "characters/taravangian",
+            "locations/kharbranth"
+        ],
+        "coppermind": "Diagram_(group)",
+        "image": {
+            "file": "diagram.jpg",
+            "credits": "by [Ari Ibarra](https://coppermind.net/wiki/Coppermind:Artists/Ari_Ibarra)"
+        }
+    },
+    {
+        "id": "ghostbloods",
+        "related": [
+            "characters/shallan"
+        ],
+        "image": {
+            "file": "ghostbloods.png",
+            "credits": "by [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)"
+        },
+        "coppermind": "Ghostbloods"
     }
 ]
