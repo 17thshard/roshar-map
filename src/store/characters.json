@@ -5,15 +5,40 @@
             "file": "Taravangian_as_the_Wheel_of_Fortune_Orientation_1.jpg",
             "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
         },
-        "coppermind": "Taravangian"
+        "coppermind": "Taravangian",
+        "related": [
+            "events/first-meeting-of-monarchs",
+            "events/taravangian-arrives-in-urithiru",
+            "events/taravangian-crowned-king-of-jah-keved",
+            "events/taravangian-visits-the-nightwatcher",
+            "events/the-battle-of-thaylen-field",
+            "locations/kharbranth"
+        ]
     },
     {
         "id": "dalinar",
         "related": [
-            "characters/gavilar",
             "characters/adolin",
+            "characters/gavilar",
+            "characters/navani",
             "characters/renarin",
-            "characters/navani"
+            "events/battle-of-narak-and-the-everstorm",
+            "events/battle-of-the-tower",
+            "events/chasmfiend-hunt-disaster",
+            "events/dalinar-and-navani-are-married",
+            "events/dalinar-confronts-the-thrill-in-vedenar",
+            "events/dalinar-decides-to-abdicate",
+            "events/dalinar-venli-meet",
+            "events/dalinar-visits-the-nightwatcher",
+            "events/dalinar-wins-oathbringer",
+            "events/first-meeting-of-monarchs",
+            "events/kholin-conquest-of-alethkar-begins",
+            "events/odium-appears-to-dalinar",
+            "events/return-to-the-rift",
+            "events/szeth-attacks-dalinar",
+            "events/the-battle-of-thaylen-field",
+            "locations/kholinar",
+            "locations/urithiru"
         ],
         "image": {
             "file": "Dalinar_-_IV._The_Emperor_.jpg",
@@ -25,9 +50,14 @@
         "id": "gavilar",
         "related": [
             "characters/dalinar",
-            "characters/navani",
             "characters/elhokar",
-            "characters/jasnah"
+            "characters/jasnah",
+            "characters/navani",
+            "events/gavilars-assassination",
+            "events/kholin-conquest-of-alethkar-begins",
+            "events/the-parshendi-discovered",
+            "events/unification-of-alethkar",
+            "locations/kholinar"
         ],
         "image": {
             "file": "King_Gavilar.jpg",
@@ -40,7 +70,20 @@
         "related": [
             "characters/dalinar",
             "characters/renarin",
-            "characters/shallan"
+            "characters/shallan",
+            "events/adolin-begins-dueling",
+            "events/adolin-murders-sadeas",
+            "events/battle-of-kholinar",
+            "events/battle-of-narak-and-the-everstorm",
+            "events/battle-of-the-tower",
+            "events/disadvantaged-duel",
+            "events/elhokars-team-arrive-in-kholinar",
+            "events/re-shephir-driven-from-urithiru",
+            "events/shallan-adolin-date",
+            "events/shallan-and-adolin-wedding",
+            "events/stop-in-celebrant",
+            "events/the-battle-of-thaylen-field",
+            "events/trapped-in-shadesmar"
         ],
         "image": {
             "file": "Adolin_-_VIII._Strength_.jpg",
@@ -50,7 +93,30 @@
     },
     {
         "id": "kaladin",
-        "related": [],
+        "related": [
+            "events/battle-of-kholinar",
+            "events/battle-of-narak-and-the-everstorm",
+            "events/battle-of-the-tower",
+            "events/bridge-four-begins-training",
+            "events/bridge-four-begins-training-squires",
+            "events/disadvantaged-duel",
+            "events/kaladin-becomes-a-slave",
+            "events/kaladin-begins-training",
+            "events/kaladin-in-hearthstone",
+            "events/kaladin-joins-a-group-of-singers",
+            "events/kaladin-joins-bridge-four",
+            "events/kaladin-joins-the-army",
+            "events/kaladin-meets-highmarshal-azure",
+            "events/kaladin-strung-up",
+            "events/kaladin-surgebinds",
+            "events/shallan-and-kaladin-in-the-chasms",
+            "events/stop-in-celebrant",
+            "events/szeth-attacks-dalinar",
+            "events/the-battle-of-thaylen-field",
+            "events/tien-dies",
+            "events/trapped-in-shadesmar",
+            "locations/hearthstone"
+        ],
         "image": {
             "file": "Kaladin_-_XI_Justice_.jpg",
             "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
@@ -60,8 +126,15 @@
     {
         "id": "renarin",
         "related": [
+            "characters/adolin",
             "characters/dalinar",
-            "characters/adolin"
+            "events/battle-of-narak-and-the-everstorm",
+            "events/disadvantaged-duel",
+            "events/everstorm-countdown",
+            "events/re-shephir-driven-from-urithiru",
+            "events/renarin-discovers-the-gemstone-library",
+            "events/renarin-is-born",
+            "events/the-battle-of-thaylen-field"
         ],
         "coppermind": "Renarin_Kholin",
         "image": {
@@ -71,7 +144,14 @@
     },
     {
         "id": "navani",
-        "related": [],
+        "related": [
+            "events/battle-of-narak-and-the-everstorm",
+            "events/dalinar-and-navani-are-married",
+            "events/first-meeting-of-monarchs",
+            "events/navani-is-born",
+            "events/the-battle-of-thaylen-field",
+            "events/vision-revelation"
+        ],
         "image": {
             "file": "Navani_-_III._The_Empress.png",
             "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
@@ -83,7 +163,13 @@
         "related": [
             "characters/gavilar",
             "characters/jasnah",
-            "characters/navani"
+            "characters/navani",
+            "events/battle-of-kholinar",
+            "events/chasmfiend-hunt-disaster",
+            "events/elhokar-is-born",
+            "events/elhokars-team-arrive-in-kholinar",
+            "events/gavinor-is-born",
+            "locations/urithiru"
         ],
         "image": {
             "file": "Elhokar_-_V._Hierophant.jpg",
@@ -94,9 +180,18 @@
     {
         "id": "jasnah",
         "related": [
+            "characters/elhokar",
             "characters/gavilar",
             "characters/navani",
-            "characters/elhokar"
+            "events/jasnah-arrives",
+            "events/jasnah-crowned",
+            "events/jasnah-is-born",
+            "events/jasnah-returns-from-shadesmar",
+            "events/shallan-becomes-jasnahs-ward",
+            "events/shallan-confronts-jasnah",
+            "events/the-battle-of-thaylen-field",
+            "events/the-lesson",
+            "events/winds-pleasure-attacked"
         ],
         "image": {
             "file": "Jasnah_-_II._The_High_Priestess_.jpg",
@@ -107,7 +202,31 @@
     {
         "id": "shallan",
         "related": [
-            "characters/adolin"
+            "characters/adolin",
+            "events/battle-of-kholinar",
+            "events/battle-of-narak-and-the-everstorm",
+            "events/re-shephir-driven-from-urithiru",
+            "events/shallan-and-adolin-wedding",
+            "events/shallan-and-kaladin-in-the-chasms",
+            "events/shallan-attends-the-revel",
+            "events/shallan-becomes-jasnahs-ward",
+            "events/shallan-confronts-jasnah",
+            "events/shallan-draws-a-cryptic",
+            "events/shallan-is-born",
+            "events/shallan-kills-her-father",
+            "events/shallan-kills-her-mother",
+            "events/shallan-meets-ghostbloods",
+            "events/shallan-meets-wit",
+            "events/shallan-recruits-deserters",
+            "events/shallan-recruits-ishnah",
+            "events/shallan-sees-pattern",
+            "events/shallan-visits-shadesmar",
+            "events/stop-in-celebrant",
+            "events/the-battle-of-thaylen-field",
+            "events/the-lesson",
+            "events/trapped-in-shadesmar",
+            "events/urithiru-rediscovered",
+            "events/winds-pleasure-attacked"
         ],
         "image": {
             "file": "Shallan_-_I._The_Magician_.jpg",
@@ -118,7 +237,12 @@
     {
         "id": "eshonai",
         "related": [
-            "characters/venli"
+            "characters/venli",
+            "events/battle-of-narak-and-the-everstorm",
+            "events/eshonai-adopts-stormform",
+            "events/eshonai-seizes-control",
+            "events/the-parshendi-discovered",
+            "locations/narak"
         ],
         "coppermind": "Eshonai",
         "image": {
@@ -129,7 +253,15 @@
     {
         "id": "venli",
         "related": [
-            "characters/eshonai"
+            "characters/eshonai",
+            "events/battle-of-narak-and-the-everstorm",
+            "events/dalinar-venli-meet",
+            "events/eshonai-adopts-stormform",
+            "events/the-battle-of-thaylen-field",
+            "events/the-parshendi-discovered",
+            "events/venli-is-claimed-by-odium",
+            "events/venli-relocated-to-marat",
+            "locations/narak"
         ],
         "image": {
             "file": "Venli_-_XVI._The_Tower_.jpg",
@@ -139,7 +271,13 @@
     },
     {
         "id": "lift",
-        "related": [],
+        "related": [
+            "events/lift-is-born",
+            "events/lift-saves-gawx",
+            "events/lift-saves-the-stump",
+            "events/lin-davar-accused-of-murder",
+            "events/the-battle-of-thaylen-field"
+        ],
         "image": {
             "file": "Lift_-_VII._The_Chariot_.jpg",
             "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
@@ -148,7 +286,17 @@
     },
     {
         "id": "moash",
-        "related": [],
+        "related": [
+            "characters/kaladin",
+            "events/battle-of-kholinar",
+            "events/battle-of-the-tower",
+            "events/bridge-four-begins-training",
+            "events/meeting-with-graves",
+            "events/moash-and-graves-attacked",
+            "events/moash-arrives-outside-kholinar",
+            "events/moash-kills-jezrien",
+            "events/moash-travels-to-kholinar"
+        ],
         "image": {
             "file": "Moash_-_IX._Hermit.jpg",
             "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
@@ -158,8 +306,13 @@
     {
         "id": "odium",
         "related": [
+            "characters/cultivation",
             "characters/honor",
-            "characters/cultivation"
+            "events/dalinar-venli-meet",
+            "events/odium-appears-to-dalinar",
+            "events/shattering-of-adonalsium",
+            "events/state-of-the-world",
+            "events/the-battle-of-thaylen-field"
         ],
         "image": {
             "file": "Odium_-_XV_the_Devil.jpg",
@@ -169,7 +322,18 @@
     },
     {
         "id": "szeth",
-        "related": [],
+        "related": [
+            "events/battle-of-narak-and-the-everstorm",
+            "events/gavilars-assassination",
+            "events/szeth-assassinates-hanavanar",
+            "events/szeth-attacks-dalinar",
+            "events/szeth-is-born",
+            "events/szeth-joins-the-skybreakers",
+            "events/szeth-named-truthless",
+            "events/szeths-killing-spree-begins",
+            "events/taravangian-crowned-king-of-jah-keved",
+            "events/the-battle-of-thaylen-field"
+        ],
         "image": {
             "file": "Szeth_-_XX._Judgement_.jpg",
             "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
@@ -178,7 +342,13 @@
     },
     {
         "id": "wit",
-        "related": [],
+        "related": [
+            "events/ishikk",
+            "events/jasnah-returns-from-shadesmar",
+            "events/shallan-meets-wit",
+            "events/shattering-of-adonalsium",
+            "events/taln-arrives-in-kholinar"
+        ],
         "image": {
             "file": "Wit-Fool_by_taratjah.jpg",
             "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
@@ -189,7 +359,10 @@
         "id": "cultivation",
         "related": [
             "characters/honor",
-            "characters/odium"
+            "characters/odium",
+            "events/dalinar-visits-the-nightwatcher",
+            "events/shattering-of-adonalsium",
+            "events/taravangian-visits-the-nightwatcher"
         ],
         "image": {
             "file": "Cultivation_and_the_Nightwatcher_2.jpg",
@@ -201,7 +374,8 @@
         "id": "honor",
         "related": [
             "characters/cultivation",
-            "characters/odium"
+            "characters/odium",
+            "events/shattering-of-adonalsium"
         ],
         "image": {
             "file": "Tanavast.jpg",
@@ -211,7 +385,11 @@
     },
     {
         "id": "rysn",
-        "related": [],
+        "related": [
+            "events/rysn-in-shinovar",
+            "events/rysn-in-the-reshi-isles",
+            "events/the-battle-of-thaylen-field"
+        ],
         "image": {
             "file": "Rysn_&_Larkin_by_botanicaxu.jpg",
             "credits": "by [botanicaxu](https://botanicaxu.tumblr.com/post/165173520094/oathbringer-countdown-70-days-rysn-larkin)"

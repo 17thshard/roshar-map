@@ -743,8 +743,9 @@
             "dalinar"
         ],
         "related": [
-            "locations/valley",
-            "characters/cultivation"
+            "characters/cultivation",
+            "characters/dalinar",
+            "locations/valley"
         ],
         "coppermind": "Dalinar_Kholin#Gavilar.27s_Death_and_Dalinar.27s_Transformation",
         "image": {
@@ -2506,7 +2507,7 @@
         "coppermind": "Kaladin#Revolar"
     },
     {
-        "id": "jasnah-returns",
+        "id": "jasnah-arrives",
         "date": [
             1174,
             1,
@@ -2887,6 +2888,11 @@
             }
         },
         "related": [
+            "characters/adolin",
+            "characters/elhokar",
+            "characters/kaladin",
+            "characters/moash",
+            "characters/shallan",
             "locations/kholinar"
         ]
     },
