@@ -39,9 +39,9 @@
         "specialEffect": "shattering",
         "coppermind": "Shattering",
         "related": [
-            "characters/honor",
             "characters/cultivation",
-            "characters/szeth",
+            "characters/honor",
+            "characters/odium",
             "characters/wit"
         ]
     },
@@ -212,6 +212,28 @@
         ]
     },
     {
+        "id": "navani-is-born",
+        "date": [
+            1120
+        ],
+        "tags": [
+            "navani"
+        ],
+        "coordinates": {
+            "x": 738.1,
+            "y": 249
+        },
+        "image": {
+            "file": "Navani_-_III._The_Empress.png",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
+        },
+        "coppermind": "Navani_Kholin",
+        "related": [
+            "characters/navani"
+        ],
+        "tieBreaker": 0
+    },
+    {
         "id": "dalinar-is-born",
         "date": [
             1120
@@ -230,28 +252,8 @@
         "image": {
             "file": "Dalinar_-_IV._The_Emperor_.jpg",
             "credits": "by [Exmakina](https://coppermind.net/wiki/Coppermind:Artists/Exmakina)"
-        }
-    },
-    {
-        "id": "navani-is-born",
-        "date": [
-            1120
-        ],
-        "tags": [
-            "navani"
-        ],
-        "coordinates": {
-            "x": 0,
-            "y": 0
         },
-        "image": {
-            "file": "Navani_-_III._The_Empress.png",
-            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
-        },
-        "coppermind": "Navani_Kholin",
-        "related": [
-            "characters/navani"
-        ]
+        "tieBreaker": 1
     },
     {
         "id": "szeth-is-born",
@@ -262,8 +264,8 @@
             "szeth"
         ],
         "coordinates": {
-            "x": 0,
-            "y": 0
+            "x": 292.6,
+            "y": 259.6
         },
         "related": [
             "characters/szeth",
@@ -305,8 +307,8 @@
             "jasnah"
         ],
         "coordinates": {
-            "x": 0,
-            "y": 0
+            "x": 738.1,
+            "y": 249.6
         },
         "image": {
             "file": "Jasnah_-_II._The_High_Priestess_.jpg",
@@ -391,8 +393,8 @@
         ],
         "tags": [],
         "coordinates": {
-            "x": 0,
-            "y": 0
+            "x": 738.1,
+            "y": 249.6
         },
         "image": {
             "file": "Elhokar_-_V._Hierophant.jpg",
@@ -797,8 +799,9 @@
             "taravangian"
         ],
         "related": [
-            "characters/taravangian",
             "characters/cultivation",
+            "characters/taravangian",
+            "locations/valley",
             "misc/diagram"
         ],
         "coppermind": "Taravangian#The_Nightwatcher_and_the_creation_of_the_Diagram",
@@ -989,6 +992,31 @@
         ]
     },
     {
+        "id": "ishikk",
+        "date": [
+            1173,
+            3
+        ],
+        "tags": [
+            "wit",
+            "twok"
+        ],
+        "coordinates": {
+            "x": 466.5,
+            "y": 250.3
+        },
+        "related": [
+            "characters/wit",
+            "locations/purelake"
+        ],
+        "coppermind": "Ishikk",
+        "image": {
+            "file": "Purelake_1.jpeg",
+            "credits": "by [Bonnie Johnson](https://coppermind.net/wiki/Coppermind:Artists/Bonnie_Johnson)"
+        },
+        "circa": true
+    },
+    {
         "id": "rysn-in-the-reshi-isles",
         "date": [
             1173,
@@ -1013,7 +1041,9 @@
         },
         "coppermind": "Rysn#Reshi_Isles",
         "related": [
-            "characters/rysn"
+            "characters/rysn",
+            "locations/reshi-isles",
+            "locations/reshi-sea"
         ]
     },
     {
@@ -1400,7 +1430,8 @@
         "image": {
             "file": "Shallan_and_Cryptic.jpg",
             "credits": "by [Petar Penev](https://coppermind.net/wiki/Coppermind:Artists/Petar_Penev)"
-        }
+        },
+        "perpendicularity": false
     },
     {
         "id": "shallan-confronts-jasnah",
@@ -1882,7 +1913,7 @@
         ],
         "image": {
             "file": "Shallan_Adolin.jpg",
-            "credits": "https://coppermind.net/wiki/Coppermind:Artists/Shuravf",
+            "credits": "by [Shuravf](https://coppermind.net/wiki/Coppermind:Artists/Shuravf)",
             "offset": {
                 "x": 0,
                 "y": 25
@@ -2489,8 +2520,8 @@
             "navani"
         ],
         "coordinates": {
-            "x": 0,
-            "y": 0
+            "x": 485.9,
+            "y": 318
         },
         "related": [
             "characters/jasnah",
@@ -2854,7 +2885,10 @@
                 "x": 0,
                 "y": 60
             }
-        }
+        },
+        "related": [
+            "locations/kholinar"
+        ]
     },
     {
         "id": "trapped-in-shadesmar",
@@ -2890,7 +2924,8 @@
             "characters/adolin",
             "locations/kholinar"
         ],
-        "coppermind": "Shallan_Davar#Journey_through_Shadesmar"
+        "coppermind": "Shallan_Davar#Journey_through_Shadesmar",
+        "perpendicularity": false
     },
     {
         "id": "riinos-lighthouse",

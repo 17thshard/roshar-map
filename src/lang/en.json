@@ -160,6 +160,11 @@
             "blurb": "Dalinar travelled to Azimir and convinced the Azish to consider joining the coalition.",
             "details": "Details"
         },
+        "dalinar-venli-meet": {
+            "name": "dalinar-venli-meet",
+            "blurb": "Blurb",
+            "details": "Details"
+        },
         "dalinar-visits-the-nightwatcher": {
             "name": "Dalinar visits the Nightwatcher",
             "blurb": "Dalinar visited Nightwatcher. Cultivation granted his request instead, removing all memories of Evi.",
@@ -173,6 +178,11 @@
         "disadvantaged-duel": {
             "name": "Disadvantaged duel",
             "blurb": "Adolin dueled four Shardbearers in a surprise disadvantaged duel, and was victorious with the help of Kaladin and Renarin. Kaladin was imprisoned following his demands after the duel.",
+            "details": "Details"
+        },
+        "elhokar-is-born": {
+            "name": "elhokar-is-born",
+            "blurb": "Blurb",
             "details": "Details"
         },
         "elhokars-team-arrive-in-kholinar": {
@@ -220,9 +230,19 @@
             "blurb": "Jasnah was crowned queen of Alethkar.",
             "details": "Details"
         },
+        "jasnah-is-born": {
+            "name": "jasnah-is-born",
+            "blurb": "Blurb",
+            "details": "Details"
+        },
         "jasnah-returns-from-shadesmar": {
             "name": "Jasnah returns from Shadesmar",
             "blurb": "Jasnah returned from Shadesmar after meeting with the highspren and encountered Wit waiting for her.",
+            "details": "Details"
+        },
+        "jasnah-returns": {
+            "name": "jasnah-returns",
+            "blurb": "Blurb",
             "details": "Details"
         },
         "kaladin-becomes-a-slave": {
@@ -340,6 +360,11 @@
             "blurb": "Four days after Sadeas's corpse was discovered a second body was found. Adolin was given the responsibility of investigating the murders.",
             "details": "Details"
         },
+        "navani-is-born": {
+            "name": "navani-is-born",
+            "blurb": "Blurb",
+            "details": "Details"
+        },
         "oathgate-to-thaylen-city-opened": {
             "name": "Oathgate to Thaylen City opened",
             "blurb": "Dalinar convinced Queen Fen to open the Oathgate between Thaylen City and Urithiru.",
@@ -403,6 +428,11 @@
         "scouring-of-aimia": {
             "name": "Scouring of Aimia",
             "blurb": "The scouring of Aimia was a mysterious, destructive event that took place on the Rosharan island of Aimia.",
+            "details": "Details"
+        },
+        "shallan-adolin-date": {
+            "name": "shallan-adolin-date",
+            "blurb": "Blurb",
             "details": "Details"
         },
         "shallan-and-adolin-wedding": {
@@ -528,6 +558,11 @@
         "szeth-attacks-dalinar": {
             "name": "Szeth attacks Dalinar",
             "blurb": "Szeth arrived at the Shattered Plains to assassinate Dalinar, and was repelled with the help of Kaladin.",
+            "details": "Details"
+        },
+        "szeth-is-born": {
+            "name": "szeth-is-born",
+            "blurb": "Blurb",
             "details": "Details"
         },
         "szeth-joins-the-skybreakers": {
@@ -1048,6 +1083,10 @@
             "name": "adolin",
             "details": "Details"
         },
+        "cultivation": {
+            "name": "cultivation",
+            "details": "Details"
+        },
         "dalinar": {
             "name": "dalinar",
             "details": "Details"
@@ -1062,6 +1101,10 @@
         },
         "gavilar": {
             "name": "gavilar",
+            "details": "Details"
+        },
+        "honor": {
+            "name": "honor",
             "details": "Details"
         },
         "jasnah": {
@@ -1092,6 +1135,10 @@
             "name": "renarin",
             "details": "Details"
         },
+        "rysn": {
+            "name": "rysn",
+            "details": "Details"
+        },
         "shallan": {
             "name": "shallan",
             "details": "Details"
@@ -1117,6 +1164,10 @@
         "diagram": {
             "name": "The Diagram",
             "details": "Bliblablub, the Diagram is an organization"
+        },
+        "ghostbloods": {
+            "name": "ghostbloods",
+            "details": "Details"
         }
     }
 }

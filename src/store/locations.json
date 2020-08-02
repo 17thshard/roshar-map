@@ -243,6 +243,10 @@
         },
         "related": [
             "characters/taravangian",
+            "events/shallan-becomes-jasnahs-ward",
+            "events/shallan-confronts-jasnah",
+            "events/shallan-visits-shadesmar",
+            "events/the-lesson",
             "misc/diagram"
         ],
         "coppermind": "Kharbranth"
@@ -426,7 +430,11 @@
                 "y": 234.2457248092607
             }
         ],
-        "coppermind": "Shinovar"
+        "coppermind": "Shinovar",
+        "related": [
+            "events/szeth-is-born",
+            "events/szeth-named-truthless"
+        ]
     },
     {
         "id": "aimia",
@@ -497,7 +505,10 @@
                 "y": 292.57142857142856
             }
         ],
-        "coppermind": "Aimia"
+        "coppermind": "Aimia",
+        "related": [
+            "events/scouring-of-aimia"
+        ]
     },
     {
         "id": "iri",
@@ -700,10 +711,11 @@
             "credits": "by [Otto Didact](Map_ReshiSea.png)"
         },
         "related": [
-            "locations/quili",
+            "events/rysn-in-the-reshi-isles",
             "locations/abri",
-            "locations/kadrix",
             "locations/arak",
+            "locations/kadrix",
+            "locations/quili",
             "locations/sumi"
         ]
     },
@@ -742,10 +754,11 @@
         },
         "coppermind": "Reshi_Isles",
         "related": [
-            "locations/quili",
+            "events/rysn-in-the-reshi-isles",
             "locations/abri",
-            "locations/kadrix",
             "locations/arak",
+            "locations/kadrix",
+            "locations/quili",
             "locations/sumi"
         ]
     },
@@ -786,7 +799,14 @@
             "file": "Urithiru3_by_Jacobo_Montoya.jpg",
             "credits": "by [Jacoo Montoya](https://coppermind.net/wiki/Coppermind:Artists/Jacobo_Montoya)"
         },
-        "coppermind": "Urithiru"
+        "coppermind": "Urithiru",
+        "related": [
+            "events/first-meeting-of-monarchs",
+            "events/founding-of-the-knights-radiant-and-urithiru",
+            "events/re-shephir-driven-from-urithiru",
+            "events/taravangian-arrives-in-urithiru",
+            "events/urithiru-rediscovered"
+        ]
     },
     {
         "id": "shattered-plains",
@@ -835,6 +855,13 @@
         },
         "coppermind": "Shattered_Plains",
         "related": [
+            "events/battle-of-the-tower",
+            "events/disadvantaged-duel",
+            "events/kaladin-joins-a-group-of-singers",
+            "events/shallan-and-kaladin-in-the-chasms",
+            "events/shallan-meets-ghostbloods",
+            "events/szeth-attacks-dalinar",
+            "events/the-last-legion",
             "locations/narak"
         ]
     },
@@ -915,6 +942,7 @@
         ],
         "coppermind": "Emul",
         "related": [
+            "events/the-eightys-war",
             "locations/sesemalex-dar"
         ]
     },
@@ -969,6 +997,7 @@
         ],
         "coppermind": "Tukar",
         "related": [
+            "events/the-eightys-war",
             "locations/sesemalex-dar"
         ]
     },
@@ -1021,7 +1050,10 @@
                 "y": 369.99779005524863
             }
         ],
-        "coppermind": "Marat"
+        "coppermind": "Marat",
+        "related": [
+            "events/venli-relocated-to-marat"
+        ]
     },
     {
         "id": "liafor",
@@ -1239,7 +1271,11 @@
         "image": {
             "file": "Purelake_1.jpeg",
             "credits": "by [Bonnie Johnson](https://coppermind.net/wiki/Coppermind:Artists/Bonnie_Johnson)"
-        }
+        },
+        "related": [
+            "events/ishikk",
+            "events/szeth-joins-the-skybreakers"
+        ]
     },
     {
         "id": "kholinar",
@@ -1271,6 +1307,13 @@
             }
         ],
         "related": [
+            "events/battle-of-kholinar",
+            "events/gavilars-assassination",
+            "events/kaladin-meets-highmarshal-azure",
+            "events/moash-kills-jezrien",
+            "events/shallan-attends-the-revel",
+            "events/taln-arrives-in-kholinar",
+            "events/trapped-in-shadesmar",
             "locations/alethkar"
         ],
         "image": {
@@ -1310,11 +1353,13 @@
         ],
         "coppermind": "Rathalas",
         "related": [
+            "events/dalinar-wins-oathbringer",
+            "events/return-to-the-rift",
             "locations/alethkar"
         ]
     },
     {
-        "id": "new-natanatan",
+        "id": "new-natanan",
         "mapId": 24,
         "coordinates": {
             "x": 832.1,
@@ -1399,6 +1444,8 @@
         },
         "coppermind": "Thaylen_City",
         "related": [
+            "events/oathgate-to-thaylen-city-opened",
+            "events/the-battle-of-thaylen-field",
             "locations/thaylenah"
         ]
     },
@@ -1463,7 +1510,11 @@
         "image": {
             "file": "Cultivation_and_the_Nightwatcher_2.jpg",
             "credits": "by [Kyle Pearson](https://coppermind.net/wiki/Coppermind:Artists/Kyle_Pearson)"
-        }
+        },
+        "related": [
+            "events/dalinar-visits-the-nightwatcher",
+            "events/taravangian-visits-the-nightwatcher"
+        ]
     },
     {
         "id": "narak",
@@ -1496,6 +1547,10 @@
         },
         "coppermind": "Narak",
         "related": [
+            "events/battle-of-narak-and-the-everstorm",
+            "events/bridge-four-begins-training",
+            "events/eshonai-adopts-stormform",
+            "events/eshonai-seizes-control",
             "locations/shattered-plains"
         ]
     },
@@ -1526,6 +1581,13 @@
         ],
         "coppermind": "Hearthstone",
         "related": [
+            "events/kaladin-begins-training",
+            "events/kaladin-in-hearthstone",
+            "events/kaladin-is-born",
+            "events/kaladin-joins-the-army",
+            "events/oroden-is-born",
+            "events/roshone-arrives-in-hearthstone",
+            "events/wistiow-dies",
             "locations/alethkar"
         ]
     },
@@ -1610,6 +1672,7 @@
         ],
         "coppermind": "Revolar",
         "related": [
+            "events/kaladin-leaves-alethkar",
             "locations/alethkar"
         ]
     },
@@ -1729,6 +1792,8 @@
             }
         ],
         "related": [
+            "events/dalinar-travels-to-azimir",
+            "events/lift-saves-gawx",
             "locations/azir"
         ],
         "coppermind": "Azimir"
@@ -1760,6 +1825,9 @@
         ],
         "coppermind": "Vedenar",
         "related": [
+            "events/dalinar-confronts-the-thrill-in-vedenar",
+            "events/szeth-assassinates-hanavanar",
+            "events/taravangian-crowned-king-of-jah-keved",
             "locations/jah-keved"
         ]
     },
@@ -1966,7 +2034,10 @@
                 "y": 295.3631406761178
             }
         ],
-        "coppermind": "Unclaimed_Hills"
+        "coppermind": "Unclaimed_Hills",
+        "related": [
+            "events/jasnah-returns-from-shadesmar"
+        ]
     },
     {
         "id": "dawns-shadow",
@@ -2090,7 +2161,10 @@
                 "y": 200.8171573973101
             }
         ],
-        "coppermind": "Reshi_Sea"
+        "coppermind": "Reshi_Sea",
+        "related": [
+            "events/rysn-in-the-reshi-isles"
+        ]
     },
     {
         "id": "reshi-sea",
@@ -2117,7 +2191,10 @@
                 "y": 179.60014540167214
             }
         ],
-        "coppermind": "Reshi_Sea"
+        "coppermind": "Reshi_Sea",
+        "related": [
+            "events/rysn-in-the-reshi-isles"
+        ]
     },
     {
         "id": "northern-depths",
@@ -2319,7 +2396,7 @@
         "coppermind": "Tarat_Sea"
     },
     {
-        "id": "longbrows-straights",
+        "id": "longbrows-straits",
         "coordinates": {
             "x": 615.3,
             "y": 402.6
@@ -2355,7 +2432,10 @@
                 "y": 392.4449291166849
             }
         ],
-        "coppermind": "Longbrow's_Straits"
+        "coppermind": "Longbrow's_Straits",
+        "related": [
+            "events/shallan-sees-pattern"
+        ]
     },
     {
         "id": "longbrows-straits",
@@ -2390,7 +2470,10 @@
                 "y": 410.9400218102508
             }
         ],
-        "coppermind": "Longbrow's_Straits"
+        "coppermind": "Longbrow's_Straits",
+        "related": [
+            "events/shallan-sees-pattern"
+        ]
     },
     {
         "id": "klna",
@@ -2477,6 +2560,9 @@
             "credits": "by [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)"
         },
         "related": [
+            "events/moash-and-graves-attacked",
+            "events/shallan-joins-tvlakvs-caravan",
+            "events/shallan-recruits-deserters",
             "locations/shallow-crypts"
         ]
     },
@@ -2839,8 +2925,9 @@
             }
         ],
         "related": [
-            "locations/tukar",
-            "locations/emul"
+            "events/the-eightys-war",
+            "locations/emul",
+            "locations/tukar"
         ],
         "coppermind": "Sesemalex_Dar"
     },
@@ -2875,6 +2962,7 @@
             "credits": "by [Ben McSweeney](https://coppermind.net/wiki/Coppermind:Artists/Ben_McSweeney)"
         },
         "related": [
+            "events/lift-saves-the-stump",
             "locations/tashikk"
         ]
     },
@@ -3936,6 +4024,9 @@
             }
         ],
         "shadesmar": true,
-        "coppermind": "Celebrant"
+        "coppermind": "Celebrant",
+        "related": [
+            "events/stop-in-celebrant"
+        ]
     }
 ]
