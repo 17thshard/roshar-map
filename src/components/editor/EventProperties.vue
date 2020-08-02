@@ -112,7 +112,7 @@
         :autocomplete-items="linkAutocompletions"
         add-only-from-autocomplete
         placeholder="Add Link"
-        @tags-changed="newLinks => $set(event, 'related', newLinks.map(t => t.text))"
+        @tags-changed="newLinks => $set(event, 'related', newLinks.map(t => t.text).sort((a, b) => a.localeCompare(b)))"
       />
 
       <span>Linked to by</span>
@@ -243,7 +243,9 @@ export default {
       return `${process.env.BASE_URL}img/events`
     },
     linkAutocompletions () {
-      return this.linkables.filter(l => l.startsWith(this.newLink) && l !== `events/${this.event.id}`).map(l => ({ text: l }))
+      return this.linkables.filter(l => l.startsWith(this.newLink) && l !== `events/${this.event.id}`)
+        .sort((a, b) => a.localeCompare(b))
+        .map(l => ({ text: l }))
     },
     imageStyles () {
       if (this.event.image === undefined) {

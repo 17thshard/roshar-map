@@ -12,7 +12,7 @@
         :autocomplete-items="linkAutocompletions"
         add-only-from-autocomplete
         placeholder="Add Link"
-        @tags-changed="newLinks => $set(character, 'related', newLinks.map(t => t.text))"
+        @tags-changed="newLinks => $set(character, 'related', newLinks.map(t => t.text).sort((a, b) => a.localeCompare(b)))"
       />
 
       <span>Linked to by</span>
@@ -85,7 +85,9 @@ export default {
       return `${process.env.BASE_URL}img/characters`
     },
     linkAutocompletions () {
-      return this.linkables.filter(l => l.startsWith(this.newLink) && l !== `characters/${this.character.id}`).map(l => ({ text: l }))
+      return this.linkables.filter(l => l.startsWith(this.newLink) && l !== `characters/${this.character.id}`)
+        .sort((a, b) => a.localeCompare(b))
+        .map(l => ({ text: l }))
     }
   },
   methods: {
