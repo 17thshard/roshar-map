@@ -14,7 +14,11 @@
             "history"
         ],
         "hideMarker": true,
-        "coppermind": "Roshar#Creation_and_Early_Inhabitants"
+        "coppermind": "Roshar#Creation_and_Early_Inhabitants",
+        "image": {
+            "file": "Inner_Rosharan_System_by_Art_Noob.jpg",
+            "credits": "by [Art Noob](https://coppermind.net/wiki/Coppermind:Artists/Art_Noob)"
+        }
     },
     {
         "id": "shattering-of-adonalsium",
@@ -32,7 +36,13 @@
         ],
         "hideMarker": true,
         "specialEffect": "shattering",
-        "coppermind": "Shattering"
+        "coppermind": "Shattering",
+        "related": [
+            "characters/honor",
+            "characters/cultivation",
+            "characters/szeth",
+            "characters/wit"
+        ]
     },
     {
         "id": "ashyn-exodus",
@@ -48,7 +58,11 @@
             "history"
         ],
         "hideMarker": false,
-        "coppermind": "Roshar#The_Expulsion_and_Early_Interactions"
+        "coppermind": "Roshar#The_Expulsion_and_Early_Interactions",
+        "image": {
+            "file": "C:\\Users\\har29370\\Joshua's Documents\\Personal\\Stormlight Visual Timeline\\Images\\Coppermind\\No Credit Needed\\Oathgate_Locations_(edited).jpg",
+            "credits": "by [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)"
+        }
     },
     {
         "id": "the-first-desolation",
@@ -196,6 +210,27 @@
         ]
     },
     {
+        "id": "navani-is-born",
+        "date": [
+            1120
+        ],
+        "tags": [
+            "navani"
+        ],
+        "coordinates": {
+            "x": 0,
+            "y": 0
+        },
+        "image": {
+            "file": "Navani_-_III._The_Empress.png",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
+        },
+        "coppermind": "Navani_Kholin",
+        "related": [
+            "characters/navani"
+        ]
+    },
+    {
         "id": "dalinar-is-born",
         "date": [
             1120
@@ -217,6 +252,28 @@
         }
     },
     {
+        "id": "szeth-is-born",
+        "date": [
+            1138
+        ],
+        "tags": [
+            "szeth"
+        ],
+        "coordinates": {
+            "x": 0,
+            "y": 0
+        },
+        "related": [
+            "characters/szeth",
+            "locations/shinovar"
+        ],
+        "image": {
+            "file": "Szeth_-_XX._Judgement_.jpg",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
+        },
+        "coppermind": "Szeth#Early_Life"
+    },
+    {
         "id": "kholin-conquest-of-alethkar-begins",
         "date": [
             1139
@@ -234,7 +291,30 @@
             "characters/dalinar",
             "characters/gavilar"
         ],
-        "coppermind": "Gavilar_Kholin#Unification_of_Alethkar"
+        "coppermind": "Gavilar_Kholin#Unification_of_Alethkar",
+        "tieBreaker": 0
+    },
+    {
+        "id": "jasnah-is-born",
+        "date": [
+            1139
+        ],
+        "tags": [
+            "jasnah"
+        ],
+        "coordinates": {
+            "x": 0,
+            "y": 0
+        },
+        "image": {
+            "file": "Jasnah_-_II._The_High_Priestess_.jpg",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
+        },
+        "related": [
+            "characters/jasnah"
+        ],
+        "coppermind": "Jasnah_Kholin",
+        "tieBreaker": 1
     },
     {
         "id": "dalinar-wins-oathbringer",
@@ -291,7 +371,30 @@
         "image": {
             "file": "Alethkar_Color.jpg",
             "credits": "by [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)"
-        }
+        },
+        "related": [
+            "characters/dalinar",
+            "characters/gavilar"
+        ]
+    },
+    {
+        "id": "elhokar-is-born",
+        "date": [
+            1146
+        ],
+        "tags": [],
+        "coordinates": {
+            "x": 0,
+            "y": 0
+        },
+        "image": {
+            "file": "Elhokar_-_V._Hierophant.jpg",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
+        },
+        "related": [
+            "characters/elhokar"
+        ],
+        "coppermind": "Elhokar_Kholin"
     },
     {
         "id": "adolin-is-born",
@@ -299,8 +402,8 @@
             1150
         ],
         "coordinates": {
-            "x": 738.6,
-            "y": 250.3
+            "x": 738.5,
+            "y": 250
         },
         "tags": [
             "ob",
@@ -309,11 +412,12 @@
         ],
         "coppermind": "Adolin_Kholin",
         "image": {
-            "file": "Adolin.jpgAdolin_-_VIII._Strength_.jpg",
-            "credits": "by [Exmakina](https://coppermind.net/wiki/Coppermind:Artists/Exmakina)"
+            "file": "Child_by_Xabi_Gazte.jpg",
+            "credits": "by [Xabi Gazte](https://coppermind.net/wiki/Coppermind:Artists/Xabi_Gazte)"
         },
         "related": [
-            "characters/adolin"
+            "characters/adolin",
+            "characters/dalinar"
         ]
     },
     {
@@ -329,8 +433,8 @@
             "kaladin"
         ],
         "image": {
-            "file": "Kaladin_-_XI_Justice_.jpg",
-            "credits": "by [Exmakina](https://coppermind.net/wiki/Coppermind:Artists/Exmakina)"
+            "file": "Darkeyes_by_Gal_Or.jpg",
+            "credits": "by [Gal Or](https://coppermind.net/wiki/File:Darkeyes_by_Gal_Or.jpg)"
         },
         "coppermind": "Kaladin",
         "related": [
@@ -415,8 +519,14 @@
             "kaladin"
         ],
         "related": [
-            "locations/hearthstone"
-        ]
+            "locations/hearthstone",
+            "characters/kaladin"
+        ],
+        "coppermind": "Kaladin#Early_childhood",
+        "image": {
+            "file": "Kaladin_young.jpg",
+            "credits": "by [botanicaxu](https://coppermind.net/wiki/Coppermind:Artists/botanicaxu)"
+        }
     },
     {
         "id": "return-to-the-rift",
@@ -430,7 +540,16 @@
         "tags": [
             "ob",
             "dalinar"
-        ]
+        ],
+        "coppermind": "Rathalas#Destruction_of_Rathalas_.281163.29",
+        "related": [
+            "characters/dalinar",
+            "locations/rathalas"
+        ],
+        "image": {
+            "file": "the_rift_by_greatunknown.png",
+            "credits": "by [greatunknown](https://www.deviantart.com/greatunknown/art/The-Rift-721567537)"
+        }
     },
     {
         "id": "szeth-named-truthless",
@@ -445,7 +564,16 @@
         "tags": [
             "szeth"
         ],
-        "tieBreaker": 0
+        "tieBreaker": 0,
+        "image": {
+            "file": "Szeth_-_XX._Judgement_.jpg",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
+        },
+        "coppermind": "Szeth#Early_Life",
+        "related": [
+            "characters/szeth",
+            "locations/shinovar"
+        ]
     },
     {
         "id": "wistiow-dies",
@@ -461,7 +589,12 @@
             "twok",
             "kaladin"
         ],
-        "tieBreaker": 1
+        "tieBreaker": 1,
+        "related": [
+            "characters/kaladin",
+            "locations/hearthstone"
+        ],
+        "coppermind": "Hearthstone#History"
     },
     {
         "id": "the-parshendi-discovered",
@@ -475,6 +608,12 @@
         },
         "tags": [
             "dalinar"
+        ],
+        "related": [
+            "characters/dalinar",
+            "characters/gavilar",
+            "characters/eshonai",
+            "characters/venli"
         ]
     },
     {
@@ -490,6 +629,11 @@
         "tags": [
             "twok",
             "kaladin"
+        ],
+        "coppermind": "Hearthstone#History",
+        "related": [
+            "characters/kaladin",
+            "locations/hearthstone"
         ]
     },
     {
@@ -505,7 +649,15 @@
         "tags": [
             "wor",
             "shallan"
-        ]
+        ],
+        "related": [
+            "characters/shallan"
+        ],
+        "image": {
+            "file": "Shallan_and_her_mother.jpg",
+            "credits": "by [Sheep](https://coppermind.net/wiki/Coppermind:Artists/Sheep)"
+        },
+        "coppermind": "Shallan#Early_Childhood"
     },
     {
         "id": "the-eightys-war",
@@ -514,11 +666,19 @@
             10
         ],
         "coordinates": {
-            "x": 427,
-            "y": 362.5
+            "x": 402,
+            "y": 362
         },
-        "tags": [],
-        "tieBreaker": 0
+        "tags": [
+            "history"
+        ],
+        "tieBreaker": 0,
+        "coppermind": "Eighty's_War",
+        "related": [
+            "locations/emul",
+            "locations/tukar",
+            "locations/sesemalex-dar"
+        ]
     },
     {
         "id": "gavilars-assassination",
@@ -534,9 +694,26 @@
             "twok",
             "wor",
             "ob",
-            "dalinar"
+            "dalinar",
+            "szeth",
+            "navani",
+            "adolin",
+            "renarin",
+            "jasnah",
+            "eshonai",
+            "venli"
         ],
-        "tieBreaker": 1
+        "tieBreaker": 1,
+        "related": [
+            "locations/kholinar",
+            "characters/gavilar",
+            "characters/szeth"
+        ],
+        "coppermind": "Assassination_of_Gavilar",
+        "image": {
+            "file": "Reluctant_Villain_by_Art_Dem.jpg",
+            "credits": "by [Artem Demura](https://coppermind.net/wiki/Coppermind:Artists/Artem_Demura)"
+        }
     },
     {
         "id": "dalinar-visits-the-nightwatcher",
@@ -551,7 +728,16 @@
         "tags": [
             "ob",
             "dalinar"
-        ]
+        ],
+        "related": [
+            "locations/valley",
+            "characters/cultivation"
+        ],
+        "coppermind": "Dalinar_Kholin#Gavilar.27s_Death_and_Dalinar.27s_Transformation",
+        "image": {
+            "file": "Cultivation_and_the_Nightwatcher_2.jpg",
+            "credits": "by [Kyle Pearson](https://coppermind.net/wiki/Coppermind:Artists/Kyle_Pearson)"
+        }
     },
     {
         "id": "kaladin-joins-the-army",
@@ -566,6 +752,15 @@
         "tags": [
             "twok",
             "kaladin"
+        ],
+        "image": {
+            "file": "Stormblessed_by_BBQShapez.png",
+            "credits": "by [BBQShapez](https://coppermind.net/wiki/Coppermind:Artists/BBQShapez)"
+        },
+        "coppermind": "Kaladin#A_decision_made",
+        "related": [
+            "characters/kaladin",
+            "locations/hearthstone"
         ]
     },
     {
@@ -578,7 +773,19 @@
             "x": 484.1,
             "y": 333.8
         },
-        "tags": []
+        "tags": [
+            "taravangian"
+        ],
+        "related": [
+            "characters/taravangian",
+            "characters/cultivation",
+            "misc/diagram"
+        ],
+        "coppermind": "Taravangian#The_Nightwatcher_and_the_creation_of_the_Diagram",
+        "image": {
+            "file": "Cultivation_and_the_Nightwatcher_2.jpg",
+            "credits": "by [Kyle Pearson](https://coppermind.net/wiki/Coppermind:Artists/Kyle_Pearson)"
+        }
     },
     {
         "id": "tien-dies",
@@ -593,6 +800,14 @@
         "tags": [
             "twok",
             "kaladin"
+        ],
+        "image": {
+            "file": "Driven_by_Guilt_by_Ari_Ibarra.jpg",
+            "credits": "by [Ari Ibarra](https://coppermind.net/wiki/Coppermind:Artists/Ari_Ibarra)"
+        },
+        "coppermind": "Kaladin#Tien.27s_Death",
+        "related": [
+            "characters/kaladin"
         ]
     },
     {
@@ -608,7 +823,11 @@
         "tags": [
             "wor",
             "shallan"
-        ]
+        ],
+        "related": [
+            "characters/shallan"
+        ],
+        "coppermind": "Shallan_Davar#Cutting_the_Thorns"
     },
     {
         "id": "gavinor-is-born",
@@ -620,7 +839,12 @@
             "x": 738.7,
             "y": 250.4
         },
-        "tags": []
+        "tags": [],
+        "coppermind": "Gavinor",
+        "related": [
+            "locations/kholinar",
+            "characters/elhokar"
+        ]
     },
     {
         "id": "shallan-meets-wit",
@@ -635,7 +859,12 @@
         "tags": [
             "wor",
             "shallan"
-        ]
+        ],
+        "related": [
+            "characters/shallan",
+            "characters/wit"
+        ],
+        "coppermind": "Shallan_Davar#Cutting_the_Thorns"
     },
     {
         "id": "kaladin-becomes-a-slave",
@@ -650,6 +879,14 @@
         "tags": [
             "twok",
             "kaladin"
+        ],
+        "image": {
+            "file": "Stormblessed_by_ThomasW.jpg",
+            "credits": "by [ThomasW](https://coppermind.net/wiki/Coppermind:Artists/ThomasW)"
+        },
+        "coppermind": "Kaladin#Fighting_the_Shardbearer",
+        "related": [
+            "characters/kaladin"
         ]
     },
     {
@@ -666,7 +903,15 @@
             "twok",
             "rysn"
         ],
-        "tieBreaker": 0
+        "tieBreaker": 0,
+        "related": [
+            "characters/rysn"
+        ],
+        "image": {
+            "file": "Rysn.jpg",
+            "credits": "by [botanicaxu](https://botanicaxu.tumblr.com/post/165173520094/oathbringer-countdown-70-days-rysn-larkin)"
+        },
+        "coppermind": "Rysn#Shinovar"
     },
     {
         "id": "shallan-kills-her-father",
@@ -682,7 +927,11 @@
             "wor",
             "shallan"
         ],
-        "tieBreaker": 1
+        "tieBreaker": 1,
+        "coppermind": "Shallan_Davar#The_Perfect_Daughter",
+        "related": [
+            "characters/shallan"
+        ]
     },
     {
         "id": "oroden-is-born",
@@ -694,7 +943,16 @@
             "x": 734.1,
             "y": 196.3
         },
-        "tags": []
+        "tags": [],
+        "image": {
+            "file": "Child_of_Peace_by_Vladora.png",
+            "credits": "by [Vladora](https://coppermind.net/wiki/Coppermind:Artists/Vladora)"
+        },
+        "coppermind": "Oroden",
+        "related": [
+            "locations/hearthstone",
+            "characters/kaladin"
+        ]
     },
     {
         "id": "rysn-in-the-reshi-isles",
@@ -709,6 +967,14 @@
         "tags": [
             "wor",
             "rysn"
+        ],
+        "image": {
+            "file": "Rysn-and-Larkin.jpg",
+            "credits": "by [botanicaxu](https://botanicaxu.tumblr.com/post/165173520094/oathbringer-countdown-70-days-rysn-larkin)"
+        },
+        "coppermind": "Rysn#Reshi_Isles",
+        "related": [
+            "characters/rysn"
         ]
     },
     {
@@ -725,6 +991,15 @@
             "twok",
             "shallan",
             "jasnah"
+        ],
+        "coppermind": "Shallan_Davar#Kharbranth_.281173.29",
+        "image": {
+            "file": "Shallan_in_the_Palanaeum.jpg",
+            "credits": "by [Alex Allen](https://coppermind.net/wiki/Coppermind:Artists/Alex_Allen)"
+        },
+        "related": [
+            "characters/shallan",
+            "characters/jasnah"
         ]
     },
     {
@@ -740,7 +1015,16 @@
         "tags": [
             "twok",
             "szeth"
-        ]
+        ],
+        "coppermind": "Szeth#Taravangian.27s_Killer",
+        "related": [
+            "characters/szeth",
+            "misc/diagram"
+        ],
+        "image": {
+            "file": "Assassin_in_White_by_Krystian_Biskup.jpg",
+            "credits": "by [Krystian Biskup](https://imgur.com/gallery/Bw2k31X)"
+        }
     },
     {
         "id": "kaladin-joins-bridge-four",
@@ -759,14 +1043,19 @@
             "kaladin"
         ],
         "image": {
-            "file": "kaladin.jpg",
-            "credits": "by [Exmakina](https://coppermind.net/wiki/Coppermind:Artists/Exmakina)",
+            "file": "Honor_is_Dead_by_ThomasW.jpg",
+            "credits": "https://coppermind.net/wiki/Coppermind:Artists/ThomasW",
             "offset": {
                 "x": 90,
                 "y": 0
             },
             "size": 150
-        }
+        },
+        "coppermind": "Kaladin#Bridgeman_.281173.29",
+        "related": [
+            "characters/kaladin",
+            "locations/shattered-plains"
+        ]
     },
     {
         "id": "kaladin-strung-up",
@@ -783,7 +1072,16 @@
         "tags": [
             "twok",
             "kaladin"
-        ]
+        ],
+        "related": [
+            "locations/shattered-plains",
+            "characters/kaladin"
+        ],
+        "image": {
+            "file": "Survive_the_Storm_by_Ari_Ibarra.jpg",
+            "credits": "by [Ari Ibarra](https://coppermind.net/wiki/Coppermind:Artists/Ari_Ibarra)"
+        },
+        "coppermind": "Kaladin#The_Stormfather.27s_Judgement"
     },
     {
         "id": "chasmfiend-hunt-disaster",
@@ -801,6 +1099,17 @@
             "twok",
             "dalinar",
             "adolin"
+        ],
+        "image": {
+            "file": "Dalinar_the_Blackthorn.jpg",
+            "credits": "by [Evan Monteiro](https://coppermind.net/wiki/Coppermind:Artists/Evan_Monteiro)"
+        },
+        "coppermind": "Dalinar_Kholin#The_War_Changes",
+        "related": [
+            "characters/dalinar",
+            "characters/adolin",
+            "characters/elhokar",
+            "locations/shattered-plains"
         ]
     },
     {
@@ -818,6 +1127,16 @@
         "tags": [
             "twok",
             "kaladin"
+        ],
+        "image": {
+            "file": "Secret_Training_by_Adam_J._Marin.png",
+            "credits": "by [Adam J. Marin](https://imgur.com/gallery/Bw2k31X)"
+        },
+        "coppermind": "Kaladin#Transforming_Bridge_Four_into_spearmen",
+        "related": [
+            "characters/kaladin",
+            "locations/shattered-plains",
+            "characters/moash"
         ]
     },
     {
@@ -836,7 +1155,11 @@
             "twok",
             "dalinar",
             "adolin",
-            "navani"
+            "navani",
+            "renarin"
+        ],
+        "related": [
+            "characters/dalinar"
         ]
     },
     {
@@ -854,8 +1177,16 @@
         "tags": [
             "twok",
             "shallan",
-            "jasnah"
-        ]
+            "jasnah",
+            "taravangian"
+        ],
+        "related": [
+            "characters/shallan",
+            "characters/jasnah",
+            "characters/taravangian",
+            "locations/kharbranth"
+        ],
+        "coppermind": "Shallan_Davar#A_Scholar.27s_Mantle"
     },
     {
         "id": "dalinar-and-sadeas-begin-joint-bridge-runs",
@@ -874,7 +1205,14 @@
             "dalinar",
             "adolin",
             "kaladin"
-        ]
+        ],
+        "related": [
+            "characters/dalinar",
+            "characters/adolin",
+            "characters/kaladin",
+            "locations/shattered-plains"
+        ],
+        "coppermind": "Dalinar_Kholin#Dalinar_Reaches_Out"
     },
     {
         "id": "szeth-assassinates-hanavanar",
@@ -891,6 +1229,16 @@
         "tags": [
             "twok",
             "szeth"
+        ],
+        "coppermind": "Szeth#Taravangian.27s_Killer",
+        "image": {
+            "file": "Assassin_in_White_by_Krystian_Biskup.jpg",
+            "credits": "by [Krystian Biskup](https://imgur.com/gallery/Bw2k31X)"
+        },
+        "related": [
+            "characters/szeth",
+            "locations/vedenar",
+            "misc/diagram"
         ]
     },
     {
@@ -909,6 +1257,16 @@
             "twok",
             "shallan",
             "jasnah"
+        ],
+        "image": {
+            "file": "the_way_of_kings__excerpt_illustration_by_beagifted.jpg",
+            "credits": "by [beagifted](https://www.deviantart.com/beagifted/art/The-Way-of-Kings-Excerpt-Illustration-826870710)"
+        },
+        "coppermind": "Shallan_Davar#Heart_of_a_Thief",
+        "related": [
+            "characters/shallan",
+            "characters/jasnah",
+            "locations/kharbranth"
         ]
     },
     {
@@ -926,6 +1284,11 @@
         "tags": [
             "twok",
             "kaladin"
+        ],
+        "coppermind": "Kaladin#Discovery_of_Surgebinding_powers",
+        "related": [
+            "characters/kaladin",
+            "locations/shattered-plains"
         ]
     },
     {
@@ -944,8 +1307,17 @@
             "twok",
             "dalinar",
             "adolin",
-            "navani"
-        ]
+            "navani",
+            "renarin"
+        ],
+        "related": [
+            "characters/dalinar",
+            "characters/navani",
+            "characters/adolin",
+            "characters/renarin",
+            "locations/shattered-plains"
+        ],
+        "coppermind": "Dalinar_Kholin#Dalinar_Reaches_Out"
     },
     {
         "id": "shallan-visits-shadesmar",
@@ -964,7 +1336,17 @@
             "shallan",
             "jasnah"
         ],
-        "shadesmar": true
+        "shadesmar": true,
+        "related": [
+            "characters/shallan",
+            "characters/jasnah",
+            "locations/kharbranth"
+        ],
+        "coppermind": "Shallan_Davar#Heart_of_a_Thief",
+        "image": {
+            "file": "Shallan_and_Cryptic.jpg",
+            "credits": "by [Petar Penev](https://coppermind.net/wiki/Coppermind:Artists/Petar_Penev)"
+        }
     },
     {
         "id": "shallan-confronts-jasnah",
@@ -982,7 +1364,13 @@
             "twok",
             "shallan",
             "jasnah"
-        ]
+        ],
+        "related": [
+            "characters/shallan",
+            "characters/jasnah",
+            "locations/kharbranth"
+        ],
+        "coppermind": "Shallan_Davar#Questions_and_Answers"
     },
     {
         "id": "battle-of-the-tower",
@@ -1000,7 +1388,21 @@
             "twok",
             "kaladin",
             "dalinar",
-            "adolin"
+            "adolin",
+            "renarin",
+            "navani"
+        ],
+        "image": {
+            "file": "The_Leap_by_Grant_Hansen.jpg",
+            "credits": "by [Grant Hansen](https://coppermind.net/wiki/Coppermind:Artists/Grant_M._Hansen)"
+        },
+        "coppermind": "Battle_of_the_Tower",
+        "related": [
+            "characters/dalinar",
+            "characters/adolin",
+            "characters/kaladin",
+            "locations/shattered-plains",
+            "characters/moash"
         ]
     },
     {
@@ -1012,13 +1414,20 @@
             5
         ],
         "coordinates": {
-            "x": 643.9,
-            "y": 413.5
+            "x": 666.4,
+            "y": 427.6
         },
         "tags": [
             "wor",
-            "shallan"
-        ]
+            "shallan",
+            "jasnah"
+        ],
+        "related": [
+            "characters/shallan",
+            "characters/jasnah",
+            "locations/longbrows-straights"
+        ],
+        "coppermind": "Shallan_Davar#The_Wind.27s_Pleasure"
     },
     {
         "id": "taln-arrives-in-kholinar",
@@ -1033,8 +1442,18 @@
             "y": 250.3
         },
         "tags": [
-            "twok"
-        ]
+            "twok",
+            "wit"
+        ],
+        "related": [
+            "characters/wit",
+            "locations/kholinar"
+        ],
+        "coppermind": "Talenel#Return_to_Kholinar",
+        "image": {
+            "file": "Taln_Neirr.png",
+            "credits": "by [Neirr](https://coppermind.net/wiki/Coppermind:Artists/Neirr)"
+        }
     },
     {
         "id": "everstorm-countdown",
@@ -1053,7 +1472,14 @@
             "dalinar",
             "kaladin",
             "adolin",
-            "renarin"
+            "renarin",
+            "navani"
+        ],
+        "coppermind": "Dalinar_Kholin#The_Start",
+        "related": [
+            "characters/dalinar",
+            "characters/renarin",
+            "locations/shattered-plains"
         ]
     },
     {
@@ -1065,14 +1491,20 @@
             3
         ],
         "coordinates": {
-            "x": 731,
-            "y": 432.7
+            "x": 738.7,
+            "y": 434.5
         },
         "tags": [
             "wor",
             "shallan",
             "jasnah"
-        ]
+        ],
+        "related": [
+            "characters/shallan",
+            "characters/jasnah",
+            "misc/ghostbloods"
+        ],
+        "coppermind": "Shallan_Davar#The_Wind.27s_Pleasure"
     },
     {
         "id": "amarams-arrival",
@@ -1090,6 +1522,16 @@
             "wor",
             "dalinar",
             "kaladin"
+        ],
+        "image": {
+            "file": "Amaram_by_Marie_Seeberger.jpg",
+            "credits": "by [Marie Seeberger](https://coppermind.net/wiki/Coppermind:Artists/Marie_Seeberger)"
+        },
+        "coppermind": "Kaladin#Becoming_What_Dalinar_Needs",
+        "related": [
+            "characters/kaladin",
+            "characters/dalinar",
+            "locations/shattered-plains"
         ]
     },
     {
@@ -1101,11 +1543,17 @@
             5
         ],
         "coordinates": {
-            "x": 733.7,
-            "y": 412.5
+            "x": 738.6,
+            "y": 431.2
         },
         "tags": [
-            "wor"
+            "wor",
+            "shallan"
+        ],
+        "coppermind": "Shallan_Davar#Tradesman_Tvlakv",
+        "related": [
+            "characters/shallan",
+            "locations/frostlands"
         ]
     },
     {
@@ -1122,7 +1570,17 @@
         },
         "tags": [
             "wor",
-            "adolin"
+            "adolin",
+            "dalinar"
+        ],
+        "image": {
+            "file": "Duelist_by_Randy_Vargas.jpg",
+            "credits": "by [Randy Vargas](https://coppermind.net/wiki/Coppermind:Artists/Randy_Vargas)"
+        },
+        "coppermind": "Adolin_Kholin#Disarming_the_Shardbearers",
+        "related": [
+            "characters/adolin",
+            "locations/shattered-plains"
         ]
     },
     {
@@ -1134,13 +1592,18 @@
             1
         ],
         "coordinates": {
-            "x": 736.9,
-            "y": 385.6
+            "x": 745.7,
+            "y": 404.9
         },
         "tags": [
             "wor",
             "shallan"
-        ]
+        ],
+        "related": [
+            "characters/shallan",
+            "locations/frostlands"
+        ],
+        "coppermind": "Shallan_Davar#Tradesman_Tvlakv"
     },
     {
         "id": "boots",
@@ -1151,14 +1614,24 @@
             3
         ],
         "coordinates": {
-            "x": 754.9,
-            "y": 368.4
+            "x": 754.8,
+            "y": 373
         },
         "tags": [
             "wor",
             "shallan",
             "kaladin"
-        ]
+        ],
+        "related": [
+            "characters/shallan",
+            "characters/kaladin",
+            "locations/shattered-plains"
+        ],
+        "coppermind": "Shallan_Davar#Tyn.27s_Apprentice",
+        "image": {
+            "file": "Shallan demanding Kals shoes_by_mjusi.jpg",
+            "credits": "by [mjusi](https://www.reddit.com/r/Stormlight_Archive/comments/308jyt/wor_boots_please_finished_fanart_210/)"
+        }
     },
     {
         "id": "eshonai-adopts-stormform",
@@ -1174,9 +1647,20 @@
         },
         "tags": [
             "wor",
-            "eshonai"
+            "eshonai",
+            "venli"
         ],
-        "tieBreaker": 0
+        "tieBreaker": 0,
+        "related": [
+            "characters/eshonai",
+            "characters/venli",
+            "locations/narak"
+        ],
+        "coppermind": "Eshonai#The_Everstorm",
+        "image": {
+            "file": "Eshonai_by_Casey_Fallon.jpg",
+            "credits": "by [Casey Fallon](https://coppermind.net/wiki/Coppermind:Artists/Casey_Fallon)"
+        }
     },
     {
         "id": "szeth-attacks-dalinar",
@@ -1195,9 +1679,22 @@
             "dalinar",
             "kaladin",
             "adolin",
-            "renarin"
+            "renarin",
+            "szeth"
         ],
-        "tieBreaker": 1
+        "tieBreaker": 1,
+        "related": [
+            "characters/dalinar",
+            "characters/adolin",
+            "characters/kaladin",
+            "characters/szeth",
+            "locations/shattered-plains"
+        ],
+        "coppermind": "Dalinar_Kholin#The_Assassin_in_White",
+        "image": {
+            "file": "Facing_off_with_the_Assassin_in_White.jpg",
+            "credits": "by [Jules Aguimatang]https://coppermind.net/wiki/Coppermind:Artists/Jules_Aguimatang)"
+        }
     },
     {
         "id": "shallan-kills-tyn",
@@ -1208,14 +1705,24 @@
             5
         ],
         "coordinates": {
-            "x": 753,
-            "y": 368.9
+            "x": 756.3,
+            "y": 367
         },
         "tags": [
             "wor",
             "shallan"
         ],
-        "tieBreaker": 2
+        "tieBreaker": 2,
+        "image": {
+            "file": "Shallan_shardblade1_full.jpg",
+            "credits": "by [Sheep](https://coppermind.net/wiki/Coppermind:Artists/Sheep)"
+        },
+        "related": [
+            "characters/shallan",
+            "locations/shattered-plains",
+            "misc/ghostbloods"
+        ],
+        "coppermind": "Shallan_Davar#Tyn.27s_Apprentice"
     },
     {
         "id": "shallan-meets-ghostbloods",
@@ -1232,7 +1739,16 @@
         "tags": [
             "wor",
             "shallan"
-        ]
+        ],
+        "related": [
+            "locations/shattered-plains",
+            "misc/ghostbloods"
+        ],
+        "image": {
+            "file": "Ghostblood_Agent_by_Soph_P.jpg",
+            "credits": "by [Soph Peralta](https://coppermind.net/wiki/Coppermind:Artists/Soph_Peralta)"
+        },
+        "coppermind": "Shallan_Davar#The_Ghostbloods"
     },
     {
         "id": "meeting-with-graves",
@@ -1249,7 +1765,42 @@
         "tags": [
             "wor",
             "kaladin"
-        ]
+        ],
+        "related": [
+            "characters/kaladin",
+            "characters/moash",
+            "locations/shattered-plains",
+            "misc/diagram"
+        ],
+        "coppermind": "Kaladin#Preparing_for_the_Assassin_in_White"
+    },
+    {
+        "id": "shallan-adolin-date",
+        "date": [
+            1173,
+            10,
+            4,
+            1
+        ],
+        "tags": [
+            "shallan",
+            "adolin",
+            "wor"
+        ],
+        "coordinates": {
+            "x": 759,
+            "y": 357.4
+        },
+        "related": [
+            "characters/shallan",
+            "characters/adolin",
+            "locations/shattered-plains"
+        ],
+        "image": {
+            "file": "Shallan_Adolin.jpg",
+            "credits": "https://coppermind.net/wiki/Coppermind:Artists/Shuravf"
+        },
+        "coppermind": "Shallan_Davar#Adolin_Kholin.27s_Betrothed"
     },
     {
         "id": "disadvantaged-duel",
@@ -1271,7 +1822,18 @@
             "renarin",
             "shallan",
             "navani"
-        ]
+        ],
+        "related": [
+            "characters/adolin",
+            "characters/kaladin",
+            "characters/renarin",
+            "locations/shattered-plains"
+        ],
+        "coppermind": "https://coppermind.net/wiki/Adolin_Kholin#The_Duel",
+        "image": {
+            "file": "The_Impossible_Odds_by_Randy_Vargas.jpg",
+            "credits": "by [Randy Vargas](https://coppermind.net/wiki/Coppermind:Artists/Randy_Vargas)"
+        }
     },
     {
         "id": "eshonai-seizes-control",
@@ -1289,7 +1851,13 @@
             "wor",
             "eshonai"
         ],
-        "tieBreaker": 0
+        "tieBreaker": 0,
+        "related": [
+            "characters/eshonai",
+            "characters/venli",
+            "locations/narak"
+        ],
+        "coppermind": "Eshonai#The_Everstorm"
     },
     {
         "id": "lift-saves-gawx",
@@ -1307,7 +1875,16 @@
             "wor",
             "lift"
         ],
-        "tieBreaker": 1
+        "tieBreaker": 1,
+        "related": [
+            "characters/lift",
+            "locations/azimir"
+        ],
+        "image": {
+            "file": "Lift_-_VII._The_Chariot_.jpg",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
+        },
+        "coppermind": "Lift#Bronze_Palace_Heist"
     },
     {
         "id": "shallan-meets-taln",
@@ -1324,7 +1901,12 @@
         "tags": [
             "wor",
             "shallan"
-        ]
+        ],
+        "related": [
+            "locations/shattered-plains",
+            "characters/shallan"
+        ],
+        "coppermind": "Shallan_Davar#The_Ghostbloods"
     },
     {
         "id": "taravangian-crowned-king-of-jah-keved",
@@ -1342,6 +1924,16 @@
             "wor",
             "taravangian",
             "szeth"
+        ],
+        "image": {
+            "file": "Taravangian_as_the_Wheel_of_Fortune_Orientation_1.jpg",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
+        },
+        "coppermind": "Taravangian#King_of_Jah_Keved",
+        "related": [
+            "characters/taravangian",
+            "characters/szeth",
+            "locations/vedenar"
         ]
     },
     {
@@ -1360,6 +1952,16 @@
             "wor",
             "kaladin",
             "shallan"
+        ],
+        "coppermind": "Chasmfiend_Fight_by_Ellie_L..png",
+        "image": {
+            "file": "Chasmfiend_Fight_by_Ellie_L..png",
+            "credits": "by [Ellie L.](https://coppermind.net/wiki/Coppermind:Artists/Ellie_L.)"
+        },
+        "related": [
+            "characters/kaladin",
+            "characters/shallan",
+            "locations/shattered-plains"
         ]
     },
     {
@@ -1381,8 +1983,28 @@
             "adolin",
             "renarin",
             "shallan",
-            "navani"
-        ]
+            "navani",
+            "eshonai",
+            "venli",
+            "szeth"
+        ],
+        "related": [
+            "characters/dalinar",
+            "characters/adolin",
+            "characters/kaladin",
+            "characters/renarin",
+            "characters/navani",
+            "characters/shallan",
+            "characters/eshonai",
+            "characters/venli",
+            "characters/szeth",
+            "locations/narak"
+        ],
+        "coppermind": "Battle_of_Narak",
+        "image": {
+            "file": "Battle_of_Narak.jpeg",
+            "credits": "by [Isaac Stewart](Battle_of_Narak.jpeg)"
+        }
     },
     {
         "id": "urithiru-rediscovered",
@@ -1404,6 +2026,15 @@
             "renarin",
             "shallan",
             "navani"
+        ],
+        "image": {
+            "file": "Urithiru3_by_Jacobo_Montoya.jpg",
+            "credits": "by [Jacoo Montoya](https://coppermind.net/wiki/Coppermind:Artists/Jacobo_Montoya)"
+        },
+        "coppermind": "Urithiru#True_Desolation",
+        "related": [
+            "characters/shallan",
+            "locations/urithiru"
         ]
     },
     {
@@ -1421,6 +2052,15 @@
         "tags": [
             "wor",
             "adolin"
+        ],
+        "image": {
+            "file": "WoR_SH_-_Adolin.jpg",
+            "credits": "by [botanicaxu](https://coppermind.net/wiki/User:Botanicaxu)"
+        },
+        "coppermind": "Adolin_Kholin#Exploring_Urithiru",
+        "related": [
+            "characters/adolin",
+            "locations/urithiru"
         ]
     },
     {
@@ -1439,7 +2079,17 @@
             "wor",
             "jasnah",
             "wit"
-        ]
+        ],
+        "related": [
+            "characters/jasnah",
+            "characters/wit",
+            "locations/unclaimed-hills"
+        ],
+        "coppermind": "Jasnah_Kholin#Return_to_the_Physical_Realm_.281173.E2.80.94.29",
+        "image": {
+            "file": "Jasnah_by_Audrey_Hotte.png",
+            "credits": "by [Audrey Hotte](https://coppermind.net/wiki/Coppermind:Artists/Audrey_Hotte)"
+        }
     },
     {
         "id": "lift-saves-the-stump",
@@ -1454,9 +2104,17 @@
             "y": 337.7
         },
         "tags": [
-            "ed",
             "lift"
-        ]
+        ],
+        "image": {
+            "file": "Hug_the_Darkness.png",
+            "credits": "by [LittleGreyDragon](https://coppermind.net/wiki/Coppermind:Artists/LittleGreyDragon)"
+        },
+        "related": [
+            "characters/lift",
+            "locations/yeddaw"
+        ],
+        "coppermind": "Lift#Yeddaw"
     },
     {
         "id": "dalinar-and-navani-are-married",
@@ -1476,7 +2134,17 @@
             "navani",
             "adolin",
             "renarin"
-        ]
+        ],
+        "image": {
+            "file": "Dalinar_and_Navani_by_Marie_Seeberger.jpg",
+            "credits": "by [Marie Seeberger](https://coppermind.net/wiki/Coppermind:Artists/Marie_Seeberger)"
+        },
+        "related": [
+            "characters/dalinar",
+            "characters/navani",
+            "locations/urithiru"
+        ],
+        "coppermind": "Dalinar_Kholin#Leading_the_Knights_Radiant_.281174_-_.29"
     },
     {
         "id": "kaladin-in-hearthstone",
@@ -1493,7 +2161,16 @@
         "tags": [
             "ob",
             "kaladin"
-        ]
+        ],
+        "related": [
+            "characters/kaladin",
+            "locations/hearthstone"
+        ],
+        "coppermind": "https://coppermind.net/wiki/Kaladin#Returning_to_Hearthstone",
+        "image": {
+            "file": "Thepathtohearthstone.png",
+            "credits": "by [Ashley Coad](https://coppermind.net/wiki/Coppermind:Artists/Ashley_Coad)"
+        }
     },
     {
         "id": "murders-in-urithiru",
@@ -1513,6 +2190,12 @@
             "shallan",
             "renarin",
             "dalinar"
+        ],
+        "related": [
+            "characters/dalinar",
+            "characters/adolin",
+            "characters/shallan",
+            "locations/urithiru"
         ]
     },
     {
@@ -1530,6 +2213,10 @@
         "tags": [
             "ob",
             "kaladin"
+        ],
+        "coppermind": "Kaladin#Finding_the_Parshmen",
+        "related": [
+            "characters/kaladin"
         ]
     },
     {
@@ -1547,6 +2234,15 @@
         "tags": [
             "ob",
             "shallan"
+        ],
+        "image": {
+            "file": "Veil_by_LGD.jpg",
+            "credits": "by [LittleGreyDragon](https://coppermind.net/wiki/Coppermind:Artists/LittleGreyDragon)"
+        },
+        "coppermind": "Shallan_Davar#Veil.27s_Investigation",
+        "related": [
+            "characters/shallan",
+            "locations/urithiru"
         ]
     },
     {
@@ -1566,7 +2262,17 @@
             "taravangian",
             "dalinar"
         ],
-        "tieBreaker": 0
+        "tieBreaker": 0,
+        "related": [
+            "misc/diagram",
+            "characters/taravangian",
+            "locations/urithiru"
+        ],
+        "image": {
+            "file": "Taravangian_as_the_Wheel_of_Fortune_Orientation_1.jpg",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
+        },
+        "coppermind": "Taravangian#Dalinar.27s_coalition_of_Roshar"
     },
     {
         "id": "shallan-discovers-the-midnight-essence",
@@ -1584,7 +2290,12 @@
             "ob",
             "shallan"
         ],
-        "tieBreaker": 1
+        "tieBreaker": 1,
+        "coppermind": "Shallan_Davar#A_New_Job",
+        "related": [
+            "characters/shallan",
+            "locations/urithiru"
+        ]
     },
     {
         "id": "re-shephir-driven-from-urithiru",
@@ -1604,7 +2315,18 @@
             "adolin",
             "renarin"
         ],
-        "tieBreaker": 0
+        "tieBreaker": 0,
+        "image": {
+            "file": "Midnight_Mother_2.jpg",
+            "credits": "by [Petar Penev](https://coppermind.net/wiki/Coppermind:Artists/Petar_Penev)"
+        },
+        "coppermind": "Shallan_Davar#Encounter_with_Re-Shephir",
+        "related": [
+            "characters/shallan",
+            "characters/adolin",
+            "characters/renarin",
+            "locations/urithiru"
+        ]
     },
     {
         "id": "kaladin-leaves-alethkar",
@@ -1622,7 +2344,41 @@
             "ob",
             "kaladin"
         ],
-        "tieBreaker": 1
+        "tieBreaker": 1,
+        "related": [
+            "characters/kaladin",
+            "locations/revolar"
+        ],
+        "coppermind": "Kaladin#Revolar"
+    },
+    {
+        "id": "jasnah-returns",
+        "date": [
+            1174,
+            1,
+            5,
+            2
+        ],
+        "tags": [
+            "ob",
+            "shallan",
+            "jasnah",
+            "navani"
+        ],
+        "coordinates": {
+            "x": 0,
+            "y": 0
+        },
+        "related": [
+            "characters/jasnah",
+            "locations/urithiru"
+        ],
+        "tieBreaker": 2,
+        "image": {
+            "file": "Shallan_and_Jasnah_Reunited.png",
+            "credits": "by [BBQShapez](https://coppermind.net/wiki/Coppermind:Artists/BBQShapez)"
+        },
+        "coppermind": "Shallan_Davar#Jasnah.27s_Return"
     },
     {
         "id": "moash-and-graves-attacked",
@@ -1640,7 +2396,13 @@
             "ob",
             "moash"
         ],
-        "tieBreaker": 2
+        "tieBreaker": 3,
+        "related": [
+            "characters/moash",
+            "locations/frostlands",
+            "misc/diagram"
+        ],
+        "coppermind": "Moash#Attempted_Regicide_and_Desertion"
     },
     {
         "id": "bridge-four-begins-training-squires",
@@ -1651,13 +2413,22 @@
             1
         ],
         "coordinates": {
-            "x": 486.3,
-            "y": 318.3
+            "x": 768,
+            "y": 363.9
         },
         "tags": [
             "ob",
             "kaladin"
-        ]
+        ],
+        "related": [
+            "characters/kaladin",
+            "locations/narak"
+        ],
+        "coppermind": "Kaladin#Training_and_Recruiting_Bridge_Four_Squires",
+        "image": {
+            "file": "Lyn_by_Shuravf.jpg",
+            "credits": "by [Shuravf](https://coppermind.net/wiki/Coppermind:Artists/Shuravf)"
+        }
     },
     {
         "id": "shallan-recruits-ishnah",
@@ -1674,6 +2445,10 @@
         "tags": [
             "ob",
             "shallan"
+        ],
+        "coppermind": "Ishnah#History",
+        "related": [
+            "characters/shallan"
         ]
     },
     {
@@ -1685,13 +2460,17 @@
             4
         ],
         "coordinates": {
-            "x": 762.3,
-            "y": 360.2
+            "x": 759.3,
+            "y": 369.4
         },
         "tags": [
             "ob",
             "venli"
-        ]
+        ],
+        "related": [
+            "characters/venli"
+        ],
+        "coppermind": "Venli#True_Desolation"
     },
     {
         "id": "renarin-discovers-the-gemstone-library",
@@ -1710,7 +2489,11 @@
             "renarin",
             "jasnah",
             "navani"
-        ]
+        ],
+        "related": [
+            "characters/renarin"
+        ],
+        "coppermind": "Urithiru_gem_archive"
     },
     {
         "id": "odium-appears-to-dalinar",
@@ -1727,7 +2510,16 @@
         "tags": [
             "ob",
             "dalinar"
-        ]
+        ],
+        "related": [
+            "characters/dalinar",
+            "characters/odium"
+        ],
+        "coppermind": "Dalinar_Kholin#Uniting_Roshar",
+        "image": {
+            "file": "Odium_-_XV_the_Devil.jpg",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
+        }
     },
     {
         "id": "oathgate-to-thaylen-city-opened",
@@ -1743,7 +2535,17 @@
         },
         "tags": [
             "ob",
-            "dalinar"
+            "dalinar",
+            "kaladin",
+            "shallan",
+            "renarin"
+        ],
+        "coppermind": "Thaylen_City#Alliance_with_Urithiru",
+        "related": [
+            "characters/dalinar",
+            "characters/kaladin",
+            "characters/shallan",
+            "locations/thaylen-city"
         ]
     },
     {
@@ -1755,13 +2557,17 @@
             1
         ],
         "coordinates": {
-            "x": 726.6,
-            "y": 236.7
+            "x": 728.3,
+            "y": 237.1
         },
         "tags": [
             "ob",
             "moash"
-        ]
+        ],
+        "related": [
+            "characters/moash"
+        ],
+        "coppermind": "Moash#Servant_of_the_Fused"
     },
     {
         "id": "elhokars-team-arrive-in-kholinar",
@@ -1781,7 +2587,15 @@
             "adolin",
             "shallan"
         ],
-        "tieBreaker": 0
+        "tieBreaker": 0,
+        "related": [
+            "characters/kaladin",
+            "characters/adolin",
+            "characters/shallan",
+            "characters/elhokar",
+            "locations/kholinar"
+        ],
+        "coppermind": "Siege_of_Kholinar"
     },
     {
         "id": "dalinar-travels-to-azimir",
@@ -1797,9 +2611,18 @@
         },
         "tags": [
             "ob",
-            "dalinar"
+            "dalinar",
+            "jasnah",
+            "lift"
         ],
-        "tieBreaker": 1
+        "tieBreaker": 1,
+        "related": [
+            "characters/dalinar",
+            "locations/azimir",
+            "characters/jasnah",
+            "characters/lift"
+        ],
+        "coppermind": "Dalinar_Kholin#Uniting_Roshar"
     },
     {
         "id": "moash-arrives-outside-kholinar",
@@ -1810,12 +2633,17 @@
             4
         ],
         "coordinates": {
-            "x": 738.9,
-            "y": 250.4
+            "x": 738.1,
+            "y": 249.4
         },
         "tags": [
             "ob",
             "moash"
+        ],
+        "coppermind": "Siege_of_Kholinar",
+        "related": [
+            "characters/moash",
+            "locations/kholinar"
         ]
     },
     {
@@ -1833,7 +2661,16 @@
         "tags": [
             "ob",
             "kaladin"
-        ]
+        ],
+        "coppermind": "Kaladin#Infiltrating_the_Wall_Guard",
+        "related": [
+            "characters/kaladin",
+            "locations/kholinar"
+        ],
+        "image": {
+            "file": "Azure.jpg",
+            "credits": "by [FelCandy](https://coppermind.net/wiki/Coppermind:Artists/FelCandy)"
+        }
     },
     {
         "id": "shallan-attends-the-revel",
@@ -1850,7 +2687,16 @@
         "tags": [
             "ob",
             "shallan"
-        ]
+        ],
+        "coppermind": "Cult_of_Moments",
+        "related": [
+            "characters/shallan",
+            "locations/kholinar"
+        ],
+        "image": {
+            "file": "Aesudan_and_Ashertmarn.jpg",
+            "credits": "by [Kyle Pearson](https://coppermind.net/wiki/Coppermind:Artists/Kyle_Pearson)"
+        }
     },
     {
         "id": "battle-of-kholinar",
@@ -1871,7 +2717,12 @@
             "shallan",
             "moash"
         ],
-        "tieBreaker": 0
+        "tieBreaker": 0,
+        "coppermind": "Siege_of_Kholinar",
+        "image": {
+            "file": "Moash_by_Nick_Vidic.jpg",
+            "credits": "by [Nick Vidic](https://coppermind.net/wiki/Coppermind:Artists/Nick_Vidic)"
+        }
     },
     {
         "id": "trapped-in-shadesmar",
@@ -1892,7 +2743,18 @@
             "shallan"
         ],
         "tieBreaker": 1,
-        "shadesmar": true
+        "shadesmar": true,
+        "image": {
+            "file": "Oathgate_by_Artem_Demura.png",
+            "credits": "by [Artem Demura](https://coppermind.net/wiki/Coppermind:Artists/Artem_Demura)"
+        },
+        "related": [
+            "characters/kaladin",
+            "characters/shallan",
+            "characters/adolin",
+            "locations/kholinar"
+        ],
+        "coppermind": "Shallan_Davar#Journey_through_Shadesmar"
     },
     {
         "id": "riinos-lighthouse",
@@ -1913,7 +2775,13 @@
             "shallan"
         ],
         "tieBreaker": 0,
-        "shadesmar": true
+        "shadesmar": true,
+        "coppermind": "Riino's_lighthouse",
+        "related": [
+            "characters/adolin",
+            "characters/kaladin",
+            "characters/shallan"
+        ]
     },
     {
         "id": "first-meeting-of-monarchs",
@@ -1929,9 +2797,19 @@
         },
         "tags": [
             "ob",
-            "navani"
+            "navani",
+            "jasnah",
+            "taravangian",
+            "dalinar"
         ],
-        "tieBreaker": 1
+        "tieBreaker": 1,
+        "related": [
+            "characters/navani",
+            "locations/urithiru",
+            "characters/taravangian",
+            "characters/dalinar"
+        ],
+        "coppermind": "Navani_Kholin#Uniting_Roshar"
     },
     {
         "id": "szeth-joins-the-skybreakers",
@@ -1948,6 +2826,15 @@
         "tags": [
             "ob",
             "szeth"
+        ],
+        "image": {
+            "file": "Szeth_Nale.jpg",
+            "credits": "by [botanicaxu](https://coppermind.net/wiki/Coppermind:Artists/botanicaxu)"
+        },
+        "coppermind": "Szeth#Skybreaker_Trainee",
+        "related": [
+            "characters/szeth",
+            "locations/purelake"
         ]
     },
     {
@@ -1959,8 +2846,8 @@
             5
         ],
         "coordinates": {
-            "x": 712.6,
-            "y": 321.8
+            "x": 705.7,
+            "y": 316.7
         },
         "tags": [
             "ob",
@@ -1969,7 +2856,14 @@
             "shallan"
         ],
         "tieBreaker": 0,
-        "shadesmar": true
+        "shadesmar": true,
+        "related": [
+            "locations/celebrant",
+            "characters/adolin",
+            "characters/kaladin",
+            "characters/shallan"
+        ],
+        "coppermind": "Celebrant#History"
     },
     {
         "id": "dalinar-confronts-the-thrill-in-vedenar",
@@ -1985,9 +2879,16 @@
         },
         "tags": [
             "ob",
-            "dalinar"
+            "dalinar",
+            "taravangian"
         ],
-        "tieBreaker": 1
+        "tieBreaker": 1,
+        "related": [
+            "characters/dalinar",
+            "locations/vedenar",
+            "characters/taravangian"
+        ],
+        "coppermind": "Dalinar_Kholin#Uniting_Roshar"
     },
     {
         "id": "venli-relocated-to-marat",
@@ -1998,13 +2899,46 @@
             5
         ],
         "coordinates": {
-            "x": 480.1,
-            "y": 383.6
+            "x": 484.1,
+            "y": 391
         },
         "tags": [
             "ob",
             "venli"
-        ]
+        ],
+        "related": [
+            "characters/venli",
+            "locations/marat"
+        ],
+        "coppermind": "Venli#True_Desolation"
+    },
+    {
+        "id": "dalinar-venli-meet",
+        "date": [
+            1174,
+            2,
+            7,
+            4
+        ],
+        "tags": [
+            "ob",
+            "dalinar",
+            "venli"
+        ],
+        "coordinates": {
+            "x": 485.8,
+            "y": 317.8
+        },
+        "related": [
+            "characters/dalinar",
+            "characters/venli",
+            "characters/odium"
+        ],
+        "coppermind": "Venli#True_Desolation",
+        "image": {
+            "file": "Choose_a_Side.jpg",
+            "credits": "by [Ganna Pazyniuk ](https://coppermind.net/wiki/Coppermind:Artists/AnnDR)"
+        }
     },
     {
         "id": "the-battle-of-thaylen-field",
@@ -2019,10 +2953,43 @@
             "y": 419.2
         },
         "tags": [
-            "ob"
+            "ob",
+            "navani",
+            "dalinar",
+            "szeth",
+            "jasnah",
+            "adolin",
+            "kaladin",
+            "renarin",
+            "shallan",
+            "lift",
+            "venli",
+            "taravangian",
+            "rysn"
         ],
         "tieBreaker": 0,
-        "perpendicularity": true
+        "perpendicularity": true,
+        "related": [
+            "characters/rysn",
+            "characters/dalinar",
+            "characters/taravangian",
+            "characters/kaladin",
+            "characters/renarin",
+            "characters/navani",
+            "characters/adolin",
+            "characters/jasnah",
+            "characters/shallan",
+            "characters/venli",
+            "characters/lift",
+            "characters/odium",
+            "characters/szeth",
+            "locations/thaylen-city"
+        ],
+        "image": {
+            "file": "Thrill.png",
+            "credits": "by [Ashley Coad](https://coppermind.net/wiki/Coppermind:Artists/Ashley_Coad)"
+        },
+        "coppermind": "Battle_of_Thaylen_Field"
     },
     {
         "id": "moash-kills-jezrien",
@@ -2040,7 +3007,16 @@
             "ob",
             "moash"
         ],
-        "tieBreaker": 1
+        "tieBreaker": 1,
+        "image": {
+            "file": "Fallen_from_Grace_by_Soph_P.jpg",
+            "credits": "by [Soph Peralta](https://coppermind.net/wiki/Coppermind:Artists/Soph_Peralta)"
+        },
+        "coppermind": "https://coppermind.net/wiki/Moash#Servant_of_the_Fused",
+        "related": [
+            "characters/moash",
+            "locations/kholinar"
+        ]
     },
     {
         "id": "jasnah-crowned",
@@ -2057,7 +3033,12 @@
         "tags": [
             "ob",
             "jasnah"
-        ]
+        ],
+        "related": [
+            "characters/jasnah",
+            "locations/urithiru"
+        ],
+        "coppermind": "Jasnah_Kholin#Battle_Aftermath"
     },
     {
         "id": "shallan-and-adolin-wedding",
@@ -2075,25 +3056,54 @@
             "ob",
             "shallan",
             "adolin"
-        ]
+        ],
+        "image": {
+            "file": "Adolin_&_Shallan_-_VI._the_Lovers_.png",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
+        },
+        "related": [
+            "characters/adolin",
+            "characters/shallan",
+            "locations/urithiru"
+        ],
+        "coppermind": "Shallan_Davar#Battle_of_Thaylen_Field_and_Aftermath"
     },
     {
         "id": "state-of-the-world",
         "specialEffect": "factions",
         "date": [
             1174,
-            2,
-            10,
-            6
+            3,
+            1,
+            1
         ],
         "coordinates": {
-            "x": 486.1,
-            "y": 318.5
+            "x": 512,
+            "y": 256,
+            "zoom": 0
         },
         "tags": [
             "ob",
+            "navani",
+            "dalinar",
+            "szeth",
+            "jasnah",
+            "adolin",
+            "kaladin",
+            "renarin",
             "shallan",
-            "dalinar"
-        ]
+            "lift",
+            "venli",
+            "taravangian",
+            "rysn",
+            "wit",
+            "moash"
+        ],
+        "related": [
+            "characters/dalinar",
+            "characters/odium"
+        ],
+        "hideMarker": true,
+        "coppermind": "True_Desolation"
     }
 ]
