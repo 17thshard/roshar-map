@@ -17,7 +17,8 @@
         "coppermind": "Roshar#Creation_and_Early_Inhabitants",
         "image": {
             "file": "Inner_Rosharan_System_by_Art_Noob.jpg",
-            "credits": "by [Art Noob](https://coppermind.net/wiki/Coppermind:Artists/Art_Noob)"
+            "credits": "by [Art Noob](https://coppermind.net/wiki/Coppermind:Artists/Art_Noob)",
+            "size": 170
         }
     },
     {
@@ -60,8 +61,9 @@
         "hideMarker": false,
         "coppermind": "Roshar#The_Expulsion_and_Early_Interactions",
         "image": {
-            "file": "C:\\Users\\har29370\\Joshua's Documents\\Personal\\Stormlight Visual Timeline\\Images\\Coppermind\\No Credit Needed\\Oathgate_Locations_(edited).jpg",
-            "credits": "by [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)"
+            "file": "Oathgate_Locations_(edited).jpg",
+            "credits": "by [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)",
+            "size": 200
         }
     },
     {
@@ -210,27 +212,6 @@
         ]
     },
     {
-        "id": "navani-is-born",
-        "date": [
-            1120
-        ],
-        "tags": [
-            "navani"
-        ],
-        "coordinates": {
-            "x": 0,
-            "y": 0
-        },
-        "image": {
-            "file": "Navani_-_III._The_Empress.png",
-            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
-        },
-        "coppermind": "Navani_Kholin",
-        "related": [
-            "characters/navani"
-        ]
-    },
-    {
         "id": "dalinar-is-born",
         "date": [
             1120
@@ -250,6 +231,27 @@
             "file": "Dalinar_-_IV._The_Emperor_.jpg",
             "credits": "by [Exmakina](https://coppermind.net/wiki/Coppermind:Artists/Exmakina)"
         }
+    },
+    {
+        "id": "navani-is-born",
+        "date": [
+            1120
+        ],
+        "tags": [
+            "navani"
+        ],
+        "coordinates": {
+            "x": 0,
+            "y": 0
+        },
+        "image": {
+            "file": "Navani_-_III._The_Empress.png",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
+        },
+        "coppermind": "Navani_Kholin",
+        "related": [
+            "characters/navani"
+        ]
     },
     {
         "id": "szeth-is-born",
@@ -370,7 +372,12 @@
         "coppermind": "Alethkar#History",
         "image": {
             "file": "Alethkar_Color.jpg",
-            "credits": "by [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)"
+            "credits": "by [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)",
+            "offset": {
+                "x": 50,
+                "y": 50
+            },
+            "size": 120
         },
         "related": [
             "characters/dalinar",
@@ -712,7 +719,11 @@
         "coppermind": "Assassination_of_Gavilar",
         "image": {
             "file": "Reluctant_Villain_by_Art_Dem.jpg",
-            "credits": "by [Artem Demura](https://coppermind.net/wiki/Coppermind:Artists/Artem_Demura)"
+            "credits": "by [Artem Demura](https://coppermind.net/wiki/Coppermind:Artists/Artem_Demura)",
+            "offset": {
+                "x": 0,
+                "y": 60
+            }
         }
     },
     {
@@ -736,7 +747,11 @@
         "coppermind": "Dalinar_Kholin#Gavilar.27s_Death_and_Dalinar.27s_Transformation",
         "image": {
             "file": "Cultivation_and_the_Nightwatcher_2.jpg",
-            "credits": "by [Kyle Pearson](https://coppermind.net/wiki/Coppermind:Artists/Kyle_Pearson)"
+            "credits": "by [Kyle Pearson](https://coppermind.net/wiki/Coppermind:Artists/Kyle_Pearson)",
+            "offset": {
+                "x": 0,
+                "y": 30
+            }
         }
     },
     {
@@ -755,7 +770,12 @@
         ],
         "image": {
             "file": "Stormblessed_by_BBQShapez.png",
-            "credits": "by [BBQShapez](https://coppermind.net/wiki/Coppermind:Artists/BBQShapez)"
+            "credits": "by [BBQShapez](https://coppermind.net/wiki/Coppermind:Artists/BBQShapez)",
+            "size": 150,
+            "offset": {
+                "x": 55,
+                "y": 0
+            }
         },
         "coppermind": "Kaladin#A_decision_made",
         "related": [
@@ -784,7 +804,11 @@
         "coppermind": "Taravangian#The_Nightwatcher_and_the_creation_of_the_Diagram",
         "image": {
             "file": "Cultivation_and_the_Nightwatcher_2.jpg",
-            "credits": "by [Kyle Pearson](https://coppermind.net/wiki/Coppermind:Artists/Kyle_Pearson)"
+            "credits": "by [Kyle Pearson](https://coppermind.net/wiki/Coppermind:Artists/Kyle_Pearson)",
+            "offset": {
+                "x": 0,
+                "y": 30
+            }
         }
     },
     {
@@ -803,7 +827,11 @@
         ],
         "image": {
             "file": "Driven_by_Guilt_by_Ari_Ibarra.jpg",
-            "credits": "by [Ari Ibarra](https://coppermind.net/wiki/Coppermind:Artists/Ari_Ibarra)"
+            "credits": "by [Ari Ibarra](https://coppermind.net/wiki/Coppermind:Artists/Ari_Ibarra)",
+            "offset": {
+                "x": 0,
+                "y": 50
+            }
         },
         "coppermind": "Kaladin#Tien.27s_Death",
         "related": [
@@ -882,7 +910,8 @@
         ],
         "image": {
             "file": "Stormblessed_by_ThomasW.jpg",
-            "credits": "by [ThomasW](https://coppermind.net/wiki/Coppermind:Artists/ThomasW)"
+            "credits": "by [ThomasW](https://coppermind.net/wiki/Coppermind:Artists/ThomasW)",
+            "size": 150
         },
         "coppermind": "Kaladin#Fighting_the_Shardbearer",
         "related": [
@@ -946,7 +975,12 @@
         "tags": [],
         "image": {
             "file": "Child_of_Peace_by_Vladora.png",
-            "credits": "by [Vladora](https://coppermind.net/wiki/Coppermind:Artists/Vladora)"
+            "credits": "by [Vladora](https://coppermind.net/wiki/Coppermind:Artists/Vladora)",
+            "size": 105,
+            "offset": {
+                "x": 50,
+                "y": 0
+            }
         },
         "coppermind": "Oroden",
         "related": [
@@ -970,7 +1004,12 @@
         ],
         "image": {
             "file": "Rysn-and-Larkin.jpg",
-            "credits": "by [botanicaxu](https://botanicaxu.tumblr.com/post/165173520094/oathbringer-countdown-70-days-rysn-larkin)"
+            "credits": "by [botanicaxu](https://botanicaxu.tumblr.com/post/165173520094/oathbringer-countdown-70-days-rysn-larkin)",
+            "size": 150,
+            "offset": {
+                "x": 50,
+                "y": 0
+            }
         },
         "coppermind": "Rysn#Reshi_Isles",
         "related": [
@@ -995,7 +1034,12 @@
         "coppermind": "Shallan_Davar#Kharbranth_.281173.29",
         "image": {
             "file": "Shallan_in_the_Palanaeum.jpg",
-            "credits": "by [Alex Allen](https://coppermind.net/wiki/Coppermind:Artists/Alex_Allen)"
+            "credits": "by [Alex Allen](https://coppermind.net/wiki/Coppermind:Artists/Alex_Allen)",
+            "size": 150,
+            "offset": {
+                "x": 50,
+                "y": 0
+            }
         },
         "related": [
             "characters/shallan",
@@ -1102,7 +1146,8 @@
         ],
         "image": {
             "file": "Dalinar_the_Blackthorn.jpg",
-            "credits": "by [Evan Monteiro](https://coppermind.net/wiki/Coppermind:Artists/Evan_Monteiro)"
+            "credits": "by [Evan Monteiro](https://coppermind.net/wiki/Coppermind:Artists/Evan_Monteiro)",
+            "size": 200
         },
         "coppermind": "Dalinar_Kholin#The_War_Changes",
         "related": [
@@ -1130,7 +1175,12 @@
         ],
         "image": {
             "file": "Secret_Training_by_Adam_J._Marin.png",
-            "credits": "by [Adam J. Marin](https://imgur.com/gallery/Bw2k31X)"
+            "credits": "by [Adam J. Marin](https://imgur.com/gallery/Bw2k31X)",
+            "offset": {
+                "x": 50,
+                "y": 65
+            },
+            "size": 150
         },
         "coppermind": "Kaladin#Transforming_Bridge_Four_into_spearmen",
         "related": [
@@ -1260,7 +1310,11 @@
         ],
         "image": {
             "file": "the_way_of_kings__excerpt_illustration_by_beagifted.jpg",
-            "credits": "by [beagifted](https://www.deviantart.com/beagifted/art/The-Way-of-Kings-Excerpt-Illustration-826870710)"
+            "credits": "by [beagifted](https://www.deviantart.com/beagifted/art/The-Way-of-Kings-Excerpt-Illustration-826870710)",
+            "offset": {
+                "x": 0,
+                "y": 70
+            }
         },
         "coppermind": "Shallan_Davar#Heart_of_a_Thief",
         "related": [
@@ -1394,7 +1448,12 @@
         ],
         "image": {
             "file": "The_Leap_by_Grant_Hansen.jpg",
-            "credits": "by [Grant Hansen](https://coppermind.net/wiki/Coppermind:Artists/Grant_M._Hansen)"
+            "credits": "by [Grant Hansen](https://coppermind.net/wiki/Coppermind:Artists/Grant_M._Hansen)",
+            "size": 170,
+            "offset": {
+                "x": 25,
+                "y": 0
+            }
         },
         "coppermind": "Battle_of_the_Tower",
         "related": [
@@ -1630,7 +1689,12 @@
         "coppermind": "Shallan_Davar#Tyn.27s_Apprentice",
         "image": {
             "file": "Shallan demanding Kals shoes_by_mjusi.jpg",
-            "credits": "by [mjusi](https://www.reddit.com/r/Stormlight_Archive/comments/308jyt/wor_boots_please_finished_fanart_210/)"
+            "credits": "by [mjusi](https://www.reddit.com/r/Stormlight_Archive/comments/308jyt/wor_boots_please_finished_fanart_210/)",
+            "offset": {
+                "x": 20,
+                "y": 0
+            },
+            "size": 120
         }
     },
     {
@@ -1659,7 +1723,12 @@
         "coppermind": "Eshonai#The_Everstorm",
         "image": {
             "file": "Eshonai_by_Casey_Fallon.jpg",
-            "credits": "by [Casey Fallon](https://coppermind.net/wiki/Coppermind:Artists/Casey_Fallon)"
+            "credits": "by [Casey Fallon](https://coppermind.net/wiki/Coppermind:Artists/Casey_Fallon)",
+            "size": 200,
+            "offset": {
+                "x": 50,
+                "y": 50
+            }
         }
     },
     {
@@ -1693,7 +1762,12 @@
         "coppermind": "Dalinar_Kholin#The_Assassin_in_White",
         "image": {
             "file": "Facing_off_with_the_Assassin_in_White.jpg",
-            "credits": "by [Jules Aguimatang]https://coppermind.net/wiki/Coppermind:Artists/Jules_Aguimatang)"
+            "credits": "by [Jules Aguimatang]https://coppermind.net/wiki/Coppermind:Artists/Jules_Aguimatang)",
+            "size": 200,
+            "offset": {
+                "x": 78,
+                "y": 0
+            }
         }
     },
     {
@@ -1715,7 +1789,12 @@
         "tieBreaker": 2,
         "image": {
             "file": "Shallan_shardblade1_full.jpg",
-            "credits": "by [Sheep](https://coppermind.net/wiki/Coppermind:Artists/Sheep)"
+            "credits": "by [Sheep](https://coppermind.net/wiki/Coppermind:Artists/Sheep)",
+            "size": 150,
+            "offset": {
+                "x": 60,
+                "y": 0
+            }
         },
         "related": [
             "characters/shallan",
@@ -1746,7 +1825,12 @@
         ],
         "image": {
             "file": "Ghostblood_Agent_by_Soph_P.jpg",
-            "credits": "by [Soph Peralta](https://coppermind.net/wiki/Coppermind:Artists/Soph_Peralta)"
+            "credits": "by [Soph Peralta](https://coppermind.net/wiki/Coppermind:Artists/Soph_Peralta)",
+            "size": 125,
+            "offset": {
+                "x": 50,
+                "y": 20
+            }
         },
         "coppermind": "Shallan_Davar#The_Ghostbloods"
     },
@@ -1798,7 +1882,11 @@
         ],
         "image": {
             "file": "Shallan_Adolin.jpg",
-            "credits": "https://coppermind.net/wiki/Coppermind:Artists/Shuravf"
+            "credits": "https://coppermind.net/wiki/Coppermind:Artists/Shuravf",
+            "offset": {
+                "x": 0,
+                "y": 25
+            }
         },
         "coppermind": "Shallan_Davar#Adolin_Kholin.27s_Betrothed"
     },
@@ -1832,7 +1920,11 @@
         "coppermind": "https://coppermind.net/wiki/Adolin_Kholin#The_Duel",
         "image": {
             "file": "The_Impossible_Odds_by_Randy_Vargas.jpg",
-            "credits": "by [Randy Vargas](https://coppermind.net/wiki/Coppermind:Artists/Randy_Vargas)"
+            "credits": "by [Randy Vargas](https://coppermind.net/wiki/Coppermind:Artists/Randy_Vargas)",
+            "offset": {
+                "x": 0,
+                "y": 30
+            }
         }
     },
     {
@@ -1956,7 +2048,12 @@
         "coppermind": "Chasmfiend_Fight_by_Ellie_L..png",
         "image": {
             "file": "Chasmfiend_Fight_by_Ellie_L..png",
-            "credits": "by [Ellie L.](https://coppermind.net/wiki/Coppermind:Artists/Ellie_L.)"
+            "credits": "by [Ellie L.](https://coppermind.net/wiki/Coppermind:Artists/Ellie_L.)",
+            "size": 150,
+            "offset": {
+                "x": 75,
+                "y": 0
+            }
         },
         "related": [
             "characters/kaladin",
@@ -2003,7 +2100,8 @@
         "coppermind": "Battle_of_Narak",
         "image": {
             "file": "Battle_of_Narak.jpeg",
-            "credits": "by [Isaac Stewart](Battle_of_Narak.jpeg)"
+            "credits": "by [Isaac Stewart](Battle_of_Narak.jpeg)",
+            "size": 150
         }
     },
     {
@@ -2029,7 +2127,12 @@
         ],
         "image": {
             "file": "Urithiru3_by_Jacobo_Montoya.jpg",
-            "credits": "by [Jacoo Montoya](https://coppermind.net/wiki/Coppermind:Artists/Jacobo_Montoya)"
+            "credits": "by [Jacoo Montoya](https://coppermind.net/wiki/Coppermind:Artists/Jacobo_Montoya)",
+            "size": 200,
+            "offset": {
+                "x": 50,
+                "y": 50
+            }
         },
         "coppermind": "Urithiru#True_Desolation",
         "related": [
@@ -2055,7 +2158,12 @@
         ],
         "image": {
             "file": "WoR_SH_-_Adolin.jpg",
-            "credits": "by [botanicaxu](https://coppermind.net/wiki/User:Botanicaxu)"
+            "credits": "by [botanicaxu](https://coppermind.net/wiki/User:Botanicaxu)",
+            "offset": {
+                "x": 50,
+                "y": 0
+            },
+            "size": 170
         },
         "coppermind": "Adolin_Kholin#Exploring_Urithiru",
         "related": [
@@ -2108,7 +2216,12 @@
         ],
         "image": {
             "file": "Hug_the_Darkness.png",
-            "credits": "by [LittleGreyDragon](https://coppermind.net/wiki/Coppermind:Artists/LittleGreyDragon)"
+            "credits": "by [LittleGreyDragon](https://coppermind.net/wiki/Coppermind:Artists/LittleGreyDragon)",
+            "size": 119,
+            "offset": {
+                "x": 100,
+                "y": 40
+            }
         },
         "related": [
             "characters/lift",
@@ -2169,7 +2282,12 @@
         "coppermind": "https://coppermind.net/wiki/Kaladin#Returning_to_Hearthstone",
         "image": {
             "file": "Thepathtohearthstone.png",
-            "credits": "by [Ashley Coad](https://coppermind.net/wiki/Coppermind:Artists/Ashley_Coad)"
+            "credits": "by [Ashley Coad](https://coppermind.net/wiki/Coppermind:Artists/Ashley_Coad)",
+            "size": 250,
+            "offset": {
+                "x": 10,
+                "y": 50
+            }
         }
     },
     {
@@ -2318,7 +2436,12 @@
         "tieBreaker": 0,
         "image": {
             "file": "Midnight_Mother_2.jpg",
-            "credits": "by [Petar Penev](https://coppermind.net/wiki/Coppermind:Artists/Petar_Penev)"
+            "credits": "by [Petar Penev](https://coppermind.net/wiki/Coppermind:Artists/Petar_Penev)",
+            "size": 200,
+            "offset": {
+                "x": 50,
+                "y": 0
+            }
         },
         "coppermind": "Shallan_Davar#Encounter_with_Re-Shephir",
         "related": [
@@ -2376,7 +2499,12 @@
         "tieBreaker": 2,
         "image": {
             "file": "Shallan_and_Jasnah_Reunited.png",
-            "credits": "by [BBQShapez](https://coppermind.net/wiki/Coppermind:Artists/BBQShapez)"
+            "credits": "by [BBQShapez](https://coppermind.net/wiki/Coppermind:Artists/BBQShapez)",
+            "size": 150,
+            "offset": {
+                "x": 15,
+                "y": 30
+            }
         },
         "coppermind": "Shallan_Davar#Jasnah.27s_Return"
     },
@@ -2721,7 +2849,11 @@
         "coppermind": "Siege_of_Kholinar",
         "image": {
             "file": "Moash_by_Nick_Vidic.jpg",
-            "credits": "by [Nick Vidic](https://coppermind.net/wiki/Coppermind:Artists/Nick_Vidic)"
+            "credits": "by [Nick Vidic](https://coppermind.net/wiki/Coppermind:Artists/Nick_Vidic)",
+            "offset": {
+                "x": 0,
+                "y": 60
+            }
         }
     },
     {
@@ -2746,7 +2878,11 @@
         "shadesmar": true,
         "image": {
             "file": "Oathgate_by_Artem_Demura.png",
-            "credits": "by [Artem Demura](https://coppermind.net/wiki/Coppermind:Artists/Artem_Demura)"
+            "credits": "by [Artem Demura](https://coppermind.net/wiki/Coppermind:Artists/Artem_Demura)",
+            "offset": {
+                "x": 0,
+                "y": 30
+            }
         },
         "related": [
             "characters/kaladin",
@@ -2829,7 +2965,11 @@
         ],
         "image": {
             "file": "Szeth_Nale.jpg",
-            "credits": "by [botanicaxu](https://coppermind.net/wiki/Coppermind:Artists/botanicaxu)"
+            "credits": "by [botanicaxu](https://coppermind.net/wiki/Coppermind:Artists/botanicaxu)",
+            "offset": {
+                "x": 0,
+                "y": 35
+            }
         },
         "coppermind": "Szeth#Skybreaker_Trainee",
         "related": [
@@ -2987,7 +3127,8 @@
         ],
         "image": {
             "file": "Thrill.png",
-            "credits": "by [Ashley Coad](https://coppermind.net/wiki/Coppermind:Artists/Ashley_Coad)"
+            "credits": "by [Ashley Coad](https://coppermind.net/wiki/Coppermind:Artists/Ashley_Coad)",
+            "size": 200
         },
         "coppermind": "Battle_of_Thaylen_Field"
     },
@@ -3010,7 +3151,11 @@
         "tieBreaker": 1,
         "image": {
             "file": "Fallen_from_Grace_by_Soph_P.jpg",
-            "credits": "by [Soph Peralta](https://coppermind.net/wiki/Coppermind:Artists/Soph_Peralta)"
+            "credits": "by [Soph Peralta](https://coppermind.net/wiki/Coppermind:Artists/Soph_Peralta)",
+            "offset": {
+                "x": 0,
+                "y": 35
+            }
         },
         "coppermind": "https://coppermind.net/wiki/Moash#Servant_of_the_Fused",
         "related": [

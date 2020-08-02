@@ -59,7 +59,7 @@ export default {
   methods: {
     buildImageStyles (image) {
       const styles = {
-        backgroundImage: `url(${this.imageBaseUrl}/${image.file})`
+        backgroundImage: `url("${this.imageBaseUrl}/${image.file}")`
       }
 
       if (image.offset !== undefined) {

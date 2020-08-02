@@ -153,7 +153,7 @@
           >
           <div class="event-properties__image-preview-container">
             <div
-              :style="buildImageStyles(event.image)"
+              :style="imageStyles"
               class="event-properties__image-preview"
             />
           </div>
@@ -166,7 +166,7 @@
               id="event-properties__coordinates--image-x"
               :value="event.image.offset !== undefined ? event.image.offset.x : 0"
               type="number"
-              min="0"
+              min="-100"
               max="100"
               step="any"
               @input="updateImageOffset('x', $event)"
@@ -179,7 +179,7 @@
               id="event-properties__coordinates--image-y"
               :value="event.image.offset !== undefined ? event.image.offset.y : 0"
               type="number"
-              min="0"
+              min="-100"
               max="100"
               step="any"
               @input="updateImageOffset('y', $event)"
@@ -244,6 +244,25 @@ export default {
     },
     linkAutocompletions () {
       return this.linkables.filter(l => l.startsWith(this.newLink) && l !== `events/${this.event.id}`).map(l => ({ text: l }))
+    },
+    imageStyles () {
+      if (this.event.image === undefined) {
+        return
+      }
+
+      const styles = {
+        backgroundImage: `url("${this.imageBaseUrl}/${this.event.image.file}")`
+      }
+
+      if (this.event.image.offset !== undefined) {
+        styles.backgroundPosition = `${this.event.image.offset.x}% ${this.event.image.offset.y}%`
+      }
+
+      if (this.event.image.size !== undefined) {
+        styles.backgroundSize = `${this.event.image.size}%`
+      }
+
+      return styles
     }
   },
   methods: {
@@ -290,48 +309,33 @@ export default {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.event.image.offset = undefined
+        this.$delete(this.event.image, 'offset')
         return
       }
 
       if (this.event.image.offset === undefined) {
-        this.event.image.offset = { x: 0, y: 0 }
+        this.$set(this.event.image, 'offset', { x: 0, y: 0 })
       }
 
-      this.event.image.offset[prop] = Number.parseInt(trimmed, 10)
+      this.$set(this.event.image.offset, prop, Number.parseInt(trimmed, 10))
 
       if (this.event.image.offset.x === 0 && this.event.image.offset.y === 0) {
-        this.event.image.offset = undefined
+        this.$delete(this.event.image, 'offset')
       }
     },
     updateImageSize ({ target: { value } }) {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.event.image.size = undefined
+        this.$delete(this.event.image, 'size')
         return
       }
 
-      this.event.image.size = Number.parseInt(trimmed, 10)
+      this.$set(this.event.image, 'size', Number.parseInt(trimmed, 10))
 
       if (this.event.image.size === 100) {
-        this.event.image.size = undefined
+        this.$delete(this.event.image, 'size')
       }
-    },
-    buildImageStyles (image) {
-      const styles = {
-        backgroundImage: `url(${this.imageBaseUrl}/${image.file})`
-      }
-
-      if (image.offset !== undefined) {
-        styles.backgroundPosition = `${image.offset.x}% ${image.offset.y}%`
-      }
-
-      if (image.size !== undefined) {
-        styles.backgroundSize = `${image.size}%`
-      }
-
-      return styles
     },
     update (property, { target: { value } }) {
       const trimmed = value.trim()
