@@ -157,7 +157,10 @@
     },
     {
         "id": "odium",
-        "related": [],
+        "related": [
+            "characters/honor",
+            "characters/cultivation"
+        ],
         "image": {
             "file": "Odium_-_XV_the_Devil.jpg",
             "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
@@ -181,5 +184,38 @@
             "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
         },
         "coppermind": "Hoid"
+    },
+    {
+        "id": "cultivation",
+        "related": [
+            "characters/honor",
+            "characters/odium"
+        ],
+        "image": {
+            "file": "Cultivation_and_the_Nightwatcher_2.jpg",
+            "credits": "by [Kyle Pearson](https://coppermind.net/wiki/Coppermind:Artists/Kyle_Pearson)"
+        },
+        "coppermind": "Cultivation"
+    },
+    {
+        "id": "honor",
+        "related": [
+            "characters/cultivation",
+            "characters/odium"
+        ],
+        "image": {
+            "file": "Tanavast.jpg",
+            "credits": "by [botanicaxu](https://coppermind.net/wiki/Coppermind:Artists/botanicaxu)"
+        },
+        "coppermind": "Honor"
+    },
+    {
+        "id": "rysn",
+        "related": [],
+        "image": {
+            "file": "Rysn_&_Larkin_by_botanicaxu.jpg",
+            "credits": "by [botanicaxu](https://botanicaxu.tumblr.com/post/165173520094/oathbringer-countdown-70-days-rysn-larkin)"
+        },
+        "coppermind": "Rysn"
     }
 ]
