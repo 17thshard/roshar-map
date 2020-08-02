@@ -1,2 +1,0 @@
-# longbrows-straights
-Details
