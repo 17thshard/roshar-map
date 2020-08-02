@@ -240,8 +240,8 @@
             "blurb": "Jasnah returned from Shadesmar after meeting with the highspren and encountered Wit waiting for her.",
             "details": "Details"
         },
-        "jasnah-arrives": {
-            "name": "Jasnah arrives in Urithiru",
+        "jasnah-returns": {
+            "name": "jasnah-returns",
             "blurb": "Blurb",
             "details": "Details"
         },
@@ -861,8 +861,8 @@
             "name": "Liafor",
             "details": "Details"
         },
-        "longbrows-straits": {
-            "name": "longbrows-straits",
+        "longbrows-straights": {
+            "name": "longbrows-straights",
             "details": "Details"
         },
         "longbrows-straits": {
@@ -885,8 +885,8 @@
             "name": "Narak",
             "details": "Details"
         },
-        "new-natanan": {
-            "name": "New Natanan",
+        "new-natanatan": {
+            "name": "New Natanatan",
             "details": "Details"
         },
         "nexus-of-imagination": {

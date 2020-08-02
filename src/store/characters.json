@@ -37,7 +37,7 @@
             "events/return-to-the-rift",
             "events/szeth-attacks-dalinar",
             "events/the-battle-of-thaylen-field",
-            "locations/kholinar",
+            "locations/alethkar",
             "locations/urithiru"
         ],
         "image": {
@@ -57,6 +57,7 @@
             "events/kholin-conquest-of-alethkar-begins",
             "events/the-parshendi-discovered",
             "events/unification-of-alethkar",
+            "locations/alethkar",
             "locations/kholinar"
         ],
         "image": {
@@ -83,7 +84,8 @@
             "events/shallan-and-adolin-wedding",
             "events/stop-in-celebrant",
             "events/the-battle-of-thaylen-field",
-            "events/trapped-in-shadesmar"
+            "events/trapped-in-shadesmar",
+            "locations/alethkar"
         ],
         "image": {
             "file": "Adolin_-_VIII._Strength_.jpg",
@@ -115,6 +117,7 @@
             "events/the-battle-of-thaylen-field",
             "events/tien-dies",
             "events/trapped-in-shadesmar",
+            "locations/alethkar",
             "locations/hearthstone"
         ],
         "image": {
@@ -134,7 +137,8 @@
             "events/re-shephir-driven-from-urithiru",
             "events/renarin-discovers-the-gemstone-library",
             "events/renarin-is-born",
-            "events/the-battle-of-thaylen-field"
+            "events/the-battle-of-thaylen-field",
+            "locations/alethkar"
         ],
         "coppermind": "Renarin_Kholin",
         "image": {
@@ -150,7 +154,8 @@
             "events/first-meeting-of-monarchs",
             "events/navani-is-born",
             "events/the-battle-of-thaylen-field",
-            "events/vision-revelation"
+            "events/vision-revelation",
+            "locations/alethkar"
         ],
         "image": {
             "file": "Navani_-_III._The_Empress.png",
@@ -169,7 +174,8 @@
             "events/elhokar-is-born",
             "events/elhokars-team-arrive-in-kholinar",
             "events/gavinor-is-born",
-            "locations/urithiru"
+            "locations/alethkar",
+            "locations/kholinar"
         ],
         "image": {
             "file": "Elhokar_-_V._Hierophant.jpg",
@@ -191,7 +197,8 @@
             "events/shallan-confronts-jasnah",
             "events/the-battle-of-thaylen-field",
             "events/the-lesson",
-            "events/winds-pleasure-attacked"
+            "events/winds-pleasure-attacked",
+            "locations/alethkar"
         ],
         "image": {
             "file": "Jasnah_-_II._The_High_Priestess_.jpg",
@@ -226,7 +233,8 @@
             "events/the-lesson",
             "events/trapped-in-shadesmar",
             "events/urithiru-rediscovered",
-            "events/winds-pleasure-attacked"
+            "events/winds-pleasure-attacked",
+            "locations/jah-keved"
         ],
         "image": {
             "file": "Shallan_-_I._The_Magician_.jpg",
@@ -276,7 +284,8 @@
             "events/lift-saves-gawx",
             "events/lift-saves-the-stump",
             "events/lin-davar-accused-of-murder",
-            "events/the-battle-of-thaylen-field"
+            "events/the-battle-of-thaylen-field",
+            "locations/rall-elorim"
         ],
         "image": {
             "file": "Lift_-_VII._The_Chariot_.jpg",
@@ -295,7 +304,8 @@
             "events/moash-and-graves-attacked",
             "events/moash-arrives-outside-kholinar",
             "events/moash-kills-jezrien",
-            "events/moash-travels-to-kholinar"
+            "events/moash-travels-to-kholinar",
+            "locations/alethkar"
         ],
         "image": {
             "file": "Moash_-_IX._Hermit.jpg",
@@ -332,7 +342,8 @@
             "events/szeth-named-truthless",
             "events/szeths-killing-spree-begins",
             "events/taravangian-crowned-king-of-jah-keved",
-            "events/the-battle-of-thaylen-field"
+            "events/the-battle-of-thaylen-field",
+            "locations/shinovar"
         ],
         "image": {
             "file": "Szeth_-_XX._Judgement_.jpg",
@@ -362,7 +373,8 @@
             "characters/odium",
             "events/dalinar-visits-the-nightwatcher",
             "events/shattering-of-adonalsium",
-            "events/taravangian-visits-the-nightwatcher"
+            "events/taravangian-visits-the-nightwatcher",
+            "locations/valley"
         ],
         "image": {
             "file": "Cultivation_and_the_Nightwatcher_2.jpg",
@@ -388,7 +400,8 @@
         "related": [
             "events/rysn-in-shinovar",
             "events/rysn-in-the-reshi-isles",
-            "events/the-battle-of-thaylen-field"
+            "events/the-battle-of-thaylen-field",
+            "locations/thaylenah"
         ],
         "image": {
             "file": "Rysn_&_Larkin_by_botanicaxu.jpg",

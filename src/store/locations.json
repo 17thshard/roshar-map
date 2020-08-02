@@ -50,15 +50,24 @@
             "credits": "by [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)"
         },
         "related": [
+            "characters/adolin",
+            "characters/dalinar",
+            "characters/elhokar",
+            "characters/gavilar",
+            "characters/jasnah",
+            "characters/kaladin",
+            "characters/moash",
+            "characters/navani",
+            "characters/renarin",
+            "locations/akak",
+            "locations/dumadari",
+            "locations/hearthstone",
+            "locations/karanak",
             "locations/kholinar",
             "locations/rathalas",
-            "locations/hearthstone",
             "locations/revolar",
-            "locations/dumadari",
-            "locations/karanak",
             "locations/shulin",
-            "locations/varikev",
-            "locations/akak"
+            "locations/varikev"
         ]
     },
     {
@@ -164,13 +173,14 @@
         ],
         "coppermind": "Jah_Keved",
         "related": [
-            "locations/vedenar",
+            "characters/shallan",
+            "locations/bavland",
+            "locations/elanar",
             "locations/horneater-peaks",
             "locations/northgrip",
-            "locations/elanar",
-            "locations/valath",
             "locations/silnasen",
-            "locations/bavland"
+            "locations/valath",
+            "locations/vedenar"
         ]
     },
     {
@@ -306,8 +316,9 @@
         ],
         "coppermind": "Thaylenah",
         "related": [
-            "locations/thaylen-city",
-            "locations/klna"
+            "characters/rysn",
+            "locations/klna",
+            "locations/thaylen-city"
         ]
     },
     {
@@ -432,6 +443,7 @@
         ],
         "coppermind": "Shinovar",
         "related": [
+            "characters/szeth",
             "events/szeth-is-born",
             "events/szeth-named-truthless"
         ]
@@ -801,6 +813,7 @@
         },
         "coppermind": "Urithiru",
         "related": [
+            "characters/dalinar",
             "events/first-meeting-of-monarchs",
             "events/founding-of-the-knights-radiant-and-urithiru",
             "events/re-shephir-driven-from-urithiru",
@@ -1307,6 +1320,8 @@
             }
         ],
         "related": [
+            "characters/elhokar",
+            "characters/gavilar",
             "events/battle-of-kholinar",
             "events/gavilars-assassination",
             "events/kaladin-meets-highmarshal-azure",
@@ -1512,6 +1527,7 @@
             "credits": "by [Kyle Pearson](https://coppermind.net/wiki/Coppermind:Artists/Kyle_Pearson)"
         },
         "related": [
+            "characters/cultivation",
             "events/dalinar-visits-the-nightwatcher",
             "events/taravangian-visits-the-nightwatcher"
         ]
@@ -1547,6 +1563,8 @@
         },
         "coppermind": "Narak",
         "related": [
+            "characters/eshonai",
+            "characters/venli",
             "events/battle-of-narak-and-the-everstorm",
             "events/bridge-four-begins-training",
             "events/eshonai-adopts-stormform",
@@ -1581,6 +1599,7 @@
         ],
         "coppermind": "Hearthstone",
         "related": [
+            "characters/kaladin",
             "events/kaladin-begins-training",
             "events/kaladin-in-hearthstone",
             "events/kaladin-is-born",
@@ -1703,6 +1722,7 @@
         ],
         "coppermind": "Rall_Elorim",
         "related": [
+            "characters/lift",
             "locations/iri"
         ]
     },
