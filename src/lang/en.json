@@ -710,7 +710,7 @@
     },
     "locations": {
         "abri": {
-            "name": "abri",
+            "name": "Abri",
             "details": "Details"
         },
         "aimia": {
@@ -718,11 +718,11 @@
             "details": "Details"
         },
         "aimian-sea": {
-            "name": "aimian-sea",
+            "name": "Aimian Sea",
             "details": "Details"
         },
         "akak": {
-            "name": "akak",
+            "name": "Akak",
             "details": "Details"
         },
         "alethkar": {
@@ -730,15 +730,15 @@
             "details": "Details"
         },
         "alm": {
-            "name": "alm",
+            "name": "Alm",
             "details": "Details"
         },
         "arak": {
-            "name": "arak",
+            "name": "Arak",
             "details": "Details"
         },
         "azimir": {
-            "name": "azimir",
+            "name": "Azimir",
             "details": "Details"
         },
         "azir": {
@@ -750,35 +750,35 @@
             "details": "Details"
         },
         "bavland": {
-            "name": "bavland",
+            "name": "Bavland",
             "details": "Details"
         },
         "berizhet": {
-            "name": "berizhet",
+            "name": "Berizhet",
             "details": "Details"
         },
         "celebrant": {
-            "name": "celebrant",
+            "name": "Celebrant",
             "details": "Details"
         },
         "dawns-shadow": {
-            "name": "dawns-shadow",
+            "name": "Dawns Shadow",
             "details": "Details"
         },
         "desh": {
-            "name": "desh",
+            "name": "Desh",
             "details": "Details"
         },
         "dumadari": {
-            "name": "dumadari",
+            "name": "Dumadari",
             "details": "Details"
         },
         "eila": {
-            "name": "eila",
+            "name": "Eila",
             "details": "Details"
         },
         "elanar": {
-            "name": "elanar",
+            "name": "Elanar",
             "details": "Details"
         },
         "emul": {
@@ -786,35 +786,35 @@
             "details": "Details"
         },
         "endless-ocean": {
-            "name": "endless-ocean",
+            "name": "Endless Ocean",
             "details": "Details"
         },
         "expanse-of-the-broken-sky": {
-            "name": "expanse-of-the-broken-sky",
+            "name": "Expanse of the Broken Sky",
             "details": "Details"
         },
         "expanse-of-the-densities": {
-            "name": "expanse-of-the-densities",
+            "name": "Expanse of the Densities",
             "details": "Details"
         },
         "expanse-of-the-vapors": {
-            "name": "expanse-of-the-vapors",
+            "name": "Expanse of the Vapors",
             "details": "Details"
         },
         "expanse-of-vibrance": {
-            "name": "expanse-of-vibrance",
+            "name": "Expanse of Vibrance",
             "details": "Details"
         },
         "frostlands": {
-            "name": "frostlands",
+            "name": "Frostlands",
             "details": "Details"
         },
         "fu-namir": {
-            "name": "fu-namir",
+            "name": "Fu Namir",
             "details": "Details"
         },
         "greater-hexi": {
-            "name": "greater-hexi",
+            "name": "Greater Hexi",
             "details": "Details"
         },
         "hearthstone": {
@@ -826,11 +826,11 @@
             "details": "Details"
         },
         "horneater-peaks": {
-            "name": "horneater-peaks",
+            "name": "Horneater Peaks",
             "details": "Details"
         },
         "icewater": {
-            "name": "icewater",
+            "name": "Icewater",
             "details": "Details"
         },
         "iri": {
@@ -842,15 +842,15 @@
             "details": "Details"
         },
         "kadrix": {
-            "name": "kadrix",
+            "name": "Kadrix",
             "details": "Details"
         },
         "karanak": {
-            "name": "karanak",
+            "name": "Karanak",
             "details": "Details"
         },
         "kasitor": {
-            "name": "kasitor",
+            "name": "Kasitor",
             "details": "Details"
         },
         "kharbranth": {
@@ -862,23 +862,19 @@
             "details": "Details"
         },
         "klna": {
-            "name": "klna",
+            "name": "Klna",
             "details": "Details"
         },
         "kurth": {
-            "name": "kurth",
+            "name": "Kurth",
             "details": "Details"
         },
         "liafor": {
             "name": "Liafor",
             "details": "Details"
         },
-        "longbrows-straights": {
-            "name": "longbrows-straights",
-            "details": "Details"
-        },
         "longbrows-straits": {
-            "name": "longbrows-straits",
+            "name": "Longbrows Straits",
             "details": "Details"
         },
         "marabethia": {
@@ -890,7 +886,7 @@
             "details": "Details"
         },
         "misted-mountains": {
-            "name": "misted-mountains",
+            "name": "Misted Mountains",
             "details": "Details"
         },
         "narak": {
@@ -898,35 +894,35 @@
             "details": "Details"
         },
         "new-natanatan": {
-            "name": "New Natanatan",
+            "name": "New Natanan",
             "details": "Details"
         },
         "nexus-of-imagination": {
-            "name": "nexus-of-imagination",
+            "name": "Nexus of Imagination",
             "details": "Details"
         },
         "nexus-of-transition": {
-            "name": "nexus-of-transition",
+            "name": "Nexus of Transition",
             "details": "Details"
         },
         "nexus-of-truth": {
-            "name": "nexus-of-truth",
+            "name": "Nexus of Truth",
             "details": "Details"
         },
         "northern-depths": {
-            "name": "northern-depths",
+            "name": "Northern Depths",
             "details": "Details"
         },
         "northgrip": {
-            "name": "northgrip",
+            "name": "Northgrip",
             "details": "Details"
         },
         "ocean-of-origins": {
-            "name": "ocean-of-origins",
+            "name": "Ocean of Origins",
             "details": "Details"
         },
         "panatham": {
-            "name": "panatham",
+            "name": "Panatham",
             "details": "Details"
         },
         "purelake": {
@@ -934,11 +930,11 @@
             "details": "Details"
         },
         "quili": {
-            "name": "quili",
+            "name": "Quili",
             "details": "Details"
         },
         "rall-elorim": {
-            "name": "rall-elorim",
+            "name": "Rall Elorim",
             "details": "Details"
         },
         "rathalas": {
@@ -950,11 +946,11 @@
             "details": "Details"
         },
         "reshi-sea": {
-            "name": "reshi-sea",
+            "name": "Reshi Sea",
             "details": "Details"
         },
         "revolar": {
-            "name": "revolar",
+            "name": "Revolar",
             "details": "Details"
         },
         "rira": {
@@ -962,27 +958,27 @@
             "details": "Details"
         },
         "ru-parat": {
-            "name": "ru-parat",
+            "name": "Ru Parat",
             "details": "Details"
         },
         "sea-of-lost-lights": {
-            "name": "sea-of-lost-lights",
+            "name": "Sea of Lost Lights",
             "details": "Details"
         },
         "sea-of-regret": {
-            "name": "sea-of-regret",
+            "name": "Sea of Regret",
             "details": "Details"
         },
         "sea-of-souls": {
-            "name": "sea-of-souls",
+            "name": "Sea of Souls",
             "details": "Details"
         },
         "sesemalex-dar": {
-            "name": "sesemalex-dar",
+            "name": "Sesemalex Dar",
             "details": "Details"
         },
         "shallow-crypts": {
-            "name": "shallow-crypts",
+            "name": "Shallow Crypts",
             "details": "Details"
         },
         "shattered-plains": {
@@ -994,31 +990,31 @@
             "details": "Details"
         },
         "shulin": {
-            "name": "shulin",
+            "name": "Shulin",
             "details": "Details"
         },
         "silnasen": {
-            "name": "silnasen",
+            "name": "Silnasen",
             "details": "Details"
         },
         "southern-depths": {
-            "name": "southern-depths",
+            "name": "Southern Depths",
             "details": "Details"
         },
         "steamwaterocean": {
-            "name": "steamwaterocean",
+            "name": "Steamwater Ocean",
             "details": "Details"
         },
         "steen": {
-            "name": "steen",
+            "name": "Steen",
             "details": "Details"
         },
         "sumi": {
-            "name": "sumi",
+            "name": "Sumi",
             "details": "Details"
         },
         "tarat-sea": {
-            "name": "tarat-sea",
+            "name": "Tarat Sea",
             "details": "Details"
         },
         "tashikk": {
@@ -1034,15 +1030,15 @@
             "details": "Details"
         },
         "triax": {
-            "name": "triax",
+            "name": "Triax",
             "details": "Details"
         },
         "tu-bayla": {
-            "name": "tu-bayla",
+            "name": "Tu Bayla",
             "details": "Details"
         },
         "tu-fallia": {
-            "name": "tu-fallia",
+            "name": "Tu Fallia",
             "details": "Details"
         },
         "tukar": {
@@ -1050,7 +1046,7 @@
             "details": "Details"
         },
         "unclaimed-hills": {
-            "name": "unclaimed-hills",
+            "name": "Unclaimed Hills",
             "details": "Details"
         },
         "urithiru": {
@@ -1058,7 +1054,7 @@
             "details": "Details"
         },
         "valath": {
-            "name": "valath",
+            "name": "Valath",
             "details": "Details"
         },
         "valley": {
@@ -1066,97 +1062,97 @@
             "details": "Details"
         },
         "varikev": {
-            "name": "varikev",
+            "name": "Varikev",
             "details": "Details"
         },
         "vedenar": {
-            "name": "vedenar",
+            "name": "Vedenar",
             "details": "Details"
         },
         "yeddaw": {
-            "name": "yeddaw",
+            "name": "Yeddaw",
             "details": "Details"
         },
         "yezier": {
-            "name": "yezier",
+            "name": "Yezier",
             "details": "Details"
         },
         "yulay": {
-            "name": "yulay",
+            "name": "Yulay",
             "details": "Details"
         },
         "zawfix": {
-            "name": "zawfix",
+            "name": "Zawfix",
             "details": "Details"
         }
     },
     "characters": {
         "adolin": {
-            "name": "adolin",
+            "name": "Adolin",
             "details": "Details"
         },
         "cultivation": {
-            "name": "cultivation",
+            "name": "Cultivation",
             "details": "Details"
         },
         "dalinar": {
-            "name": "dalinar",
+            "name": "Dalinar",
             "details": "Details"
         },
         "elhokar": {
-            "name": "elhokar",
+            "name": "Elhokar",
             "details": "Details"
         },
         "eshonai": {
-            "name": "eshonai",
+            "name": "Eshonai",
             "details": "Details"
         },
         "gavilar": {
-            "name": "gavilar",
+            "name": "Gavilar",
             "details": "Details"
         },
         "honor": {
-            "name": "honor",
+            "name": "Honor",
             "details": "Details"
         },
         "jasnah": {
-            "name": "jasnah",
+            "name": "Jasnah",
             "details": "Details"
         },
         "kaladin": {
-            "name": "kaladin",
+            "name": "Kaladin",
             "details": "Details"
         },
         "lift": {
-            "name": "lift",
+            "name": "Lift",
             "details": "Details"
         },
         "moash": {
-            "name": "moash",
+            "name": "Moash",
             "details": "Details"
         },
         "navani": {
-            "name": "navani",
+            "name": "Navani",
             "details": "Details"
         },
         "odium": {
-            "name": "odium",
+            "name": "Oodium",
             "details": "Details"
         },
         "renarin": {
-            "name": "renarin",
+            "name": "Renarin",
             "details": "Details"
         },
         "rysn": {
-            "name": "rysn",
+            "name": "Rysn",
             "details": "Details"
         },
         "shallan": {
-            "name": "shallan",
+            "name": "Shallan",
             "details": "Details"
         },
         "szeth": {
-            "name": "szeth",
+            "name": "Szeth",
             "details": "Details"
         },
         "taravangian": {
@@ -1164,11 +1160,11 @@
             "details": "Details"
         },
         "venli": {
-            "name": "venli",
+            "name": "Venli",
             "details": "Details"
         },
         "wit": {
-            "name": "wit",
+            "name": "Wit",
             "details": "Details"
         }
     },
@@ -1178,7 +1174,7 @@
             "details": "Bliblablub, the Diagram is an organization"
         },
         "ghostbloods": {
-            "name": "ghostbloods",
+            "name": "The Ghostbloods",
             "details": "Details"
         }
     }
