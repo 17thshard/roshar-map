@@ -73,67 +73,79 @@
         "adolin-begins-dueling": {
             "name": "Adolin begins dueling",
             "blurb": "Adolin began dueling Shardbearers to win Shards for House Kholin.",
-            "details": "Details"
+            "details": "After being named Highprince of War, Dalinar continued struggling to unite the stubborn Alethi highprinces against the Parshendi. To force them into submission, Dalinar asked Adolin to begin dueling competitively. Over the following weeks, Adolin was able to secure several Shards for House Kholin.",
+            "chapter": "*Words of Radiance* Chapter 14"
         },
         "adolin-is-born": {
             "name": "Adolin is born",
             "blurb": "",
-            "details": "Details"
+            "details": "Adolin was born to Dalinar and Evi Kholin.",
+            "chapter": "*Oathbringer* Chapter 49"
         },
         "adolin-murders-sadeas": {
             "name": "Adolin murders Sadeas",
             "blurb": "Adolin encountered Sadeas alone in the halls of Urithiru and murdered him upon provocation.",
-            "details": "Details"
+            "details": "While exploring the halls of Urithiru days after residiscovery of the city, Adolin encountered Sadeas alone. After Adolin revealed his presence, Sadeas made smug threats against the Kholins. This prompted a sudden and violent response from Adolin, leaving Sadeas dead with a dagger through one eye.",
+            "chapter": "*Words of Radiance* Chapter 89"
         },
         "amarams-arrival": {
             "name": "Amaram's arrival",
             "blurb": "Amaram arrived on the Shattered Plains.",
-            "details": "Details"
+            "details": "Amaram arrived on the Shattered Plains shortly after the Battle of the Tower, with secretive plans relating to his involvement with the Sons of Honor. His arrival caused Kaladin to doubt Dalinar's honor and drove a wedge in their relationship for a time.",
+            "chapter": "*Words of Radiance* Chapter 12"
         },
         "ashyn-exodus": {
             "name": "Ashyn Exodus",
             "blurb": "Fleeing the destruction of their homeworld, humans from Ashyn settled in Shinovar.",
-            "details": "Details"
+            "details": "> They came from another world, using powers that we have been forbidden to touch. Dangerous powers, of spren and Surges. They destroyed their lands and have come to us begging.We took them in, as commanded by the gods. What else could we do? They were a people forlorn, without a home. Our pity destroyed us.\n> —From the Eila Stele\nFleeing the destruction of their homeworld, humans from Ashyn, travelled by magical means to Roshar. At the prompting of the Shards, Honor and Cultivation, the native singers welcomed the humans, who initially settled in Shinovar."
         },
         "battle-of-kholinar": {
             "name": "Battle of Kholinar",
             "blurb": "The singers attacked and seized Kholinar. Elhokar is killed. F*** Moash.",
-            "details": "Details"
+            "details": "The singer forces laying seige to Kholinar attacked on the day Elhokar's team attempted to open the Oathgate. Elhokar's team failed after Moash killed the Alethi king and Kaladin, Shallan, Adolin, and Azure were stranded in Shadesmar. The singer assult was successful.",
+            "chapter": "*Oathbringer* Chapter 83"
         },
         "battle-of-narak-and-the-everstorm": {
-            "name": "Battle of Narak and the Everstorm",
+            "name": "Battle of Narak",
             "blurb": "The Everstorm was summoned as Alethi armies faced off with the listeners at the Battle of Narak.",
-            "details": "Details"
+            "details": "The Alethi forces led by Dalinar Kholin arrived at Narak on the final day of Renarin's cryptic countdown. A battle ensued as the stormform listener forces worked to summon the Everstorm. The Alethi proved victorious, but the Everstorm's arrival nearly wiped out all survivors.",
+    "chapter": "*Words of Radiance* Chapter 81"
         },
         "battle-of-the-tower": {
             "name": "Battle of the Tower",
-            "blurb": "",
-            "details": "Details"
+            "blurb": "Kaladin saved Dalinar and Adolin's forces after betrayal at the hands of Sadeas.",
+            "details": "Dalinar and Sadeas arranged a joint plateau run to the infamous plateau known as 'the Tower', where no Alethi army had yet proven victorious. As Dalinar's forces became engaged, Sadeas betrayed Dalinar, withdrawing his troops and leaving Dalinar surrounded. Kaladin and Bridge Four returned to the plateau, giving Dalinar, Adolin, and a remnant of their forces an opportunity to escape.",
+            "chapter": "*The Way of Kings* Chapter 65"
         },
         "boots": {
             "name": "Boots!",
             "blurb": "Shallan and Kaladin met for the first time, with Shallan pretending to be a Horneater princess.",
-            "details": "Details"
+            "details": "Unsure of the loyalties of an approaching group of soldiers, and at the prompting of Tyn, Shallan impersonated Horneater royalty at her first meeting with Kaladin on the outskirts of the Shattered Plains. She demanded, and received, his boots in payment for a feigned slight.",
+            "chapter": "*Words of Radiance* Chapter 28"
         },
         "bridge-four-begins-training-squires": {
             "name": "Bridge Four begins training squires",
             "blurb": "After Kaladin returned to Urithiru, Bridge Four began training Bridge Four as Windrunner squires. Rock's family arrived on the Shattered Plains.",
-            "details": "Details"
+            "details": "After Kaladin returned from his mission in Alethkar, he began to see to the development of the growing Windrunners. Several members of Bridge Four showed signs of being Kaladin's squires, and in the coming weeks most of the crew, as well as some newcomers, would also take the steps to become squires or full Windrunners.",
+            "chapter": "*Oathbringer* Chapter 35"
         },
         "bridge-four-begins-training": {
-            "name": "Bridge Four begins training",
-            "blurb": "Rlain joined Bridge Four. Kaladin began training the bridge crew to fight with the spear.",
-            "details": "Details"
+            "name": "Bridge Four spear training",
+            "blurb": "Kaladin began training the bridge crew to fight with the spear in order to escape.",
+            "details": "After the disaster with the attempt to protect the bridge crew with the 'side carry' maneuver, Kaladin was left with the hopeless realization that protecting the men would ultimately prove impossible. On the day Rlain was assigned to Bridge Four, the crew was assigned chasm duty. Finding a spear in the chasms, Kaladin determined that Bridge Four's only option was to try fighting their way to freedom",
+            "chapter": "*The Way of Kings* Chapter 27"
         },
         "chasmfiend-hunt-disaster": {
             "name": "Chasmfiend hunt disaster",
             "blurb": "Elhokar was saved by Dalinar when his saddle strap broke during a Chasmfiend hunt gone wrong.",
-            "details": "Details"
+            "details": "Dalinar and several highprinces attended Elhokar on a hunting party out onto the Shattered Plains. Upon arriving at their destination, where a small chasmfiend was to be baited, an enormous chasmfiend found its way onto the adjacent plateau, catching the party by surprise. While attacking the beast, Elhokar's saddle strap broke, leaving him vulnerable before the greatshell. Dalinar held the chasmfiend back and they ultimately slew the monster. The broken saddle strap led to an investigation into an aleged assassination attempt.",
+            "chapter": "*The Way of Kings* Chapter 13"
         },
         "dalinar-and-navani-are-married": {
             "name": "Dalinar and Navani are married",
             "blurb": "Dalinar and Navani were married atop Urithiru by the Stormfather.",
-            "details": "Details"
+            "details": "After the Vorin church refused to sanction Dalinar and Navani's marriage, the pair arranged a wedding officiated by the Stormfather himself atop Urithiru.",
+            "chapter": "*Oathbringer* Chapter 4"
         },
         "dalinar-and-sadeas-begin-joint-bridge-runs": {
             "name": "Dalinar and Sadeas begin joint bridge runs",
