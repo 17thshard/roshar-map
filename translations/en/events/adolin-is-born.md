@@ -1,5 +1,5 @@
 # Adolin is born
 
 
-## Details
-Details
+##Details
+Adolin was born to Dalinar and Evi Kholin.
