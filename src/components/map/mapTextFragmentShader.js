@@ -78,14 +78,14 @@ export default `
 
     float noise = texture2D(PatternTexture, vUv * vec2(16., 8.)).r;
 
-    vec4 map = texture2D(Texture, vUv);
-    vec4 shadesmarMap = texture2D(ShadesmarTexture, vUv);
+    highp vec4 map = texture2D(Texture, vUv);
+    highp vec4 shadesmarMap = texture2D(ShadesmarTexture, vUv);
 
-    float hoverValue = Transition > 0.5 ? shadesmarMap.b * 255. : map.b * 255.;
-    bool highlight = HoveredItem > .0 && hoverValue == HoveredItem;
+    highp float hoverValue = Transition > 0.5 ? shadesmarMap.b * 255. : map.b * 255.;
+    bool highlight = HoveredItem > .0 && hoverValue > HoveredItem - 1e-2 && hoverValue < HoveredItem + 1e-2;
     float highlightProgress = HoverProgress;
 
-    if (ActiveItem > .0 && hoverValue == ActiveItem) {
+    if (ActiveItem > .0 && hoverValue > ActiveItem - 1e-2 && hoverValue < ActiveItem + 1e-2) {
       highlight = true;
       highlightProgress = ActiveProgress;
     }
