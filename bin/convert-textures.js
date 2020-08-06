@@ -18,6 +18,7 @@ const textures = {
 }
 
 const basePath = './public/img/textures'
+const webpOnly = process.argv.slice(2)[0] === '--webp-only'
 
 Promise.all(Object.keys(textures).flatMap((name) => {
   const texture = textures[name]
@@ -36,12 +37,12 @@ Promise.all(Object.keys(textures).flatMap((name) => {
 
   console.log(`Optimizing and converting texture '${name}'...`)
 
-  return imagemin(changedFiles, {
+  return (webpOnly ? new Promise(resolve => resolve()) : imagemin(changedFiles, {
     destination: basePath,
     plugins: [
       imageminZopfli({ more: true })
     ]
-  }).then(() => {
+  })).then(() => {
     console.log(`Optimized PNGs for texture '${name}'`)
 
     return imagemin(changedFiles, {
