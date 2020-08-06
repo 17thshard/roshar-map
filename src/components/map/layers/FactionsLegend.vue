@@ -1,13 +1,12 @@
 <template>
   <ul class="factions-legend">
-    <li class="factions-legend__entry factions-legend__entry--coalition" aria-label="Red and maroon checkered">
-      Dalinar's Coalition of Monarchs
-    </li>
-    <li class="factions-legend__entry factions-legend__entry--odium" aria-label="Gold">
-      Odium's Forces
-    </li>
-    <li class="factions-legend__entry factions-legend__entry--neutral" aria-label="Green">
-      Neutral
+    <li
+      v-for="faction in ['coalition', 'odium', 'neutral']"
+      :key="faction"
+      :class="['factions-legend__entry', `factions-legend__entry--${faction}`]"
+      :aria-label="$t(`factions.${faction}.style`)"
+    >
+      {{ $t(`factions.${faction}.name`) }}
     </li>
   </ul>
 </template>
