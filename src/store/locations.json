@@ -47,7 +47,12 @@
         "coppermind": "Alethkar",
         "image": {
             "file": "locations/Alethkar_Color.jpg",
-            "credits": "by [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)"
+            "credits": "by [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)",
+            "size": 140,
+            "offset": {
+                "x": 1,
+                "y": 35
+            }
         },
         "related": [
             "characters/adolin",
@@ -249,7 +254,12 @@
         ],
         "image": {
             "file": "locations/kharbranth.jpg",
-            "credits": "by [Grant M. Hansen](https://coppermind.net/wiki/Coppermind:Artists/Grant_M._Hansen)"
+            "credits": "by [Grant M. Hansen](https://coppermind.net/wiki/Coppermind:Artists/Grant_M._Hansen)",
+            "size": 200,
+            "offset": {
+                "x": 65,
+                "y": 0
+            }
         },
         "related": [
             "characters/taravangian",
@@ -720,7 +730,12 @@
         "coppermind": "Reshi_Isles",
         "image": {
             "file": "locations/Map_ReshiSea.png",
-            "credits": "by [Otto Didact](Map_ReshiSea.png)"
+            "credits": "by [Otto Didact](Map_ReshiSea.png)",
+            "offset": {
+                "x": 50,
+                "y": 0
+            },
+            "size": 205
         },
         "related": [
             "events/rysn-in-the-reshi-isles",
@@ -762,7 +777,12 @@
         ],
         "image": {
             "file": "locations/Map_ReshiSea.png",
-            "credits": "by [Otto Didact](Map_ReshiSea.png)"
+            "credits": "by [Otto Didact](Map_ReshiSea.png)",
+            "size": 205,
+            "offset": {
+                "x": 50,
+                "y": 0
+            }
         },
         "coppermind": "Reshi_Isles",
         "related": [
@@ -809,7 +829,12 @@
         ],
         "image": {
             "file": "locations/Urithiru3_by_Jacobo_Montoya.jpg",
-            "credits": "by [Jacoo Montoya](https://coppermind.net/wiki/Coppermind:Artists/Jacobo_Montoya)"
+            "credits": "by [Jacoo Montoya](https://coppermind.net/wiki/Coppermind:Artists/Jacobo_Montoya)",
+            "size": 200,
+            "offset": {
+                "x": 50,
+                "y": 0
+            }
         },
         "coppermind": "Urithiru",
         "related": [
@@ -864,7 +889,12 @@
         ],
         "image": {
             "file": "locations/Whelan_Stormlight_Shallan.jpg",
-            "credits": "by [Michael Whelan](https://coppermind.net/wiki/Michael_Whelan)"
+            "credits": "by [Michael Whelan](https://coppermind.net/wiki/Michael_Whelan)",
+            "size": 150,
+            "offset": {
+                "x": 100,
+                "y": 0
+            }
         },
         "coppermind": "Shattered_Plains",
         "related": [
@@ -1283,7 +1313,8 @@
         "coppermind": "Purelake",
         "image": {
             "file": "locations/Purelake_1.jpeg",
-            "credits": "by [Bonnie Johnson](https://coppermind.net/wiki/Coppermind:Artists/Bonnie_Johnson)"
+            "credits": "by [Bonnie Johnson](https://coppermind.net/wiki/Coppermind:Artists/Bonnie_Johnson)",
+            "size": 155
         },
         "related": [
             "events/ishikk",
@@ -1333,7 +1364,12 @@
         ],
         "image": {
             "file": "locations/Kholinar_Illustratio_by_Daitengu_koh.jpg",
-            "credits": "by [Daitengu_koh](https://www.reddit.com/r/Stormlight_Archive/comments/do31o9/kholinar_illustration/)"
+            "credits": "by [Daitengu_koh](https://www.reddit.com/r/Stormlight_Archive/comments/do31o9/kholinar_illustration/)",
+            "size": 150,
+            "offset": {
+                "x": 15,
+                "y": 0
+            }
         },
         "coppermind": "Kholinar"
     },
@@ -1455,7 +1491,12 @@
         ],
         "image": {
             "file": "locations/Thaylen_City.jpg",
-            "credits": "by [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)"
+            "credits": "by [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)",
+            "size": 160,
+            "offset": {
+                "x": 80,
+                "y": 50
+            }
         },
         "coppermind": "Thaylen_City",
         "related": [
@@ -1559,7 +1600,12 @@
         ],
         "image": {
             "file": "locations/Stormseat_Mosaic.jpeg",
-            "credits": "by [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)"
+            "credits": "by [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)",
+            "size": 170,
+            "offset": {
+                "x": 70,
+                "y": 10
+            }
         },
         "coppermind": "Narak",
         "related": [
@@ -1618,7 +1664,8 @@
         },
         "image": {
             "file": "locations/The_Horneater_Peaks_by_Yen_Shu_Liao.jpg",
-            "credits": "by [Yen Shu Liao](https://coppermind.net/wiki/Coppermind:Artists/Yen_Shu_Liao)"
+            "credits": "by [Yen Shu Liao](https://coppermind.net/wiki/Coppermind:Artists/Yen_Shu_Liao)",
+            "size": 200
         },
         "mapId": 29,
         "points": [
@@ -2577,7 +2624,11 @@
         "coppermind": "Frostlands",
         "image": {
             "file": "locations/Frostlands_map.jpeg",
-            "credits": "by [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)"
+            "credits": "by [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)",
+            "offset": {
+                "x": 50,
+                "y": 10
+            }
         },
         "related": [
             "events/moash-and-graves-attacked",
@@ -3716,8 +3767,13 @@
             }
         ],
         "image": {
-            "file": "locations/Sea of Lost Lights.jpg",
-            "credits": "by [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)"
+            "file": "locations/Sea_of_Lost_Lights.jpg",
+            "credits": "by [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)",
+            "size": 150,
+            "offset": {
+                "x": 50,
+                "y": 50
+            }
         },
         "shadesmar": true,
         "coppermind": "Sea_of_Lost_Lights"

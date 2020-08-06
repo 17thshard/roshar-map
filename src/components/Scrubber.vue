@@ -142,7 +142,7 @@ export default {
     if (this.activeEvent !== null) {
       setTimeout(() => this.scrollToEvent(this.activeEvent), 1500)
     } else {
-      setTimeout(() => this.scrollToEvent(this.$store.state.mappings.events['kaladin-joins-bridge-four']), 1500)
+      setTimeout(() => this.scrollToEvent(this.$store.state.mappings.events['gavilars-assassination']), 1500)
     }
 
     this.update()
