@@ -41,7 +41,7 @@ export default {
   },
   computed: {
     imageBaseUrl () {
-      return `${process.env.BASE_URL}img/events`
+      return `${process.env.BASE_URL}img`
     }
   },
   methods: {
@@ -144,7 +144,9 @@ export default {
     animation: event-card__image-enter 0.5s ease-out;
     animation-delay: 1.5s;
     animation-fill-mode: forwards;
+    background-color: #F5ECDA;
     background-size: 100%;
+    background-repeat: no-repeat;
 
     @keyframes event-card__image-enter {
       0% {

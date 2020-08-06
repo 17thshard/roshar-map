@@ -44,7 +44,7 @@ export default {
   },
   computed: {
     imageBaseUrl () {
-      return `${process.env.BASE_URL}img/events`
+      return `${process.env.BASE_URL}img`
     },
     selectedMessages () {
       return this.selectedLanguage !== null ? this.languages[this.selectedLanguage] : null

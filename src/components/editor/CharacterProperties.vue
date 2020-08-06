@@ -25,23 +25,75 @@
         </li>
       </ul>
 
-      <label for="character-properties__image">Image</label>
-      <input
-        id="character-properties__image"
-        :value="character.image !== undefined ? character.image.file : undefined"
-        type="text"
-        @input="updateImageFile"
-      >
+      <div class="character-properties__image">
+        <h3>Image</h3>
 
-      <label v-if="character.image !== undefined" for="character-properties__image--credits">Image Credits</label>
-      <input
-        v-if="character.image !== undefined"
-        id="character-properties__image--credits"
-        v-model="character.image.credits"
-        type="text"
-      >
+        <label for="character-properties__image--file">File</label>
+        <input
+          id="character-properties__image--file"
+          :value="character.image !== undefined ? character.image.file : undefined"
+          type="text"
+          @input="updateImageFile"
+        >
 
-      <img v-if="character.image !== undefined" :src="`${imageBaseUrl}/${character.image.file}`" :alt="character.id">
+        <template v-if="character.image !== undefined">
+          <label for="character-properties__image--credits">Credits</label>
+          <input
+            id="character-properties__image--credits"
+            v-model="character.image.credits"
+            type="text"
+          >
+          <div class="character-properties__image-preview-container">
+            <div
+              :style="imageStyles"
+              class="character-properties__image-preview"
+            />
+          </div>
+
+          <div class="character-properties__coordinates character-properties__coordinates--units">
+            <h4>Offset</h4>
+
+            <label for="character-properties__coordinates--image-x">X</label>
+            <input
+              id="character-properties__coordinates--image-x"
+              :value="character.image.offset !== undefined ? character.image.offset.x : 0"
+              type="number"
+              min="-100"
+              max="100"
+              step="any"
+              @input="updateImageOffset('x', $event)"
+            >
+
+            %
+
+            <label for="character-properties__coordinates--image-y">Y</label>
+            <input
+              id="character-properties__coordinates--image-y"
+              :value="character.image.offset !== undefined ? character.image.offset.y : 0"
+              type="number"
+              min="-100"
+              max="100"
+              step="any"
+              @input="updateImageOffset('y', $event)"
+            >
+
+            %
+          </div>
+
+          <div class="character-properties__image-size">
+            <label for="character-properties__image--size">Size</label>
+            <input
+              id="character-properties__image--size"
+              :value="character.image.size !== undefined ? character.image.size : 100"
+              type="number"
+              min="0"
+              step="any"
+              @input="updateImageSize"
+            >
+            %
+          </div>
+        </template>
+      </div>
 
       <label for="character-properties__coppermind">Coppermind Article</label>
       <input
@@ -82,12 +134,31 @@ export default {
   },
   computed: {
     imageBaseUrl () {
-      return `${process.env.BASE_URL}img/characters`
+      return `${process.env.BASE_URL}img`
     },
     linkAutocompletions () {
       return this.linkables.filter(l => l.startsWith(this.newLink) && l !== `characters/${this.character.id}`)
         .sort((a, b) => a.localeCompare(b))
         .map(l => ({ text: l }))
+    },
+    imageStyles () {
+      if (this.character.image === undefined) {
+        return
+      }
+
+      const styles = {
+        backgroundImage: `url("${this.imageBaseUrl}/${this.character.image.file}")`
+      }
+
+      if (this.character.image.offset !== undefined) {
+        styles.backgroundPosition = `${this.character.image.offset.x}% ${this.character.image.offset.y}%`
+      }
+
+      if (this.character.image.size !== undefined) {
+        styles.backgroundSize = `${this.character.image.size}%`
+      }
+
+      return styles
     }
   },
   methods: {
@@ -104,6 +175,38 @@ export default {
       }
 
       this.character.image.file = trimmed
+    },
+    updateImageOffset (prop, { target: { value } }) {
+      const trimmed = value.trim()
+
+      if (trimmed.length === 0) {
+        this.$delete(this.character.image, 'offset')
+        return
+      }
+
+      if (this.character.image.offset === undefined) {
+        this.$set(this.character.image, 'offset', { x: 0, y: 0 })
+      }
+
+      this.$set(this.character.image.offset, prop, Number.parseInt(trimmed, 10))
+
+      if (this.character.image.offset.x === 0 && this.character.image.offset.y === 0) {
+        this.$delete(this.character.image, 'offset')
+      }
+    },
+    updateImageSize ({ target: { value } }) {
+      const trimmed = value.trim()
+
+      if (trimmed.length === 0) {
+        this.$delete(this.character.image, 'size')
+        return
+      }
+
+      this.$set(this.character.image, 'size', Number.parseInt(trimmed, 10))
+
+      if (this.character.image.size === 100) {
+        this.$delete(this.character.image, 'size')
+      }
     },
     update (property, { target: { value } }) {
       const trimmed = value.trim()
@@ -159,6 +262,81 @@ export default {
   &__linked {
     padding: 0;
     margin: 0;
+  }
+
+  &__image {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 0.5rem;
+    grid-column: 1 / span 2;
+    align-items: center;
+
+    h3 {
+      margin: 0;
+      grid-column: 1 / span 2;
+    }
+
+    &-preview {
+      width: 115px;
+      height: 115px;
+      clip-path: polygon(
+          2rem 0,
+          calc(100% - 2rem) 0,
+          100% 2rem,
+          100% calc(100% - 2rem),
+          calc(100% - 2rem) 100%,
+          2rem 100%,
+          0 calc(100% - 2rem),
+          0 2rem
+      );
+      background-size: 100%;
+      box-sizing: border-box;
+      background-repeat: no-repeat;
+      background-color: #0f3562;
+
+      &-container {
+        display: flex;
+        justify-content: center;
+        grid-column: 1 / span 2;
+      }
+    }
+
+    &-size {
+      display: grid;
+      align-items: center;
+      grid-column: 1 / span 2;
+      grid-gap: 0.25rem;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+
+      input {
+        margin-left: 0.25rem;
+      }
+    }
+  }
+
+  &__coordinates {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+    grid-column: 1 / span 2;
+    align-items: center;
+    grid-gap: 0.5rem;
+
+    h3, h4 {
+      margin: 0;
+      grid-column: 1 / span 6;
+    }
+
+    input[type="number"] {
+      width: auto;
+    }
+
+    &--units {
+      grid-template-columns: auto minmax(0, 1fr) auto auto minmax(0, 1fr) auto;
+
+      h3, h4 {
+        grid-column: 1 / span 6;
+      }
+    }
   }
 }
 </style>

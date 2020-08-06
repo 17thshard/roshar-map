@@ -240,7 +240,7 @@ export default {
   },
   computed: {
     imageBaseUrl () {
-      return `${process.env.BASE_URL}img/events`
+      return `${process.env.BASE_URL}img`
     },
     linkAutocompletions () {
       return this.linkables.filter(l => l.startsWith(this.newLink) && l !== `events/${this.event.id}`)
@@ -425,6 +425,8 @@ export default {
       border-radius: 100%;
       border: 4px solid #F5ECDA;
       box-sizing: border-box;
+      background-repeat: no-repeat;
+      background-color: #F5ECDA;
 
       &-container {
         display: flex;

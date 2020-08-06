@@ -1123,7 +1123,7 @@ export default {
   font-family: sans-serif;
 
   &__menu {
-    position: absolute;
+    position: fixed;
     top: 0;
     height: 100px;
     left: 0;
@@ -1230,7 +1230,7 @@ export default {
 
   &__location-list {
     list-style-type: none;
-    position: absolute;
+    position: fixed;
     top: 100px;
     left: 0;
     bottom: 0;
@@ -1275,7 +1275,7 @@ export default {
 
   &__event-list {
     list-style-type: none;
-    position: absolute;
+    position: fixed;
     top: 100px;
     left: 0;
     bottom: 0;
@@ -1332,7 +1332,7 @@ export default {
 
   &__character-list {
     list-style-type: none;
-    position: absolute;
+    position: fixed;
     top: 100px;
     left: 0;
     bottom: 0;
@@ -1376,7 +1376,7 @@ export default {
 
   &__misc-list {
     list-style-type: none;
-    position: absolute;
+    position: fixed;
     top: 100px;
     left: 0;
     bottom: 0;
@@ -1419,7 +1419,7 @@ export default {
   }
 
   &__tags {
-    position: absolute;
+    position: fixed;
     top: 100px;
     left: 0;
     bottom: 0;
@@ -1548,7 +1548,7 @@ export default {
   }
 
   .event-properties, .location-properties, .character-properties, .misc-properties, .tag-properties {
-    position: absolute;
+    position: fixed;
     top: 100px;
     right: 0;
     bottom: 0;

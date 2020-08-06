@@ -2,7 +2,7 @@
     {
         "id": "taravangian",
         "image": {
-            "file": "Taravangian_as_the_Wheel_of_Fortune_Orientation_1.jpg",
+            "file": "characters/Taravangian_as_the_Wheel_of_Fortune_Orientation_1.jpg",
             "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
         },
         "coppermind": "Taravangian",
@@ -41,7 +41,7 @@
             "locations/urithiru"
         ],
         "image": {
-            "file": "Dalinar_-_IV._The_Emperor_.jpg",
+            "file": "characters/Dalinar_-_IV._The_Emperor_.jpg",
             "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
         },
         "coppermind": "Dalinar_Kholin"
@@ -61,7 +61,7 @@
             "locations/kholinar"
         ],
         "image": {
-            "file": "King_Gavilar.jpg",
+            "file": "characters/King_Gavilar.jpg",
             "credits": "by [Grant M. Hansen](https://coppermind.net/wiki/Coppermind:Artists/Grant_M._Hansen)"
         },
         "coppermind": "Gavilar_Kholin"
@@ -88,7 +88,7 @@
             "locations/alethkar"
         ],
         "image": {
-            "file": "Adolin_-_VIII._Strength_.jpg",
+            "file": "characters/Adolin_-_VIII._Strength_.jpg",
             "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
         },
         "coppermind": "Adolin_Kholin"
@@ -121,7 +121,7 @@
             "locations/hearthstone"
         ],
         "image": {
-            "file": "Kaladin_-_XI_Justice_.jpg",
+            "file": "characters/Kaladin_-_XI_Justice_.jpg",
             "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
         },
         "coppermind": "Kaladin"
@@ -142,7 +142,7 @@
         ],
         "coppermind": "Renarin_Kholin",
         "image": {
-            "file": "Renarin_-_XVIII._The_Moon_.jpg",
+            "file": "characters/Renarin_-_XVIII._The_Moon_.jpg",
             "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
         }
     },
@@ -158,7 +158,7 @@
             "locations/alethkar"
         ],
         "image": {
-            "file": "Navani_-_III._The_Empress.png",
+            "file": "characters/Navani_-_III._The_Empress.png",
             "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
         },
         "coppermind": "Navani_Kholin"
@@ -178,7 +178,7 @@
             "locations/kholinar"
         ],
         "image": {
-            "file": "Elhokar_-_V._Hierophant.jpg",
+            "file": "characters/Elhokar_-_V._Hierophant.jpg",
             "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
         },
         "coppermind": "Elhokar_Kholin"
@@ -201,7 +201,7 @@
             "locations/alethkar"
         ],
         "image": {
-            "file": "Jasnah_-_II._The_High_Priestess_.jpg",
+            "file": "characters/Jasnah_-_II._The_High_Priestess_.jpg",
             "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
         },
         "coppermind": "Jasnah_Kholin"
@@ -237,7 +237,7 @@
             "locations/jah-keved"
         ],
         "image": {
-            "file": "Shallan_-_I._The_Magician_.jpg",
+            "file": "characters/Shallan_-_I._The_Magician_.jpg",
             "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
         },
         "coppermind": "Shallan"
@@ -254,7 +254,7 @@
         ],
         "coppermind": "Eshonai",
         "image": {
-            "file": "Eshonai_-_XIII._Death.jpg",
+            "file": "characters/Eshonai_-_XIII._Death.jpg",
             "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
         }
     },
@@ -272,7 +272,7 @@
             "locations/narak"
         ],
         "image": {
-            "file": "Venli_-_XVI._The_Tower_.jpg",
+            "file": "characters/Venli_-_XVI._The_Tower_.jpg",
             "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
         },
         "coppermind": "Venlil"
@@ -287,7 +287,7 @@
             "locations/rall-elorim"
         ],
         "image": {
-            "file": "Lift_-_VII._The_Chariot_.jpg",
+            "file": "characters/Lift_-_VII._The_Chariot_.jpg",
             "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
         },
         "coppermind": "Lift"
@@ -307,7 +307,7 @@
             "locations/alethkar"
         ],
         "image": {
-            "file": "Moash_-_IX._Hermit.jpg",
+            "file": "characters/Moash_-_IX._Hermit.jpg",
             "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
         },
         "coppermind": "Moash"
@@ -324,7 +324,7 @@
             "events/the-battle-of-thaylen-field"
         ],
         "image": {
-            "file": "Odium_-_XV_the_Devil.jpg",
+            "file": "characters/Odium_-_XV_the_Devil.jpg",
             "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
         },
         "coppermind": "Odium"
@@ -345,7 +345,7 @@
             "locations/shinovar"
         ],
         "image": {
-            "file": "Szeth_-_XX._Judgement_.jpg",
+            "file": "characters/Szeth_-_XX._Judgement_.jpg",
             "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
         },
         "coppermind": "Szeth"
@@ -360,7 +360,7 @@
             "events/taln-arrives-in-kholinar"
         ],
         "image": {
-            "file": "Wit-Fool_by_taratjah.jpg",
+            "file": "characters/Wit-Fool_by_taratjah.jpg",
             "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
         },
         "coppermind": "Hoid"
@@ -376,7 +376,7 @@
             "locations/valley"
         ],
         "image": {
-            "file": "Cultivation_and_the_Nightwatcher_2.jpg",
+            "file": "characters/Cultivation_and_the_Nightwatcher_2.jpg",
             "credits": "by [Kyle Pearson](https://coppermind.net/wiki/Coppermind:Artists/Kyle_Pearson)"
         },
         "coppermind": "Cultivation"
@@ -389,7 +389,7 @@
             "events/shattering-of-adonalsium"
         ],
         "image": {
-            "file": "Tanavast.jpg",
+            "file": "characters/Tanavast.jpg",
             "credits": "by [botanicaxu](https://coppermind.net/wiki/Coppermind:Artists/botanicaxu)"
         },
         "coppermind": "Honor"
@@ -403,7 +403,7 @@
             "locations/thaylenah"
         ],
         "image": {
-            "file": "Rysn_&_Larkin_by_botanicaxu.jpg",
+            "file": "characters/Rysn_&_Larkin_by_botanicaxu.jpg",
             "credits": "by [botanicaxu](https://botanicaxu.tumblr.com/post/165173520094/oathbringer-countdown-70-days-rysn-larkin)"
         },
         "coppermind": "Rysn"

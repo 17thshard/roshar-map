@@ -44,7 +44,12 @@
             class="details__related-link"
           >
             <div class="details__related-link-icon">
-              <img v-if="link.image !== undefined" :src="link.image" :alt="$t(link.translationKey)" class="details__related-link-image">
+              <div
+                v-if="link.image !== undefined"
+                :style="link.image"
+                :title="$t(link.translationKey)"
+                class="details__related-link-image"
+              />
               <svg v-else class="details__related-link-placeholder" viewBox="0 0 1 1">
                 <path
                   fill="#f6f8fa"
@@ -81,7 +86,7 @@ export default {
   },
   computed: {
     imageUrl () {
-      return `${process.env.BASE_URL}img/${this.details.type}/${this.details.image.file}`
+      return `${process.env.BASE_URL}img/${this.details.image.file}`
     },
     baseTranslationKey () {
       return `${this.details.type}.${this.details.id}`
@@ -111,7 +116,17 @@ export default {
 
         let image
         if (linkDetails.image !== undefined) {
-          image = `${process.env.BASE_URL}img/${type}/${linkDetails.image.file}`
+          image = {
+            backgroundImage: `url("${process.env.BASE_URL}img/${linkDetails.image.file}")`
+          }
+
+          if (linkDetails.image.offset !== undefined) {
+            image.backgroundPosition = `${linkDetails.image.offset.x}% ${linkDetails.image.offset.y}%`
+          }
+
+          if (linkDetails.image.size !== undefined) {
+            image.backgroundSize = `${linkDetails.image.size}%`
+          }
         }
 
         return {
@@ -305,6 +320,8 @@ export default {
       z-index: 1;
       width: 100%;
       clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), 0 100%);
+      background-color: #0f3562;
+      background-repeat: no-repeat;
     }
 
     figcaption {
@@ -435,7 +452,9 @@ export default {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        background: #0f3562;
+        background-color: #0f3562;
+        background-repeat: no-repeat;
+        background-size: 100%;
         transition: transform 0.2s linear;
       }
 
