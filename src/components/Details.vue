@@ -25,6 +25,16 @@
           <h2 class="details__title">
             {{ $t(`${baseTranslationKey}.name`) }}
           </h2>
+          <ul v-if="Object.keys(metadata).length > 0" class="details__metadata">
+            <li v-if="metadata.date" class="details__metadata--date">
+              <strong>{{ $t(`ui.date`) }}:</strong>
+              {{ metadata.date }}
+              <span class="details__date-help" @click="$store.commit('openCalendarGuide')">
+                <HelpCircleIcon size="1.25x" />
+                How to read this?
+              </span>
+            </li>
+          </ul>
           <Markdown :content="text" tag="article" />
           <a
             v-if="details.coppermind !== undefined"
@@ -42,7 +52,9 @@
             :key="type"
             class="details__related-group"
           >
-            <h4 class="details__related-group-title">{{ $t(`entry-types.${type}`) }}</h4>
+            <h4 class="details__related-group-title">
+              {{ $t(`entry-types.${type}`) }}
+            </h4>
             <router-link
               v-for="link in related[type]"
               :key="link.translationKey"
@@ -74,12 +86,13 @@
 
 <script>
 import Scrollbar from 'vuescroll/dist/vuescroll-native'
-import { XIcon } from 'vue-feather-icons'
+import { HelpCircleIcon, XIcon } from 'vue-feather-icons'
 import Markdown from '@/components/Markdown.vue'
+import { formatDate } from '@/utils'
 
 export default {
   name: 'Details',
-  components: { Markdown, XIcon, Scrollbar },
+  components: { Markdown, HelpCircleIcon, XIcon, Scrollbar },
   props: {
     details: {
       type: Object,
@@ -97,6 +110,15 @@ export default {
     },
     baseTranslationKey () {
       return `${this.details.type}.${this.details.id}`
+    },
+    metadata () {
+      const result = {}
+
+      if (this.details.date) {
+        result.date = formatDate(this.details.date)
+      }
+
+      return result
     },
     text () {
       if (!this.$te(`${this.baseTranslationKey}.details`, 'en') && this.$te(`${this.baseTranslationKey}.blurb`, 'en')) {
@@ -344,6 +366,44 @@ export default {
       margin-top: -0.75rem;
       margin-left: auto;
       padding-right: 2rem;
+    }
+  }
+
+  &__metadata {
+    list-style-type: none;
+    padding: 0;
+    margin: 0.5rem 0;
+    line-height: 1;
+    font-size: 0.9em;
+
+    &--date {
+      display: flex;
+      align-items: center;
+
+      strong {
+        margin-right: 0.25rem;
+      }
+    }
+  }
+
+  &__date-help {
+    display: flex;
+    align-items: center;
+    margin-left: 0.25rem;
+    overflow: hidden;
+    max-width: 1.25em;
+    white-space: nowrap;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+    .feather {
+      flex-shrink: 0;
+      margin-right: 0.25rem;
+    }
+
+    &:hover {
+      max-width: 100%;
+      color: #0f3562;
     }
   }
 

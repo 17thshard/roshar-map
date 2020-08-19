@@ -83,7 +83,7 @@
 import { mapState } from 'vuex'
 import Timeline from '@/components/Timeline.vue'
 import EventCard from '@/components/EventCard.vue'
-import { lerp } from '@/utils'
+import { formatDate, lerp } from '@/utils'
 
 export default {
   name: 'Scrubber',
@@ -178,7 +178,7 @@ export default {
       const scroll = this.$refs.container.scrollLeft
       const event = this.events.find(event => Math.abs(event.offset - scroll) <= 1)
       if (event !== undefined) {
-        this.currentDate = this.formatDate(event.date)
+        this.currentDate = formatDate(event.date)
 
         if (event.circa) {
           this.currentDate = this.$t('ui.circa', { date: this.currentDate })
@@ -213,7 +213,7 @@ export default {
           (localScroll - startMonth.offset) / (endMonth.offset - startMonth.offset)
         )
 
-        this.currentDate = this.formatDate([start.year, Math.trunc(displayMonth) + 1])
+        this.currentDate = formatDate([start.year, Math.trunc(displayMonth) + 1])
       } else {
         const end = this.years[endIndex]
         const lerpOffset = start.singleEvent ? start.offset : startEndOffset
@@ -224,9 +224,6 @@ export default {
       const { container } = this.$refs
       this.leftOverflowVisible = container.scrollLeft > this.timelineOffset
       this.rightOverflowVisible = container.scrollLeft + container.clientWidth < container.scrollWidth - this.timelineOffset
-    },
-    formatDate (date) {
-      return date.filter(n => !Number.isNaN(n)).join('.')
     },
     gotoEvent (dir) {
       const scroll = this.$refs.container.scrollLeft

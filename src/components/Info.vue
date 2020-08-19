@@ -29,6 +29,9 @@
               <a href="#" target="_blank" @click.prevent="subPage = 'language'">
                 {{ $t('ui.language') }}
               </a>
+              <a href="#" target="_blank">
+                {{ $t('ui.help') }}
+              </a>
               <a href="#" target="_blank" @click.prevent="subPage = 'disclaimer'">
                 {{ $t('ui.disclaimer') }}
               </a>

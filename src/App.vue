@@ -12,6 +12,9 @@
     </transition>
     <Info @open="sidebarActive = true" @close="sidebarActive = false" />
     <Settings @open="sidebarActive = true" @close="sidebarActive = false" />
+    <transition name="calendar-guide">
+      <CalendarGuide v-if="$store.state.calendarGuideOpen" />
+    </transition>
     <transition name="loading__fade">
       <LoadingIndicator v-if="!ready" />
     </transition>
@@ -25,10 +28,12 @@ import Settings from '@/components/Settings.vue'
 import LoadingIndicator from '@/components/LoadingIndicator.vue'
 import Info from '@/components/Info.vue'
 import Details from '@/components/Details.vue'
+import CalendarGuide from '@/components/CalendarGuide.vue'
 
 export default {
   name: 'App',
   components: {
+    CalendarGuide,
     Details,
     Info,
     LoadingIndicator,

@@ -260,6 +260,12 @@ const mutations = {
   },
   toggleLayer (state, { layer, value }) {
     state.layersActive[layer] = value
+  },
+  openCalendarGuide (state) {
+    state.calendarGuideOpen = true
+  },
+  closeCalendarGuide (state) {
+    state.calendarGuideOpen = false
   }
 }
 
@@ -278,7 +284,8 @@ export default new Vuex.Store({
       shadesmar: false,
       oathgates: false,
       factions: false
-    }
+    },
+    calendarGuideOpen: false
   },
   mutations,
   getters: {

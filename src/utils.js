@@ -21,3 +21,11 @@ export function clamp01 (t) {
 export function inverseLerp (a, b, value) {
   return clamp01((value - a) / (b - a))
 }
+
+export function formatDate (date) {
+  return date.filter(n => !Number.isNaN(n)).join('.')
+}
+
+export function getTimestampInYear ([month, week, day]) {
+  return day + week * 5 + month * 50
+}
