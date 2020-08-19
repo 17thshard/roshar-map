@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@johmun/vue-tags-input": "^2.1.0",
+    "@popperjs/core": "^2.4.4",
     "core-js": "^3.6.5",
     "deep-diff": "^1.0.2",
     "hammerjs": "^2.0.8",

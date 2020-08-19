@@ -1,6 +1,6 @@
 <template>
   <div :class="['info', { 'info--active': active, 'info--leave-active': leaveActive }]">
-    <button class="info__button" :title="$t('ui.menu')" @click="open">
+    <button data-tutorial-id="menu-button" class="info__button" :title="$t('ui.menu')" @click="open">
       <MenuIcon size="1x" />
     </button>
     <transition name="info__wrapper" @before-leave="leaveActive = true" @after-leave="leaveActive = false">
@@ -29,7 +29,7 @@
               <a href="#" target="_blank" @click.prevent="subPage = 'language'">
                 {{ $t('ui.language') }}
               </a>
-              <a href="#" target="_blank">
+              <a href="#" target="_blank" @click.prevent="$emit('open-tutorial')">
                 {{ $t('ui.help') }}
               </a>
               <a href="#" target="_blank" @click.prevent="subPage = 'disclaimer'">
@@ -112,6 +112,7 @@
 <script>
 import Scrollbar from 'vuescroll/dist/vuescroll-native'
 import { ChevronLeftIcon, FacebookIcon, GithubIcon, MenuIcon, TwitterIcon, XIcon, YoutubeIcon } from 'vue-feather-icons'
+import { mapState } from 'vuex'
 import Markdown from '@/components/Markdown.vue'
 
 export default {
@@ -119,21 +120,23 @@ export default {
   components: { Markdown, TwitterIcon, FacebookIcon, YoutubeIcon, GithubIcon, MenuIcon, XIcon, Scrollbar, ChevronLeftIcon },
   data () {
     return {
-      active: false,
       leaveActive: false,
       subPage: null,
       scrolled: {}
     }
   },
+  computed: {
+    ...mapState({ active: 'infoOpen' })
+  },
   methods: {
     open () {
       this.scrolled = {}
       this.subPage = null
-      this.active = true
+      this.$store.commit('openInfo')
       this.$emit('open')
     },
     close () {
-      this.active = false
+      this.$store.commit('closeInfo')
       this.$emit('close')
     },
     onScroll (page, event) {

@@ -1,5 +1,10 @@
 <template>
   <div class="map">
+    <span
+      data-tutorial-id="location"
+      class="map__tutorial-ref"
+      :style="{ left: `${tutorialReferencePosition.x}%`, top: `${tutorialReferencePosition.y}%` }"
+    />
     <transition name="map__factions-legend">
       <FactionsLegend v-if="layers.factions !== undefined && layers.factions.t > 0.5" class="map__factions-legend" />
     </transition>
@@ -51,7 +56,11 @@ export default {
       perpendicularityTransitionDirection: 0,
       dimmingProgress: 0,
       dimmingProgressDirection: 0,
-      layers: {}
+      layers: {},
+      tutorialReferencePosition: {
+        x: 0,
+        y: 0
+      }
     }
   },
   computed: {
@@ -313,6 +322,12 @@ export default {
 
       this.controls.update()
 
+      const tutorialPos = new Vector3(206.9, -21.2, 0)
+      tutorialPos.project(this.camera)
+
+      this.tutorialReferencePosition.x = (tutorialPos.x + 1) * 0.5 * 100
+      this.tutorialReferencePosition.y = (1 - tutorialPos.y) * 0.5 * 100
+
       this.mapMaterial.uniforms.PerpTransition.value = this.perpendicularityTransition
       this.mapMaterial.uniforms.DimTransition.value = this.dimmingProgress
       this.mapMaterial.uniforms.Time.value = timestamp / 1000
@@ -467,6 +482,11 @@ export default {
     pointer-events: none;
     box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.6);
     z-index: 10;
+  }
+
+  &__tutorial-ref {
+    position: absolute;
+    pointer-events: none;
   }
 
   &__factions-legend {

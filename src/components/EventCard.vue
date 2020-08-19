@@ -19,7 +19,7 @@
         inline
         class="event-card__text"
       >
-        <router-link :to="`/${$route.params.locale}/events/${event.id}`" class="event-card__read-more">
+        <router-link data-tutorial-id="event" :to="`/${$route.params.locale}/events/${event.id}`" class="event-card__read-more">
           {{ $t('ui.more') }}
         </router-link>
       </Markdown>

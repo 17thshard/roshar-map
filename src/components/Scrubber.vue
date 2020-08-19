@@ -1,5 +1,6 @@
 <template>
   <div
+    data-tutorial-id="timeline"
     :class="[
       'scrubber',
       {

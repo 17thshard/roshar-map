@@ -1,6 +1,6 @@
 <template>
   <div :class="['settings', { 'settings--active': active }]">
-    <button class="settings__button" @click="open">
+    <button data-tutorial-id="settings-button" class="settings__button" @click="open">
       <SlidersIcon size="1x" />
       {{ $t('ui.settings') }}
     </button>
@@ -24,7 +24,7 @@
           @handle-scroll="onScroll"
         >
           <section class="settings__layers">
-            <h3>{{ $t('ui.layers') }}</h3>
+            <h3 data-tutorial-id="settings-layers">{{ $t('ui.layers') }}</h3>
             <label
               v-for="(layerActive, layer) in $store.state.layersActive"
               :key="layer"
@@ -43,7 +43,7 @@
           </section>
 
           <section class="settings__filters" :style="{ paddingBottom: `${separateHeight + 56}px` }">
-            <h3>{{ $t('ui.filters') }}</h3>
+            <h3 data-tutorial-id="settings-filters">{{ $t('ui.filters') }}</h3>
             <template v-for="(tags, category) in tagCategories">
               <h4 :key="category">
                 {{ $t(`tagCategories.${category}`) }}
@@ -69,7 +69,7 @@
         </Scrollbar>
 
         <section class="settings__separate-timelines-container">
-          <h3>
+          <h3 data-tutorial-id="settings-separate-timelines">
             {{ $t('ui.separate-timelines') }}
           </h3>
           <Draggable
@@ -118,7 +118,6 @@ export default {
   components: { SlidersIcon, XIcon, EyeIcon, EyeOffIcon, GitBranchIcon, Draggable, Scrollbar },
   data () {
     return {
-      active: false,
       scrolled: false,
       tagCategories,
       draggingSeparates: false
@@ -126,6 +125,7 @@ export default {
   },
   computed: {
     ...mapState(['events', 'filter']),
+    ...mapState({ active: 'settingsOpen' }),
     separateTags: {
       get () {
         return this.filter.separateTags
@@ -140,12 +140,12 @@ export default {
   },
   methods: {
     open () {
-      this.active = true
+      this.$store.commit('openSettings')
       this.scrolled = false
       this.$emit('open')
     },
     close () {
-      this.active = false
+      this.$store.commit('closeSettings')
       this.$emit('close')
     },
     onScroll (event) {
@@ -252,6 +252,7 @@ export default {
 
     h3 {
       margin: 0 0 0.5rem;
+      display: inline-block;
     }
 
     h4 {

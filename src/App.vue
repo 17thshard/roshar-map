@@ -10,10 +10,16 @@
     <transition name="scrubber" duration="1500" @after-enter="onScrubberLoaded">
       <Scrubber v-if="ready" />
     </transition>
-    <Info @open="sidebarActive = true" @close="sidebarActive = false" />
+    <Info @open="sidebarActive = true" @open-tutorial="tutorialActive = true" @close="sidebarActive = false" />
     <Settings @open="sidebarActive = true" @close="sidebarActive = false" />
     <transition name="calendar-guide">
       <CalendarGuide v-if="$store.state.calendarGuideOpen" />
+    </transition>
+    <transition name="first-visit-window" appear>
+      <FirstVisitWindow v-if="ready && firstVisit" @open-tutorial="tutorialActive = true" @close="firstVisit = false" />
+    </transition>
+    <transition name="tutorial">
+      <Tutorial v-if="ready && tutorialActive" @close="tutorialActive = false" />
     </transition>
     <transition name="loading__fade">
       <LoadingIndicator v-if="!ready" />
@@ -29,10 +35,14 @@ import LoadingIndicator from '@/components/LoadingIndicator.vue'
 import Info from '@/components/Info.vue'
 import Details from '@/components/Details.vue'
 import CalendarGuide from '@/components/CalendarGuide.vue'
+import Tutorial from '@/components/Tutorial.vue'
+import FirstVisitWindow from '@/components/FirstVisitWindow.vue'
 
 export default {
   name: 'App',
   components: {
+    FirstVisitWindow,
+    Tutorial,
     CalendarGuide,
     Details,
     Info,
@@ -45,7 +55,9 @@ export default {
     return {
       ready: false,
       mapTransitions: false,
-      sidebarActive: false
+      sidebarActive: false,
+      tutorialActive: window.localStorage.tutorialStarted === 'true' && window.localStorage.tutorialDone !== 'true',
+      firstVisit: window.localStorage.tutorialStarted !== 'true' && window.localStorage.tutorialDone !== 'true'
     }
   },
   computed: {
