@@ -1,5 +1,5 @@
 # Riino's lighthouse
-Kaladin, Shallan, Adolin, and Azure reached Riino's lighthouse. Kaladin had a vision suggesting Dalinar will need their aid. The group found passage to Celebrant aboard a Reacher ship.
+Kaladin, Shallan, Adolin, and Azure reached Riino's lighthouse. The group found passage to Celebrant aboard a Reacher ship there.
 
 ## Details
-Details
+Kaladin, Shallan, Adolin, and Azure reached Riino's lighthouse. Riino was in possession of a strange orb which reacted to Kaladin's touch, giving him visions that suggested Dalinar would soon need their aid in Thaylen City. Later, the group found passage to Celebrant aboard a Reacher ship.
