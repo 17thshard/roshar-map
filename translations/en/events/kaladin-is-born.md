@@ -2,4 +2,4 @@
 
 
 ## Details
-Details
+Kaladin was born to Lirin and Hesina in Hearthstone.
