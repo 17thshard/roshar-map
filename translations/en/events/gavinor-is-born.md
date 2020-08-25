@@ -2,4 +2,4 @@
 
 
 ## Details
-Details
+Gavinor is born to Elhokar and Aesudan Kholin.
