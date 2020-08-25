@@ -1,5 +1,5 @@
 # Dalinar & Venli Meet
-Dalinar and Venli meet in a highstorm vision.
+Dalinar and Venli met in a highstorm vision.
 
 ## Details
-Seeking to compromise with the singers, Dalinar has Stormfather pull Venli into a shared vision during a highstorm. The negotiations go nowhere, and are ended suddenly as Odium forces his way into the vision.
+Seeking to compromise with the singers, Dalinar had Stormfather pull Venli into a shared vision during a highstorm. The negotiations went nowhere, and were ended suddenly as Odium forced his way into the vision.
