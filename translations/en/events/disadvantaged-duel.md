@@ -1,5 +1,5 @@
-# Chasmfiend hunt
-Elhokar was saved by Dalinar when his saddle strap broke during a Chasmfiend hunt gone wrong.
+# Disadvantaged duel
+With the help of Kaladin and Renarin, Adolin defeated four Shardbearers in a duel
 
 ## Details
-Dalinar and several highprinces attended Elhokar on a hunting party out onto the Shattered Plains. Upon arriving at their destination, where a small chasmfiend was to be baited, an enormous chasmfiend found its way onto the adjacent plateau, catching the party by surprise. While attacking the beast, Elhokar's saddle strap broke, leaving him vulnerable before the greatshell. Dalinar held the chasmfiend back and they ultimately slew the monster. The broken saddle strap led to an investigation into an aleged assassination attempt.
+On his mission to win Shards for House Kholin, Adolin accepted a dueling challenge from Relis Ruthar. Based on the careless wording of his acceptance, Adolin unwittingly accepted a duel against multiple Shardbearers. Relis was accompanied by Elit, Abrobadarm, and Jakamav on the day of the duel. Shortly after the duel began, Renarin donned his Shards and charged into the arena to help his brother, but he was unable to provide much assistance due to his inability to handle his screaming Shardblade. Kaladin also jumped into the ring and, with subtle use of his Surgebinding powers, was able to turn the tides. Adolin arose victorious, though his ultimate plan to demand a duel with Sadeas was interrupted by Kaladin's own demand for vengeance against Amaram.
