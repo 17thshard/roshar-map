@@ -2,4 +2,4 @@
 Dalinar convinced Queen Fen to open the Oathgate between Thaylen City and Urithiru.
 
 ## Details
-Details
+After meeting with Fen in a highstorm vision, Dalinar was able to convince the queen to meet in person. Kaladin and Shallan flew to Thaylen City and opened the Oathgate for the first time. Dalinar travelled to Thaylen City and was able to convince Fen of his good intentions.
