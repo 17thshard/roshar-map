@@ -1,5 +1,5 @@
 # Kholin conquest of Alethkar begins
-After working their way to the head of House Kholin, Gavilar, Dalinar, and Sadeas worked together to unite Alethkar under a monarchy.
+After working their way to the head of House Kholin, Gavilar and Dalinar began a campaign to unite Alethkar under a monarchy.
 
 ## Details
-Details
+After working their way to the head of House Kholin, Gavilar and Dalinar began a campaign to unite Alethkar under a monarchy. The forged an alliance with Sadeas and waged war against highprinces who stood in their way.
