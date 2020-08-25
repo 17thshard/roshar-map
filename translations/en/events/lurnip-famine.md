@@ -1,5 +1,5 @@
 # Lurnip famine
-Emul was devestated by a lurnip famine. It was a pretty big deal.
+Emul was devestated by a lurnip famine.
 
 ## Details
-Details
+Emul was devestated by a lurnip famine, and much of the population suffered from starvation.
