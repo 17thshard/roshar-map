@@ -1,5 +1,5 @@
 # Kaladin Surgebinds
-Kaladin used Surgebinding consiously for the first time. While cosidering his new powers, he encountered Wit and heard the story of the Wandersail.
+Kaladin used Surgebinding consiously for the first time.
 
 ## Details
-Details
+After realizing Kaladin was a Surgebinder, Teft tricked Kaladin into accidentally using his powers and then made him aware of what he had done. Unsure what to make of the magic, Kaladin sought out some time alone to consider his newly discovered powers. During this time he encountered Wit and heard the story of the Wandersail.
