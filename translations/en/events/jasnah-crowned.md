@@ -2,4 +2,4 @@
 Jasnah was crowned queen of Alethkar.
 
 ## Details
-Details
+Following the Battle of Thaylen Field and the confirmation of King Elhokar's death, Jasnah was named Queen of Alethkar.
