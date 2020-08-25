@@ -1,5 +1,4 @@
-# jasnah-is-born
-Blurb
+# Jasnah is born
 
 ## Details
-Details
+Jasnah was born the first child of Gavilar and Navani Kholin.
