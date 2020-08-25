@@ -1,5 +1,4 @@
-# elhokar-is-born
-Blurb
+# Elhokar is born
 
 ## Details
-Details
+Elhokar is born to Gavilar and Navani Kholin, several years behind his elder sister, Jasnah.
