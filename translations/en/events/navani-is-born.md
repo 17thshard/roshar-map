@@ -1,5 +1,5 @@
-# navani-is-born
-Blurb
+# Navani is born
+
 
 ## Details
-Details
+Navani was born to her parents in Alethkar.
