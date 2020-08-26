@@ -1,2 +1,2 @@
 # The Shattered Plains
-Details
+The **Shattered Plains** are located on the border of the #[Frostlands](locations/frostlands) and #[Unclaimed Hills](locations/unclaimed-hills), formerly part of the Silver Kingdom of Natanatan. They are aptly named, as the terrain of the Plains consists of huge numbers of plateaus of various sizes, surrounded on all sides by deep chasms. It is unknown what caused the landscape to form this way, but during #[Kaladin's](characters/kaladin) dream he saw the entire area as a symmetrical pattern, radiating outwards from the center as if something massive had struck there.

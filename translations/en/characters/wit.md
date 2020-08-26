@@ -1,2 +1,7 @@
-# wit
-Details
+# Wit
+
+> And while I am your friend, please understand that our goals do not completely align. You must not trust yourself with me. If I have to watch this world crumble and burn to get what I need, I will do so. With tears, yes, but I would let it happen.
+
+**Hoid** is a recurring character in the cosmere, as well as a legend rumored to have a thousand titles (most of which, he says, are not pleasant). He has appeared in almost every cosmere novel, short story, and novella which takes place in that universe. Note that his real name is likely not Hoid. In _The Way of Kings_, he mentions he stole the name from someone he should have loved, while giving #[Kaladin](characters/kaladin) his flute and telling the story of the _Wandersail_. In section 2 of the 2nd Letter from _Words of Radiance_, the author of the letter asks if Hoid is no longer hiding behind the name of his old master. The name "Hoid" is likely the name he is hiding behind.
+
+Hoid was involved in the events taking place before any of the cosmere's published books begin, and is the second oldest character seen so far. He was originally human, but has changed enough that when asked, Brandon only says "It's complicated." Hoid is not a Shard, nor is he a Herald, but something else entirely. He is very skilled with disguises, and the overtness of his involvement varies from book to book. In some, he is named outright and makes references to other events and places in the cosmere, while in others he is seen only deep in disguise, almost unrecognizable. Brandon has confirmed that all of these appearances are the same individual, but that he worldhops between planets. Hoid's motives are unknown, and most of his actions occur behind the scenes.

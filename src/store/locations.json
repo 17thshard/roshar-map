@@ -689,7 +689,7 @@
                 "y": 149.87213891081294
             }
         ],
-        "coppermind": "Rira",
+        "coppermind": "Rira_(country)",
         "related": [
             "locations/kurth"
         ]
@@ -1831,7 +1831,7 @@
         "related": [
             "locations/babatharnam"
         ],
-        "coppermind": "Pantham"
+        "coppermind": "Panatham"
     },
     {
         "id": "azimir",
@@ -2662,7 +2662,7 @@
                 "y": 425.7919302071974
             }
         ],
-        "coppermind": "Sallow_Crypts",
+        "coppermind": "Shallow_Crypts",
         "related": [
             "locations/frostlands"
         ]
