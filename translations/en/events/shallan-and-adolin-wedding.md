@@ -2,4 +2,4 @@
 Shallan and Adolin were married in Urithiru.
 
 ## Details
-Details
+Shallan and Adolin were married in Urithiru.
