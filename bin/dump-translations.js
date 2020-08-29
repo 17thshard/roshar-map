@@ -10,7 +10,10 @@ events.forEach((event) => {
     return
   }
 
-  fs.writeFileSync(path, `# ${event.id}\nBlurb\n\n## Details\nDetails\n`)
+  fs.writeFileSync(
+    path,
+    `# ${event.id}\nBlurb\n\n## Details\nDetails\n##Metadata\n| Field | Value |\n| ----- | ----- |\n| chapter | n/a |\n`
+  )
 
   console.log(`Created new translation file for event ${event.id}`)
 })

@@ -26,13 +26,17 @@
             {{ $t(`${baseTranslationKey}.name`) }}
           </h2>
           <ul v-if="Object.keys(metadata).length > 0" class="details__metadata">
-            <li v-if="metadata.date" class="details__metadata--date">
-              <strong>{{ $t(`ui.date`) }}:</strong>
+            <li v-if="metadata.date">
+              <CalendarIcon :aria-label="$t(`ui.date`)" class="details__metadata-icon" size="1.25x" />
               {{ metadata.date }}
               <span class="details__date-help" @click="$store.commit('openCalendarGuide')">
                 <HelpCircleIcon size="1.25x" />
                 How to read this?
               </span>
+            </li>
+            <li v-if="metadata.chapter">
+              <BookIcon :aria-label="$t(`ui.chapter`)" class="details__metadata-icon" size="1.25x" />
+              <Markdown tag="span" :content="metadata.chapter" inline />
             </li>
           </ul>
           <Markdown :content="text" tag="article" />
@@ -86,13 +90,13 @@
 
 <script>
 import Scrollbar from 'vuescroll/dist/vuescroll-native'
-import { HelpCircleIcon, XIcon } from 'vue-feather-icons'
+import { BookIcon, CalendarIcon, HelpCircleIcon, XIcon } from 'vue-feather-icons'
 import Markdown from '@/components/Markdown.vue'
 import { formatDate } from '@/utils'
 
 export default {
   name: 'Details',
-  components: { Markdown, HelpCircleIcon, XIcon, Scrollbar },
+  components: { Markdown, HelpCircleIcon, XIcon, CalendarIcon, BookIcon, Scrollbar },
   props: {
     details: {
       type: Object,
@@ -116,6 +120,10 @@ export default {
 
       if (this.details.date) {
         result.date = formatDate(this.details.date)
+      }
+
+      if (this.$te(`${this.baseTranslationKey}.chapter`, 'en')) {
+        result.chapter = this.$t(`${this.baseTranslationKey}.chapter`)
       }
 
       return result
@@ -373,19 +381,34 @@ export default {
   }
 
   &__metadata {
+    display: flex;
+    flex-wrap: wrap;
     list-style-type: none;
     padding: 0;
-    margin: 0.5rem 0;
+    margin: 0.5rem -0.25rem;
     line-height: 1;
     font-size: 0.9em;
 
-    &--date {
+    li {
       display: flex;
       align-items: center;
+      margin: 0.25rem;
 
-      strong {
-        margin-right: 0.25rem;
+      &:after {
+        content: '◆';
+        font-size: 0.8em;
+        margin: 0 0.4rem 0.125rem;
+        opacity: 0.7;
       }
+
+      &:last-child:after {
+        display: none;
+      }
+    }
+
+    &-icon {
+      margin-right: 0.25rem;
+      flex-shrink: 0;
     }
   }
 

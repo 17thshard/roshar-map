@@ -64,14 +64,12 @@ function parseEventFile (lang, type, id, content) {
     process.exit(1)
   }
 
-  const firstNewLine = content.indexOf('\n')
+  const { root, sections, metadata } = parseSections(content)
 
-  const name = content.substring(1, firstNewLine).trim()
-  const detailsHeadingPos = content.indexOf('\n## Details')
-  const blurb = content.substring(firstNewLine, detailsHeadingPos !== -1 ? detailsHeadingPos : undefined).trim()
-  const details = detailsHeadingPos !== -1 ? content.substring(content.indexOf('\n', detailsHeadingPos + 1)).trim() : undefined
+  const blurb = root.content.trim()
+  const details = sections.details === undefined ? undefined : sections.details.content.trim()
 
-  return { name, blurb, details }
+  return { name: root.name, blurb, details, ...metadata }
 }
 
 function parseStandardFile (lang, type, id, content) {
@@ -80,10 +78,54 @@ function parseStandardFile (lang, type, id, content) {
     process.exit(1)
   }
 
-  const firstNewLine = content.indexOf('\n')
+  const { root, metadata } = parseSections(content)
 
-  const name = content.substring(1, firstNewLine).trim()
-  const details = content.substring(firstNewLine).trim()
+  return { name: root.name, details: root.content.trim(), ...metadata }
+}
 
-  return { name, details }
+function parseSections (content) {
+  let root
+  const sections = {}
+  const lines = content.split('\n')
+
+  let currentSection
+  lines.forEach((line) => {
+    if (line.startsWith('#')) {
+      const [, hashes, name] = line.trim().match(/^(#+)\s*(.*?)$/)
+
+      if (hashes.length === 1) {
+        currentSection = { name: name.trim(), content: '' }
+
+        root = currentSection
+      } else {
+        currentSection = { content: '' }
+        sections[name.toLowerCase().trim()] = currentSection
+      }
+
+      return
+    }
+
+    if (currentSection === undefined) {
+      throw new Error('Line found outside of section')
+    }
+
+    currentSection.content += line + '\n'
+  })
+
+  if (root === undefined) {
+    throw new Error('Markdown file did not contain root section (started by level 1 heading)')
+  }
+
+  const metadata = {}
+  if (sections.metadata) {
+    sections.metadata.content.split('\n').filter(line => line.trim().startsWith('|')).slice(2).forEach((line) => {
+      const match = line.trim().match(/^\|([^|]+)\|([^|]+)\|$/)
+
+      if (match !== null) {
+        metadata[match[1].trim()] = match[2].trim()
+      }
+    })
+  }
+
+  return { root, sections, metadata }
 }
