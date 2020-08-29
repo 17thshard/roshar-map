@@ -3,7 +3,7 @@
     <h2>Tag properties</h2>
     <div class="tag-properties__form">
       <label for="tag-properties__id">ID</label>
-      <input id="tag-properties__id" :value="tag" readonly type="text">
+      <input id="tag-properties__id" :value="tag.id" readonly type="text">
 
       <template v-if="selectedLanguage !== null">
         <label for="tag-properties__name">Name</label>
@@ -16,34 +16,38 @@
       </template>
 
       <template v-if="!category">
-        <label for="tag-properties__category">Category</label>
-        <select id="tag-properties__category" @change="reassignTag">
-          <option selected disabled>
-            None
-          </option>
-          <option v-for="(tags, tagCategory) in tagCategories" :key="tagCategory" :value="tagCategory" :selected="tags.includes(tag)">
-            {{ tagCategory }}
-          </option>
-        </select>
+        <label for="tag-properties__color">Color</label>
+        <input id="tag-properties__color" v-model="tag.color" type="color">
+        <label for="tag-properties__alpha">Alpha</label>
+        <div>
+          <input
+            id="tag-properties__alpha"
+            :value="alpha"
+            step="1"
+            type="number"
+            @input="tag.alpha = parseFloat($event.target.value) / 100"
+          >
+          %
+        </div>
+        <span>Preview</span>
+        <div class="tag-properties__preview" :style="previewStyles" />
       </template>
     </div>
   </section>
 </template>
 
 <script>
+import { parseColorToCssVar } from '@/utils'
+
 export default {
   name: 'TagProperties',
   props: {
     tag: {
-      type: String,
+      type: Object,
       required: true
     },
     category: {
       type: Boolean
-    },
-    tagCategories: {
-      type: Object,
-      required: true
     },
     selectedLanguage: {
       type: [String, null],
@@ -75,6 +79,19 @@ export default {
     },
     displayName () {
       return this.languageNamespace?.[this.tag] ?? ''
+    },
+    alpha () {
+      return this.category ? 0 : Math.round(this.tag.alpha * 100)
+    },
+    previewStyles () {
+      if (this.category) {
+        return undefined
+      }
+
+      return {
+        '--color': parseColorToCssVar(this.tag.color),
+        '--alpha': this.tag.alpha
+      }
     }
   },
   methods: {
@@ -90,21 +107,6 @@ export default {
       } else {
         this.$set(this.languageNamespace, this.tag, trimmed)
       }
-    },
-    reassignTag (event) {
-      const newCategory = event.target.value
-
-      Object.keys(this.tagCategories).forEach((tagCategory) => {
-        const index = this.tagCategories[tagCategory].indexOf(this.tag)
-
-        if (index === -1) {
-          return
-        }
-
-        this.tagCategories[tagCategory].splice(index, 1)
-      })
-
-      this.tagCategories[newCategory].push(this.tag)
     }
   }
 }
@@ -128,6 +130,23 @@ export default {
     padding-top: 1rem;
     grid-gap: 0.5rem;
     align-items: center;
+  }
+
+  &__preview {
+    height: 2rem;
+    background: #F5ECDA url(../../assets/paper.png);
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    padding: 0 0.5rem;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1rem;
+      background: rgba(var(--color), var(--alpha));
+    }
   }
 }
 </style>

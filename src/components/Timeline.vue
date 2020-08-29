@@ -1,6 +1,6 @@
 <template>
   <transition-group tag="div" name="timeline__event" class="timeline">
-    <div key="bar" :style="{ left: `${barOffset + offset}px` }" class="timeline__bar" />
+    <div key="bar" :style="{ left: `${barOffset + offset}px`, ...barStyles }" class="timeline__bar" />
     <template v-for="event in events">
       <button
         :key="event.id"
@@ -15,11 +15,16 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapState } from 'vuex'
+import { parseColorToCssVar } from '@/utils'
 
 export default {
   name: 'Timeline',
   props: {
+    tag: {
+      type: String,
+      required: true
+    },
     offset: {
       type: Number,
       required: true
@@ -35,10 +40,23 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['isDisabled']),
+    ...mapState({ tagProperties: state => state.mappings.tags }),
+    barStyles () {
+      const props = this.tagProperties[this.tag]
+
+      if (props === undefined) {
+        return undefined
+      }
+
+      return {
+        '--timeline-bar-color': parseColorToCssVar(props.color),
+        '--timeline-bar-alpha': props.alpha
+      }
+    },
     barOffset () {
       return Math.min(...this.events.map(e => e.offset))
-    },
-    ...mapGetters(['isDisabled'])
+    }
   }
 }
 </script>
@@ -78,30 +96,17 @@ export default {
     }
   }
 
-  @mixin bar($base-color) {
-    .timeline__bar {
-      &:before {
-        background: $base-color;
-      }
+  .timeline__bar {
+    --timeline-bar-color: 153, 151, 145;
+    --timeline-bar-alpha: 0.5;
 
-      &:after {
-        background: linear-gradient(to right, $base-color, rgba($base-color, 0));
-      }
+    &:before {
+      background: rgba(var(--timeline-bar-color), var(--timeline-bar-alpha));
     }
-  }
 
-  @include bar(rgba(153, 151, 145, 0.5));
-
-  &--dalinar {
-    @include bar(rgba(#ebc965, 0.75));
-  }
-
-  &--kaladin {
-    @include bar(rgba(#0f3562, 0.5));
-  }
-
-  &--shallan {
-    @include bar(rgba(#6c011d, 0.5));
+    &:after {
+      background: linear-gradient(to right, rgba(var(--timeline-bar-color), var(--timeline-bar-alpha)), rgba(var(--timeline-bar-color), 0));
+    }
   }
 
   &__event {

@@ -4,6 +4,7 @@ import baseEvents from '@/store/events.json'
 import baseLocations from '@/store/locations.json'
 import baseCharacters from '@/store/characters.json'
 import baseMisc from '@/store/misc.json'
+import tagCategories from '@/store/tags.json'
 import { inverseLerp } from '@/utils'
 
 Vue.use(Vuex)
@@ -193,30 +194,43 @@ function calculateYearDistance (year, lastYear) {
 
 const mappings = {}
 
-mappings.events = events.reduce((acc, event) => ({
-  ...acc,
-  [event.id]: { type: 'events', ...event }
-}), {})
+mappings.events = events.reduce((acc, event) => {
+  acc[event.id] = { type: 'events', ...event }
 
-mappings.locations = baseLocations.reduce((acc, location) => ({
-  ...acc,
-  [location.id]: { type: 'locations', ...location }
-}), {})
+  return acc
+}, {})
 
-mappings.characters = baseCharacters.reduce((acc, character) => ({
-  ...acc,
-  [character.id]: { type: 'characters', ...character }
-}), {})
+mappings.locations = baseLocations.reduce((acc, location) => {
+  acc[location.id] = { type: 'locations', ...location }
 
-mappings.misc = baseMisc.reduce((acc, entry) => ({
-  ...acc,
-  [entry.id]: { type: 'misc', ...entry }
-}), {})
+  return acc
+}, {})
 
-const locationsByMapId = Object.values(mappings.locations).filter(location => location.mapId !== undefined).reduce((acc, location) => ({
-  ...acc,
-  [location.mapId]: location
-}), {})
+mappings.characters = baseCharacters.reduce((acc, character) => {
+  acc[character.id] = { type: 'characters', ...character }
+
+  return acc
+}, {})
+
+mappings.misc = baseMisc.reduce((acc, entry) => {
+  acc[entry.id] = { type: 'misc', ...entry }
+
+  return acc
+}, {})
+
+mappings.tags = tagCategories.reduce((acc, category) => {
+  category.tags.forEach((tag) => {
+    acc[tag.id] = tag
+  })
+
+  return acc
+}, {})
+
+const locationsByMapId = Object.values(mappings.locations).filter(location => location.mapId !== undefined).reduce((acc, location) => {
+  acc[location.mapId] = location
+
+  return acc
+}, {})
 
 const mutations = {
   selectEvent (state, event) {

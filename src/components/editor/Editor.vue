@@ -250,42 +250,51 @@
 
         <input id="editor__file--tags" type="file" @change="loadTags">
       </div>
-      <h2>Categories</h2>
-      <ul class="editor__tags-categories">
+      <template v-if="uncategorizedTags.length > 0">
+        <h3>Uncategorized</h3>
+        <Draggable tag="ul" :value="uncategorizedTags" group="tags" class="editor__tags-list">
+          <li
+            v-for="tag in uncategorizedTags"
+            :key="tag.id"
+            class="editor__tags-list-item--invalid"
+          >
+            {{ tag.id }}
+          </li>
+        </Draggable>
+      </template>
+      <Draggable tag="ul" :list="tagCategories" group="tag-categories" class="editor__tags-categories">
         <li>
           <button @click="addTagCategory">
-            New
+            New Category
           </button>
           <button @click="selectedTag = null">
             Clear selection
           </button>
         </li>
         <li
-          v-for="(tagCategory, index) in Object.keys(tagCategories)"
-          :key="`tagCategory${index}`"
+          v-for="tagCategory in tagCategories"
+          :key="tagCategory.id"
           :class="selectedTag === tagCategory && categorySelected ? 'editor__tags-item--selected' : undefined"
-          @click="selectTag(tagCategory, true)"
+          @click.self="selectTag(tagCategory, true)"
         >
-          <span>{{ tagCategory }}</span>
+          <span>{{ tagCategory.id }}</span>
           <button @click.stop="deleteTagCategory(tagCategory)">
             Delete
           </button>
+          <Draggable tag="ul" :list="tagCategory.tags" group="tags" class="editor__tags-list">
+            <li
+              v-for="tag in tagCategory.tags"
+              :key="tag.id"
+              :class="{
+                'editor__tags-item--selected': selectedTag === tag && !categorySelected
+              }"
+              @click.stop="selectTag(tag, false)"
+            >
+              {{ tag.id }}
+            </li>
+          </Draggable>
         </li>
-      </ul>
-      <h2>Tags</h2>
-      <ul class="editor__tags-list">
-        <li
-          v-for="(tag, index) in availableTags"
-          :key="`tag${index}`"
-          :class="{
-            'editor__tags-item--selected': selectedTag === tag && !categorySelected,
-            'editor__tags-list-item--invalid': !hasTagCategory(tag)
-          }"
-          @click="selectTag(tag, false)"
-        >
-          {{ tag }}
-        </li>
-      </ul>
+      </Draggable>
     </div>
     <template
       v-if="mode === 'events' && selectedEvent !== null"
@@ -343,6 +352,7 @@
 
 <script>
 import { Mesh, OrthographicCamera, PlaneBufferGeometry, Scene, ShaderMaterial, Vector2, WebGLRenderer } from 'three'
+import Draggable from 'vuedraggable'
 import DeepDiff from 'deep-diff'
 import Zip from 'jszip'
 import mapFragmentShader from '@/components/map/mapFragmentShader'
@@ -378,7 +388,7 @@ function saveAs (blob, name) {
 
 export default {
   name: 'Editor',
-  components: { TagProperties, LocationProperties, EventPreview, EventProperties, CharacterProperties, MiscProperties },
+  components: { TagProperties, LocationProperties, EventPreview, EventProperties, CharacterProperties, MiscProperties, Draggable },
   data () {
     return {
       mode: 'events',
@@ -429,6 +439,10 @@ export default {
       })
 
       return [...set]
+    },
+    uncategorizedTags () {
+      return this.availableTags.filter(tag => this.tagCategories.every(c => !c.tags.some(t => t.id === tag)))
+        .map(tag => ({ id: tag, color: '#999791', alpha: 0.5 }))
     },
     linkables () {
       return [
@@ -1098,7 +1112,7 @@ export default {
       img.src = `data:image/svg+xml;base64,${window.btoa(svgString)}`
     },
     hasTagCategory (tag) {
-      return Object.values(this.tagCategories).some(tags => tags.includes(tag))
+      return this.tagCategories.some(({ tags }) => tags.includes(tag))
     },
     isLinked (type, id) {
       return this.relatedIndex[`${type}/${id}`] !== undefined && this.relatedIndex[`${type}/${id}`].length > 0
@@ -1432,7 +1446,7 @@ export default {
     box-sizing: border-box;
     padding: 1rem 0 0;
 
-    h2 {
+    h3 {
       margin: 0;
       padding: 0 1rem;
     }
@@ -1457,7 +1471,7 @@ export default {
         padding: 0.5rem 1rem;
         cursor: pointer;
 
-        &:first-child {
+        & > &:first-child {
           cursor: default;
           pointer-events: none;
           grid-template-columns: 1fr 1fr;
@@ -1466,13 +1480,18 @@ export default {
             pointer-events: auto;
           }
         }
+
+        & > span {
+          pointer-events: none;
+        }
       }
     }
 
     &-list {
       list-style-type: none;
       padding: 0;
-      margin: 0.5rem 0 1rem;
+      margin: 0 0 0.5rem;
+      grid-column: 1/span 2;
 
       li {
         display: grid;

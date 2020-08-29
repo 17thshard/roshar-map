@@ -167,7 +167,10 @@ export default {
           url: link,
           image
         }
-      }).reduce((acc, relatedItem) => ({ ...acc, [relatedItem.type]: [...(acc[relatedItem.type] ?? []), relatedItem] }), {})
+      }).reduce((acc, relatedItem) => {
+        acc[relatedItem.type] = [...(acc[relatedItem.type] ?? []), relatedItem]
+        return acc
+      }, {})
     }
   },
   mounted () {

@@ -29,3 +29,9 @@ export function formatDate (date) {
 export function getTimestampInYear ([month, week, day]) {
   return day + week * 5 + month * 50
 }
+
+export function parseColorToCssVar (hexColor) {
+  const parseComponent = i => Number.parseInt(hexColor.substring(i * 2 + 1, i * 2 + 3), 16)
+
+  return [parseComponent(0), parseComponent(1), parseComponent(2)].join(', ')
+}

@@ -49,10 +49,11 @@
           <Timeline
             v-for="(timelineEvents, tag) in timelines"
             :key="tag"
+            :tag="tag"
             :offset="timelineOffset"
             :events="timelineEvents"
             :active-event="activeEvent"
-            :class="['scrubber__timeline', `timeline--${tag}`]"
+            class="scrubber__timeline"
             @event-selected="selectEvent"
           />
           <div key="years" class="scrubber__years">
@@ -104,18 +105,21 @@ export default {
       return Math.max(92, Object.keys(this.timelines).length * 24 + 64)
     },
     timelines () {
-      const result = this.filter.separateTags.reduce((acc, t) => ({ ...acc, [t]: [] }), {})
+      const result = this.filter.separateTags.reduce((acc, t) => {
+        acc[t] = []
+        return acc
+      }, {})
 
       result.all = []
 
       this.events.forEach((event) => {
-        const breakoutPositions = this.filter.separateTags.filter(t => event.tags.includes(t))
+        const separatedAssignments = this.filter.separateTags.filter(t => event.tags.includes(t))
 
-        breakoutPositions.forEach((t) => {
+        separatedAssignments.forEach((t) => {
           result[t].push(event)
         })
 
-        if (breakoutPositions.length < event.tags.length || event.tags.length === 0) {
+        if (separatedAssignments.length < event.tags.length || event.tags.length === 0) {
           result.all.push(event)
         }
       })

@@ -1,30 +1,38 @@
-{
-    "tags": [
-        "general",
-        "history"
-    ],
-    "characters": [
-        "dalinar",
-        "kaladin",
-        "shallan",
-        "szeth",
-        "adolin",
-        "renarin",
-        "lift",
-        "jasnah",
-        "rysn",
-        "navani",
-        "eshonai",
-        "venli",
-        "taravangian",
-        "wit",
-        "moash"
-    ],
-    "books": [
-        "twok",
-        "wor",
-        "ed",
-        "ob",
-        "row"
-    ]
-}
+[
+    {
+        "id": "tags",
+        "tags": [
+            { "id": "history", "color": "#999791", "alpha": 0.5 }
+        ]
+    },
+    {
+        "id": "characters",
+        "tags": [
+            { "id": "dalinar", "color": "#ebc965", "alpha": 0.75 },
+            { "id": "kaladin", "color": "#0f3562", "alpha": 0.5 },
+            { "id": "shallan", "color": "#6c011d", "alpha": 0.5 },
+            { "id": "szeth", "color": "#999791", "alpha": 0.5 },
+            { "id": "adolin", "color": "#999791", "alpha": 0.5 },
+            { "id": "renarin", "color": "#999791", "alpha": 0.5 },
+            { "id": "lift", "color": "#999791", "alpha": 0.5 },
+            { "id": "jasnah", "color": "#999791", "alpha": 0.5 },
+            { "id": "rysn", "color": "#999791", "alpha": 0.5 },
+            { "id": "navani", "color": "#999791", "alpha": 0.5 },
+            { "id": "eshonai", "color": "#999791", "alpha": 0.5 },
+            { "id": "venli", "color": "#999791", "alpha": 0.5 },
+            { "id": "taravangian", "color": "#999791", "alpha": 0.5 },
+            { "id": "wit", "color": "#999791", "alpha": 0.5 },
+            { "id": "moash", "color": "#999791", "alpha": 0.5 }
+        ]
+    },
+    {
+        "id": "books",
+        "tags": [
+            { "id": "twok", "color": "#999791", "alpha": 0.5 },
+            { "id": "wor", "color": "#999791", "alpha": 0.5 },
+            { "id": "ed", "color": "#999791", "alpha": 0.5 },
+            { "id": "ob", "color": "#999791", "alpha": 0.5 },
+            { "id": "row", "color": "#999791", "alpha": 0.5 }
+        ]
+    }
+]

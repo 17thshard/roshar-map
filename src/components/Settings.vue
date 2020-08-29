@@ -24,7 +24,9 @@
           @handle-scroll="onScroll"
         >
           <section class="settings__layers">
-            <h3 data-tutorial-id="settings-layers">{{ $t('ui.layers') }}</h3>
+            <h3 data-tutorial-id="settings-layers">
+              {{ $t('ui.layers') }}
+            </h3>
             <label
               v-for="(layerActive, layer) in $store.state.layersActive"
               :key="layer"
@@ -43,25 +45,27 @@
           </section>
 
           <section class="settings__filters" :style="{ paddingBottom: `${separateHeight + 56}px` }">
-            <h3 data-tutorial-id="settings-filters">{{ $t('ui.filters') }}</h3>
-            <template v-for="(tags, category) in tagCategories">
-              <h4 :key="category">
-                {{ $t(`tagCategories.${category}`) }}
+            <h3 data-tutorial-id="settings-filters">
+              {{ $t('ui.filters') }}
+            </h3>
+            <template v-for="category in tagCategories">
+              <h4 :key="category.id">
+                {{ $t(`tagCategories.${category.id}`) }}
               </h4>
-              <ul :key="`${category}-tags?`" class="settings__tag-list">
-                <li v-for="tag in tags" :key="tag">
-                  <div :class="['settings__options', `settings__options--${buildTagState(tag)}`]">
-                    <button class="settings__options-button" :title="$t('ui.enable')" @click="enableTag(tag)">
+              <ul :key="`${category.id}-tags?`" class="settings__tag-list">
+                <li v-for="tag in category.tags" :key="tag.id">
+                  <div :class="['settings__options', `settings__options--${buildTagState(tag.id)}`]">
+                    <button class="settings__options-button" :title="$t('ui.enable')" @click="enableTag(tag.id)">
                       <EyeIcon size="1x" />
                     </button>
-                    <button class="settings__options-button" :title="$t('ui.display-separately')" @click="enableTagSeparation(tag)">
+                    <button class="settings__options-button" :title="$t('ui.display-separately')" @click="enableTagSeparation(tag.id)">
                       <GitBranchIcon size="1x" />
                     </button>
-                    <button class="settings__options-button" :title="$t('ui.disable')" @click="disableTag(tag)">
+                    <button class="settings__options-button" :title="$t('ui.disable')" @click="disableTag(tag.id)">
                       <EyeOffIcon size="1x" />
                     </button>
                   </div>
-                  {{ $t(`tags.${tag}`) }}
+                  {{ $t(`tags.${tag.id}`) }}
                 </li>
               </ul>
             </template>
