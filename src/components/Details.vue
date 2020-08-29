@@ -29,10 +29,9 @@
             <li v-if="metadata.date">
               <CalendarIcon :aria-label="$t(`ui.date`)" class="details__metadata-icon" size="1.25x" />
               {{ metadata.date }}
-              <span class="details__date-help" @click="$store.commit('openCalendarGuide')">
+              <button class="details__date-help" :title="$t('ui.date-help')" @click="$store.commit('openCalendarGuide')">
                 <HelpCircleIcon size="1.25x" />
-                How to read this?
-              </span>
+              </button>
             </li>
             <li v-if="metadata.chapter">
               <BookIcon :aria-label="$t(`ui.chapter`)" class="details__metadata-icon" size="1.25x" />
@@ -397,7 +396,7 @@ export default {
       &:after {
         content: '◆';
         font-size: 0.8em;
-        margin: 0 0.4rem 0.125rem;
+        margin: 0 0 0.125rem 0.4rem;
         opacity: 0.7;
       }
 
@@ -415,20 +414,20 @@ export default {
   &__date-help {
     display: flex;
     align-items: center;
-    margin-left: 0.25rem;
+    padding: 0;
+    margin: 0 0 0 0.25rem;
     overflow: hidden;
-    max-width: 1.25em;
     white-space: nowrap;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
-
-    .feather {
-      flex-shrink: 0;
-      margin-right: 0.25rem;
-    }
+    appearance: none;
+    outline: none;
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    font-size: 1em;
 
     &:hover {
-      max-width: 100%;
       color: #0f3562;
     }
   }
