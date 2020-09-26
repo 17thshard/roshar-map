@@ -7,25 +7,26 @@
         :key="id"
         :class="['tutorial__marker', { 'tutorial__marker--active': activeMarker === id }]"
         :style="{ left: `${marker.position.x}px`, top: `${marker.position.y}px` }"
-        @click="activeMarker = id"
+        :title="$t(`ui.tutorial.hints.${id}.title`)"
+        @click="activeMarker = activeMarker === id ? null : id"
       />
     </transition-group>
     <transition name="tutorial__details">
       <div v-if="activeMarker !== null && markers[activeMarker].visible" :key="activeMarker" ref="details" class="tutorial__details">
-        <Markdown tag="div" class="tutorial__details-text" :content="$t(`tutorial.${activeMarker}.text`)" inline />
+        <Markdown tag="div" class="tutorial__details-text" :content="$t(`ui.tutorial.hints.${activeMarker}.text`)" inline />
       </div>
     </transition>
     <div class="tutorial__window">
       <div class="tutorial__window-text">
-        <h2>Tutorial</h2>
-        <p>Click on any of the red dots to find out what you can do with the app.</p>
+        <h2>{{ $t('ui.tutorial.title') }}</h2>
+        <p>{{ $t('ui.tutorial.explanation') }}</p>
       </div>
       <div class="tutorial__window-buttons">
         <button @click="dismiss">
-          Dismiss
+          {{ $t('ui.dismiss') }}
         </button>
         <button @click="$store.commit('openCalendarGuide')">
-          Explain calendar and dates
+          {{ $t('ui.tutorial.calendar') }}
         </button>
       </div>
     </div>
@@ -115,7 +116,17 @@ export default {
         this.popper = createPopper(document.querySelector(`#tutorial__marker--${value}`), this.$refs.details, {
           placement: this.markers[value].detailsPlacement ?? 'top-start',
           modifiers: [
-            preventOverflow,
+            {
+              ...preventOverflow,
+              options: {
+                padding: {
+                  top: 16,
+                  bottom: 16,
+                  left: 16,
+                  right: 16
+                }
+              }
+            },
             flip,
             {
               ...offset,
@@ -189,7 +200,7 @@ export default {
         return
       }
 
-      if (!this.$el.contains(e.target)) {
+      if (!this.$refs.details.contains(e.target) && !e.target.classList.contains('tutorial__marker')) {
         this.activeMarker = null
         e.stopPropagation()
       }
@@ -287,6 +298,7 @@ export default {
     position: absolute;
     bottom: 2.75rem;
     left: 0.625rem;
+    max-width: 350px;
     padding: 1rem;
     font-size: 0.9rem;
     cursor: auto;
@@ -357,13 +369,18 @@ export default {
     position: absolute;
     top: 2rem;
     left: 2rem;
-    z-index: 4;
+    right: 2rem;
+    z-index: 0;
     margin: 0;
     padding: 1rem;
     font-size: 14px;
     filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.5));
     max-width: 350px;
     pointer-events: auto;
+
+    @media (max-width: 640px) {
+      top: 6rem;
+    }
 
     &:before {
       content: '';

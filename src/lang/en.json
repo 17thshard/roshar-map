@@ -26,7 +26,80 @@
         "more": "More...",
         "date": "Date",
         "date-help": "How to read this?",
-        "chapter": "Chapter"
+        "chapter": "Chapter",
+        "dismiss": "Dismiss",
+        "first-visit": {
+            "heading": "Welcome",
+            "intro": "It looks like this is your first use of this app. Would you like some help?\n\nYou can always find help later on from the menu to the top right.",
+            "calendar": "Explain dates",
+            "tutorial": "Show hints"
+        },
+        "tutorial": {
+            "title": "Tutorial",
+            "explanation": "Click on any of the red dots to find out what you can do with the app.",
+            "calendar": "Explain calendar & dates",
+            "hints": {
+                "settings-button": {
+                    "title": "Settings Menu",
+                    "text": "Adjust display & filter settings for the map and timeline"
+                },
+                "menu-button": {
+                    "title": "Menu",
+                    "text": "Find helpful links and language settings"
+                },
+                "timeline": {
+                    "title": "Timeline",
+                    "text": "Navigate this timeline by scrubbing or scrolling and click on any of the diamonds to view the associated event"
+                },
+                "event": {
+                    "title": "Event Details",
+                    "text": "Click the \"More\" link to get a detailed summary, related information and where to find the event in the book, if applicable"
+                },
+                "location": {
+                    "title": "Location Details",
+                    "text": "Click on any named location to view a detailed description and associated information"
+                },
+                "settings-layers": {
+                    "title": "Layers",
+                    "text": "Layers can provide additional useful information on top of the map view. They can be toggled at any time"
+                },
+                "settings-filters": {
+                    "title": "Filters",
+                    "text": "Filters allow you to decide which events are displayed on the timeline. You may hide them completely or create a separate timeline that focuses on the filtered item"
+                },
+                "settings-separate-timelines": {
+                    "title": "Separate Timelines",
+                    "text": "Once you've started displaying a filter as separate timeline, you can find it labeled here. Use the drag handle to change the order the timelines are displayed in"
+                }
+            }
+        },
+        "calendar-guide": {
+            "title": "The Rosharan Calendar",
+            "start": {
+                "name": "Start",
+                "explanation": "This is one year in the Rosharan calendar."
+            },
+            "day": {
+                "name": "Day",
+                "explanation": "Each day is 20 Rosharan hours long."
+            },
+            "week": {
+                "name": "Week",
+                "explanation": "Each week is 5 days long."
+            },
+            "month": {
+                "name": "Month",
+                "explanation": "Each month spans 50 days, or 10 weeks."
+            },
+            "year": {
+                "name": "Year",
+                "explanation": "A year amounts to 10 months, 100 weeks, or 500 days."
+            },
+            "date": {
+                "name": "Dates",
+                "explanation": "Dates are written as the year first, month second, week third, and day last. The numbers are separated by periods.\n\nFor example, this date in year 1173 is written: {date}"
+            }
+        }
     },
     "entry-types": {
         "events": "Events",
@@ -63,33 +136,6 @@
         "neutral": {
             "name": "Neutral",
             "style": "Green"
-        }
-    },
-    "calendar-guide": {
-        "title": "The Rosharan Calendar",
-        "start": {
-            "name": "Start",
-            "explanation": "This is one year in the Rosharan calendar."
-        },
-        "day": {
-            "name": "Day",
-            "explanation": "Each day is 20 Rosharan hours long."
-        },
-        "week": {
-            "name": "Week",
-            "explanation": "Each week is 5 days long."
-        },
-        "month": {
-            "name": "Month",
-            "explanation": "Each month spans 50 days, or 10 weeks."
-        },
-        "year": {
-            "name": "Year",
-            "explanation": "A year amounts to 10 months, 100 weeks, or 500 days."
-        },
-        "date": {
-            "name": "Dates",
-            "explanation": "Dates are written as the year first, month second, week third, and day last. The numbers are separated by periods.\n\nFor example, this date in year 1173 is written: {date}"
         }
     },
     "tagCategories": {

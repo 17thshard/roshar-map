@@ -2,7 +2,7 @@
   <div class="calendar-guide__wrapper" @click.self="$store.commit('closeCalendarGuide')">
     <section class="calendar-guide">
       <header class="calendar-guide__header">
-        <h2>{{ $t('calendar-guide.title') }}</h2>
+        <h2>{{ $t('ui.calendar-guide.title') }}</h2>
 
         <button class="calendar-guide__close" :title="$t('ui.close')" @click="$store.commit('closeCalendarGuide')">
           <XIcon />
@@ -25,7 +25,7 @@
             v-for="s in STEPS"
             :key="s"
             :class="['calendar-guide__dots-item', { 'calendar-guide__dots-item--active': step === s }]"
-            :title="$t(`calendar-guide.${s}.name`)"
+            :title="$t(`ui.calendar-guide.${s}.name`)"
             @click="step = s"
           />
         </ul>
@@ -61,8 +61,8 @@ export default {
     },
     explanation () {
       return this.step === 'date'
-        ? this.$t(`calendar-guide.${this.step}.explanation`, { date: formatDate([1173, ...this.highlightedDate]) })
-        : this.$t(`calendar-guide.${this.step}.explanation`)
+        ? this.$t(`ui.calendar-guide.${this.step}.explanation`, { date: formatDate([1173, ...this.highlightedDate]) })
+        : this.$t(`ui.calendar-guide.${this.step}.explanation`)
     },
     highlightRange () {
       switch (this.step) {

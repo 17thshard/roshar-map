@@ -99,7 +99,11 @@ export default {
     const parsed = parser(this.content, { inline: this.inline })
     const children = parsed.map(node => renderNode(node, h, this.$route))
 
-    children.push(' ', ...(this.$slots.default || []))
+    if (this.$slots.prefix) {
+      children.unshift(this.$slots.prefix, ' ')
+    }
+
+    children.push(' ', ...(this.$slots.default || this.$slots.suffix || []))
 
     return h(this.tag, { class: 'markdown' }, children)
   }
