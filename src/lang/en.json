@@ -66,6 +66,7 @@
         }
     },
     "calendar-guide": {
+        "title": "The Rosharan Calendar",
         "start": {
             "name": "Start",
             "explanation": "This is one year in the Rosharan calendar."

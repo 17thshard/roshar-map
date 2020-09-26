@@ -2,7 +2,7 @@
   <div class="calendar-guide__wrapper" @click.self="$store.commit('closeCalendarGuide')">
     <section class="calendar-guide">
       <header class="calendar-guide__header">
-        <h2>The Rosharan Calendar</h2>
+        <h2>{{ $t('calendar-guide.title') }}</h2>
 
         <button class="calendar-guide__close" :title="$t('ui.close')" @click="$store.commit('closeCalendarGuide')">
           <XIcon />
@@ -17,8 +17,8 @@
         @date-click="highlightedDate = $event"
       />
       <nav class="calendar-guide__navigation">
-        <button class="calendar-guide__button calendar-guide__button--prev" @click="prevStep">
-          {{ $t('ui.previous') }}
+        <button class="calendar-guide__button calendar-guide__button--prev" :title="$t('ui.previous')" @click="prevStep">
+          <ChevronLeftIcon size="1x" :stroke-width="3" />
         </button>
         <ul class="calendar-guide__dots">
           <li
@@ -29,8 +29,8 @@
             @click="step = s"
           />
         </ul>
-        <button class="calendar-guide__button calendar-guide__button--next" @click="nextStep">
-          {{ $t('ui.next') }}
+        <button class="calendar-guide__button calendar-guide__button--next" :title="$t('ui.next')" @click="nextStep">
+          <ChevronRightIcon size="1x" :stroke-width="3" />
         </button>
       </nav>
     </section>
@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import { XIcon } from 'vue-feather-icons'
+import { ChevronLeftIcon, ChevronRightIcon, XIcon } from 'vue-feather-icons'
 import Calendar from '@/components/Calendar.vue'
 import Markdown from '@/components/Markdown.vue'
 import { formatDate } from '@/utils'
@@ -47,7 +47,7 @@ const STEPS = ['start', 'day', 'week', 'month', 'year', 'date']
 
 export default {
   name: 'CalendarGuide',
-  components: { Markdown, Calendar, XIcon },
+  components: { Markdown, Calendar, ChevronLeftIcon, ChevronRightIcon, XIcon },
   data () {
     return {
       step: 'start',
@@ -207,6 +207,37 @@ export default {
     align-items: center;
     margin-top: 1rem;
     z-index: 1;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0;
+    color: #0f3562;
+    background: none;
+    appearance: none;
+    border: none;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+
+    &:hover, &:active, &:focus {
+      cursor: pointer;
+      color: lighten(#0f3562, 10%);
+    }
+
+    &--prev {
+      &:hover, &:active, &:focus {
+        transform: translateX(-0.25rem);
+      }
+    }
+
+    &--next {
+      &:hover, &:active, &:focus {
+        transform: translateX(0.25rem);
+      }
+    }
   }
 
   &__dots {
