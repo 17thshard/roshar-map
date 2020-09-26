@@ -3,6 +3,7 @@
     <Map
       :transitions="mapTransitions"
       @ready="onReady"
+      @error="onError"
     />
     <transition name="details">
       <Details v-if="details !== null" :key="details.id" :details="details" />
@@ -22,7 +23,10 @@
       <Tutorial v-if="ready && tutorialActive" @close="tutorialActive = false" />
     </transition>
     <transition name="loading__fade">
-      <LoadingIndicator v-if="!ready" />
+      <LoadingIndicator v-if="!ready && !errored" />
+    </transition>
+    <transition name="loading__fade">
+      <ErrorScreen v-if="errored" />
     </transition>
   </div>
 </template>
@@ -37,10 +41,12 @@ import Details from '@/components/Details.vue'
 import CalendarGuide from '@/components/CalendarGuide.vue'
 import Tutorial from '@/components/Tutorial.vue'
 import FirstVisitWindow from '@/components/FirstVisitWindow.vue'
+import ErrorScreen from '@/components/ErrorScreen.vue'
 
 export default {
   name: 'App',
   components: {
+    ErrorScreen,
     FirstVisitWindow,
     Tutorial,
     CalendarGuide,
@@ -54,6 +60,7 @@ export default {
   data () {
     return {
       ready: false,
+      errored: false,
       mapTransitions: false,
       sidebarActive: false,
       tutorialActive: window.localStorage.tutorialStarted === 'true' && window.localStorage.tutorialDone !== 'true',
@@ -87,6 +94,11 @@ export default {
   methods: {
     onReady () {
       this.ready = true
+    },
+    onError (error) {
+      this.errored = true
+      // eslint-disable-next-line no-console
+      console.error(error)
     },
     onScrubberLoaded () {
       this.mapTransitions = true

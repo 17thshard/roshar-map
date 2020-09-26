@@ -11,7 +11,7 @@
     </svg>
     <div class="loading-indicator__icon" />
     <div class="loading-indicator__text">
-      Loading...
+      {{ $t('ui.loading') }}
     </div>
   </div>
 </template>

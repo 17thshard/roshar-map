@@ -1,5 +1,6 @@
 {
     "ui": {
+        "loading": "Loading...",
         "circa": "ca. {date}",
         "menu": "Menu",
         "settings": "Settings",
@@ -99,6 +100,11 @@
                 "name": "Dates",
                 "explanation": "Dates are written as the year first, month second, week third, and day last. The numbers are separated by periods.\n\nFor example, this date in year 1173 is written: {date}"
             }
+        },
+        "error-screen": {
+            "message": "Whoops... Looks like the app cannot be loaded in your browser for some reason.\n\nPlease consider visiting using a [modern browser](https://browsehappy.com).",
+            "report-intro": "Think this is an actual error?",
+            "report-button": "Report on GitHub"
         }
     },
     "entry-types": {

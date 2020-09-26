@@ -87,14 +87,19 @@ export default {
     }
   },
   mounted () {
-    this.renderer = new WebGLRenderer({ antialias: false, alpha: true })
-    this.renderer.setPixelRatio(window.devicePixelRatio)
-    this.renderer.setSize(window.innerWidth, window.innerHeight)
-    this.renderer.sortObjects = false
+    try {
+      this.renderer = new WebGLRenderer({ antialias: false, alpha: true })
+      this.renderer.setPixelRatio(window.devicePixelRatio)
+      this.renderer.setSize(window.innerWidth, window.innerHeight)
+      this.renderer.sortObjects = false
 
-    this.textureManager = new TextureManager(this.renderer)
+      this.textureManager = new TextureManager(this.renderer)
 
-    this.composer = new EffectComposer(this.renderer)
+      this.composer = new EffectComposer(this.renderer)
+    } catch (error) {
+      this.$emit('error', error)
+      return
+    }
 
     this.loadTextures()
       .then(this.setupScene)
@@ -108,6 +113,9 @@ export default {
 
         this.onEventChanged(this.activeEvent, null)
         this.onLocationChanged(this.activeLocation, null)
+      })
+      .catch((error) => {
+        this.$emit('error', error)
       })
   },
   destroyed () {
