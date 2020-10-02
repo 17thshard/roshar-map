@@ -7,4 +7,4 @@ Seeking clues for the investigation of Torol Sadeas's murderer, Shallan enterned
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* 18 |
+| chapter | *Oathbringer* 18 |
