@@ -7,4 +7,4 @@ On her first night in the warcamps, Shallan found Tyn's spanreed flashing. She r
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* 42 |
+| chapter | *Words of Radiance* 42 & 43 |
