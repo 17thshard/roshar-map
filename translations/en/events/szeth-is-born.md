@@ -1,5 +1,2 @@
-# szeth-is-born
-Blurb
-
-## Details
-Details
+# Szeth is born
+Szeth is born in Shinovar.
