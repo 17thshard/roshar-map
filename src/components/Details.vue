@@ -8,6 +8,7 @@
       <XIcon />
     </router-link>
     <Scrollbar
+      ref="scroller"
       class="details__scroller"
       :ops="{
         vuescroll: { wheelScrollDuration: 400 },
@@ -17,12 +18,19 @@
     >
       <div class="details__content">
         <figure v-if="details.image !== undefined" class="details__image">
-          <img :src="imageUrl" :alt="$t(`${baseTranslationKey}.name`)">
+          <div
+            class="details__image-art"
+            :style="{
+              backgroundImage: `url(${imageUrl})`,
+              paddingBottom: `${(imageAspect * 100).toFixed(3)}%`,
+              backgroundSize: `${width}px auto`
+            }"
+          />
           <Markdown :content="details.image.credits || 'Credits have to be set!'" tag="figcaption" inline />
         </figure>
         <section class="details__text">
           <div ref="intersectionGuard" class="details__intersection-guard" />
-          <h2 class="details__title">
+          <h2 ref="title" class="details__title">
             {{ $t(`${baseTranslationKey}.name`) }}
           </h2>
           <ul v-if="Object.keys(metadata).length > 0" class="details__metadata">
@@ -104,12 +112,14 @@ export default {
   },
   data () {
     return {
-      reachedHeading: false
+      reachedHeading: false,
+      imageAspect: 1,
+      width: 1
     }
   },
   computed: {
     imageUrl () {
-      return `${process.env.BASE_URL}img/${this.details.image.file}`
+      return this.details.image !== undefined ? `${process.env.BASE_URL}img/${this.details.image.file}` : undefined
     },
     baseTranslationKey () {
       return `${this.details.type}.${this.details.id}`
@@ -180,6 +190,26 @@ export default {
       }, {})
     }
   },
+  watch: {
+    imageUrl: {
+      handler (newUrl) {
+        if (newUrl !== undefined) {
+          const image = new Image()
+          image.src = newUrl
+
+          image.onload = () => {
+            this.imageAspect = image.height / image.width
+            const actualHeight = this.imageAspect * this.$el.clientWidth
+
+            if (actualHeight >= window.innerHeight) {
+              this.$refs.scroller.scrollTo({ y: actualHeight * 0.5 })
+            }
+          }
+        }
+      },
+      immediate: true
+    }
+  },
   mounted () {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -194,6 +224,17 @@ export default {
     )
 
     observer.observe(this.$refs.intersectionGuard)
+
+    window.addEventListener('resize', this.onResize)
+    this.onResize()
+  },
+  destroyed () {
+    window.removeEventListener('resize', this.onResize)
+  },
+  methods: {
+    onResize () {
+      this.width = this.$el.clientWidth
+    }
   }
 }
 </script>
@@ -358,12 +399,18 @@ export default {
     margin: 0;
     padding: 0;
 
-    img {
+    &-art {
       position: relative;
-      z-index: 1;
-      width: 100%;
+      max-width: 100%;
       clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), 0 100%);
       background-color: #0f3562;
+      background-attachment: fixed;
+    }
+
+    img {
+      position: absolute;
+      z-index: 1;
+      width: 100%;
       background-repeat: no-repeat;
     }
 
