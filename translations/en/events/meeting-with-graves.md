@@ -7,4 +7,4 @@ Moash convinced Kaladin to meet with Graves and hear the man's plan to assassina
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* 46 |
+| chapter | *Words of Radiance* 46 |
