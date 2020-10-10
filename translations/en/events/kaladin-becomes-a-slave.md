@@ -3,3 +3,8 @@ Kaladin killed a Shardbearer, Helaran Davar, on the battlefield. Amaram took the
 
 ## Details
 While attempting to kill a brightlord on the battlefield, and thus earn his squad enough honor to be transferred to the Shattered Plains, Kaladin's entire squad was nearly slaughtered by a mysterious Shardbearer. Seeking vengeance, Kaladin attacked the Shardbearer (later revealed to be Helaran Davar) who had set his sights on Amaram. Kaladin was miraculously successful, stabbing Helaran through the slits on his helmet. Kaladin was offered the Shards, but rejected them. Convinced by Restares to take the Shards for himself, Amaram had the rest of Kaladin's squad killed and branded Kaladin as a slave in order to keep the secret of his theft.
+
+## Metadata
+| Field | Value |
+| ----- | ----- |
+| chapter | *The Way of Kings* 47 & 51 |
