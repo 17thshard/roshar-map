@@ -9,4 +9,4 @@ Shallan quickly surmised that the ship was under attack. Upon peeking out of her
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* 6 & 7 |
+| chapter | *Words of Radiance* Ch. 6 & 7 |

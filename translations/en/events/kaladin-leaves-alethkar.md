@@ -7,4 +7,4 @@ After following the band of Alethi singers all the way to the city of Revolar, K
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* 31 |
+| chapter | *Oathbringer* Ch. 31 |

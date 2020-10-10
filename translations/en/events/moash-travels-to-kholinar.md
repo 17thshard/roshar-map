@@ -7,4 +7,4 @@ After being left in Revolar by the Fused who assaulted his group in the Frostlan
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* 48 |
+| chapter | *Oathbringer* Ch. 48 |

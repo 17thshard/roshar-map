@@ -7,4 +7,4 @@ Dalinar and several highprinces attended Elhokar on a hunting party out onto the
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* 13 |
+| chapter | *The Way of Kings* Ch. 13 |

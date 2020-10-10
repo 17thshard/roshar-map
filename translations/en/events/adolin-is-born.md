@@ -4,4 +4,4 @@ Adolin was born to Dalinar and Evi Kholin.
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* 49 |
+| chapter | *Oathbringer* Ch. 49 |

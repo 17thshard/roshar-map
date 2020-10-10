@@ -7,4 +7,4 @@ Dalinar and Sadeas arranged a joint plateau run to the infamous plateau known as
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* 65 |
+| chapter | *The Way of Kings* Ch. 65 |

@@ -7,4 +7,4 @@ After a few days of searching the vicinity of Hearthstone, Kaladin was able to l
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* 14 |
+| chapter | *Oathbringer* Ch. 14 |

@@ -7,4 +7,4 @@ After the Vorin church refused to sanction Dalinar and Navani's marriage, the pa
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* 4 |
+| chapter | *Oathbringer* Ch. 4 |

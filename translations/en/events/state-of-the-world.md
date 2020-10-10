@@ -7,4 +7,4 @@ The present state of the world following the Battle of Thaylen Field.
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* 122 |
+| chapter | *Oathbringer* Ch. 122 |

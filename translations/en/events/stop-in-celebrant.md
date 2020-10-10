@@ -7,4 +7,4 @@ In Nan 1174 Kaladin, Shallan, Adolin, Sylphrena, Pattern, and Azure passed throu
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* 102 |
+| chapter | *Oathbringer* Ch. 102 |

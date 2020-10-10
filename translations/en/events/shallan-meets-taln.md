@@ -9,4 +9,4 @@ The women rode a palanquin to the temple complex in Dalinar's warcamps, where Sh
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* 63 & 64 |
+| chapter | *Words of Radiance* Ch. 63 & 64 |

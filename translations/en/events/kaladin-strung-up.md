@@ -7,4 +7,4 @@ With no means of protecting his newly united Bridge Four, Kaladin had the crew d
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* 32, 34, & 35 |
+| chapter | *The Way of Kings* Ch. 32, 34, & 35 |

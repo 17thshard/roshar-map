@@ -9,4 +9,4 @@ What resulted was a pitched battle between the defending forces -- mostly the Kn
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* 115-120 |
+| chapter | *Oathbringer* Ch. 115–120 |

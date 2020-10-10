@@ -7,4 +7,4 @@ While exploring the halls of Urithiru days after residiscovery of the city, Adol
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* 89 |
+| chapter | *Words of Radiance* Ch. 89 |

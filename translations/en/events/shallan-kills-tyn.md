@@ -7,4 +7,4 @@ With a highstorm approaching at night and the sun soon setting, Tyn and Shallan 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* 31, 32, & 34 |
+| chapter | *Words of Radiance* Ch. 31, 32, & 34 |

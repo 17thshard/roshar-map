@@ -7,4 +7,4 @@ The singer forces laying seige to Kholinar attacked on the day Elhokar's team at
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* 83 |
+| chapter | *Oathbringer* Ch. 83 |

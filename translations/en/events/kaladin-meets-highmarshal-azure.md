@@ -7,4 +7,4 @@ While investigating the city of Kholinar, Kaladin found himself joining the city
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* 70 |
+| chapter | *Oathbringer* Ch. 70 |

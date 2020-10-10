@@ -7,4 +7,4 @@ After the disaster with the attempt to protect the bridge crew with the 'side ca
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* 27 |
+| chapter | *The Way of Kings* Ch. 27 |

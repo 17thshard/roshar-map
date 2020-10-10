@@ -7,4 +7,4 @@ The Alethi forces led by Dalinar Kholin arrived at Narak on the final day of Ren
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* 81 |
+| chapter | *Words of Radiance* Ch. 81 |

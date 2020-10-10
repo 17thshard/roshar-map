@@ -7,4 +7,4 @@ Unsure of the loyalties of an approaching group of soldiers, and at the promptin
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* 28 |
+| chapter | *Words of Radiance* Ch. 28 |

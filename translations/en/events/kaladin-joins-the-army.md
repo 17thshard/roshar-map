@@ -7,4 +7,4 @@ When his cousin Amaram arrived in Hearthstone, looking for new recruits to join 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* 44 |
+| chapter | *The Way of Kings* Ch. 44 |

@@ -7,4 +7,4 @@ Following the Battle of Thaylen Field and the confirmation of King Elhokar's dea
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* 122 |
+| chapter | *Oathbringer* Ch. 122 |

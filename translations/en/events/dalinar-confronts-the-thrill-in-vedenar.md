@@ -7,4 +7,4 @@ Following the failure of Elhokar's team at the Battle of Kholinar, Dalinar took 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* 100 |
+| chapter | *Oathbringer* Ch. 100 |

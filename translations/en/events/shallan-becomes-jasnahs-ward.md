@@ -7,4 +7,4 @@ After months of chasing Jasnah Kholin from port to port, Shallan finally caught 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* 3, 5, 7, & 8 |
+| chapter | *The Way of Kings* Ch. 3, 5, 7, & 8 |

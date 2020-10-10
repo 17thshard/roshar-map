@@ -7,4 +7,4 @@ Following the assassination of Gavilar, Dalinar was determined to seek vengeance
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* 114 |
+| chapter | *Oathbringer* Ch. 114 |

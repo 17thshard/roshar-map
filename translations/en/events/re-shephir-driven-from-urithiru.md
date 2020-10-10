@@ -7,4 +7,4 @@ After finding a Midnight Essence to be responsible for the murders in Urithiru, 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* 29 & 30 |
+| chapter | *Oathbringer* Ch. 29 & 30 |

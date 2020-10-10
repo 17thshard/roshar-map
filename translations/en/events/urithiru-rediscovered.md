@@ -7,4 +7,4 @@ Jasnah Kholin began an effort to rediscover the city after growing convinced tha
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* 86 |
+| chapter | *Words of Radiance* Ch. 86 |

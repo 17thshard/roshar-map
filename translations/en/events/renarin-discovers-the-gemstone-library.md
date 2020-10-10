@@ -7,4 +7,4 @@ Noting something strange about one wall of the library in Urithiru's basement, R
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* 53 |
+| chapter | *Oathbringer* Ch. 53 |

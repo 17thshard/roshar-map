@@ -7,4 +7,4 @@ After being accidentally poisoned by Kabsal, Shallan's theft of Jasnah's Soulcas
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* 70, 72, & 74 |
+| chapter | *The Way of Kings* Ch. 70, 72, & 74 |

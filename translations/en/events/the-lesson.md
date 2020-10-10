@@ -11,4 +11,4 @@ Shallan, shocked and horrified by what Jasnah had done, argued with her tutor ov
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* 36 |
+| chapter | *The Way of Kings* Ch. 36 |

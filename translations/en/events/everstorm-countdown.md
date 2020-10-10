@@ -7,4 +7,4 @@ Granted some measure of uncontrollable futuresight by his bond with his corrupte
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* 4 |
+| chapter | *Words of Radiance* Ch. 4 |

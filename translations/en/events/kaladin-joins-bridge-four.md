@@ -7,4 +7,4 @@ The slaver Tvlakv arrived on the Shattered Plains, selling Kaladin into continue
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* 6 |
+| chapter | *The Way of Kings* Ch. 6 |

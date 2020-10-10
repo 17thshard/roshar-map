@@ -7,4 +7,4 @@ Around early 1166, an army passed through Hearthstone and asked Citylord Wistiow
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* 16 |
+| chapter | *The Way of Kings* Ch. 16 |

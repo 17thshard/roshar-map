@@ -7,4 +7,4 @@ In Kholinar, Roshone used his connections to have a pair of elderly darkeyes, Mo
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* 25 |
+| chapter | *The Way of Kings* Ch. 25 |

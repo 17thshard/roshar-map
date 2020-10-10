@@ -7,4 +7,4 @@ After his failure to assassinate Dalinar, Taravangian decided on an alternate st
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* 24 |
+| chapter | *Oathbringer* Ch. 24 |

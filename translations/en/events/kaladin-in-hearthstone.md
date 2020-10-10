@@ -7,4 +7,4 @@ After the summoning of the Everstorm, Kaladin returned to Hearthstone to aid his
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* 5-7 |
+| chapter | *Oathbringer* Ch. 5–7 |

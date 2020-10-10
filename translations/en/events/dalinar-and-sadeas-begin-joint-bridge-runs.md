@@ -7,4 +7,4 @@ The tension between Dalinar and Sadeas eased after the latter's investigation in
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* 55 |
+| chapter | *The Way of Kings* Ch. 55 |

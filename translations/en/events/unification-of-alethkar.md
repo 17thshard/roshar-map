@@ -7,4 +7,4 @@ Dalinar led the attack against Highprince Kalanor, the final holdout against Gav
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* 26 |
+| chapter | *Oathbringer* Ch. 26 |

@@ -7,4 +7,4 @@ Amaram arrived on the Shattered Plains shortly after the Battle of the Tower, wi
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* 12 |
+| chapter | *Words of Radiance* Ch. 12 |

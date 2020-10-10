@@ -11,7 +11,7 @@
     <Markdown class="error-screen__report" :content="$t('ui.error-screen.report-intro')">
       <a class="error-screen__report-button" href="https://github.com/Palanaeum/roshar-map/issues/new">
         <GithubIcon size="1x" />
-        {{$t('ui.error-screen.report-button')}}
+        {{ $t('ui.error-screen.report-button') }}
       </a>
     </Markdown>
   </div>

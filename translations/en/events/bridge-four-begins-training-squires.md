@@ -7,4 +7,4 @@ After Kaladin returned from his mission in Alethkar, he began to see to the deve
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* 35 |
+| chapter | *Oathbringer* Ch. 35 |

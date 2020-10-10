@@ -7,4 +7,4 @@ After being named Highprince of War, Dalinar continued struggling to unite the s
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* 14 |
+| chapter | *Words of Radiance* Ch. 14 |

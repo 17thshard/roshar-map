@@ -9,4 +9,4 @@ While she listened to Dalinar's visions she realized that what he was saying had
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* 60 |
+| chapter | *The Way of Kings* Ch. 60 |
