@@ -49,7 +49,7 @@
           </a>
         </section>
         <section v-if="anyRelated" class="details__related">
-          <h3>Related</h3>
+          <h3>{{ $t('ui.related') }}</h3>
           <div
             v-for="type in ['events', 'locations', 'characters', 'misc'].filter(t => related[t] !== undefined && related[t].length > 0)"
             :key="type"
@@ -491,11 +491,12 @@ export default {
     padding: 1rem 2.5rem;
 
     h3 {
+      font-size: 1.3em;
       width: 100%;
       flex-grow: 1;
       padding: 0 0.5rem;
-      font-weight: 400;
-      margin: 0 0 0.5rem;
+      font-weight: 600;
+      margin: 0 0 1rem;
     }
 
     &-group {
