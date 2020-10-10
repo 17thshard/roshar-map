@@ -7,4 +7,4 @@ Rysn and Vstim travelled to Shinovar, where they met with Vstim's friend, Thresh
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* I-3 |
+| chapter | *The Way of Kings* I-4 |
