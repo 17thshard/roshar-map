@@ -3,3 +3,8 @@ After Venli discovered and captured the correct spren, and with the blessing of 
 
 ## Details
 After Venli's discovery of the correct spren to create stormform, the Five determined that testing the new form would be wise. Eshonai demanded that she be allowed an opportunity to test the form first for herlsef, and this permission was granted to her.
+
+## Metadata
+| Field | Value |
+| ----- | ----- |
+| chapter | *Words of Radiance* I-5 & I-8 |
