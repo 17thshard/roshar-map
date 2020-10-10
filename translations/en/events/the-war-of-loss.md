@@ -2,4 +2,8 @@
 Sadees, the Sunmaker, ended the Vorin church's Heirocracy and united much of eastern Roshar.
 
 ## Details
-Details
+Before the Hierocracy could spread to western Roshar, the Hierocracy became embroiled in the War of Loss, a conflict spearheaded by the man later known as the Sunmaker. The Sunmaker united together the ten princedoms of Alethkar for the first time since the fall of Alethela into one nation. It is unknown if any other factions joined them, but working together the Alethi forces fought the Hierocracy in truly epic battles, whose like has not been seen on Roshar since then. The Sunmaker managed to cast down the Hierocracy. Its fall led to much chaos and destruction, and many eastern cities were sacked and destroyed, with the notable exception of Kholinar.
+
+The Sunmaker himself interrogated the remaining priests and went through their correspondences. He claimed that he had found no proof of any of the visions that they had claimed to be receiving from the Almighty, stating that it had been a massive fraud on the part of the Church. The central leadership of the Vorin Church was destroyed. Vorinism was then shattered in the Devotaries, and ardents lost much of their power, only able to teach laws, not enforce them. They were no longer allowed to be involved in politics, unable to own property, and were actually considered the property of lighteyes. These events are still a source of embarrassment to modern day ardents, who prefer not to speak of them.
+
+Sadees, after his win, claimed to have a mandate from the Almighty and crowned himself king of the united Alethkar. He decided to continue conquering the world, starting with Herdaz and going at least to Azimir, where he committed genocide killing ten percent of the Azish population. The kingdom he'd united during the war collapsed after his death.
