@@ -288,11 +288,14 @@ export default {
         this.highlights.add(new Highlight(target.x, target.y, event.specialEffect === 'shattering' ? 2 : undefined))
       }
 
-      this.controls.transitionTo(target, newPosition.zoom !== undefined ? newPosition.zoom : 0.7)
-
       if (event.perpendicularity) {
         this.mapMaterial.uniforms.PerpLocation.value.set(target.x, target.y)
       }
+
+      this.$nextTick(() => {
+        const cardHeight = document.querySelector(`.event-card[data-id="${event.id}"]`).clientHeight
+        this.controls.transitionTo(target.setY(target.y - 10), newPosition.zoom !== undefined ? newPosition.zoom : 0.7, cardHeight)
+      })
     },
     onLocationChanged (location, oldLocation) {
       if (location !== null && location.shadesmar) {

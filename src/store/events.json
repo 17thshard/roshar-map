@@ -1013,7 +1013,8 @@
         "coppermind": "Ishikk",
         "image": {
             "file": "events/Purelake_1.jpeg",
-            "credits": "by [Bonnie Johnson](https://coppermind.net/wiki/Coppermind:Artists/Bonnie_Johnson)"
+            "credits": "by [Bonnie Johnson](https://coppermind.net/wiki/Coppermind:Artists/Bonnie_Johnson)",
+            "size": 170
         },
         "circa": true
     },

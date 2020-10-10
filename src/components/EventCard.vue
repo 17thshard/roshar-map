@@ -4,6 +4,7 @@
       'event-card',
       { 'event-card--image': event.image !== undefined, 'event-card--details-visible': $route.name === 'events' }
     ]"
+    :data-id="event.id"
   >
     <div class="event-card__content">
       <div

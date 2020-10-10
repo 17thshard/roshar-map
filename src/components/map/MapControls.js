@@ -150,10 +150,16 @@ const MapControls = function (object, domElement) {
     clampPosition(targetPosition, targetAngle)
   }
 
-  this.transitionTo = function (target, newZoom) {
+  this.transitionTo = function (target, newZoom, yOffset) {
     transitionStartZoom = zoom
     targetZoom = newZoom
     intendedTarget.copy(target)
+
+    if (yOffset !== undefined) {
+      calculateIntersections(lerp(maxZoomHeight, minZoomHeight, targetZoom), lerp(scope.maxZoomAngle, scope.minZoomAngle, targetZoom))
+      const availableHeight = Math.abs(highIntersection.y - lowIntersection.y)
+      intendedTarget.y -= availableHeight * (yOffset / scope.domElement.clientHeight) * 0.5 - 10
+    }
 
     updateTargetPosition()
 
