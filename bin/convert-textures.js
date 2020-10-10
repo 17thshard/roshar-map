@@ -14,7 +14,7 @@ const textures = {
   shadesmar_map_text: { hqAvailable: true },
   hover_text: {},
   factions: { hqAvailable: true },
-  oathgate_text: { hqAvailable: true }
+  oathgates_silver_kingdoms: { hqAvailable: true }
 }
 
 const basePath = './public/img/textures'

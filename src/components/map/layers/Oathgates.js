@@ -35,7 +35,7 @@ export default class Oathgates extends Group {
       `,
       fragmentShader: oathgateTextFragmentShader,
       uniforms: {
-        Texture: { value: textures.oathgate_text },
+        Texture: { value: textures.oathgates_silver_kingdoms },
         PatternTexture: { value: textures.text_pattern },
         Opacity: { value: this.t }
       },

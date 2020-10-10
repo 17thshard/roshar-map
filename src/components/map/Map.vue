@@ -36,6 +36,7 @@ import ShatteringPass from '@/components/map/ShatteringPass'
 import TextureManager from '@/components/map/TextureManager'
 import { clamp01, lerp } from '@/utils'
 import Factions from '@/components/map/layers/Factions'
+import SilverKingdoms from '@/components/map/layers/SilverKingdoms'
 import Oathgates from '@/components/map/layers/Oathgates'
 import Shadesmar from '@/components/map/layers/Shadesmar'
 import FactionsLegend from '@/components/map/layers/FactionsLegend.vue'
@@ -133,7 +134,7 @@ export default {
         map_text: { hqAvailable: true },
         shadesmar_map_text: { hqAvailable: true },
         factions: { hqAvailable: true },
-        oathgate_text: { hqAvailable: true }
+        oathgates_silver_kingdoms: { hqAvailable: true }
       }
 
       return this.textureManager.load(textures)
@@ -239,12 +240,13 @@ export default {
 
       this.layers = {
         shadesmar: new Shadesmar(),
+        silverKingdoms: new SilverKingdoms(textures),
         oathgates: new Oathgates(textures),
         factions: new Factions(textures.factions)
       }
 
       this.scene = new Scene()
-      this.scene.add(this.plane, this.textPlane, this.highlights, this.layers.factions, this.layers.oathgates)
+      this.scene.add(this.plane, this.textPlane, this.highlights, this.layers.factions, this.layers.silverKingdoms, this.layers.oathgates)
 
       this.composer.addPass(new RenderPass(this.scene, this.camera))
       this.shatteringPass = new ShatteringPass()

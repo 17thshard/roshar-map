@@ -308,6 +308,7 @@ export default new Vuex.Store({
     },
     layersActive: {
       shadesmar: false,
+      silverKingdoms: false,
       oathgates: false,
       factions: false
     },
