@@ -90,8 +90,9 @@ function parseSections (content) {
 
   let currentSection
   lines.forEach((line) => {
-    if (line.startsWith('#')) {
-      const [, hashes, name] = line.trim().match(/^(#+)\s*(.*?)$/)
+    const headerMatch = line.trim().match(/^(#+)\s+(.*?)$/)
+    if (headerMatch != null) {
+      const [, hashes, name] = headerMatch
 
       if (hashes.length === 1) {
         currentSection = { name: name.trim(), content: '' }
