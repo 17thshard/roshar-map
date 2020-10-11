@@ -116,7 +116,9 @@
             "x": 767.7,
             "y": 363.3
         },
-        "tags": [],
+        "tags": [
+            "history"
+        ],
         "coppermind": "Listener#The_Last_Legion_and_Abandoning_of_the_Gods",
         "related": [
             "locations/shattered-plains"
@@ -289,7 +291,8 @@
         },
         "tags": [
             "ob",
-            "dalinar"
+            "dalinar",
+            "history"
         ],
         "related": [
             "characters/dalinar",
@@ -335,7 +338,7 @@
         ],
         "image": {
             "file": "events/Act_of_Mercy_by_Xabi_Gaztelua.jpg",
-            "credits": "by [Xabi Gaztelua](https://www.instagram.com/p/CCjmcd5Damu/)"
+            "credits": "by [Xabi Gazte](https://coppermind.net/wiki/Coppermind:Artists/Xabi_Gazte)"
         },
         "coppermind": "Oathbringer_(Shardblade)",
         "related": [
@@ -442,8 +445,8 @@
             "kaladin"
         ],
         "image": {
-            "file": "events/Darkeyes_by_Gal_Or.jpg",
-            "credits": "by [Gal Or](https://coppermind.net/wiki/File:Darkeyes_by_Gal_Or.jpg)"
+            "file": "characters/Kaladin_-_XI_Justice_.jpg",
+            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
         },
         "coppermind": "Kaladin",
         "related": [
@@ -548,7 +551,8 @@
         },
         "tags": [
             "ob",
-            "dalinar"
+            "dalinar",
+            "history"
         ],
         "coppermind": "Rathalas#Destruction_of_Rathalas_.281163.29",
         "related": [
@@ -978,8 +982,8 @@
         },
         "tags": [],
         "image": {
-            "file": "events/Child_of_Peace_by_Vladora.png",
-            "credits": "by [Vladora](https://coppermind.net/wiki/Coppermind:Artists/Vladora)",
+            "file": "events/Darkeyes_by_Gal_Or.jpg",
+            "credits": "by [Gal Or](https://coppermind.net/wiki/File:Darkeyes_by_Gal_Or.jpg)",
             "size": 105,
             "offset": {
                 "x": 50,

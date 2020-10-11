@@ -2,37 +2,121 @@
     {
         "id": "tags",
         "tags": [
-            { "id": "history", "color": "#999791", "alpha": 0.5 }
+            {
+                "id": "history",
+                "color": "#785c54",
+                "alpha": 0.6
+            }
         ]
     },
     {
         "id": "characters",
         "tags": [
-            { "id": "dalinar", "color": "#ebc965", "alpha": 0.75 },
-            { "id": "kaladin", "color": "#0f3562", "alpha": 0.5 },
-            { "id": "shallan", "color": "#6c011d", "alpha": 0.5 },
-            { "id": "szeth", "color": "#999791", "alpha": 0.5 },
-            { "id": "adolin", "color": "#999791", "alpha": 0.5 },
-            { "id": "renarin", "color": "#999791", "alpha": 0.5 },
-            { "id": "lift", "color": "#999791", "alpha": 0.5 },
-            { "id": "jasnah", "color": "#999791", "alpha": 0.5 },
-            { "id": "rysn", "color": "#999791", "alpha": 0.5 },
-            { "id": "navani", "color": "#999791", "alpha": 0.5 },
-            { "id": "eshonai", "color": "#999791", "alpha": 0.5 },
-            { "id": "venli", "color": "#999791", "alpha": 0.5 },
-            { "id": "taravangian", "color": "#999791", "alpha": 0.5 },
-            { "id": "wit", "color": "#999791", "alpha": 0.5 },
-            { "id": "moash", "color": "#999791", "alpha": 0.5 }
+            {
+                "id": "dalinar",
+                "color": "#ebc965",
+                "alpha": 0.75
+            },
+            {
+                "id": "kaladin",
+                "color": "#165a9e",
+                "alpha": 0.5
+            },
+            {
+                "id": "shallan",
+                "color": "#950025",
+                "alpha": 0.5
+            },
+            {
+                "id": "szeth",
+                "color": "#8b81a9",
+                "alpha": 0.5
+            },
+            {
+                "id": "adolin",
+                "color": "#0f3462",
+                "alpha": 0.75
+            },
+            {
+                "id": "renarin",
+                "color": "#2e6f26",
+                "alpha": 0.5
+            },
+            {
+                "id": "lift",
+                "color": "#cdcdcd",
+                "alpha": 1
+            },
+            {
+                "id": "jasnah",
+                "color": "#3a497e",
+                "alpha": 0.5
+            },
+            {
+                "id": "rysn",
+                "color": "#999791",
+                "alpha": 0.5
+            },
+            {
+                "id": "navani",
+                "color": "#999791",
+                "alpha": 0.5
+            },
+            {
+                "id": "eshonai",
+                "color": "#921892",
+                "alpha": 0.5
+            },
+            {
+                "id": "venli",
+                "color": "#921892",
+                "alpha": 0.5
+            },
+            {
+                "id": "taravangian",
+                "color": "#999791",
+                "alpha": 0.5
+            },
+            {
+                "id": "wit",
+                "color": "#000000",
+                "alpha": 0.5
+            },
+            {
+                "id": "moash",
+                "color": "#999791",
+                "alpha": 0.5
+            }
         ]
     },
     {
         "id": "books",
         "tags": [
-            { "id": "twok", "color": "#999791", "alpha": 0.5 },
-            { "id": "wor", "color": "#999791", "alpha": 0.5 },
-            { "id": "ed", "color": "#999791", "alpha": 0.5 },
-            { "id": "ob", "color": "#999791", "alpha": 0.5 },
-            { "id": "row", "color": "#999791", "alpha": 0.5 }
+            {
+                "id": "twok",
+                "color": "#165a9e",
+                "alpha": 0.5
+            },
+            {
+                "id": "wor",
+                "color": "#950025",
+                "alpha": 0.5
+            },
+            {
+                "id": "ed",
+                "color": "#cdcdcd",
+                "alpha": 1
+            },
+            {
+                "id": "ob",
+                "color": "#ebca65",
+                "alpha": 0.75
+            },
+            {
+                "id": "row",
+                "color": "#921892",
+                "alpha": 0.5
+            }
         ]
     }
 ]
