@@ -21,7 +21,7 @@
           <div
             class="details__image-art"
             :style="{
-              backgroundImage: `url(${imageUrl})`,
+              backgroundImage: `url('${imageUrl}')`,
               paddingBottom: `${(imageAspect * 100).toFixed(3)}%`,
               backgroundSize: `${width}px auto`
             }"
