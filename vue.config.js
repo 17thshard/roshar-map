@@ -21,7 +21,7 @@ module.exports = {
     workboxOptions: {
       skipWaiting: true,
       clientsClaim: true,
-      exclude: ['index.html', /^\/img\/textures\/localized\/[^/]+\/.*\.(webp|png)/, /^\/js\/lang-.*\.js/],
+      exclude: ['index.html', /.*\/textures\/localized\/[^/]+\/.*\.(webp|png)$/, /.*\/lang-.*\.js/],
       runtimeCaching: [
         {
           urlPattern: /^$|^\/$|\/#.*$/,
