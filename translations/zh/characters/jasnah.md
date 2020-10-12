@@ -1,0 +1,5 @@
+# Jasnah Kholin
+
+> It strikes me that religion—in its essence—seeks to take natural events and ascribe supernatural causes to them. I, however, seek to take supernatural events and find the natural meanings behind them. Perhaps that is the final dividing line between science and religion. Opposite sides of a card.
+
+**Jasnah Kholin** is the queen of #[Alethkar](locations/alethkar) on Roshar. She is a Surgebinder and Elsecaller, with access to the Surges of Transformation and Transportation, sometimes called "Elsecalling." She is the sister of the late King #[Elhokar](characters/elhokar), daughter of the late King #[Gavilar](characters/gavilar) and #[Navani](characters/navani), niece of Highprince #[Dalinar](characters/dalinar), aunt of royal heir Gavinor, and cousin to Adolin and Renarin. She is known widely as a brilliant scholar and for her denunciation of Vorinism. She is a member of the Veristitalians, an order of historians dedicated to reconstructing unbiased and factual accounts of the past in order to better understand the present. She is training Shallan Davar as her ward.

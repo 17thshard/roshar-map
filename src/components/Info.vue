@@ -84,8 +84,11 @@
               <router-link to="/en-US">
                 English
               </router-link>
-              <router-link to="/de-DE">
-                Deutsch
+              <router-link to="/es-ES">
+                Español
+              </router-link>
+              <router-link to="/zh">
+                Chinese
               </router-link>
             </nav>
           </div>
