@@ -2,7 +2,7 @@ import isMobile from 'is-mobile'
 import { TextureLoader } from 'three'
 
 export default class TextureManager {
-  constructor (renderer) {
+  constructor (renderer, locale) {
     const maxTextureSize = renderer.capabilities.maxTextureSize
     this.useHq = maxTextureSize >= 8192 && !isMobile({ tablet: true, featureDetect: true })
     this.webpPromise = new Promise((resolve) => {
@@ -17,10 +17,17 @@ export default class TextureManager {
       }
       img.src = 'data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAACyAgCdASoCAAEALmk0mk0iIiIiIgBoSygABc6zbAAA/v56QAAAAA=='
     })
+    this.locale = locale
   }
 
-  buildPath (prefix, name) {
-    return `${process.env.BASE_URL}img/textures/${prefix}${name}.${this.webpSupported ? 'webp' : 'png'}`
+  buildPath (prefix, name, localized) {
+    const base = `${prefix}${name}.${this.webpSupported ? 'webp' : 'png'}`
+
+    if (localized === undefined || localized === false) {
+      return base
+    }
+
+    return `localized/${this.locale}/${base}`
   }
 
   load (textures) {
@@ -28,26 +35,31 @@ export default class TextureManager {
 
     const textureLoader = new TextureLoader()
 
-    return this.webpPromise.then(() => new Promise((resolve) => {
+    return this.webpPromise.then(() => new Promise((resolve, reject) => {
       Object.keys(textures).forEach((name) => {
         const texture = textures[name]
 
         const prefix = (texture.hqAvailable || (texture.hqWebpAvailable && this.webpSupported)) && this.useHq ? 'hq_' : ''
-        const path = this.buildPath(prefix, name)
+        const path = this.buildPath(prefix, name, texture.localized)
 
-        textureLoader.load(path, (data) => {
-          texture.loaded = true
-          result[name] = data
+        textureLoader.load(
+          require(`@/assets/textures/${path}`),
+          (data) => {
+            texture.loaded = true
+            result[name] = data
 
-          if (Object.keys(textures).every(t => textures[t].loaded === true)) {
-            resolve(result)
-          }
-        })
+            if (Object.keys(textures).every(t => textures[t].loaded === true)) {
+              resolve(result)
+            }
+          },
+          undefined,
+          errorEvent => reject(new Error(`Could not load texture '${name}': ${errorEvent.message}`))
+        )
       })
     }))
   }
 
-  loadData (name, hqAvailable, channelsToKeep) {
+  loadData (name, hqAvailable, localized, channelsToKeep) {
     const channels = {}
     channelsToKeep.split('').forEach((c) => {
       channels[c] = channelsToKeep.indexOf(c)
@@ -55,7 +67,7 @@ export default class TextureManager {
 
     const channelNames = Object.keys(channels)
 
-    return this.webpPromise.then(() => new Promise((resolve) => {
+    return this.webpPromise.then(() => new Promise((resolve, reject) => {
       const image = new Image()
 
       image.onload = () => {
@@ -92,7 +104,11 @@ export default class TextureManager {
         resolve({ width: raw.width, height: raw.height, data })
       }
 
-      image.src = this.buildPath(hqAvailable && this.useHq ? 'hq_' : '', name)
+      image.onerror = errorEvent => reject(new Error(`Could not load texture '${name}': ${errorEvent.message}`))
+
+      const path = this.buildPath(hqAvailable && this.useHq ? 'hq_' : '', name, localized)
+
+      image.src = require(`@/assets/textures/${path}`)
     }))
   }
 }

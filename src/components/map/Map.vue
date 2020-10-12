@@ -94,7 +94,7 @@ export default {
       this.renderer.setSize(window.innerWidth, window.innerHeight)
       this.renderer.sortObjects = false
 
-      this.textureManager = new TextureManager(this.renderer)
+      this.textureManager = new TextureManager(this.renderer, this.$t('textureLocale'))
 
       this.composer = new EffectComposer(this.renderer)
     } catch (error) {
@@ -131,10 +131,12 @@ export default {
         shadesmar_map_bg: {},
         transition: {},
         text_pattern: {},
-        map_text: { hqAvailable: true },
-        shadesmar_map_text: { hqAvailable: true },
+        map_text: { hqAvailable: true, localized: true },
+        shadesmar_map_text: { hqAvailable: true, localized: true },
         factions: { hqAvailable: true },
-        oathgates_silver_kingdoms: { hqAvailable: true }
+        oathgates_text: { hqAvailable: true, localized: true },
+        silver_kingdoms: { hqAvailable: true },
+        silver_kingdoms_text: { hqAvailable: true, localized: true }
       }
 
       return this.textureManager.load(textures)
@@ -252,7 +254,7 @@ export default {
       this.shatteringPass = new ShatteringPass()
       this.composer.addPass(this.shatteringPass)
 
-      this.hoverTexture = await this.textureManager.loadData('hover_text', false, 'gb')
+      this.hoverTexture = await this.textureManager.loadData('hover_text', false, true, 'gb')
     },
     onEventChanged (event, oldEvent) {
       this.highlights.children.forEach(h => h.leave())

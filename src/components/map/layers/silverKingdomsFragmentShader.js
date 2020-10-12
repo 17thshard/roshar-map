@@ -30,6 +30,6 @@ export default `
 
     vec4 map = texture2D(Texture, vUv);
 
-    gl_FragColor = Sample(map.g, 20., maxGrad);
+    gl_FragColor = Sample(map.r, 20., maxGrad);
   }
 `

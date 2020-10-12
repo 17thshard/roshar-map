@@ -34,7 +34,7 @@ export default class SilverKingdoms extends Group {
       `,
       fragmentShader: silverKingdomsFragmentShader,
       uniforms: {
-        Texture: { value: textures.oathgates_silver_kingdoms },
+        Texture: { value: textures.silver_kingdoms },
         Opacity: { value: this.t }
       },
       extensions: {
@@ -56,7 +56,7 @@ export default class SilverKingdoms extends Group {
       `,
       fragmentShader: silverKingdomsTextFragmentShader,
       uniforms: {
-        Texture: { value: textures.oathgates_silver_kingdoms },
+        Texture: { value: textures.silver_kingdoms_text },
         PatternTexture: { value: textures.text_pattern },
         Opacity: { value: this.t }
       },

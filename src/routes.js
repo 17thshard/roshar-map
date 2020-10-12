@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import { loadLanguageAsync } from '@/i18n'
+import { i18n, loadLanguageAsync } from '@/i18n'
 import store from '@/store'
 
 Vue.use(VueRouter)
@@ -75,7 +75,16 @@ router.beforeEach((to, from, next) => {
     return
   }
 
-  loadLanguage(locale).then(() => next()).catch(() => next('/en-US'))
+  loadLanguage(locale).catch(() => next('/en-US')).then(() => next())
+})
+
+router.afterEach((to, from) => {
+  const oldLocale = from.params.locale
+  const newLocale = to.params.locale
+
+  if (oldLocale !== undefined && i18n.t('textureLocale', newLocale) !== i18n.t('textureLocale', oldLocale)) {
+    location.reload()
+  }
 })
 
 export { router }

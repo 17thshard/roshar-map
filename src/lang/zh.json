@@ -1,4 +1,6 @@
 {
+    "textureLocale": "en",
+    "title": "Map of Roshar | The Stormlight Archive",
     "ui": {
         "loading": "Loading...",
         "circa": "ca. {date}",

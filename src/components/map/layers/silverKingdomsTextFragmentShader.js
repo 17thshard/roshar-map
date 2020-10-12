@@ -42,6 +42,6 @@ export default `
     float noise = texture2D(PatternTexture, vUv * vec2(16., 8.)).r;
     vec4 map = texture2D(Texture, vUv);
 
-    gl_FragColor = Sample(map.b, noise, 24., 60., 10., maxGrad);
+    gl_FragColor = Sample(map.r, noise, 24., 60., 10., maxGrad);
   }
 `

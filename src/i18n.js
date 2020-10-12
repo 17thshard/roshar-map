@@ -16,6 +16,7 @@ const loadedLanguages = ['en'] // our default language that is preloaded
 function setI18nLanguage (lang) {
   i18n.locale = lang
   document.querySelector('html').setAttribute('lang', lang)
+  document.querySelector('title').innerHTML = i18n.t('title')
   return lang
 }
 
