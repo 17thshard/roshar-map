@@ -1,5 +1,5 @@
 <template>
-  <div class="editor">
+  <div :class="['editor', { 'editor--loading': loading }]">
     <div class="editor__menu">
       <img src="@/assets/roshar_logo.png" alt="Logo">
       <button @click="save">
@@ -41,6 +41,12 @@
         <label for="editor__selected-language">Override with</label>
         <input id="editor__file--language" :disabled="selectedLanguage === null" type="file" @change="loadLanguage">
       </div>
+      <label for="editor__texture-locale">Texture Locale</label>
+      <select id="editor__texture-locale" v-model="textureLocale" @change="resetRenderer">
+        <option v-for="language in availableLanguages" :key="language" :value="language">
+          {{ language }}
+        </option>
+      </select>
     </div>
     <div
       ref="surface"
@@ -56,7 +62,7 @@
     >
       <svg v-if="mode === 'locations'">
         <template
-          v-for="(location, index) in locations.filter(l => l.points !== undefined && (selectedLocation !== null && selectedLocation.shadesmar ? l.shadesmar : l.shadesmar !== true))"
+          v-for="(location, index) in locations.filter(l => l.points[textureLocale] !== undefined && (selectedLocation !== null && selectedLocation.shadesmar ? l.shadesmar : l.shadesmar !== true))"
         >
           <polygon
             :key="`polygon${index}`"
@@ -65,7 +71,7 @@
             @click="clickLocationPolygon(location, $event)"
           />
           <circle
-            v-for="(point, pointIndex) in location.points"
+            v-for="(point, pointIndex) in location.points[textureLocale]"
             :key="`polygon${index}-point${pointIndex}`"
             :cx="point.x / xScale"
             :cy="point.y / yScale"
@@ -113,22 +119,19 @@
           <button @click="selectedEvent = null">
             Clear selection
           </button>
+          <button @click="renderPhysical">
+            Save Physical Realm
+          </button>
+          <button @click="renderShadesmar">
+            Save Shadesmar
+          </button>
+          <button @click="renderHover">
+            Save hover
+          </button>
+          <button @click="renderAll">
+            Save all
+          </button>
         </div>
-        <button @click="renderPng(locations.filter(l => l.shadesmar !== true), 'map_text')">
-          Save LQ
-        </button>
-        <button @click="renderPng(locations.filter(l => l.shadesmar !== true), 'hq_map_text')">
-          Save HQ
-        </button>
-        <button @click="renderPng(locations.filter(l => l.shadesmar), 'shadesmar_map_text')">
-          Save Shadesmar LQ
-        </button>
-        <button @click="renderPng(locations.filter(l => l.shadesmar), 'hq_shadesmar_map_text')">
-          Save Shadesmar HQ
-        </button>
-        <button @click="renderPng(locations)">
-          Save hover
-        </button>
       </li>
       <li
         v-for="(location, index) in locations"
@@ -282,18 +285,18 @@
             Delete
           </button>
           <Draggable tag="ul" :list="tagCategory.tags" group="tags" class="editor__tags-list">
-            <li
-              v-for="tag in tagCategory.tags"
-              :key="tag.id"
-              :class="{
+        <li
+          v-for="tag in tagCategory.tags"
+          :key="tag.id"
+          :class="{
                 'editor__tags-item--selected': selectedTag === tag && !categorySelected
               }"
-              @click.stop="selectTag(tag, false)"
-            >
-              {{ tag.id }}
-            </li>
-          </Draggable>
+          @click.stop="selectTag(tag, false)"
+        >
+          {{ tag.id }}
         </li>
+      </Draggable>
+      </li>
       </Draggable>
     </div>
     <template
@@ -391,6 +394,8 @@ export default {
   components: { TagProperties, LocationProperties, EventPreview, EventProperties, CharacterProperties, MiscProperties, Draggable },
   data () {
     return {
+      textureLocale: 'en',
+      loading: true,
       mode: 'events',
       locations: JSON.parse(JSON.stringify(originalLocations)),
       events: JSON.parse(JSON.stringify(originalEvents)),
@@ -414,7 +419,7 @@ export default {
       panStart: null,
       xScale: 1,
       yScale: 1,
-      availableLanguages: ['en', 'de'],
+      availableLanguages: ['en', 'es', 'zh'],
       loadedLanguages: {},
       selectedLanguage: null,
       locationsDirty: false,
@@ -549,23 +554,7 @@ export default {
   mounted () {
     window.addEventListener('beforeunload', this.onLeave)
 
-    this.renderer = new WebGLRenderer({ antialias: false, alpha: true })
-    this.renderer.setPixelRatio(window.devicePixelRatio)
-    this.renderer.setSize(window.innerWidth, window.innerHeight)
-    this.renderer.setClearColor(0x000000)
-    this.renderer.sortObjects = false
-
-    this.textureManager = new TextureManager(this.renderer)
-
-    this.loadTextures()
-      .then(this.setupScene)
-      .then(() => {
-        this.$el.appendChild(this.renderer.domElement)
-
-        this.update()
-
-        this.$emit('ready')
-      })
+    this.setupRenderer()
   },
   destroyed () {
     window.removeEventListener('beforeunload', this.onLeave)
@@ -573,6 +562,33 @@ export default {
     cancelAnimationFrame(this.latestAnimationFrame)
   },
   methods: {
+    resetRenderer () {
+      this.renderer.dispose()
+      this.renderer.domElement.remove()
+      cancelAnimationFrame(this.latestAnimationFrame)
+
+      this.setupRenderer()
+    },
+    setupRenderer () {
+      this.loading = true
+
+      this.renderer = new WebGLRenderer({ antialias: false, alpha: true })
+      this.renderer.setPixelRatio(window.devicePixelRatio)
+      this.renderer.setSize(window.innerWidth, window.innerHeight)
+      this.renderer.setClearColor(0x000000)
+      this.renderer.sortObjects = false
+
+      this.textureManager = new TextureManager(this.renderer, this.textureLocale)
+
+      this.loadTextures()
+        .then(this.setupScene)
+        .then(() => {
+          this.$el.appendChild(this.renderer.domElement)
+
+          this.update()
+          this.loading = false
+        })
+    },
     onLeave (event) {
       if (this.dirty) {
         event.returnValue = 'Are you sure you want to leave?'
@@ -580,12 +596,11 @@ export default {
     },
     loadTextures () {
       const textures = {
-        map_bg: {},
+        map_bg: { hqWebpAvailable: true },
         map: { hqAvailable: true },
         shadesmar_map_bg: {},
-        transition: {},
-        map_text: { hqAvailable: true },
-        shadesmar_map_text: { hqAvailable: true }
+        map_text: { hqAvailable: true, localized: true },
+        shadesmar_map_text: { hqAvailable: true, localized: true }
       }
 
       return this.textureManager.load(textures)
@@ -917,7 +932,8 @@ export default {
       }
 
       if (this.selectedLocation !== null && this.selectedLocation.mapId !== undefined && shiftKey) {
-        this.selectedLocation.points.push({ x, y })
+        this.ensureLocalePoints(this.selectedLocation)
+        this.selectedLocation.points[this.textureLocale].push({ x, y })
       } else if (this.selectedLocation !== null && ctrlKey) {
         this.selectedLocation.coordinates = { x: Number.parseFloat(x.toFixed(1)), y: Number.parseFloat(y.toFixed(1)) }
       }
@@ -939,8 +955,8 @@ export default {
         return
       }
 
-      if (event.ctrlKey) {
-        location.points.splice(pointIndex, 1)
+      if (event.ctrlKey && location.points[this.textureLocale] !== undefined) {
+        location.points[this.textureLocale].splice(pointIndex, 1)
       }
 
       event.preventDefault()
@@ -988,8 +1004,13 @@ export default {
       this.draggedPoint = null
       this.panning = false
     },
+    ensureLocalePoints (location) {
+      if (location.points[this.textureLocale] === undefined) {
+        this.$set(location.points, this.textureLocale, [])
+      }
+    },
     buildPolygonPoints (polygon) {
-      return polygon.points.map(p => `${p.x / this.xScale},${p.y / this.yScale}`).join(' ')
+      return polygon.points[this.textureLocale].map(p => `${p.x / this.xScale},${p.y / this.yScale}`).join(' ')
     },
     onZoom (event) {
       const e = window.event || event
@@ -1050,9 +1071,41 @@ export default {
         return a.mapId - b.mapId
       })
     },
-    async renderPng (locations, base) {
+    async renderAll () {
+      this.loading = true
+      const zip = new Zip()
+      const texturesDir = zip.folder(`src/assets/textures/localized/${this.textureLocale}`)
+
+      const fileAction = (fileName, png) => {
+        texturesDir.file(fileName, png.substring(png.indexOf('base64,') + 'base64,'.length), { base64: true })
+      }
+
+      await this.renderPhysical(fileAction)
+      await this.renderShadesmar(fileAction)
+      await this.renderHover(fileAction)
+
+      const data = await zip.generateAsync({ type: 'uint8array' })
+
+      saveAs(
+        new Blob([data], { type: 'application/zip' }),
+        `${this.textureLocale}_textures.zip`
+      )
+      this.loading = false
+    },
+    async renderPhysical (fileAction) {
+      await this.renderPng(this.locations.filter(l => l.shadesmar !== true), 'map_text', fileAction)
+      await this.renderPng(this.locations.filter(l => l.shadesmar !== true), 'hq_map_text', fileAction)
+    },
+    async renderShadesmar (fileAction) {
+      await this.renderPng(this.locations.filter(l => l.shadesmar === true), 'shadesmar_map_text', fileAction)
+      await this.renderPng(this.locations.filter(l => l.shadesmar === true), 'hq_shadesmar_map_text', fileAction)
+    },
+    async renderHover (fileAction) {
+      await this.renderPng(this.locations, undefined, fileAction)
+    },
+    async renderPng (locations, base, fileAction) {
       const { width, height, data: baseData } = base !== undefined
-        ? (await this.textureManager.loadData(base, false, 'rgba'))
+        ? (await this.textureManager.loadData(base, false, true, 'rgba'))
         : { width: 1024, height: 512 }
 
       const xScale = width / 1024
@@ -1060,7 +1113,7 @@ export default {
       const svgString = `
       <svg xmlns='http://www.w3.org/2000/svg' shape-rendering="crispEdges" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
         ${
-        locations.filter(l => l.points !== undefined).map((location) => {
+        locations.filter(l => l.points[this.textureLocale] !== undefined).map((location) => {
           let hexId = Number.parseInt(location.mapId, 10).toString(16)
 
           if (location.shadesmar && base === undefined) {
@@ -1068,7 +1121,7 @@ export default {
           }
 
           return `<polygon fill="#${hexId.padStart(6, '0')}" style="mix-blend-mode: screen" points="${
-            location.points.map(p => `${(p.x * xScale).toFixed(5)},${(p.y * yScale).toFixed(5)}`).join(' ')
+            location.points[this.textureLocale].map(p => `${(p.x * xScale).toFixed(5)},${(p.y * yScale).toFixed(5)}`).join(' ')
           }"></polygon>`
         }).join('\n')
       }
@@ -1079,37 +1132,48 @@ export default {
       canvas.width = width
       canvas.height = height
       const ctx = canvas.getContext('2d')
-      const img = new Image()
 
-      img.onload = function () {
-        ctx.clearRect(0, 0, width, height)
-        ctx.drawImage(img, 0, 0)
-        const hoverData = ctx.getImageData(0, 0, width, height).data
+      return new Promise((resolve) => {
+        const img = new Image()
 
-        if (base !== undefined) {
-          for (let i = 0; i < hoverData.length / 4; i++) {
-            baseData[i * 4 + 2] = hoverData[i * 4 + 2]
-          }
-        }
-
-        if (base !== undefined) {
+        img.onload = function () {
           ctx.clearRect(0, 0, width, height)
-          ctx.putImageData(new ImageData(baseData, width, height), 0, 0)
+          ctx.drawImage(img, 0, 0)
+          const hoverData = ctx.getImageData(0, 0, width, height).data
+
+          if (base !== undefined) {
+            for (let i = 0; i < hoverData.length / 4; i++) {
+              baseData[i * 4 + 2] = hoverData[i * 4 + 2]
+            }
+          }
+
+          if (base !== undefined) {
+            ctx.clearRect(0, 0, width, height)
+            ctx.putImageData(new ImageData(baseData, width, height), 0, 0)
+          }
+
+          const fileName = `${base !== undefined ? base : 'hover_text'}.png`
+          const png = canvas.toDataURL('image/png')
+
+          if (fileAction !== undefined) {
+            fileAction(fileName, png)
+          } else {
+            const a = document.createElement('a')
+            document.body.appendChild(a)
+            a.style = 'display: none'
+            a.href = png
+            a.download = fileName
+            a.click()
+            a.remove()
+          }
+
+          window.URL.revokeObjectURL(png)
+          canvas.remove()
+
+          resolve()
         }
-
-        const png = canvas.toDataURL('image/png')
-        const a = document.createElement('a')
-        document.body.appendChild(a)
-        a.style = 'display: none'
-        a.href = png
-        a.download = `${base !== undefined ? base : 'hover_text'}.png`
-        a.click()
-        window.URL.revokeObjectURL(png)
-
-        a.remove()
-        canvas.remove()
-      }
-      img.src = `data:image/svg+xml;base64,${window.btoa(svgString)}`
+        img.src = `data:image/svg+xml;base64,${window.btoa(svgString)}`
+      })
     },
     hasTagCategory (tag) {
       return this.tagCategories.some(({ tags }) => tags.includes(tag))
@@ -1135,6 +1199,20 @@ export default {
   left: 0;
   padding-bottom: 50%;
   font-family: sans-serif;
+
+  &--loading {
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      cursor: wait;
+      z-index: 1000;
+    }
+  }
 
   &__menu {
     position: fixed;
@@ -1268,7 +1346,7 @@ export default {
         grid-template-columns: auto auto;
         padding-top: 0;
 
-        & > button:first-of-type, & > button:nth-of-type(2), input, label, & > button:last-of-type {
+        & > button:first-of-type, & > button:nth-of-type(2), input, label {
           grid-column: 1 / span 2;
         }
       }

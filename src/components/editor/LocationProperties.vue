@@ -232,7 +232,7 @@ export default {
       this.$set(this.location, 'mapId', Number.parseInt(trimmed))
 
       if (this.location.points === undefined) {
-        this.$set(this.location, 'points', [])
+        this.$set(this.location, 'points', {})
       }
     },
     updateZoom ({ target: { value } }) {
