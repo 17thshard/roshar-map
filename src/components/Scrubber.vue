@@ -246,7 +246,7 @@ export default {
         this.selectEvent(this.events[index])
       }
 
-      if (this.activeEvent !== null && Math.abs(this.activeEvent.offset - scroll) <= 0.5) {
+      if (this.activeEvent !== null && Math.abs(this.activeEvent.offset - scroll) <= 1) {
         gotoAndScroll(this.activeEvent.index + dir)
 
         return
@@ -261,9 +261,9 @@ export default {
         const start = this.events[prevIndex]
         const end = this.events[endIndex]
 
-        if (scroll <= start.offset + 0.5) {
+        if (scroll <= start.offset + 1) {
           gotoAndScroll(start.index)
-        } else if (scroll >= end.offset - 0.5) {
+        } else if (scroll >= end.offset - 1) {
           gotoAndScroll(end.index)
         } else if (dir < 0) {
           gotoAndScroll(start.index)
