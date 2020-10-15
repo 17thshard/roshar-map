@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import { i18n, loadLanguageAsync } from '@/i18n'
 import store from '@/store'
+import Map from '@/components/map/Map.vue'
 
 Vue.use(VueRouter)
 
@@ -29,6 +30,7 @@ const router = new VueRouter({
     {
       name: 'root',
       path: '/:locale',
+      component: Map,
       children: detailRoutes.map(({ name, path, specialAction }) => ({
         name,
         path: `${name}/:id`,

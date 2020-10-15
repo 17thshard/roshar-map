@@ -21,18 +21,18 @@ module.exports = {
     workboxOptions: {
       skipWaiting: true,
       clientsClaim: true,
-      exclude: ['index.html', /.*\/textures\/localized\/[^/]+\/.*\.(webp|png)$/, /.*\/lang-.*\.js/],
+      exclude: ['index.html', /.*\/textures\/.*\.(webp|png)$/, /.*\/lang-.*\.js/],
       runtimeCaching: [
         {
           urlPattern: /^$|^\/$|\/#.*$/,
           handler: 'NetworkFirst'
         },
         {
-          urlPattern: /^\/?img\/textures\/localized\/[^/]+\/.*\.(webp|png)/,
+          urlPattern: /.*\/textures\/.*\.(webp|png)$/,
           handler: 'CacheFirst'
         },
         {
-          urlPattern: /^\/?js\/lang-.*\.js/,
+          urlPattern: /.*\/?js\/lang-.*\.js/,
           handler: 'CacheFirst'
         }
       ]

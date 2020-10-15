@@ -1,6 +1,6 @@
 <template>
   <div id="app" :class="{ 'app--details': details !== null, 'app--sidebar-active': sidebarActive }">
-    <Map
+    <router-view
       :transitions="mapTransitions"
       @ready="onReady"
       @error="onError"
@@ -32,7 +32,6 @@
 </template>
 
 <script>
-import Map from '@/components/map/Map.vue'
 import Scrubber from '@/components/Scrubber.vue'
 import Settings from '@/components/Settings.vue'
 import LoadingIndicator from '@/components/LoadingIndicator.vue'
@@ -54,8 +53,7 @@ export default {
     Info,
     LoadingIndicator,
     Settings,
-    Scrubber,
-    Map
+    Scrubber
   },
   data () {
     return {
