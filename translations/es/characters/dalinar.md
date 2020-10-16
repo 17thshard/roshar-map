@@ -1,5 +1,5 @@
 # Dalinar Kholin
 
-> I see beauty in you, Dalinar Kholin. I see a great man struggling against a terrible one.
+> Veo belleza en ti, Dalinar Kholin. Veo a un gran hombre que forcejea contra uno terrible.
 
-**Dalinar Kholin** is an Alethi highprince of #[Alethkar](locations/alethkar). He is known as the **Blackthorn** for his military prowess and is the Highprince of War. He is the younger brother of the late King Gavilar, uncle of King #[Elhokar Kholin](characters/elhokar) and #[Jasnah Kholin](characters/jasnah), and is currently married to Brightness #[Navani Kholin](characters/navani), Gavilar's widow. He has two sons, #[Adolin Kholin](characters/adolin) and #[Renarin Kholin](characters/renarin). He is a member of the Order of Bondsmiths, bonded to the Stormfather, and is the de facto leader of the reformed Knights Radiant.
+**Dalinar Kholin** es un alezi y Alto Rey de #[Urithiru](locations/urithiru), también conocido como el **Espina Negra** por su destreza militar. Es el hermano menor del fallecido rey Gavilar, tío del fallecido rey #[Elhokar Kholin](characters/elhokar) y de #[Jasnah Kholin](characters/jasnah), y está casado con la brillante #[Navani Kholin](characters/navani), la viuda de Gavilar. Tiene dos hijos, #[Adolin Kholin](characters/adolin) y #[Renarin Kholin](characters/renarin). Es miembro de la Orden de los Forjadores de Vínculos, vinculado al Padre Tormenta, y también el líder de facto de los reformados Caballeros Radiantes.
