@@ -13,6 +13,15 @@
     <transition name="event-card">
       <EventCard v-if="activeEvent !== null" :key="`event-${activeEvent.id}`" :event="activeEvent" />
     </transition>
+    <transition name="scrubber__jump">
+      <button
+        v-if="leftOverflowVisible"
+        class="scrubber__jump scrubber__jump--start"
+        :title="$t('ui.jump-to-start')"
+      >
+        <ChevronsLeftIcon />
+      </button>
+    </transition>
     <div class="scrubber__bar">
       <div class="scrubber__indicator">
         <div class="scrubber__indicator-actions">
@@ -78,18 +87,28 @@
         </transition-group>
       </div>
     </div>
+    <transition name="scrubber__jump">
+      <button
+        v-if="rightOverflowVisible"
+        class="scrubber__jump scrubber__jump--end"
+        :title="$t('ui.jump-to-end')"
+      >
+        <ChevronsRightIcon />
+      </button>
+    </transition>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
+import { ChevronsLeftIcon, ChevronsRightIcon } from 'vue-feather-icons'
 import Timeline from '@/components/Timeline.vue'
 import EventCard from '@/components/EventCard.vue'
 import { formatDate, lerp } from '@/utils'
 
 export default {
   name: 'Scrubber',
-  components: { EventCard, Timeline },
+  components: { EventCard, Timeline, ChevronsLeftIcon, ChevronsRightIcon },
   data () {
     return {
       timelineWidth: 0,
@@ -350,6 +369,47 @@ export default {
 
   &--right-overflow:after {
     opacity: 1;
+  }
+
+  &__jump {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    z-index: 16;
+    align-self: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+    appearance: none;
+    border: none;
+    background: #0f3562;
+    color: #f6f8fa;
+    margin: 0;
+    cursor: pointer;
+    outline: none;
+    box-sizing: border-box;
+    white-space: nowrap;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
+
+    &-enter-active, &-leave-active {
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    &-enter, &-leave-to {
+      opacity: 0;
+    }
+
+    &-enter-to, &-leave-from {
+      opacity: 1;
+    }
+
+    &--start {
+      left: 1.5rem;
+    }
+
+    &--end {
+      right: 1.5rem;
+    }
   }
 
   &__indicator {
