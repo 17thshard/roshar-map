@@ -473,36 +473,6 @@ export default {
     padding: 2rem 3rem 1rem;
     text-align: justify;
     line-height: 1.9;
-
-    blockquote {
-      position: relative;
-      font-size: 1.2em;
-      line-height: 1.7;
-      box-sizing: border-box;
-      padding: 0;
-      margin: 0;
-      font-style: italic;
-
-      &:before {
-        content: '“';
-        position: absolute;
-        left: -1.7rem;
-        top: 0.5rem;
-        line-height: 1;
-        font-size: 3rem;
-        color: lighten(#1c1d26, 40%);
-      }
-
-      &:after {
-        content: '”';
-        position: absolute;
-        right: -1rem;
-        bottom: -1.5rem;
-        line-height: 1;
-        font-size: 3rem;
-        color: lighten(#1c1d26, 40%);
-      }
-    }
   }
 
   &__title {

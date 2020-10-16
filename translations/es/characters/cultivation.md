@@ -1,7 +1,7 @@
 # Cultivación
 
-> YO CONTROLO TODO LO QUE SE PUEDE HACER CRECER, TODO LO QUE SE PUEDE NUTRIR.
-> ESO INCLUYE LAS ESPINAS.
+> ^Yo controlo todo lo que se puede hacer crecer, todo lo que se puede nutrir.
+> Eso incluye las espinas.^
 
 **Cultivación** es una de las dieciséis Esquirlas de Adonalsium. Reside en Roshar, a donde originalmente viajó junto a #[Honor](characters/honor) antes de la llegada de #[Odium](characters/odium) arrival. Se desconoce el nombre de su recipiente, aunque #[Hoid](characters/wit) se refiere a ella como **Trena**
 

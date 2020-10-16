@@ -30,6 +30,15 @@ const rules = {
   em: markdown.defaultRules.em,
   strong: markdown.defaultRules.strong,
   u: markdown.defaultRules.u,
+  smallCaps: {
+    order: markdown.defaultRules.em.order,
+    match: markdown.inlineRegex(/^\^((?:\\[\s\S]|[^\\])+?)\^/),
+    parse (capture, parse, state) {
+      return {
+        content: parse(capture[1], state)
+      }
+    }
+  },
   internalLink: {
     order: markdown.defaultRules.link.order - 1,
     match: markdown.inlineRegex(new RegExp(
@@ -77,6 +86,8 @@ export default {
           return h('blockquote', node.content.map(child => this.renderNode(child, h, route)))
         case 'paragraph':
           return h('p', node.content.map(child => this.renderNode(child, h, route)))
+        case 'smallCaps':
+          return h('span', { class: 'markdown__small-caps' }, node.content.map(child => this.renderNode(child, h, route)))
         case 'translatorNote':
           return h(
             'div',
@@ -176,7 +187,11 @@ export default {
     }
   }
 
-  .markdown__translator-note {
+  &__small-caps {
+    font-variant: small-caps;
+  }
+
+  &__translator-note {
     font-size: 0.9em;
     padding: 1em 0.5em;
     border-top: 2px solid rgba(0, 0, 0, 0.2);
@@ -221,6 +236,36 @@ export default {
 
     &-content {
       font-style: italic;
+    }
+  }
+
+  blockquote {
+    position: relative;
+    font-size: 1.2em;
+    line-height: 1.7;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-style: italic;
+
+    &:before {
+      content: '“';
+      position: absolute;
+      left: -1.7rem;
+      top: 0.5rem;
+      line-height: 1;
+      font-size: 3rem;
+      color: lighten(#1c1d26, 40%);
+    }
+
+    &:after {
+      content: '”';
+      position: absolute;
+      right: -1rem;
+      bottom: -1.5rem;
+      line-height: 1;
+      font-size: 3rem;
+      color: lighten(#1c1d26, 40%);
     }
   }
 }
