@@ -1,6 +1,8 @@
-# Cultivation
+# Cultivación
 
-> I control all things that can be grown, nurtured.  
-> That includes the thorns.
+> YO CONTROLO TODO LO QUE SE PUEDE HACER CRECER, TODO LO QUE SE PUEDE NUTRIR.
+> ESO INCLUYE LAS ESPINAS.
 
-**Cultivation** is one of the sixteen Shards of Adonalsium. She resides on Roshar, having originally come there with #[Honor](characters/honor) before #[Odium's](characters/odium) arrival. Its Vessel's name is unknown, although #[Hoid](characters/wit) calls her **Slammer**. Cultivation’s Investiture is typically associated with the color green.
+**Cultivación** es una de las dieciséis Esquirlas de Adonalsium. Reside en Roshar, a donde originalmente viajó junto a #[Honor](characters/honor) antes de la llegada de #[Odium](characters/odium) arrival. Se desconoce el nombre de su recipiente, aunque #[Hoid](characters/wit) se refiere a ella como **Trena**
+
+N.T.: En inglés, el apodo que le otorga Hoid es _**Slammer**_, no tenemos aún traducción oficial al español, pero el término hace referencia a una forma coloquial de referirse a la cárcel. Esta información no se ha mencionado de forma oficial en los libros, proviene de una [WoB de Brandon] (https://wob.coppermind.net/events/134-general-signed-books-2016/#e9472).
