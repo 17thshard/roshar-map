@@ -31,7 +31,7 @@ const router = new VueRouter({
       name: 'root',
       path: '/:locale',
       component: Map,
-      children: detailRoutes.map(({ name, path, specialAction }) => ({
+      children: detailRoutes.map(({ name, specialAction }) => ({
         name,
         path: `${name}/:id`,
         meta: {

@@ -359,22 +359,6 @@ export default {
     @media (max-width: 1920px) {
       font-size: 14px;
     }
-
-    .markdown a {
-      display: inline-block;
-      color: inherit;
-      text-decoration: none;
-      transition: all 0.2s ease-in-out;
-      background-image: linear-gradient(0deg, #0f3562 0%, #0f3562 100%);
-      background-repeat: no-repeat;
-      background-size: 100% 0.1em;
-      background-position: 50% 100%;
-
-      &:hover, &:active, &:focus {
-        color: #f6f8fa;
-        background-size: 100% 100%;
-      }
-    }
   }
 
   .__rail-is-vertical {
