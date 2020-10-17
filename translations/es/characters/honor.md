@@ -1,5 +1,5 @@
 # Honor
 
-> I am . . . I was . . . God. The one you call the Almighty, the creator of mankind. And now I am dead. #[Odium](characters/odium) has killed me. I am sorry.
+> Soy…, fui…, Dios. El que llamáis el Todopoderoso, el creador de la humanidad. Y ahora estoy muerto. #[Odium](characters/odium) me ha matado. Lo siento.
 
-**Honor** is one of the sixteen Shards of Adonalsium, and one of the three, alongside #[Cultivation](characters/cultivation) and #[Odium](characters/odium), present in the Rosharan system. The original Vessel of Honor was called Tanavast. Following his death at the hands of Odium, Honor was Splintered. Honor’s Investiture is typically associated with the color blue-white.
+**Honor** es una de las dieciséis esquirlas de Adonalsium, y una de las tres que, junto a #[Cultivación](characters/cultivation) y #[Odium](characters/odium), están presentes en el sistema roshariano. El recipiente original de Honor se llamaba Tanavast. Tras morir a manos de Odium, Honor fue astillado. La Investidura de Odium suele asociarse con el color blanquiazulado.
