@@ -18,6 +18,7 @@
         v-if="leftOverflowVisible"
         class="scrubber__jump scrubber__jump--start"
         :title="$t('ui.jump-to-start')"
+        @click="jumpToStart"
       >
         <ChevronsLeftIcon />
       </button>
@@ -92,6 +93,7 @@
         v-if="rightOverflowVisible"
         class="scrubber__jump scrubber__jump--end"
         :title="$t('ui.jump-to-end')"
+        @click="jumpToEnd"
       >
         <ChevronsRightIcon />
       </button>
@@ -303,6 +305,18 @@ export default {
           behavior: 'smooth'
         })
       })
+    },
+    jumpToStart () {
+      this.$refs.container.scrollTo({
+        left: 0,
+        behavior: 'smooth'
+      })
+    },
+    jumpToEnd () {
+      this.$refs.container.scrollTo({
+        left: this.$refs.container.scrollWidth - this.$refs.container.clientWidth,
+        behavior: 'smooth'
+      })
     }
   }
 }
@@ -390,6 +404,11 @@ export default {
     box-sizing: border-box;
     white-space: nowrap;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
+    transition: 0.2s ease-in-out background;
+
+    &:hover, &:active, &:focus {
+      background: lighten(#0f3562, 10%);
+    }
 
     &-enter-active, &-leave-active {
       transition: opacity 0.2s ease-in-out;
