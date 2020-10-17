@@ -271,6 +271,12 @@ export default {
     display: flex;
     align-items: center;
 
+    @media (max-width: 500px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-row-gap: 0.25rem;
+    }
+
     button {
       display: flex;
       align-items: center;
@@ -295,6 +301,11 @@ export default {
       &:hover, &:active, &:focus {
         background: lighten(#0f3562, 20%);
       }
+
+      @media (max-width: 500px) {
+        grid-column: 1 / span 3;
+        margin: 1rem auto 0.5rem;
+      }
     }
   }
 
@@ -306,6 +317,11 @@ export default {
 
     &--wide {
       width: 7rem;
+
+      @media (max-width: 500px) {
+        grid-column: 1 / span 3;
+        width: calc(100% - 1rem);
+      }
     }
 
     $focus-height: 0.3rem;

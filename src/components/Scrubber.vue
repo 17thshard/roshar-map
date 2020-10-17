@@ -330,7 +330,7 @@ export default {
         })
         return
       } else if (matchingYear !== undefined) {
-        const timeOfMonth = (date[3] ?? 1) - 1 + (date[2] ?? 1 - 1) * 5
+        const timeOfMonth = (date[3] ?? 1) - 1 + ((date[2] ?? 1) - 1) * 5
 
         const month = matchingYear.months[date[1] - 1]
         const nextMonth = matchingYear.months[date[1]]
