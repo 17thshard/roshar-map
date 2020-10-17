@@ -1,5 +1,5 @@
 # Lift
 
-> Someone has to care. Too few people care these days.
+> Alguien tiene que preocuparse —dijo, echando a andar pasillo abajo—. Muy poca gente lo hace, hoy en día.
 
-**Lift** is a Reshi thief who works in the city of #[Azimir](locations/azimir) in #[Azir](locations/azir) on Roshar. She's a Surgebinder of the Order of Edgedancers, bonded to Wyndle.
+**Lift** es una ladrona reshi que operaba en la ciudad de #[Azimir](locations/azimir) ubicada en #[Azir](locations/azir) dentro de Roshar. Es una potenciadora perteneciente a la orden de los Dazantes del Filo, vinculada a Wyndle.
