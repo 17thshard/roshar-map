@@ -1,3 +1,3 @@
 # Rysn
 
-**Rysn** is a young woman from #[Thaylenah](locations/thaylenah) on Roshar. She currently works in the Thaylen Gemstone Reserve, managing Queen Fen's personal finances. Previously she was an an apprentice merchant under her _babsk_ Vstim. She has a pet Larkin which she calls Chiri-Chiri.
+**Rysn** es una joven de #[Thaylenah](locations/thaylenah) en Roshar. En la actualidad trabaja en la Reserva de Gemas Thayleña, llevando las finanzas personales de la reina Fen. Anteriormente fue aprendiz de mercader bajo la tutela de su _babsk_, Vstim. Tiene un larkin por mascota, al que llama Chiri-Chiri.
