@@ -1,5 +1,5 @@
 # Moash
 
-> He couldn't be blamed. He was a product of his culture.
+> No se lo podía considerar responsable a él. No era más que un producto de su cultura.
 
-**Moash**, also known as **Vyre**, is an Alethi man on Roshar. Originally a bridgeman in Bridge Four, he becomes a soldier and bodyguard under #[Kaladin](characters/kaladin); eventually, he betrays Bridge Four and switches sides to the #[Diagram](misc/diagram), then the Fused, serving them as a slave, warrior and assassin. He's the current holder of Jezrien's Honorblade.
+**Moash**, también conocido como **Vyre**, es un alezi de Roshar. En sus orígenes fue un hombre del puente en el Puente Cuatro. Más adelante se convirtió en soldado y guardaespaldas bajo las órdenes de #[Kaladin](characters/kaladin). Con el tiempo, traiciona al Puente Cuatro y cambia de bando uniéndose primero al #[Diagrama](misc/diagram), y posteriormente al bando de los Fusionados como esclavo, guerrero y asesino, que acaba con la vida del difunto rey #[Elhokar](characters/elhokar). En la actualidad, es el portador de la hoja de Honor de Jezrien.
