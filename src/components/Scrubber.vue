@@ -116,7 +116,7 @@ import { mapState } from 'vuex'
 import { ChevronsLeftIcon, ChevronsRightIcon, CalendarIcon } from 'vue-feather-icons'
 import Timeline from '@/components/Timeline.vue'
 import EventCard from '@/components/EventCard.vue'
-import { compareDates, formatDate, getTimestamp, lerp } from '@/utils'
+import { formatDate, lerp } from '@/utils'
 import GoToDate from '@/components/GoToDate.vue'
 import { inverseLerp } from '@/utils.js'
 
@@ -344,24 +344,25 @@ export default {
         return
       }
 
-      const endIndex = this.events.findIndex(event => compareDates(date, event.date) < 0)
+      const endIndex = this.years.findIndex(year => year.year >= date[0])
 
       if (endIndex === -1) {
         this.jumpToEnd()
         return
-      } else if (endIndex === 0) {
-        this.jumpToStart()
-        return
       }
 
-      const startEvent = this.events[endIndex - 1]
-      const endEvent = this.events[endIndex]
-
+      const start = this.years[Math.max(endIndex - 1, 0)]
+      const end = this.years[endIndex]
       const offset = lerp(
-        startEvent.offset,
-        endEvent.offset,
-        inverseLerp(getTimestamp(startEvent.date), getTimestamp(endEvent.date), getTimestamp(date))
+        start.offset,
+        end.offset,
+        inverseLerp(
+          start.year,
+          end.year,
+          date[0]
+        )
       )
+
       this.$refs.container.scrollTo({
         left: offset,
         behavior: 'smooth'
