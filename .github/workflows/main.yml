@@ -50,5 +50,5 @@ jobs:
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         run: |
-          ssh ${{ secrets.SSH_USER }}@{{ secrets.DOCKER_HOST }} 'docker pull docker.pkg.github.com/palanaeum/roshar-map/roshar-map:latest && docker service update --force ${{ secrets.DOCKER_SERVICE }}'
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.DOCKER_HOST }} 'docker pull docker.pkg.github.com/palanaeum/roshar-map/roshar-map:latest && docker service update --force ${{ secrets.DOCKER_SERVICE }}'
 
