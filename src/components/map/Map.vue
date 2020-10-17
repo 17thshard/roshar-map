@@ -510,6 +510,11 @@ export default {
     left: 2rem;
     z-index: 11;
 
+    @media (max-width: 640px) {
+      top: 6rem;
+      right: 2rem;
+    }
+
     &-enter-active, &-leave-active {
       transition: opacity 0.3s ease-in-out;
     }

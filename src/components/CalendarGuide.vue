@@ -1,10 +1,10 @@
 <template>
-  <div class="calendar-guide__wrapper" @click.self="$store.commit('closeCalendarGuide')">
+  <div class="calendar-guide__wrapper" @click.self="close">
     <section class="calendar-guide">
       <header class="calendar-guide__header">
         <h2>{{ $t('ui.calendar-guide.title') }}</h2>
 
-        <button class="calendar-guide__close" :title="$t('ui.close')" @click="$store.commit('closeCalendarGuide')">
+        <button class="calendar-guide__close" :title="$t('ui.close')" @click="close">
           <XIcon />
         </button>
       </header>
@@ -81,7 +81,21 @@ export default {
       }
     }
   },
+  mounted () {
+    document.addEventListener('keyup', this.closeOnEscape)
+  },
+  destroyed () {
+    document.removeEventListener('keyup', this.closeOnEscape)
+  },
   methods: {
+    closeOnEscape (event) {
+      if (event.key === 'Escape') {
+        this.close()
+      }
+    },
+    close () {
+      this.$store.commit('closeCalendarGuide')
+    },
     prevStep () {
       this.step = STEPS[Math.max(this.stepIndex - 1, 0)]
     },

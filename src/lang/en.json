@@ -114,6 +114,32 @@
         "translatorNote": {
             "abbreviation": "TN",
             "full": "Translator's Note"
+        },
+        "go-to-date": {
+            "heading": "Go to Date",
+            "fields": {
+                "year": {
+                    "label": "Year",
+                    "placeholder": "YYYY"
+                },
+                "month": {
+                    "label": "Month",
+                    "placeholder": "MM"
+                },
+                "week": {
+                    "label": "Week",
+                    "placeholder": "WW"
+                },
+                "day": {
+                    "label": "Day",
+                    "placeholder": "DD"
+                }
+            },
+            "errors": {
+                "year-required": "You must fill out the year!",
+                "month-required": "You must fill out the month!",
+                "week-required": "You must fill out the week!"
+            }
         }
     },
     "entry-types": {

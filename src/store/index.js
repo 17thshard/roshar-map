@@ -281,6 +281,12 @@ const mutations = {
   closeCalendarGuide (state) {
     state.calendarGuideOpen = false
   },
+  openGoToDate (state) {
+    state.goToDateOpen = true
+  },
+  closeGoToDate (state) {
+    state.goToDateOpen = false
+  },
   openSettings (state) {
     state.settingsOpen = true
   },
@@ -313,6 +319,7 @@ export default new Vuex.Store({
       factions: false
     },
     calendarGuideOpen: false,
+    goToDateOpen: false,
     settingsOpen: false,
     infoOpen: false
   },

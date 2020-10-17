@@ -98,19 +98,31 @@
         <ChevronsRightIcon />
       </button>
     </transition>
+    <button
+      class="scrubber__jump scrubber__jump--date"
+      :title="$t('ui.go-to-date.heading')"
+      @click="$store.commit('openGoToDate')"
+    >
+      <CalendarIcon size="1x" />
+    </button>
+    <transition name="go-to-date">
+      <GoToDate v-if="$store.state.goToDateOpen" @submit="scrollToDate" />
+    </transition>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
-import { ChevronsLeftIcon, ChevronsRightIcon } from 'vue-feather-icons'
+import { ChevronsLeftIcon, ChevronsRightIcon, CalendarIcon } from 'vue-feather-icons'
 import Timeline from '@/components/Timeline.vue'
 import EventCard from '@/components/EventCard.vue'
-import { formatDate, lerp } from '@/utils'
+import { compareDates, formatDate, getTimestamp, lerp } from '@/utils'
+import GoToDate from '@/components/GoToDate.vue'
+import { inverseLerp } from '@/utils.js'
 
 export default {
   name: 'Scrubber',
-  components: { EventCard, Timeline, ChevronsLeftIcon, ChevronsRightIcon },
+  components: { GoToDate, EventCard, Timeline, ChevronsLeftIcon, ChevronsRightIcon, CalendarIcon },
   data () {
     return {
       timelineWidth: 0,
@@ -293,6 +305,68 @@ export default {
         }
       }
     },
+    scrollToDate (date) {
+      const formattedDate = formatDate(date)
+      const matchingEvents = this.events.filter(event => formatDate(event.date) === formattedDate)
+      if (matchingEvents.length === 1) {
+        this.selectEvent(matchingEvents[0])
+        return
+      } else if (matchingEvents.length > 1) {
+        this.scrollToEvent(matchingEvents[0])
+        return
+      }
+
+      const matchingYear = this.years.find(y => y.year === date[0])
+      if (date.length === 1 && matchingYear !== undefined) {
+        this.$refs.container.scrollTo({
+          left: matchingYear.offset,
+          behavior: 'smooth'
+        })
+        return
+      } else if (date.length === 2 && matchingYear !== undefined) {
+        this.$refs.container.scrollTo({
+          left: matchingYear.offset + matchingYear.months[date[1] - 1].offset,
+          behavior: 'smooth'
+        })
+        return
+      } else if (matchingYear !== undefined) {
+        const timeOfMonth = (date[3] ?? 1) - 1 + (date[2] ?? 1 - 1) * 5
+
+        const month = matchingYear.months[date[1] - 1]
+        const nextMonth = matchingYear.months[date[1]]
+        const monthWidth = date[1] === 10 ? matchingYear.size - month.offset : nextMonth.offset - month.offset
+
+        this.$refs.container.scrollTo({
+          left: matchingYear.offset + month.offset + timeOfMonth / 50 * monthWidth,
+          behavior: 'smooth'
+        })
+
+        return
+      }
+
+      const endIndex = this.events.findIndex(event => compareDates(date, event.date) < 0)
+
+      if (endIndex === -1) {
+        this.jumpToEnd()
+        return
+      } else if (endIndex === 0) {
+        this.jumpToStart()
+        return
+      }
+
+      const startEvent = this.events[endIndex - 1]
+      const endEvent = this.events[endIndex]
+
+      const offset = lerp(
+        startEvent.offset,
+        endEvent.offset,
+        inverseLerp(getTimestamp(startEvent.date), getTimestamp(endEvent.date), getTimestamp(date))
+      )
+      this.$refs.container.scrollTo({
+        left: offset,
+        behavior: 'smooth'
+      })
+    },
     selectEvent (event) {
       this.$store.commit('selectEvent', event)
       this.scrollToEvent(event)
@@ -385,12 +459,14 @@ export default {
     opacity: 1;
   }
 
-  &__jump {
+  &__jump, &__button {
     display: flex;
     align-items: center;
+    justify-content: center;
     position: absolute;
     z-index: 16;
     align-self: center;
+    font-size: 1rem;
     width: 2rem;
     height: 2rem;
     border-radius: 100%;
@@ -399,6 +475,7 @@ export default {
     background: #0f3562;
     color: #f6f8fa;
     margin: 0;
+    padding: 0;
     cursor: pointer;
     outline: none;
     box-sizing: border-box;
@@ -410,24 +487,50 @@ export default {
       background: lighten(#0f3562, 10%);
     }
 
-    &-enter-active, &-leave-active {
-      transition: opacity 0.2s ease-in-out;
+    &-enter-active {
+      transition: opacity 0.2s ease-out, transform 0.3s ease-out;
+      transition-delay: 0.1s, 0s;
+    }
+
+    &-leave-active {
+      transition: opacity 0.2s ease-in, transform 0.3s ease-in;
     }
 
     &-enter, &-leave-to {
       opacity: 0;
+      transform: translateX(var(--leave-position));
     }
 
     &-enter-to, &-leave-from {
       opacity: 1;
+      transform: translateX(0);
     }
 
     &--start {
-      left: 1.5rem;
+      left: 2rem;
+      --leave-position: -100%;
     }
 
     &--end {
-      right: 1.5rem;
+      right: 2rem;
+      --leave-position: 100%;
+    }
+
+    &--date {
+      width: auto;
+      height: auto;
+      bottom: 100%;
+      margin-bottom: 2rem;
+      right: 2rem;
+      border-radius: 2rem;
+      padding: 0.75rem 0.75rem;
+      background: #F5ECDA;
+      color: #242629;
+      z-index: 4;
+
+      &:hover, &:focus, &:active {
+        background: saturate(darken(#F5ECDA, 10%), 5%);
+      }
     }
   }
 
