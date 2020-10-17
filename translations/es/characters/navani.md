@@ -1,3 +1,5 @@
 # Navani Kholin
 
-**Navani Kholin** is a Brightlady of #[Alethkar](locations/alethkar) on Roshar. She is the widow of #[Gavilar Kholin](characters/gavilar) and the mother of Jasnah and #[Elhokar Kholin](characters/elhokar). She was the sister-in-law to #[Dalinar Kholin](characters/dalinar) and aunt to Adolin and #[Renarin Kholin](characters/renarin) until she was married to Dalinar. She is also a renowned scholar and artifabrian.
+> Orden a partir del caos. Encuentra la estructura subyacente y empieza a construir sobre ella.
+
+**Navani Kholin** es una brillante señora de #[Alezkar](locations/alethkar) en Roshar. Es la viuda de #[Gavilar Kholin](characters/gavilar) y la madre de #[Jasnah](characters/jasnah) y #[Elhokar Kholin](characters/elhokar). Fue la cuñada de #[Dalinar Kholin](characters/dalinar) y tía de #[Adolin](characters/adolin)y de #[Renarin Kholin](characters/renarin) hasta que contrajo matrimonio con Dalinar. También es una reconocida artifabriana y erudita.
