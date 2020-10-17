@@ -1,5 +1,5 @@
 # Gavilar Kholin
 
-> We live without honor, for your gods once brought ours. Without them, we have no _power._ This world is trapped, Eshonai! Stuck in a dull, lifeless state of transition. Unite them. I need a threat. Only danger will unite them.
+> Vivimos sin honor, pues vuestros dioses una vez trajeron a los nuestros. Sin ellos, no tenemos _poder_. ¡El mundo está atrapado, Eshonai! Atrapado en un estado gris y sombrío de transición. Hay que unirlos. Necesito una amenaza. Solo el peligro logrará unirlos.
 
-**Gavilar Kholin** was the King of #[Alethkar](locations/alethkar), a nation on Roshar, who was assassinated by #[Szeth](characters/szeth) under the orders of the Parshendi. He was the brother of #[Dalinar Kholin](characters/dalinar) and married to #[Navani Kholin](characters/navani), with whom he had two children, Elhokar and Jasnah.
+**Gavilar Kholin** fue el rey de #[Alezkar](locations/alethkar), una nación de Roshar, que resultó asesinado por #[Szeth](characters/szeth) siguiendo las órdenes de los parshendi. Era el hermano de #[Dalinar Kholin](characters/dalinar) y estaba casado con #[Navani Kholin](characters/navani), con quien tuvo dos hijos #[Elhokar](characters/elhokar) and #[Jasnah](characters/jasnah).
