@@ -14,7 +14,7 @@ jobs:
 
   build-conditions:
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/master' && contains(github.event.head_commit.message, '[docker-push]')
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master' && contains(github.event.head_commit.message, '[deploy]')
 
     steps:
       - run: echo Build conditions are met
@@ -31,4 +31,24 @@ jobs:
         with:
           tags: latest
           access_token: ${{ secrets.GITHUB_TOKEN }}
+
+  update-service:
+    runs-on: ubuntu-latest
+    needs: build-node
+
+    steps:
+      - name: Setup SSH Keys and known_hosts
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan "${{ secrets.DOCKER_HOST }}" >> ~/.ssh/known_hosts
+          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+          ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
+
+      - name: Update Docker service
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+          ssh ${{ secrets.SSH_USER }}@{{ secrets.DOCKER_HOST }} 'docker pull docker.pkg.github.com/palanaeum/roshar-map/roshar-map:latest && docker service update --force ${{ secrets.DOCKER_SERVICE }}'
 
