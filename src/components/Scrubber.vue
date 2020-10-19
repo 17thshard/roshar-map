@@ -113,7 +113,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import { ChevronsLeftIcon, ChevronsRightIcon, CalendarIcon } from 'vue-feather-icons'
+import { CalendarIcon, ChevronsLeftIcon, ChevronsRightIcon } from 'vue-feather-icons'
 import Timeline from '@/components/Timeline.vue'
 import EventCard from '@/components/EventCard.vue'
 import { formatDate, lerp } from '@/utils'
@@ -170,6 +170,18 @@ export default {
       }
 
       if (oldEvent && event.id === oldEvent.id) {
+        return
+      }
+
+      this.scrollToEvent(event)
+    },
+    'filter.latestSeparatedTag' (tag, oldTag) {
+      if (tag === oldTag || tag === null) {
+        return
+      }
+
+      const event = this.events.find(event => event.tags.includes(tag))
+      if (event === undefined) {
         return
       }
 
@@ -318,16 +330,10 @@ export default {
 
       const matchingYear = this.years.find(y => y.year === date[0])
       if (date.length === 1 && matchingYear !== undefined) {
-        this.$refs.container.scrollTo({
-          left: matchingYear.offset,
-          behavior: 'smooth'
-        })
+        this.scrollTo(matchingYear.offset)
         return
       } else if (date.length === 2 && matchingYear !== undefined) {
-        this.$refs.container.scrollTo({
-          left: matchingYear.offset + matchingYear.months[date[1] - 1].offset,
-          behavior: 'smooth'
-        })
+        this.scrollTo(matchingYear.offset + matchingYear.months[date[1] - 1].offset)
         return
       } else if (matchingYear !== undefined) {
         const timeOfMonth = (date[3] ?? 1) - 1 + ((date[2] ?? 1) - 1) * 5
@@ -336,10 +342,7 @@ export default {
         const nextMonth = matchingYear.months[date[1]]
         const monthWidth = date[1] === 10 ? matchingYear.size - month.offset : nextMonth.offset - month.offset
 
-        this.$refs.container.scrollTo({
-          left: matchingYear.offset + month.offset + timeOfMonth / 50 * monthWidth,
-          behavior: 'smooth'
-        })
+        this.scrollTo(matchingYear.offset + month.offset + timeOfMonth / 50 * monthWidth)
 
         return
       }
@@ -363,10 +366,7 @@ export default {
         )
       )
 
-      this.$refs.container.scrollTo({
-        left: offset,
-        behavior: 'smooth'
-      })
+      this.scrollTo(offset)
     },
     selectEvent (event) {
       this.$store.commit('selectEvent', event)
@@ -375,23 +375,17 @@ export default {
     scrollToEvent (event) {
       this.$nextTick(() => {
         const scrollTarget = event !== undefined ? event : this.activeEvent
-        this.$refs.container.scrollTo({
-          left: scrollTarget.offset,
-          behavior: 'smooth'
-        })
+        this.scrollTo(scrollTarget.offset)
       })
     },
     jumpToStart () {
-      this.$refs.container.scrollTo({
-        left: 0,
-        behavior: 'smooth'
-      })
+      this.scrollTo(0)
     },
     jumpToEnd () {
-      this.$refs.container.scrollTo({
-        left: this.$refs.container.scrollWidth - this.$refs.container.clientWidth,
-        behavior: 'smooth'
-      })
+      this.scrollTo(this.$refs.container.scrollWidth - this.$refs.container.clientWidth)
+    },
+    scrollTo (offset) {
+      this.$refs.container.scrollTo({ left: offset, behavior: 'smooth' })
     }
   }
 }

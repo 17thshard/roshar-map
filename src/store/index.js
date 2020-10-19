@@ -261,6 +261,8 @@ const mutations = {
     if (!state.filter.separateTags.includes(tag)) {
       state.filter.separateTags.push(tag)
     }
+
+    state.filter.latestSeparatedTag = tag
   },
   disableTagSeparation (state, tag) {
     const index = state.filter.separateTags.indexOf(tag)
@@ -268,6 +270,8 @@ const mutations = {
     if (index !== -1) {
       state.filter.separateTags.splice(index, 1)
     }
+
+    state.filter.latestSeparatedTag = null
   },
   updateSeparateTags (state, tags) {
     state.filter.separateTags = tags
@@ -310,7 +314,8 @@ export default new Vuex.Store({
     activeEvent: null,
     filter: {
       tags: [],
-      separateTags: []
+      separateTags: [],
+      latestSeparatedTag: null
     },
     layersActive: {
       shadesmar: false,

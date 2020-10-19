@@ -1,6 +1,10 @@
 <template>
   <transition-group tag="div" name="timeline__event" class="timeline">
-    <div key="bar" :style="{ left: `${barOffset + offset}px`, ...barStyles }" class="timeline__bar" />
+    <div
+      key="bar"
+      :style="{ left: `${barOffset + offset}px`, ...(tag === 'all' ? { right: 0 } : { width: `${width}px` }), ...barStyles }"
+      :class="['timeline__bar', { 'timeline__bar--separate': tag !== 'all' }]"
+    />
     <template v-for="event in events">
       <button
         :key="event.id"
@@ -56,6 +60,9 @@ export default {
     },
     barOffset () {
       return Math.min(...this.events.map(e => e.offset))
+    },
+    width () {
+      return Math.max(...this.events.map(e => e.offset)) - Math.min(...this.events.map(e => e.offset))
     }
   }
 }
@@ -71,7 +78,6 @@ export default {
 
   &__bar {
     position: absolute;
-    right: 0;
     height: 0.6rem;
     z-index: 14;
 
@@ -93,6 +99,16 @@ export default {
       width: 10rem;
       left: auto;
       right: 0;
+    }
+
+    &--separate {
+      &:before {
+        right: 0;
+      }
+
+      &:after {
+        left: 100%;
+      }
     }
   }
 
