@@ -17,7 +17,7 @@
           :class="['info__scroller', 'info__scroller--root', { 'info__scroller--inactive': subPage !== null }]"
           :ops="{
             vuescroll: { wheelScrollDuration: 400 },
-            bar: { background: '#482d00', opacity: 0.5, size: '0.5rem' },
+            bar: { onlyShowBarOnScroll: false, keepShow: true, background: '#482d00', opacity: 0.5, size: '0.5rem' },
             rail: { size: '0.5rem', gutterOfSide: '0' }
           }"
           @handle-scroll="onScroll(null, $event)"
@@ -73,7 +73,7 @@
           :class="['info__scroller', 'info__scroller--language', { 'info__scroller--active': subPage === 'language' }]"
           :ops="{
             vuescroll: { wheelScrollDuration: 400 },
-            bar: { background: '#482d00', opacity: 0.5, size: '0.5rem' },
+            bar: { onlyShowBarOnScroll: false, keepShow: true, background: '#482d00', opacity: 0.5, size: '0.5rem' },
             rail: { size: '0.5rem', gutterOfSide: '0' }
           }"
           @handle-scroll="onScroll('language', $event)"
@@ -97,7 +97,7 @@
           :class="['info__scroller', 'info__scroller--disclaimer', { 'info__scroller--active': subPage === 'disclaimer' }]"
           :ops="{
             vuescroll: { wheelScrollDuration: 400 },
-            bar: { background: '#482d00', opacity: 0.5, size: '0.5rem' },
+            bar: { onlyShowBarOnScroll: false, keepShow: true, background: '#482d00', opacity: 0.5, size: '0.5rem' },
             rail: { size: '0.5rem', gutterOfSide: '0' }
           }"
           @handle-scroll="onScroll('disclaimer', $event)"
