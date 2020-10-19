@@ -126,7 +126,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import { CalendarIcon, ChevronLeftIcon, ChevronsLeftIcon, ChevronsRightIcon, ChevronRightIcon } from 'vue-feather-icons'
+import { CalendarIcon, ChevronLeftIcon, ChevronRightIcon, ChevronsLeftIcon, ChevronsRightIcon } from 'vue-feather-icons'
 import Timeline from '@/components/Timeline.vue'
 import EventCard from '@/components/EventCard.vue'
 import { formatDate, lerp } from '@/utils'
@@ -407,10 +407,30 @@ export default {
       })
     },
     jumpToStart () {
-      this.scrollTo(0)
+      const firstEvent = this.events.find(event => !this.$store.getters.isDisabled(event))
+
+      if (firstEvent === undefined) {
+        this.scrollTo(0)
+        return
+      }
+
+      this.scrollToEvent(firstEvent)
     },
     jumpToEnd () {
-      this.scrollTo(this.$refs.container.scrollWidth - this.$refs.container.clientWidth)
+      let lastEvent = null
+      for (let i = this.events.length - 1; i >= 0; i--) {
+        if (!this.$store.getters.isDisabled(this.events[i])) {
+          lastEvent = this.events[i]
+          break
+        }
+      }
+
+      if (lastEvent === null) {
+        this.scrollTo(this.$refs.container.scrollWidth - this.$refs.container.clientWidth)
+        return
+      }
+
+      this.scrollToEvent(lastEvent)
     },
     scrollTo (offset) {
       this.$refs.container.scrollTo({ left: offset, behavior: 'smooth' })
