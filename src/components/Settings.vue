@@ -39,7 +39,7 @@
                 :checked="layerActive"
                 @input="$store.commit('toggleLayer', { layer, value: $event.target.checked })"
               >
-              <span class="settings__layer-check" />
+              <span :class="['settings__layer-check', { 'settings__layer-check--temporary': isLayerEnabledByEvent(layer) }]" />
               {{ $t(`layers.${layer}`) }}
             </label>
           </section>
@@ -134,6 +134,20 @@ export default {
     },
     enableTagSeparation (tag) {
       this.$store.commit('enableTagSeparation', tag)
+    },
+    isLayerEnabledByEvent (layer) {
+      const activeEvent = this.$store.state.activeEvent
+      if (activeEvent === null) {
+        return false
+      }
+
+      if (layer === 'shadesmar') {
+        return activeEvent.shadesmar === true
+      } else if (layer === 'factions') {
+        return activeEvent.specialEffect === 'factions'
+      }
+
+      return false
     }
   }
 }
@@ -327,6 +341,11 @@ export default {
         transform: rotate(45deg) scale(0);
         opacity: 0;
         transition: all 0.2s ease-in-out;
+      }
+
+      &--temporary:after {
+        opacity: 0.5;
+        transform: rotate(45deg) scale(1);
       }
     }
 

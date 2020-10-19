@@ -434,7 +434,7 @@ export default {
 
       if (layerData.dimming && Object.keys(this.layersActive)
         .filter(l => l !== layer)
-        .every(l => this.layers[l].dimming ? !this.layersActive[l] : true)) {
+        .every(l => this.layers[l].dimming ? !this.layersActive[l] && !this.isLayerActivatedByEntry(l) : true)) {
         this.dimmingProgressDirection = -1
       }
     },
