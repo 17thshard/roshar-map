@@ -1,5 +1,21 @@
 <template>
   <div class="tutorial">
+    <transition name="tutorial">
+      <div v-if="!hideWindow" class="tutorial__window">
+        <div class="tutorial__window-text">
+          <h2>{{ $t('ui.tutorial.title') }}</h2>
+          <p>{{ $t('ui.tutorial.explanation') }}</p>
+        </div>
+        <div class="tutorial__window-buttons">
+          <button @click="dismiss">
+            {{ $t('ui.dismiss') }}
+          </button>
+          <button @click="$store.commit('openCalendarGuide')">
+            {{ $t('ui.tutorial.calendar') }}
+          </button>
+        </div>
+      </div>
+    </transition>
     <transition-group tag="div" name="tutorial__marker" class="tutorial__markers">
       <div
         v-for="{ id, marker } in Object.keys(markers).filter(k => markers[k].visible).map(k => ({ id: k, marker: markers[k] }))"
@@ -16,20 +32,6 @@
         <Markdown tag="div" class="tutorial__details-text" :content="$t(`ui.tutorial.hints.${activeMarker}.text`)" inline />
       </div>
     </transition>
-    <div class="tutorial__window">
-      <div class="tutorial__window-text">
-        <h2>{{ $t('ui.tutorial.title') }}</h2>
-        <p>{{ $t('ui.tutorial.explanation') }}</p>
-      </div>
-      <div class="tutorial__window-buttons">
-        <button @click="dismiss">
-          {{ $t('ui.dismiss') }}
-        </button>
-        <button @click="$store.commit('openCalendarGuide')">
-          {{ $t('ui.tutorial.calendar') }}
-        </button>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -52,7 +54,7 @@ export default {
           position: { x: 0, y: 0 },
           detailsPlacement: 'bottom-end',
           detailsOffset: [-10, -10],
-          isVisible: () => !this.settingsOpen && !this.infoOpen,
+          isVisible: () => !this.settingsOpen && !this.infoOpen && this.$route.name === 'root',
           getPosition: rect => ({ x: rect.x + rect.height * 0.1, y: rect.y + rect.height * 0.9 })
         },
         'settings-layers': {
@@ -78,28 +80,30 @@ export default {
           position: { x: 0, y: 0 },
           detailsPlacement: 'bottom-end',
           detailsOffset: [-10, -10],
-          isVisible: () => !this.settingsOpen && !this.infoOpen,
+          isVisible: () => !this.settingsOpen && !this.infoOpen && this.$route.name === 'root',
           getPosition: rect => ({ x: rect.x + rect.height * 0.1, y: rect.y + rect.height * 0.9 })
         },
         timeline: {
           visible: false,
           position: { x: 0, y: 0 },
-          isVisible: () => !this.eventActive,
+          isVisible: () => !this.eventActive && !this.settingsOpen && !this.infoOpen && this.$route.name === 'root' && this.$route.name === 'root',
           getPosition: rect => ({ x: rect.x + rect.width * 0.5 + 75, y: rect.y })
         },
         event: {
           visible: false,
           position: { x: 0, y: 0 },
-          isVisible: () => this.eventActive,
+          isVisible: () => this.eventActive && this.$route.name === 'root',
           getPosition: rect => ({ x: rect.x + rect.width - rect.height * 0.1, y: rect.y + rect.height * 0.9 })
         },
         location: {
           visible: false,
           position: { x: 0, y: 0 },
+          isVisible: () => !this.settingsOpen && !this.infoOpen && this.$route.name === 'root',
           getPosition: rect => ({ x: rect.x, y: rect.y })
         }
       },
-      activeMarker: null
+      activeMarker: null,
+      hideWindow: false
     }
   },
   computed: {
@@ -185,6 +189,8 @@ export default {
       if (this.popper !== undefined && this.popper !== null) {
         this.popper.update()
       }
+
+      this.hideWindow = ((this.infoOpen || this.settingsOpen) && window.innerWidth < 800) || this.$route.name !== 'root'
 
       this.lastAnimationRequest = requestAnimationFrame(this.update)
     },
