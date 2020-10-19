@@ -91,7 +91,7 @@
     <transition name="scrubber__jump">
       <button
         v-if="rightOverflowVisible"
-        class="scrubber__jump scrubber__jump--end"
+        :class="['scrubber__jump scrubber__jump--end', { 'scrubber__jump--end-offset': filter.separateTags.length > 0 }]"
         :title="$t('ui.jump-to-end')"
         @click="jumpToEnd"
       >
@@ -105,6 +105,19 @@
     >
       <CalendarIcon size="1x" />
     </button>
+    <div
+      v-if="filter.separateTags.length > 0"
+      :class="['scrubber__separate-timelines', {'scrubber__separate-timelines--visible': separateVisible}]"
+    >
+      <button class="scrubber__separate-timelines-toggle" :title="$t('ui.separate-timelines')" @click="separateVisible = !separateVisible">
+        <ChevronRightIcon v-if="separateVisible" size="1x" />
+        <ChevronLeftIcon v-else size="1x" />
+      </button>
+      <div class="scrubber__separate-timelines-content">
+        <h3>{{ $t('ui.separate-timelines') }}</h3>
+        <SeparateTimelineOverview :height="separateHeight" />
+      </div>
+    </div>
     <transition name="go-to-date">
       <GoToDate v-if="$store.state.goToDateOpen" @submit="scrollToDate" />
     </transition>
@@ -113,23 +126,35 @@
 
 <script>
 import { mapState } from 'vuex'
-import { CalendarIcon, ChevronsLeftIcon, ChevronsRightIcon } from 'vue-feather-icons'
+import { CalendarIcon, ChevronLeftIcon, ChevronsLeftIcon, ChevronsRightIcon, ChevronRightIcon } from 'vue-feather-icons'
 import Timeline from '@/components/Timeline.vue'
 import EventCard from '@/components/EventCard.vue'
 import { formatDate, lerp } from '@/utils'
 import GoToDate from '@/components/GoToDate.vue'
 import { inverseLerp } from '@/utils.js'
+import SeparateTimelineOverview from '@/components/SeparateTimelineOverview.vue'
 
 export default {
   name: 'Scrubber',
-  components: { GoToDate, EventCard, Timeline, ChevronsLeftIcon, ChevronsRightIcon, CalendarIcon },
+  components: {
+    SeparateTimelineOverview,
+    GoToDate,
+    EventCard,
+    Timeline,
+    ChevronsLeftIcon,
+    ChevronsRightIcon,
+    CalendarIcon,
+    ChevronLeftIcon,
+    ChevronRightIcon
+  },
   data () {
     return {
       timelineWidth: 0,
       timelineOffset: 0,
       leftOverflowVisible: false,
       rightOverflowVisible: false,
-      currentDate: '1174'
+      currentDate: '1174',
+      separateVisible: false
     }
   },
   computed: {
@@ -161,6 +186,9 @@ export default {
     },
     maxEventOffset () {
       return Math.max(...this.events.map(e => e.offset))
+    },
+    separateHeight () {
+      return Math.max(92, (this.filter.separateTags.length + 1) * 24 + 64)
     }
   },
   watch: {
@@ -509,6 +537,10 @@ export default {
     &--end {
       right: 2rem;
       --leave-position: 100%;
+
+      &-offset {
+        right: 3rem;
+      }
     }
 
     &--date {
@@ -747,6 +779,62 @@ export default {
 
     &--0:before {
       display: none;
+    }
+  }
+
+  &__separate-timelines {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: flex-end;
+    z-index: 16;
+    filter: drop-shadow(-2px 0 6px rgba(0, 0, 0, 0.5));
+    font-size: 14px;
+    transform: translateX(calc(100% - 1.5rem));
+    transition: transform 0.2s ease-in;
+
+    &--visible {
+      transform: translateX(0);
+      transition: transform 0.2s ease-out;
+    }
+
+    &-toggle {
+      display: flex;
+      align-self: stretch;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      appearance: none;
+      border: none;
+      background: #F5ECDA;
+      color: #242629;
+      margin: 0;
+      padding: 0 0.25rem;
+      cursor: pointer;
+      outline: none;
+      box-sizing: border-box;
+      white-space: nowrap;
+      transition: 0.2s ease-in-out background;
+      width: 1.5rem;
+
+      &:hover, &:focus, &:active {
+        background: saturate(darken(#F5ECDA, 10%), 5%);
+      }
+    }
+
+    &-content {
+      padding: 0.5rem 1rem 0 0.75rem;
+      margin-top: -1rem;
+      border-top-left-radius: 1rem;
+
+      h3 {
+        margin: 0;
+        display: inline-block;
+      }
+
+      background: #F5ECDA;
     }
   }
 }

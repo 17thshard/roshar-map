@@ -76,34 +76,7 @@
           <h3 data-tutorial-id="settings-separate-timelines">
             {{ $t('ui.separate-timelines') }}
           </h3>
-          <Draggable
-            v-model="separateTags"
-            :animation="200"
-            tag="div"
-            handle=".settings__separate-timeline-drag-handle"
-            @start="draggingSeparates = true"
-            @end="draggingSeparates = false"
-          >
-            <transition-group
-              :name="draggingSeparates ? 'settings__separate-timeline--dragging' : 'settings__separate-timeline'"
-              tag="ul"
-              type="transition"
-              class="settings__separate-timelines"
-              :style="{ height: `${separateHeight}px` }"
-            >
-              <li v-for="tag in separateTags" :key="tag" class="settings__separate-timeline">
-                <span class="settings__separate-timeline-drag-handle" />
-                {{ $t(`tags.${tag}`) }}
-                <button
-                  class="settings__separate-timeline-delete"
-                  :title="$t('ui.stop-display-separately')"
-                  @click="disableTagSeparation(tag)"
-                >
-                  <XIcon />
-                </button>
-              </li>
-            </transition-group>
-          </Draggable>
+          <SeparateTimelineOverview :height="separateHeight" />
         </section>
       </div>
     </transition>
@@ -112,34 +85,25 @@
 
 <script>
 import Scrollbar from 'vuescroll/dist/vuescroll-native'
-import Draggable from 'vuedraggable'
 import { EyeIcon, EyeOffIcon, GitBranchIcon, SlidersIcon, XIcon } from 'vue-feather-icons'
 import { mapState } from 'vuex'
 import tagCategories from '@/store/tags.json'
+import SeparateTimelineOverview from '@/components/SeparateTimelineOverview.vue'
 
 export default {
   name: 'Settings',
-  components: { SlidersIcon, XIcon, EyeIcon, EyeOffIcon, GitBranchIcon, Draggable, Scrollbar },
+  components: { SeparateTimelineOverview, SlidersIcon, XIcon, EyeIcon, EyeOffIcon, GitBranchIcon, Scrollbar },
   data () {
     return {
       scrolled: false,
-      tagCategories,
-      draggingSeparates: false
+      tagCategories
     }
   },
   computed: {
     ...mapState(['events', 'filter']),
     ...mapState({ active: 'settingsOpen' }),
-    separateTags: {
-      get () {
-        return this.filter.separateTags
-      },
-      set (value) {
-        this.$store.commit('updateSeparateTags', value)
-      }
-    },
     separateHeight () {
-      return Math.max(92, (this.separateTags.length + 1) * 24 + 64)
+      return Math.max(92, (this.filter.separateTags.length + 1) * 24 + 64)
     }
   },
   methods: {
@@ -156,7 +120,7 @@ export default {
       this.scrolled = event.process > 0
     },
     buildTagState (tag) {
-      if (this.separateTags.includes(tag)) {
+      if (this.filter.separateTags.includes(tag)) {
         return 'separate'
       }
 
@@ -170,9 +134,6 @@ export default {
     },
     enableTagSeparation (tag) {
       this.$store.commit('enableTagSeparation', tag)
-    },
-    disableTagSeparation (tag) {
-      this.$store.commit('disableTagSeparation', tag)
     }
   }
 }
@@ -445,79 +406,15 @@ export default {
     }
   }
 
-  &__separate-timelines {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    list-style-type: none;
-    margin: 0;
-    position: relative;
-    transition: height 0.5s ease-in-out;
-    box-sizing: border-box;
-    padding: 1rem 0 calc(24px + 3rem);
-
-    &-container {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 1rem 0.5rem 0;
-      background: #F5ECDA url(../assets/paper.png);
-      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
-      z-index: 2;
-    }
-  }
-
-  &__separate-timeline {
-    display: flex;
-    align-items: center;
-    height: 24px;
-    box-sizing: border-box;
-
-    &.ghost {
-      opacity: 0.5;
-      background: #c8ebfb;
-    }
-
-    &-move, &-enter-active, &-leave-active {
-      transition: all 0.5s ease-in-out;
-    }
-
-    &-leave-active {
-      position: absolute;
-      left: 0;
-      right: 0;
-    }
-
-    &-enter, &-leave-to {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-
-    &-drag-handle {
-      align-self: stretch;
-      margin-right: 0.5rem;
-      width: 16px;
-      cursor: move;
-      background-repeat: no-repeat;
-      background-position: 50%;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23242629' d='M7 2a2 2 0 1 0 .001 4.001A2 2 0 0 0 7 2m0 6a2 2 0 1 0 .001 4.001A2 2 0 0 0 7 8m0 6a2 2 0 1 0 .001 4.001A2 2 0 0 0 7 14m6-8a2 2 0 1 0-.001-4.001A2 2 0 0 0 13 6m0 2a2 2 0 1 0 .001 4.001A2 2 0 0 0 13 8m0 6a2 2 0 1 0 .001 4.001A2 2 0 0 0 13 14'/%3E%3C/svg%3E");
-    }
-
-    &-delete {
-      margin-left: auto;
-      cursor: pointer;
-      appearance: none;
-      outline: none;
-      box-sizing: border-box;
-      border: none;
-      background: none;
-      transition: color 0.2s ease-in-out;
-
-      &:hover, &:active, &:focus {
-        color: #ffad00;
-      }
-    }
+  &__separate-timelines-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 0.5rem 0;
+    background: #F5ECDA url(../assets/paper.png);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    z-index: 2;
   }
 }
 </style>
