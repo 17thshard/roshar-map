@@ -1,4 +1,4 @@
-# Wistiow dies
+# Wistiow muere
 Wistiow, citylord of Hearthstone, died unexpectedly.
 
 ## Details
