@@ -1,4 +1,4 @@
 # Taravangian
-> I am the monster who will save this world.
+> Soy el monstruo que salvará a este mundo. 
 
-**Taravangian** is the king of #[Kharbranth](locations/kharbranth) and #[Jah Keved](locations/jah-keved). He is the leader of the secret society known as "the #[Diagram](misc/diagram)" which believes the truth and the path to human salvation lies in the set of predictions and instructions he laid out on the day he was a genius.
+**Taravangian** es el rey de Kharbranth #[Kharbranth](locations/kharbranth) y #[Jah Keved](locations/jah-keved). Es el líder de la socidad secreta conocida como "el #[Diagrama](misc/diagram)", que cree que la verdad y el camino a la salvación de la humanidad reside en unas predicciones e instrucciones que él mismo escribió un día en uno de su día de mayor ingenio.
