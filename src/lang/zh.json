@@ -1,6 +1,7 @@
 {
     "textureLocale": "en",
-    "title": "Map of Roshar | The Stormlight Archive",
+    "name": "Map of Roshar",
+    "title": "{page} | The Stormlight Archive",
     "ui": {
         "loading": "Loading...",
         "circa": "ca. {date}",
@@ -19,13 +20,15 @@
         "next-event": "Next Event",
         "previous": "Previous",
         "next": "Next",
+        "jump-to-start": "Jump to start",
+        "jump-to-end": "Jump to end",
         "coppermind": "More on the Coppermind",
         "welcome": "Welcome to the unofficial interactive map and timeline of Brandon Sanderson's *The Stormlight Archive* series of books!",
         "language": "Language",
         "languageHeading": "Language Selection",
         "help": "Help",
-        "disclaimer": "Disclaimer",
-        "disclaimerText": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+        "about": "About",
+        "aboutText": "Lorem ipsum dolor sit _[tn](En inglés, el apodo que le otorga Hoid es Slammer, no tenemos aún traducción oficial al español, pero el término hace referencia a una forma coloquial de referirse a la cárcel. Esta información no se ha mencionado de forma oficial en los libros, proviene de una [WoB de Brandon](https://wob.coppermind.net/events/134-general-signed-books-2016/#e9472))_, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         "more": "More...",
         "related": "Related",
         "date": "Date",
@@ -108,6 +111,36 @@
             "message": "Whoops... Looks like the app cannot be loaded in your browser for some reason.\n\nPlease consider visiting using a [modern browser](https://browsehappy.com).",
             "report-intro": "Think this is an actual error?",
             "report-button": "Report on GitHub"
+        },
+        "translatorNote": {
+            "abbreviation": "TN",
+            "full": "Translator's Note"
+        },
+        "go-to-date": {
+            "heading": "Go to Date",
+            "fields": {
+                "year": {
+                    "label": "Year",
+                    "placeholder": "YYYY"
+                },
+                "month": {
+                    "label": "Month",
+                    "placeholder": "MM"
+                },
+                "week": {
+                    "label": "Week",
+                    "placeholder": "WW"
+                },
+                "day": {
+                    "label": "Day",
+                    "placeholder": "DD"
+                }
+            },
+            "errors": {
+                "year-required": "You must fill out the year!",
+                "month-required": "You must fill out the month!",
+                "week-required": "You must fill out the week!"
+            }
         }
     },
     "entry-types": {

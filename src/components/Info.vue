@@ -26,14 +26,14 @@
             <div class="info__logo" />
             <Markdown :content="$t('ui.welcome')" class="info__text" />
             <nav class="info__menu">
+              <a href="#" target="_blank" @click.prevent="subPage = 'about'">
+                {{ $t('ui.about') }}
+              </a>
               <a href="#" target="_blank" @click.prevent="subPage = 'language'">
                 {{ $t('ui.language') }}
               </a>
               <a href="#" target="_blank" @click.prevent="$emit('open-tutorial')">
                 {{ $t('ui.help') }}
-              </a>
-              <a href="#" target="_blank" @click.prevent="subPage = 'disclaimer'">
-                {{ $t('ui.disclaimer') }}
               </a>
               <a href="https://brandonsanderson.com" target="_blank">Brandon Sanderson</a>
               <a href="https://coppermind.net" target="_blank">The Coppermind</a>
@@ -94,17 +94,17 @@
           </div>
         </Scrollbar>
         <Scrollbar
-          :class="['info__scroller', 'info__scroller--disclaimer', { 'info__scroller--active': subPage === 'disclaimer' }]"
+          :class="['info__scroller', 'info__scroller--about', { 'info__scroller--active': subPage === 'about' }]"
           :ops="{
             vuescroll: { wheelScrollDuration: 400 },
             bar: { onlyShowBarOnScroll: false, keepShow: true, background: '#482d00', opacity: 0.5, size: '0.5rem' },
             rail: { size: '0.5rem', gutterOfSide: '0' }
           }"
-          @handle-scroll="onScroll('disclaimer', $event)"
+          @handle-scroll="onScroll('about', $event)"
         >
           <div class="info__content">
-            <h2>{{ $t('ui.disclaimer') }}</h2>
-            <Markdown :content="$t('ui.disclaimerText')" class="info__text" />
+            <h2>{{ $t('ui.about') }}</h2>
+            <Markdown :content="$t('ui.aboutText')" class="info__text" />
           </div>
         </Scrollbar>
       </div>
