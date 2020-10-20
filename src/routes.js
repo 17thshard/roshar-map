@@ -89,4 +89,14 @@ router.afterEach((to, from) => {
   }
 })
 
+router.afterEach((to) => {
+  let pageName = i18n.t('name')
+
+  if (to.name !== 'root') {
+    pageName = i18n.t(`${to.name}.${to.params.id}.name`)
+  }
+
+  document.querySelector('title').innerHTML = i18n.t('title', { page: pageName })
+})
+
 export { router }
