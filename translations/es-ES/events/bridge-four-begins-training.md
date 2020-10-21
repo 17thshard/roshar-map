@@ -1,10 +1,10 @@
-# Bridge Four spear training
-Kaladin began training the bridge crew to fight with the spear in order to escape.
+# El Puente Cuatro entrena con lanzas
+Kaladin empieza a entrenar a la cuadrilla del puerte en la lucha con lanza para poder escapar.
 
 ## Details
-After the disaster with the attempt to protect the bridge crew with the 'side carry' maneuver, Kaladin was left with the hopeless realization that protecting the men would ultimately prove impossible. On the day Rlain was assigned to Bridge Four, the crew was assigned chasm duty. Finding a spear in the chasms, Kaladin determined that Bridge Four's only option was to try fighting their way to freedom
+Después del desastre resultante del intento de proteger a la cuadrilla del puente con la maniobra de «carga lateral», Kaladin fue consciente de la cruda realidad de que proteger a los hombres al final resultaría algo imposible. El día en que Rlain fue asignado al Puente Cuatro, la cuadrilla fue enviada de servicio a los abismos. Tras encontrar una lanza en el abismo, Kaladin decide que la única opción del Puente Cuatro es intentar luchar por su libertad.
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* Ch. 27 |
+| chapter | *El camino de los reyes* Cap. 27 |
