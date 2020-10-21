@@ -135,17 +135,17 @@
     ],
     "layers": {
         "shadesmar": "Shadesmar",
-        "silverKingdoms": "Silver Kingdoms",
+        "silverKingdoms": "Reinos Plateados",
         "oathgates": "Oathgate Locations",
         "factions": "Current State of the World"
     },
     "factions": {
         "coalition": {
-            "name": "Dalinar's Coalition of Monarchs",
+            "name": "Coalición de Monarcas de Dalinar",
             "style": "Blue and maroon checkered"
         },
         "odium": {
-            "name": "Odium's Forces",
+            "name": "Fuerzas de Odium",
             "style": "Gold"
         },
         "neutral": {
