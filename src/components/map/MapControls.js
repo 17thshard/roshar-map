@@ -45,7 +45,7 @@ const MapControls = function (object, domElement) {
     scope.object.updateProjectionMatrix()
     scope.dispatchEvent(changeEvent)
 
-    scope.update()
+    scope.update(0)
 
     state = STATE.NONE
   }
@@ -57,7 +57,7 @@ const MapControls = function (object, domElement) {
   this.update = (function () {
     const position = new Vector3()
 
-    return function update () {
+    return function update (delta) {
       calculateIntersections(1e3, scope.maxZoomAngle)
       const tmpA = Math.abs(highIntersection.y - lowIntersection.y) / 512
       const tmpB = Math.max(Math.abs(highIntersection.x), Math.abs(lowIntersection.x)) / 1024 * 2
@@ -71,7 +71,7 @@ const MapControls = function (object, domElement) {
 
         startPosition.z = lerp(maxZoomHeight, minZoomHeight, transitionStartZoom)
 
-        transitionProgress += 0.02
+        transitionProgress += 0.0012 * delta
 
         position.set(
           lerp(startPosition.x, targetPosition.x, smootherstep(transitionProgress)),
@@ -85,7 +85,7 @@ const MapControls = function (object, domElement) {
           transitionProgress = null
         }
       } else {
-        zoom = lerp(zoom, targetZoom, 0.1)
+        zoom = lerp(zoom, targetZoom, 0.006 * delta)
         position.z = lerp(maxZoomHeight, minZoomHeight, zoom)
       }
 
@@ -307,7 +307,7 @@ const MapControls = function (object, domElement) {
 
     dollyStart.copy(dollyEnd)
 
-    scope.update()
+    scope.update(0)
   }
 
   function handleMouseMovePan (event) {
@@ -336,7 +336,7 @@ const MapControls = function (object, domElement) {
       dollyOut(getZoomScale())
     }
 
-    scope.update()
+    scope.update(0)
   }
 
   function handleTouchStartPan (event) {
@@ -585,7 +585,7 @@ const MapControls = function (object, domElement) {
 
         handleTouchMovePan(event)
 
-        scope.update()
+        scope.update(0)
 
         break
       default:
@@ -632,7 +632,7 @@ const MapControls = function (object, domElement) {
 
   // force an update at start
 
-  this.update()
+  this.update(0)
 }
 
 MapControls.prototype = Object.create(EventDispatcher.prototype)

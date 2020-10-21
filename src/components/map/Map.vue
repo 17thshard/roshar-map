@@ -318,24 +318,29 @@ export default {
     update (timestamp) {
       this.resizeCanvasToDisplaySize()
 
-      this.perpendicularityTransition += this.perpendicularityTransitionDirection * 0.05
+      let delta = 0
+      if (timestamp !== undefined && this.lastTimestamp !== undefined) {
+        delta = timestamp - this.lastTimestamp
+      }
+
+      this.perpendicularityTransition += this.perpendicularityTransitionDirection * 0.003 * delta
 
       if (this.perpendicularityTransition <= 0 || this.perpendicularityTransition >= 1) {
         this.perpendicularityTransition = clamp01(this.perpendicularityTransition)
         this.perpendicularityTransitionDirection = 0
       }
 
-      this.dimmingProgress += this.dimmingProgressDirection * 0.05
+      this.dimmingProgress += this.dimmingProgressDirection * 0.003 * delta
 
       if (this.dimmingProgress <= 0 || this.dimmingProgress >= 1) {
         this.dimmingProgress = clamp01(this.dimmingProgress)
         this.dimmingProgressDirection = 0
       }
 
-      this.highlights.children.forEach(h => h.update(this.camera, timestamp))
-      Object.values(this.layers).forEach(h => h.update(this.camera, timestamp))
+      this.highlights.children.forEach(h => h.update(this.camera, timestamp, delta))
+      Object.values(this.layers).forEach(h => h.update(this.camera, timestamp, delta))
 
-      this.controls.update()
+      this.controls.update(delta)
 
       const tutorialPos = new Vector3(206.9, -21.2, 0)
       tutorialPos.project(this.camera)
@@ -353,7 +358,7 @@ export default {
 
       document.body.style.cursor = 'initial'
 
-      this.updateTextHighlights()
+      this.updateTextHighlights(delta)
 
       this.textPlane.material.uniforms.HoveredItem.value = this.lastHoveredItem !== null ? this.lastHoveredItem : 0
       this.textPlane.material.uniforms.HoverProgress.value = this.textHoverProgress
@@ -361,13 +366,15 @@ export default {
       this.textPlane.material.uniforms.ActiveItem.value = this.lastActiveLocation !== null ? this.lastActiveLocation : 0
       this.textPlane.material.uniforms.ActiveProgress.value = this.textActiveProgress
 
-      this.composer.render()
+      this.composer.render(delta)
+
+      this.lastTimestamp = timestamp
       this.latestAnimationFrame = requestAnimationFrame(this.update)
     },
-    updateTextHighlights () {
+    updateTextHighlights (delta) {
       const hoveredItem = this.queryHover(this.controls.textHoverPosition.x, this.controls.textHoverPosition.y)
 
-      this.textHoverProgress = clamp01(this.textHoverProgress + (hoveredItem !== null ? 0.1 : -0.1))
+      this.textHoverProgress = clamp01(this.textHoverProgress + (hoveredItem !== null ? 0.006 : -0.006) * delta)
 
       if (hoveredItem !== this.lastHoveredItem && hoveredItem !== null) {
         this.textHoverProgress = 0
@@ -380,7 +387,7 @@ export default {
         document.body.style.cursor = 'pointer'
       }
 
-      this.textActiveProgress = clamp01(this.textActiveProgress + (this.activeLocation !== null ? 0.0 : -0.1))
+      this.textActiveProgress = clamp01(this.textActiveProgress + (this.activeLocation !== null ? 0.0 : -0.006) * delta)
 
       if (this.activeLocation !== this.lastActiveLocation && this.activeLocation !== null) {
         this.textActiveProgress = 1

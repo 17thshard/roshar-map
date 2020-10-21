@@ -86,13 +86,13 @@ export default class SilverKingdoms extends Group {
     this.enabled = true
   }
 
-  update () {
+  update (camera, timestamp, delta) {
     if (!this.enabled) {
       return
     }
 
     if (this.t <= 1) {
-      this.t = clamp01(this.t + (this.entering ? 0.05 : -0.05))
+      this.t = clamp01(this.t + (this.entering ? 0.003 : -0.003) * delta)
     }
 
     if (!this.entering && this.t <= 0) {

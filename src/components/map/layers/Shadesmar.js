@@ -17,13 +17,13 @@ export default class Shadesmar {
     this.enabled = true
   }
 
-  update () {
+  update (camera, timestamp, delta) {
     if (!this.enabled) {
       return
     }
 
     if (this.progress <= 1) {
-      this.progress = clamp01(this.progress + (this.entering ? 0.01 : -0.01))
+      this.progress = clamp01(this.progress + (this.entering ? 0.0006 : -0.0006) * delta)
     }
 
     if (!this.entering && this.progress <= 0) {

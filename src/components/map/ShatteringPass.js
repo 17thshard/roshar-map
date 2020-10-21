@@ -61,7 +61,7 @@ export default class ShatteringPass extends ShaderPass {
 
   render (renderer, writeBuffer, readBuffer, deltaTime, maskActive) {
     if (this.t <= 1) {
-      this.t = clamp01(this.t + (this.entering ? 0.01 : -0.01))
+      this.t = clamp01(this.t + (this.entering ? 0.0006 : -0.0006) * deltaTime)
     }
 
     if (!this.entering && this.t <= 0) {

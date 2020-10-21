@@ -156,9 +156,9 @@ export default class Highlight extends Group {
     this.state = State.LEAVING
   }
 
-  update (camera, timestamp) {
+  update (camera, timestamp, delta) {
     if (this.state !== State.VISIBLE) {
-      this.opacity = clamp01(this.opacity + (this.state === State.ENTERING ? 1 / 30 : -1 / 30))
+      this.opacity = clamp01(this.opacity + (this.state === State.ENTERING ? 0.002 : -0.002) * delta)
     }
 
     if (this.state === State.ENTERING && this.opacity >= 1) {
