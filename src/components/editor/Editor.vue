@@ -43,7 +43,7 @@
       </div>
       <label for="editor__texture-locale">Texture Locale</label>
       <select id="editor__texture-locale" v-model="textureLocale" @change="resetRenderer">
-        <option v-for="language in availableLanguages" :key="language" :value="language">
+        <option v-for="language in ['en', 'es']" :key="language" :value="language">
           {{ language }}
         </option>
       </select>
@@ -419,7 +419,7 @@ export default {
       panStart: null,
       xScale: 1,
       yScale: 1,
-      availableLanguages: ['en', 'es', 'zh'],
+      availableLanguages: ['en', 'es-ES', 'zh'],
       loadedLanguages: {},
       selectedLanguage: null,
       locationsDirty: false,
