@@ -7,4 +7,4 @@ Después de ser nombrado Alto Príncipe de la Guerra, Dalinar continuó teniendo
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Palabras Radiantes* Cap. 14 |
+| chapter | *Palabras radiantes* Cap. 14 |
