@@ -1,10 +1,10 @@
-# Battle of the Tower
-Kaladin saved Dalinar and Adolin's forces after betrayal at the hands of Sadeas.
+# Batalla de la Torre
+Kaladin salvó las fuerzas de Dalinar y Adolin después de que fueran traicionadas por Sadeas.
 
 ## Details
-Dalinar and Sadeas arranged a joint plateau run to the infamous plateau known as 'the Tower', where no Alethi army had yet proven victorious. As Dalinar's forces became engaged, Sadeas betrayed Dalinar, withdrawing his troops and leaving Dalinar surrounded. Kaladin and Bridge Four returned to the plateau, giving Dalinar, Adolin, and a remnant of their forces an opportunity to escape.
+Dalinar y Sadeas acuerdan un ataque conjunto a la infame meseta conocida como la Torre, de donde ningún ejército alezi había conseguido salir victorioso hasta el momento. Mientras las fuerzas de Dalinar arrementen, Sadeas le traiciona, retirando sus tropas y dejando a Dalinar rodeado de enemigos. Kaladin y el Puente Cuatro regresan a la meseta, facilitando a Dalinar, Adolin, y los restos de su ejército, una oportunidad para escapar.
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* Ch. 65 |
+| chapter | *El camino de los reyes* Cap. 65 |
