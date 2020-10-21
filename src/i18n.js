@@ -11,7 +11,7 @@ export const i18n = new VueI18n({
   silentFallbackWarn: true
 })
 
-const loadedLanguages = ['en'] // our default language that is preloaded
+const loadedLanguages = ['en', 'en-US'] // our default language that is preloaded
 
 function setI18nLanguage (lang) {
   i18n.locale = lang

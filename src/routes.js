@@ -53,7 +53,7 @@ const router = new VueRouter({
   ]
 })
 
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
   const locale = to.params.locale
 
   if (locale === undefined) {
@@ -62,7 +62,14 @@ router.beforeEach((to, from, next) => {
     return
   }
 
-  loadLanguageAsync(locale, locale).catch(() => next('/en-US')).then(() => next())
+  try {
+    await loadLanguageAsync(locale, locale)
+  } catch {
+    next({ name: to.name, params: { ...to.params, locale: 'en-US' }, replace: true })
+    return
+  }
+
+  next()
 })
 
 router.afterEach((to, from) => {
