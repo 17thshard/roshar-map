@@ -52,7 +52,7 @@ jobs:
 
   update-service:
     runs-on: ubuntu-latest
-    needs: build-node
+    needs: [build-node, build-dev]
 
     steps:
       - name: Setup SSH Keys and known_hosts
