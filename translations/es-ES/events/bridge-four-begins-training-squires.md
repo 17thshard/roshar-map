@@ -1,4 +1,4 @@
-# El Puente CUatro entrena escuderos
+# El Puente Cuatro entrena escuderos
 A la vuelta de Kaladin a Urithiru, el Puente Cuatro empieza a entrenar escuderos Corredores del Viento. La familia de Roca llega a las Llanuras Quebradas.
 
 ## Details
