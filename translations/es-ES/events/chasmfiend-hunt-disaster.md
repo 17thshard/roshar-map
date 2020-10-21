@@ -1,10 +1,10 @@
-# Chasmfiend hunt
-Elhokar was saved by Dalinar when his saddle strap broke during a Chasmfiend hunt gone wrong.
+# La caza del abismoide
+Dalinar salva a Elhokar cuando la cincha de su silla se rompe durante la caza de un abismoide que sale mal.
 
 ## Details
-Dalinar and several highprinces attended Elhokar on a hunting party out onto the Shattered Plains. Upon arriving at their destination, where a small chasmfiend was to be baited, an enormous chasmfiend found its way onto the adjacent plateau, catching the party by surprise. While attacking the beast, Elhokar's saddle strap broke, leaving him vulnerable before the greatshell. Dalinar held the chasmfiend back and they ultimately slew the monster. The broken saddle strap led to an investigation into an aleged assassination attempt.
+#[Dalinar Kholin](characters/dalinar) y varios altos príncipes asisten a #[Elhokar](characters/elhokar) durante la partida de caza a las Llanuras Quebradas. Al llegar a su destino, donde iban a atraer a un abismoide pequeño, un ejemplar enorme se abre camino a la meseta adjacente, tomando al grupo por sorpresa. Mientras ataca a la bestia, la cincha de la silla de Elhokar se rompe, dejándole en una posición vulnerable ante el grancaparazón. Dalinar mantiene a raya al abismoide, y al final consiguen acabar con la bestia. La cincha rota deriva en una investigación de intento de asesinato.
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* Ch. 13 |
+| chapter | *El camino de los reyes* Cap. 13 |
