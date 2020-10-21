@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve": "vue-cli-service serve --port 10010 src/dev.js",
+    "build": "vue-cli-service build --dest dist/release src/main.js",
+    "build:dev": "vue-cli-service build --dest dist/dev --skip-plugins pwa,workbox src/dev.js",
     "lint": "vue-cli-service lint",
     "dumpTranslations": "node ./bin/dump-translations.js",
     "validateTranslations": "node ./bin/validate-translations.js",
