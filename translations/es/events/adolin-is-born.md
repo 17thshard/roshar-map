@@ -1,7 +1,7 @@
-# Adolin is born
-Adolin was born to Dalinar and Evi Kholin.
+# Nace Adolin
+Nace Adolin, hijo de Dalinar y Evi Kholin.
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 49 |
+| chapter | *Juramentada* Cap. 49 |
