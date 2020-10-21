@@ -1,5 +1,5 @@
 # Venli
 
-> I feel like a relic. Already I seem like a cast-off ruin from a nearly forgotten day.
+> Me siento como una reliquia. Ya me veo como una ruina abandonada, de una época casi olvidada.
 
-**Venli** is a listener scholar in #[Narak](locations/narak) and #[Eshonai's](characters/eshonai) sister. During the True Desolation, she bonds with Timbre and becomes a Surgebinder of the Order of Willshapers.
+**Venli** es una cantora erudita de #[Narak](locations/narak) y hermana de #[Eshonai's](characters/eshonai). Durante la Verdadera Desolación, se vincula a Timbre y se convierte en una potenciadora de la orden de los Escultores de Voluntad.
