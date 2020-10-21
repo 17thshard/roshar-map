@@ -1,10 +1,10 @@
-# Battle of Narak
-The Everstorm was summoned as Alethi armies faced off with the listeners at the Battle of Narak.
+# Batalla de Narak
+La Tormenta Eterna fue invocada durante la Batalla de Narak, mientras los ejércitos alezi se enfrentaban a los oyentes.
 
 ## Details
-The Alethi forces led by Dalinar Kholin arrived at Narak on the final day of Renarin's cryptic countdown. A battle ensued as the stormform listener forces worked to summon the Everstorm. The Alethi proved victorious, but the Everstorm's arrival nearly wiped out all survivors.
+Las fuerzas alezi, lideradas por Dalinar Kholin, llegaron a #[Narak](locations/narak) el último día de la críptica cuenta atrás de Renarin. La batalla tuvo lugar mientras las fuerzas oyentes en forma de tormenta trabajaban para invocar la Tormenta Eterna. Los alezi se alzaron con la victoria. No obstante, la llegada de la Tormenta Eterna barrió a los supervivientes.
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* Ch. 81 |
+| chapter | *Palabras Radiantes* Cap. 81 |
