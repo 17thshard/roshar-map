@@ -1,7 +1,5 @@
 # Akak
 
-**Akak** is one of the #[Reshi Isles](locations/reshi-isles), located just to the north of #[Alethkar](locations/alethkar).
+**Akak** es una de las #[Islas Reshi](locations/reshi-isles), ubicada justo al norte de #[Alezkar](locations/alethkar). #[Dalinar](characters/dalinar), como general, luchó y destruyó los Reshi Akak en algún momento cerca del año 1155, y reclamó la isla por Alezkar. 
 
-#[Dalinar](characters/dalinar), as general, fought and destroyed the Akak Reshi, some time around the year 1155, and claimed the island for Alethkar.
-
-The zatalef is a cephalopod that lives at least in Akak, perhaps in other Reshi Isles.
+El zetalef es un cefalópodo que vive por lo menos en Akak, quizás en otras Islas Reshi. 
