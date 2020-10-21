@@ -1,10 +1,10 @@
-# Adolin begins dueling
-Adolin began dueling Shardbearers to win Shards for House Kholin.
+# Adolin comienza a batirse en duelo
+Adolin empieza a batirse en duelo con portadores de esquirladas y así ganar éstas para la Casa Kholin.
 
 ## Details
-After being named Highprince of War, Dalinar continued struggling to unite the stubborn Alethi highprinces against the Parshendi. To force them into submission, Dalinar asked Adolin to begin dueling competitively. Over the following weeks, Adolin was able to secure several Shards for House Kholin.
+Después de ser nombrado Alto Príncipe de la Guerra, Dalinar continuó teniendo dificultades para unir a los obstinados altos príncipes Alezi contra los Parshendi. Para obligarlos a someterse, Dalinar le pidió a Adolin que comenzara a batirse en duelo de manera competitiva. Durante las siguientes semanas, Adolin pudo asegurar varias esquirlas para la Casa Kholin.
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* Ch. 14 |
+| chapter | *Palabras Radiantes* Cap. 14 |
