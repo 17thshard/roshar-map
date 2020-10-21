@@ -1,5 +1,5 @@
-# Aimian Sea
+# Mar Aimiano
 
-The **Aimian Sea** is a body of water that separates the islands of #[Aimia](locations/aimia) from the coast of #[Shinovar](locations/shinovar) on the continent of Roshar. It is a large, deep channel that is connected to the #[Endless Ocean](locations/endless-ocean).
+El **Mar Aimiano** es un cuerpo de agua que separa las islas de #[Aimia](locations/aimia) de la costa de #[Shinovar](locations/shinovar) en el continente de Roshar. Es un canal grande y profundo que conecta con el #[Océano sin Fin](locations/endless-ocean).
 
-Kaza and the crew of the _First Dreams_ crossed the Aimian Sea from #[Liafor](locations/liafor) in hopes of reaching Akinah and discovering a wealth of gemhearts.
+Kaza y la tripulación del _First Dreams_ cruzaron el Mar Aimiano de #[Liafor](locations/liafor) con la esperanza de llegar a Akinah y descrubir una riqueza de gemhearts. 
