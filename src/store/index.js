@@ -272,6 +272,10 @@ const mutations = {
     }
 
     state.filter.latestSeparatedTag = null
+
+    if (state.filter.lockedTag === tag) {
+      mutations.unlockTag(state)
+    }
   },
   updateSeparateTags (state, tags) {
     state.filter.separateTags = tags
@@ -302,6 +306,25 @@ const mutations = {
   },
   closeInfo (state) {
     state.infoOpen = false
+  },
+  lockTag (state, tag) {
+    state.filter.lockedTag = tag
+  },
+  unlockTag (state) {
+    state.filter.lockedTag = null
+  }
+}
+
+const getters = {
+  isIncludedInNavigation (state) {
+    return (event) => {
+      return !getters.isDisabled(state)(event) && (state.filter.lockedTag === null || event.tags.includes(state.filter.lockedTag))
+    }
+  },
+  isDisabled (state) {
+    return (event) => {
+      return state.filter.tags.some(t => event.tags.includes(t))
+    }
   }
 }
 
@@ -315,7 +338,8 @@ export default new Vuex.Store({
     filter: {
       tags: [],
       separateTags: [],
-      latestSeparatedTag: null
+      latestSeparatedTag: null,
+      lockedTag: null
     },
     layersActive: {
       shadesmar: false,
@@ -329,11 +353,5 @@ export default new Vuex.Store({
     infoOpen: false
   },
   mutations,
-  getters: {
-    isDisabled (state) {
-      return (event) => {
-        return state.filter.tags.some(t => event.tags.includes(t))
-      }
-    }
-  }
+  getters
 })

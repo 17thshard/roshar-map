@@ -1,5 +1,5 @@
 <template>
-  <transition-group tag="div" name="timeline__event" class="timeline">
+  <transition-group tag="div" name="timeline__event" :class="['timeline', { 'timeline--excluded-by-lock': excludedByLock }]">
     <div
       key="bar"
       :style="{ left: `${barOffset + offset}px`, ...(tag === 'all' ? { right: 0 } : { width: `${width}px` }), ...barStyles }"
@@ -41,6 +41,9 @@ export default {
       type: Object,
       required: false,
       default: () => null
+    },
+    excludedByLock: {
+      type: Boolean
     }
   },
   computed: {
@@ -75,6 +78,10 @@ export default {
   box-sizing: content-box;
   padding: 0.75rem 0;
   position: relative;
+
+  &--excluded-by-lock {
+    opacity: 0.2;
+  }
 
   &__bar {
     position: absolute;

@@ -14,17 +14,34 @@
       class="separate-timeline-overview"
       :style="{ height: `${height}px` }"
     >
-      <li v-for="tag in separateTags" :key="tag" class="separate-timeline-overview__timeline">
+      <li
+        v-for="tag in separateTags"
+        :key="tag"
+        :class="[
+          'separate-timeline-overview__timeline',
+          { 'separate-timeline-overview__timeline--excluded': lockedTag !== null && lockedTag !== tag }
+        ]"
+      >
         <span class="separate-timeline-overview__timeline-drag-handle" />
         <span class="separate-timeline-overview__timeline-icon" :style="{ background: $store.state.mappings.tags[tag].color }" />
         {{ $t(`tags.${tag}`) }}
-        <button
-          class="separate-timeline-overview__timeline-delete"
-          :title="$t('ui.stop-display-separately')"
-          @click="disableTagSeparation(tag)"
-        >
-          <XIcon />
-        </button>
+        <div class="separate-timeline-overview__timeline-actions">
+          <button
+            class="separate-timeline-overview__timeline-action"
+            :title="lockedTag === tag ? $t('ui.unlock-timeline') : $t('ui.lock-timeline')"
+            @click="toggleLock(tag)"
+          >
+            <LockIcon v-if="lockedTag === tag" size="1x" />
+            <UnlockIcon v-else size="1x" />
+          </button>
+          <button
+            class="separate-timeline-overview__timeline-action"
+            :title="$t('ui.stop-display-separately')"
+            @click="disableTagSeparation(tag)"
+          >
+            <XIcon size="1x" />
+          </button>
+        </div>
       </li>
     </transition-group>
   </Draggable>
@@ -32,11 +49,11 @@
 
 <script>
 import Draggable from 'vuedraggable'
-import { XIcon } from 'vue-feather-icons'
+import { LockIcon, UnlockIcon, XIcon } from 'vue-feather-icons'
 
 export default {
   name: 'SeparateTimelineOverview',
-  components: { Draggable, XIcon },
+  components: { Draggable, LockIcon, UnlockIcon, XIcon },
   props: {
     height: {
       type: Number,
@@ -56,9 +73,19 @@ export default {
       set (value) {
         this.$store.commit('updateSeparateTags', value)
       }
+    },
+    lockedTag () {
+      return this.$store.state.filter.lockedTag
     }
   },
   methods: {
+    toggleLock (tag) {
+      if (this.lockedTag === tag) {
+        this.$store.commit('unlockTag')
+      } else {
+        this.$store.commit('lockTag', tag)
+      }
+    },
     disableTagSeparation (tag) {
       this.$store.commit('disableTagSeparation', tag)
     }
@@ -84,9 +111,13 @@ export default {
     height: 24px;
     box-sizing: border-box;
 
+    &--excluded {
+      opacity: 0.5;
+    }
+
     &.ghost {
       opacity: 0.5;
-      background: #c8ebfb;
+      background: #F5ECDA;
     }
 
     &-move, &-enter-active, &-leave-active {
@@ -121,8 +152,16 @@ export default {
       border-radius: 100%;
     }
 
-    &-delete {
+    &-actions {
+      display: flex;
+      align-items: center;
       margin-left: auto;
+    }
+
+    &-action {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
       appearance: none;
       outline: none;
@@ -130,6 +169,9 @@ export default {
       border: none;
       background: none;
       transition: color 0.2s ease-in-out;
+      padding: 0;
+      margin-left: 0.25rem;
+      font-size: 1.25rem;
 
       &:hover, &:active, &:focus {
         color: #ffad00;

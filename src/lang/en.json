@@ -141,7 +141,9 @@
                 "month-required": "You must fill out the month!",
                 "week-required": "You must fill out the week!"
             }
-        }
+        },
+        "lock-timeline": "Lock navigation to timeline",
+        "unlock-timeline": "Unlock navigation"
     },
     "entry-types": {
         "events": "Events",

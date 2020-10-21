@@ -63,6 +63,7 @@
             :offset="timelineOffset"
             :events="timelineEvents"
             :active-event="activeEvent"
+            :excluded-by-lock="filter.lockedTag !== null && filter.lockedTag !== tag"
             class="scrubber__timeline"
             @event-selected="selectEvent"
           />
@@ -90,25 +91,28 @@
     </div>
     <transition name="scrubber__jump">
       <button
-        v-if="rightOverflowVisible"
-        :class="['scrubber__jump scrubber__jump--end', { 'scrubber__jump--end-offset': filter.separateTags.length > 0 }]"
+        v-if="rightOverflowVisible && filter.separateTags.length === 0"
+        class="scrubber__jump scrubber__jump--end"
         :title="$t('ui.jump-to-end')"
         @click="jumpToEnd"
       >
         <ChevronsRightIcon />
       </button>
     </transition>
-    <button
-      class="scrubber__jump scrubber__jump--date"
-      :title="$t('ui.go-to-date.heading')"
-      @click="$store.commit('openGoToDate')"
-    >
-      <CalendarIcon size="1x" />
-    </button>
     <div
       v-if="filter.separateTags.length > 0"
       :class="['scrubber__separate-timelines', {'scrubber__separate-timelines--visible': separateVisible}]"
     >
+      <transition name="scrubber__jump">
+        <button
+          v-if="rightOverflowVisible"
+          :class="['scrubber__jump scrubber__jump--end', { 'scrubber__jump--end-offset': filter.separateTags.length > 0 }]"
+          :title="$t('ui.jump-to-end')"
+          @click="jumpToEnd"
+        >
+          <ChevronsRightIcon />
+        </button>
+      </transition>
       <button class="scrubber__separate-timelines-toggle" :title="$t('ui.separate-timelines')" @click="separateVisible = !separateVisible">
         <ChevronRightIcon v-if="separateVisible" size="1x" />
         <ChevronLeftIcon v-else size="1x" />
@@ -118,6 +122,13 @@
         <SeparateTimelineOverview :height="separateHeight" />
       </div>
     </div>
+    <button
+      class="scrubber__jump scrubber__jump--date"
+      :title="$t('ui.go-to-date.heading')"
+      @click="$store.commit('openGoToDate')"
+    >
+      <CalendarIcon size="1x" />
+    </button>
     <transition name="go-to-date">
       <GoToDate v-if="$store.state.goToDateOpen" @submit="scrollToDate" />
     </transition>
@@ -189,6 +200,9 @@ export default {
     },
     separateHeight () {
       return Math.max(92, (this.filter.separateTags.length + 1) * 24 + 64)
+    },
+    filteredEvents () {
+      return this.events.filter(event => this.$store.getters.isIncludedInNavigation(event))
     }
   },
   watch: {
@@ -214,6 +228,14 @@ export default {
       }
 
       this.scrollToEvent(event)
+    },
+    'filter.separateTags': {
+      handler (value) {
+        if (value.length === 0) {
+          this.separateVisible = false
+        }
+      },
+      deep: true
     }
   },
   mounted () {
@@ -308,11 +330,11 @@ export default {
 
       const gotoAndScroll = (id) => {
         let index = Math.max(0, Math.min(id, this.events.length - 1))
-        while (index > 0 && index < this.events.length - 1 && this.$store.getters.isDisabled(this.events[index])) {
+        while (index > 0 && index < this.events.length - 1 && !this.$store.getters.isIncludedInNavigation(this.events[index])) {
           index += dir
         }
 
-        if (this.$store.getters.isDisabled(this.events[index])) {
+        if (!this.$store.getters.isIncludedInNavigation(this.events[index])) {
           return
         }
 
@@ -407,7 +429,7 @@ export default {
       })
     },
     jumpToStart () {
-      const firstEvent = this.events.find(event => !this.$store.getters.isDisabled(event))
+      const firstEvent = this.filteredEvents[0]
 
       if (firstEvent === undefined) {
         this.scrollTo(0)
@@ -417,15 +439,9 @@ export default {
       this.scrollToEvent(firstEvent)
     },
     jumpToEnd () {
-      let lastEvent = null
-      for (let i = this.events.length - 1; i >= 0; i--) {
-        if (!this.$store.getters.isDisabled(this.events[i])) {
-          lastEvent = this.events[i]
-          break
-        }
-      }
+      const lastEvent = this.filteredEvents[this.filteredEvents.length - 1]
 
-      if (lastEvent === null) {
+      if (lastEvent === undefined) {
         this.scrollTo(this.$refs.container.scrollWidth - this.$refs.container.clientWidth)
         return
       }
@@ -559,7 +575,9 @@ export default {
       --leave-position: 100%;
 
       &-offset {
-        right: 3rem;
+        right: auto;
+        left: -3rem;
+        box-shadow: none;
       }
     }
 
