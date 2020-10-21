@@ -1,8 +1,13 @@
-# Ashyn Exodus
-Fleeing the destruction of their homeworld, humans from Ashyn settled in Shinovar.
+# Éxodo de Ashyn
+Escapando a la destucción de su mundo, los humanos de Ashyn se asientan en Shinovar.
 
 ## Details
-> They came from another world, using powers that we have been forbidden to touch. Dangerous powers, of spren and Surges. They destroyed their lands and have come to us begging. We took them in, as commanded by the gods. What else could we do? They were a people forlorn, without a home. Our pity destroyed us.
-> —From the Eila Stele
+> Vinieron de otro mundo, empleando poderes a los que se nos ha prohibido acceder. Poderes peligrosos, de los spren y las potencias. Destruyeron sus tierras y vinieron a nosotros suplicando. Los acogimos, como ordenaban los dioses. ¿Qué otra cosa podíamos hacer? Eran un pueblo abandonado, sin hogar. Nuestra piedad nos destruyó.
+> —Del Eila Stele
 
-Fleeing the destruction of their homeworld, humans from Ashyn, travelled by magical means to Roshar. At the prompting of the Shards, Honor and Cultivation, the native singers welcomed the humans, who initially settled in Shinovar.
+Los humanos de Ashyn, escapando a la destrucción de su mundo natal, viajaron a Roshar valiéndose de medios mágicos. Persuadidos por las esquirlas Honor y Cultivación, los cantores nativos acogieron a los humanos, que inicialmente se asentaron en Shinovar.
+
+## Metadata
+| Field | Value |
+| ----- | ----- |
+| chapter | *Juramentada* Cap. 111 |
