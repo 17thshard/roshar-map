@@ -7,4 +7,4 @@ A principios de 1166, un ejército pasó a través de Piedralar y pidió el perm
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *El Camino de los Reyes* Capítulo 16 |
+| chapter | *El Camino de los Reyes* Cap. 16 |
