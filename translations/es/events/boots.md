@@ -1,10 +1,10 @@
-# Boots!
-Shallan and Kaladin met for the first time, with Shallan pretending to be a Horneater princess.
+# ¡Botas!
+Shallan y Kaladin se encuentran por primera vez, mientras Shallan se hace pasar por una princesa comecuerno.
 
 ## Details
-Unsure of the loyalties of an approaching group of soldiers, and at the prompting of Tyn, Shallan impersonated Horneater royalty at her first meeting with Kaladin on the outskirts of the Shattered Plains. She demanded, and received, his boots in payment for a feigned slight.
+Al dudar de las lealtades de un grupo de soldados que se aproximaba, y siguiendo el consejo de Tyn, durante su primer encuentro con Kaladin en las afuerzas de las Llanuras Quebradas, Shallan se hace pasar por realeza comecuernos. Exige, y recibe, sus botas como pago de una ofensa inventada.
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* Ch. 28 |
+| chapter | *Palabras radiantes* Cap. 28 |
