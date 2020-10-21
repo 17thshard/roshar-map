@@ -1,10 +1,10 @@
-# Bridge Four trains squires
-After Kaladin returned to Urithiru, Bridge Four began training Bridge Four as Windrunner squires. Rock's family arrived on the Shattered Plains.
+# El Puente CUatro entrena escuderos
+A la vuelta de Kaladin a Urithiru, el Puente Cuatro empieza a entrenar escuderos Corredores del Viento. La familia de Roca llega a las Llanuras Quebradas.
 
 ## Details
-After Kaladin returned from his mission in Alethkar, he began to see to the development of the growing Windrunners. Several members of Bridge Four showed signs of being Kaladin's squires, and in the coming weeks most of the crew, as well as some newcomers, would also take the steps to become squires or full Windrunners.
+Cuando Kaladin regresa tras su misión en #[Alezkar](locations/Alethkar), empieza a hacerse cargo de la evolución del creciente número de Corredores del Viento. Varios miembros del Puente Cuatro muestran indicios de ser escuderos de Kaladin, y en el transcurso de las semanas, tanto la mayoría de la cuadrilla como algunos recién llegados, seguirán los pasos para convertirse en escuderos o en Corredores del Viento plenos.
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 35 |
+| chapter | *Juramentada* Cap. 35 |
