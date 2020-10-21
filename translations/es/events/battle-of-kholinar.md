@@ -1,10 +1,10 @@
-# Battle of Kholinar
-Elhokar is killed as the singers attacked and seized Kholinar. F*** Moash.
+# Batalla de Kholinar
+Elhokar es asesinado cuando los cantores atacan y se apoderan de Kholinar.
 
 ## Details
-The singer forces laying seige to Kholinar attacked on the day Elhokar's team attempted to open the Oathgate. Elhokar's team failed after Moash killed the Alethi king and Kaladin, Shallan, Adolin, and Azure were stranded in Shadesmar. The singer assult was successful.
+Los cantores que asediaban Kholinar atacaron el día en que el equipo de Elhokar intentó abrir la Puertajurada. El equipo de Elhokar falló después de que Moash asesinase al rey Alezi y Kaladin, Shallan, Adolin y Azure quedasen atrapados en Shadesmar. El asalto de los cantores fue un éxito.
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 83 |
+| chapter | *Juramentada* Cap. 83 |
