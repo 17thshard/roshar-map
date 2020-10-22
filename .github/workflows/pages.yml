@@ -41,8 +41,10 @@ jobs:
         with:
           cmd: build
       - name: Create CNAME
-        run: |
-          sudo echo 'roshar.17thshard.com' > dist/release/CNAME
+        uses: finnp/create-file-action@master
+        env:
+          FILE_NAME: "./dist/release/CNAME"
+          FILE_DATA: "roshar.17thshard.com"
 
       - name: Deploy
         uses: maxheld83/ghpages@v0.2.1
