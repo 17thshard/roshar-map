@@ -1,8 +1,8 @@
-# Urithiru rediscovered
-The Alethi armies escaped to Urithiru via Oathgate to flee from the Everstorm.
+# Urithiru redescubierta
+Las tropas alezi escaparon a Urithiru a través de la puertajurada para escapar de la tormenta eterna.
 
 ## Details
-Jasnah Kholin began an effort to rediscover the city after growing convinced that a new Desolation was coming. While she herself was unable to do so, her student, Shallan Davar, managed to complete her works and pinpoint the location of Stormseat, an ancient city that possessed an Oathgate, but was destroyed long before Urithiru was abandoned. She eventually lead the Alethi army to Stormseat--now a listener city called Narak--and, as the listeners summoned the Everstorm, transported them through its Oathgate, rediscovering Urithiru. Following the arrival of the Everstorm, Urithiru became the centre of Alethi military power, with most highprinces, chief among them House Kholin, relocating there along with their armies.
+#[Jasnah Kholin](characters/jasnah) dio comienzo a un esfuerzo para redescubrir la ciudad tras crecer con la convicción de que una nueva Desolación estaba en camino. Mientras que ella misma fue incapaz de hacerlo, su aprendiza, #[Shallan Davar](characters/shallan), se las arregló para completar su trabajo y localizar con precisión la localización de Stormseat, una antigua ciudad que poseía una puertajurada, pero que fue destruida mucho antes de que Urithiru fuera abandonada. Al final ella Shallan condujo al ejército alezi hasta Stormseat, ahora una ciudad oyente llamada #[Narak](locations/narak), y, mientras los oyentes invocaban la tormenta eterna, los transportó a través de la puertajurada, redescubriendo #[Urithiru](locations/urithiru). Tras la llegada de la tormenta eterna, Urithiru se convirtió en el centro del poder militar alezi, con la mayoría de los altos príncipes, la Casa Kholin la principal entre ellos, reubicándose allí junto a sus tropas. 
 
 ## Metadata
 | Field | Value |
