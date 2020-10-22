@@ -1,10 +1,10 @@
-# Dalinar confronts the Thrill in Vedenar
-While visiting Vedenar the Thrill confronted Dalinar heavily, causing him to flee to Urithiru.
+# Dalinar se enfrenta a la Emoción en Vedenar
+En una visita a Vedenar, la Emoción golpea a Dalinar con dureza, provocando que huya hacia Urithiru.
 
 ## Details
-Following the failure of Elhokar's team at the Battle of Kholinar, Dalinar took an opportunity to visit troops in Vedenar. While visiting troops who had fought in the Veden civil war, Nergaoul (the Thrill) confronted Dalinar. Already struggling mentally after the apparent loss of Adolin and the rest of Elhokar's team, and facing excommunication by the Vorin church leadership, Dalinar summoned Stormfather as a sort of Shardblade against the spren's will and fled back to Urithiru via Oathgate. There he turned to alcohol to dull his pain, leaving him incapacitated for a week.
+Después del fracaso del equipo de #[Elhokar](characters/elhokar) durante la Batalla de #[Kholinar](locations/kholinar), #[Dalinar](characters/dalinar) aprovecha para hacer una visita a las tropas emplazadas en #[Vedenar](locations/vedenar). Durante la visita a tropas que lucharon durante la guerra civil de Vedenar, Nergaoul (la Emoción) confronta a Dalinar. Todavía debatiéndose internamente contra la aparente muerte de #[Adolin](characters/adolin) y del resto del grupo de Elhokar, y afrontando la excomunión por parte de los líderes de la iglesia vorin, Dalinar invoca al Padre Tormenta en contra de su voluntad para que tome la forma de una especie de una hoja esquirlada, y escapa de vuelta a #[Urithiru](locations/urithiru) a través de una Puerta Jurada. Una vez allí, se refugia en el alcohol para mitigar su dolor, lo cual le deja incapacitado durante una semana.
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 100 |
+| chapter | *Juramentada* Cap. 100 |
