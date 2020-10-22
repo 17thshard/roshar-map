@@ -1,10 +1,10 @@
-# Venli relocated to Marat
-After being chastised by Odium in Kholinar, Venli is brought to Marat.
+# Venli se traslada a Marat
+Tras ser castigada por Odium en Kholinar, Venli es llevada a Marat. 
 
 ## Details
-At the end of her time spreading propoganda in Kholinar, Venli experienced a vision of Odium during an Everstorm. During their meeting Odium overwhelms her, burning her body, and upbraids her for her restlessness. He affirms that she belongs to him. She collapsed on the floor afterward and tells Timbre that she has the wrong sister, as she feels unable to resist Odium. 
+Tras finalizar su tiempo difundiendo la propaganda en Kholinar, #[Venli](characters/venli) experimentó una vision de Odium durante una tormenta eterna. Durante su encuentro Odium la abruma, quemando su cuerpo, y reprendiéndola por su inquietud. Afirma que ella le pertenece. Luego se derrumbó en el suelo y le dijo a Timbre que tenía a la hermana equivocada, ya que se siente incapaz de resistirse a Odium. 
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* I-9 |
+| chapter | *Juramentada* I-9 |
