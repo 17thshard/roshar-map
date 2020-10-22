@@ -1,9 +1,8 @@
-# Unification of Alethkar
-Gavilar's final opponents are eliminated, Dalinar & Evi were married, and Gavilar was crowned king of Alethkar.
+# Unificación de Alezkar.
+Los últimos oponentes de Gavilar fueron eliminados, Dalinar y Evi se casaron, y Gavilar fue coronado rey de Alezkar. 
 
 ## Details
-Dalinar led the attack against Highprince Kalanor, the final holdout against Gavilar's rule, intent on winning the Shards that Kalanor held. While in the battle, Dalinar got so caught up in the Thrill that he didn't realize he killed Kholin men during the assault. Dalinar killed Kalanor in single combat, winning his Shards, but the Thrill was so strong in him that when Gavilar approached him afterwards, Dalinar went after his own brother with the intent to kill him. Only when Gavilar took off his helm and smiled at him did Dalinar snap out of it. Deeply ashamed of himself, Dalinar gifted Gavilar the Shards he had just won, swearing to himself that he must never be king. This battle marked the end of Gavilar's unification war, with Gavilar crowned in the months that followed.
-
+#[Dalinar](characters/dalinar) dirigió el ataque contra el alto principe Kalanor, la última resistencia contra el gobierno de #[Gavilar](characters/gavilar), con la intención de ganar las esquirladas que Kalanor tenía. Durante la batalla, Dalinar se vio tan atrapado por la Emoción que no fue consciente de matar hombres de Kholin durante el asalto. Dalinar mató a Kalanor en combate singular, obteniendo sus esquirladas... pero la Emoción era tan intensa en su interior que cuando Gavilar se aproximó momentos después, Dalinar fue tras su propio hermano con al intención de matarle. Solo cuando Gavilar se retiró el yelmo, y le sonrió, Dalinar se lo quitó de encima. Profundamente avergonzado de si mismo, Dalinar le regaló a Gavilar las esquirladas que acababa de ganar, jurándose a si mismo que él nunca sería rey. Esta batalla marcó el final de la guerra de unificación de Gavilar, con Gavilar siendo coronado en los meses que siguieron. 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
