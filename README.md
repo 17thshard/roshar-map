@@ -56,7 +56,7 @@ For some more detailed instructions on both translating and developing, follow t
 
 Obviously this project would not exist without the fantastic books by [Brandon Sanderson](https://brandonsanderson.com). The richness of the world allows us to create such a detailed experience.
 
-The following is a list of all the artists that have gracefully granted this project permission to use their pieces as images for events, locations, characters, or other items:
+The following is a list of all the artists that are either official artists or have gracefully granted this project permission to use their pieces as images for events, locations, characters, or other items:
 
  * [Adam J. Marin](https://imgur.com/gallery/Bw2k31X)
  * [Alex Allen](https://coppermind.net/wiki/Coppermind:Artists/Alex_Allen)
@@ -104,7 +104,6 @@ The following is a list of all the artists that have gracefully granted this pro
  * [ThomasW](https://coppermind.net/wiki/Coppermind:Artists/ThomasW)
  * [Vladora](https://coppermind.net/wiki/Coppermind:Artists/Vladora)
  * [Xabi Gazte](https://coppermind.net/wiki/Coppermind:Artists/Xabi_Gazte)
- * [Xabi Gaztelua](https://www.instagram.com/p/CCjmcd5Damu/)
  * [Yen Shu Liao](https://coppermind.net/wiki/Coppermind:Artists/Yen_Shu_Liao)
 
 A very special thanks goes out to Reddit user [Stoneward13](https://www.reddit.com/user/Stoneward13) for letting use and modify his awesome high resolution versions of the Roshar and Shadesmar maps.
