@@ -1,4 +1,4 @@
-# Dalinar and Sadeas joint assaults
+# Asaltos conjuntos de Dalinar y Sadeas
 Una vez Sadeas limpia el nombre de Dalinar, ambos acuerdan intentar los asaltos conjuntos a las mesetas. Dado que el primero fue un éxito, decidieron seguir adelante.
 
 ## Details
