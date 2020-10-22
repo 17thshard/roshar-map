@@ -1,10 +1,10 @@
 # Dalinar and Navani wedding
-Dalinar and Navani were married atop Urithiru by the Stormfather.
+El Padre Tormenta casa a Dalinar y Navani en lo alto de Uruthiru.
 
 ## Details
-After the Vorin church refused to sanction Dalinar and Navani's marriage, the pair arranged a wedding officiated by the Stormfather himself atop Urithiru.
+Después de que la iglesia vorin rehusara oficiar la boda entre #[Dalinar](characters/dalinar) y #[Navani](characters/navani), la pareja organiza una ceremonia celebrada por el mismísimo Padre Tormenta en lo alto de #[Urithiru](locations/urithiru).
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 4 |
+| chapter | *Juramentada* Cap. 4 |
