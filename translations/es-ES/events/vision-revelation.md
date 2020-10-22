@@ -1,12 +1,12 @@
-# Vision revelation
-Navani uncovered evidence that Dalinar's visions may be real when she recognized he was speaking Dawnchant.
+# La revelación de la Visión
+Navani descubrió la evidencia de que las visiones de Dalinar podían ser reales cuando reconoció que estaba hablando en cantoalba.
 
 ## Details
-Because Navani was so exacting in her words and thoughts, as well as the only woman in the warcamps he knew he could trust, Dalinar chose her to record his visions. She scribed expertly, picking out details from him, and knowing when to prod him for more. She was business-like and careful and recorded his visions without complaint. 
+Como #[Navani](characters/navani) era tan exigente con sus palabras y pensamientos, así como la única mujer de los campamentos de guerra en la que sabía que podía confiar, #[Dalinar](characters/dalinar) la eligió para registrar sus visiones. Tomó notas de modo experto, seleccionando detalles de él y sabiendo cuando presionarlo para obtener más. Ella fue muy profesional y cuidadosa y registró sus visiones sin quejarse. 
 
-While she listened to Dalinar's visions she realized that what he was saying had too much order to be gibberish. She discovered a phrase from the Analectics that matched what Dalinar was babbling during his fits. She told him that it was a line from a song, a chant by the Vanrial, written in the Dawnchant by the Heralds. Navani was able to use Dalinar's visions as a guide to help her scholars translate the Dawnchant.
+Mientras escuchaba las visiones de Dalinar, se dio cuenta de que lo que estaba diciendo tenía demasiado orden como para ser un galimatías. Descubrió una frase de la Analectica que coincidía con lo que balbuceaba Dalinar durante sus ataques. Le dijo que era una línea de una canción, un canto del Vanrial, escrito en cantoalba por los Heraldos. Navani fue capaz de utilizar las visiones de Dalinar como una guía para ayudar a sus eruditos a traducir el cantoalba.
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* Ch. 60 |
+| chapter | *El camino de los reyes* Cap. 60 |
