@@ -1,4 +1,4 @@
-name: CI
+name: Pages
 
 on:
   push:
@@ -42,7 +42,7 @@ jobs:
           cmd: build
       - name: Create CNAME
         run: |
-          echo 'roshar.17thshard.com' > dist/release/CNAME
+          sudo echo 'roshar.17thshard.com' > dist/release/CNAME
 
       - name: Deploy
         uses: maxheld83/ghpages@v0.2.1
