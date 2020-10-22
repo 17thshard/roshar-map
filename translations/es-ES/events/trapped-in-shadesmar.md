@@ -1,8 +1,8 @@
-# Trapped in Shadesmar
-Kaladin, Shallan, Adolin, and Azure became trapped in Shadesmar.
+# Atrapados en Shadesmar
+Kaladin, Shallan, Adolin y Celeste quedaron atrapados en Shadesmar.
 
 ## Details
-With King Elhokar dead at the hand of Moash and the city of Kholinar fallen, Kaladin and Azure retreated from the palace to join Adolin and Shallan on the Oathgate platform. Upon trying to activate the Oathgate, Sja-anat revealed to Shallan that the Oathgate is a trap. With no alternate choices available, Adolin told her to proceed. Rather than finding themselves transported to Urithiru, the group became trapped in Shadesmar, along with their spren. With no way to return to the Physical Realm, the fled across the bead ocean.
+Con el rey #[Elhokar](characters/elhokar) muerto a manos de #[Moash](characters/moash) y la ciudad de #[Kholinar](characters/kholinar) caída, #[Kaladin](characters/kaladin) y Celeste se retiran del palacio para unirse a #[Adolin](characters/adolin) y #[Shallan](characters/shallan) en la plataforma de la puertajurada. Al intentar activar la puertajurada, Sja-anat le reveló a Shallan que la puertajurada era una trampa. Son opciones alternativas disponibles, Adolin le dijo que continuase. En lugar de verse transportados a #[Urithiru](locations/urithiru), el grupo quedó atrapado en Shadesmar, junto con sus spren. Sin un modo de regresar al Reino Físico, huyeron a través del océano de cuentas.
 
 ## Metadata
 | Field | Value |
