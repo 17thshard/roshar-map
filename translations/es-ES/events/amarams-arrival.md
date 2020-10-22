@@ -2,7 +2,7 @@
 Amaram llega a las llanuras quebradas.
 
 ## Details
-Amaram llega a las Llanuras Quebradas poco después de la Batalla de la Torre con planes secretos en relación a los Hijos de Honor, grupo del cual es parte. Su llegada hizo que Kaladin dudara del honor de Dalinar y abrió una brecha en su relación durante un tiempo.
+Amaram llega a las #[Llanuras Quebradas](locations/shattered-plains) poco después de la #[Batalla de la Torre](events/battle-of-the-tower) con planes secretos en relación a los Hijos de Honor, grupo del cual es parte. Su llegada hizo que #[Kaladin](characters/kaladin) dudara del honor de #[Dalinar](characters/dalinar) y abrió una brecha en su relación durante un tiempo.
 
 ## Metadata
 | Field | Value |
