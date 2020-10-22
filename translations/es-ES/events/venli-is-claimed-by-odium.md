@@ -1,10 +1,9 @@
-# Venli is claimed by Odium
-Venli's friends were taken by Fused during an Everstorm. After refusing for herself, Venli was claimed by Odium.
+# Odium reclamó a Venli
+Durante una tormenta eterna los Fusionados toman a los amigos de Venli. Tras negarse a sí misma, Odium reclama a Venlli.
 
 ## Details
-When nine listeners were chosen by Ulim to receive "new forms," Venli and Demid were among them. In the Everstorm, the Fused replaced their souls and possessed their bodies, with the sole exception of Venli. Odium himself protected her, and she was given envoyform instead. After realizing that the others were effectively dead, Venli once more spotted a strange spren, Timbre, whom she hid from the Fused. Afterwards, Venli became Odium's chief propagandist.
-
+#[Venli](characters/venli) y Demid se encontraban entre los nueve oyentes que fueron escogidos por Ulim para recibir las "nuevas formas". Durante la tormenta eterna, los Fusionados sustituyeron sus almas y poseyeron sus cuerpos, con la única excepción de Venlil. El mismo Odium la protegió, y se le otorgó la forma de emisaria en su lugar. Tras darse cuenta que los otros estaban efectivamente muertos, Venli vio una vez más a un spren extraño, Timbre, a quién escondió de los Fusionados. Tras estp. Vemño se convirtió en la principal propagandista de Odium.
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* I-6 |
+| chapter | *Juramentada* I-6 |
