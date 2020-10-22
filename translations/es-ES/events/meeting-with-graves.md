@@ -7,4 +7,4 @@ Moash convinced Kaladin to meet with Graves and hear the man's plan to assassina
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* Ch. 46 |
+| chapter | *Palabras radiantes* Cap. 46 |

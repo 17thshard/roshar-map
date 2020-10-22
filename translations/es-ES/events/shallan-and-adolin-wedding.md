@@ -7,4 +7,4 @@ Shallan and Adolin were married in Urithiru.
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 122 |
+| chapter | *Juramentada* Cap. 122 |

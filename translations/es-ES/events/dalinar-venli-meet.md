@@ -7,4 +7,4 @@ Seeking to compromise with the singers, Dalinar had Stormfather pull Venli into 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 109 |
+| chapter | *Juramentada* Cap. 109 |

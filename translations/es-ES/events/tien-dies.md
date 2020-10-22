@@ -7,4 +7,4 @@ Less than four months after being drafted, Tien was killed during battle against
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* Ch. 67 |
+| chapter | *El camino de los reyes* Cap. 67 |

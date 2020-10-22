@@ -7,4 +7,4 @@ After Venli's discovery of the correct spren to create stormform, the Five deter
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* I-5 & I-8 |
+| chapter | *Palabras radiantes* I-5 y I-8 |

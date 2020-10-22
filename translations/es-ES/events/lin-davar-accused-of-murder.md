@@ -7,4 +7,4 @@ With the Tavinar family invited to the Davar estates for dinner one evening, Kin
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* Ch. 39 |
+| chapter | *Palabras radiantes* Cap. 39 |

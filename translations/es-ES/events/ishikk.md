@@ -7,4 +7,4 @@ After a long day of fishing Ishikk returned to Maib's place, where he met with t
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* I-1 |
+| chapter | *El camino de los reyes* I-1 |

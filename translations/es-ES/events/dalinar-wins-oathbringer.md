@@ -7,4 +7,4 @@ During the campaign to unite Alethkar under Gavilar as king, the brothers found 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 11 |
+| chapter | *Juramentada* Cap. 11 |

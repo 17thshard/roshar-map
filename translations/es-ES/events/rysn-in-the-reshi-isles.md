@@ -7,4 +7,4 @@ Rysn and Vstim arrived in the Reshi Isles, seeking to trade with the inhabitants
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* I-3 |
+| chapter | *Palabras radiantes* I-3 |

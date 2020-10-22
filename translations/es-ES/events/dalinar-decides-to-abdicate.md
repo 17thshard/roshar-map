@@ -7,4 +7,4 @@ With every highprince (aside from rivaling Sadeas) rejecting Dalinar's proposal 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* Ch. 28 |
+| chapter | *El camino de los reyes* Cap. 28 |

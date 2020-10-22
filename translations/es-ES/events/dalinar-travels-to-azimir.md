@@ -7,4 +7,4 @@ Dealinar travelled to Azimir via Oathgate bearing a series of trade deals organi
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 65 |
+| chapter | *Juramentada* Cap. 65 |

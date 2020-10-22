@@ -7,4 +7,4 @@ While viewing a vision of the Recreance with Navani and Jasnah, Odium revealed h
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 56 & 57 |
+| chapter | *Juramentada* Cap. 56 y 57 |

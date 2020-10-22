@@ -7,4 +7,4 @@ After washing ashore with no supplies after the attack on the *Wind's Pleasure*,
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* Ch. 11 & 13 |
+| chapter | *Palabras radiantes* Cap. 11 y 13 |

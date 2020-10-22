@@ -7,4 +7,4 @@ Graves' team fled from the Shattered Plains on foot after the summoning of the E
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 43 |
+| chapter | *Juramentada* Cap. 43 |

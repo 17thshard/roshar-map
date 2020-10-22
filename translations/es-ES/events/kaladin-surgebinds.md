@@ -7,4 +7,4 @@ After realizing Kaladin was a Surgebinder, Teft tricked Kaladin into accidentall
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* Ch. 57 |
+| chapter | *El camino de los reyes* Cap. 57 |

@@ -7,4 +7,4 @@ The Diagram showed that to save human kind, Taravangian needed to unite Roshar u
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* I-14 |
+| chapter | *Palabras radiantes* I-14 |

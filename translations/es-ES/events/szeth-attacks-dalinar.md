@@ -7,4 +7,4 @@ During a highstorm, Szeth attacked King Elhokar's palace on the Shattered Plains
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* Ch. 29 & 30 |
+| chapter | *Palabras radiantes* Cap. 29 y 30 |

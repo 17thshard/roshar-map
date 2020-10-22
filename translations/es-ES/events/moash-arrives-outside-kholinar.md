@@ -7,4 +7,4 @@ After hauling supplies for weeks on foot from Revolar, Moash arrived on the outs
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 51 |
+| chapter | *Juramentada* Cap. 51 |

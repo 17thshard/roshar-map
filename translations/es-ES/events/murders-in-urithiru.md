@@ -7,4 +7,4 @@ Four days after Sadeas's corpse was discovered a second body, of a man similar i
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 8 & 9 |
+| chapter | *Juramentada* Cap. 8 y 9 |

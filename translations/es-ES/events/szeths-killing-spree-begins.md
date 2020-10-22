@@ -7,4 +7,4 @@ With Szeth under his control, Makkek set out to gain wealth, first by killing hi
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* I-6 |
+| chapter | *El camino de los reyes* I-6 |

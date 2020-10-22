@@ -7,4 +7,4 @@ Around four and a half millennia later, not long after the Battle of the Tower, 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* Epilogue |
+| chapter | *El camino de los reyes* Epilogue |

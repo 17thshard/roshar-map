@@ -7,4 +7,4 @@ With King Elhokar dead at the hand of Moash and the city of Kholinar fallen, Kal
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 87 |
+| chapter | *Juramentada* Cap. 87 |

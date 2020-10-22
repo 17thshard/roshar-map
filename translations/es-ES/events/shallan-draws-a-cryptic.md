@@ -7,4 +7,4 @@ As Shallan and Jasnah were studying one day, Taravangian approached and asked to
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* Ch. 29 |
+| chapter | *El camino de los reyes* Cap. 29 |

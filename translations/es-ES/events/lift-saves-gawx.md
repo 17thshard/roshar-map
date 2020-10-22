@@ -7,4 +7,4 @@ After working with Gawx and his associates to infiltrate the Bronze Palace in Az
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* I-9 |
+| chapter | *Palabras radiantes* I-9 |

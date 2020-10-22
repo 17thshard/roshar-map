@@ -7,4 +7,4 @@ While attempting to kill a brightlord on the battlefield, and thus earn his squa
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* Ch. 47 & 51 |
+| chapter | *El camino de los reyes* Cap. 47 y 51 |

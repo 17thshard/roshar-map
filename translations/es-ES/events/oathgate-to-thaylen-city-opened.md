@@ -7,4 +7,4 @@ After meeting with Fen in a highstorm vision, Dalinar was able to convince the q
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 58 & 59 |
+| chapter | *Juramentada* Cap. 58 y 59 |

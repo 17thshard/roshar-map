@@ -7,4 +7,4 @@ Szeth's new masters gave him a list of high-ranking targets, all of whom were to
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* I-9 |
+| chapter | *El camino de los reyes* I-9 |

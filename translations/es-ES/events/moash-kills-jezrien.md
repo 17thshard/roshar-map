@@ -7,4 +7,4 @@ After impressing the Fused during the battle to take Kholinar, Moash was given a
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 121 |
+| chapter | *Juramentada* Cap. 121 |

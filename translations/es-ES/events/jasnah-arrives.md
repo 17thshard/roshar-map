@@ -7,4 +7,4 @@ Attacked by Ghostbloods aboard *Wind's Pleasure*, Jasnah accidentally transporte
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 32 |
+| chapter | *Juramentada* Cap. 32 |
