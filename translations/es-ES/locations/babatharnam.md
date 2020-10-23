@@ -1,2 +1,2 @@
-# Babatharnam
-**Babatharnam** is a kingdom in western Roshar. Its capital is #[Panatham](locations/panatham), and people from Babatharnam are called Babath. Babath women have patterns of veins that sit shallowly beneath their skin, which some non-natives find unnerving.
+# Babazarnam
+**Babazarnam** es un reino del oeste de Roshar. Su capital es #[Panatham](locations/panatham), y las personas de Babazarnam se llaman Babaz. Mujeres de Babazarnam tiene patrones de venas justo debajo de su piel, un hecho que extranjeros encuentran inquietante. 
