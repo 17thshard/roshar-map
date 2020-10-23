@@ -1,3 +1,3 @@
 # Alm
 
-**Alm** is a kingdom in southwestern Roshar that is a member nation of the Azish Empire.
+**Alm** es un reino en el suroeste de Roshar que es un nación miembro del Imperio de Azir. 
