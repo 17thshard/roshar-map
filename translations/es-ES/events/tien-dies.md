@@ -1,8 +1,8 @@
-# Tien dies
-Tien dies in battle.
+# Tien muere
+Tien muere en batalla. 
 
 ## Details
-Less than four months after being drafted, Tien was killed during battle against Brightlord Hallaw. During the encounter, he was assigned to Sheler’s company under the squad leader Varth along with two other undertrained messenger boys. Unable to use the boys effectively in combat, Varth positioned the three at the front of the lines, to act as a distraction for the enemy. He saw the three messengers as liabilities due to their lack of training. Tien and the two other messengers were killed by an enemy lighteyes, after Varth pulled his squad pulled back, leaving the three of them exposed to the enemy. Kaladin, who had been looking for his brother during the battle, arrived moments before Tien was struck down and killed. He lay on the battlefield with his brother’s corpse for hours, not returning to camp until long after the battle had ended. Tien’s parents received notice of his death from Kaladin, shortly after the incident.
+Menos de cuatro meses después tras ser recluta, Tien murió durante una batalla contra el brillante señor Hallaw. Durante el enfrentamiento, fue asignado a la compañía de Sheler bajo el mando del lider de equipo Varth junto a otros dos chicos mensajeros sin adiestrar. Incapaz de utilizar a los muchachos de manera efectiva en combate, Varth situó a los tres al frente de las líneas, para actuar como una distración para el enemigo. Vió a los tres mensajeros como una carga debido a su falta de entrenamiento. Tien y los otros dos mensajeron murieron a manos de un enemigo ojosclaros, después de que Varth hiciese retroceder a su escuadrón, dejando a los tres expuestos al enemigo. #[Kaladin](characters/kaladin), quien había estado buscando a su hermano durante la batalla, llegó momentos antes de que Tien fuese derribado y matado. Estuvo en el campo de batalla junto al cuerpo de su hermano durante horas, sin retornar al campamento hasta mucho después de que la batalla hubiese terminado. Los padres de Tien recibierdon la noticia de su muerte del propio Kaladin, poco después del incidente. 
 
 ## Metadata
 | Field | Value |
