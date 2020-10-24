@@ -1,5 +1,5 @@
-# Navani is born
+# Nace Navani
 
 
 ## Details
-Navani was born to her parents in Alethkar.
+Navani nace en Alezhkar, hija de padres alezi.
