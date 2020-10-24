@@ -1,8 +1,8 @@
-# Kaladin meets Highmarshal Azure
-Kaladin met and joined the Wall Guard and was introduced to Highmarshal Azure.
+# Kaladin conoce a la alta mariscal Celeste
+Kaladin conoce y se une a la guardia de la muralla y es presentado a la alta mariscal Celeste.
 
 ## Details
-While investigating the city of Kholinar, Kaladin found himself joining the city's Wall Guard, where he had the opportunity to meet Highmarshal Azure.
+Mientras investigaba la ciudad de #[Kholinar](locations/kholinar), #[Kaladin](characters/kaladin) acabó uniéndose a la guardia de la muralla de la ciudad, donde tuvo la oportunidad de conocer a la alta mariscal Celeste.
 
 ## Metadata
 | Field | Value |
