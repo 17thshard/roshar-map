@@ -1,4 +1,4 @@
-# Jasnah is born
+# Nace Jasnah
 
 ## Details
-Jasnah was born the first child of Gavilar and Navani Kholin.
+Nace #[Jasnah](characters/jasnah), primogénita de #[Gavilar](characters/gavilar) y #[Navani Kholin](characters/navani).
