@@ -634,6 +634,10 @@ const MapControls = function (object, domElement) {
       return
     }
 
+    if (event.target !== document.body) {
+      return
+    }
+
     const key = {
       ArrowLeft: 'left',
       ArrowRight: 'right',
