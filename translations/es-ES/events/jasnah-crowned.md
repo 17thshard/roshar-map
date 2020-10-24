@@ -1,8 +1,8 @@
-# Jasnah crowned
-Jasnah was crowned queen of Alethkar.
+# Jasnah es coronada
+Jasnah es coronada reina de Alezkar.
 
 ## Details
-Following the Battle of Thaylen Field and the confirmation of King Elhokar's death, Jasnah was named Queen of Alethkar.
+Tras la #[batalla del Campo de Thaylen](events/the-battle-of-thaylen-field), y la confirmación de la muerte de #[Elhokar](characters/elhokar), #[Jasnah](characters/jasnah) fue nombrada reina de #[Alezkar](locations/alethkar).
 
 ## Metadata
 | Field | Value |
