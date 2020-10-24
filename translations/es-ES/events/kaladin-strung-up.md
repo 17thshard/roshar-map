@@ -1,4 +1,4 @@
-# Kaladin colgado
+# Kaladin es colgado
 Después de unir al Puente Cuatro y de intentar proteger a la cuadrilla con su maniobra de «carga lateral», Kaladin fue colgado durante una alta tormenta.
 
 ## Details
