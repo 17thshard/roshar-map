@@ -1,8 +1,8 @@
-# Odium appears to Dalinar
-While viewing a vision of the Recreance with Navani and Jasnah, Odium revealed himself to Dalinar.
+# Odium aparece ante Dalinar
+Odium aparece ante Dalinar mientras este es testigo de una visión del día de la Traición junto Navani y Jasnah.
 
 ## Details
-While viewing a vision of the Recreance with Navani and Jasnah, Odium revealed himself to Dalinar.
+Odium aparece ante Dalinar mientras este es testigo de una visión del día de la Traición junto Navani y Jasnah.
 
 ## Metadata
 | Field | Value |
