@@ -1,8 +1,8 @@
-# Elhokar's team arrive in Kholinar
-After camping outside the city the day before, Elhokar's team entered Kholinar under cover and met with Adolin's tailor.
+# El equipo de Elhokar llega a Kholinar
+Tras acampar a las afueras de Kholinar, el equipo de Elhokar se adentra de incógnito en Kholinar, y se encuentra con la modista de Adolin.
 
 ## Details
-Seeking to retake the city of Kholinar, Elhokar's team travelled with Kaladin and several Windrunners to the city in secret. Finding evidence of several Unmade in the city, they opted to camp a day outside and sneak into the city the following day in disguise. From there they investigated the Unmade taking up residence in the city and laid plans to retake the Oathgate platform.
+Con intención de retomar #[Kholinar](locations/kholinar), el equipo de #[Elhokar](characters/elhokar) viaja en secreto a la ciudad junto a #[Kaladin](characters/kaladin) y varios Corredores del Viento. Al encontrar evidencias de que hay varios Deshechos en la ciudad, optan por acampar a las afueras e infiltrarse de incógnito al día siguiente. A partir de ahí, investigaron a los Deshechos mientras residían en la ciudad, y trazaron planes para recuperar la plataforma de la Puerta Jurada.
 
 ## Metadata
 | Field | Value |
