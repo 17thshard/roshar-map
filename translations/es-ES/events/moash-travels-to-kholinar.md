@@ -1,8 +1,8 @@
-# Moash travels to Kholinar
-Moash pulled supplies to Kholinar with Sah and Khen's group.
+# Moash viaja a Kholinar
+Moash lleva suministros a Kholinar junto al grupo de Sah y Khen.
 
 ## Details
-After being left in Revolar by the Fused who assaulted his group in the Frostlands, Moash fell in with the laborers hauling supplies from Revolar to Kholinar. On the way he fell in with Sah and Khen's group of singers.
+Después de que los Fusionados que asaltaron a su equipo en las Tierras Heladas le dejen en #[Revolar](locations/revolar), Moash acaba en el grupo de trabajadores que llevan suministros de Revolar a #[Kholinar](locations/kholinar). Por el camino se junta con el grupo de cantores de Sah y Khen.
 
 ## Metadata
 | Field | Value |
