@@ -1,8 +1,8 @@
-# Meeting with Graves
-Moash convinced Kaladin to meet with Graves and hear the man's plan to assassinate King Elhokar.
+# Reunión con Graves
+Moash convence a Kaladin para que se reuna con Graves y escuche el plan del hombre para asesinar al rey Elhokar.
 
 ## Details
-Moash convinced Kaladin to meet with Graves and hear the man's plan to assassinate King Elhokar. Though Kaladin initially agreed to the meeting with no intention of aiding in the conspiracy, he later agreed to help the group after being thrown into prison by Elhokar for his accusations against Amaram.
+Moash convenció a #[Kaladin](characters/kaladin) para reunirse con Graves y escuchar el pan para asesinar al rey #[Elhokar](characters/elhokar). Aunque al principio Kaladin accede al encuentro sin intenciones de ayudar en la conspiración, más tarde, después de acabar en prisión por orden de Elhokar debido a las acusaciones que hizo sobre Amaram, acuerda colaborar con el grupo.
 
 ## Metadata
 | Field | Value |
