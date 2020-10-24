@@ -1,8 +1,8 @@
-# Kaladin becomes a slave
-Kaladin killed a Shardbearer, Helaran Davar, on the battlefield. Amaram took the Shards for himself, and branded Kaladin a slave to keep his secret.
+# Kaladin se convierte en esclavo
+Kaladin mató a un portador de esquirlada, Helaran Davar, en el campo de batalla. Amaram reclama las esquirlas para sí, y marca a Kaladin como esclavo para proteger su secreto.
 
 ## Details
-While attempting to kill a brightlord on the battlefield, and thus earn his squad enough honor to be transferred to the Shattered Plains, Kaladin's entire squad was nearly slaughtered by a mysterious Shardbearer. Seeking vengeance, Kaladin attacked the Shardbearer (later revealed to be Helaran Davar) who had set his sights on Amaram. Kaladin was miraculously successful, stabbing Helaran through the slits on his helmet. Kaladin was offered the Shards, but rejected them. Convinced by Restares to take the Shards for himself, Amaram had the rest of Kaladin's squad killed and branded Kaladin as a slave in order to keep the secret of his theft.
+Mientras intentaba matar a un brillante señor en el campo de batalla, y así ganar suficiente honor para que su escuadrón fuera transferido a las Llanuras Quebradas, prácticamente todo el escuadrón de Kaladin es masacrado por un misterioso portador de esquirlada. Buscando venganza, Kaladin atacó al portador (más tarde descubrimos que se trata de Helaran Davar) que tenía a Amaram en su punto de mira. Milagrosamente, Kaladin resulta victorioso, tras apuñalar a Helaran a través de su yelmo. Kaladin es ofrecido con las esquirlas, pero las rechaza. Convencido de que Restares se haría con las esquirlas para sí, Amaram ejecuta al resto del escuadrón de Kaladin y a él le marca como esclavo para mantener a salvo el secreto de su robo.
 
 ## Metadata
 | Field | Value |
