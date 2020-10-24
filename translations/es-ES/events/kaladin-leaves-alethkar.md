@@ -1,8 +1,8 @@
-# Kaladin leaves Alethkar
-Kaladin revealed himself as a Radiant the the singers he travelled with and returned to Urithiru during a highstorm.
+# Kaladin se marcha de Alezkar
+Kaladin se muestra como Radiante ante los cantores con quienes viaja, y regresa a Urithiru durante una alta tormenta.
 
 ## Details
-After following the band of Alethi singers all the way to the city of Revolar, Kaladin and Syl decided that they had learned all they could and keeping his disguise as a commoner was no longer worth the risk. Kaladin used the coming of a highstorm to make his escape, and travelled with the storm all the way back to Urithiru.
+Después de seguir al grupo de cantores alezi hasta la ciudad de #[Revolar](locations/revolar), #[Kaladin](characters/kaladin) y Syl deciden que ya han aprendido todo lo que podían, y que mantener su disfaz de hombre común ya no valía la pena. Kaladin se valió de la llegada de una alta tormenta para escapar, y viajó con la tormenta hasta volver a #[Urithiru](locations/urithiru).
 
 ## Metadata
 | Field | Value |
