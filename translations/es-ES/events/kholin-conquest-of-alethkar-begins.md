@@ -2,4 +2,4 @@
 Después de trabajar para hacerse con el liderazgo de la casa Kholin, Gavilar y Dalinar empiezan una campaña para unificar Alezkar bajo una monarquía.
 
 ## Details
-After working their way to the head of House Kholin, Gavilar and Dalinar began a campaign to unite Alethkar under a monarchy. The forged an alliance with Sadeas and waged war against highprinces who stood in their way.
+Una vez al mando de la casa Kholin, #[Dalinar](characters/dalinar) y #[Gavilar](characters/gavilar) trabajan para unificar #[Alezkar](locations/alezkar) bajo una monarquía liderada por Gavilar. Forjaron una alianza con Sadeas y se enzarzaron en guerra contra los altos príncipes que se interpusieron en su camino.
