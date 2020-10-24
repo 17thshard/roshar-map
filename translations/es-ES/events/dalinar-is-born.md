@@ -1,5 +1,4 @@
-# Dalinar is born
-
+# Nace Dalinar
 
 ## Details
-Dalinar was born into a minor Kholin house a few years behind his elder brother, Gavilar.
+#[Dalinar](characters/dalinar) nace en el seno de una casa menor Kholin, pocos años más tarde que su hermano, #[Gavilar](characters/gavilar).
