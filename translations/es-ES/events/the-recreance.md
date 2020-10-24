@@ -1,5 +1,5 @@
-# The Recreance
-After the False Desolation, most orders of the Knights Radiant disbanded, leaving behind their Shardblades and Shardplate.
+# La Traición
+Tras la Falsa Desolación, la mayoría de las órdenes de los Caballeros Radiantes se disolvieron, dejando atrás sus hojas y armaduras esquirladas. 
 
 ## Details
-The Day of Recreance was the final act of the Knights Radiant. Nine of the ten orders abandoned their Shardblades and Shardplate and broke their oaths, killing their spren. The Order of Skybreakers was the one order that did not participate and instead hid themselves away. For around two thousand years the reason for the Recreance remained unknown until it was rediscovered in the Eila Stele during the True Desolation. 
+el Día de la Traición fue el acto final de los Caballeros Radiantes. Nueve de las diez órdenes abandonaros sus hojas y armaduras esquirladas y rompieron sus juramentos, matando a sus spren. La orden de los Rompedores del Cielo fue la única que no participó y en su lugar se escondieron. Durante alrededor de dos mil años la razón para la Traición permaneció desconocida hasta que fue redescubierta en el Eila Stele durante la Verdadera Desolación. 
