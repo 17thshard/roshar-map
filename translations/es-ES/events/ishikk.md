@@ -1,8 +1,8 @@
-# Ishikk's visitors
-Three members of the Seventeenth Shard visit Ishikk on the Purelake.
+# Los visitantes de Ishikk
+Tres miembros de la Decimoséptima Esquirla vistan a Ishikk en el Lagopuro.
 
 ## Details
-After a long day of fishing Ishikk returned to Maib's place, where he met with three members of the Seventeenth Shard who had hired him to search for Hoid. Ishikk reports that he has had no success locating the man in the region.
+Tras un largo día de pesca, Ishikk regresa a casa de Maib, donde se encuentra con tres miembros de la Decimoséptima Esquirla que le habían contratado para buscar a Hoid. Ishikk informa de que no ha conseguido encontrarle en la región.
 
 ## Metadata
 | Field | Value |
