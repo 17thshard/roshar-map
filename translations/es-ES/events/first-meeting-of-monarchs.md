@@ -1,8 +1,8 @@
-# First meeting of monarchs
-Navani led the first meeting of the human coalition against Odium's forces.
+# Primer encuentro de monarcas
+Navani dirige el primer encuentro de la coalición humana contra las fuerzas de Odium.
 
 ## Details
-The united human monarchs of Roshar met in Urithiru to formalize their relationship and make plans concerning the war against Odium's forces. With Dalinar struggling under the return of his own memories of the past and Elhokar's failure in Kholinar, Navani took lead during the meeting on his behalf.
+Los monarcas humanos unidos de Roshar se congregan en #[Urithiru](locations/urithiru) para formalizar su relación y trazar planes en relación a la guerra contra las fuerzas de #[Odium](characters/odium). Con #[Dalinar](characters/dalinar) sufriendo por el regreso de sus propios recuerdos del pasado y por el fracaso de #[Elhokar](characters/elhokar) en #[Kholinar](locations/kholinar), #[Navani](characters/navani) toma las riendas de la reunión en su nombre.
 
 ## Metadata
 | Field | Value |
