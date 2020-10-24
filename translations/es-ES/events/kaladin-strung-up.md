@@ -1,8 +1,8 @@
-# Kaladin strung up
-After uniting Bridge Four and attempting to protect the crew with their "side carry" maneuver, Kaladin was strung up in a highstorm.
+# Kaladin colgado
+Después de unir al Puente Cuatro y de intentar proteger a la cuadrilla con su maniobra de «carga lateral», Kaladin fue colgado durante una alta tormenta.
 
 ## Details
-With no means of protecting his newly united Bridge Four, Kaladin had the crew develop an alternate means of holding the bridge which would offer some protection against Parshendi arrows. The plan worked perfectly when implemented in battle, but several other crews tried to imitate their maneuver and, without practice, failed disastrously. The assult was a total loss, and much of the blame was placed on Kaladin. Sadeas ordered the bridge crew leader strung up outside during a coming highstorm to face the Stormfather's judgement. With the help of a sphere of Stormlight given him by Teft, Kaladin was able to survive the storm.
+Sin medios para proteger a su recién cohesionado Puente Cuatro, Kaladin hace que la cuadrilla ponga en práctica diferentes formas de cargar el puente que puedan ofrecerles cierta protección contra las flechas parshendi. Una vez puesto en práctica durante la batalla, el plan funciona a la perfección, pero varias de las otras cuadrillas intentan imitar su maniobra y, al no tener práctica, fallan estrepitosamente. El asalto resulta una ruina completa, y gran parte de la culpa recae sobre Kaladin. Sadeas ordena colgar en el exterior al líder de la cuadrilla del puente durante una alta tormenta para afrontar el juicio del Padre Tormenta. Con ayuda de la esfera de luz tormentosa que le entregó Teft, Kaladin consigue sobrevivir a la tormenta.
 
 ## Metadata
 | Field | Value |
