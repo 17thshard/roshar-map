@@ -1,8 +1,8 @@
-# Oathgate to Thaylen City opened
-Dalinar convinced Queen Fen to open the Oathgate between Thaylen City and Urithiru.
+# Se abre la Puerta Jurada en Ciudad Thaylen
+Dalinar convence a la reina Fen para abrir la Puerta Jurada entre Ciudad Thaylen y Urithiru.
 
 ## Details
-After meeting with Fen in a highstorm vision, Dalinar was able to convince the queen to meet in person. Kaladin and Shallan flew to Thaylen City and opened the Oathgate for the first time. Dalinar travelled to Thaylen City and was able to convince Fen of his good intentions.
+Después de reunirse con Fen en una visión durante una alta tormenta, #[Dalinar](characters/dalinar) logra convencer a la reina para verse en persona. #[Kaladin](characters/kaladin) y #[Shallan](characters/shallan) vuelan hasta #[Ciudad Thaylen](locations/thaylen-city) y abren la Puerta Jurada por primera vez. Dalinar viaja a Ciudad Thaylen y consigue demostrar sus buenas intenciones a Fen.
 
 ## Metadata
 | Field | Value |
