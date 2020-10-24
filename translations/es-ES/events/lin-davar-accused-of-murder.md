@@ -1,8 +1,8 @@
-# Lin Davar accused of murder
-Redin, King Hanavanar's bastard son, accuses Lin Davar of murdering his late wife and calls for witnesses to come forward.
+# Lin Davar es acusado de asesinato
+Redin, el hijo bastardo del rey Hanavanar, acusa a Lin Davar del asesinato de su difunta esposa y pide a los testigos que de un paso al frente.
 
 ## Details
-With the Tavinar family invited to the Davar estates for dinner one evening, King Hanavanar's bastard son, Redin, arrived and demanded entry. He called on Lin to confess to the murder of his wife and called for witnesses to come forward with any accusations or evidence.
+Una noche en que los Davar habían invitado a cenar a la familia Tavinar, el hijo bastardo del rey Hanavanar, Redin, llega y exige entrar. Emplaza a Lin a confesar el asesinato de su esposa y pide a los testigos que den un paso al frente aportando cualquier tipo de acusación o evidencia.
 
 ## Metadata
 | Field | Value |
