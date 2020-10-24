@@ -1,8 +1,8 @@
-# Dalinar travels to Azimir
-Dalinar travelled to Azimir and convinced the Azish to consider joining the coalition.
+# Dalinar viaja a Azimir
+Dalinar viajó a Azimiar para convencer a los azish de que se unieran a la coalición.
 
 ## Details
-Dealinar travelled to Azimir via Oathgate bearing a series of trade deals organized by Queen Fen, a treatise from Navani, and an essay by Jasnah Kholin. The visit ultimately convinced the Prime Aqasix of Azir, and with him the rest of the Makabaki rulers, to visit Urithiru and join the coalition against Odium.
+#[Dalinar](characters/dalinar) viajó a #[Azimir](locations/azimir) a través de la Puerta Jurada, llevando una serie de acuerdos comerciales organizados por la reina Fen, un tratado de #[Navani](characters/navani), y un ensayo de #[Jasnah Kholin](characters/jasnah). Durante la visita acaba convenciendo al Aqasix Supremo de #[Azir](locations/azir), y con él al resto de gobernantes Makabaki para que visiten #[Urithiru](locations/urithiru) y se unan a la coalición contra #[Odium](characters/odium).
 
 ## Metadata
 | Field | Value |
