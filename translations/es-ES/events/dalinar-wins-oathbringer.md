@@ -1,8 +1,8 @@
-# Dalinar wins Oathbringer
-Dalinar won the Shardblade Oathbringer upon killing its previous owner, Tanalan, at Rathalas.
+# Dalinar se hace con Juramentada
+Dalinar gana la hoja esquirlada Juramentada tras matar a su anterior dueño, Tanalan, en Rathalas.
 
 ## Details
-During the campaign to unite Alethkar under Gavilar as king, the brothers found themselves attacking the city of Rathalas. With only Shardplate at the time, Dalinar reached and killed the city's ruler, Tanalan senior. The man's young son took up his father's Blade against Dalinar, but was easily swept aside by Dalinar. The Shardblade, Oathbringer, became Dalinar's. Though Dalinar led some to believe he killed the boy, Tanalan junior was allowed to escape.
+Durante la campaña para unificar Alezkar bajo el mandato de #[Gavilar](characters/gavilar) como rey, los hermanos atacan la ciudad de #[Rathalas](locations/rathalas). En aquel entonces, contando únicamente con una armadura esquirlada, #[Dalinar](characters/dalinar) llega hasta el Tanalan, regente de la ciudad y termina con su vida. El joven hijo del rey empuña la hoja contra Dalinar, quien rápidamente lo aparta. La hoja esquirlada, Juramentada, se convierte en propiedad de Dalinar. Aunque Dalinar hace creer a algunas personas que había acabado con la vida del chico, el joven Tanalan (llamado igual que su padre), en realidad le permite escapar.
 
 ## Metadata
 | Field | Value |
