@@ -1,5 +1,5 @@
-# Kaladin is born
+# Nace Kaladin
 
 
 ## Details
-Kaladin was born to Lirin and Hesina in Hearthstone.
+Kaladin, hijo de Lirin y Hesina, nace en #[Piedralar](locations/hearthstone).
