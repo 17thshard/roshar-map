@@ -1,5 +1,5 @@
-# Founding of the Knights Radiant
-During the Heraldic Epochs, humans began developing Nahel bonds with spren. Urithiru is constructed and the Knights Radiant were established.
+# Fundación de los Caballeros Radiantes
+Durante las Épocas Heráldicas, los humanos empiezan a desarrollar vínculos nahel con spren. Se contruye Urithiru y se establecen los Caballeros Radiantes.
 
 ## Details
-Sometime during the Desolations, humans began to develop special bonds withspren, called Nahel bonds, granting them the powers of Surgebinding. The Knights Radiant were eventually founded to give organization and leadership to these Surgebinders. The tower city of Urithiru was erected around the same time, and served as the headquarters of the Knights Radiant.
+En algún momento entre Desolaciones, los humanos empezaron a desarrollar vínculos especiales con spren, llamados vínculos nahel, que les otorgaban los poderes de las potencias. Con el tiempo, se fundaron los Caballeros Radiantes para dotar de organización y liderazgo a estos potenciadores. La ciudad torre de Urithiru fue erigida más o menos al mismo tiempo, y sirvió como sede a los Caballeros Radiantes.
