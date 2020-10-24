@@ -1,4 +1,4 @@
-# Moash and Graves attacked
+# Moash y Graves son atacados
 Los Fusionados atacan al grupo de Moash y Graves en las Tierras Heladas. Moash es llevado a Revolar.
 Moash and Graves' team was attacked by Fused in the Frostlands. Moash was brought to Revolar.
 
