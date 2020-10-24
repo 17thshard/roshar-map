@@ -1,8 +1,8 @@
-# Kaladin in Hearthstone
-Kaladin arrived in Hearthstone and met with his family, including baby Oroden, before continuing on in search of the missing, transformed singers.
-
+# Kaladin en Piedralar
+Kaladin llega a Piedralar y se reune con su familia, incluyendo al bebé Oroden, antes de segiur en busca de los cantores transformados y perdidos.
+                                                                                                    
 ## Details
-After the summoning of the Everstorm, Kaladin returned to Hearthstone to aid his family as soon as he was able. He ran out of Stormlight before reaching the town, causing him to walk the final miles and arrive after the Everstorm. Fearing the worst, Kaladin found most of the town's inhabitants to be safe, including his own parents and new younger brother, Oroden. Learning that the city's parshmen had fled after the storm passed, Kaladin set out in search of them.
+Después de que se invocara la Tormenta Eterna, Kaladin regresa a Pedralar para ayudar a su familia tan pronto como le es posible. Se queda sin luz tormentosa antes de llegar a la ciudad, lo que le obliga a caminar los últimos kilómetros. Temiendo lo peor, Kaladin se encuentra con que la mayoría de los habitantes de la ciudad están a salvo, incluyendo a sus propios padres y su nuevo hermano pequeño, Oroden. Tras saber que los residentes parshmenios huyeron de la ciudad tan pronto pasó la tormenta, Kaladin se pone en su busca.
 
 ## Metadata
 | Field | Value |
