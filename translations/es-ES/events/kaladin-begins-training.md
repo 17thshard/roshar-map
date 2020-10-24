@@ -1,5 +1,5 @@
-# Kaladin begins training
-At the age of 9 Kaladin began training to be a surgeon with his father, Lirin.
+# Kaladin empieza su adiestramiento
+A los nueve años, Kaladin empieza a entrenar con Lirin, su padre, para ser un cirujano.
 
 ## Details
-At the age of 9 Kaladin began training to be a surgeon with his father, Lirin.
+Mientras vivía en #[Piedralar](locations/hearthstone), #[Kaladin](characters/kaladin) empezó a entrenar con su padre desde la infancia para convertirse en cirujano, ajeno a las espectativas de Lirin de enviarle a #[Kharbranth](locations/kharbranth) en cuanto tuviera la edad necesaria.
