@@ -1,8 +1,8 @@
-# Kaladin joins the army
-Roshone drafted Tien into the army, and Kaladin joined to protect his younger brother.
+# Kaladin se une al ejército
+Roshone asigna a Tien al ejército en un sorteo, y Kaladin se une para proteger a su hermano pequeño.
 
 ## Details
-When his cousin Amaram arrived in Hearthstone, looking for new recruits to join the army, Roshone used his authority to have Tien drafted as a means of revenge against Lirin. Seeing the look of fear on Tien's face Kaladin joined the army as well, with the goal of protecting Tien until their tour of duty was complete.
+Cuando su primo Amaram llegó a #[Piedralar](locations/hearthstone) en busca de nuevos reclutas para su ejército, Roshone se valió de su autoridad para que Tien fuera seleccionado y usarlo como venganza contra Lirin. Al ver el miedo en la mirada de Tien, #[Kaladin](characters/kaladin) se unió también al ejército con la finalidad de protegerle hasta que sus años de servicio terminasen.
 
 ## Metadata
 | Field | Value |
