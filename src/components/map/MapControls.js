@@ -18,6 +18,8 @@ const MapControls = function (object, domElement) {
   this.enableZoom = true
   this.zoomSpeed = 1.0
 
+  this.keyboardSpeed = 62.5
+
   // Set to false to disable panning
   this.enablePan = true
 
@@ -114,6 +116,17 @@ const MapControls = function (object, domElement) {
         }
       }
 
+      Object.keys(keysPressed).forEach((key) => {
+        if (!keysPressed[key]) {
+          return
+        }
+
+        const offset = keyOffsets[key]
+        const factor = scope.keyboardSpeed * delta / 1000
+        position.x += offset.x * factor
+        position.y += offset.y * factor
+      })
+
       const rayResult = rayCast(mousePosition.x, mousePosition.y, true)
       if (rayResult !== null) {
         scope.textHoverPosition.set(rayResult.x, rayResult.y)
@@ -134,6 +147,9 @@ const MapControls = function (object, domElement) {
     scope.domElement.removeEventListener('touchstart', onTouchStart, false)
     scope.domElement.removeEventListener('touchend', onTouchEnd, false)
     scope.domElement.removeEventListener('touchmove', onTouchMove, false)
+
+    scope.domElement.ownerDocument.removeEventListener('keydown', onKeyDown, false)
+    scope.domElement.ownerDocument.removeEventListener('keyup', onKeyUp, false)
 
     scope.domElement.ownerDocument.removeEventListener('mousemove', onMouseMove, false)
     scope.domElement.ownerDocument.removeEventListener('mouseup', onMouseUp, false)
@@ -196,6 +212,14 @@ const MapControls = function (object, domElement) {
 
   let transitionProgress = null
   let transitionStartZoom = 0
+
+  const keysPressed = {}
+  const keyOffsets = {
+    left: new Vector2(-1, 0),
+    right: new Vector2(1, 0),
+    up: new Vector2(0, 1),
+    down: new Vector2(0, -1)
+  }
 
   const startPosition = new Vector3()
   const targetPosition = new Vector3()
@@ -605,6 +629,40 @@ const MapControls = function (object, domElement) {
     state = STATE.NONE
   }
 
+  function onKeyDown (event) {
+    if (scope.enabled === false) {
+      return
+    }
+
+    const key = {
+      ArrowLeft: 'left',
+      ArrowRight: 'right',
+      ArrowUp: 'up',
+      ArrowDown: 'down'
+    }[event.key]
+
+    if (key !== undefined) {
+      keysPressed[key] = true
+    }
+  }
+
+  function onKeyUp (event) {
+    if (scope.enabled === false) {
+      return
+    }
+
+    const key = {
+      ArrowLeft: 'left',
+      ArrowRight: 'right',
+      ArrowUp: 'up',
+      ArrowDown: 'down'
+    }[event.key]
+
+    if (key !== undefined) {
+      keysPressed[key] = false
+    }
+  }
+
   scope.domElement.addEventListener('mousedown', onMouseDown, false)
   scope.domElement.addEventListener('wheel', onMouseWheel, false)
   scope.domElement.addEventListener('mouseover', updateMousePos, false)
@@ -614,6 +672,9 @@ const MapControls = function (object, domElement) {
   scope.domElement.addEventListener('touchstart', onTouchStart, false)
   scope.domElement.addEventListener('touchend', onTouchEnd, false)
   scope.domElement.addEventListener('touchmove', onTouchMove, false)
+
+  scope.domElement.ownerDocument.addEventListener('keydown', onKeyDown, false)
+  scope.domElement.ownerDocument.addEventListener('keyup', onKeyUp, false)
 
   const hammer = new Hammer.Manager(scope.domElement)
 

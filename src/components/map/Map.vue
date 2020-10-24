@@ -28,6 +28,9 @@ import {
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
 import { mapState } from 'vuex'
+// #ifdef MAP_DEBUG
+import Stats from 'stats.js'
+// #endif
 import MapControls from '@/components/map/MapControls'
 import Highlight from '@/components/map/layers/Highlight'
 import fragmentShader from '@/components/map/mapFragmentShader'
@@ -85,6 +88,11 @@ export default {
         this.updateLayers(layersActive)
       },
       deep: true
+    },
+    '$route.query.speed' (newSpeed) {
+      if (newSpeed !== undefined) {
+        this.controls.keyboardSpeed = Number.parseFloat(newSpeed)
+      }
     }
   },
   mounted () {
@@ -101,6 +109,11 @@ export default {
       this.$emit('error', error)
       return
     }
+
+    // #ifdef MAP_DEBUG
+    this.stats = new Stats()
+    document.body.appendChild(this.stats.dom)
+    // #endif
 
     this.loadTextures()
       .then(this.setupScene)
@@ -122,6 +135,10 @@ export default {
   destroyed () {
     this.renderer.dispose()
     cancelAnimationFrame(this.latestAnimationFrame)
+
+    // #ifdef MAP_DEBUG
+    this.stats.dom.remove()
+    // #endif
   },
   methods: {
     loadTextures () {
@@ -165,6 +182,10 @@ export default {
           }
         }
       })
+      const customSpeed = this.$route.query.speed
+      if (customSpeed !== undefined) {
+        this.controls.keyboardSpeed = Number.parseFloat(customSpeed)
+      }
 
       this.highlights = new Group()
 
@@ -316,6 +337,9 @@ export default {
       this.controls.transitionTo(target, newPosition.zoom !== undefined ? newPosition.zoom : 0.7)
     },
     update (timestamp) {
+      // #ifdef MAP_DEBUG
+      this.stats.begin()
+      // #endif
       this.resizeCanvasToDisplaySize()
 
       let delta = 0
@@ -369,6 +393,11 @@ export default {
       this.composer.render(delta)
 
       this.lastTimestamp = timestamp
+
+      // #ifdef MAP_DEBUG
+      this.stats.end()
+      // #endif
+
       this.latestAnimationFrame = requestAnimationFrame(this.update)
     },
     updateTextHighlights (delta) {

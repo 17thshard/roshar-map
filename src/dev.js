@@ -5,7 +5,6 @@ import store from './store'
 import { i18n } from '@/i18n'
 import Editor from '@/components/editor/Editor.vue'
 import { router } from '@/routes'
-import './registerServiceWorker'
 
 Vue.config.productionTip = false
 

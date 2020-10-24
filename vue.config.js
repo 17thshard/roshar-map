@@ -37,5 +37,12 @@ module.exports = {
         }
       ]
     }
+  },
+  pluginOptions: {
+    ifdefConfig: {
+      context: {
+        MAP_DEBUG: process.env.MAP_DEBUG === 'true'
+      }
+    }
   }
 }
