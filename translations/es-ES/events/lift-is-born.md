@@ -1,5 +1,5 @@
-# Lift is born
+# Nace Lift
 
 
 ## Details
-Lift is born to her Reshi mother, and grew up in Ral Elorim.
+Nace #[Lift](characters/lift), hija de una madre reshi. Creció en #[Ral Elorim](locations/rall-elorim).
