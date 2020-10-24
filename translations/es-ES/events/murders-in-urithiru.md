@@ -1,8 +1,8 @@
-# Murders in Urithiru
-Four days after Sadeas's corpse was discovered a second body was found. Adolin was given the responsibility of investigating the murders.
+# Asesinatos en Urithiru
+Cuatro días más tarde de que se descubriese el cadáver de Sadeas se encuentra un segundo cuerpo. Adolin tiene la responsabilidad de investigar los asesinatos.
 
 ## Details
-Four days after Sadeas's corpse was discovered a second body, of a man similar in appearance to Sadeas, was found. Adolin was given the responsibility of investigating the murders by Dalinar. Though Adolin was unsure where to begin, knowing himself to be the original murderer, Shallan began to assist him with the case. She began to search for other related murders in the city.
+Cuatro días después de que se descubra el cadáver de Sadeas, se encuentra el segundo cuerpo un hombre de apariencia similar. #[Dalinar](characters/dalinar) encarga a #[Adolin](characters/adolin) que investigue los asesinatos. Aunque Adolin no tiene idea de por dónde empezar, ya que sabe que él es el asesino original, #[Shallan](characters/shallan) empieza a ayudarle con el caso. Ella empieza a buscar otros asesinatos relacionados en la ciudad.
 
 ## Metadata
 | Field | Value |
