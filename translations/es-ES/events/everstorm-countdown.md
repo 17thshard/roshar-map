@@ -1,8 +1,8 @@
-# Everstorm countdown
-Renarin began scribing a countdown to the Everstorm.
+# Cuenta atrás de la Tormenta Eterna
+Renarin empieza a escribir una cuenta atrás para la Tormenta Eterna.
 
 ## Details
-Granted some measure of uncontrollable futuresight by his bond with his corrupted Truthwatcher spren, Glys, Renarin began to scribe glyphs counting down to the coming of the Battle of Narak and the summoning of the Everstorm.
+Dotado de algún tipo de capacidad de predicción incontrolable gracias a su spren de Vigilante de la Verdad corrupto, Glys, Renarin empieza a escribir glifos que representan una cuenta atrás de la Batalla de Narak y de la invocación de la Tormenta Eterna.
 
 ## Metadata
 | Field | Value |
