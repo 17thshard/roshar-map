@@ -1,10 +1,10 @@
 # Gavilar's assassination
-Gavilar Kholin was assassinated by Szeth on behalf of the listeners. Highprinces swore the Vengeance Pact, and the War of Reckoning began.
+Gavilar Kholin fue asesinado por Szeth, que seguía las órdenes de los oyentes. Los altos príncipes jurarion el Pacto de la Venganza, y empezó la Guerra del Juicio. 
 
 ## Details
-After the discovering of the listeners near the Shattered Plains, Gavilar took a sudden interest in their people and eventually invited them to Kholinar to sign a treaty. Finding Eshonai wandering the halls of the palace, Gavilar spoke with her alone, revealing a dark, myserious sphere and speaking of plans to bring on the return of the listener gods. Eshonai took this news back to her leaders, who purchased Szeth and arranged the assassination of Gavilar that very night. Szeth succesfully assassinated Gavilar and fled the city. The listener leaders gave themselves up while the rest of their people fled to the Shattered Plains. In the following days, the Alethi highprinces swore the Vengeance Pact and sent armies to the Shattered Plains to fight the War of Reckoning.
+Después de descubrir a los oyentes cerca de las #[Llanuras Quebradas](locations/shattered-plains), #[Gavilar](characters/gavilar) cobró un repentino interés en su gente y eventualmente los invitó a #[Kholinar](locations/kholinar) para firmar un tratado. Al encontrarse a #[Eshonai](characters/eshonai) merodeando por los pasillos del palacio, Gavilar habla con ella a solas, revelando una esfera oscura y misteriosa, y hablando de planes para traer de vuelta a los dioses de los oyentes. Eshonai llevó las noticias de vuelta a sus líderes, quienes adquirieron a #[Szeth](characters/szeth) y organizaron el asesinato de Gavilar para que tuviera lugar durante esa misma noche. Szeth llevó a cabo el asesinato de Gavilar con éxito, y escapó de la ciudad. Los líderes de los oyentes se entregaron mientras que el resto de su gente escapaba hacia las Llanuras Quebradas. En los días que siguieron, los altos príncipes alezi juraron el Pacto de la Venganza y enviaron ejércitos a las Llanuras Quebradas para luchar en la Guerra del Juicio.
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *El camino de los reyes* Prologue |
+| chapter | *El camino de los reyes* Prólogo|
