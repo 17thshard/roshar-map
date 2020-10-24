@@ -1,8 +1,8 @@
-# Dalinar & Venli Meet
-Dalinar and Venli met in a highstorm vision.
+# Dalinar y Venli se conocen
+Dalinar y Venli se conocen en una visión durante una alta tormenta.
 
 ## Details
-Seeking to compromise with the singers, Dalinar had Stormfather pull Venli into a shared vision during a highstorm. The negotiations went nowhere, and were ended suddenly as Odium forced his way into the vision.
+En un intento de llegar a un acuerdo con los cantores, #[Dalinar](characters/dalinar) hace que el Padre Tormenta incluya a #[Venli](characters/venli) en una visión compartida durante una alta tormenta. Las negociaciones no llegan a ninguna parte, y finalizan abruptamente cuando #[Odium](characters/odium) se abre paso en la visión.
 
 ## Metadata
 | Field | Value |
