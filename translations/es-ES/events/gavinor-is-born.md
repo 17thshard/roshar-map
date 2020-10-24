@@ -1,5 +1,5 @@
-# Gavinor is born
+# Nace Gavinor
 
 
 ## Details
-Gavinor is born to Elhokar and Aesudan Kholin.
+Nace Gavinor, hijo de #[Elhokar](characters/elhokar) y Aesudan Kholin.
