@@ -1,8 +1,8 @@
-# Kaladin Surgebinds
-Kaladin used Surgebinding consiously for the first time.
+# Kaladin emplea las potencias
+Kaladin emplea la potenciación de forma consciente por primera vez.
 
 ## Details
-After realizing Kaladin was a Surgebinder, Teft tricked Kaladin into accidentally using his powers and then made him aware of what he had done. Unsure what to make of the magic, Kaladin sought out some time alone to consider his newly discovered powers. During this time he encountered Wit and heard the story of the Wandersail.
+Tras darse cuenta de que #[Kaladin](characters/kaladin) es un potenciador, Teft le engaña para que utilice sus poderes accidentalmente, y luego le señala lo que ha hecho. Sin tener muy claro qué hacer con la magia, Kaladin pasa un tiempo a solas pensando sobre sus recién descubiertos poderes. Durante ese tiempo se encuentra con #[Sagaz](characters/wit), y escucha la historia del Vela Errante.
 
 ## Metadata
 | Field | Value |
