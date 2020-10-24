@@ -1,8 +1,8 @@
-# Moash kills Jezrien
-Moash was given a strange golden dagger by the singers, which he used to assassinate the Herald Jezrien.
+# Moash mata a Jezrien
+Los cantores entregan una extraña daga a Moash, que él emplea para acabar con la vida del Heraldo Jezrien.
 
 ## Details
-After impressing the Fused during the battle to take Kholinar, Moash was given a strange golden dagger and commanded to assassinate the Herald Jezrien. Moash succeeded, and was given the name Vyre. 
+Después de impresionar a los Fusionados durante el transcurso de la batalla para tomar #[Kholinar](locations/kholinar), los Fusionados le entregan una extraña daga dorada y le ordenan asesinar al Heraldo Jezrien. Moash lleva a cabo la tarea con éxito, y se gana el nombre de Vyre.
 
 ## Metadata
 | Field | Value |
