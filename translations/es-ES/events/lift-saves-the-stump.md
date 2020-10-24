@@ -1,10 +1,10 @@
-# Lift saves the Stump
-Lift visited Yeddaw and saved the Stump from Nale as the Everstorm arrived.
+# Lift salva a la Tocón
+Lift visita Yeddaw y salva a la Tocón de Nale mientras llega la Tormenta eterna.
 
 ## Details
-After the encounter with Nale in Azimir, Lift quietly followed the Herald to Yeddaw, where he continued hunting Radiants. Nale tasked his Skybreaker squires with hunting a Radiant in the city. When they failed Nale approached the Radiant herself, called the Stump by Lift. Lift was able to protect the Stump however, convincing Nale that the Last Desolation had begun and his mission to hunt Radiants was in vain.
+Después de su encuentro con Nale en #[Azimir](locations/azimir), #[Lift](characters/lift) sigue sigilosamente al Heraldo hasta #[Yeddaw](locations/yeddaw), donde continúa a la persecución de Radiantes. Nale encarga a sus escuderos Rompedores del Cielo que cacen Radiantes en la ciudad. Al fracasar, el propio Nale se acerca a la Radiante, a quien Lift llama Tocón. A pesar de todo, Lift consigue proteger a la Tocón, convenciendo a Nale de que la Última Desolación ha comenzado y de que su misión de perseguir Radiantes es inútil.
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Edgedancer* |
+| chapter | *Danzante del Filo* |
