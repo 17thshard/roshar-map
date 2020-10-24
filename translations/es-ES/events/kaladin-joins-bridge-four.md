@@ -1,8 +1,8 @@
-# Kaladin joins Bridge Four
-Kaladin arrived as a slave at the Shattered Plains and was assigned by Gaz to Bridge Four.
+# Kaladin se une al Puente Cuatro
+Kaladin llegó como esclavo a las Llanuras Quebradas, y Gaz le asignó a Puente Cuatro.
 
 ## Details
-The slaver Tvlakv arrived on the Shattered Plains, selling Kaladin into continued slavery as a bridgeman in Sadeas's bridge crews. Kaladin was assigned by Gaz to Bridge Four.
+El esclavista Tvlakv llegó a las #[Llanuras Quebradas](locations/shattered-plains), y vendió a #[Kaladin](characters/kaladin) para seguir siendo esclavo como un hombre del puente an las cuadrillas de los puentes de Sadeas. Gaz asignó a Kaladin al Puente Cuatro.
 
 ## Metadata
 | Field | Value |
