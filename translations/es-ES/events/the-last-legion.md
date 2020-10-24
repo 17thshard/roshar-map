@@ -1,7 +1,7 @@
-# The Last Legion
-Some singers abandoned their gods, choosing dullform and fleeing into the wild, and called themselves "the listeners." They eventually settled around the Shattered Plains.
+# La última legión
+Algunos cantores abandonaron a sus dioses, escogiendo la forma gris y escapando a la naturaleza, y llamándose a si mismos "los oyentes". Al final se asentaron en las Llanuras Quebradas. 
 
 ## Details
-The listeners were originally called the Last Legion, and like other singers in the Voidbringer army, they followed the commands of the Fused, who were the listeners' gods. The listeners lived in somewhere called the dark home (but this might have been metaphorical for being under Odium's influence, and not an actual place). The Last Legion was sent to fight in the farthest plains, probably the plains of Natanatan and the Shattered Plains. 
+Los oyentes originalmente fueron denominados la Última Legion, y al igual que otros cantores del ejército de los Portadores del Vacío, seguían las órdenes de los Fusionados, quienes eran los dioses de los oyentes. Los oyentes vivían en algún lugar llamado el *hogar oscuro* (aunque esto podría haber sido metafórico por estar bajo la influencia de #[Odium](characters/odium), y no un lugar real). La Última Legión fue enviada a las llanuras más alejadas, probablemente las llanuras de Natanatan y las #[Llanuras Quebradas](locations/shattered-plains). 
 
-One day the Last Legion fled, leaving the forms of power for dullform. Despite being thus crippled, it would lead to freedom from their gods. These listeners composed many songs to remember their history and forms, such as the Song of Listing, Song of Secrets, and Song of Histories because they risked forgetting everything. They had only known how to transform into forms other than dullform and mateform with the help of gods.
+Un día la Última Legión huyó, dejando las formas de poder por la forma gris. A pesar de estando así lisiados, conduciría a liberarse de sus dioses. Estos Oyentes compusieron muchas canciones para recordar su historia y formas, tal como la Canción de la Lizta, la Canción de los Secretos y la Canción de las Historias, porque se arriesgaban a olvidarlo todo. Solo habían sabido como transformarse en otras formas a parte de la forma gris y la forma carnal con la ayuda de los dioses. 
