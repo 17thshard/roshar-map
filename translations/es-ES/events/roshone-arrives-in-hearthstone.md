@@ -1,8 +1,8 @@
-# Roshone arrives in Hearthstone
-Exiled from Kholinar by Dalinar, Roshone arrived as citylord of Hearthstone.
+# Roshone llega a Piedralar
+Tras ser exiliado de Kholinar por Dalinar, Roshone llega a Piedralar como consistor.
 
 ## Details
-In Kholinar, Roshone used his connections to have a pair of elderly darkeyes, Moash's grandparents, arrested on false charges. The pair died in prison, and when Dalinar found out he had the man exiled. Roshone was placed as the citylord of Hearthstone, where Dalinar assumed he could cause no harm. Upon his arrival, Roshone showed no respect for the inhabitants, and appeared particularly distasteful of Lirin, whom he blamed for the death of the previous citylord.
+En #[Kholinar](locations/kholinar), Roshone se valió de sus contactos para hacer que una pareja de ancianos ojos oscuros, los abuelos de #[Moash](characters/moash), fueran arrestados bajo falsas acusaciones. La pareja murió en prisión, y cuando Dalinar conoció la situación, exilió al hombre. Roshone fue colocado como consistor de #[Piedralar](locations/hearthstone), donde #[Dalinar](characters/dalinar) asumió que no podría causar daño alguno. A su llegada, Roshone no muestró respeto alguno por los habitantes, y parecía especialmente disgustado con Lirin, a quien acusó de la muerte del anterior consistor.
 
 ## Metadata
 | Field | Value |
