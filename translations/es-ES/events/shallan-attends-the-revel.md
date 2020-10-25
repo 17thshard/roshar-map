@@ -1,8 +1,8 @@
-# Shallan attends the revel
-After drawing the eyes of the Cult of Moments, Shallan accepted her invitation to attend the revel.
+# Shallan asiste al festejo
+Después de atraer la atención del Culto de los Momentos, Shallan acepta su invitación para asistir al festejo.
 
 ## Details
-After drawing the eyes of the Cult of Moments, Shallan accepted her invitation to attend the revel on Kholinar's Oathgate platform. She discovered Ashertmarn's presence there, and had to flee before she was drawn in by the Unmade's influence.
+Después de atraer la atención del Culto de los Momentos, #[Shallan](characters/shallan) acepta la invitación para asistir al festejo en la plataforma de la Puerta Jurada de #[Kholinar](locations/kholinar). Allí, descubre la presencia de Ashertmarn, y huye antes de caer presa de la influencia del Deshecho.
 
 ## Metadata
 | Field | Value |
