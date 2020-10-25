@@ -1,8 +1,12 @@
-# State of the World
-The present state of the world following the Battle of Thaylen Field.
+# estado del mundo
+El estado actual del mundo tras la Batalla de la Explanada Thayleña.
 
 ## Details
-> Dalinar walked through the illusion, holding his hand over Iri, Rira, and Babatharnam. “Change this part of the land to a burning gold.” [...] By reports via spanreed, most of the lesser kingdoms surrounding the Purelake had been captured by Iri—which had moved, accompanied by Fused, to secure land they’d eyed for generations. This secured for them three total Oathgates. Shallan painted those kingdoms on the map a vivid gold at Dalinar’s request. Azir and its protectorates she painted a pattern of blue and maroon, the symbol the Azish scribes had chosen for the coalition between their kingdoms. [...] She continued shading the landscape colors at Dalinar’s request. Marat and those around it went gold, as did—unfortunately—Alethkar. Lands that hadn’t yet committed, like Shinovar and Tukar, she turned green. The result was a depressing view of a continent, with far too little of it colored the shades of their coalition.
+> Dalinar caminó a través de la ilusión y pasó la mano sobre Iri, Rira y Babazarnam.
+> —Cambia esta parte del territorio a un oro ardiente. [...]
+> Según los informes recibidos por vinculacaña, casi todos los reinos menores que rodeaban el Lagopuro estaban conquistados por Iri, que había avanzado en compañía de los Fusionados para tomar unas tierras a las que tenía echado el ojo desde hacía generaciones. Con ello, el enemigo dominaba un total de tres Puertas Juradas. Shallan pintó esos reinos en el mapa de un vivo color dorado, a petición de Dalinar.
+> Azir y sus protectorados los pintó con una pauta de azul y granate, el símbolo que las escribas azishianas habían escogido para la alianza entre sus reinos. [...]
+> Shallan siguió tiñendo el territorio de colores según iba pidiéndole Dalinar. Marat y sus tierras circundantes se volvieron doradas, igual que Alezkar, por desgracia. Los territorios que no se habían definido por un bando, como Shinovar y Tukar, las coloreó de verde. El resultado fue una visión depresiva de un continente, con demasiado poco terreno pintado en los tonos de su coalición.
 
 ## Metadata
 | Field | Value |
