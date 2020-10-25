@@ -1,8 +1,8 @@
-# Shallan draws a Cryptic
-Shallan accidentally drew a Cryptic while she and Jasnah joined Taravangian for lunch.
+# Shallan dibuja un críptico
+Shallan dibuja un críptico por accidente, cuando ella y Jasnah se unen a Taravangian para almorzar.
 
 ## Details
-As Shallan and Jasnah were studying one day, Taravangian approached and asked to join the pair for lunch. Afteward, the king asked for a portrait by Shallan. As Shallan sketched Taravangian she found herself accidentally drawing a strange creature standing behind him. She discarded the drawing, pretending to have made a mistake, and promised to make another.
+Un día, mientras #[Shallan](characters/shallan) y #[Jasnah](characters/jasnah) están estudiando, #[Taravangian](characters/taravangian) se acerca para unirse a ellas durante el almuerzo. Más tarde, el rey pide a Shallan que haga un retrato suyo. Conforme Shallan realiza el boceto de Taravangian, se da cuenta de que accidentalmente está dibujando una extraña criatura que se yergue tras él. Descarta el dibujo, fingiendo haberse equivocado, y promete hacer un nuevo retrato.
 
 ## Metadata
 | Field | Value |
