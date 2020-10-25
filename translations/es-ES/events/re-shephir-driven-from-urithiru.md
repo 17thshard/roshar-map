@@ -1,8 +1,8 @@
-# Re-Shephir driven from Urithiru
-With the help of Adolin and Bridge Four, Shallan found, confronted, and drove Re-Shephir out of Urithiru's libraries.
+# Re-Shephir es expulsada de Urithiru
+Con la ayuda de Adolin y del Puente Cuatro, Shallan encuentra, hace frente, y expulsa a Re-Shephir de la biblioteca de Urithiru.
 
 ## Details
-After finding a Midnight Essence to be responsible for the murders in Urithiru, Shallan chased one into the tower's basement. After waiting for reinforcements to arrive, including Adolin and several members of Bridge Four, they entered the basement library and found the Unmade Re-Shephir. Fighting through the Midnight Essences, Shallan confronted the Unmade and was able to drive it out of the city.
+Tras descubrir que la responsable de los asesinatos en #[Urithiru](locations/urithiru) era una Esencia de Medianoche, #[Shallan](characters/shallan) persigue a una hasta los cimientos de la torre. Después de esperar a que lleguen los refuerzos, entre ellos #[Adolin](characters/adolin) y varios miembros del Puente Cuatro, se adentran en la biblioteca del sótano, donde se topan con la Deshecho Re-Shephir. Shallan luchó abriéndose paso entre las Esencias de Medianoche, confrontó a la Deshecho, y consiguió expulsarla de la ciudad.
 
 ## Metadata
 | Field | Value |
