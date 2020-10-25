@@ -1,8 +1,8 @@
-# Taravangian crowned king of Jah Keved
-Taravangian arrived in Vedenar following a deadly battle and claimed the throne. Szeth is reassured and sent to assassinate Dalinar again.
+# Taravangian coronado rey de Jah Keved
+Taravangian llegó a Vedenar tras una batalla mortal y reclamó el trono. Szeth se tranquiliza y es enviado a asesinar a Dalinar de nuevo. 
 
 ## Details
-The Diagram showed that to save human kind, Taravangian needed to unite Roshar under his rule. Using Szeth to assassinate Jah Keved's king, Hanavanar, Taravangian caused the nation to be plunged into a devastating succession war, which wiped out all of the remaining highprinces. Taravangian arrived at the city in time for the death of the last Veden Highprince, Valam, who named him king of Jah Keved. Taravangian was able to fulfill his plot without anyone suspecting his intervention.
+El #[Diagrama](misc/diagram) mostró que para salvar a la humanidad, #[Taravangian](characters/taravangian) necesitaba unir Roshar bajos su gobierno. Utulizando a #[Szeth](characters/szeth) para asesinar al rey de #[Jah Keved](locations/jah-keved), Havanar, Taravangian provocó que la nación se sumergiese en una guerra de sucesión devastadora, que acabó con todos los altos príncipes restantes. Taravangian llegó a la ciudad a tiempo de la muerte del último alto príncipe veden, Valam, quien le nombró rey de Jah Keved. Taravangian fue capaz de cumplir su plan sin que nadie sospechase de su intervención. 
 
 ## Metadata
 | Field | Value |
