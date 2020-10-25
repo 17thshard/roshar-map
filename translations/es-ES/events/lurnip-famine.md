@@ -1,5 +1,5 @@
-# Lurnip famine
-Emul was devastated by a lurnip famine.
+# Hambruna del lurnip
+Emul fue devastada por la hambruna del lurnip.
 
 ## Details
-Emul was devastated by a lurnip famine, and much of the population suffered from starvation.
+Durante varias décadas, Emul fue devastada tras sufrir la hambruna del lurnip, ya que las cosechas de estas plantas resultaron arruinadas, y gran parte de la población padeció inanición. 
