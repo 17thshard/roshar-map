@@ -1,8 +1,8 @@
-# Rysn in the Reshi Isles
-Rysn and Vstim traded with the Reshi. Rysn became paralyzed but was gifted a larkin.
+# Rysn en las islas Reshi
+Rysn y Vstim comercian con los reshi. Rysn queda paralítica, pero le regalan un larkin.
 
 ## Details
-Rysn and Vstim arrived in the Reshi Isles, seeking to trade with the inhabitants of a Tai-na greatshell. Vstim pretended to be deathly ill, and required Rysn to make the trade in his place as a test. Thinking their livelihood must be on the line, Rysn took desparate measure to make the trade, falling from the greatshell in an attempt to prove her bravery. Rysn was left paralyzed from the waste down after the incident. The island gifted her with a living larkin.
+#[Rysn](characters/rysn) y Vstim llegan a las #[islas Reshi](locations/reshi-isles), para comerciar con los habitantes de un grancaparazón Tai-na. Vstim finge estar mortalmente enfermo, y le pide a Rysn que se haga cargo del intercambio en su lugar, como prueba. Pensando que su sustento está en juego, Rysn toma una medida desesperada para asegurar el trato, cayendo desde el grancaparazón para probar su valentía. Rysn queda paralítica de la cintura para abajo tras el incidente. La isla le regala un larkin vivo.
 
 ## Metadata
 | Field | Value |
