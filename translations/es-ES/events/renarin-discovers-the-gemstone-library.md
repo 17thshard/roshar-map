@@ -1,8 +1,8 @@
-# Renarin discovers the gemstone archive
-Renarin discovered the gemstones in Urithiru's library.
+# Renarin descubre el archivo de gemas corazón
+Renarin descubre las gemas corazón en la biblioteca de Urithiru.
 
 ## Details
-Noting something strange about one wall of the library in Urithiru's basement, Renarin discovered that gems were contained within compartments in the wall. Further inspection revealed that filling the gemstones with Stormlight caused strange vibration patterns, which were decrpted into messages from Radiants around the time of the Recreance.
+Dándose cuenta de que había algo peculiar en una de las paredes de la biblioteca en el sótano de #[Urithiru](locations/urithiru), #[Renarin](characters/renarin) descubre que las había gemas escondidas en compartimientos dentro de la pared. Una inspección más concienzuda revela que llenar las gemas corazón con luz tormentosa provocaba extraños patrones de vibración, que se tradujeron en mensajes de Radiantes de la época de la Traición.
 
 ## Metadata
 | Field | Value |
