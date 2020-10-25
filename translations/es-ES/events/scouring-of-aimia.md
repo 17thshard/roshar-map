@@ -1,5 +1,5 @@
-# Scouring of Aimia
-The scouring of Aimia was a mysterious, destructive event that took place on the Rosharan island of Aimia.
+# La destrucción de Aimia
+La destrucción de Aimia fue un evento misterioso y destructivo que tuvo lugar en la isla roshariana de Aimia.
 
 ## Details
-The scouring of Aimia was a mysterious, destructive event that took place on the Rosharan island of Aimia. The exact cause is unknown, and it seems to have left the entire island desolate. The lanceryn are beleived to have all died off during the scouring.
+La destrucción de #[Aimia](locations/aimia) fue un evento misterioso y destructivo que sucedió en la misteriosa isla roshariana. Se desconoce el momento exacto, y parece que el evento asoló la isla por completo. Se cree que los todos los lanceryn murieron durante la destrucción.
