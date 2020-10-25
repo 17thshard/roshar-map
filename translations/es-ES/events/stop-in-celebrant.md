@@ -1,8 +1,8 @@
-# Stop in Celebrant
-Kaladin, Shallan, Adolin, and Azure arrived in Celebrant. They spent some time purchasing supplies in the city before fleeing from the Fused aboard Honor's Path.
+# Parada en Celebrant
+Kaladin, Shallan, Adolin, y Celeste llegan a Celebrant. Dedican un tiempo a abastecerse en la ciudad antes de huir de los Fusionados a bordo del Sendero de Honor. 
 
 ## Details
-In Nan 1174 Kaladin, Shallan, Adolin, Sylphrena, Pattern, and Azure passed through Celebrant after getting stuck in Shadesmar following the Siege of Kholinar. The group arrived on a ship captained by Ico. They purchased clothing, weapons, and food in the market. Shallan sought passage on ships heading toward Cultivation's Perpendicularity or Thaylen City, but the group was ultimately forced to leave swiftly aboard Honor's Path, pursued by Fused. 
+En nan de 1174 #[Kaladin](characters/kaladin), #[Shallan](characters/shallan), #[Adolin](characters/adolin), Sylphrena, Patrón, y Celeste pasan por #[Celebrant](locations/celebrant) después de quedar atrapados en Shadesmar tras el asedio a #[Kholinar](locations/kholinar). El grupo llega en un barco capitaneado por Ico. Adquieren ropas, armas, y comida en el mercado. Shallan busca pasaje en barcos en ruta hacia la Perpendicularidad de Cultivación o a #[Ciudad Thaylen](locations/theylen-city), pero el grupo acaba viéndose obligado a marcharse rápidamente a bordo del Sendero de Honor, perseguido por los Fusionados.
 
 ## Metadata
 | Field | Value |
