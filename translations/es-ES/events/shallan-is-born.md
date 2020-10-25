@@ -1,5 +1,5 @@
-# Shallan is born
+# Nace Shallan
 
 
 ## Details
-Shallan was born to Lin Davar and her mother in Jah Keved. She was the youngest child of the family, with four older brothers.
+#[Shallan](characters/shallan), hija de Lin Davar y de su madre, nace en Jah Keved. Es la hija más pequeña de la familia, y tiene cuatro hermanos mayores.
