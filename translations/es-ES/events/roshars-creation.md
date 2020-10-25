@@ -1,5 +1,5 @@
-# Roshar's Creation
-At some point in the distant past, Roshar was created or modified by Adonalsium.
+# Creación de Roshar
+En algún momento del pasado distante, Roshar fue creado o modificado por Adonalsium.
 
 ## Details
-The exact date of Roshar's creation is unclear. It is also unknown whether Roshar was created from nothing or whether the planet (and some lifeforms) were pre-existing in some way. In any case, Adonalsium was directly and intentionally involved with the development of the planet and the lifeforms making their home there.
+La fecha exacta de la creación de Roshar no está clara. Tampoco se sabe si Roshar fue creado de la nada, o si el planeta (y algunas de sus formas de vida) ya existían de algún modo. En cualquier caso, Adonalsium estuvo directa e intencionadamente involurado en el desarrollo del planeta y de las formas de vida que hicieron del mundo su hogar.
