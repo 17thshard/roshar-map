@@ -1,8 +1,8 @@
-# Shallan discovers the Midnight Essence
-Shallan discovered the Midnight Essence while searching for secrets in the depths of Urithiru.
+# Shallan descubre la Esencia de Medianoche
+Shallan descubre la Esencia de Medianoche mientras busca secretos escondidos en las profundidades de Urithiru.
 
 ## Details
-While searching for secrets in teh depths of Urithiru, Shallan used her Lightweaving to perform a play from her childhood called "The Girl Who Looked Up". After finishing the play, she spoted a strange spren watching her in the back of the room. She chased the creature before it was able to elude her. The spren was later revealed to be Midnight Essence from Re-Shephir.
+Mientras busca secretos escondidos en las profundidades de #[Urithiru](locations/urithiru), #[Shallan](characters/shallan) se vale de su habilidad como Tejedora de Luz para representar una obra de su infancia conocida como «La niña que miró arriba». Al finalizar la representación, se fija en un extraño spren que la está observando desde el fondo de la habitación. Shallan persigue a la criatura antes de que esta pueda eludirla. Más tarde se revela que el spren era una Esencia de Medianoche de Re-Shephir. 
 
 ## Metadata
 | Field | Value |
