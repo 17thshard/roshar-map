@@ -1,8 +1,8 @@
-# Shallan and Kaladin in the chasms
-Kaladin and Shallan fought a chasmfiend and survived a highstorm the day after sabotage during an expedition left them trapped in the chasms.
+# Shallan y Kaladin en los abismos
+Shallan y Kaladin hacen frente a un abismoide y sobreviven a la alta tormenta al día siguiente de que la expedición fuera saboteada y de quedar atrapados en los abismos.
 
 ## Details
-During a expedition out onto the Shattered Plains, a failed assassination attempt on Dalinar left Kaladin and Shallan trapped and presumed dead at the bottom of the chasms. They worked their way through the maze of chasms back toward the warcamps with very little success. Shallan began mapping their way and, with the revelation that the Plains were symmetrical, finally determined the way back. The pair encountered a chasmfiend along the way and Kaladin, with Shallan's Shardblade, was able to slay the monster. With Kaladin wounded and a highstorm quickly approaching, Shallan cut a nook into the chasm wall where they were able to safely wait out the storm. They arrived in the warcamps the following day, bearing the chasmfiend's gemheart.
+Durante una expedición a las #[Llanuras Quebradas](locations/shattered-plains), un intento de asesinato fallido para acabar con la vida de #[Dalinar](characters/dalinar) deja a #[Kaladin](characters/kaladin) y a #[Shallan](characters/shallan) atrapados y dados por muertos en el fondo de los abismos. Ambos se abren paso sin éxito a través del laberinto de abismos en dirección a los campamentos de guerra. Shallan empieza a trazar un mapa de su recorrido, y después de descubrir que las Llanuras son simétricas, consiguen finalmente establecer el camino de vuelta. Durante el trayecto, la pareja se encuentra un abismoide, y Kaladin, con la hoja esquirlada de Shallan, consigue acabar con la bestia. Kaladin resulta herido mientras una alta tormenta se cierne sobre ellos, y Shallan talla un recoveco en una de las paredes del abismo donde consiguen permanecer a resguardo mientras pasa la tormenta. Al día siguiente llegan a los campamentos de guerra, cargando con ellos la gema corazón del abismoide.
 
 ## Metadata
 | Field | Value |
