@@ -1,8 +1,8 @@
-# Shallan confronts Jasnah
-Shallan confronted Jasnah and learned the truth about Soulcasting and the Voidbringers the day after her theft was revealed.
+# Shallan se enfrneta a Jasnah
+Shallan se enfrenta a Jasnah y aprende la verdad sobre el moldeado de almas y los Poratdores del Vacío el día después de que su robo quede al descubierto.
 
 ## Details
-After being accidentally poisoned by Kabsal, Shallan's theft of Jasnah's Soulcaster was revealed and Jasnah terminated her wardship. After Shallan realized Jasnah had been Soulcasting without the use of her fabrial, she confronted Jasnah and revealed that she was a Surgebinder as well. Jasnah took Shallan back as a ward, revealing her knowledge of the Knights Radiant and the conclusions of her research that the parshmen were Voidbringers.
+Después de ser accidentalmente envenenada por Kabsal, el robo del moldeador de almas de #[Jasnah](characters/jasnah) perpetrado por #[Shallan](characters/shallan) se descubre, y Jasnah da por finalizada su aprendizaje. Cuando Shallan se da cuenta de que Jasnah ha estado moldeando almas sin necesidad de emplear su fabrial, se enfrenta a la princesa y se descubre que Shallan también es una potenciadora. Jasnah vuelve a aceptarla como pupila, revelándole su conocimiento sobre los Caballeros Radiantes y las conclusiones a las que ha llegado en su investigación: que los parshmenios son los Portadores del Vacío.
 
 ## Metadata
 | Field | Value |
