@@ -1,8 +1,8 @@
-# Return to the Rift
-Dalinar burned Rathalas to the ground, killing Evi.
+# Regreso a la Grieta
+Dalinar incinera Rathalas hasta los cimientos, matando a Evi.
 
 ## Details
-After Dalinar spared the life of young Tanalan, the boy grew up in secret and eventually gathered a rebellion against Gavilar. At his hometown, Rathalas, Tanalan conspired against Dalinar's armies, which had been sent by Gavilar to quell the rebellion. When their plot to assassinate Dalinar failed, the enraged highprince burned the entire city to the ground. Unknown to Dalinar, Evi had entered the city in hopes of making peace and died in the fires.
+Después de que #[Dalinar](characters/dalinar) perdonara la vida del joven Tanalan, el muchacho creció en la clandestinidad, y con el tiempo organiza una rebelión contra #[Gavilar](characters/gavilar). En #[Rathalas](locations/rathalas), su ciudad natal, Tanalan conspira contra los ejércitos de Dalinar, que han sido enviados por Gavilar para frenar la rebelión. Cuando el plan para acabar con Dalinar falla, el enfurecido alto príncipe quema la ciudad hasta los cimientos. Sin que Dalinar lo sepa, Evi se había adentrado en la ciudad con la esperanza de lograr la paz, y muere atrapada en el fuego.
 
 ## Metadata
 | Field | Value |
