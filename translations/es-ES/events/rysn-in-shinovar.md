@@ -1,8 +1,8 @@
-# Rysn in Shinovar
-Rysn and Vstim traded with the Shin. Rysn was given a pot of grass to tend.
+# Rysn en Shinovar
+Rysn y Vstim comercian con los Shin. Rysn recibe una maceta con hierba para cuidar.
 
 ## Details
-Rysn and Vstim travelled to Shinovar, where they met with Vstim's friend, Thresh. They traded scrap metal, the byproduct of Soulcasting practice, in exchange for chickens and other exotic Shin goods. Vstim asked Rysn to take a pot of Shin grass and tend it until it no longer seemed strange to her.
+#[Rysn](characters/rysn) y Vstim viajaron hasta #[Shinovar](locations/shinovar), donde se reunieron con un amigo de Vstim, Thresh. Intercambian restos de metal, el subproducto que queda después de emplear el moldeado de almas, a cambio de pollos y otros exóticos bienes shin. Vstim le pide a Rysn que tome una maceta con hierba y la cuide hasta que se familiarice con ella.
 
 ## Metadata
 | Field | Value |
