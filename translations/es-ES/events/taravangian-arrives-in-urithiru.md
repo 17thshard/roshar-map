@@ -1,8 +1,8 @@
-# Taravangian arrives in Urithiru
-Taravangian and his followers, including the Dustbringer Malata, arrive in Urithiru.
+# Taravangian llega a Urithiru
+Taravangian y sus seguidores, incluyendo a la portadora del polvo Malata, llegan a Urithiru. 
 
 ## Details
-After his failure to assassinate Dalinar, Taravangian decided on an alternate strategy. When Dalinar called for the unification of Roshar against the Voidbringer threat, following the advent of the Everstorm, Taravangian was the first and only king to initially agree. Shortly thereafter, with the help of his Radiant, Malata, Taravangian moved to Urithiru to be closer to Dalinar.
+Tras su fallo al asesinar a #[Dalinar](characters/dalinar), #[Taravangian](characters/taravangian) se decide por una estrategia alternativa. Cuando Dalinar demanda la unificación de Roshar en contra de la amenaza de los Portadores del Vacío, después del advenimiento de la Tormenta Eterna, Taravangian fue el primer y único monarca que estuvo de acuerdo inicialmente. Poco después, con la ayuda de su radiante, Malata, Taravangian se mudó a #[Urithiru](locations/urithiru) para estar más cerca de Dalinar. 
 
 ## Metadata
 | Field | Value |
