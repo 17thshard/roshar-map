@@ -1,8 +1,8 @@
-# Shallan kills her father.
-Shallan killed her father after he killed his wife and foiled Balat's plans to run away. Lin Davar's Soulcaster is damaged.
+# Shallan mata a su padre
+Shallan mata a su padre después de que este haya matado a su esposa y de frustrar los planes de escape de balat. El moldeador de almas de Lin Davar resulta dañado.
 
 ## Details
-Shallan helped her brother, Balat, and mother-in-law, Malise, make plans to flee as Lin Davar's anger and abuse grew stronger. On the evening the pair were to leave, Lin revealed that he had discovered their plains, killing Malise. Shallan poised her father's wine before he began to attack Balat, and when the poison didn't prove potent enough she used her necklace to strangle him.
+Shallan ayudó a su hermano, Balat, y a su madrastra, Malise, a planificar su huída ya que la rabia y los abusos de Lin Davar iban en aumento. La noche en que ambos iban a escapar, Lin revela haber descubierto sus planes, y mata a Malise. Shallan envenena el vino de su padre antes de que este arremeta contra Balar, y cuando el veneno prueba no ser lo suficientemente potente, utiliza su collar para estrangularle.
 
 ## Metadata
 | Field | Value |
