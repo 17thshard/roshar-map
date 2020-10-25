@@ -1,5 +1,5 @@
-# Shattering of Adonalsium
-Adonalsium was shattered into sixteen Shards. The Shards of Honor and Cultivation settled on Roshar. Odium would follow later.
+# Fragmentación de Adonalsium
+Adonalsium se fragmentó en dieciseis Esquirlas. Las esquirlas de Honor y Cultivación se asentaron en Roshar. Odium las siguió más tarde.
 
 ## Details
-The Shattering of Adonalsium (or simply, the Shattering) was a pivotal moment in the history of the cosmere when Adonalsium was killed. Prior to this, there were no Shards, which have been the dominant influence in the cosmere we've seen so far.
+La Fragmentación de Adonalsium (o simplemente, la Fragmentación) fue un momento crucial en la historia del Cosmere, en el que Adonalsium fue asesinado. Antes de este momento no había Esquirlas, que son la influencia predominente dentro el Cosmere que hemos visto hasta el momento.
