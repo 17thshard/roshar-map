@@ -1,8 +1,8 @@
-# Shallan recruits Ishnah
-Shallan recruited Ishnah after the woman made several attempts to prove her value.
+# Shallan recluta a Ishnah
+Shallan recluta a Ishnah después de que la mujer haya demostrado su valía en varias ocasiones.
 
 ## Details
-Ishnah began following Veil after having revealed herself to be a Ghostblood in All's Alley, hoping to become a member herself. Shallan rejected the woman after their first encounter. Later, while discussing the usefulness of the soldiers, Veil noticed a washwoman observing them nearby. Recognizing the woman as Ishnah, Veil questioned her. She soon discovered that Ishnah was once a spy and hoped to join the Ghostbloods by proving herself. Seeing this as an opportunity to learn more about being a spy, Veil gave Ishnah the option of teaching her men how to be spies in exchange for promising to see if she would be worthy to join the Ghostbloods.
+Ishnah empieza a seguir a Velo después de que se revele como una Sangre Espectral en el Callejón de Todos, con la esperanza de convertirse ella también en miembro. #[Shallan](characters/shallan) rechaza a la mujer durante su primer encuentro. Más tarde, mientras debate sobre la utilidad de los soldados, Velo distingue a una lavandera que los observa de cerca. Al reconocer a la mujer como Ishnah, Velo la interroga. Pronto descubre que, antiguamente, Ishnah había sido una espía y que esperaba unirse a los Sangre Espectral después de probar su valía. Al ver esto como una oportunidad para aprender más sobre cómo ser una espía, Velo le da la oportunidad de enseñar a espiar a sus hombres a cambio de la promesa de valorar si sería digna de unirse a los Sangre Espectral.
 
 ## Metadata
 | Field | Value |
