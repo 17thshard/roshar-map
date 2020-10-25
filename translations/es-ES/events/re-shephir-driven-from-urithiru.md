@@ -1,4 +1,4 @@
-# Re-Shephir es expulsada de Urithiru
+# Re-Shephir expulsada de Urithiru
 Con la ayuda de Adolin y del Puente Cuatro, Shallan encuentra, hace frente, y expulsa a Re-Shephir de la biblioteca de Urithiru.
 
 ## Details
