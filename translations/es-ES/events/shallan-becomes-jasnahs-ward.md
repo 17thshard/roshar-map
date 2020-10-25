@@ -1,8 +1,8 @@
-# Shallan becomes Jasnah's ward
-Shallan arrived in Kharbranth and became Jasnah's ward, planning to steal the princess's Soulcaster.
+# Shallan se convierte en la pupila de Jasnah
+Shallan llega a Kharbranth y se convierte en la pupila de Jasnah, con la idea en mente de robar el moldeador de almas de la princesa.
 
 ## Details
-After months of chasing Jasnah Kholin from port to port, Shallan finally caught up with her in Karbranth. Her first petition was rejected outright, due to Shallan's lacking education. She approached Jasnah a second time that day in the Pallanaeum, after which Jasnah promised to give her another opportunity at a later date. With no time to spare due to her family's desparate financial situation, Shallan purchased books in the city and set about studying that night. Jasnah approached Shallan and accepted her as a ward.
+Después de meses de perseguir a #[Jasnah Kholin](characters/jasnah) de puerto en puerto, #[Shallan](characters/shallan) consigue alcanzarla finalmente en #[Kharbranth](locations/kharbranth). Su primera petición es rechazada sin piedad, debido a la falta de educación de Shallan, que vuelve a intentarlo por segunda vez ese mismo día en el Palaneo, tras lo que Jasnah promete darle una nueva oportunidad más adelante. Sin tiempo que perder debido a la desesperada situación económica de su familia, Shallan compra libros en la ciudad y se prepara para estudiar durante la noche. Jasnah se acerca a Shallan y la acepta como su pupila.
 
 ## Metadata
 | Field | Value |
