@@ -1,5 +1,4 @@
-# Renarin is born
-
+# Nace Renarin
 
 ## Details
-Renarin, younger brother of Adolin, was born to Evi and Dalinar Kholin.
+Nace #[Renarin](characters/renarin), hijo de Evi y #[Dalinar Kholin](characters/dalinar), y hermano pequeño de #[Adolin](characters/adolin).
