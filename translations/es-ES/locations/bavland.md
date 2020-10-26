@@ -1,3 +1,3 @@
-# Bavland
+# Bavlandia
 
-**Bavland** is a small mining region in the nation of #[Jah Keved](locations/jah-keved) on Roshar. The people from Bavland are called either Bav or Bavlanders.
+**Bavlandia** es una pequeña región minera de #[Jah Keved](locations/jah-keved). Los lugareños se denominan bav o bablandeses.
