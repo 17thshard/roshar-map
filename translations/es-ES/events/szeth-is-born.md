@@ -1,2 +1,2 @@
-# Szeth is born
-Szeth is born in Shinovar.
+# Nace Szeth
+#[Szeth](characters/szeth) nace en #[Shinovar](locations/shinovar).
