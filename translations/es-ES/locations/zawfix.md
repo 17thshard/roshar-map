@@ -1,7 +1,7 @@
 # Zawfix
 
-**Zawfix** is a city in northeastern #[Azir](locations/azir) on Roshar. It lies at the foot of a mountain range between Azir and #[Yulay](locations/yulay).
+**Zawfix** es una ciudad del noreste de #[Azir](locations/azir) en Roshar. Se encuentra al pie de una cadena montañasa entre Azir y #[Yulay](locations/yulay).
 
-Zawfix has shanties built inside of old mines to protect them from highstorms. When #[Lift](characters/lift) encounters shanties in #[Yeddaw](locations/yeddaw), she recalls seeing them in Zawfix.
+Zawfix tiene chozas construidas en el interior de antiguas minas para protegerlas de las altas tormentas. Cuando #[Lift](characters/lift) se encuentra chozas en #[Yeddaw](locations/yeddaw), recuerda haberlas visto en Zawfix.
 
-It is said that when the Sunmaker invaded Azir, he murdered ten percent of the population, and that highstorms piled bones as high as buildings in Zawfix.
+Se dice que cuando el Hacedor de Soles invadió Azir, asesinó al diez por ciento de la población y que las altas tormentas amontonaron huesos tan alto como edificios en Zawfix.
