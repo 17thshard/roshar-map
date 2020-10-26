@@ -1,4 +1,4 @@
-# La última legión
+# La Última Legión
 Algunos cantores abandonaron a sus dioses, escogiendo la forma gris y escapando a la naturaleza, llamándose a si mismos "los oyentes". Al final se asentaron en las Llanuras Quebradas. 
 
 ## Details
