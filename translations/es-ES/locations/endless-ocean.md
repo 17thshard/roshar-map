@@ -1,5 +1,4 @@
-# Endless Ocean
+# Océano sin Fin
 
-The **Endless Ocean** is a massive ocean to the west of the continent of Roshar.
-
-According to legend, Derethil and the _Wandersail_ sailed the Endless Ocean during a highstorm, where they found the islands of the Uvara.
+El **océano Sin Fin** es un océano de enormes proporciones que se encuentra al oeste del continente de Roshar.
+Según la leyenda, Derethil y el _Vela Errante_ navegador en océano Sin Fin durante una alta tormenta, y encontraron las islas de los uvara.
