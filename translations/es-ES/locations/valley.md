@@ -1,4 +1,4 @@
 # The Valley
-> Vines, ferns, flowers, and grasses grew together in a wall of underbrush. Trees stretched above them, and these weren't the durable stumpweights of his homeland. These were grnarled, tall, and twisted, with branches that wound together. They were overgrown with draping moss and vines, lifespren bobbing about them in plentitude.
+> Enredaderas, helechos, flores y hierbas creían juntos en un muro de sotobosque. Los árboles se alzaban por encima, y no eran los resistentes tocopesos de su país. Eran nudosos, altos y retorcidos, con ramas que se enmarañaban. Estaban cubiertos de musgo y enredaderas que colgaban, y rodeados por una multitud de flotantes vidaspren.
 
-The **Valley** is the home of the Nightwatcher on Roshar.
+El **Valle** es el hogar de la Vigilante Nocturna en Roshar.
