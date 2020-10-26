@@ -1,5 +1,5 @@
 # Elanar
 
-**Elanar** is a city in #[Jah Keved](locations/jah-keved) on Roshar during the Era of Solitude.
+**Elanar** is una ciudad de #[Jah Keved](locations/jah-keved) de la Era de la Soledad.
 
-Elanar is located in west-central Jah Keved, not far from its border with #[Tu Bayla](locations/tu-bayla).
+Está ubicada en la zona centro-occidental de Jah Keved, no muy alejada de la frontera con #[Tu Bayla](locations/tu-bayla).
