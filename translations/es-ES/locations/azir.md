@@ -1,4 +1,4 @@
 # Azir
-> You underestimate your importance. Azir's Oathgate will be vital, and you are the strongest kingdom of the west. With Azir at our side, many other countries will join with us.
+> Discúlpame, excelencia, pero te subestimas. La Puerta Jurada de Azir va a ser crucial, y sois el reino más fuerte de occidente. Con Azir de nuestro lado, otros muchos países se unirán a nosotros.
 
-**Azir** es un reino en el suroeste de Roshar. Su capital es #[Azimir](locations/azimir). Las personas y el idioma de Azir se llaman (Azish). 
+**Azir** es un reino en el suroeste de Roshar. Su capital es #[Azimir](locations/azimir). Tanto el nativo como el idioma de Azir reciben el nombre de azishiano.
