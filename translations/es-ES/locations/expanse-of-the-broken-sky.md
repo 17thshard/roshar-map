@@ -1,5 +1,5 @@
-# Expanse of the Broken Sky
+# Extensión del Cielo Roto
 
-The **Expanse of the Broken Sky** is a location in Shadesmar that corresponds to an unknown planet.
+La **Extensión del Cielo Roto** is una localización de Shadesmar que corresponde a un planeta desconocido.
 
-It is bordered by the #[Sea of Lost Lights](locations/sea-of-lost-lights).
+Está rodeada por el #[mar de las Luces Perdidas](locations/sea-of-lost-lights).
