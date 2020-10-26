@@ -1,5 +1,5 @@
 # Vedenar
 
-> Vedenar, one of the great cities of the world, was now little more than a heap of rubble and ash.
+> Vedenar, una de las grandes ciudades del mundo, había quedado reducida a un montón de cenizas y escrombros. 
 
-**Vedenar** is the capital city of #[Jah Keved](locations/jah-keved) on Roshar.
+**Vedenar** es la capital de #[Jah Keved](locations/jah-keved) en Roshar.
