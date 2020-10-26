@@ -1,7 +1,7 @@
 # Valath
 
-**Valath** is a city in #[Jah Keved](locations/jah-keved) next to the #[Horneater Peaks](locations/horneater-peaks).
+**Valath** es una ciudad de #[Jah Keved](locations/jah-keved) próxima a los #[Picos Comecuernos](locations/horneater-peaks).
 
-It is likely in Valam princedom, maybe even the capital.
+Es posible que esté en el principado de Valam, tal vez sea incluso la capital. 
 
-Valath is the location of the Holy Enclave, and though the Palanaeum has more tomes and scrolls, the Holy Enclave clearly has many tomes themselves.
+En Valath está localizado el Enclave Sagrado y aunque el Palaneum posee más pergaminos y tomos, el Enclave Sagrado claramente tiene muchos libros. 
