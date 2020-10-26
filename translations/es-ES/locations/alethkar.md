@@ -1,4 +1,4 @@
 # Alezkar
-> We've got a noble heritage, Kal, darkeyes and lighteyes alike. That’s why the best warriors have always been from Alethkar.
+> Tenemos una noble herencia, Kal, ojos oscuros y ojos claros por igual. Por eso los mejores guerreros han sido siempre de Alezkar. 
 
-**Alezkar** es el más grande y prominente de los cinco naciones Vorines en Roshar. Personas de Alezkar se llaman **Alezi**, y sus colores reales son azúl y dorado. Antes de la (True Desolation), estaban en la (War of the Reckoning) contra los (listeners). Ahora, la mayoria de su territorio está bajo el control de los (Voidbringers). 
+**Alezkar** es la más grande y notable de las cinco naciones vorin de Roshar. Los habitantes de Alezkar reciben el nombre de **Alezi**, y sus colores reales son el azul y el dorado. Antes de la Verdadera Desolación, durante la Guerra del Juicio, estaban en guerra con los oyentes. Ahora, la mayor parte de su territorio está bajo el control de los Potadores del Vacío. 
