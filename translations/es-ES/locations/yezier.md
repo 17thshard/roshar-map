@@ -1,3 +1,3 @@
 # Yezier
 
-**Yezier** is a princedom in southwestern Roshar and one of the member states of the #[Azish Empire](locations/azir). It's ruled by a princess.
+**Yezier** es un principado del suroeste de Roshar y uno de los estados miembros del #[Imperio Azish](locations/azir). Está gobernado por una princesa. 
