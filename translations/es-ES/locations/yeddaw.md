@@ -1,5 +1,5 @@
 # Yeddaw
 
-> No, **this** was impressive. A majestic city cut **out of the starvin' ground**.
+> No, Yeddaw si **que** era impresionante. Una ciudad majestuosa **cortada en el famélico suelo**.
 
-**Yeddaw** is a city in #[Tashikk](locations/tashikk) on Roshar.
+**Yeddaw** es una ciudad de #[Tashikk](locations/tashikk) en Roshar.
