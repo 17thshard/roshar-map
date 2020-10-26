@@ -1,6 +1,6 @@
 # The Purelake
-> The Purelake seemed to extend forever, wide as an ocean... Rock outcrops broke the lake near the coast, but inward the Purelake grew placid, more empty.
+> El Lagopuro parecía extenderse sin límite, amplio como un océano. [...] Cerca de la costa asomaban rocas de la superficie, pero más hacia el centro el Lagopuro se tornaba plácido, más vacío.
 
-The **Purelake** is a shallow inland lake located in north central Roshar. The people of the region are known as **Purelakers** and are ethnically Selay.
+El **Lagopuro** es un lago interior poco profundo ubicado al norte del centro de Roshar. Los lugareños reciben el nombre de **lagopureños** y pertenecen a la etnia selay.
 
-The Purelake is influenced, in some way, by #[Cultivation](characters/cultivation). It is unknown if she has a secondary perpendicularity in the Purelake.
+El Lagopuro está influenciado, de alún modo, por #[Cultivación](characters/cultivation). Se desconoce si posee una Perpendicularidad secundaria en el lugar.
