@@ -1,4 +1,4 @@
 # Shinovar
-> The world is changing outside, but the Shin seem determined to remain the same.
+> El mundo cambia, pero los shin parecen decididos a seguir igual.
 
-**Shinovar** is a nation on the western mainland of Roshar. Due to the #[mountains](locations/misted-mountains) separating it from the rest of the continent, Shinovar is distinct both ecologically and culturally from the rest of Roshar. Shinovar natives are known as the **Shin**.
+**Shinovar** es una nación del oeste continental de Roshar. Debido a que las #[Montañas Brumosas](locations/misted-mountains) lo separan del resto del continente, Shinovar es diferente tanto cultural como ecológicamente del resto de Roshar. Los nativos de shinovar son conocidos como los **Shin**.
