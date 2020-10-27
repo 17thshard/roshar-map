@@ -1,7 +1,11 @@
-# Expanse of Vibrance
+# Expansión de la Intensidad
 
-The **Expanse of Vibrance** is a location in Shadesmar that corresponds to an unknown planet.
+La **Expansión de la Intensidad** es una ubicación dentro de Shadesmar que se corresponde con un planeta desconocido.
 
-It is bordered by the #[Nexus of Imagination](locations/nexus-of-imagination).
+Está rodeada por el #[Nexo de la Imaginación](locations/nexus-of-imagination).
 
-The Expanse of Vibrance is commonly thought to correspond to the world Nalthis, due to the importance of color in that planet's manifestation of Investiture, Awakening.
+Una idea muy extendida es que la Expansión de la Intensidad corresponde al mundo de Nalthis, debido a la importancia del color en la manifestación de la Investidura del planeta, el Despertar.
+
+`​`​`tn
+Ahora mismo no existe una traducción oficial para el término «_Vibrance_», por lo que de momento seguiremos utilizando «Intensidad».
+`​`​`
