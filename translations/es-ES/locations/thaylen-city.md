@@ -1,4 +1,4 @@
 # Thaylen City
-> A place that was hit hardest of all by the new storms. A place whose military might was severely undermined by the Everstorm. A place with an Oathgate.
+>En el lugar donde más fuerte golpearon las nuevas tormentas. Un lugar cuyo poderío militar se vio mermado en gran medida por la tormenta eterna. Un lugar con Puerta Jurada.
 
-**Thaylen City** is the capital of #[Thaylenah](locations/thaylenah) on Roshar, and the site of the Battle of Thaylen Field.
+**Thaylen City** es la capital de #[Thaylenah](locations/thaylenah) en Roshar, y el lugar donde sucede la Batalla de la Explanada Thayleña.
