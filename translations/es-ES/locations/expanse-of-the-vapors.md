@@ -1,7 +1,7 @@
-# Expanse of the Vapors
+# Exppansión de los Vapores
 
-The **Expanse of the Vapors** is a location in Shadesmar. It is bordered by the #[Sea of Lost Lights](locations/sea-of-lost-lights) and the #[Nexus of Imagination](locations/nexus-of-imagination).
+La **Expansión de los Vapores** es una ubicación dentro de Shadesmar. Está rodeada por el #[mar de las Luces Perdidas](locations/sea-of-lost-lights) y el #[Nexo de la Imaginación](locations/nexus-of-imagination).
 
-The Expanse of the Vapors leads to Scadrial.
+La Expansión de los Vapores conduce a Scadrial.
 
-In Mistborn: Secret History, Kelsier goes to the Cognitive Realm on Scadrial, and describes everything that doesn't have Investiture to be made of 'thick, shifting mists' that coalesced in the same shape as everything in the Physical Realm. This is likely where the Expanse of the Vapors gets its name. As part of the Scadrian subastral, mist obscures everything and metals glow with a brilliant light. The counterpart to bodies of water is smoky stone where mysterious plants grow and the counterpart to solid earth is a misty, vaporous substance.
+En _Nacidos de la Bruma: Historia Secreta_, Kelsier va al Reino Cognitivo de Scadrial, y describe todo aquello que no posee Investidura como hecho de brumas cambiantes y densas que se unen dando forma a todo, igual que en el Reino Físico: «La bruma se condensó en distintas formas. Las sombras que había confundido con colinas eran edificios, borrosos y formados de cambiante bruma». Posiblemente es de aquí de donde la Expansión de los Vapores obtiene su nombre. Como parte del subastral (o plano paralelo) de Scadrialm la bruma oscurece todo y los metales refulgen con una luz brillante. La contrapartida para las masas de agua es una piedra humeante, en la que crecen plantas misteriosas, y la contrapartida de la tierra sólida es una substancia de bruma, vaporosa: «El suelo bajo sus pies también era bruma, una profunda extensión, como si estuviera sobre la superficie del océano. Era suave al tacto, como la tela, y hasta un poco mullido».
