@@ -1485,7 +1485,7 @@
         ],
         "image": {
             "file": "events/The_Leap_by_Grant_Hansen.jpg",
-            "credits": "by [Grant Hansen](https://coppermind.net/wiki/Coppermind:Artists/Grant_M._Hansen)",
+            "credits": "by [Grant M. Hansen](https://coppermind.net/wiki/Coppermind:Artists/Grant_M._Hansen)",
             "size": 170,
             "offset": {
                 "x": 25,
@@ -2164,7 +2164,7 @@
         ],
         "image": {
             "file": "events/Urithiru3_by_Jacobo_Montoya.jpg",
-            "credits": "by [Jacoo Montoya](https://coppermind.net/wiki/Coppermind:Artists/Jacobo_Montoya)",
+            "credits": "by [Jacobo Montoya](https://coppermind.net/wiki/Coppermind:Artists/Jacobo_Montoya)",
             "size": 200,
             "offset": {
                 "x": 50,
