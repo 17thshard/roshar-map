@@ -1,7 +1,7 @@
 # Steen
 
-**Steen** is a kingdom at the tip of a peninsula in southwestern Roshar. As such, it only borders #[Liafor](locations/liafor).
+**Steen** es un reino situado en la punta de una península en el suroeste de Roshar. is a kingdom at the tip of a peninsula in southwestern Roshar. Como tal, solo limita con #[Liafor](locations/liafor).
 
-During the Silver Kingdoms era, it was part of Makabakam. Noura describes them as a tricky bunch, and hints that they shouldn't be invited to the #[Urithiru](locations/urithiru) talks along with the other Makabak representatives.
+Durante la era de los Reinos Plateados, Makabakam. Noura los describe como un grupo falso y sugiere que no deberían ser invitados a las conferencias de #[Urithiru](locations/urithiru) tjunto a los otros representantes makabaki. 
 
-Beard tells a tale about him swimming across a vat of dyes when in service to the Steen merchant lords. The crew of _First Dreams_ on its trip to Akinah is made up of Steen mercenaries.
+Barba cuenta una historia sobre él nadando en una tina de tintes cuando estaba ak servicio de de los señores mercantes de Steen. La tripulación del _Primeros Sueñoss_ en su viaje hacia Akinah se compone de mercenarios de Steen. 
