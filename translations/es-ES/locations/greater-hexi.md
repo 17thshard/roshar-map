@@ -1,3 +1,3 @@
-# Greater Hexi
+# Gran Hexi
 
-**Greater Hexi** is a small nation in southern Roshar during the Era of Solitude.
+**Gran Hexi** es una pequeña nación al sur de Roshar, de la Era de la Soledad.
