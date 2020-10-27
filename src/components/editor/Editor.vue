@@ -119,13 +119,13 @@
           <button @click="selectedEvent = null">
             Clear selection
           </button>
-          <button @click="renderPhysical">
+          <button @click="renderPhysical(undefined)">
             Save Physical Realm
           </button>
-          <button @click="renderShadesmar">
+          <button @click="renderShadesmar(undefined)">
             Save Shadesmar
           </button>
-          <button @click="renderHover">
+          <button @click="renderHover(undefined)">
             Save hover
           </button>
           <button @click="renderAll">
