@@ -1,5 +1,5 @@
 # Shulin
 
-**Shulin** is a city in #[Alethkar](locations/alethkar) in Kholin princedom. It is near the border to the #[Unclaimed Hills](locations/unclaimed-hills).
+**Shulin** es una ciudad de #[Alezkar](locations/alethkar) que está en el principado Kholin. Está cerca de la frontera con las #[Montañas Irreclamadas](locations/unclaimed-hills).
 
-It is possible that the royal cartographer, Isasik Shulin, is from here.
+Es posible que el cartógrafo real, Isasik Shulin, sea de allí.
