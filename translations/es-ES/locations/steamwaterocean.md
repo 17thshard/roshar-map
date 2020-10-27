@@ -1,5 +1,5 @@
-# Steamwater Ocean
+# Océano de las Aguas Hirvientes
 
-The **Steamwater Ocean** is a body of water to the northeast of Roshar.
+El **Océano de las Aguas Hirvientes** es un cuerpo de agua situado en el noreste de Roshar. 
 
-#[Dalinar Kholin](characters/dalinar) proposed to Evi that they and Adolin take a vacation to the Steamwater, as Evi had grown tired of the wind and cold in #[Alethkar](locations/alethkar). There is no indication that they ever took this trip.
+#[Dalinar Kholin](characters/dalinar) le propuso a Evi que ellos y Adolin se tomaran unas vacaciones en el Océano de las Aguas Hirvientes, debido a que Evi se había cansado del viento y el frío de #[Alezkar](locations/alethkar). No hay indicios de que hubiesen hecho este viaje en algún momento.
