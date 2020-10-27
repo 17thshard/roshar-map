@@ -27,11 +27,18 @@ module.exports = {
       .end()
   },
   pwa: {
-    name: 'Roshar Map',
+    name: 'Interactive Map & Timeline of Roshar',
     themeColor: '#0f3562',
     msTileColor: '#0f3562',
     manifestOptions: {
       background_color: '#0f3562'
+    },
+    iconPaths: {
+      favicon32: null,
+      favicon16: null,
+      appleTouchIcon: null,
+      maskIcon: null,
+      msTileImage: null
     },
     workboxOptions: {
       skipWaiting: true,

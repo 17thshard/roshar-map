@@ -33,7 +33,5 @@ module.exports = function (content) {
   const renderer = markdown.outputFor(markdownRules, 'html')
   const html = renderer(parser(readme.sections.credits.content))
 
-  console.log('BLAH')
-
   return content.replace(targetText, html)
 }
