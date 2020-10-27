@@ -1,4 +1,4 @@
 # Thaylenah
-> We are going to need to administrate trade through the Oathgates. I wonder, who has excellent expertise in shipping, caravans, and trade in general…?
+> Al fin y al cabo, tendremos que administrar el comercio a través de las Puertas Juradas. Me pregunto quién cuenta con gran experiencia en envíos, caravanas y negocios en general...
 
-**Thaylenah** is an island kingdom in the South of Roshar, with capital in #[Thaylen City](locations/thaylen-city). The people and language of Thaylenah are called the Thaylen.
+**Thaylenah** es un reino isleño del sur de Roshar, cuya capital es #[Ciudad Thaylen](locations/thaylen-city). Tanto la gente como el idioma de Thaylenah es denominado "thayleño". 
