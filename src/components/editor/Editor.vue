@@ -285,18 +285,18 @@
             Delete
           </button>
           <Draggable tag="ul" :list="tagCategory.tags" group="tags" class="editor__tags-list">
-        <li
-          v-for="tag in tagCategory.tags"
-          :key="tag.id"
-          :class="{
+            <li
+              v-for="tag in tagCategory.tags"
+              :key="tag.id"
+              :class="{
                 'editor__tags-item--selected': selectedTag === tag && !categorySelected
               }"
-          @click.stop="selectTag(tag, false)"
-        >
-          {{ tag.id }}
+              @click.stop="selectTag(tag, false)"
+            >
+              {{ tag.id }}
+            </li>
+          </Draggable>
         </li>
-      </Draggable>
-      </li>
       </Draggable>
     </div>
     <template

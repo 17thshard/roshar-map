@@ -26,17 +26,12 @@
             <div class="info__logo" />
             <Markdown :content="$t('ui.welcome')" class="info__text" />
             <nav class="info__menu">
-              <a href="#" target="_blank" @click.prevent="subPage = 'about'">
-                {{ $t('ui.about') }}
-              </a>
-              <a href="#" target="_blank" @click.prevent="subPage = 'language'">
-                {{ $t('ui.language') }}
-              </a>
-              <a href="#" target="_blank" @click.prevent="$emit('open-tutorial')">
-                {{ $t('ui.help') }}
-              </a>
+              <a href="#" target="_blank" @click.prevent="subPage = 'about'">{{ $t('ui.about') }}</a>
+              <a href="#" target="_blank" @click.prevent="subPage = 'language'">{{ $t('ui.language') }}</a>
+              <a href="#" target="_blank" @click.prevent="$emit('open-tutorial')">{{ $t('ui.help') }}</a>
               <a href="https://brandonsanderson.com" target="_blank">Brandon Sanderson</a>
               <a href="https://coppermind.net" target="_blank">The Coppermind</a>
+              <a href="#" target="_blank" @click.prevent="subPage = 'credits'">Credits</a>
             </nav>
             <footer class="info__footer">
               <div class="info__credits">
@@ -105,6 +100,22 @@
           <div class="info__content">
             <h2>{{ $t('ui.about') }}</h2>
             <Markdown :content="$t('ui.aboutText')" class="info__text" />
+          </div>
+        </Scrollbar>
+        <Scrollbar
+          :class="['info__scroller', 'info__scroller--credits', { 'info__scroller--active': subPage === 'credits' }]"
+          :ops="{
+            vuescroll: { wheelScrollDuration: 400 },
+            bar: { onlyShowBarOnScroll: false, keepShow: true, background: '#482d00', opacity: 0.5, size: '0.5rem' },
+            rail: { size: '0.5rem', gutterOfSide: '0' }
+          }"
+          @handle-scroll="onScroll('credits', $event)"
+        >
+          <div class="info__content">
+            <h2>Credits</h2>
+            <div class="markdown info__text">
+              <!-- CREDITS_TEXT -->
+            </div>
           </div>
         </Scrollbar>
       </div>

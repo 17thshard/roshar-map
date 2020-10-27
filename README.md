@@ -107,9 +107,9 @@ The following is a list of all the artists that are either official artists or h
 
 A very special thanks goes out to Reddit user [Stoneward13](https://www.reddit.com/user/Stoneward13) for letting use and modify his awesome high resolution versions of the Roshar and Shadesmar maps.
 
-We also thank the amazing people at [cosmere.es](https://cosmere.es/) for going through the monumental effort of translating everything to Spanish!
+We also thank the amazing people at [cosmere.es](https://cosmere.es/) for going through the monumental effort of translating everything to Spanish and fixing errors in the English text along the way!
 
-Finally, the general appearance and concept of the map derives heavily from the [interactive map of "The Continent"](http://witchernetflix.com/) for Netflix's *The Witcher* series.
+Finally, the general appearance and concept of the map derives heavily from the [interactive map](http://witchernetflix.com/) of "The Continent" for Netflix's *The Witcher* series.
 
 ## License
 

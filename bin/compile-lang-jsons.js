@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 const fs = require('fs')
+const parseSections = require('../src/parse-markdown-sections')
 
 const destPath = './build/lang'
 
@@ -66,6 +67,10 @@ function parseEventFile (lang, type, id, content) {
 
   const { root, sections, metadata } = parseSections(content)
 
+  if (root === undefined) {
+    throw new Error(`Translation of ${type} entry ${id} for locale '${lang}' does not contain root section (started by level 1 heading)`)
+  }
+
   const blurb = root.content.trim()
   const details = sections.details === undefined ? undefined : sections.details.content.trim()
 
@@ -80,53 +85,9 @@ function parseStandardFile (lang, type, id, content) {
 
   const { root, metadata } = parseSections(content)
 
-  return { name: root.name, details: root.content.trim(), ...metadata }
-}
-
-function parseSections (content) {
-  let root
-  const sections = {}
-  const lines = content.split('\n')
-
-  let currentSection
-  lines.forEach((line) => {
-    const headerMatch = line.trim().match(/^(#+)\s+(.*?)$/)
-    if (headerMatch != null) {
-      const [, hashes, name] = headerMatch
-
-      if (hashes.length === 1) {
-        currentSection = { name: name.trim(), content: '' }
-
-        root = currentSection
-      } else {
-        currentSection = { content: '' }
-        sections[name.toLowerCase().trim()] = currentSection
-      }
-
-      return
-    }
-
-    if (currentSection === undefined) {
-      throw new Error('Line found outside of section')
-    }
-
-    currentSection.content += line + '\n'
-  })
-
   if (root === undefined) {
-    throw new Error('Markdown file did not contain root section (started by level 1 heading)')
+    throw new Error(`Translation of ${type} entry ${id} for locale '${lang}' does not contain root section (started by level 1 heading)`)
   }
 
-  const metadata = {}
-  if (sections.metadata) {
-    sections.metadata.content.split('\n').filter(line => line.trim().startsWith('|')).slice(2).forEach((line) => {
-      const match = line.trim().match(/^\|([^|]+)\|([^|]+)\|$/)
-
-      if (match !== null) {
-        metadata[match[1].trim()] = match[2].trim()
-      }
-    })
-  }
-
-  return { root, sections, metadata }
+  return { name: root.name, details: root.content.trim(), ...metadata }
 }

@@ -1,5 +1,12 @@
+const path = require('path')
+
 module.exports = {
   chainWebpack: (config) => {
+    config.resolveLoader
+      .modules
+      .add(path.resolve(__dirname, 'build/loaders'))
+      .end()
+
     config.module
       .rule('images')
       .use('url-loader')
@@ -10,6 +17,14 @@ module.exports = {
 
         return options
       })
+      .end()
+
+    config.module
+      .rule('html-credits')
+      .resourceQuery(/vue&type=template/)
+      .use('credits-loader')
+      .loader(path.resolve('build/loaders/credits-loader.js'))
+      .end()
   },
   pwa: {
     name: 'Roshar Map',
