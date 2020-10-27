@@ -1,5 +1,5 @@
-# Frostlands
+#Tierras Heladas
 
-The **Frostlands** are the lawless, sparsely populated southeastern lands of Roshar. They are located outside the boundaries of #[Alethkar](locations/alethkar). They receive the strongest highstorms out of all of Roshar, due to the Frostlands being closest to the Origin out of all of the Stormlands, i.e. Eastern Roshar.
+Las **Tierras Heladas** es una zona sin ley, y escasamente poblada al sudeste de Roshar. Se encuentra fuera de la frontera con #[Alezkar](locations/alethkar). De todo el continente de Roshar, es la región que recibe lo más duro del impacto de las altas tormentas, ya que también es la más cercana al Origen de entre todas las tierras de tormentas (nombre bajo el que se conoce a la zona este de Roshar).
 
-Prominent locations in the Frostlands include #[Kharbranth](locations/kharbranth), the #[Unclaimed Hills](locations/unclaimed-hills), the #[Shattered Plains](locations/shattered-plains), Dawn's Shadow, #[New Natanan](locations/new-natanan), and the #[Shallow Crypts](locations/shallow-crypts).
+Las ubicaciones famosas de las Tierras Heladas incluyen #[Kharbranth](locations/kharbranth), las #[montañas Irreclamadas](locations/unclaimed-hills), las #[Llanuras Quebradas](locations/shattered-plains), #[Sombra del Amanecer](locations/dawns-shadow), #[Nueva Natanan](locations/new-natanan), y las #[Criptas Huecas](locations/shallow-crypts).
