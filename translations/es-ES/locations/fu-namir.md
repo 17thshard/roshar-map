@@ -1,7 +1,7 @@
 # Fu Namir
 
-**Fu Namir** is a city on the border of #[Yulay](locations/yulay) and #[Tu Bayla](locations/tu-bayla) on Roshar during the Era of Solitude.
+**Fu Namir** es una ciudad en Roshar que linda con #[Yulay](locations/yulay) y #[Tu Bayla](locations/tu-bayla) durante la Era de la Soledad.
 
-It is located on the southern coast of the #[Purelake](locations/purelake).
+Se encuentra ubicada en la costa meridional del #[Lagopuro](locations/purelake).
 
-In 1173, Ishikk searched for #[Hoid](characters/wit) in Fu Namir for several members of the Seventeenth Shard.
+En 1173, Ishikk buscó a #[Hoid](characters/wit) en Fu Namir a petición de varios miembros de la Decimoséptima Esquirla.
