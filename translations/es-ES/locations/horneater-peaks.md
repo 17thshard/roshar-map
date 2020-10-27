@@ -1,3 +1,3 @@
-# Horneater Peaks
+# Picos Comecuernos
 
-The **Horneater Peaks** are a mountain range in #[Jah Keved](locations/jah-keved) in eastern Roshar. They are the home of the Unkalaki, also known as the Horneater people.
+Los **Picos Comecuernos** es una cordillera que se encuentra en #[Jah Keved](locations/jah-keved), al este de Roshar. Es el hogar de los unkalaki, también conocidos como comecuernos.
