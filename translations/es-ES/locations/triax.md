@@ -1,3 +1,3 @@
 # Triax
 
-**Triax** is a small kingdom in southern Roshar.
+**Triax** es un reino pequeño del sur de Roshar. 
