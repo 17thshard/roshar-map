@@ -1,5 +1,5 @@
 # Rira
-**Rira** es un reino del noroeste de Roshar, limitando con #[Iri](locations/iri) y #[Babatharnam](locations/babatharnam).
+**Rira** es un reino del noroeste de Roshar, limita con #[Iri](locations/iri) y #[Babatharnam](locations/babatharnam).
 
 Durante la era de los Reinos Plateados, Rira formaba parte de #[Iri](locations/iri). Actualmente Iri continúa siendo una importante influencia en Rira; sin embargo, hay algunas personas en Rira que se esfuerzan por mantenerse ideológica y religiosamente diferenciados de Iri, además de las naciones vorin del este. 
 
