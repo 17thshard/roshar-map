@@ -1,7 +1,7 @@
-# Reshi Sea
+# El Mar de Reshi
 
-The **Reshi Sea** is a body of water in northern Roshar. It contains the #[Reshi Isles](locations/reshi-isles) and is separated from the #[Purelake](locations/purelake) by #[Marabethia](locations/marabethia). It borders #[Iri](locations/iri), #[Rira](locations/rira), #[Babatharnam](locations/babatharnam), #[Tu Bayla](locations/tu-bayla), #[Jah Keved](locations/jah-keved), and #[Herdaz](locations/herdaz).
+El **Mar de Reshi** es un cuerpo de agua situado al norte de Roshar. Contiene las #[Islas Reshi](locations/reshi-isles) y está separado del #[Lagopuro](locations/purelake) por #[Marabethia](locations/marabethia). Limita con #[Iri](locations/iri), #[Rira](locations/rira), #[Babatharnam](locations/babatharnam), #[Tu Bayla](locations/tu-bayla), #[Jah Keved](locations/jah-keved) y #[Herdaz](locations/herdaz).
 
-The Reshi Sea is deeper than the purelake, but is shallow enough that Tai-na legs are able to reach the bottom of making it shallow enough to be warm nearly all the time.
+El Mar de Reshi es más profundo que el Lagopuro, pero es lo suficientemente profundo para que las patas de un Tai-na sean capaces de alcanzar el fondo y para estar caliente casi todo el tiempo. 
 
-Ashir and Geranid live on a small island in the Reshi Sea.
+Ashir y Geranid viven en una pequeña isla en el Mar de Reshi. 
