@@ -1,3 +1,3 @@
 # Quili
 
-**Quili** is one of the #[Reshi Isles](locations/reshi-isles), west of #[Abri](locations/abri), but east of the kingdom of #[Rira](locations/rira).
+**Quili** es una de las #[islas Reshi](locations/reshi-isles), al oeste de #[Abri](locations/abri), pero al este del reino de #[Rira](locations/rira).
