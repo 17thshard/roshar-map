@@ -1,5 +1,5 @@
 # Ru Parat
 
-**Ru Parat** is a city in #[Tu Bayla](locations/tu-bayla) in central Roshar. It may be the nation's capital.
+**Ru Parat** es una ciudad en #[Tu Bayla](locations/tu-bayla) en el centro de Roshar. Podría ser la capital de la nación. 
 
-It is located in the north, close to the shore of the #[Reshi Sea](locations/reshi-sea).
+Está ubicada en el norte, cerca de la costa del #[Mar de Reshi](locations/reshi-sea).
