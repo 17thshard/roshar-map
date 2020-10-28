@@ -1,5 +1,5 @@
-# Sea of Lost Lights
+# El Mar de las Luces Perdidas 
 
-> The sea of beads rolling against itself began to sound soothing. Even rhythmic.
+> El mar de cuentas que rodaba contra sí mismo empezó a sonar relajante. Rítmico, incluso.
 
-The **Sea of Lost Lights** is a large sea in eastern Shadesmar, the subastral of Roshar. The origin of its name is unknown.
+El **Mar de las Luces Perdidas** es un gran mar en el este de Shadesmar, en el Roshar subastral. Se desconoce el origen de su nombre.
