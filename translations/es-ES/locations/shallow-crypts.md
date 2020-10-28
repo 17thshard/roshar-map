@@ -1,7 +1,7 @@
-# Shallow Crypts
+# Las Criptas Huecas
 
-> I wouldn’t send my own brother ashore there without guards, and he’s killed seventeen men with his bare hands, he has.
+> Yo no enviaría ni a mi propio hermano allí sin escolta, y eso que ha matado a diecisiete hombres con sus manos desnudas.
 
-The **Shallow Crypts** is a port settlement on the southern edge of the #[Frostlands](locations/frostlands).
+Las **Criptas Huecas** es un asentamiento portuario en el extremo sur de las #[Tierras Heladas](locations/frostlands).
 
-The Shallow Crypts is considered to be a very dangerous city by sailors who know it well. The city itself is unremarkable in appearance. It is surrounded by several similar sister cities in the same region. Due to the location of the Shallow Crypts, there is a commonly traveled corridor running through the sparsely populated Frostlands that connects the city with the #[Shattered Plains](locations/shattered-plains) and the Alethi warcamps. Even in this corridor, it can be expensive to run a caravan to the Plains without sufficient wares. The people of the Shallow Crypts often trade slaves to caravans of merchants, who transport them to the Shattered Plains for sale. The city also does some trade by sea, managed by the harbormaster.
+Las Criptas Huecas es considerada una ciudad muy peligrosa por los marineros quienes la conocen bien. La ciudad en sí no tiene un aspecto notable. Está rodeada de varias ciudades hermanas similares en la misma región. It is surrounded by several similar sister cities in the same region. Debido a la ubicación de las Criptas Huecas, hay un camino transitado de manera habitual que atraviesa las escasamente pobladas Tierras Heladas que conecta la ciudad con las #[Llanuras Quebradas](locations/shattered-plains) y los campamentos de guerra alezi. Incluso en este camino, puede resultar caro llevar una caravana hasta las Llanuras sin suficientes mercancías. La gente de las Criptas Huecas a menudo comercian con esclavos con las caravanas de comerciantes, quienes los transportan para venderlos a las Llanuras Quebradas. La ciudad comercia también por mar, gestionado por el supervisor del puerto.
