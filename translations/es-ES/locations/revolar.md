@@ -1,3 +1,3 @@
 # Revolar
 
-**Revolar** is a city in Vamah princedom and one of the larger cities in the region. It is located close to a tributary of the Windrunner River which forms the eastern border between Vamah princedom and Ruthar princedom. Revolar is no more than a few weeks away from #[Hearthstone](locations/hearthstone) by foot.
+**Revolar** es una ciudad en el principado de Vamah y una de las ciudades más grandes de la región. Está ubicado cerca de un afluente del río Correviento que constituye la frontera oriental entre los principados de Vamah y Ruthar. Revolar está a unas pocas semanas de #[Piedralar](locations/hearthstone) a pie.
