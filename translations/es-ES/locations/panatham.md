@@ -1,3 +1,3 @@
 # Panatham
 
-**Panatham** is a city in #[Babatharnam](locations/babatharnam) on Roshar.
+**Panatham** es una ciudad de #[Babatharnam](locations/babatharnam) en Roshar.
