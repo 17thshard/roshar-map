@@ -1,6 +1,6 @@
-# Reshi Isles
-The **Reshi Isles** are a collection of islands on the northern edge of Roshar in the #[Reshi Sea](locations/reshi-sea). People from the Reshi Isles are called **Reshi**.
+# Islas Reshi
+Las **Islas Reshi** son un grupo de islas situadas en el extremo norte de Roshar en el #[Mar de Reshi](locations/reshi-sea). La gente de las Islas Reshi se denomina **Reshi**.
 
-They include the islands of Kadrix, #[Quili](locations/quili), #[Abri](locations/abri), #[Arak](locations/arak) and #[Sumi](locations/sumi). According to #[Dalinar's](characters/dalinar) memories the people of the **Akak Reshi** were destroyed.
+Se incluyen las islas de Kadrix, #[Quili](locations/quili), #[Abri](locations/abri), #[Arak](locations/arak) y #[Sumi](locations/sumi). De acuerdo a los recuerdos de #[Dalinar](characters/dalinar) la gente de **Akak de Reshi** fue aniquilada. 
 
-One of the smaller islands is home to the ardents Geranid and her husband Ashir.
+Una de las islas más pequeás es el hogar de los fervorosos Geranid y su esposo Ashir.
