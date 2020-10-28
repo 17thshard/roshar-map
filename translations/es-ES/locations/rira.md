@@ -1,6 +1,6 @@
 # Rira
-**Rira** is a kingdom in north-western Roshar, bordering on #[Iri](locations/iri) and #[Babatharnam](locations/babatharnam).
+**Rira** es un reino del noroeste de Roshar, limitando con #[Iri](locations/iri) y #[Babatharnam](locations/babatharnam).
 
-In the Silver Kingdoms era, Rira was a part of #[Iri](locations/iri). Iri continues to be a major influence in Rira in the present day; however, there are some people in Rira who make an effort to keep themselves ideologically and religiously distinct from Iri, as well as the Vorin nations to the east. 
+Durante la era de los Reinos Plateados, Rira formaba parte de #[Iri](locations/iri). Actualmente Iri continúa siendo una importante influencia en Rira; sin embargo, hay algunas personas en Rira que se esfuerzan por mantenerse ideológica y religiosamente diferenciados de Iri, además de las naciones vorin del este. 
 
-Rira has an Oathgate which #[Jasnah Kholin](characters/jasnah) believes is located in the city of Kurth. Rira is not a current military power and does not possess soulcasters. Rira is also home to the Sunken Forests.
+Rira tiene una Puerta Jurada, la cual #[Jasnah Kholin](characters/jasnah) cree que está en la ciudad de Kurth. Rira no es una potencia militar en la actualidad y carece de moldeadores de almas. Rira es también el hogar de los Bosques Hundidos. 
