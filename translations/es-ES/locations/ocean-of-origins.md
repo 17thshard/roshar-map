@@ -1,7 +1,7 @@
-# Ocean of Origins
+# El Océano de los Orígenes
 
-The **Ocean of Origins** is a body of water east of Roshar, towards the Origin.
+El **Océano de los Orígenes** es un cuerpo de agua en el este de Roshar, en dirección hacia el Origen. 
 
-The shores of the Ocean of Origins are sparsely populated, with the cities of #[New Natanan](locations/new-natanan) and Dawn's Shadow being the only notable settlements. This is likely because highstorms make landfall there, and as such hit that coast with the greatest force. To the East, the Ocean of Origins presumably connects to the #[Endless Ocean](locations/endless-ocean) on the opposite side of the planet, while from North and South, it's bracketed by #[Steamwater Ocean](locations/steamwaterocean) and #[Southern Depths](locations/southern-depths).
+Las costas del Océano de los Orígenes están escasamente pobladas, siendo las ciudades de  #[Nueva Natanan](locations/new-natanan) y Sombra del Amanecer los únicos asentamientos destacados. Esto es debido probablemente a que las altas tormentas tocan tierra allí, y por tanto golpean la costa con su máxima fuerza. Hacia el este, se presume que el Océano de los Orígenes conecta con el #[Océano sin Fin](locations/endless-ocean) en el lado opuesto del planeta, mientras que al norte y al sur limita con el #[Océano de las Aguas Hirvientes](locations/steamwaterocean) y las #[Profundidades Meridionales](locations/southern-depths).
 
-The Origin of Storms, where the highstorms originate, lies at the far end of the Ocean of Origins. There are multiple legends talking about there being an inhabited island there, populated by people called Uvara in some versions of the story. The version told in New Natanan says that they are sailors who were lost while travelling the Ocean of Origins and that one day, they will come back to reclaim Natanatan.
+El Origen de las Tormentas, allí donde las altas tormentas se originan, se encuentra en el extremo alejado del Océano de los Orígenes. Existen múltiples leyendas que hablan sobre la existencia de una isla habitada allí, poblada por una gente llamada Uvara en algunas versiones de la historia. La versión contada en Nueva Natanatan dice son marineros que se perdieron mientras navegaban el Océano de los Orígenes y que un día retornarían para reclamar Natanatan. 
