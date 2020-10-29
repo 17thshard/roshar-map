@@ -1,5 +1,5 @@
-# Nexus of Transition
+# Nexo de la Transición
 
-The **Nexus of Transition** is a region on Roshar's subastral of the Cognitive Realm. It is bordered by the #[Sea of Regret](locations/sea-of-regret), the #[Sea of Souls](locations/sea-of-souls), and the #[Sea of Lost Lights](locations/sea-of-lost-lights).
+El **Nexo de la Transición** es una región en el Roshar subastral del Reino Cognitivo. Limita con el #[Mar del Pesar](locations/sea-of-regret), el #[Mar de las Almas](locations/sea-of-souls) y el #[Mar de las Luces Perdidas](locations/sea-of-lost-lights).
 
-In the Physical Realm, the Nexus of Transition corresponds to the #[Reshi Sea](locations/reshi-sea). Much of the Nexus of Transition is mountainous.
+En el Reino Físico, el Nexo de la Transición se corresponde con el #[Mar de Reshi](locations/reshi-sea). Gran parte del Nexo de la Transición es montañosa. 
