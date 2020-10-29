@@ -30,6 +30,7 @@
 
 <script>
 import Markdown from '@/components/Markdown.vue'
+import { escapeCssPath } from '@/utils'
 
 export default {
   name: 'EventCard',
@@ -48,7 +49,7 @@ export default {
   methods: {
     buildImageStyles (image) {
       const styles = {
-        backgroundImage: `url("${this.imageBaseUrl}/${image.file}")`
+        backgroundImage: `url("${this.imageBaseUrl}/${escapeCssPath(image.file)}")`
       }
 
       if (image.offset !== undefined) {

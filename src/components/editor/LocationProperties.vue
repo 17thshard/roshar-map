@@ -166,6 +166,7 @@
 
 <script>
 import VueTagsInput from '@johmun/vue-tags-input'
+import { escapeCssPath } from '@/utils'
 
 export default {
   name: 'LocationProperties',
@@ -205,7 +206,7 @@ export default {
       }
 
       const styles = {
-        backgroundImage: `url("${this.imageBaseUrl}/${this.location.image.file}")`
+        backgroundImage: `url("${this.imageBaseUrl}/${escapeCssPath(this.location.image.file)}")`
       }
 
       if (this.location.image.offset !== undefined) {

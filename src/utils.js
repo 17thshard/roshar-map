@@ -35,3 +35,7 @@ export function parseColorToCssVar (hexColor) {
 
   return [parseComponent(0), parseComponent(1), parseComponent(2)].join(', ')
 }
+
+export function escapeCssPath (path) {
+  return path.replace('\'', '\\\'').replace('(', '\\(').replace(')', '\\)')
+}

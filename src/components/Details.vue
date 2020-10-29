@@ -21,7 +21,7 @@
           <div
             class="details__image-art"
             :style="{
-              backgroundImage: `url('${imageUrl}')`,
+              backgroundImage: `url('${escapeCssPath(imageUrl)}')`,
               paddingBottom: `${(imageAspect * 100).toFixed(3)}%`,
               backgroundSize: `${width}px auto`
             }"
@@ -99,7 +99,7 @@
 import Scrollbar from 'vuescroll/dist/vuescroll-native'
 import { BookIcon, CalendarIcon, HelpCircleIcon, XIcon } from 'vue-feather-icons'
 import Markdown from '@/components/Markdown.vue'
-import { formatDate } from '@/utils'
+import { escapeCssPath, formatDate } from '@/utils'
 
 export default {
   name: 'Details',
@@ -232,6 +232,7 @@ export default {
     window.removeEventListener('resize', this.onResize)
   },
   methods: {
+    escapeCssPath,
     onResize () {
       this.width = this.$el.clientWidth
     }

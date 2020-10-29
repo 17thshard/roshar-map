@@ -108,6 +108,7 @@
 
 <script>
 import VueTagsInput from '@johmun/vue-tags-input'
+import { escapeCssPath } from '@/utils'
 
 export default {
   name: 'CharacterProperties',
@@ -147,7 +148,7 @@ export default {
       }
 
       const styles = {
-        backgroundImage: `url("${this.imageBaseUrl}/${this.character.image.file}")`
+        backgroundImage: `url("${this.imageBaseUrl}/${escapeCssPath(this.character.image.file)}")`
       }
 
       if (this.character.image.offset !== undefined) {
