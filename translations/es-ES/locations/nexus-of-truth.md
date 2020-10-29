@@ -1,5 +1,5 @@
-# Nexus of Truth
+# Nexo de la Verdad
 
-The **Nexus of Truth** is a region on Roshar's subastral of the Cognitive Realm. It is bordered by the #[Sea of Regret](locations/sea-of-regret), and leads to the #[Expanse of the Densities](locations/expanse-of-the-densities).
+El **Nexo de la Verdad** es una región del Roshar subastral del Reino Cognitivo. Limita con el #[Mar del Pesar](locations/sea-of-regret) y conduce a la #[Expansión de las Densidades](locations/expanse-of-the-densities).
 
-In the Physical Realm, the Nexus of Truth corresponds the oceans northwest of #[Iri](locations/iri) and #[Shinovar](locations/shinovar).
+En el Reino Físico, el Nexo de la Verdad se corresponde a los océanos al noroeste de #[Iri](locations/iri) y #[Shinovar](locations/shinovar).
