@@ -50,7 +50,7 @@ Bug fixes and improvements based on [reported issues](https://github.com/Palanae
 
 If you've found a bug or would like to request a feature, please report it on [GitHub's issue tracker](https://github.com/Palanaeum/roshar-map/issues).
 
-For some more detailed instructions on both translating and developing, follow the [contribution guide](CONTRIBUTING.md)
+For some more detailed instructions on both translating and developing, follow the [contribution guide](CONTRIBUTING.md).
 
 ## Credits
 
