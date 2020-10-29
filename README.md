@@ -69,6 +69,7 @@ The following is a list of all the artists that are either official artists or h
  * [BBQShapez](https://coppermind.net/wiki/Coppermind:Artists/BBQShapez)
  * [beagifted](https://www.deviantart.com/beagifted/art/The-Way-of-Kings-Excerpt-Illustration-826870710)
  * [Ben McSweeney](https://coppermind.net/wiki/Coppermind:Artists/Ben_McSweeney)
+ * [Bonnie Johnson](https://coppermind.net/wiki/Coppermind:Artists/Bonnie_Johnson)
  * [botanicaxu](https://coppermind.net/wiki/Coppermind:Artists/botanicaxu)
  * [Casey Fallon](https://coppermind.net/wiki/Coppermind:Artists/Casey_Fallon)
  * [Eduard Coll](https://www.artstation.com/eduardcoll)
