@@ -1,3 +1,3 @@
-# Northern Depths
+# Profundidades Septentrionales
 
-The **Northern Depths** is the ocean to the north of Roshar and the #[Reshi Isles](locations/reshi-isles). It is presumably quite deep.
+Las **Profundidades Septentrionales** es el océano situado al norte de Roshar y las #[Islas Reshi](locations/reshi-isles). Presumiblemente es bastante profundo. 
