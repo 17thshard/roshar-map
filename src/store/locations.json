@@ -6435,6 +6435,10 @@
                 }
             ]
         },
+        "image": {
+            "file": "locations/Honor's_Path_Kyle_Pearson.jpg",
+            "credits": "by [Kyle Pearson](https://coppermind.net/wiki/Coppermind:Artists/Kyle_Pearson)"
+        },
         "coppermind": "Sea_of_Regret"
     },
     {
@@ -6499,6 +6503,10 @@
             ]
         },
         "shadesmar": true,
+        "image": {
+            "file": "locations/Honor's_Path_Kyle_Pearson.jpg",
+            "credits": "by [Kyle Pearson](https://coppermind.net/wiki/Coppermind:Artists/Kyle_Pearson)"
+        },
         "coppermind": "Sea_of_Souls"
     },
     {
