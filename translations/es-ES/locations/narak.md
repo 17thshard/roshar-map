@@ -1,7 +1,7 @@
 # Narak
-> They blame our people  
-> For the loss of that land.  
-> The city that once covered it  
-> Did range the eastern strand.
+> Acusan a nuestro pueblo  
+> de la pérdida de aquella tierra.  
+> la ciudad que la cubrió una vez  
+> se extendía por la cordillera oriental. 
 
-**Stormseat** was the capital city of the historic Silver Kingdom of Natanatan on Roshar. During the War of Reckoning, it's called **Narak**, or Exile, and serves as the home of the listeners.
+**Sedetormenta** era la ciudad capital del histórico Reino Plateado de Natanatan en Roshar. Durante la Guerra de la Venganza, es llamada **Narak**, o Exilio, y sirve como hogar a los oyentes. 
