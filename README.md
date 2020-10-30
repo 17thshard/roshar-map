@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://roshar-map.paleo.dev" title="Visit Site">
+  <a href="https://roshar.17thshard.com" title="Visit Site">
     <img src="docs/logo.png" alt="Logo showing map of Roshar in the background with the title 'Roshar' and subtitle 'Interactive Map & Timeline' overlayed" />
   </a>
 </p>
@@ -35,7 +35,7 @@
    * Spanish
  * Layers on top of the map that can be enabled at any time, displaying useful additional information
    * Overlay the borders of the historic Silver Kingdoms
-   * Show a color indicators of the allegiances of various nations
+   * Show color indicators of the allegiances of various nations
    * Map out the ten Oathgate locations
  * Powerful filtering and customization capabilities
    * Filter timeline events by tags
