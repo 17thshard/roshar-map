@@ -1,4 +1,4 @@
 # New Natanan
-> \[Au-nak\] represented a dead kingdom that had been reduced to a single city-state on the eastern coast of Roshar with a few other cities as protectorates.
+> \[Au-nak\] Representaba a un reino muerto, reducido a una sola ciudad-estado en la costa oriental de Roshar que ejercía el protectorado sobre otro puñado de ciudades.
 
-**New Natanan** is a city-state on Roshar whose power extends to a few surrounding settlements. The people of Natanan are called the **Natan**.
+**Nueva Natanan** es una ciudad-estado de Roshar cuya influencia se extiende a unos pocos asentamientos circundantes. La gente de Natanan se llama **Natan**.
