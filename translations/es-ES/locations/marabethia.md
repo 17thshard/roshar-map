@@ -1,6 +1,6 @@
-# Marabethia
-> The Marabethians have a saying for those who refuse to see the truth of a situation. 'You have eyes of red and blue', they say. Red for blood dripping. Blue for the water. It is said that these two things are all the \[criminals\] see. Usually they are attacked within one day. And yet, most still wish to take that chance. They prefer the false hope
+# Marabezia
+> Los marabezios tienen una expresión para los que se niegan a ver la verdad de una situación. «Tienes ojos de rojo y azul», dicen. Rojo por la sangre que mana. Azul por el agua. Se dice que esas dos cosas son todo lo que ven los prisioneros. Normalmente los conchagrandes los atacan el mismo día. Y sin embargo, la mayoría sigue deseando correr el riesgo. Prefieren la falsa esperanza.
 
-**Marabethia** is a nation on Roshar occupying the isthmus separating the #[Purelake](locations/purelake) from the #[Reshi Sea](locations/reshi-sea). It is in the north, in Selay lands beside the sea.
+**Marabezia** es una nación de Roshar que ocupa el istmo que separa el #[Lagopuro](locations/purelake) del #[Mar de Reshi](locations/reshi-sea). Se encuentra en el norte, en lo que fueron tierras de Sela Tales, al lado del mar. 
 
-The Marabethian people are known to have a great fondness for debate; the city has many pedestals at intersections where men can stand and proclaim his arguments. The residents are known to carry around overripe fruit for discouraging those they disagree with.
+El pueblo marabezio es conocido por tener una gran afición por el debate; la ciudad tiene muchos pedestales colocados en las intersecciones donde los hombres pueden subirse y pregonar sus debates. Es sabido que los residentes llevan consigo fruta demasiado madura para desanimar a aquellos con los que no estén de acuerdo.
