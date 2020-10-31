@@ -165,6 +165,7 @@
     ],
     "layers": {
         "shadesmar": "Shadesmar",
+        "graticule": "Lines of latitude and longitude",
         "silverKingdoms": "Silver Kingdoms",
         "oathgates": "Oathgate Locations",
         "factions": "Current State of the World"

@@ -20,11 +20,14 @@ const textures = {
   factions: { hqAvailable: true },
   oathgates_text: { hqAvailable: true, localized: true },
   silver_kingdoms: { hqAvailable: true },
-  silver_kingdoms_text: { hqAvailable: true, localized: true }
+  silver_kingdoms_text: { hqAvailable: true, localized: true },
+  graticule: { hqAvailable: true, lossy: true },
+  graticule_text: { hqAvailable: true }
 }
 
 const basePath = './src/assets/textures'
 const webpOnly = process.argv.slice(2)[0] === '--webp-only'
+const filter = process.argv.slice(webpOnly ? 3 : 2)
 const locales = readdirSync(path.resolve(`${basePath}/localized`)).filter(locale => isDirectory(`${basePath}/localized/${locale}`))
 
 Promise.all(Object.keys(textures).flatMap((name) => {
@@ -53,12 +56,18 @@ Promise.all(Object.keys(textures).flatMap((name) => {
 
   const changedFiles = texture.files.filter(path => childProcess.execSync(`git status -s ${path}`).toString().length > 0)
 
-  if (changedFiles.length === 0) {
+  if (changedFiles.length === 0 && (filter.length === 0 || !filter.includes(name))) {
     console.log(`Files for texture '${name}' haven't changed, ignoring...`)
     return
   }
 
-  console.log(`Optimizing and converting texture '${name}'...`)
+  if (filter.length > 0 && !filter.includes(name)) {
+    console.log(`Ignoring texture '${name}'...`)
+    return
+  }
+
+  const forced = filter.includes(name)
+  console.log(`Optimizing and converting texture '${name}${forced ? ' (forced)' : ''}'...`)
 
   return (webpOnly ? new Promise(resolve => resolve()) : imagemin(changedFiles, {
     destination: texture.destination,

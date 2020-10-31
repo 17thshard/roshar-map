@@ -343,6 +343,7 @@ export default new Vuex.Store({
     },
     layersActive: {
       shadesmar: false,
+      graticule: false,
       silverKingdoms: false,
       oathgates: false,
       factions: false

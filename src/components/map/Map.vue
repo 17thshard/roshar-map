@@ -39,6 +39,7 @@ import ShatteringPass from '@/components/map/ShatteringPass'
 import TextureManager from '@/components/map/TextureManager'
 import { clamp01, lerp } from '@/utils'
 import Factions from '@/components/map/layers/Factions'
+import Graticule from '@/components/map/layers/Graticule'
 import SilverKingdoms from '@/components/map/layers/SilverKingdoms'
 import Oathgates from '@/components/map/layers/Oathgates'
 import Shadesmar from '@/components/map/layers/Shadesmar'
@@ -153,7 +154,9 @@ export default {
         factions: { hqAvailable: true },
         oathgates_text: { hqAvailable: true, localized: true },
         silver_kingdoms: { hqAvailable: true },
-        silver_kingdoms_text: { hqAvailable: true, localized: true }
+        silver_kingdoms_text: { hqAvailable: true, localized: true },
+        graticule: { hqAvailable: true },
+        graticule_text: { hqAvailable: true }
       }
 
       return this.textureManager.load(textures)
@@ -263,13 +266,14 @@ export default {
 
       this.layers = {
         shadesmar: new Shadesmar(),
+        graticule: new Graticule(textures),
         silverKingdoms: new SilverKingdoms(textures),
         oathgates: new Oathgates(textures),
         factions: new Factions(textures.factions)
       }
 
       this.scene = new Scene()
-      this.scene.add(this.plane, this.textPlane, this.highlights, this.layers.factions, this.layers.silverKingdoms, this.layers.oathgates)
+      this.scene.add(this.plane, this.layers.graticule, this.textPlane, this.highlights, this.layers.factions, this.layers.silverKingdoms, this.layers.oathgates)
 
       this.composer.addPass(new RenderPass(this.scene, this.camera))
       this.shatteringPass = new ShatteringPass()
