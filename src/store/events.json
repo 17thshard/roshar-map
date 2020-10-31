@@ -77,6 +77,10 @@
             "y": 256,
             "zoom": 0
         },
+        "image": {
+            "file": "events/Jezrien_Oathbringer_Herald.jpg",
+            "credits": "by [Howard Lyon](https://coppermind.net/wiki/Howard_Lyon)"
+        },
         "tags": [
             "history"
         ],
@@ -298,8 +302,13 @@
             "characters/dalinar",
             "characters/gavilar"
         ],
+        "image": {
+            "file": "events/Dalinar_Ambush_LGD.png",
+            "credits": "by [LittleGreyDragon](https://coppermind.net/wiki/Coppermind:Artists/LittleGreyDragon)"
+        },
         "coppermind": "Gavilar_Kholin#Unification_of_Alethkar",
         "tieBreaker": 0
+
     },
     {
         "id": "jasnah-is-born",
@@ -749,8 +758,8 @@
         ],
         "coppermind": "Dalinar_Kholin#Gavilar.27s_Death_and_Dalinar.27s_Transformation",
         "image": {
-            "file": "events/Cultivation_and_the_Nightwatcher_2.jpg",
-            "credits": "by [Kyle Pearson](https://coppermind.net/wiki/Coppermind:Artists/Kyle_Pearson)",
+            "file": "events/Seeking_Forgiveness_Jordi_Rapture.jpg",
+            "credits": "by [Jordi Rapture](https://coppermind.net/wiki/Coppermind:Artists/Jordi_Rapture)",
             "offset": {
                 "x": 0,
                 "y": 30
@@ -872,6 +881,10 @@
             "y": 250.4
         },
         "tags": [],
+        "image": {
+            "file": "events/Gavinor_Shuravf.jpg",
+            "credits": "by [Shuravf](https://coppermind.net/wiki/Coppermind:Artists/Shuravf)"
+        },
         "coppermind": "Gavinor",
         "related": [
             "locations/kholinar",
@@ -1293,6 +1306,10 @@
             "adolin",
             "kaladin"
         ],
+        "image": {
+            "file": "events/Plateau_Battle_by_Miguel_Sastre.jpg",
+            "credits": "by [Miguel Sastre](https://www.instagram.com/p/CDZXDdrjYcU/)"
+        },
         "related": [
             "characters/dalinar",
             "characters/adolin",
@@ -2002,8 +2019,8 @@
             "locations/azimir"
         ],
         "image": {
-            "file": "events/Lift_-_VII._The_Chariot_.jpg",
-            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
+            "file": "events/Thief_by_Ari_Ibarra.jpg",
+            "credits": "by [Ari Ibarra](https://coppermind.net/wiki/Coppermind:Artists/Ari_Ibarra)"
         },
         "coppermind": "Lift#Bronze_Palace_Heist"
     },
