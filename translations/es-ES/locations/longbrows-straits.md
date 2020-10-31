@@ -1,5 +1,5 @@
-# Longbrow's Straits
+# Estrechos de Ceño Largo
 
-**Longbrow's Straits** is a waterway that separates the island of #[Thaylenah](locations/thaylenah) from the #[Frostlands](locations/frostlands) on mainland Roshar. The straits are presumably named for the characteristic long eyebrows of the Thaylen people.
+**Estrechos de Ceño Largo** es un canal que separa la isla de #[Thaylenah](locations/thaylenah) de las #[Tierras Heladas](locations/frostlands) en el continente de Roshar. Los estrechos se llaman presumiblemente así por las largas cejas características de los thayleños. 
 
-The straits are lined by tall, sleek lighthouses for navigation. Various creatures live in the water, including santhids, khornaks, redwaters, and schools of small fish. The straits become narrow near Klna City, but in some areas they are wide enough that it can be difficult to see land.
+Los estrechos están bordeados por altos y elegantes faros para la navegación. Varias criaturas viven en el agua, incluidos los santhids, khornaks, aguasrojas y cardúmenes  de pequeños peces. Los estrechos se tornan angostos cerca de Ciudad Klna, pero en algunas áreas son los suficientemente amplios para que pueda ser difícil ver tierra. 
