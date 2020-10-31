@@ -81,6 +81,7 @@ The following is a list of all the artists that are either official artists or h
  * [Gal Or](https://coppermind.net/wiki/File:Darkeyes_by_Gal_Or.jpg)
  * [Ganna Pazyniuk ](https://coppermind.net/wiki/Coppermind:Artists/AnnDR)
  * [Grant M. Hansen](https://coppermind.net/wiki/Coppermind:Artists/Grant_M._Hansen)
+ * [Howard Lyon](https://coppermind.net/wiki/Howard_Lyon)
  * [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)
  * [Jacobo Montoya](https://coppermind.net/wiki/Coppermind:Artists/Jacobo_Montoya)
  * [Jordi Rapture](https://coppermind.net/wiki/Coppermind:Artists/Jordi_Rapture)
