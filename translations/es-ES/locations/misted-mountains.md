@@ -1,3 +1,3 @@
-# Misted Mountains
+# Las Montañas Brumosas
 
-The **Misted Mountains** are a mountain range located on the eastern border of #[Shinovar](locations/shinovar) on Roshar.
+Las **Montañas Brumosas** son una cadena montañosa ubicada en la frontera oriental de #[Shinovar](locations/shinovar) en Roshar.
