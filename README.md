@@ -83,6 +83,7 @@ The following is a list of all the artists that are either official artists or h
  * [Grant M. Hansen](https://coppermind.net/wiki/Coppermind:Artists/Grant_M._Hansen)
  * [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)
  * [Jacobo Montoya](https://coppermind.net/wiki/Coppermind:Artists/Jacobo_Montoya)
+ * [Jordi Rapture](https://coppermind.net/wiki/Coppermind:Artists/Jordi_Rapture)
  * [Jules Aguimatang](https://coppermind.net/wiki/Coppermind:Artists/Jules_Aguimatang)
  * [Krystian Biskup](https://imgur.com/gallery/Bw2k31X)
  * [Kyle Pearson](https://coppermind.net/wiki/Coppermind:Artists/Kyle_Pearson)
