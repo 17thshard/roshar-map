@@ -144,18 +144,18 @@ export default {
   methods: {
     loadTextures () {
       const textures = {
-        map_bg: { hqWebpAvailable: true },
+        map_bg: { hqAvailable: true, lossy: true },
         map: { hqAvailable: true },
-        shadesmar_map_bg: {},
+        shadesmar_map_bg: { lossy: true },
         transition: {},
         text_pattern: {},
         map_text: { hqAvailable: true, localized: true },
         shadesmar_map_text: { hqAvailable: true, localized: true },
-        factions: { hqAvailable: true },
+        factions: { hqAvailable: true, lossy: true },
         oathgates_text: { hqAvailable: true, localized: true },
         silver_kingdoms: { hqAvailable: true },
         silver_kingdoms_text: { hqAvailable: true, localized: true },
-        graticule: { hqAvailable: true },
+        graticule: { hqAvailable: true, lossy: true },
         graticule_text: { hqAvailable: true }
       }
 
@@ -279,7 +279,7 @@ export default {
       this.shatteringPass = new ShatteringPass()
       this.composer.addPass(this.shatteringPass)
 
-      this.hoverTexture = await this.textureManager.loadData('hover_text', false, true, 'gb')
+      this.hoverTexture = await this.textureManager.loadData('hover_text', false, true, false, 'gb')
     },
     onEventChanged (event, oldEvent) {
       this.highlights.children.forEach(h => h.leave())

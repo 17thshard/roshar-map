@@ -9,7 +9,7 @@ const imageminZopfli = require('imagemin-zopfli')
 const isDirectory = source => lstatSync(path.resolve(source)).isDirectory()
 
 const textures = {
-  map_bg: { lossy: true },
+  map_bg: { hqAvailable: true, lossy: true },
   map: { hqAvailable: true },
   shadesmar_map_bg: { lossy: true },
   transition: {},
@@ -17,7 +17,7 @@ const textures = {
   map_text: { hqAvailable: true, localized: true },
   shadesmar_map_text: { hqAvailable: true, localized: true },
   hover_text: { localized: true },
-  factions: { hqAvailable: true },
+  factions: { lossy: true, hqAvailable: true },
   oathgates_text: { hqAvailable: true, localized: true },
   silver_kingdoms: { hqAvailable: true },
   silver_kingdoms_text: { hqAvailable: true, localized: true },
@@ -26,8 +26,8 @@ const textures = {
 }
 
 const basePath = './src/assets/textures'
-const webpOnly = process.argv.slice(2)[0] === '--webp-only'
-const filter = process.argv.slice(webpOnly ? 3 : 2)
+const webpOnly = process.argv.slice(3)[0] === '--webp-only'
+const filter = process.argv.slice(webpOnly ? 4 : 3)
 const locales = readdirSync(path.resolve(`${basePath}/localized`)).filter(locale => isDirectory(`${basePath}/localized/${locale}`))
 
 Promise.all(Object.keys(textures).flatMap((name) => {
@@ -43,16 +43,18 @@ Promise.all(Object.keys(textures).flatMap((name) => {
       transformed.push({ ...texture, name: `${name}[${locale}]`, files, destination: `${basePath}/localized/${locale}` })
     })
   } else {
-    const files = [`${basePath}/${name}.png`]
+    const directory = texture.lossy ? 'lossy' : 'lossless'
+    const ext = texture.lossy ? 'jpg' : 'png'
+    const files = [`${basePath}/${directory}/${name}.${ext}`]
     if (texture.hqAvailable === true) {
-      files.push(`${basePath}/hq_${name}.png`)
+      files.push(`${basePath}/${directory}/hq_${name}.${ext}`)
     }
-    transformed.push({ ...texture, name, files, destination: basePath })
+    transformed.push({ ...texture, name, files, destination: `${basePath}/${directory}` })
   }
 
   return transformed
 }).flatMap((texture) => {
-  const { name } = texture
+  const { name, lossy } = texture
 
   const changedFiles = texture.files.filter(path => childProcess.execSync(`git status -s ${path}`).toString().length > 0)
 
@@ -69,7 +71,7 @@ Promise.all(Object.keys(textures).flatMap((name) => {
   const forced = filter.includes(name)
   console.log(`Optimizing and converting texture '${name}${forced ? ' (forced)' : ''}'...`)
 
-  return (webpOnly ? new Promise(resolve => resolve()) : imagemin(changedFiles, {
+  return (webpOnly || lossy ? new Promise(resolve => resolve()) : imagemin(changedFiles, {
     destination: texture.destination,
     plugins: [
       imageminZopfli({ more: true })

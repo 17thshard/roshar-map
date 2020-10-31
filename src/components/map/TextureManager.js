@@ -20,11 +20,12 @@ export default class TextureManager {
     this.locale = locale
   }
 
-  buildPath (prefix, name, localized) {
-    const base = `${prefix}${name}.${this.webpSupported ? 'webp' : 'png'}`
+  buildPath (prefix, name, localized, lossy) {
+    const fallbackExt = lossy === true && (localized === undefined || localized === false) ? 'jpg' : 'png'
+    const base = `${prefix}${name}.${this.webpSupported ? 'webp' : fallbackExt}`
 
     if (localized === undefined || localized === false) {
-      return base
+      return `${lossy ? 'lossy' : 'lossless'}/${base}`
     }
 
     return `localized/${this.locale}/${base}`
@@ -40,7 +41,7 @@ export default class TextureManager {
         const texture = textures[name]
 
         const prefix = (texture.hqAvailable || (texture.hqWebpAvailable && this.webpSupported)) && this.useHq ? 'hq_' : ''
-        const path = this.buildPath(prefix, name, texture.localized)
+        const path = this.buildPath(prefix, name, texture.localized, texture.lossy)
 
         textureLoader.load(
           require(`@/assets/textures/${path}`),
@@ -59,7 +60,7 @@ export default class TextureManager {
     }))
   }
 
-  loadData (name, hqAvailable, localized, channelsToKeep) {
+  loadData (name, hqAvailable, localized, lossy, channelsToKeep) {
     const channels = {}
     channelsToKeep.split('').forEach((c) => {
       channels[c] = channelsToKeep.indexOf(c)
@@ -106,7 +107,7 @@ export default class TextureManager {
 
       image.onerror = errorEvent => reject(new Error(`Could not load texture '${name}': ${errorEvent.message}`))
 
-      const path = this.buildPath(hqAvailable && this.useHq ? 'hq_' : '', name, localized)
+      const path = this.buildPath(hqAvailable && this.useHq ? 'hq_' : '', name, localized, false)
 
       image.src = require(`@/assets/textures/${path}`)
     }))

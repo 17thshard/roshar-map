@@ -596,9 +596,9 @@ export default {
     },
     loadTextures () {
       const textures = {
-        map_bg: { hqWebpAvailable: true },
+        map_bg: { hqAvailable: true, lossy: true },
         map: { hqAvailable: true },
-        shadesmar_map_bg: {},
+        shadesmar_map_bg: { lossy: true },
         map_text: { hqAvailable: true, localized: true },
         shadesmar_map_text: { hqAvailable: true, localized: true }
       }
@@ -1105,7 +1105,7 @@ export default {
     },
     async renderPng (locations, base, fileAction) {
       const { width, height, data: baseData } = base !== undefined
-        ? (await this.textureManager.loadData(base, false, true, 'rgba'))
+        ? (await this.textureManager.loadData(base, false, true, false, 'rgba'))
         : { width: 1024, height: 512 }
 
       const xScale = width / 1024

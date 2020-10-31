@@ -53,7 +53,7 @@ export default `
     vec4 map = texture2D(Texture, vUv);
     vec4 textMap = texture2D(TextTexture, vUv);
 
-    vec4 fineTexel = Sample(map.r, 0.47, maxGrad);
+    vec4 fineTexel = Sample(map.r, 0.475, maxGrad);
     vec4 coarseTexel = Sample(map.g, 0.48, maxGrad);
     fineTexel.a *= 0.9;
     coarseTexel.a *= 1.5;
