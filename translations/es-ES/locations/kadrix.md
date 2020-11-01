@@ -1,5 +1,5 @@
 # Kadrix
 
-**Kadrix** is the largest Reshi island on Roshar.
+**Kadrix** es la isla Reshi más grande de Roshar.
 
-The inhabitants of Kadrix ride greatshells.
+Los habitantes de Kadrix montan en grancaparazones. 
