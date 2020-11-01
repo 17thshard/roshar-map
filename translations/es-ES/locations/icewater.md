@@ -4,4 +4,4 @@
 
 Agua Helada es una ciudad portuaria en el lado norte de la isla. Se desconoce si es autónoma o si se encuentra bajo el control de #[Tukar](locations/tukar) u otra nación.
 
-#[Rysn](characters/rysn) iajó una vez junto a Vstim a Agua Helada y regateó con piratas.
+#[Rysn](characters/rysn) viajó una vez junto a Vstim a Agua Helada y regateó con piratas.
