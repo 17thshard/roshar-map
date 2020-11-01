@@ -121,12 +121,16 @@ export default {
       .then(() => {
         this.$el.prepend(this.renderer.domElement)
 
+        Object.keys(this.layers).forEach((layer) => {
+          this.layers[layer].changeVisibility = false
+        })
         this.updateLayers(this.layersActive)
         this.update()
         Object.keys(this.layersActive).forEach((layer) => {
           if (!this.layersActive[layer] && !this.isLayerActivatedByEntry(layer)) {
             this.layers[layer].visible = false
           }
+          this.layers[layer].changeVisibility = true
         })
 
         this.$emit('ready')

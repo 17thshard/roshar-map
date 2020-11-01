@@ -19,7 +19,7 @@ export default `
   uniform highp float ActiveProgress;
   uniform highp float Opacity;
 
-  vec4 Sample(float base, bool highlight, float highlightProgress, float noise, float innerGlowSize, float outerGlowSize, float strokeSize, float maxGrad) {
+  vec4 Sample(float base, float highlight, float highlightProgress, float noise, float innerGlowSize, float outerGlowSize, float strokeSize, float maxGrad) {
     float value = base - 0.5;
     float aa = maxGrad / 24.;
 
@@ -27,21 +27,15 @@ export default `
     vec4 col = vec4(1., .92, .5, alpha);
     vec3 innerGlowColor = vec3(146. / 255., 93. / 255., 43. / 255.);
     
-    if (highlight) {
-      outerGlowSize += highlightProgress * outerGlowSize;
-      col = mix(col, vec4(20. / 255., 143. / 255., 218. / 255., alpha), highlightProgress);
-      innerGlowColor = mix(innerGlowColor, vec3(.5, .81, 1.), highlightProgress);
-    }
+    outerGlowSize += highlight * highlightProgress * outerGlowSize;
+    col = mix(col, vec4(20. / 255., 143. / 255., 218. / 255., alpha), highlight * highlightProgress);
+    innerGlowColor = mix(innerGlowColor, vec3(.5, .81, 1.), highlight * highlightProgress);
 
     float innerGlow = smoothstep(-innerGlowSize / 255. - aa, .0, value);
-    if (value < .0) {
-      col = mix(col, vec4(innerGlowColor, Opacity), innerGlow * 0.5 * (innerGlow + (1. - innerGlow) * noise));
-    }
+    col = mix(col, vec4(innerGlowColor, Opacity), innerGlow * 0.5 * (innerGlow + (1. - innerGlow) * noise));
 
     float outerGlow = smoothstep(aa + outerGlowSize / 255., .0 / 255., value);
-    if (value > .0) {
-      col = vec4(.0, .0, .0, .35 * outerGlow * Opacity);
-    }
+    col = mix(col, vec4(.0, .0, .0, .35 * outerGlow * Opacity), max(sign(value), .0));
 
     float stroke = smoothstep(aa * 0.5 + strokeSize / 255., 0., abs(value - 1. / 255.)) / (1. + maxGrad);
 
@@ -50,7 +44,7 @@ export default `
     return col;
   }
 
-  vec4 SampleShadesmar(float base, bool highlight, float highlightProgress, float noise, float outerGlowStart, float outerGlowSize, float outerGlowAlpha, float maxGrad) {
+  vec4 SampleShadesmar(float base, float highlight, float highlightProgress, float noise, float outerGlowStart, float outerGlowSize, float outerGlowAlpha, float maxGrad) {
     float value = base - 0.5;
     float aa = maxGrad / 24.;
 
@@ -58,16 +52,12 @@ export default `
 
     vec4 col = vec4(59. / 255., 138. / 255., 189. / 255., alpha);
     
-    if (highlight) {
-      col = mix(col, vec4(213. / 255., 106. / 255., 15. / 255., alpha), highlightProgress);
-    }
+    col = mix(col, vec4(213. / 255., 106. / 255., 15. / 255., alpha), highlight * highlightProgress);
 
     col = mix(col, vec4(1., 1., 1., Opacity), noise * 0.35);
 
     float outerGlow = smoothstep(aa + outerGlowSize / 255., outerGlowStart / 255., value) * outerGlowAlpha;
-    if (value > .0) {
-      col = vec4(.0, .0, .0, outerGlow * Opacity);
-    }
+    col = mix(col, vec4(.0, .0, .0, outerGlow * Opacity), max(sign(value), .0));
 
     return col;
   }
@@ -81,14 +71,11 @@ export default `
     highp vec4 map = texture2D(Texture, vUv);
     highp vec4 shadesmarMap = texture2D(ShadesmarTexture, vUv);
 
-    highp float hoverValue = Transition > 0.5 ? shadesmarMap.b * 255. : map.b * 255.;
-    bool highlight = HoveredItem > .0 && hoverValue > HoveredItem - 1e-2 && hoverValue < HoveredItem + 1e-2;
-    float highlightProgress = HoverProgress;
-
-    if (ActiveItem > .0 && hoverValue > ActiveItem - 1e-2 && hoverValue < ActiveItem + 1e-2) {
-      highlight = true;
-      highlightProgress = ActiveProgress;
-    }
+    highp float hoverValue = mix(map.b * 255., shadesmarMap.b * 255., max(sign(Transition - 0.5), 0.0));
+    float highlight = sign(HoveredItem) * max(sign(1e-2 - abs(hoverValue - HoveredItem)), .0);
+    float activeHighlight = sign(ActiveItem) * max(sign(1e-2 - abs(hoverValue - ActiveItem)), .0);
+    highlight = min(highlight + activeHighlight, 1.);
+    float highlightProgress = mix(HoverProgress, ActiveProgress, activeHighlight);
 
     vec4 texel1Large = Sample(map.r, highlight, highlightProgress, noise, 24., 37., 3., maxGrad);
     vec4 texel1Small = Sample(map.g, highlight, highlightProgress, noise, 12., 18., 2., maxGrad);

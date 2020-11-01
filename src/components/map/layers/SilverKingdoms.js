@@ -96,9 +96,9 @@ export default class SilverKingdoms extends Group {
       this.t = clamp01(this.t + (this.entering ? 0.003 : -0.003) * delta)
     }
 
-    if (!this.entering && this.t < 0) {
+    if (!this.entering && this.t <= 0) {
       this.enabled = false
-      this.visible = false
+      this.visible = this.changeVisibility ? false : this.visible
       this.t = 0
     }
 

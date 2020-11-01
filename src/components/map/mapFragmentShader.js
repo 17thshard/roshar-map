@@ -6,8 +6,7 @@ export default `
 
   #define ALPHA .65
   #define PI 3.141592653589793
-
-  float threshold = 0.1;
+  #define COLOR_CONV 0.00392156862
 
   varying highp vec2 vUv;
 
@@ -22,32 +21,34 @@ export default `
   uniform highp float DimTransition;
   uniform highp float Time;
 
-  float wave(float maxGrad, float value, float threshold, float opacity) {
-    float waveDist = abs(value - threshold / 255. - 0.5);
-    float aa = maxGrad / 24.;
+  float wave(float aa, float value, float threshold, float opacity, float scale) {
+    float waveDist = abs(-threshold * COLOR_CONV + value - 0.5);
 
-    return 1. - smoothstep(aa + 1. / 255., 0., waveDist) / (1. + .5 * maxGrad) * opacity;
+    return -smoothstep(aa + COLOR_CONV, 0., waveDist) * scale * opacity + 1.;
   }
 
   vec4 Sample(sampler2D bg, float borders, float waveDir, vec2 vUv, float maxGrad) {
     vec3 outlines = texture2D(OutlineTexture, vUv).rgb;
     float aa = maxGrad / 24.;
+    float scale = (1. / (maxGrad * .5 + 1.));
 
     vec3 col = texture2D(bg, vUv).rgb;
 
     float outline = outlines.r - .5;
-    col *= 1. - smoothstep(aa + 0.5 / 255., 0., outline) / (1. + .5 * maxGrad) * 0.6;
+    col *= -smoothstep(0.5 * COLOR_CONV + aa, 0., outline) * scale * 0.6 + 1.;
 
     float waves = outlines.g;
-    col *= wave(maxGrad, waves, waveDir * 12., 0.35) * wave(maxGrad, waves, waveDir * 22., 0.25) * wave(maxGrad, waves, waveDir * 32., 0.15);
+    col *= wave(aa, waves, waveDir * 12., 0.35, scale);
+    col *= wave(aa, waves, waveDir * 22., 0.25, scale);
+    col *= wave(aa, waves, waveDir * 32., 0.15, scale);
 
     float borderSdf = outlines.b - .5;
-    float borderFactor = smoothstep(aa + 20. / 255., 0., borderSdf + 0.02) * borders;
-    col = mix(col, vec3(178. / 255., 1. / 255., 1. / 255.), borderFactor);
+    float borderFactor = smoothstep(20. * COLOR_CONV + aa, 0., borderSdf + 0.02) * borders;
+    col = mix(col, vec3(178. * COLOR_CONV, COLOR_CONV, COLOR_CONV), borderFactor);
 
     return vec4(col, 1);
   }
-  
+
   vec2 perturbations(float t) {
     return vec2(
       0.5 * (sin(t) + cos(3.3 * t) + sin(0.7 * t)) + sin(4. * Time + t) * 0.5,
@@ -63,14 +64,14 @@ export default `
     vec4 texel2 = Sample(ShadesmarBgTexture, 0., -1., vUv, maxGrad);
 
     vec4 transitionTexel = texture2D(TransitionTexture, vUv);
-    float r = Transition * (1.0 + threshold * 2.0) - threshold;
-    float mixf = clamp((transitionTexel.r - r) * (1.0 / threshold), 0.0, 1.0);
-    
+    float r = Transition * 1.2 - 0.1;
+    float mixf = clamp((transitionTexel.r - r) * 10.0, 0.0, 1.0);
+
     vec4 color = mix(texel1, texel2, 1.0 - mixf);
 
-    if (PerpTransition > 0.) {
-      vec2 mapPos = (vUv * vec2(1024, 512) - vec2(512, 256)) - PerpLocation;
-
+    vec2 mapPos = (vUv * vec2(1024, 512) - vec2(512, 256)) - PerpLocation;
+    float distance = length(mapPos);
+    if (PerpTransition > 0. && distance < 20.) {
       float angle = atan(mapPos.x, mapPos.y);
       vec2 perturbation = perturbations(PerpPeriod * angle);
 
@@ -79,26 +80,25 @@ export default `
         vec2 rightPerturbation = perturbations(PerpPeriod * -3.05);
         perturbation = mix(leftPerturbation, rightPerturbation, smoothstep(0., PI - 3.05, mod(angle + 2. * PI, 2. * PI) - 3.05));
       }
-      
-      float transitionValue = smoothstep(0.0, 1.0, PerpTransition);
-      
-      vec4 perpendicularityColor = mix(texel1, texel2, mixf);
-      
-      float distance = length(mapPos);
 
+      float transitionValue = smoothstep(0.0, 1.0, PerpTransition);
+
+      vec4 perpendicularityColor = mix(texel1, texel2, mixf);
+      vec2 transitionPerturbation = perturbation * transitionValue;
+      
       perpendicularityColor = mix(
         perpendicularityColor,
-        vec4(252. / 255., 228. / 255., 124. / 255., 1.),
-        smoothstep((10.0 + perturbation.y - 6.0) * transitionValue, (10.0 + perturbation.y + 2.) * transitionValue, distance)
+        vec4(252. * COLOR_CONV, 228. * COLOR_CONV, 124. * COLOR_CONV, 1.),
+        smoothstep(4. * transitionValue + transitionPerturbation.y, 12. * transitionValue + transitionPerturbation.y, distance)
       );
 
       color = mix(
         color,
         perpendicularityColor,
-        (1. - smoothstep((10.0 + perturbation.x) * transitionValue, (10.0 + perturbation.x + 2.) * transitionValue, distance))
+        -smoothstep(10. * transitionValue + transitionPerturbation.x, 12. * transitionValue + transitionPerturbation.x, distance) + 1.
       );
     }
 
-    gl_FragColor = mix(vec4(.0, .0, .0, 1.), color, .5 + .5 * (1. - DimTransition));
+    gl_FragColor = mix(vec4(.0, .0, .0, 1.), color, -DimTransition * 0.5 + 1.0);
   }
 `
