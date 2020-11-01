@@ -24,9 +24,11 @@
         "display-separately": "Mostrar por separado",
         "stop-display-separately": "Dejar de mostar por separado",
         "previous-event": "Evento anterior",
-        "next-event": "Siguiente evento",
+        "next-event": "Evento siguiente",
         "previous": "Anterior",
         "next": "Siguiente",
+        "jump-to-start": "Ir al principio",
+        "jump-to-end": "Ir al final",
         "coppermind": "Más en la Coppermind (inglés)",
         "welcome": "¡Bienvenidos al mapa y línea temporal interactiva no oficial de la saga *El archivo de las tormentas* de Brandon Sanderson.",
         "language": "Idioma",
@@ -121,6 +123,36 @@
             "abbreviation": "N.T.",
             "full": "Nota del traductor"
         }
+    },
+            "go-to-date": {
+            "heading": "Ir a la fecha",
+            "fields": {
+                "year": {
+                    "label": "Año",
+                    "placeholder": "YYYY"
+                },
+                "month": {
+                    "label": "Mes",
+                    "placeholder": "MM"
+                },
+                "week": {
+                    "label": "Semana",
+                    "placeholder": "SS"
+                },
+                "day": {
+                    "label": "Día",
+                    "placeholder": "DD"
+                }
+            },
+            "errors": {
+                "year-required": "¡Tienes que rellenar el año!",
+                "month-required": "¡Tienes que rellenar el mes!",
+                "week-required": "¡Tienes que rellenar la semana!"
+            }
+        },
+        "lock-timeline": "Lock navigation to timeline",
+        "unlock-timeline": "Unlock navigation",
+        "translation-by": "Traducido por"
     },
     "entry-types": {
         "events": "Eventos",
