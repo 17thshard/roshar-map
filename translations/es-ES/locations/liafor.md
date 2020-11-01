@@ -1,4 +1,4 @@
 # Liafor
-> I do think the coat is splendid, but I worry that the short cut might be trending out of fashion. What is the latest from Liafor?
+> Creo que la casaca es espléndida, pero me preocupa que al ser tan corta esté pasada de moda. I do think the coat is splendid, but I worry that the short cut might be trending out of fashion. ¿Qué es lo último en Liafor?
 
-**Liafor** is a kingdom on a peninsula in south-west Roshar. It is known as a center of fashion on Roshar.
+**Liafor** es un reino ubicado en una península en el suroeste de Roshar. Es conocido por ser el centro de la moda en Roshar.
