@@ -78,6 +78,7 @@ export default class Oathgates extends Group {
   enter () {
     this.entering = true
     this.enabled = true
+    this.visible = true
   }
 
   leave () {
@@ -96,6 +97,7 @@ export default class Oathgates extends Group {
 
     if (!this.entering && this.progress <= 0) {
       this.enabled = false
+      this.visible = false
       this.progress = 0
     }
 
