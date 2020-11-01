@@ -1,7 +1,7 @@
 <template>
   <div :class="['editor', { 'editor--loading': loading }]">
     <div class="editor__menu">
-      <img src="@/assets/roshar_logo.png" alt="Logo">
+      <img src="@/assets/logos/roshar.png" alt="Logo">
       <button @click="save">
         Save to disk
       </button>

@@ -172,7 +172,7 @@ export default {
 <style lang="scss">
 .markdown {
   a {
-    display: inline-block;
+    display: inline;
     color: inherit;
     text-decoration: none;
     transition: all 0.2s ease-in-out;
