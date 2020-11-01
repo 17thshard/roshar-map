@@ -1,5 +1,5 @@
-# Klna City
+# Ciudad Klna
 
-**Klna City**—also called **Klna**—is a port settlement in #[Thaylenah](locations/thaylenah), east of #[Thaylen City](locations/thaylen-city). Klna has shipbuilding capabilities, and its shipyards are sheltered from both the highstorms and the Everstorm.
+**Ciudad Klna** —también llamada **Klna**— es un asentamiento portuario en #[Thaylenah](locations/thaylenah), al este de #[Ciudad Thaylen](locations/thaylen-city). Klna posee la capacidad de construir barcos y sus astilleros están protegidos tanto de las altas tormentas como de la Tormenta Eterna. 
 
-It's where Vstim commissioned his present to #[Rysn](characters/rysn), a ship called _Wandersail_.
+Es dónde Vstim encargó su regalo para #[Rysn](characters/rysn), un barco llamado a ship called _Vela Errante_.
