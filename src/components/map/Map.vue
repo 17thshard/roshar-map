@@ -123,6 +123,11 @@ export default {
 
         this.updateLayers(this.layersActive)
         this.update()
+        Object.keys(this.layersActive).forEach((layer) => {
+          if (!this.layersActive[layer] && !this.isLayerActivatedByEntry(layer)) {
+            this.layers[layer].visible = false
+          }
+        })
 
         this.$emit('ready')
 

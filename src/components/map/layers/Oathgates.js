@@ -10,7 +10,6 @@ export default class Oathgates extends Group {
 
     this.position.set(0, 0, 1)
     this.frustumCulled = false
-    this.visible = false
 
     this.enabled = false
     this.entering = true
@@ -95,7 +94,7 @@ export default class Oathgates extends Group {
       this.progress = clamp01(this.progress + (this.entering ? 0.0006 : -0.0006) * delta)
     }
 
-    if (!this.entering && this.progress <= 0) {
+    if (!this.entering && this.progress < 0) {
       this.enabled = false
       this.visible = false
       this.progress = 0

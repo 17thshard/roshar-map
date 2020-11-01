@@ -74,7 +74,7 @@
                   {{ $t('ui.translation-by') }}
                 </h3>
                 <a :href="$t(`meta.translatorUrl`)" target="_blank" :title="$t(`meta.translator.name`)">
-                  <img class="info__forum-logo" :src="translatorLogo" :alt="$t(`meta.translator.name`)">
+                  <img class="info__translator-logo" :src="translatorLogo" :alt="$t(`meta.translator.name`)">
                 </a>
               </template>
             </footer>
@@ -508,6 +508,11 @@ export default {
 
   &__forum-logo {
     width: 10rem;
+    max-width: 100%;
+    margin-top: 0.5rem
+  }
+
+  &__translator-logo {
     max-width: 100%;
     margin-top: 0.5rem
   }

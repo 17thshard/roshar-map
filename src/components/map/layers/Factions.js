@@ -8,7 +8,6 @@ export default class Factions extends Group {
 
     this.position.set(0, 0, 1)
     this.frustumCulled = false
-    this.visible = false
 
     this.enabled = false
     this.entering = true
@@ -70,7 +69,7 @@ export default class Factions extends Group {
       this.t = clamp01(this.t + (this.entering ? 0.003 : -0.003) * delta)
     }
 
-    if (!this.entering && this.t <= 0) {
+    if (!this.entering && this.t < 0) {
       this.enabled = false
       this.visible = false
       this.t = 0
