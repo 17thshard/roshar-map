@@ -150,8 +150,8 @@
                 "week-required": "¡Tienes que rellenar la semana!"
             }
         },
-        "lock-timeline": "Lock navigation to timeline",
-        "unlock-timeline": "Unlock navigation",
+        "lock-timeline": "Fijar navegación a la línea temporal",
+        "unlock-timeline": "Desbloquear navegación",
         "translation-by": "Traducido por"
     },
     "entry-types": {
