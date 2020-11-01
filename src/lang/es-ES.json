@@ -39,7 +39,7 @@
         "date": "Fecha",
         "date-help": "¿Cómo leer esto?",
         "chapter": "Capítulo",
-        "dismiss": "Descartar",
+        "dismiss": "Ocultar",
         "first-visit": {
             "heading": "Bienvenido",
             "intro": "Parece que es la primera vez que utilizas esta aplicación. ¿Necesitas ayuda?\n\nSiempre puedes volver a la sección de ayuda desde el menú ubicado en la parte superior derecha.",
@@ -53,62 +53,62 @@
             "hints": {
                 "settings-button": {
                     "title": "Menú de opciones",
-                    "text": "Adjust display & filter settings for the map and timeline"
+                    "text": "Ajustar interfaz y filtros del mapa y la línea temporal"
                 },
                 "menu-button": {
                     "title": "Menu",
-                    "text": "Find helpful links and language settings"
+                    "text": "Aquí encontrarás enlaces de ayuda y ajustes de idioma"
                 },
                 "timeline": {
-                    "title": "Timeline",
-                    "text": "Navigate this timeline by scrubbing or scrolling and click on any of the diamonds to view the associated event"
+                    "title": "Línea temporal",
+                    "text": "Navega por esta línea temporal arrastrándola o desplazándola con el ratón y haciendo click en cualquiera de los diamantes para ver un evento asociado"
                 },
                 "event": {
-                    "title": "Event Details",
-                    "text": "Click the \"More\" link to get a detailed summary, related information and where to find the event in the book, if applicable"
+                    "title": "Detalles del evento",
+                    "text": "Haz click en el enlace \"Más\" para obtener un resumen detallado, información relacionada, y dónde localizar el evento dentro del libro, en caso de estar disponible"
                 },
                 "location": {
-                    "title": "Location Details",
-                    "text": "Click on any named location to view a detailed description and associated information"
+                    "title": "Detalles de la ubicación",
+                    "text": "Haz click sobre el nombre de cualquier ubicación para ver una descripción detallada y la información asociada"
                 },
                 "settings-layers": {
-                    "title": "Layers",
-                    "text": "Layers can provide additional useful information on top of the map view. They can be toggled at any time"
+                    "title": "Capas",
+                    "text": "Las capas pueden aportar información adicional útil además de la vista del mapa. Pueden activarse en cualquier momento"
                 },
                 "settings-filters": {
-                    "title": "Filters",
-                    "text": "Filters allow you to decide which events are displayed on the timeline. You may hide them completely or create a separate timeline that focuses on the filtered item"
+                    "title": "Filtros",
+                    "text": "Los filtros te permiten decidir qué eventos se muestran en cada momento. Puedes ocultarlos por completo, o crear una línea temporal separada que se centre en el filtro seleccionado"
                 },
                 "settings-separate-timelines": {
-                    "title": "Separate Timelines",
-                    "text": "Once you've started displaying a filter as separate timeline, you can find it labeled here. Use the drag handle to change the order the timelines are displayed in"
+                    "title": "Líneas temporales separadas",
+                    "text": "Una vez has activado un filtro como línea temporal separada, puedes verla etiquetada aquí. Utiliza el control de arrastre para cambiar el orden en que se muestran"
                 }
             }
         },
         "calendar-guide": {
-            "title": "The Rosharan Calendar",
+            "title": "El calendario roshariano",
             "start": {
-                "name": "Start",
-                "explanation": "This is one year in the Rosharan calendar. It corresponds to 1.1 years on Earth."
+                "name": "Inicio",
+                "explanation": "Esto es un año dentro del calendario roshariano. Equivale a 1.1 años terrestres."
             },
             "day": {
-                "name": "Day",
-                "explanation": "Each day is 20 Rosharan hours long."
+                "name": "Día",
+                "explanation": "Cada día dura 20 horas rosharianas."
             },
             "week": {
-                "name": "Week",
-                "explanation": "Each week is 5 days long."
+                "name": "Semana",
+                "explanation": "Cada semana dura 5 horas."
             },
             "month": {
-                "name": "Month",
-                "explanation": "Each month spans 50 days, or 10 weeks."
+                "name": "Mes",
+                "explanation": "Cada mes abarca 50 días, o 10 semanas."
             },
             "year": {
-                "name": "Year",
-                "explanation": "A year amounts to 10 months, 100 weeks, or 500 days."
+                "name": "Año",
+                "explanation": "Un año se compone de 10 meses, 100 semanas, o 500 días."
             },
             "date": {
-                "name": "Dates",
+                "name": "Fechas",
                 "explanation": "Dates are written as the year first, month second, week third, and day last. The numbers are separated by periods.\n\nFor example, this date in year 1173 is written: {date}"
             }
         },
@@ -123,10 +123,10 @@
         }
     },
     "entry-types": {
-        "events": "Events",
-        "locations": "Locations",
-        "characters": "Characters",
-        "misc": "Miscellaneous"
+        "events": "Eventos",
+        "locations": "Ubicaciones",
+        "characters": "Personajes",
+        "misc": "Misceláneo"
     },
     "numbers": [
         "Jes",
@@ -143,38 +143,38 @@
     "layers": {
         "shadesmar": "Shadesmar",
         "silverKingdoms": "Reinos Plateados",
-        "oathgates": "Oathgate Locations",
-        "factions": "Current State of the World"
+        "oathgates": "Ubicación de las Puertas Juradas",
+        "factions": "Estado actual del mundo"
     },
     "factions": {
         "coalition": {
             "name": "Coalición de Monarcas de Dalinar",
-            "style": "Blue and maroon checkered"
+            "style": "A cuadros azules y marrones"
         },
         "odium": {
             "name": "Fuerzas de Odium",
-            "style": "Gold"
+            "style": "Oro"
         },
         "neutral": {
             "name": "Neutral",
-            "style": "Green"
+            "style": "Verde"
         }
     },
     "tagCategories": {
-        "tags": "Tags",
-        "characters": "Characters",
-        "books": "Books"
+        "tags": "Etiquetas",
+        "characters": "Personajes",
+        "books": "Libros"
     },
     "tags": {
         "general": "General",
         "dalinar": "Dalinar",
         "kaladin": "Kaladin",
         "shallan": "Shallan",
-        "twok": "The Way of Kings",
-        "wor": "Words of Radiance",
-        "ed": "Edgedancer",
-        "ob": "Oathbringer",
-        "row": "Rhythm of War",
+        "twok": "El camino de los reyes",
+        "wor": "Palabras radiantes",
+        "ed": "Danzante del filo",
+        "ob": "Juramentada",
+        "row": "El ritmo de la guerra",
         "adolin": "Adolin",
         "renarin": "Renarin",
         "lift": "Lift",
@@ -184,9 +184,9 @@
         "navani": "Navani",
         "eshonai": "Eshonai",
         "taravangian": "Taravangian",
-        "wit": "Wit",
+        "wit": "Sagaz",
         "moash": "Moash",
         "venli": "Venli",
-        "history": "History"
+        "history": "Historia"
     }
 }
