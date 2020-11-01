@@ -6,8 +6,3 @@ Escapando a la destucción de su mundo, los humanos de Ashyn se asientan en Shin
 > —Del Eila Stele
 
 Los humanos de Ashyn, escapando a la destrucción de su mundo natal, viajaron a Roshar valiéndose de medios mágicos. Persuadidos por las esquirlas #[Honor](characters/honor) y #[Cultivación](characters/cultivation), los cantores nativos acogieron a los humanos, que inicialmente se asentaron en #[Shinovar](locations/shinovar).
-
-## Metadata
-| Field | Value |
-| ----- | ----- |
-| chapter | *Juramentada* Cap. 111 |
