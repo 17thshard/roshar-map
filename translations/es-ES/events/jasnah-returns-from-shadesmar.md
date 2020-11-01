@@ -2,7 +2,7 @@
 Jasnah returned from Shadesmar after meeting with the highspren and encountered Wit waiting for her.
 
 ## Details
-Attacked by Ghostbloods aboard *Wind's Pleasure*, Jasnah accidentally transported herseful fully into Shadesmar and found immediate return to the Physical Realm impossible. She made the most of her time there, visiting the highspren to learn more of Roshar's past. Months later, Jasnah was able to transition back somewhere in the Unclaimed Hills, where she was greeted by Wit.
+Atacada por los Sangre Espectral a bordo del *Placer del Viento*, #[Jasnah](characters/jasnah) se transportó accidentalmente a Shadesmar y se dio cuenta de que volver al Reino Físico de forma inmediata era algo imposible. Allí pasó la mayor parte de su tiempo visitando a los altospren para aprender más sobre el pasado de Roshar. Meses más tarde, Jasnah pudo regresar a algún lugar de las #[Montañas Irreclamadas](locations/unclaimed-hills), donde Sagaz la estaba esperando.
 
 ## Metadata
 | Field | Value |
