@@ -1,2 +1,2 @@
 # Jah Keved
-**Jah Keved** is one of the five Vorin Kingdoms on Roshar, situated in the eastern half of the continent. Its capital is #[Vedenar](locations/vedenar).
+**Jah Keved** es uno de los cinco reinos vorin en Roshar, se ubica en la mitad este del continente. Su capital es #[Vedenar](locations/vedenar).
