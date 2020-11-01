@@ -1,4 +1,6 @@
 # Iri
-> We are Iriali, and part of the Long Trail, of which this is the Fourth Land. … Eventually, all will be gathered back in—when the Seventh Land is attained—and we will once again become One.
-
-**Iri** is a kingdom in northwestern Roshar. Prior to the Recreance, it was one of the Silver Kingdoms. People from Iri are called Iriali. Iri is ruled by three monarchs, currently two kings and a queen. The Iriali queen has authority over foreign policy.
+ 
+ Somos iriali, y parte del Largo Sendero, del cual esta es la Cuarta Tierra.
+ Con el tiempo, todo volverá a unirse, cuando se consiga la Séptima Tierra, y una vez más nos convertiremos en Uno. 
+ 
+**Iri** es un reino del noroeste de Roshar. Antes de la Traición, fue uno de los Reinos Plateados. La gente de Iri es llamada iriali. Iri es gobernada por tres monarcas, una reina y dos reyes actualmente. La reina iriali tiene autoridad sobre la política exterior. 
