@@ -10,6 +10,7 @@ export default class Oathgates extends Group {
 
     this.position.set(0, 0, 1)
     this.frustumCulled = false
+    this.visible = false
 
     this.enabled = false
     this.entering = true
