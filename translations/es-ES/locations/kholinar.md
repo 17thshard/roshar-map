@@ -1,4 +1,4 @@
 # Kholinar
-**Kholinar** is the capital city of the Kholin princedom in #[Alethkar](locations/alethkar), Roshar. It's symmetrical in shape, built around enormous stone formations known as _the windblades_ for their unmistakable shape.
+**Kholinar** es la ciudad capital del principado Kholin en #[Alethkar](locations/alethkar), Roshar. Es simétrica en su forma, cons construida en torno a enormes formaciones de piedra conocidas como _las Hojas del Viento_ debido a su forma inconfundible 
 
-It is the place where Talenel, Herald of the Almighty, announced to the world that the Desolation had come.
+Es el lugar donde Talenel, Heraldo del Todopoderoso, anunció al mundo que la Desolación había llegado. 
