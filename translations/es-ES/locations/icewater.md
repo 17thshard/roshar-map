@@ -1,7 +1,7 @@
-# Icewater
+# Agua Helada
 
-**Icewater** is a city on an island in the #[Southern Depths](locations/southern-depths) along the southern edge of Roshar during the Era of Solitude.
+**Agua Helada** es una ciudad que durante la Era de la Soledad está ubicada en las #[Profundidades Meridionales](locations/southern-depths) junto al extremo meridional de Roshar.
 
-Icewater is a port city on the north side of the island. It is unknown if it is autonomous or if it is under the control of #[Tukar](locations/tukar) or some other nation.
+Agua Helada es una ciudad portuaria en el lado norte de la isla. Se desconoce si es autónoma o si se encuentra bajo el control de #[Tukar](locations/tukar) u otra nación.
 
-#[Rysn](characters/rysn) once travelled with Vstim to Icewater and bargained with pirates.
+#[Rysn](characters/rysn) iajó una vez junto a Vstim a Agua Helada y regateó con piratas.
