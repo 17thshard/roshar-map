@@ -1,3 +1,3 @@
 # Karanak
 
-**Karanak** is a city in southern #[Alethkar](locations/alethkar) in Bethab princedom. It is near Mevan Bay and runs along the Deathbend River.
+**Karanak** es una ciudad del sur de #[Alethkar](locations/alethkar) en el principado de Bethab. Está cerca de la Bahía de Mevan y se extiende a lo largo del río Curva de la Muerte. 
