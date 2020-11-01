@@ -99,7 +99,7 @@
             },
             "week": {
                 "name": "Semana",
-                "explanation": "Cada semana dura 5 horas."
+                "explanation": "Cada semana dura 5 días."
             },
             "month": {
                 "name": "Mes",
