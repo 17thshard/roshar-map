@@ -122,9 +122,8 @@
         "translatorNote": {
             "abbreviation": "N.T.",
             "full": "Nota del traductor"
-        }
-    },
-            "go-to-date": {
+        },
+        "go-to-date": {
             "heading": "Ir a la fecha",
             "fields": {
                 "year": {
