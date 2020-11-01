@@ -26,8 +26,8 @@ const textures = {
 }
 
 const basePath = './src/assets/textures'
-const webpOnly = process.argv.slice(3)[0] === '--webp-only'
-const filter = process.argv.slice(webpOnly ? 4 : 3)
+const webpOnly = process.argv.slice(2)[0] === '--webp-only'
+const filter = process.argv.slice(webpOnly ? 3 : 2)
 const locales = readdirSync(path.resolve(`${basePath}/localized`)).filter(locale => isDirectory(`${basePath}/localized/${locale}`))
 
 Promise.all(Object.keys(textures).flatMap((name) => {
