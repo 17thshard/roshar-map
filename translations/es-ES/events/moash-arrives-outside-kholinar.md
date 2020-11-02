@@ -1,8 +1,8 @@
-# Moash arrives outside Kholinar
-Moash's group arrived in a town on the outskirts of Kholinar where the singers are staging their seige of the city.
+# Moash llega a las afueras de Kholinar
+El grupo de Moash llega a las afueras de Kholinar, donde los cantores han dado comienzo al asedio de la ciudad.
 
-## Details
-After hauling supplies for weeks on foot from Revolar, Moash arrived on the outskirts of Kholinar to find the city under seige and Odium's forces preparing for a final assault on the city.
+## Details 
+Después de transportar suministros a pie durante semanas desde #[Revolar](locations/revolar), #[Moash](characters/moash) llega a las afueras de #[Kholinar](locations/kholinar) para encontrársela bajo el asedio de las fuerzas de Odium, que se preparan para el asalto final a la ciudad.
 
 ## Metadata
 | Field | Value |
