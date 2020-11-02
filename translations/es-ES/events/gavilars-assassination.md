@@ -1,4 +1,4 @@
-# Gavilar's assassination
+# Asesinato de Gavilar
 Gavilar Kholin fue asesinado por Szeth, que seguía las órdenes de los oyentes. Los altos príncipes jurarion el Pacto de la Venganza, y empezó la Guerra del Juicio. 
 
 ## Details
