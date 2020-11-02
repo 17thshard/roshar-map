@@ -563,6 +563,10 @@
             "dalinar",
             "history"
         ],
+        "image": {
+            "file": "events/The_Rift_AshfellEverdawn.jpg",
+            "credits": "by [AshfellEverdawn](https://www.reddit.com/user/AshfellEverdawn)"
+        },
         "coppermind": "Rathalas#Destruction_of_Rathalas_.281163.29",
         "related": [
             "characters/dalinar",
