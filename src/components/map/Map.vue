@@ -25,7 +25,6 @@ import {
   Vector3,
   WebGLRenderer,
   RGBFormat,
-  RGFormat,
   RedFormat,
   // eslint-disable-next-line camelcase
   RGB_S3TC_DXT1_Format
@@ -169,7 +168,7 @@ export default {
         oathgates_text: { hqAvailable: true, localized: true, pixelFormat: RedFormat },
         silver_kingdoms: { hqAvailable: true, pixelFormat: RedFormat },
         silver_kingdoms_text: { hqAvailable: true, localized: true, pixelFormat: RedFormat },
-        graticule: { hqAvailable: true, lossy: true, pixelFormat: RGFormat },
+        graticule: { hqAvailable: true, lossy: true, pixelFormat: RGBFormat },
         graticule_text: { hqAvailable: true, pixelFormat: RedFormat }
       }
 

@@ -1,6 +1,6 @@
 import isMobile from 'is-mobile'
 // eslint-disable-next-line camelcase
-import { RGBAFormat, TextureLoader, WebGLUtils } from 'three'
+import { LinearFilter, RGBAFormat, TextureLoader, WebGLUtils } from 'three'
 import { DDSLoader } from 'three/examples/jsm/loaders/DDSLoader'
 
 export default class TextureManager {
@@ -21,7 +21,9 @@ export default class TextureManager {
     })
     const context = renderer.getContext()
     this.utils = new WebGLUtils(context, renderer.extensions, renderer.capabilities)
-    this.supportedCompressionFormats = context.getParameter(context.COMPRESSED_TEXTURE_FORMATS)
+    this.supportedCompressionFormats = context.getExtension('WEBGL_compressed_texture_s3tc')
+      ? context.getParameter(context.COMPRESSED_TEXTURE_FORMATS)
+      : []
     this.locale = locale
   }
 
@@ -63,6 +65,14 @@ export default class TextureManager {
             texture.loaded = true
             const basePixelFormat = texture.pixelFormat ?? RGBAFormat
             data.format = compressed ? texture.compressedPixelFormat : basePixelFormat
+            data.minFilter = LinearFilter
+
+            if (texture.options !== undefined) {
+              Object.keys(texture.options).forEach((key) => {
+                data[key] = texture.options[key]
+              })
+            }
+
             result[name] = data
 
             if (Object.keys(textures).every(t => textures[t].loaded === true)) {
