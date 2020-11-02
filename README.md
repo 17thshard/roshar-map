@@ -64,6 +64,7 @@ The following is a list of all the artists that are either official artists or h
  * [Ari Ibarra](https://coppermind.net/wiki/Coppermind:Artists/Ari_Ibarra)
  * [Artem Demura](https://coppermind.net/wiki/Coppermind:Artists/Artem_Demura)
  * [Art Noob](https://coppermind.net/wiki/Coppermind:Artists/Art_Noob)
+ * [AshfellEverdawn](https://www.reddit.com/user/AshfellEverdawn)
  * [Ashley Coad](https://coppermind.net/wiki/Coppermind:Artists/Ashley_Coad)
  * [Audrey Hotte](https://coppermind.net/wiki/Coppermind:Artists/Audrey_Hotte)
  * [BBQShapez](https://coppermind.net/wiki/Coppermind:Artists/BBQShapez)
