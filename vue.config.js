@@ -49,14 +49,14 @@ module.exports = {
     workboxOptions: {
       skipWaiting: true,
       clientsClaim: true,
-      exclude: ['index.html', /.*\/textures\/.*\.(webp|png)$/, /.*\/lang-.*\.js/],
+      exclude: ['index.html', /.*\/textures\/.*\.(webp|png|jpg|dds)$/, /.*\/lang-.*\.js/],
       runtimeCaching: [
         {
           urlPattern: /^$|^\/$|\/#.*$/,
           handler: 'NetworkFirst'
         },
         {
-          urlPattern: /.*\/textures\/.*\.(webp|png)$/,
+          urlPattern: /.*\/textures\/.*\.(webp|png|jpg|dds)$/,
           handler: 'CacheFirst'
         },
         {
