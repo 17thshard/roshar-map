@@ -1663,6 +1663,10 @@
             "wor",
             "shallan"
         ],
+        "image": {
+            "file": "events/Stubborn_Obstacle_by_Xabi_gazte.jpg",
+            "credits": "by [Xabi Gazte](https://coppermind.net/wiki/Coppermind:Artists/Xabi_Gazte)"
+        },
         "coppermind": "Shallan_Davar#Tradesman_Tvlakv",
         "related": [
             "characters/shallan",
@@ -2641,6 +2645,10 @@
             "ob",
             "venli"
         ],
+        "image": {
+            "file": "events/Call_to_Adventure_-_Willshaper.png",
+            "credits": "by [Nastya Lehn](https://www.nastyalehn.com/)"
+        },
         "related": [
             "characters/venli"
         ],
@@ -2691,8 +2699,8 @@
         ],
         "coppermind": "Dalinar_Kholin#Uniting_Roshar",
         "image": {
-            "file": "events/Odium_-_XV_the_Devil.jpg",
-            "credits": "by [Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
+            "file": "events/Odium_by_Ganna_Pazyniuk.jpg",
+            "credits": "by [Ganna Pazyniuk](https://coppermind.net/wiki/Coppermind:Artists/AnnDR)"
         }
     },
     {
@@ -2968,6 +2976,10 @@
         "tieBreaker": 0,
         "shadesmar": true,
         "coppermind": "Riino's_lighthouse",
+        "image": {
+            "file": "events/Lighthouse_LittleGreyDragon.png",
+            "credits": "by [LittleGreyDragon](https://coppermind.net/wiki/Coppermind:Artists/LittleGreyDragon)"
+        },
         "related": [
             "characters/adolin",
             "characters/kaladin",
