@@ -1,4 +1,4 @@
-# Dalinar and Navani wedding
+# Boda de Dalinar y Navani
 El Padre Tormenta casa a Dalinar y Navani en lo alto de Uruthiru.
 
 ## Details
