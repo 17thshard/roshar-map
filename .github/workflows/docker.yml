@@ -12,31 +12,9 @@ jobs:
     steps:
       - run: echo Build started
 
-  build-conditions:
-    runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/master' && contains(github.event.head_commit.message, '[deploy]')
-
-    steps:
-      - run: echo Build conditions are met
-
-  build-node:
-    runs-on: ubuntu-latest
-    needs: build-conditions
-
-    steps:
-      - uses: actions/checkout@v1
-
-      - name: Publish app
-        uses: craftech-io/package-action@v3.1.0
-        with:
-          tags: latest
-          access_token: ${{ secrets.GITHUB_TOKEN }}
-          build_args: |
-            PUBLIC_URL=${{ secrets.DOCKER_PUBLIC_URL }}
-
   build-dev:
     runs-on: ubuntu-latest
-    needs: build-conditions
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master' && (contains(github.event.head_commit.message, '[deploy-dev]') || contains(github.event.head_commit.message, '[deploy]'))
 
     steps:
       - uses: actions/checkout@v1
@@ -52,7 +30,7 @@ jobs:
 
   update-service:
     runs-on: ubuntu-latest
-    needs: [build-node, build-dev]
+    needs: [build-dev]
 
     steps:
       - name: Setup SSH Keys and known_hosts
@@ -68,5 +46,4 @@ jobs:
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         run: |
-          ssh github@${{ secrets.DOCKER_HOST }} 'docker pull docker.pkg.github.com/palanaeum/roshar-map/roshar-map:latest && docker service update --force --image docker.pkg.github.com/palanaeum/roshar-map/roshar-map:latest ${{ secrets.DOCKER_SERVICE_NAME }}'
           ssh github@${{ secrets.DOCKER_HOST }} 'docker pull docker.pkg.github.com/palanaeum/roshar-map/roshar-map:latest-dev && docker service update --force --image docker.pkg.github.com/palanaeum/roshar-map/roshar-map:latest-dev ${{ secrets.DOCKER_DEV_SERVICE_NAME }}'
