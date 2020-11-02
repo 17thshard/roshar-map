@@ -1970,7 +1970,7 @@
             "characters/renarin",
             "locations/shattered-plains"
         ],
-        "coppermind": "https://coppermind.net/wiki/Adolin_Kholin#The_Duel",
+        "coppermind": "Adolin_Kholin#The_Duel",
         "image": {
             "file": "events/The_Impossible_Odds_by_Randy_Vargas.jpg",
             "credits": "by [Randy Vargas](https://coppermind.net/wiki/Coppermind:Artists/Randy_Vargas)",
@@ -2333,7 +2333,7 @@
             "characters/kaladin",
             "locations/hearthstone"
         ],
-        "coppermind": "https://coppermind.net/wiki/Kaladin#Returning_to_Hearthstone",
+        "coppermind": "Kaladin#Returning_to_Hearthstone",
         "image": {
             "file": "events/Thepathtohearthstone.png",
             "credits": "by [Ashley Coad](https://coppermind.net/wiki/Coppermind:Artists/Ashley_Coad)",
@@ -3228,7 +3228,7 @@
                 "y": 35
             }
         },
-        "coppermind": "https://coppermind.net/wiki/Moash#Servant_of_the_Fused",
+        "coppermind": "Moash#Servant_of_the_Fused",
         "related": [
             "characters/moash",
             "locations/kholinar"
