@@ -1,6 +1,6 @@
 <template>
   <div class="error-screen">
-    <svg class="error-screen__icon" viewBox="0 0 1200 1200">
+    <svg class="error-screen__icon" width="600px" height="auto" viewBox="0 0 1200 1200">
       <path
         fill="#cfddf1"
         opacity="0.5"
