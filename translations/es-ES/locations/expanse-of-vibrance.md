@@ -6,6 +6,4 @@ Está rodeada por el #[Nexo de la Imaginación](locations/nexus-of-imagination).
 
 Una idea muy extendida es que la Expansión de la Intensidad corresponde al mundo de Nalthis, debido a la importancia del color en la manifestación de la Investidura del planeta, el Despertar.
 
-`​`​`tn
-Ahora mismo no existe una traducción oficial para el término «_Vibrance_», por lo que de momento seguiremos utilizando «Intensidad».
-`​`​`
+_[tn](Ahora mismo no existe una traducción oficial para el término «_Vibrance_», por lo que de momento seguiremos utilizando «Intensidad».)_
