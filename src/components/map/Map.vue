@@ -23,7 +23,12 @@ import {
   ShaderMaterial,
   Vector2,
   Vector3,
-  WebGLRenderer
+  WebGLRenderer,
+  RGBFormat,
+  RGFormat,
+  RedFormat,
+  // eslint-disable-next-line camelcase
+  RGB_S3TC_DXT1_Format
 } from 'three'
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
@@ -153,19 +158,19 @@ export default {
   methods: {
     loadTextures () {
       const textures = {
-        map_bg: { hqAvailable: true, lossy: true },
-        map: { hqAvailable: true },
-        shadesmar_map_bg: { lossy: true },
-        transition: {},
-        text_pattern: {},
-        map_text: { hqAvailable: true, localized: true },
-        shadesmar_map_text: { hqAvailable: true, localized: true },
-        factions: { hqAvailable: true, lossy: true },
-        oathgates_text: { hqAvailable: true, localized: true },
-        silver_kingdoms: { hqAvailable: true },
-        silver_kingdoms_text: { hqAvailable: true, localized: true },
-        graticule: { hqAvailable: true, lossy: true },
-        graticule_text: { hqAvailable: true }
+        map_bg: { hqAvailable: true, lossy: true, pixelFormat: RGBFormat, compressedPixelFormat: RGB_S3TC_DXT1_Format },
+        map: { hqAvailable: true, pixelFormat: RGBFormat },
+        shadesmar_map_bg: { lossy: true, pixelFormat: RGBFormat, compressedPixelFormat: RGB_S3TC_DXT1_Format },
+        transition: { pixelFormat: RedFormat },
+        text_pattern: { pixelFormat: RGBFormat },
+        map_text: { hqAvailable: true, localized: true, pixelFormat: RGBFormat },
+        shadesmar_map_text: { hqAvailable: true, localized: true, pixelFormat: RGBFormat },
+        factions: { hqAvailable: true, lossy: true, pixelFormat: RGBFormat },
+        oathgates_text: { hqAvailable: true, localized: true, pixelFormat: RedFormat },
+        silver_kingdoms: { hqAvailable: true, pixelFormat: RedFormat },
+        silver_kingdoms_text: { hqAvailable: true, localized: true, pixelFormat: RedFormat },
+        graticule: { hqAvailable: true, lossy: true, pixelFormat: RGFormat },
+        graticule_text: { hqAvailable: true, pixelFormat: RedFormat }
       }
 
       return this.textureManager.load(textures)

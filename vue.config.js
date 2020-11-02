@@ -20,6 +20,11 @@ module.exports = {
       .end()
 
     config.module
+      .rule('images')
+      .test(/\.(png|jpe?g|gif|webp|dds)(\?.*)?$/)
+      .end()
+
+    config.module
       .rule('html-credits')
       .resourceQuery(/vue&type=template/)
       .use('credits-loader')

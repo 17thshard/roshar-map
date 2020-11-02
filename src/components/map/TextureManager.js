@@ -1,5 +1,7 @@
 import isMobile from 'is-mobile'
-import { TextureLoader } from 'three'
+// eslint-disable-next-line camelcase
+import { RGBAFormat, TextureLoader, WebGLUtils } from 'three'
+import { DDSLoader } from 'three/examples/jsm/loaders/DDSLoader'
 
 export default class TextureManager {
   constructor (renderer, locale) {
@@ -17,12 +19,17 @@ export default class TextureManager {
       }
       img.src = 'data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAACyAgCdASoCAAEALmk0mk0iIiIiIgBoSygABc6zbAAA/v56QAAAAA=='
     })
+    const context = renderer.getContext()
+    this.utils = new WebGLUtils(context, renderer.extensions, renderer.capabilities)
+    this.supportedCompressionFormats = context.getParameter(context.COMPRESSED_TEXTURE_FORMATS)
     this.locale = locale
   }
 
-  buildPath (prefix, name, localized, lossy) {
+  buildPath (prefix, name, localized, lossy, compressedFormat) {
     const fallbackExt = lossy === true && (localized === undefined || localized === false) ? 'jpg' : 'png'
-    const base = `${prefix}${name}.${this.webpSupported ? 'webp' : fallbackExt}`
+    const uncompressedExt = this.webpSupported ? 'webp' : fallbackExt
+    const ext = compressedFormat !== undefined && this.supportedCompressionFormats.includes(compressedFormat) ? 'dds' : uncompressedExt
+    const base = `${prefix}${name}.${ext}`
 
     if (localized === undefined || localized === false) {
       return `${lossy ? 'lossy' : 'lossless'}/${base}`
@@ -35,18 +42,23 @@ export default class TextureManager {
     const result = {}
 
     const textureLoader = new TextureLoader()
+    const compressedTextureLoader = new DDSLoader()
 
     return this.webpPromise.then(() => new Promise((resolve, reject) => {
       Object.keys(textures).forEach((name) => {
         const texture = textures[name]
 
         const prefix = (texture.hqAvailable || (texture.hqWebpAvailable && this.webpSupported)) && this.useHq ? 'hq_' : ''
-        const path = this.buildPath(prefix, name, texture.localized, texture.lossy)
+        const path = this.buildPath(prefix, name, texture.localized, texture.lossy, texture.compressedPixelFormat)
 
-        textureLoader.load(
+        const compressed = texture.compressedPixelFormat !== undefined && this.supportedCompressionFormats.includes(texture.compressedPixelFormat)
+        const loader = compressed ? compressedTextureLoader : textureLoader
+        loader.load(
           require(`@/assets/textures/${path}`),
           (data) => {
             texture.loaded = true
+            const basePixelFormat = texture.pixelFormat ?? RGBAFormat
+            data.format = compressed ? texture.compressedPixelFormat : basePixelFormat
             result[name] = data
 
             if (Object.keys(textures).every(t => textures[t].loaded === true)) {
