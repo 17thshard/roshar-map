@@ -53,7 +53,7 @@ export default `
     float factor = fractal_brownian_motion(pos + motion) * INTENSITY;
 
     vec3 mixed = mix(vec3(.0, .0, .0), vec3(239. / 255., 187. / 255., 21. / 255.), base.r * factor); // Odium
-    mixed = mix(mixed, vec3(85. / 255., 211. / 255., 35. / 255.), base.g  * factor); // Neutral
+    mixed = mix(mixed, vec3(35. / 255., 211. / 255., 156. / 255.), base.g  * factor); // Neutral
     float total = floor(vUv.x * 256.) + floor(vUv.y * 128.);
     vec3 coalitionColor = mix(vec3(32. / 255., 137. / 255., 227. / 255.), vec3(136. / 255., 67. / 255., 19. / 255.), mod(total, 2.0));
     mixed = mix(mixed, coalitionColor, base.b * (factor + 0.1)); // Coalition

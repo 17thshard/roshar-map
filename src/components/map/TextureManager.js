@@ -28,7 +28,7 @@ export default class TextureManager {
   buildPath (prefix, name, localized, lossy, compressedFormat) {
     const fallbackExt = lossy === true && (localized === undefined || localized === false) ? 'jpg' : 'png'
     const uncompressedExt = this.webpSupported ? 'webp' : fallbackExt
-    const ext = compressedFormat !== undefined && this.supportedCompressionFormats.includes(compressedFormat) ? 'dds' : uncompressedExt
+    const ext = this.supportsCompression(compressedFormat) ? 'dds' : uncompressedExt
     const base = `${prefix}${name}.${ext}`
 
     if (localized === undefined || localized === false) {
@@ -36,6 +36,10 @@ export default class TextureManager {
     }
 
     return `localized/${this.locale}/${base}`
+  }
+
+  supportsCompression (format) {
+    return format !== undefined && this.supportedCompressionFormats.includes(this.utils.convert(format))
   }
 
   load (textures) {
@@ -51,7 +55,7 @@ export default class TextureManager {
         const prefix = (texture.hqAvailable || (texture.hqWebpAvailable && this.webpSupported)) && this.useHq ? 'hq_' : ''
         const path = this.buildPath(prefix, name, texture.localized, texture.lossy, texture.compressedPixelFormat)
 
-        const compressed = texture.compressedPixelFormat !== undefined && this.supportedCompressionFormats.includes(texture.compressedPixelFormat)
+        const compressed = this.supportsCompression(texture.compressedPixelFormat)
         const loader = compressed ? compressedTextureLoader : textureLoader
         loader.load(
           require(`@/assets/textures/${path}`),

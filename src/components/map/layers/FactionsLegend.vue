@@ -71,7 +71,7 @@ export default {
     }
 
     &--neutral:before {
-      background: rgb(85, 211, 35);
+      background: rgb(35, 211, 156);
     }
   }
 }
