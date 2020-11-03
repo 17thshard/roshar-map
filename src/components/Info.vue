@@ -73,7 +73,7 @@
                 <h3 class="info__translator">
                   {{ $t('ui.translation-by') }}
                 </h3>
-                <a :href="$t(`meta.translatorUrl`)" target="_blank" :title="$t(`meta.translator.name`)">
+                <a :href="$t(`meta.translator.url`)" target="_blank" :title="$t(`meta.translator.name`)">
                   <img class="info__translator-logo" :src="translatorLogo" :alt="$t(`meta.translator.name`)">
                 </a>
               </template>

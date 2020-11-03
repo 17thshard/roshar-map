@@ -161,7 +161,7 @@ export default {
         map: { hqAvailable: true, pixelFormat: RGBFormat },
         shadesmar_map_bg: { lossy: true, pixelFormat: RGBFormat, compressedPixelFormat: RGB_S3TC_DXT1_Format },
         transition: { pixelFormat: LuminanceFormat },
-        text_pattern: { pixelFormat: RGBFormat },
+        text_pattern: { pixelFormat: LuminanceFormat },
         map_text: { hqAvailable: true, localized: true, pixelFormat: RGBFormat },
         shadesmar_map_text: { hqAvailable: true, localized: true, pixelFormat: RGBFormat },
         factions: { hqAvailable: true, lossy: true, pixelFormat: RGBFormat },
