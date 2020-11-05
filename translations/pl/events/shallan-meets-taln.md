@@ -1,0 +1,12 @@
+# Shallan meets Taln.
+On a mission for the Ghostbloods, Shallan met with the Herald Taln. Afterward, she is welcomed as a member of the Ghostbloods.
+
+## Details
+A note from Mraize eventually came, directing Shallan to seek further instructions at a specific time and location. Shallan arrived early, hoping to catch the delivery of these instructions, but after a long wait with no arrivals she began to wonder if the Ghostbloods were attempting to watch her in turn. She had Pattern search the windows of the tenement she waited on and was able to trick a spying Iyatil into revealing herself. The masked woman explained that the instructions provided were supposed to be carried out immediately, so that the Ghostbloods could watch Veil at work. When Shallan pressed, she explained that her task was to investigate a strange madman who had arrived in the warcamps under the custody of one of Dalinar Kholin's most trusted footmen. Determined to impress the Ghostbloods, Shallan invited Iyatil to join her on the task.
+
+The women rode a palanquin to the temple complex in Dalinar's warcamps, where Shallan simply used her own identity to gain entrance while Iyatil was distracted. They reached the building where the man--none other than the Herald Talenel--was being kept, along with other mentally ill patients. Shallan then convinced the ardents that Iyatil was possessed by a Voidbringer, giving her a distraction to slip through unnoticed as well as a mean to escape from Iyatil's observation, and snuck into Taln's dimly lit room. Though the crazed man reacted minimally at first, constantly reciting his repetitive speech about his nature and purpose, an attempt to Surgebind by Shallan caused him to snap into a brief intense lucidity in which he seemed to recognize her as a Knight Radiant. Dazed after drawing her Shardblade in fear, Shallan was unable to leave before Meridas Amaram arrived with Bordin to question the man himself. Shallan hid behind a Lightweaving as the brightlord asked questions of the man without success, revealing to Shallan that he believed the words of the Herald to be true. After the two new arrivals departed, Shallan returned to Iyatil with information about Taln's rambling speech and the arrival of Amaram. Later that evening she delivered a full report via spanreed. Upon receipt, Mraize welcomed Shallan as a full member of the Ghostbloods.
+
+## Metadata
+| Field | Value |
+| ----- | ----- |
+| chapter | *Words of Radiance* Ch. 63 & 64 |
