@@ -1,4 +1,4 @@
-# Azir
+# 亚泽尔
 > You underestimate your importance. Azir's Oathgate will be vital, and you are the strongest kingdom of the west. With Azir at our side, many other countries will join with us.
 
-**Azir** is a kingdom in southwest Roshar. Its capital is #[Azimir](locations/azimir). The people and language of Azir are both referred to as Azish.
+**亚泽尔**是柔刹西南部的强大国家。其首都是#[阿兹米尔](locations/azimir)。

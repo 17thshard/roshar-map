@@ -1,5 +1,5 @@
-# Aimian Sea
+# 艾米亚海
 
-The **Aimian Sea** is a body of water that separates the islands of #[Aimia](locations/aimia) from the coast of #[Shinovar](locations/shinovar) on the continent of Roshar. It is a large, deep channel that is connected to the #[Endless Ocean](locations/endless-ocean).
+**艾米亚海**是位于[艾米亚](locations/aimia)与柔刹大陆#[深国](locations/shinovar)海岸之间的一片海域。这片海域既深且广，与#[无尽海](locations/endless-ocean)相连。
 
-Kaza and the crew of the _First Dreams_ crossed the Aimian Sea from #[Liafor](locations/liafor) in hopes of reaching Akinah and discovering a wealth of gemhearts.
+Kaza与 _First Dreams_ 的船员们曾穿越艾米亚海来到#[里亚弗](locations/liafor)，期盼着能找到亚基纳，以及琼心石的宝藏。

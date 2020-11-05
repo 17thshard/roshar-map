@@ -1,4 +1,4 @@
-# Alethkar
-> We've got a noble heritage, Kal, darkeyes and lighteyes alike. That’s why the best warriors have always been from Alethkar.
+# 阿勒斯卡
+> 我们拥有高贵的传承，卡尔，不管暗眼种还是光眼种，所以第一流的战士总是出自阿勒斯卡。
 
-**Alethkar** is the largest and most prominent of the five Vorin nations on Roshar. People from Alethkar are known as **Alethi**, and their royal colors are blue and gold. Prior to the True Desolation, they were engaged in the War of Reckoning against the listeners. At the present, the vast majority of their territory is under control of the Voidbringers.
+**阿勒斯卡**是柔刹五大沃林教王国中最大最强的国家。阿勒斯卡王室的颜色是蓝与金。终极灭世之前，阿勒斯卡处在与听者的复仇之战中。目前其大部分国土已经被虚渡占领。

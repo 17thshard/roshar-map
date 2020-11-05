@@ -1,7 +1,5 @@
-# Dawn's Shadow
+# 晨曦之影
 
-**Dawn's Shadow** is a location, presumably a settlement, on the coast of far eastern Roshar.
+**晨曦之影**是#[无主山岭](locations/unclaimed-hills)东部海岸附近的一处地点，面向#[飓源海](locations/ocean-of-origins)，可能是城市。
 
-It is located east of the #[Unclaimed Hills](locations/unclaimed-hills), on a sea connected to the #[Ocean of Origins](locations/ocean-of-origins). It is situated in the former Silver Kingdom of Natanatan. The nearest population center is the city-state of #[New Natanan](locations/new-natanan).
-
-Although eastern Roshar has been described as a "crumbling" empty wasteland, Dawn's Shadow is known to some mapmakers in #[Alethkar](locations/alethkar).
+它所在的位置，在白银十王国时代时曾属于纳塔纳坦。目前距离最近的大城市是 #[新纳塔南](locations/new-natanan)。虽然柔刹东部的大片土地都是无主荒野，但还是有些制图师把晨曦之影标记为#[阿勒斯卡](locations/alethkar)领土。

@@ -1,2 +1,2 @@
-# Babatharnam
-**Babatharnam** is a kingdom in western Roshar. Its capital is #[Panatham](locations/panatham), and people from Babatharnam are called Babath. Babath women have patterns of veins that sit shallowly beneath their skin, which some non-natives find unnerving.
+# 巴巴萨那姆
+**巴巴萨那姆**位于柔刹西部，帕纳撒#[帕纳撒](locations/panatham)为其都城。那里的女人有种奇异的体征，血管位置很浅，隔着皮肤就能看见。有些旅者觉得吓人。

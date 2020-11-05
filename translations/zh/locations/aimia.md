@@ -1,2 +1,2 @@
-# Aimia
-**Aimia** is a group of islands on Roshar that is separated from the main continent by the #[Aimian Sea](locations/aimian-sea). The islands contained one of the Silver Kingdoms of Roshar that survived the Desolations. As far as can be gleaned, the Kingdom of Aimia existed for most of the Era of Solitude, but at some point it was decimated in the Scouring of Aimia.
+# 艾米亚
+**艾米亚**是柔刹世界的一片群岛，与柔刹大陆隔#[艾米亚海](locations/aimian-sea)相望。白银十王国时代的其中一国就在该岛。进入孤独时代后，艾米亚王国也曾长期存在，但在Scouring of Aimia后王国覆灭。

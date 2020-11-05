@@ -1,3 +1,3 @@
-# Alm
+# 埃姆
 
-**Alm** is a kingdom in southwestern Roshar that is a member nation of the Azish Empire.
+**埃姆**是柔刹西南方的一个国家，隶属于亚泽尔帝国。

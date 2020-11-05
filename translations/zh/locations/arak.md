@@ -1,3 +1,3 @@
-# Arak
+# 阿拉克岛
 
-**Arak** is one of the eastern #[Reshi Isles](locations/reshi-isles) on Roshar. It is located north of #[Sumi](locations/sumi) off the coast of #[Herdaz](locations/herdaz).
+**Arak**是#[雷希群岛](locations/reshi-isles)中的一座岛屿，位于#[苏米岛](locations/sumi)以北，与#[赫达孜]](locations/herdaz)隔海相望。

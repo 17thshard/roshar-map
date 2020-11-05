@@ -1,5 +1,5 @@
-# Eila
+# 伊埃拉
 
-**Eila** is a city in #[Iri](locations/iri) in northwestern Roshar during the Era of Solitude. It is located in southern Iri at the foot of the #[Misted Mountains](locations/misted-mountains), near Iri's borders with #[Shinovar](locations/shinovar) and #[Babatharnam](locations/babatharnam).
+**伊埃拉**是#[伊里](locations/iri)南部的一座城市，位于#[迷雾山脉](locations/misted-mountains)山脚下。距离伊里与#[深国](locations/shinovar)、#[巴巴萨那姆](locations/babatharnam)的边境线不远。
 
-The Eila Stele, an ancient carving written in Dawnchant, presumably originated in or was discovered in the city.
+用晨颂文写就的古老文献Eila Stele也许与此城有关。
