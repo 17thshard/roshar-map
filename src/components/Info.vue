@@ -98,6 +98,9 @@
               <router-link to="/es-ES">
                 Español
               </router-link>
+              <router-link to="/pl-PL">
+                Polski
+              </router-link>
             </nav>
           </div>
         </Scrollbar>

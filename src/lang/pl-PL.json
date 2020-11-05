@@ -1,5 +1,5 @@
 {
-    "textureLocale": "pl",
+    "textureLocale": "en",
     "name": "Mapa Rosharu",
     "title": "{page} | Archiwum Burzowego Światła",
     "ui": {
@@ -37,7 +37,7 @@
         "dismiss": "Zamknij",
         "first-visit": {
             "heading": "Witaj",
-            "intro": "**Mapa zawiera spoilery aż do końca *Dawcy Przysięgi*!** Przechodzisz dalej na własne ryzyko.\n\nWygląda na to, że jesteś tutaj po raz pierwszy. Czy chciałbyś zobaczyć samouczek?\n\nZawsze możesz znaleźć pomoc w menu w prawym górnym rogu.",
+            "intro": "**Mapa zawiera spoilery aż do końca *Dawcy Przysięgi*!** Przechodzisz dalej na własne ryzyko.\n\nWygląda na to, że jesteś tutaj po raz pierwszy. Czy chciałbyś zobaczyć samouczek?\n\nZawsze możesz znaleźć pomoc w menu w górnym prawym rogu.",
             "calendar": "Wyjaśnij daty",
             "tutorial": "Pokaż podpowiedzi"
         },
@@ -108,7 +108,7 @@
             }
         },
         "error-screen": {
-            "message": "Whoops... Looks like the app cannot be loaded in your browser for some reason.\n\nPlease consider visiting using a [modern browser](https://browsehappy.com).",
+            "message": "Ups... wygląda na to, że tej aplikacji z jakiegoś powodu nie da się uruchomić w twojej przeglądarce.\n\nProszę, spróbuj odwiedzić tę stronę, używając [współczesnej przeglądarki](https://browsehappy.com).",
             "report-intro": "Czy uważasz, że znalazłeś błąd?",
             "report-button": "Zgłoś na GitHubie"
         },
@@ -165,11 +165,11 @@
         "Ishi"
     ],
     "layers": {
-        "shadesmar": "Shadesmar",
-        "graticule": "Lines of latitude and longitude",
-        "silverKingdoms": "Silver Kingdoms",
-        "oathgates": "Oathgate Locations",
-        "factions": "Current State of the World"
+        "shadesmar": "Cieniomorze",
+        "graticule": "Południki i równoleżniki",
+        "silverKingdoms": "Srebrne Królestwa",
+        "oathgates": "Lokalizacje Wrót Przysięgi",
+        "factions": "Obecny stan świata"
     },
     "factions": {
         "coalition": {
