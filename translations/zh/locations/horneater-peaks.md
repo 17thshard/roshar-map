@@ -1,3 +1,3 @@
-# Horneater Peaks
+# 吃角族群峰
 
-The **Horneater Peaks** are a mountain range in #[Jah Keved](locations/jah-keved) in eastern Roshar. They are the home of the Unkalaki, also known as the Horneater people.
+**吃角族群峰**是#[雅克维德](locations/jah-keved)境内的山脉，是恩卡拉基人（又被称作吃角族人）的故乡。

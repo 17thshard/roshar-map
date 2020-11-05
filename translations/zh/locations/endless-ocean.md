@@ -1,5 +1,5 @@
-# Endless Ocean
+# 无尽海
 
-The **Endless Ocean** is a massive ocean to the west of the continent of Roshar.
+**无尽海**是柔刹西部的广袤海洋。
 
-According to legend, Derethil and the _Wandersail_ sailed the Endless Ocean during a highstorm, where they found the islands of the Uvara.
+传说中，德雷希尔乘坐着“徘帆”在飓风肆虐时在无尽海中航行，并找到了乌法拉岛屿。

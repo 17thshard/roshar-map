@@ -1,7 +1,3 @@
-# Expanse of Vibrance
+# 明动外域
 
-The **Expanse of Vibrance** is a location in Shadesmar that corresponds to an unknown planet.
-
-It is bordered by the #[Nexus of Imagination](locations/nexus-of-imagination).
-
-The Expanse of Vibrance is commonly thought to correspond to the world Nalthis, due to the importance of color in that planet's manifestation of Investiture, Awakening.
+**明动外域**是柔刹裂影界中的一个地区，在#[想象结域](locations/nexus-of-imagination)以外。该方向有某颗未知星球，据推测为纳尔西斯。

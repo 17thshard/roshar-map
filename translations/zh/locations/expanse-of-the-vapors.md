@@ -1,5 +1,3 @@
-# Expanse of the Vapors
+# 虚无外域
 
-The **Expanse of the Vapors** is a location in Shadesmar. It is bordered by the #[Sea of Lost Lights](locations/sea-of-lost-lights) and the #[Nexus of Imagination](locations/nexus-of-imagination).
-
-The Expanse of the Vapors leads to Scadrial.
+**虚无外域**是柔刹裂影界中的一个地区，在#[失落光海](locations/sea-of-lost-lights)和#[想象结域](locations/nexus-of-imagination)以外。这个方向是司卡德瑞尔。
