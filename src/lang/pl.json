@@ -1,0 +1,217 @@
+{
+    "textureLocale": "pl",
+    "name": "Mapa Rosharu",
+    "title": "{page} | Archiwum Burzowego Światła",
+    "ui": {
+        "loading": "Ładowanie...",
+        "circa": "ok. {date}",
+        "menu": "Menu",
+        "settings": "Ustawienia",
+        "layers": "Warstwy",
+        "filters": "Filtry",
+        "close": "Zamknij",
+        "back": "Wróć",
+        "separate-timelines": "Oddzielne osie czasu",
+        "enable": "Włącz",
+        "disable": "Wyłącz",
+        "display-separately": "Pokazuj oddzielnie",
+        "stop-display-separately": "Nie pokazuj już oddzielnie",
+        "previous-event": "Poprzednie wydarzenie",
+        "next-event": "Następne wydarzenie",
+        "previous": "Poprzednie",
+        "next": "Następne",
+        "jump-to-start": "Przejdź do początku",
+        "jump-to-end": "Przejdź do końca",
+        "coppermind": "Więcej na Coppermind",
+        "welcome": "Witaj na stronie nieoficjalnej, interaktywnej mapy i osi czasu serii powieści *Archiwum Burzowego Światła* Brandona Sandersona!",
+        "language": "Język",
+        "languageHeading": "Wybór języka",
+        "help": "Pomoc",
+        "about": "O mapie",
+        "aboutText": "Witaj na naszej Interaktywnej Mapie i Osi Czasu Rosharu!\n\nNiniejsza strona pozwoli Ci na przeglądanie mapy Rosharu oraz chronologii wydarzeń serii *Archiwum Burzowego Światła* Brandona Sandersona. Po kliknięciu na lokalizację na mapie zobaczysz informacje na jej temat, a także związane z nią wydarzenia i postaci. Oś czasu na dole strony pozwoli ci na przeskakiwanie między różnymi wydarzeniami na mapie, a także otrzymanie na ich temat więcej informacji. Jeśli chcesz wiedzieć jeszcze więcej, znajdziesz też linki do wikii Coppermind.\n\nNiniejsza mapa jest projektem fanowskim, bez wkładu Dragonsteel Entertainment. Wszystkie daty i lokacje oparte są na kombinacji odniesień znajdujących się w książkach, oraz naszych własnych założeń. Jeśli chcesz wiedzieć więcej o chronologii *Archiwum Burzowego Światła*, albo jeśli interesują cię zebrane przez nas odniesienia i założenia, odwiedź [projekt Chronologii Archiwum Burzowego Światła autorstwa Jofwu](https://docs.google.com/spreadsheets/d/1zq5bJoKE83ggDCjH43i1hZi0CIpB2iAx7v37zQPVFK0).\n\nJeśli jeszcze tego nie zrobiłeś, sprawdź samouczek! Mamy nadzieję, że gdy będziesz czytać *Archiwum Burzowego Światła*, będzie to dla Ciebie pomocne i ciekawe narzędzie!",
+        "more": "Więcej...",
+        "related": "Powiązane",
+        "date": "Data",
+        "date-help": "Jak to zrozumieć?",
+        "chapter": "Rozdział",
+        "dismiss": "Zamknij",
+        "first-visit": {
+            "heading": "Witaj",
+            "intro": "**Mapa zawiera spoilery aż do końca *Dawcy Przysięgi*!** Przechodzisz dalej na własne ryzyko.\n\nWygląda na to, że jesteś tutaj po raz pierwszy. Czy chciałbyś zobaczyć samouczek?\n\nZawsze możesz znaleźć pomoc w menu w prawym górnym rogu.",
+            "calendar": "Wyjaśnij daty",
+            "tutorial": "Pokaż podpowiedzi"
+        },
+        "tutorial": {
+            "title": "Tutorial",
+            "explanation": "Naciśnij dowolną czerwoną kropkę by dowiedzieć się, co możesz zrobić w niniejszej aplikacji.",
+            "calendar": "Wyjaśnij kalendarz i daty",
+            "hints": {
+                "settings-button": {
+                    "title": "Menu ustawień",
+                    "text": "Dostosuj widok i filtry dla mapy i osi czasu"
+                },
+                "menu-button": {
+                    "title": "Menu",
+                    "text": "Znajdź pomocne linki oraz ustawienia języka"
+                },
+                "timeline": {
+                    "title": "Oś czasu",
+                    "text": "Przeglądaj oś czasu poprzez przeciąganie lub przewijanie myszą. Kliknij na dowolny diament, aby zobaczyć powiązane z nim wydarzenie"
+                },
+                "event": {
+                    "title": "Szegóły wydarznia",
+                    "text": "Kliknij \"Więcej\", aby zobaczyć szegółowe streszczenie, powiązane informacje, i gdze znaleźć to wydarzenie w książkach, jeśli można"
+                },
+                "location": {
+                    "title": "Szegóły lokalizacji",
+                    "text": "Kliknij na dowolną nazwaną lokalizację, aby zobaczyć jej szczegółowy opis i powiązanie informacje"
+                },
+                "settings-layers": {
+                    "title": "Warstwy",
+                    "text": "Warstwy mogą zapewnić dodatkowe, użyteczne informacje na ekranie mapy. Można je włączyć i wyłączyć w dowolnym momencie"
+                },
+                "settings-filters": {
+                    "title": "Filtry",
+                    "text": "Filtry pozwalają Ci zdecydować, które wydarzenia są pokazywane na osi czasu. Możesz całkowicie schować niektóre wydarzenia lub utworzyć dodatkowe osie czasu pokazujące wyłącznie przefiltrowane wydarzenia"
+                },
+                "settings-separate-timelines": {
+                    "title": "Oddzielne osie czasu",
+                    "text": "Jeśli włączysz wyświetlanie filtru jako oddzielną oś czasu, tutaj możesz znaleźć tą oś. Użyj ikony przenoszenia, by zmienić kolejność osi"
+                }
+            }
+        },
+        "calendar-guide": {
+            "title": "Kalendarz Rosharu",
+            "start": {
+                "name": "Początek",
+                "explanation": "Oto jeden rok w kalendarzu Rosharu. Odpowiada on 1,1 latom na Ziemi."
+            },
+            "day": {
+                "name": "Dzień",
+                "explanation": "Każdy dzień składa się z 20 Rosharańskich godzin."
+            },
+            "week": {
+                "name": "Tydzień",
+                "explanation": "Każdy tydzień składa się z 5 dni."
+            },
+            "month": {
+                "name": "Miesiąc",
+                "explanation": "Każdy miesiąc składa się z 50 dni, albo 10 tygodni."
+            },
+            "year": {
+                "name": "Rok",
+                "explanation": "Każdy rok składa się z 10 miesiecy, 100 tygodni albo 500 dni."
+            },
+            "date": {
+                "name": "Daty",
+                "explanation": "Aby podać datę, po kolei wymieniany jest rok, miesiąc, tydzień i dzień. Liczby są oddzielone od siebie kropkami.\n\nPrzykładowo, niniejszy dzień w roku 1173 jest zapisany jako: {date}"
+            }
+        },
+        "error-screen": {
+            "message": "Whoops... Looks like the app cannot be loaded in your browser for some reason.\n\nPlease consider visiting using a [modern browser](https://browsehappy.com).",
+            "report-intro": "Czy uważasz, że znalazłeś błąd?",
+            "report-button": "Zgłoś na GitHubie"
+        },
+        "translatorNote": {
+            "abbreviation": "U.T.",
+            "full": "Uwaga tłumacza"
+        },
+        "go-to-date": {
+            "heading": "Przejdź do daty",
+            "fields": {
+                "year": {
+                    "label": "Rok",
+                    "placeholder": "RRRR"
+                },
+                "month": {
+                    "label": "Miesiąc",
+                    "placeholder": "MM"
+                },
+                "week": {
+                    "label": "Tydzień",
+                    "placeholder": "TT"
+                },
+                "day": {
+                    "label": "Dzień",
+                    "placeholder": "DD"
+                }
+            },
+            "errors": {
+                "year-required": "Musisz podać rok!",
+                "month-required": "Musisz podać miesiąc!",
+                "week-required": "Musisz podać tydzień!"
+            }
+        },
+        "lock-timeline": "Zablokuj nawigację na osi czasu",
+        "unlock-timeline": "Odblokuj nawigację",
+        "translation-by": "Tłumaczenie:"
+    },
+    "entry-types": {
+        "events": "Wydarzenia",
+        "locations": "Lokalizacje",
+        "characters": "Postaci",
+        "misc": "Inne"
+    },
+    "numbers": [
+        "Jes",
+        "Nan",
+        "Chach",
+        "Vev",
+        "Palah",
+        "Shash",
+        "Betab",
+        "Kak",
+        "Tanat",
+        "Ishi"
+    ],
+    "layers": {
+        "shadesmar": "Shadesmar",
+        "graticule": "Lines of latitude and longitude",
+        "silverKingdoms": "Silver Kingdoms",
+        "oathgates": "Oathgate Locations",
+        "factions": "Current State of the World"
+    },
+    "factions": {
+        "coalition": {
+            "name": "Koalicja Monarchów Dalinara",
+            "style": "Niebiesko-brązowa kratka"
+        },
+        "odium": {
+            "name": "Siły Odium",
+            "style": "Złoty"
+        },
+        "neutral": {
+            "name": "Neutralne",
+            "style": "Zielony"
+        }
+    },
+    "tagCategories": {
+        "tags": "Tagi",
+        "characters": "Postaci",
+        "books": "Książki"
+    },
+    "tags": {
+        "general": "Ogólne",
+        "dalinar": "Dalinar",
+        "kaladin": "Kaladin",
+        "shallan": "Shallan",
+        "twok": "Droga Królów",
+        "wor": "Słowa Światłości",
+        "ed": "Tancerka Krawędzi",
+        "ob": "Dawca Przysięgi",
+        "row": "Rytm Wojny",
+        "adolin": "Adolin",
+        "renarin": "Renarin",
+        "lift": "Zwinka",
+        "szeth": "Szeth",
+        "rysn": "Rysn",
+        "jasnah": "Jasnah",
+        "navani": "Navani",
+        "eshonai": "Eshonai",
+        "taravangian": "Taravangian",
+        "wit": "Trefniś",
+        "moash": "Moash",
+        "venli": "Venli",
+        "history": "Historia"
+    }
+}
