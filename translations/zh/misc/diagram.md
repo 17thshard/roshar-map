@@ -1,2 +1,3 @@
-# The Diagram
-The **Diagram** is the name of a covert group that is devoted to understanding and carrying out the instructions found in the Diagram. The Diagram is led by #[Taravangian](characters/taravangian) and has members in hiding all over Roshar. The group is ruthless, willing to kill directly, or indirectly, as many as necessary to achieve its goals.
+# 谶记社
+
+**谶记社**是由#[塔拉梵吉安](characters/taravangian)领导的秘密结社，致力于理解并实施《谶记》中的教导。成员遍布柔刹，个个心狠手辣，为达到目的，不惜直接或间接杀人灭口。

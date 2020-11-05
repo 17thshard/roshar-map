@@ -1,5 +1,5 @@
-# Dalinar Kholin
+# 达力拿·寇林
 
-> I see beauty in you, Dalinar Kholin. I see a great man struggling against a terrible one.
+> 你身上的优点我都看在眼里，达力拿·寇林。你是一个了不起的人，面对心魔还能不懈斗争。
 
-**Dalinar Kholin** is an Alethi highprince of #[Alethkar](locations/alethkar). He is known as the **Blackthorn** for his military prowess and is the Highprince of War. He is the younger brother of the late King Gavilar, uncle of King #[Elhokar Kholin](characters/elhokar) and #[Jasnah Kholin](characters/jasnah), and is currently married to Brightness #[Navani Kholin](characters/navani), Gavilar's widow. He has two sons, #[Adolin Kholin](characters/adolin) and #[Renarin Kholin](characters/renarin). He is a member of the Order of Bondsmiths, bonded to the Stormfather, and is the de facto leader of the reformed Knights Radiant.
+**达力拿·寇林**是#[乌有斯麓](locations/urithiru)的轩王。他因杰出的作战才能而得到**黑荆棘**之名，并以其为人所知。他是前国王迦维拉尔的弟弟，前国王#[艾尔霍卡·寇林](characters/elhokar)和#[迦熙娜·寇林](characters/jasnah)的叔叔，目前与光明女士#[纳瓦尼·寇林](characters/navani)成婚，她是迦维拉尔的遗孀。他有两个儿子，#[阿多林·寇林](characters/adolin)和#[雷纳林·寇林](characters/renarin)。他是一名铸契骑士，与飓风之父缔约，是重组后的光辉骑士团的实际领袖。

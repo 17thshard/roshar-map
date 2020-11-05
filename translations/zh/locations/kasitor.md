@@ -1,3 +1,3 @@
-# Kasitor
+# 卡西托
 
-**Kasitor** is a coastal city in #[Iri](locations/iri) on Roshar and the home of a notable spren known as Cusicesh, the Protector.
+**卡西托**是#[伊里](locations/iri)的沿海城市，著名灵体“保护者”库斯切什的故乡。
