@@ -1,4 +1,4 @@
 # 亚泽尔
-> You underestimate your importance. Azir's Oathgate will be vital, and you are the strongest kingdom of the west. With Azir at our side, many other countries will join with us.
+> 您还是低估了自身的重要性。亚泽尔的誓约之门将起到非常关键的作用，而贵国又是柔刹西部最强大的国家。有了亚泽尔的支持，许多其他的国家也会加入联盟。
 
 **亚泽尔**是柔刹西南部的强大国家。其首都是#[阿兹米尔](locations/azimir)。
