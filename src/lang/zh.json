@@ -28,7 +28,7 @@
         "languageHeading": "Language Selection",
         "help": "Help",
         "about": "About",
-        "aboutText": "Lorem ipsum dolor sit _[tn](En inglés, el apodo que le otorga Hoid es Slammer, no tenemos aún traducción oficial al español, pero el término hace referencia a una forma coloquial de referirse a la cárcel. Esta información no se ha mencionado de forma oficial en los libros, proviene de una [WoB de Brandon](https://wob.coppermind.net/events/134-general-signed-books-2016/#e9472))_, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+        "aboutText": "Welcome to our Interactive Map and Timeline of Roshar!\n\nThis website allows you to explore the map of Roshar and the timeline of Brandon Sanderson's *Stormlight Archive* series. Clicking locations on the map will reveal details about it as well as related events and characters. Browsing the timeline at the bottom of the page allows you to jump between different events on the map and open up more information about those events. If you want to know even more, links to the Coppermind wiki are provided.\n\nThis is a fan-made project that is not affiliated with Dragonsteel Entertainment. All dates and locations are based on a combination of in-world references and our own estimates and assumptions. If you would like to dig further into the timeline of the series, or if you are curious about the references and assumptions used, please visit [Jofwu's Stormlight Archive Timeline project](https://docs.google.com/spreadsheets/d/1zq5bJoKE83ggDCjH43i1hZi0CIpB2iAx7v37zQPVFK0).\n\nMake sure you check out the tutorial if you haven't done so! We hope that you find this to be a fun, insightful, and helpful tool as you read *The Stormlight Archive*!",
         "more": "More...",
         "related": "Related",
         "date": "Date",
@@ -37,7 +37,7 @@
         "dismiss": "Dismiss",
         "first-visit": {
             "heading": "Welcome",
-            "intro": "It looks like this is your first use of this app. Would you like some help?\n\nYou can always find help later on from the menu to the top right.",
+            "intro": "**Spoilers upto the end of *Oathbringer* ahead!** Continue at your own risk.\n\nIt looks like this is your first use of this app. Would you like some help?\n\nYou can always find help later on from the menu to the top right.",
             "calendar": "Explain dates",
             "tutorial": "Show hints"
         },
@@ -141,7 +141,10 @@
                 "month-required": "You must fill out the month!",
                 "week-required": "You must fill out the week!"
             }
-        }
+        },
+        "lock-timeline": "Lock navigation to timeline",
+        "unlock-timeline": "Unlock navigation",
+        "translation-by": "Translation by"
     },
     "entry-types": {
         "events": "Events",
@@ -163,6 +166,7 @@
     ],
     "layers": {
         "shadesmar": "Shadesmar",
+        "graticule": "Lines of latitude and longitude",
         "silverKingdoms": "Silver Kingdoms",
         "oathgates": "Oathgate Locations",
         "factions": "Current State of the World"
