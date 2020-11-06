@@ -1,7 +1,7 @@
-# Kaladin
+# 卡拉丁
 
-> I don't know what I am either. A bridgeman? A surgeon? A soldier? A slave? Those are all just labels. Inside, I'm me. A very different me than I was a year ago, but I can't worry about that, so I just keep moving and hope my feet take me where I need to go.
+> 我也不知道自己是谁。冲桥手？手术师？士兵？奴隶？都只是标签而已。在骨子里，我就是我，和一年前大不一样了，但我不操心这个。我只顾向前，希望这双脚能把我带到想去的地方。
 
-**Kaladin**, nicknamed **Kal**, renowned as **Kaladin Stormblessed**, is a darkeyed Windrunner of the Knights Radiant from #[Alethkar](locations/alethkar). Despite being trained as a surgeon from an early age by his father, his chosen profession is that of a soldier. He is famed as the captain of Highprince #[Dalinar Kholin's](characters/dalinar) personal guard, a unit known as Bridge Four, and commander of the bridgemen battalion.
+**卡拉丁**，昵称**卡尔**，以**飓风恩护者**而闻名，他是来自#[阿勒斯卡](locations/alethkar)的一名暗眼风行骑士，光辉骑士团的一员。他是李伦和赫希拿的儿子，提安（已逝）和小奥罗登的哥哥。尽管从很年轻的时候就被他的父亲训练为一名外科医生，他自己的选择却是成为一名战士。他因成为乌有斯麓的轩王#[达力拿·寇林](characters/dalinar)的私人护卫队长、第四冲桥队队长和冲桥大队指挥官而声名显赫。
 
-Kaladin has known adversity and loss throughout his life. He has suffered repeated oppression and betrayal by the lighteyed nobility, including being driven from his home by the citylord of his hometown as a teenager and being sold into slavery by the commander of his army. Kaladin has also been unable to save numerous patients, comrades, subordinates, and even his brother Tien from death.
+卡拉丁的人生饱受失去与痛苦的折磨。他遭受了光眼贵族数次的欺压和背叛，这其中包括在年轻时候就被城主从自己的家中驱赶出来以及被自己军队的指挥官卖去当奴隶。不止如此，卡拉丁也没能从死神手中拯救无数的病人、朋友、下属甚至包括自己弟弟提安。

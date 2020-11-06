@@ -1,5 +1,5 @@
-# Lift
+# 莉芙特
 
-> Someone has to care. Too few people care these days.
+> 必须有人来关心别人。现在懂得关心的人太少了。
 
-**Lift** is a Reshi thief who works in the city of #[Azimir](locations/azimir) in #[Azir](locations/azir) on Roshar. She's a Surgebinder of the Order of Edgedancers, bonded to Wyndle.
+**莉芙特**是一名雷希盗贼，她在柔刹大陆上#[亚泽尔](locations/azir)地区的#[阿兹米尔](locations/azimir) 城里生活。她是一名飓能者、缘舞骑士，与温达缔约。
