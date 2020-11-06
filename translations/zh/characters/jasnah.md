@@ -1,5 +1,5 @@
-# Jasnah Kholin
+# 迦熙娜·寇林
 
-> It strikes me that religion—in its essence—seeks to take natural events and ascribe supernatural causes to them. I, however, seek to take supernatural events and find the natural meanings behind them. Perhaps that is the final dividing line between science and religion. Opposite sides of a card.
+> 我坚信，宗教的本质是竭力用超自然理论来解释自然现象。而我呢，我深究超自然现象，找出其背后的自然因果。也许这就是科学和宗教的终极分野。它们是一张牌的两面。
 
-**Jasnah Kholin** is the queen of #[Alethkar](locations/alethkar) on Roshar. She is a Surgebinder and Elsecaller, with access to the Surges of Transformation and Transportation, sometimes called "Elsecalling." She is the sister of the late King #[Elhokar](characters/elhokar), daughter of the late King #[Gavilar](characters/gavilar) and #[Navani](characters/navani), niece of Highprince #[Dalinar](characters/dalinar), aunt of royal heir Gavinor, and cousin to Adolin and Renarin. She is known widely as a brilliant scholar and for her denunciation of Vorinism. She is a member of the Veristitalians, an order of historians dedicated to reconstructing unbiased and factual accounts of the past in order to better understand the present. She is training Shallan Davar as her ward.
+**迦熙娜·寇林**是柔刹大陆的#[阿勒斯卡](locations/alethkar)女王。她是飓能者，一名异唤骑士，拥有转化和传送的异能，有时也被称为“异唤术”。她是前国王#[艾尔霍卡](characters/elhokar)的妹妹，前国王#[迦维拉尔](characters/gavilar)和#[纳瓦尼](characters/navani)的女儿，轩亲王#[达力拿](characters/dalinar)的侄女，皇家继承人迦维诺尔的姑妈，#[阿多林](characters/adolin)和#[雷纳林](characters/renarin)的堂姐。她以一名出色的学者身份和对沃林教的反叛精神而广为知名。她是求真学会的成员，求真学会是一群致力于重构无偏向性的、真实的历史事件记录以更好了解当代的历史学家们组成的学会。#[沙兰·达瓦](characters/shallan)是她的学徒。
