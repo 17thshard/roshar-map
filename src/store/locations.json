@@ -1301,13 +1301,8 @@
         },
         "coppermind": "Reshi_Isles",
         "image": {
-            "file": "locations/Map_ReshiSea.png",
-            "credits": "by [Otto Didact](Map_ReshiSea.png)",
-            "offset": {
-                "x": 50,
-                "y": 0
-            },
-            "size": 205
+            "file": "locations/Reshi_Isles_Connor_Chamberlain.jpg",
+            "credits": "by [Connor Chamberlain](https://www.reddit.com/user/Daitengu_koh)"
         },
         "related": [
             "events/rysn-in-the-reshi-isles",
