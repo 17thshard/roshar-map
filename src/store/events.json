@@ -32,6 +32,10 @@
             "y": 256,
             "zoom": 0
         },
+        "image": {
+            "file": "events/Shattering_Connor_Chamberlain.jpg",
+            "credits": "by [Connor Chamberlain](https://www.reddit.com/user/Daitengu_koh)"
+        },
         "tags": [
             "history"
         ],
