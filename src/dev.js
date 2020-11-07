@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueDragscroll from 'vue-dragscroll'
-import VueAnalytics from 'vue-analytics'
+import VueGtag from 'vue-gtag'
 import App from './App.vue'
 import store from './store'
 import { i18n } from '@/i18n'
@@ -12,13 +12,13 @@ Vue.config.productionTip = false
 
 Vue.use(VueDragscroll)
 if (process.env.VUE_APP_GA_ID !== undefined) {
-  Vue.use(VueAnalytics, {
-    id: process.env.VUE_APP_GA_ID,
-    router: editor ? undefined : router,
-    debug: {
-      sendHitTask: process.env.NODE_ENV === 'production'
-    }
-  })
+  Vue.use(VueGtag,
+    {
+      config: { id: process.env.VUE_APP_GA_ID },
+      disableScriptLoad: process.env.NODE_ENV !== 'production'
+    },
+    editor ? undefined : router
+  )
 }
 
 new Vue({
