@@ -6,7 +6,8 @@ import { DDSLoader } from 'three/examples/jsm/loaders/DDSLoader'
 export default class TextureManager {
   constructor (renderer, locale) {
     const maxTextureSize = renderer.capabilities.maxTextureSize
-    this.useHq = maxTextureSize >= 8192 && !isMobile({ tablet: true, featureDetect: true })
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
+    this.useHq = maxTextureSize >= 8192 && !isMobile({ tablet: true, featureDetect: true }) && !isSafari
     this.webpPromise = new Promise((resolve) => {
       const img = new Image()
       img.onload = () => {
