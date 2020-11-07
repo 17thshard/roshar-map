@@ -14,9 +14,9 @@ Vue.use(VueDragscroll)
 if (process.env.VUE_APP_GA_ID !== undefined) {
   Vue.use(VueAnalytics, {
     id: process.env.VUE_APP_GA_ID,
+    router: editor ? undefined : router,
     debug: {
-      sendHitTask: process.env.NODE_ENV === 'production',
-      router: editor ? undefined : router
+      sendHitTask: process.env.NODE_ENV === 'production'
     }
   })
 }
