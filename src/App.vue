@@ -97,6 +97,7 @@ export default {
       this.errored = true
       // eslint-disable-next-line no-console
       console.error(error)
+      this.$ga.exception(error.message ?? error)
     },
     onScrubberLoaded () {
       this.mapTransitions = true

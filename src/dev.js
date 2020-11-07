@@ -1,16 +1,25 @@
 import Vue from 'vue'
 import VueDragscroll from 'vue-dragscroll'
+import VueAnalytics from 'vue-analytics'
 import App from './App.vue'
 import store from './store'
 import { i18n } from '@/i18n'
 import Editor from '@/components/editor/Editor.vue'
 import { router } from '@/routes'
 
+const editor = window.location.hash.includes('editor')
 Vue.config.productionTip = false
 
 Vue.use(VueDragscroll)
-
-const editor = window.location.hash.includes('editor')
+if (process.env.VUE_APP_GA_ID !== undefined) {
+  Vue.use(VueAnalytics, {
+    id: process.env.VUE_APP_GA_ID,
+    debug: {
+      sendHitTask: process.env.NODE_ENV === 'production',
+      router: editor ? undefined : router
+    }
+  })
+}
 
 new Vue({
   i18n,

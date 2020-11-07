@@ -38,6 +38,7 @@ jobs:
         uses: Borales/actions-yarn@v2.1.0
         env:
           VUE_APP_PUBLIC_URL: https://roshar.17thshard.com/
+          VUE_APP_GA_ID: ${{ secrets.GA_ID }}
         with:
           cmd: build
       - name: Create CNAME
