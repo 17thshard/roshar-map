@@ -1,3 +1,3 @@
-# Quili
+# 奎里岛
 
-**Quili** is one of the #[Reshi Isles](locations/reshi-isles), west of #[Abri](locations/abri), but east of the kingdom of #[Rira](locations/rira).
+**奎里岛**是#[雷希群岛](locations/reshi-isles)中的一座岛屿，位于#[阿布里岛](locations/abri)以西，#[里拉](locations/rira)以东。
