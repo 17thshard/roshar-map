@@ -1,156 +1,156 @@
 {
     "textureLocale": "en",
-    "name": "Map of Roshar",
-    "title": "{page} | The Stormlight Archive",
+    "name": "柔刹地图",
+    "title": "{page} | 飓光志",
     "ui": {
-        "loading": "Loading...",
-        "circa": "ca. {date}",
-        "menu": "Menu",
-        "settings": "Settings",
-        "layers": "Layers",
-        "filters": "Filters",
-        "close": "Close",
-        "back": "Back",
-        "separate-timelines": "Separate timelines",
-        "enable": "Enable",
-        "disable": "Disable",
-        "display-separately": "Display separately",
-        "stop-display-separately": "No longer display separately",
-        "previous-event": "Previous Event",
-        "next-event": "Next Event",
-        "previous": "Previous",
-        "next": "Next",
-        "jump-to-start": "Jump to start",
-        "jump-to-end": "Jump to end",
-        "coppermind": "More on the Coppermind",
-        "welcome": "Welcome to the unofficial interactive map and timeline of Brandon Sanderson's *The Stormlight Archive* series of books!",
-        "language": "Language",
-        "languageHeading": "Language Selection",
-        "help": "Help",
-        "about": "About",
-        "aboutText": "Welcome to our Interactive Map and Timeline of Roshar!\n\nThis website allows you to explore the map of Roshar and the timeline of Brandon Sanderson's *Stormlight Archive* series. Clicking locations on the map will reveal details about it as well as related events and characters. Browsing the timeline at the bottom of the page allows you to jump between different events on the map and open up more information about those events. If you want to know even more, links to the Coppermind wiki are provided.\n\nThis is a fan-made project that is not affiliated with Dragonsteel Entertainment. All dates and locations are based on a combination of in-world references and our own estimates and assumptions. If you would like to dig further into the timeline of the series, or if you are curious about the references and assumptions used, please visit [Jofwu's Stormlight Archive Timeline project](https://docs.google.com/spreadsheets/d/1zq5bJoKE83ggDCjH43i1hZi0CIpB2iAx7v37zQPVFK0).\n\nMake sure you check out the tutorial if you haven't done so! We hope that you find this to be a fun, insightful, and helpful tool as you read *The Stormlight Archive*!",
-        "more": "More...",
-        "related": "Related",
-        "date": "Date",
-        "date-help": "How to read this?",
-        "chapter": "Chapter",
-        "dismiss": "Dismiss",
+        "loading": "加载中……",
+        "circa": "约{date}",
+        "menu": "菜单",
+        "settings": "设置",
+        "layers": "模式",
+        "filters": "过滤器",
+        "close": "关闭",
+        "back": "返回",
+        "separate-timelines": "单独时间轴",
+        "enable": "允许",
+        "disable": "不允许",
+        "display-separately": "单独显示",
+        "stop-display-separately": "不再单独显示",
+        "previous-event": "前一个事件",
+        "next-event": "后一个事件",
+        "previous": "上一个",
+        "next": "下一个",
+        "jump-to-start": "跳转至页首",
+        "jump-to-end": "跳转至页尾",
+        "coppermind": "了解更多",
+        "welcome": "欢迎来到布兰登·桑德森所著史诗奇幻系列《飓光志》的非官方互动地图和时间轴！",
+        "language": "语言",
+        "languageHeading": "选择语言",
+        "help": "帮助",
+        "about": "关于",
+        "aboutText": "欢迎使用柔刹互动地图和时间轴！\n\n本站功能如下：\n\n1）点击地名了解详情及相关的事件和角色。\n\n2）浏览底部的时间轴，跳转至不同事件了解详情。3）欲知更多，可点击“红铜智库”英文维基（Coppermind）的链接查看。\n\n本项目由民间发起，与龙钢娱乐公司无关，所有日期和地点均基于书中信息及粉丝推测。欲深入挖掘系列的时间线或是建站所用的参考资料，请访问[Jofwu的飓光志时间轴项目](https://docs.google.com/spreadsheets/d/1zq5bJoKE83ggDCjH43i1hZi0CIpB2iAx7v37zQPVFK0).\n\n使用前请务必查看教程！希望本站能成为您阅读《飓光志》的好帮手！",
+        "more": "更多……",
+        "related": "相关条目",
+        "date": "日期",
+        "date-help": "如何解读？",
+        "chapter": "章节",
+        "dismiss": "关闭",
         "first-visit": {
-            "heading": "Welcome",
-            "intro": "**Spoilers upto the end of *Oathbringer* ahead!** Continue at your own risk.\n\nIt looks like this is your first use of this app. Would you like some help?\n\nYou can always find help later on from the menu to the top right.",
-            "calendar": "Explain dates",
-            "tutorial": "Show hints"
+            "heading": "欢迎",
+            "intro": "**剧透警告！**本互动地图含有至《渡誓》结尾的剧透，请谨慎阅览。\n\n您似乎是首次光临，需要帮助吗？\n\n您始终可以在右上方的菜单中找到本教程。",
+            "calendar": "历法说明",
+            "tutorial": "显示提示"
         },
         "tutorial": {
-            "title": "Tutorial",
-            "explanation": "Click on any of the red dots to find out what you can do with the app.",
-            "calendar": "Explain calendar & dates",
+            "title": "教程",
+            "explanation": "点击任意红点学习如何使用本互动地图。",
+            "calendar": "历法说明",
             "hints": {
                 "settings-button": {
-                    "title": "Settings Menu",
-                    "text": "Adjust display & filter settings for the map and timeline"
+                    "title": "设置菜单",
+                    "text": "为地图和时间轴调整显示和过滤设置。"
                 },
                 "menu-button": {
-                    "title": "Menu",
-                    "text": "Find helpful links and language settings"
+                    "title": "菜单",
+                    "text": "寻找外部链接和语言设置。"
                 },
                 "timeline": {
-                    "title": "Timeline",
-                    "text": "Navigate this timeline by scrubbing or scrolling and click on any of the diamonds to view the associated event"
+                    "title": "时间线",
+                    "text": "拖动时间轴并点击任意菱形符号查看相关事件。"
                 },
                 "event": {
-                    "title": "Event Details",
-                    "text": "Click the \"More\" link to get a detailed summary, related information and where to find the event in the book, if applicable"
+                    "title": "事件详情",
+                    "text": "点击\"更多\"查看事件详情、相关信息和事件在书中的位置。"
                 },
                 "location": {
-                    "title": "Location Details",
-                    "text": "Click on any named location to view a detailed description and associated information"
+                    "title": "地点详情",
+                    "text": "点击任意地点查看详情和相关信息。"
                 },
                 "settings-layers": {
-                    "title": "Layers",
-                    "text": "Layers can provide additional useful information on top of the map view. They can be toggled at any time"
+                    "title": "模式",
+                    "text": "使用模式功能为原始地图添加更多信息，图层随时可以切换。"
                 },
                 "settings-filters": {
-                    "title": "Filters",
-                    "text": "Filters allow you to decide which events are displayed on the timeline. You may hide them completely or create a separate timeline that focuses on the filtered item"
+                    "title": "过滤器",
+                    "text": "使用过滤器功能决定时间轴上显示的事件。事件可以完全隐藏，也可以设置单独时间轴，只看选定信息。"
                 },
                 "settings-separate-timelines": {
-                    "title": "Separate Timelines",
-                    "text": "Once you've started displaying a filter as separate timeline, you can find it labeled here. Use the drag handle to change the order the timelines are displayed in"
+                    "title": "单独时间轴",
+                    "text": "开启单独时间轴后，该时间轴的名称会出现在下方，拖动名称调整显示顺序。"
                 }
             }
         },
         "calendar-guide": {
-            "title": "The Rosharan Calendar",
+            "title": "柔刹历",
             "start": {
-                "name": "Start",
-                "explanation": "This is one year in the Rosharan calendar. It corresponds to 1.1 years on Earth."
+                "name": "开始",
+                "explanation": "这是柔刹历的1年，等同于1.1个地球年。"
             },
             "day": {
-                "name": "Day",
-                "explanation": "Each day is 20 Rosharan hours long."
+                "name": "日",
+                "explanation": "1天长20个小时。"
             },
             "week": {
-                "name": "Week",
-                "explanation": "Each week is 5 days long."
+                "name": "周",
+                "explanation": "1周有5天。"
             },
             "month": {
-                "name": "Month",
-                "explanation": "Each month spans 50 days, or 10 weeks."
+                "name": "月",
+                "explanation": "1个月有10周，共计50天。"
             },
             "year": {
-                "name": "Year",
-                "explanation": "A year amounts to 10 months, 100 weeks, or 500 days."
+                "name": "年",
+                "explanation": "1年有10个月和100周，共计500天。"
             },
             "date": {
-                "name": "Dates",
-                "explanation": "Dates are written as the year first, month second, week third, and day last. The numbers are separated by periods.\n\nFor example, this date in year 1173 is written: {date}"
+                "name": "日期",
+                "explanation": "书写日期时，年份在前，其后依次是月份、周数和日数，以半角句号分隔。\n\n例：下图所示的日期写作{date}。"
             }
         },
         "error-screen": {
-            "message": "Whoops... Looks like the app cannot be loaded in your browser for some reason.\n\nPlease consider visiting using a [modern browser](https://browsehappy.com).",
-            "report-intro": "Think this is an actual error?",
-            "report-button": "Report on GitHub"
+            "message": "糟糕！本互动地图似乎无法在您的浏览器中加载，\n\n请考虑使用新版本的浏览器。",
+            "report-intro": "如果您认为确实存在错误，",
+            "report-button": "请前往GitHub报错。"
         },
         "translatorNote": {
             "abbreviation": "TN",
-            "full": "Translator's Note"
+            "full": "翻译说明"
         },
         "go-to-date": {
-            "heading": "Go to Date",
+            "heading": "跳转日期",
             "fields": {
                 "year": {
-                    "label": "Year",
+                    "label": "年",
                     "placeholder": "YYYY"
                 },
                 "month": {
-                    "label": "Month",
+                    "label": "月",
                     "placeholder": "MM"
                 },
                 "week": {
-                    "label": "Week",
+                    "label": "周",
                     "placeholder": "WW"
                 },
                 "day": {
-                    "label": "Day",
+                    "label": "日",
                     "placeholder": "DD"
                 }
             },
             "errors": {
-                "year-required": "You must fill out the year!",
-                "month-required": "You must fill out the month!",
-                "week-required": "You must fill out the week!"
+                "year-required": "必须填写年份！",
+                "month-required": "必须填写月份！",
+                "week-required": "必须填写周数！"
             }
         },
-        "lock-timeline": "Lock navigation to timeline",
-        "unlock-timeline": "Unlock navigation",
-        "translation-by": "Translation by"
+        "lock-timeline": "锁住时间轴导航",
+        "unlock-timeline": "解锁导航",
+        "translation-by": "译者："
     },
     "entry-types": {
-        "events": "Events",
-        "locations": "Locations",
-        "characters": "Characters",
-        "misc": "Miscellaneous"
+        "events": "事件",
+        "locations": "地点",
+        "characters": "角色",
+        "misc": "其他"
     },
     "numbers": [
         "Jes",
@@ -165,53 +165,53 @@
         "Ishi"
     ],
     "layers": {
-        "shadesmar": "Shadesmar",
-        "graticule": "Lines of latitude and longitude",
-        "silverKingdoms": "Silver Kingdoms",
-        "oathgates": "Oathgate Locations",
-        "factions": "Current State of the World"
+        "shadesmar": "裂影界",
+        "graticule": "经纬线",
+        "silverKingdoms": "白银十王国",
+        "oathgates": "誓约之门位置",
+        "factions": "世界现状"
     },
     "factions": {
         "coalition": {
-            "name": "Dalinar's Coalition of Monarchs",
+            "name": "达力拿领导的君主联盟",
             "style": "Blue and maroon checkered"
         },
         "odium": {
-            "name": "Odium's Forces",
+            "name": "仇恨势力",
             "style": "Gold"
         },
         "neutral": {
-            "name": "Neutral",
+            "name": "中立势力",
             "style": "Green"
         }
     },
     "tagCategories": {
-        "tags": "Tags",
-        "characters": "Characters",
-        "books": "Books"
+        "tags": "标签",
+        "characters": "角色",
+        "books": "作品"
     },
     "tags": {
-        "general": "General",
-        "dalinar": "Dalinar",
-        "kaladin": "Kaladin",
-        "shallan": "Shallan",
-        "twok": "The Way of Kings",
-        "wor": "Words of Radiance",
-        "ed": "Edgedancer",
-        "ob": "Oathbringer",
-        "row": "Rhythm of War",
-        "adolin": "Adolin",
-        "renarin": "Renarin",
-        "lift": "Lift",
-        "szeth": "Szeth",
-        "rysn": "Rysn",
-        "jasnah": "Jasnah",
-        "navani": "Navani",
-        "eshonai": "Eshonai",
-        "taravangian": "Taravangian",
-        "wit": "Wit",
-        "moash": "Moash",
-        "venli": "Venli",
-        "history": "History"
+        "general": "通用",
+        "dalinar": "达力拿",
+        "kaladin": "卡拉丁",
+        "shallan": "沙兰",
+        "twok": "《王者之路》",
+        "wor": "《光辉真言》",
+        "ed": "《缘舞》",
+        "ob": "《渡誓》",
+        "row": "《纷争之韵》",
+        "adolin": "阿多林",
+        "renarin": "雷纳林",
+        "lift": "莉芙特",
+        "szeth": "泽斯",
+        "rysn": "莱丝",
+        "jasnah": "迦熙娜",
+        "navani": "纳瓦妮",
+        "eshonai": "伊舒娜",
+        "taravangian": "塔拉梵吉安",
+        "wit": "知策",
+        "moash": "莫阿什",
+        "venli": "温丽",
+        "history": "历史"
     }
 }
