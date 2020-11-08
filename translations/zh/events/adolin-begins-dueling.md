@@ -1,8 +1,8 @@
-# Adolin begins dueling
-Adolin began dueling Shardbearers to win Shards for House Kholin.
+# 阿多林开始决斗
+阿多林开始与碎瑛武士决斗来为寇林家族赢得碎瑛武器。
 
 ## Details
-After being named Highprince of War, Dalinar continued struggling to unite the stubborn Alethi highprinces against the Parshendi. To force them into submission, Dalinar asked Adolin to begin dueling competitively. Over the following weeks, Adolin was able to secure several Shards for House Kholin.
+在被指名为轩战王之后，达力拿继续挣扎着尝试团结阿勒斯卡顽固的轩亲王们对抗仆族智者。为了强迫他们屈服，达力拿让阿多林开始竞争性地决斗。在接下来的几周中，阿多林为寇林家族拿下了多件碎瑛武器。
 
 ## Metadata
 | Field | Value |

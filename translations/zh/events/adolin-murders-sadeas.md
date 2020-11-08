@@ -1,8 +1,8 @@
-# Adolin murders Sadeas
-Adolin encountered Sadeas alone in the halls of Urithiru and murdered him upon provocation.
+# 阿多林杀死撒迪亚斯
+阿多林遇到了在乌有斯麓走廊中独自一人的撒迪亚斯，并在被挑衅之后杀死了他。
 
 ## Details
-While exploring the halls of Urithiru days after residiscovery of the city, Adolin encountered Sadeas alone. After Adolin revealed his presence, Sadeas made smug threats against the Kholins. This prompted a sudden and violent response from Adolin, leaving Sadeas dead with a dagger through one eye.
+在重新发现乌有斯麓后几天，探索其门厅之时，阿多林遇到了独自一人的撒迪亚斯。在阿多林现身后，撒迪亚斯说了些自负的，针对寇林家族的威胁。阿多林做出了突然而剧烈的反应。撒迪亚斯被匕首穿过眼睛而死。
 
 ## Metadata
 | Field | Value |

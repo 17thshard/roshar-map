@@ -1,8 +1,8 @@
-# Battle of Kholinar
-Elhokar is killed as the singers attacked and seized Kholinar. F*** Moash.
+# 塔冠城之战
+艾尔霍卡在歌者们进攻并占领塔冠城时被杀。
 
 ## Details
-The singer forces laying seige to Kholinar attacked on the day Elhokar's team attempted to open the Oathgate. Elhokar's team failed after Moash killed the Alethi king and Kaladin, Shallan, Adolin, and Azure were stranded in Shadesmar. The singer assault was successful.
+歌者包围塔冠城的势力企图打开誓约之门。艾尔霍卡的队伍在莫阿什杀死阿勒斯卡国王后失败了。卡拉丁，莎兰，阿多林，天青被困在了裂影界。歌者的进攻成功了。
 
 ## Metadata
 | Field | Value |

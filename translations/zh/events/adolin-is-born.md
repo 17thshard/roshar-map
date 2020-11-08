@@ -1,5 +1,5 @@
-# Adolin is born
-Adolin was born to Dalinar and Evi Kholin.
+# 阿多林出生
+达力拿与艾薇寇林得子阿多林。
 
 ## Metadata
 | Field | Value |
