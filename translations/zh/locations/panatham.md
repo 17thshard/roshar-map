@@ -1,3 +1,3 @@
-# Panatham
+# 帕纳撒
 
-**Panatham** is a city in #[Babatharnam](locations/babatharnam) on Roshar.
+**帕纳撒**是#[巴巴萨那姆](locations/babatharnam)的一座城市。
