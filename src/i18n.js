@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
-import messages from '@/lang/en.json'
+import messages from '@/lang/en.lang.json'
 
 Vue.use(VueI18n)
 
@@ -31,7 +31,7 @@ export function loadLanguageAsync (lang, locale) {
   }
 
   // If the language hasn't been loaded yet
-  return import(/* webpackChunkName: "lang-[request]" */ '@/lang/' + lang + '.json').then(
+  return import(/* webpackChunkName: "lang-[request]" */ '@/lang/' + lang + '.lang.json').then(
     (messages) => {
       i18n.setLocaleMessage(lang, messages.default)
       loadedLanguages.push(lang)

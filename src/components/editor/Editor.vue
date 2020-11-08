@@ -545,7 +545,7 @@ export default {
   },
   created () {
     Promise.all(this.availableLanguages.map(lang =>
-      import(/* webpackChunkName: "lang-[request]" */ '@/lang/' + lang + '.json').then((messages) => {
+      import(/* webpackChunkName: "lang-[request]" */ '@/lang/' + lang + '.lang.json').then((messages) => {
         this.$set(this.loadedLanguages, lang, messages.default)
       }))).then(() => {
       this.languagesLoaded = true

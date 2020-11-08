@@ -27,13 +27,10 @@ jobs:
         uses: Borales/actions-yarn@v2.1.0
         with:
           cmd: install
-      - name: Compile Lang JSONs
+      - name: Validate translations
         uses: Borales/actions-yarn@v2.1.0
         with:
-          cmd: compileLangJsons
-      - name: Copy Lang JSONs
-        run: |
-          cp build/lang/* src/lang
+          cmd: validateTranslations
       - name: Build for production
         uses: Borales/actions-yarn@v2.1.0
         env:
