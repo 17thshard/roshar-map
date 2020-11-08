@@ -44,7 +44,7 @@
 
 ## Contribute
 
-Help is always welcome! There's two main ways of contributing directly to this project: Translations and code. For translations, you may contribute both fixes to existing texts—including English—as well as entirely new locales. Feel free to work on translations in chunks and to ask for help in getting a new language set up on our Discord or forums, especially where localizing the actual map is concerned.
+Help is always welcome! There's two main ways of contributing directly to this project: Translations and code. For translations, you may contribute both fixes to existing texts—including English—as well as entirely new locales. Feel free to work on translations in chunks and to ask for help in getting a new language set up on our [Discord](https://discord.gg/x9hjkKXBew) or forums, especially where localizing the actual map is concerned.
 
 Bug fixes and improvements based on [reported issues](https://github.com/Palanaeum/roshar-map/issues) can be addressed through pull requests if you feel confident to work on the code base. As goes for translations, do not shy away from asking other contributors for pointers on where to start looking.
 

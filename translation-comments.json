@@ -1,5 +1,8 @@
 {
-    "textureLocale": "Texture Locale",
+    "textureLocale": {
+        "name": "Texture Locale",
+        "context": "This refers to a directory in *src/assets/textures/localized*. Only change this away from 'en' if you already had the textures translated!"
+    },
     "name": "Application Name",
     "title": {
         "name": "Page Title Template",
@@ -14,7 +17,12 @@
     "meta.translator.logo": "Logo File",
     "ui": "UI",
     "ui.loading": "Loading text",
-    "ui.circa": "Date Circa",
+    "ui.circa": {
+        "name": "Date Circa",
+        "variables": {
+            "date": "Date of the event"
+        }
+    },
     "ui.menu": "Menu Button",
     "ui.settings": "Settings Button",
     "ui.layers": "Layers Heading",

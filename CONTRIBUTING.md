@@ -28,53 +28,63 @@ After the artist's permission has been shared and the requisite information gath
 
 This is guide will walk through the process of preparing the files necessary for a new translation of the Interactive Map of Roshar.
 
-### Translating Markdown Files
+## Setup
 
-Most of the site's text is found in the markdown files located under the [translations](https://github.com/Palanaeum/roshar-map/tree/master/translations) directory. You will want to download the English files in the `en` folder, rename the `en` folder to the appropriate language code, and then translate the contents of the files as described below. You **should not** translate the names of the files themselves. The files are organized into four subfolders: Characters, Events, Locations, and Misc.
+In order to work on a language, you need a copy of this project's code on your local machine. In order to contribute your changes back after you're done, fork the repository to your own account. Check out [GitHub's guide](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo) on how to work with forks in general.
 
-Here's an example of a markdown file from the Events folder, both a preview of the file and inside the file editor:
+Once you've forked the repository and got a local copy (either through a Git clone or the Code -> Download ZIP option in GitHub), it's best to download the [latest version](https://github.com/Palanaeum/roshar-map-translation-editor/releases) of our specialized translation editor.
 
-![markdown_file_example](docs/markdown_file_example.png)
+Upon first launch of the application, your operation system might say that it is unsafe. Note that this is due to the executables being unsigned and that the files are safe as long as you only download them from the above GitHub Releases page!
 
-![markdown_editor_example](docs/markdown_editor_example.png)
+The editor will ask you about a "working directory" when you first start it. Point it at your local copy of the repository at this point. You're all set for translation work now!
 
-Event files have a Name, Blurb, Description, and sometimes a Chapter Reference. Each of these will need to be translated. The Name should be a level one header (preceded by a `# `). The Blurb is the text that immediate follows the Name, and is a *brief* description of the event. The Name and Blurb appear when you select an event on the timeline on the Interactive Roshar Map:
+## Creating a new language
 
-![blurb_example](docs/blurb_example.png)
+This step is only required in case you're working on an entirely new language. While on the editor home screen, click "Create new language" and enter the locale code your language will be referred to as internally later on. You can also enter some additional metadata for the editor at this point.
 
-The Description is a longer description of the event, which appears in the left panel when users click for more information. The Chapter Reference will appear at the top of this panel, if the event refers to an event which happens in the books:
+## Translating text
 
-![description_example](docs/description_example.png)
+Select the language you'd like to edit on the editor home screen. You'll see a sidebar with five categories: Messages, events, locations, characters, and miscellaneous.
 
-The Character, Location, and Misc markdown files are a simpler case of the same thing. They simply have a Name (as a level one header) and a Description (text following the Name).
+The last four categories concern the various items you can actually look at on the map/timeline. They come with a rich Markdown-based text editor that helps you write nicely formatted descriptions and preview them. Each of these items also has a "Chapter" metadata field where you can add a reference to the book and chapter that serves as source for an event, for example.
 
-Here is a brief guide on using the markdown for different formatting: https://guides.github.com/features/mastering-markdown/. Also note that you can create links to other items on the site (other Events, Characters, Locations, Misc items) in the text using `#[TEXT](folder/filename)` where `TEXT` is the text that will appear on the site, `folder` is the folder that the item can be found in (Locations, Events, etc.) and `filename` is the name of the item's file (excluding the .md file extension).
+Events additionally have a "Blurb" field. This is the little preview text displayed for an event in the timeline with the "More..." link attached. Put a shorter summary here!
 
-Translator's notes may be added in two ways, exemplified by the following Markdown snippet:
-````markdown
-<!-- Will be rendered in parentheses inline with the rest of the text -->
-This is normal text _[tn](This is a translator's note)_. Normal text continues here.
+Finally, you may edit "messages". These are the labels and texts for various UI elements in the app. You can switch between a "flat" and "hierarchical" view in the sidebar here, which allows you to either drill down into individual categories of messages or display them all at once. Most messages are plain text, so they may not contain any special formatting using Markdown. Messages that *can* contain formatting will have the Markdown editor instead.
 
-<!-- Will be rendered as an individual section, can contain paragraphs --> 
-```tn
-Translator's note goes here
-```
-````
+Some messages come with additional context that explains where they appear. Others can contain special variables written like `{variable}` that will get replaced with an appropriate value by the application.
 
-You can edit these markdown files directly in GitHub OR you can download the files to your computer, edit them in a text editing program like Notepad++, and upload them all at once.
+Once you're done working on any entry or the messages, you have to save your work using the button at the bottom of each page. You can edit several messages before saving *all* of them! You'll also be prompted to save your progress if you leave a page with unsaved changes.
 
-### Translating UI Elements
+## Translating textures
 
-Most of the site's user interface elements can be translated in the appropriate .json file under [/src/lang](https://github.com/Palanaeum/roshar-map/tree/master/src/lang). You can copy `en.json` as a reference and translate the terms that appear on the *right* side of the colons, inside parenthesis. Or if you're uncomfortable editing the .json file directly, try using https://comigo.itch.io/jsonbabel.
+Textures are the images that make up the actual map. There are several textures that can be localized to your language. Since the process is a little more involved and requires handling large files, please contact [Paleo](https://github.com/PaleoCrafter) about it. See the last section for Discord details. Please have the translations for the following things handy to streamline the process:
 
-For example, all of the blue-highlighted text here will need to be translated:
+ * Roshar (Physical Realm) locations
+ * Shadesmar locations
+ * Silver Kingdoms
+ * Oathgate locations
 
-![json_file](docs/json_file.png)
+## Adding a language to the menu and testing your work
 
-The next step is to deal with the translation of the map itself. This will require editing several image files. Take special note of the very first item in the .json file: `"textureLocale": "en",`. This line tells the site which language's image files to use. In this case, the "en" tells the site to use the English files located in the "/en" subdirectory here: [roshar-map/src/assets/textures/localized](https://github.com/Palanaeum/roshar-map/tree/master/src/assets/textures/localized) We will need to create a new directory for the correct language code here, and put all of the new image files there.
+Simply translating the application is not quite enough for your work to also show up in the app. You'll have to edit the [`menu.json`](src/lang/menu.json) file in order for your translation to show up in the menu. Simply copy an existing entry here and adjust it for your language. Make sure that individual entries are separated by a comma!
 
-Finally, selection boundaries for the text on the map need to be updated. It is best to approach one of the maintainers of this repo (e.g. @PaleoCrafter, Paleo#1001 on Discord) about these last two steps since they require very specific outputs.
+Once you have translated some things and actually want to view them in your browser, you can run the map locally on your machine. For this, you need to have the [Yarn package manager](https://classic.yarnpkg.com/en/docs/install/) installed on your machine. Once you have done so, follow these steps to test your work:
 
-### Questions?
+ 1. Go to the map directory in your file manager and open it in your command line
+    * On Windows, hold down <kbd>Shift</kbd>, right click in the directory and click the "Open PowerShell window here"
+    * On MacOS, launch the Terminal application and `cd` to the directory
+    * On Linux, you should be familiar with doing this :)
+ 2. Run the `yarn install` command. This will install all necessary dependencies for running the map
+ 3. Run `yarn serve`. This will continuously look for changes you make to the app and reload them in your browser
+ 4. Visit http://localhost:10010 in your browser. You should see the app here just like the release version
 
-If you have any questions, just ask! We hope this guide will help, but we expect that you will have questions along the way.
+## Contributing back your changes
+
+When you're (mostly) done with a translation, you can contribute it back to the main repository. On Windows and MacOS, if you're not familiar with Git, we recommend using the official [GitHub Desktop client](https://desktop.github.com/). You can find a guide for making changes and pushing them to your fork in [their guide](https://docs.github.com/en/free-pro-team@latest/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch).
+
+As soon as your changes are pushed to your GitHub repository, you may recreate a [pull request](https://github.com/Palanaeum/roshar-map/compare). We'll review your changes from here and hopefully will have your translation merged very soon!
+
+## Questions? Suggestions?
+
+If you have any questions, just ask! We hope this guide will help, but we expect that you will have questions along the way. We have created a [dedicated Discord server](https://discord.gg/x9hjkKXBew) for coordinating translation efforts. Feel free to come just with us there and if you have any suggestions on how to improve the process, you can also let us know about them there!
