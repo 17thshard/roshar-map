@@ -1,3 +1,3 @@
-# Rysn
+# 莱丝
 
-**Rysn** is a young woman from #[Thaylenah](locations/thaylenah) on Roshar. She currently works in the Thaylen Gemstone Reserve, managing Queen Fen's personal finances. Previously she was an an apprentice merchant under her _babsk_ Vstim. She has a pet Larkin which she calls Chiri-Chiri.
+**莱丝**是来自柔刹的#[泰勒拿](locations/thaylenah)地区的一名年轻女性。她现在在泰勒拿宝石储备行工作，负责管理芬恩女王的私人财务。之前她曾是她的巴克斯乌斯提姆手下的学徒商人。她有一只宠物飓甲蜂名叫奇里奇里。

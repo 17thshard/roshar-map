@@ -1,5 +1,5 @@
-# Venli
+# 温丽
 
 > I feel like a relic. Already I seem like a cast-off ruin from a nearly forgotten day.
 
-**Venli** is a listener scholar in #[Narak](locations/narak) and #[Eshonai's](characters/eshonai) sister. During the True Desolation, she bonds with Timbre and becomes a Surgebinder of the Order of Willshapers.
+**温丽**是一名来自#[纳拉克](locations/narak)的听者学士，也是#[伊舒娜](characters/eshonai)的妹妹。在终极灭世中，她与天音缔约，成为了一名念化骑士。

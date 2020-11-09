@@ -1,5 +1,5 @@
-# Odium
+# 仇恨
 
 > It was hatred. A deep, pulsing hatred with a pressure to turn all things molten. It was the heat of a thousand suns, it was the bliss of every kiss, it was the lives of all men wrapped up in one, defined by everything they felt.
 
-**Odium** is a Shard of Adonalsium held by Rayse. Unlike most other Shards, which typically pick a single world and settle there, Odium has been traveling freely throughout the cosmere for a long time, deliberately refusing to Invest himself anywhere. He is responsible for the deaths of at least four Shards—Devotion, Dominion, Ambition and #[Honor](characters/honor). In the present, he's confined to the planet Braize, but his influence can be felt on the entire Rosharan system. Odium’s Investiture is typically associated with “burning” gold or violet-black colors, though it is also often red, the color that signifies corrupted Investiture.
+**仇恨**是由雷瑟持有的阿多拿西的神瑛之一。与其他绝大多数神瑛不同的是，他们通常会选择一个世界长久地栖息在那里，但仇恨已经在三界宙中自由地游荡了很久了，而且刻意拒绝长时间停留在某一处。他要为至少四位神瑛——忠爱、支配、意志和#[荣耀](characters/honor)——的死亡负责. 现在，他被囚禁在庇雷狱星球，但他的影响力可以辐射到整个柔刹星系。仇恨的神能通常与”燃烧“的金色或紫黑色相关，尽管它经常表现为红色，这是标志着腐化神能的颜色。
