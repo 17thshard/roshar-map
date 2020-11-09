@@ -1,8 +1,8 @@
-# Kaladin joins Bridge Four
-Kaladin arrived as a slave at the Shattered Plains and was assigned by Gaz to Bridge Four.
+# 卡拉丁加入第四冲桥队
+卡拉丁以奴隶的身份来到破碎平原，被盖兹安排到了第四冲桥队。
 
 ## Details
-The slaver Tvlakv arrived on the Shattered Plains, selling Kaladin into continued slavery as a bridgeman in Sadeas's bridge crews. Kaladin was assigned by Gaz to Bridge Four.
+奴隶主图拉科夫来到了破碎平原，将卡拉丁以奴隶的身份卖到了撒迪亚斯的冲桥队继续当奴隶。卡拉丁被盖兹安排到了第四冲桥队。
 
 ## Metadata
 | Field | Value |

@@ -1,8 +1,8 @@
-# Kaladin joins a group of singers
-Kaladin joined a group of singers fleeing to Revolar, initially as their prisoner.
+# 卡拉丁加入歌者
+卡拉丁加入了一群逃往雷沃拉尔的歌者，最初是作为他们的囚犯加入的。
 
 ## Details
-After a few days of searching the vicinity of Hearthstone, Kaladin was able to locate a band of singers who had fled their towns after being transformed by the Everstorm. The group was led by a Voidspren who refused to reveal their ultimate destination. Hoping to learn more, Kaladin allowed himself to be captured. They freed him in the days that followed by offering assistance.
+在赫斯通附近搜索了几天后，卡拉丁终于锁定了一群歌者，他们在被灭世风暴变形之后就逃离了赫斯通镇。这群歌者被一只虚灵引导前行，这只虚灵拒绝透露他们的最终目的地是哪里。为了获得更多信息，卡拉丁故意让自己被他们擒获。在卡拉丁提供了一些帮助之后，他们归还了卡拉丁自由。
 
 ## Metadata
 | Field | Value |

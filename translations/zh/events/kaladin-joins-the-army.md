@@ -1,8 +1,8 @@
-# Kaladin joins the army
-Roshone drafted Tien into the army, and Kaladin joined to protect his younger brother.
+# 卡拉丁加入军队
+荣寿计划令提恩参军，卡拉丁也加入了军队，意在保护他的弟弟。
 
 ## Details
-When his cousin Amaram arrived in Hearthstone, looking for new recruits to join the army, Roshone used his authority to have Tien drafted as a means of revenge against Lirin. Seeing the look of fear on Tien's face Kaladin joined the army as well, with the goal of protecting Tien until their tour of duty was complete.
+当他的远亲亚马兰来到赫斯通寻找新兵加入军队的时候，荣寿利用自己的权力计划强迫提恩服役，作为对李伦的报复。看到提恩脸上的畏惧之色，卡拉丁也加入了军队，希望能藉此保护提恩一直到他们的服役完成为止。 
 
 ## Metadata
 | Field | Value |
