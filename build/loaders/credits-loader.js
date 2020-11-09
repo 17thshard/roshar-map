@@ -1,7 +1,7 @@
 const path = require('path')
 const fs = require('fs')
 const markdown = require('simple-markdown')
-const parseSections = require('../../src/parse-markdown-sections')
+const parseSections = require('./parse-markdown-sections')
 
 const targetText = '<!-- CREDITS_TEXT -->'
 

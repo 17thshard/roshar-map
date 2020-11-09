@@ -1,0 +1,224 @@
+{
+    "textureLocale": "es",
+    "name": "Mapa de Roshar",
+    "title": "{page} | El archivo de las tormentas",
+    "meta": {
+        "translator": {
+            "url": "https://cosmere.es",
+            "name": "Cosmere.es",
+            "logo": "cosmerees.png"
+        }
+    },
+    "ui": {
+        "loading": "Cargando...",
+        "circa": "ca. {date}",
+        "menu": "Menu",
+        "settings": "Opciones",
+        "layers": "Capas",
+        "filters": "Filtros",
+        "close": "Cerrar",
+        "back": "Atrás",
+        "separate-timelines": "Líneas temporales separadas",
+        "enable": "Activar",
+        "disable": "Desactivar",
+        "display-separately": "Mostrar por separado",
+        "stop-display-separately": "Dejar de mostar por separado",
+        "previous-event": "Evento anterior",
+        "next-event": "Evento siguiente",
+        "previous": "Anterior",
+        "next": "Siguiente",
+        "jump-to-start": "Ir al principio",
+        "jump-to-end": "Ir al final",
+        "coppermind": "Más en la Coppermind (inglés)",
+        "welcome": "¡Bienvenidos al mapa y línea temporal interactiva no oficial de la saga *El archivo de las tormentas* de Brandon Sanderson.",
+        "language": "Idioma",
+        "languageHeading": "Selección del idioma",
+        "help": "Ayuda",
+        "about": "Acerca de",
+        "aboutText": "¡Bienvenido a nuestro mapa interactivo y línea temporal de Roshar!\n\nEsta web te permitirá explorar el mapa de Roshar y la saga *El archivo de las tormentas* de Brandon Sanderson. Hacer click en las diferentes ubicaciones del mapa te revelará detalles sobre la misma, así como sucesos y personajes relacionados. Navegar por la línea temporal en la zona inferior de la página te permitirá saltar entre diferentes sucesos del mapa y desplegar más información sobre los mismos. Si quieres saber todavía más, también hay enlaces a la wiki de Coppermind, pero ten en cuenta que por ahora solo están disponibles en inglés.\n\nEste es un proyecto desarrollado por fans, que no está relacionado con Dragonsteel Entertainment. Todas las fechas y ubicaciones están basadas en una combinación de referencias *in-world* y nuestras propias estimaciones. Si quieres profundizar más en la línea temporal de la saga, o si tienes curiosidad sobre las referencias y las estimaciones empleadas, por favor, visita [el proyecto de línea temporal del Archivo de las Tormentas hecho por Jofwu]https://docs.google.com/spreadsheets/d/1zq5bJoKE83ggDCjH43i1hZi0CIpB2iAx7v37zQPVFK0).\n\n¡Asegúrate de revisar el tutorial en caso de no haberlo hecho todavía! Esperamos que esta te parezca una herramienta divertida, esclarecedora y útil mientras lees *El archivo de las tormentas*",
+        "more": "Más...",
+        "related": "Relacionado",
+        "date": "Fecha",
+        "date-help": "¿Cómo leer esto?",
+        "chapter": "Capítulo",
+        "dismiss": "Ocultar",
+        "first-visit": {
+            "heading": "Bienvenido",
+            "intro": "**¡Spoilers hasta el final de *Juramentada*!** Sigue adelante bajo tu propio riesgo.\n\nParece que es la primera vez que utilizas esta aplicación. ¿Necesitas ayuda?\n\nSiempre puedes volver a la sección de ayuda desde el menú ubicado en la parte superior derecha.",
+            "calendar": "Explicar fechas",
+            "tutorial": "Mostrar leyendas"
+        },
+        "tutorial": {
+            "title": "Tutorial",
+            "explanation": "Haz click en cualquiera de los puntos rojos para descubrir lo que puedes hacer con la aplicación.",
+            "calendar": "Explicar calendario y fechas",
+            "hints": {
+                "settings-button": {
+                    "title": "Menú de opciones",
+                    "text": "Ajustar interfaz y filtros del mapa y la línea temporal"
+                },
+                "menu-button": {
+                    "title": "Menú",
+                    "text": "Aquí encontrarás enlaces de ayuda y ajustes de idioma"
+                },
+                "timeline": {
+                    "title": "Línea temporal",
+                    "text": "Navega por esta línea temporal arrastrándola o desplazándola con el ratón y haciendo click en cualquiera de los diamantes para ver un evento asociado"
+                },
+                "event": {
+                    "title": "Detalles del evento",
+                    "text": "Haz click en el enlace \"Más\" para obtener un resumen detallado, información relacionada, y dónde localizar el evento dentro del libro, en caso de estar disponible"
+                },
+                "location": {
+                    "title": "Detalles de la ubicación",
+                    "text": "Haz click sobre el nombre de cualquier ubicación para ver una descripción detallada y la información asociada"
+                },
+                "settings-layers": {
+                    "title": "Capas",
+                    "text": "Las capas pueden aportar información adicional útil además de la vista del mapa. Pueden activarse en cualquier momento"
+                },
+                "settings-filters": {
+                    "title": "Filtros",
+                    "text": "Los filtros te permiten decidir qué eventos se muestran en cada momento. Puedes ocultarlos por completo, o crear una línea temporal separada que se centre en el filtro seleccionado"
+                },
+                "settings-separate-timelines": {
+                    "title": "Líneas temporales separadas",
+                    "text": "Una vez has activado un filtro como línea temporal separada, puedes verla etiquetada aquí. Utiliza el control de arrastre para cambiar el orden en que se muestran"
+                }
+            }
+        },
+        "calendar-guide": {
+            "title": "El calendario roshariano",
+            "start": {
+                "name": "Inicio",
+                "explanation": "Esto es un año dentro del calendario roshariano. Equivale a 1.1 años terrestres."
+            },
+            "day": {
+                "name": "Día",
+                "explanation": "Cada día dura 20 horas rosharianas."
+            },
+            "week": {
+                "name": "Semana",
+                "explanation": "Cada semana dura 5 días."
+            },
+            "month": {
+                "name": "Mes",
+                "explanation": "Cada mes abarca 50 días, o 10 semanas."
+            },
+            "year": {
+                "name": "Año",
+                "explanation": "Un año se compone de 10 meses, 100 semanas, o 500 días."
+            },
+            "date": {
+                "name": "Fechas",
+                "explanation": "Las fechas se escriben mostrando el año en primer lugar, seguido del mes, la semana, y finalmente, el día. Los números están separados por puntos.\n\nPor ejemplo, esta fecha del año 1173 se escribe: {date}"
+            }
+        },
+        "error-screen": {
+            "message": "Uuuups... Parece que la aplicación no puede cargar en tu navegados por algún motivo.\n\nPor favor, valora utilizar un [navegador actual](https://browsehappy.com).",
+            "report-intro": "¿Crees que esto está equivocado?",
+            "report-button": "Reportar en GitHub"
+        },
+        "translatorNote": {
+            "abbreviation": "N.T.",
+            "full": "Nota del traductor"
+        },
+        "go-to-date": {
+            "heading": "Ir a la fecha",
+            "fields": {
+                "year": {
+                    "label": "Año",
+                    "placeholder": "YYYY"
+                },
+                "month": {
+                    "label": "Mes",
+                    "placeholder": "MM"
+                },
+                "week": {
+                    "label": "Semana",
+                    "placeholder": "SS"
+                },
+                "day": {
+                    "label": "Día",
+                    "placeholder": "DD"
+                }
+            },
+            "errors": {
+                "year-required": "¡Tienes que rellenar el año!",
+                "month-required": "¡Tienes que rellenar el mes!",
+                "week-required": "¡Tienes que rellenar la semana!"
+            }
+        },
+        "lock-timeline": "Fijar navegación a la línea temporal",
+        "unlock-timeline": "Desbloquear navegación",
+        "translation-by": "Traducido por"
+    },
+    "entry-types": {
+        "events": "Eventos",
+        "locations": "Ubicaciones",
+        "characters": "Personajes",
+        "misc": "Miscelánea"
+    },
+    "numbers": [
+        "Jes",
+        "Nan",
+        "Chach",
+        "Vev",
+        "Palah",
+        "Shash",
+        "Betab",
+        "Kak",
+        "Tanat",
+        "Ishi"
+    ],
+    "layers": {
+        "shadesmar": "Shadesmar",
+        "graticule": "Líneas de latidud y longitud",
+        "silverKingdoms": "Reinos Plateados",
+        "oathgates": "Ubicación de las Puertas Juradas",
+        "factions": "Estado actual del mundo"
+    },
+    "factions": {
+        "coalition": {
+            "name": "Coalición de Monarcas de Dalinar",
+            "style": "A cuadros azules y marrones"
+        },
+        "odium": {
+            "name": "Fuerzas de Odium",
+            "style": "Oro"
+        },
+        "neutral": {
+            "name": "Neutral",
+            "style": "Verde"
+        }
+    },
+    "tagCategories": {
+        "tags": "Etiquetas",
+        "characters": "Personajes",
+        "books": "Libros"
+    },
+    "tags": {
+        "general": "General",
+        "dalinar": "Dalinar",
+        "kaladin": "Kaladin",
+        "shallan": "Shallan",
+        "twok": "El camino de los reyes",
+        "wor": "Palabras radiantes",
+        "ed": "Danzante del filo",
+        "ob": "Juramentada",
+        "row": "El ritmo de la guerra",
+        "adolin": "Adolin",
+        "renarin": "Renarin",
+        "lift": "Lift",
+        "szeth": "Szeth",
+        "rysn": "Rysn",
+        "jasnah": "Jasnah",
+        "navani": "Navani",
+        "eshonai": "Eshonai",
+        "taravangian": "Taravangian",
+        "wit": "Sagaz",
+        "moash": "Moash",
+        "venli": "Venli",
+        "history": "Historia"
+    }
+}

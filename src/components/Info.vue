@@ -92,11 +92,8 @@
           <div class="info__content">
             <h2>{{ $t('ui.languageHeading') }}</h2>
             <nav class="info__menu">
-              <router-link to="/en-US">
-                English
-              </router-link>
-              <router-link to="/es-ES">
-                Español
+              <router-link v-for="{ code, name } in availableLanguages" :key="code" :to="`/${code}`">
+                {{ name }}
               </router-link>
               <router-link to="/zh">
                 中文
@@ -144,12 +141,14 @@ import Scrollbar from 'vuescroll/dist/vuescroll-native'
 import { ChevronLeftIcon, FacebookIcon, GithubIcon, MenuIcon, TwitterIcon, XIcon, YoutubeIcon } from 'vue-feather-icons'
 import { mapState } from 'vuex'
 import Markdown from '@/components/Markdown.vue'
+import availableLanguages from '@/lang/menu.json'
 
 export default {
   name: 'Info',
   components: { Markdown, TwitterIcon, FacebookIcon, YoutubeIcon, GithubIcon, MenuIcon, XIcon, Scrollbar, ChevronLeftIcon },
   data () {
     return {
+      availableLanguages,
       leaveActive: false,
       subPage: null,
       scrolled: {}

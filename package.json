@@ -9,7 +9,6 @@
     "lint": "vue-cli-service lint",
     "dumpTranslations": "node ./bin/dump-translations.js",
     "validateTranslations": "node ./bin/validate-translations.js",
-    "compileLangJsons": "node ./bin/validate-translations.js && node ./bin/compile-lang-jsons.js",
     "convertTextures": "node ./bin/convert-textures.js"
   },
   "dependencies": {

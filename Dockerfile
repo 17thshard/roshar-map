@@ -5,7 +5,7 @@ ARG PUBLIC_URL=/
 
 COPY ./ /app
 WORKDIR /app
-RUN yarn install && yarn run compileLangJsons && cp /app/build/lang/* /app/src/lang && VUE_APP_PUBLIC_URL=${PUBLIC_URL} yarn run build
+RUN yarn install && yarn run validateTranslations && VUE_APP_PUBLIC_URL=${PUBLIC_URL} yarn run build
 
 FROM nginx:stable-alpine
 RUN mkdir /app

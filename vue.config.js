@@ -32,6 +32,13 @@ module.exports = {
       .use('credits-loader')
       .loader(path.resolve('build/loaders/credits-loader.js'))
       .end()
+
+    config.module
+      .rule('lang')
+      .test(/\.lang\.json(\?.*)?$/)
+      .use('lang-loader')
+      .loader(path.resolve('build/loaders/lang-loader.js'))
+      .end()
   },
   pwa: {
     name: 'Interactive Map & Timeline of Roshar',

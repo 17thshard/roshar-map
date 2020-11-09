@@ -372,6 +372,7 @@ import LocationProperties from '@/components/editor/LocationProperties.vue'
 import CharacterProperties from '@/components/editor/CharacterProperties.vue'
 import MiscProperties from '@/components/editor/MiscProperties.vue'
 import TagProperties from '@/components/editor/TagProperties.vue'
+import languageMenu from '@/lang/menu.json'
 
 function saveAs (blob, name) {
   const a = document.createElement('a')
@@ -419,7 +420,7 @@ export default {
       panStart: null,
       xScale: 1,
       yScale: 1,
-      availableLanguages: ['en', 'es-ES', 'zh'],
+      availableLanguages: languageMenu.map(l => l.code),
       loadedLanguages: {},
       selectedLanguage: null,
       locationsDirty: false,
@@ -545,7 +546,7 @@ export default {
   },
   created () {
     Promise.all(this.availableLanguages.map(lang =>
-      import(/* webpackChunkName: "lang-[request]" */ '@/lang/' + lang + '.json').then((messages) => {
+      import(/* webpackChunkName: "lang-[request]" */ '@/lang/' + lang + '.lang.json').then((messages) => {
         this.$set(this.loadedLanguages, lang, messages.default)
       }))).then(() => {
       this.languagesLoaded = true
