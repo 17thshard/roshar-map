@@ -1,10 +1,10 @@
-# Unification of Alethkar
-Gavilar's final opponents are eliminated, Dalinar & Evi were married, and Gavilar was crowned king of Alethkar.
+# 阿勒斯卡统一
+迦维拉尔击败了最后的对手，达力拿与Evi成婚，迦维拉尔加冕。
 
 ## Details
-Dalinar led the attack against Highprince Kalanor, the final holdout against Gavilar's rule, intent on winning the Shards that Kalanor held. While in the battle, Dalinar got so caught up in the Thrill that he didn't realize he killed Kholin men during the assault. Dalinar killed Kalanor in single combat, winning his Shards, but the Thrill was so strong in him that when Gavilar approached him afterwards, Dalinar went after his own brother with the intent to kill him. Only when Gavilar took off his helm and smiled at him did Dalinar snap out of it. Deeply ashamed of himself, Dalinar gifted Gavilar the Shards he had just won, swearing to himself that he must never be king. This battle marked the end of Gavilar's unification war, with Gavilar crowned in the months that followed.
+迦维拉尔向最后一位反抗自己统治的轩亲王Kalanor发起了战争。在战斗中，达力拿深陷激越感，甚至杀掉了友军都不自知。在一对一的战斗中，达力拿杀死了Kalanor，赢得了他的全套碎瑛甲刃。战斗结束后，达力拿的激越感依然不能消退，他甚至对兄长动了杀心。但看到兄长的笑脸，达力拿清醒了过来。他对刚刚的想法万分羞愧，把刚刚赢得的碎瑛甲刃送给了迦维拉尔，并暗暗起誓绝不谋求阿勒斯卡的王位。这场战斗的胜利也为迦维拉尔的整个统一战争画上了句号。几个月后，迦维拉尔加冕为王。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 26 |
+| chapter | 《渡誓》第26章 |

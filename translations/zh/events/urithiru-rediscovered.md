@@ -1,10 +1,10 @@
-# Urithiru rediscovered
-The Alethi armies escaped to Urithiru via Oathgate to flee from the Everstorm.
+# 重新发现乌有斯麓
+阿勒斯卡军为躲避灭世风暴，通过誓约之门前往乌有斯麓。
 
 ## Details
-Jasnah Kholin began an effort to rediscover the city after growing convinced that a new Desolation was coming. While she herself was unable to do so, her student, Shallan Davar, managed to complete her works and pinpoint the location of Stormseat, an ancient city that possessed an Oathgate, but was destroyed long before Urithiru was abandoned. She eventually lead the Alethi army to Stormseat--now a listener city called Narak--and, as the listeners summoned the Everstorm, transported them through its Oathgate, rediscovering Urithiru. Following the arrival of the Everstorm, Urithiru became the centre of Alethi military power, with most highprinces, chief among them House Kholin, relocating there along with their armies.
+自从确信新的灭世将要到来，迦熙娜·寇林就一直致力于寻找乌有斯麓。虽然她本人并没能完成这一目标，但她的学生沙兰·达瓦找到了飓座（当时被听者占领，被称作纳拉克），并在那里发现了誓约之门。当时听者大军已经召唤出灭世风暴，幸亏沙兰及时的打开了誓约之门，整个阿勒斯卡军才得以逃脱至乌有斯麓。此后，大多数阿勒斯卡轩亲王在达力拿的领导下，把军队迁入了乌有斯麓。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* Ch. 86 |
+| chapter | 《光辉真言》第86章 |
