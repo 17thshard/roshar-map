@@ -1,7 +1,7 @@
-# Shallan Davar
+# 沙兰·达瓦
 
-> I seek the truth. Wherever it may be, whoever may hold it. That's who I am.
+> 我寻求真相。不论它藏在哪里、不论它握在谁手里，我都要找到。我就是这样的人。
 
-**Shallan Davar**, also known as **Veil** or **Radiant**, is a lighteyed Lightweaver of the Knights Radiant from #[Jah Keved](locations/jah-keved). Shallan is an emerging scholar whose greatest achievement is the discovery of the legendary city #[Urithiru](locations/urithiru). She is also renowned for her extraordinary talent of accurately reproducing even fleeting scenes with photographic accuracy.
+**沙兰·达瓦**也叫**浣纱**或**骑士**，是来自#[雅克维德](locations/jah-keved)的一名光眼种织光骑士，同时她也在与一个叫做鬼血会的神秘社会团体合作。她是已故的林·达瓦的女儿，但她妈妈的名字尚不知晓。她有四个哥哥，最大的一个叫做赫拉兰，死于与#[卡拉丁](characters/kaladin)的战斗中，死前他们未曾有机会谋面。其余的哥哥分别是巴拉特、维吉姆和尤术。她是一位刚刚崭露头角的学者，最大的成就是发现了传奇之城#[乌有斯麓](locations/urithiru)。此外，她还以她能够用精准的图画速写精确复原瞬时场景的卓绝天赋而闻名。
 
-Hailing from a mid-level noble house in Jah Keved, Shallan lived a sheltered life on her father's estate until the age of seventeen, when she left to seek an apprenticeship under Princess #[Jasnah Kholin](characters/jasnah) as a scholar. While acting as an apprentice to Jasnah Kholin, she became the causal betrothed of Jasnah's cousin, Prince #[Adolin Kholin](characters/adolin), who she later married following the Battle of Thaylen Field. She also learns of and shares in Jasnah's quest to stop the mysterious and calamitous Voidbringers.
+出生于雅克维德的中等贵族之家，沙兰从小就生活在父亲给她带来的阴影之中。直到她十七岁那年，她离开家去追寻#[迦熙娜·寇林](characters/jasnah)公主去学习成为一名学者。在作为迦熙娜·寇林的学徒期间，沙兰与迦熙娜的堂弟#[阿多林·寇林](characters/adolin)订婚，并在泰勒拿之战后与他完婚 。她也和迦熙娜学习并分享了关于如何阻止神秘而可怕的虚渡灭世的知识。

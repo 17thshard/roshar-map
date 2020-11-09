@@ -1,7 +1,7 @@
-# Wit
+# 须空
 
-> And while I am your friend, please understand that our goals do not completely align. You must not trust yourself with me. If I have to watch this world crumble and burn to get what I need, I will do so. With tears, yes, but I would let it happen.
+> 请你看清这一点：你我尽管交情不浅，各自的目标还是不尽相同，切莫对我推心置腹。为了达到目标，即便要亲眼见证这个世界的崩塌和焚毁，我也绝不会犹豫。诚然，我会为之哭泣，可我不会出手相阻。
 
-**Hoid** is a recurring character in the cosmere, as well as a legend rumored to have a thousand titles (most of which, he says, are not pleasant). He has appeared in almost every cosmere novel, short story, and novella which takes place in that universe. Note that his real name is likely not Hoid. In _The Way of Kings_, he mentions he stole the name from someone he should have loved, while giving #[Kaladin](characters/kaladin) his flute and telling the story of the _Wandersail_. In section 2 of the 2nd Letter from _Words of Radiance_, the author of the letter asks if Hoid is no longer hiding behind the name of his old master. The name "Hoid" is likely the name he is hiding behind.
+**须空**是三界宙中一位重复出现的角色，也是一位据传有上千个头衔的传奇人物（尽管他自认绝大多数头衔并不好听）。他几乎在每一部三界宙长篇、中篇和短篇小说中都有出场。他的真实名字并非须空，在《王者之路》中，他曾提到这个名字是偷自一位他本应深爱之人，然后给了#[卡拉丁](characters/kaladin)他的笛子，并讲述了徘帆的故事。在《光辉真言》的第二封信的第二部分中，信的作者问须空是否不再躲在他的原主人的名字后面。因此”须空“可能是他赖以躲藏的名字。
 
-Hoid was involved in the events taking place before any of the cosmere's published books begin, and is the second oldest character seen so far. He was originally human, but has changed enough that when asked, Brandon only says "It's complicated." Hoid is not a Shard, nor is he a Herald, but something else entirely. He is very skilled with disguises, and the overtness of his involvement varies from book to book. In some, he is named outright and makes references to other events and places in the cosmere, while in others he is seen only deep in disguise, almost unrecognizable. Brandon has confirmed that all of these appearances are the same individual, but that he worldhops between planets. Hoid's motives are unknown, and most of his actions occur behind the scenes.
+须空参与了一系列在所有三界宙已出版小说故事之前发生的事件，是迄今为止三界宙中第二古老的角色。他原本是人类，但有过巨大的改变，当被问起此事，布兰登只表示这很复杂。须空并非神瑛之一，也不是令使之一，而是别的完全不同的存在。他特别擅于伪装，而他公开露面的方式在每本书中都有所不同。在一些书中，他公开了自己的身份，并提到了三界宙中其他地方发生的事件和地点；而在另一些书中，他在重重伪装之中，几乎无法识别。布兰登已经确认所有这些须空的伪装都是同一个个体的储存在，但他会在不同世界不同星球之间跳转。须空的动机尚未可知，绝大多数他的行为也依然隐藏在重重幕后。

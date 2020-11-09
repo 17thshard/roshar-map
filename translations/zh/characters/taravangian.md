@@ -1,4 +1,5 @@
-# Taravangian
-> I am the monster who will save this world.
+# 塔拉梵吉安
 
-**Taravangian** is the king of #[Kharbranth](locations/kharbranth) and #[Jah Keved](locations/jah-keved). He is the leader of the secret society known as "the #[Diagram](misc/diagram)" which believes the truth and the path to human salvation lies in the set of predictions and instructions he laid out on the day he was a genius.
+> 我这个禽兽会拯救世界。
+
+**塔拉梵吉安**是#[卡哈巴兰斯](locations/kharbranth)和#[雅克维德](locations/jah-keved)的国王。他是名为“#[谶记](misc/diagram)”的神秘组织的领袖。这个组织相信拯救人类的前途和命运的方法都藏在了塔拉梵吉安在他智商超绝的那一天写下的一系列对未来事件的预言之中。

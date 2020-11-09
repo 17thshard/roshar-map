@@ -1,7 +1,7 @@
-# Szeth
+# 泽斯
 
-> I am Truthless. I do as my master requires and I require no explanation.
+> 我是无真奴，主人如此要求，我便不问缘由。
 
-**Szeth**, formerly **Szeth-son-son-Vallano** or **Szeth-son-Neturo**, Truthless of #[Shinovar](locations/shinovar), is a Shin man from Roshar. He is the infamous Assassin in White and is responsible for the death of #[Gavilar Kholin](characters/gavilar) kickstarting the War of Reckoning. As the Assassin, he wields Jezrien's Honorblade; eventually, he loses it, and is gifted Nightblood.
+**泽斯**是深国人，全称为**瓦拉诺之孙泽斯**或**内荼罗之子泽斯**，#[深国](locations/shinovar)无真奴。他是臭名昭著的白衣刺客，正是他杀死了#[迦维拉尔·寇林](characters/gavilar)开启了复仇之战的序幕。作为一名刺客，他随身带着杰兹雷恩的荣刃；但最后，他丢失了它，又被赐予了夜血。
 
-Szeth is currently a Skybreaker of the Third Ideal and serves #[Dalinar Kholin](characters/dalinar). He intends to return to Shinovar and bring justice to the ones who exiled him as his Fourth Skybreaker Ideal quest.
+泽斯现在已经是一名说出第三信条的破天骑士，为#[达力拿·寇林](characters/dalinar)服务。他想要返回深国，将正义带给流放他之人，这也是他的破天骑士第四信条阶段的任务。
