@@ -95,9 +95,6 @@
               <router-link v-for="{ code, name } in availableLanguages" :key="code" :to="`/${code}`">
                 {{ name }}
               </router-link>
-              <router-link to="/zh">
-                中文
-              </router-link>
             </nav>
           </div>
         </Scrollbar>
