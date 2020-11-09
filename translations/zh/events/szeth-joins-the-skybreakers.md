@@ -1,5 +1,5 @@
-# Szeth joins the Skybreakers
-After months working directly with Nale, Szeth officially joined the Skybreakers.
+# 泽斯加入破天骑士团
+与纳尔共事数月后，泽斯正式加入破天骑士团。
 
 ## Details
-After swearing the First Ideal, Szeth was taken to the Purelake along with other Skybreaker hopefuls and squires to complete the next test. The challenge was based on a message sent via spanreed by the city's minister, who told them there was a breakout of convicts. The request was to find the guilty and execute them. While most of the squires and hopefuls started immediately to find and execute the convicts, Szeth stayed and questioned their motives, learning more about the local law. When he confirmed with Ki that the prison administrator was also on the list of the guilty, Szeth drew Nightblood and killed the man. This allowed him to swear the Second Ideal, letting him draw Stormlight. Impressed, Ki chose him as her squire.
+念出第一信条后，泽斯被带到淳湖进行下一场试炼，目标是抓捕并处决越狱的犯人。与他一同参加试炼的扈从和候选人大多立刻按照要求行动，但他留了下来，询问犯人的动机，进一步了解当地的法律。得知典狱长也有罪，泽斯拔出夜血剑杀了对方，从而念出第二信条，获得吸取飓光的能力。骑士大师祁收他为徒。
