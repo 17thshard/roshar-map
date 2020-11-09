@@ -1,8 +1,8 @@
-# Kaladin becomes a slave
-Kaladin killed a Shardbearer, Helaran Davar, on the battlefield. Amaram took the Shards for himself, and branded Kaladin a slave to keep his secret.
+# 卡拉丁成为奴隶
+卡拉丁在战场上杀死了一名碎瑛武士——赫拉兰·达瓦。亚马兰自己拿走了碎瑛武器，并将卡拉丁贬为奴隶，以保存他的秘密。
 
 ## Details
-While attempting to kill a brightlord on the battlefield, and thus earn his squad enough honor to be transferred to the Shattered Plains, Kaladin's entire squad was nearly slaughtered by a mysterious Shardbearer. Seeking vengeance, Kaladin attacked the Shardbearer (later revealed to be Helaran Davar) who had set his sights on Amaram. Kaladin was miraculously successful, stabbing Helaran through the slits on his helmet. Kaladin was offered the Shards, but rejected them. Convinced by Restares to take the Shards for himself, Amaram had the rest of Kaladin's squad killed and branded Kaladin as a slave in order to keep the secret of his theft.
+为了使自己的小队获得足够的荣誉以转移到破碎平原，卡拉丁尝试在战场上击杀一名光明贵人，但他的小队却几乎被一名神秘的碎瑛武士屠杀殆尽。在碎瑛武士（后被揭示为赫拉兰·达瓦）盯上亚马兰时，卡拉丁为了复仇和其战斗，没想到他奇迹般地获得了胜利，成功从赫拉兰头盔上的裂缝中刺入。卡拉丁被赐予碎瑛武器，但是他拒绝了。当卡拉丁被瑞斯塔雷说服要拿走碎瑛武器时，亚马兰杀掉了卡拉丁小队除他以外的所有成员并给他烙上奴隶铭文以使他偷窃碎瑛刃的事永不被人所知。
 
 ## Metadata
 | Field | Value |

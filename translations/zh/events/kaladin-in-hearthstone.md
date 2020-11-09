@@ -1,8 +1,8 @@
-# Kaladin in Hearthstone
-Kaladin arrived in Hearthstone and met with his family, including baby Oroden, before continuing on in search of the missing, transformed singers.
+# 卡拉丁在赫斯通
+卡拉丁在继续去寻找失踪的、变形的歌者之前，先回到了赫斯通与他的家人再会，也见到了新出生的小欧罗登。
 
 ## Details
-After the summoning of the Everstorm, Kaladin returned to Hearthstone to aid his family as soon as he was able. He ran out of Stormlight before reaching the town, causing him to walk the final miles and arrive after the Everstorm. Fearing the worst, Kaladin found most of the town's inhabitants to be safe, including his own parents and new younger brother, Oroden. Learning that the city's parshmen had fled after the storm passed, Kaladin set out in search of them.
+在灭世风暴出现后，卡拉丁回到了赫斯通，想在力所能及的范围内帮助自己的家庭。他在到达城镇之前就用完了飓光，所以不得不走完了最后的一段路，在灭世风暴过后才到达赫斯通。怀着对最坏的境况的担忧，卡拉丁发现大多数镇上的居民安全无碍，也和他的父母以及新出生的弟弟欧罗登重逢了。了解到城里的仆族智者在灭世风暴过后都逃跑了以后，卡拉丁踏上了寻找他们的旅程。
 
 ## Metadata
 | Field | Value |
