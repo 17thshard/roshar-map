@@ -1,10 +1,10 @@
-# Venli relocated to Marat
-After being chastised by Odium in Kholinar, Venli is brought to Marat.
+# 温丽赴任玛拉特
+温丽在塔冠城受了仇恨一顿训斥后，被带往玛拉特。
 
 ## Details
-At the end of her time spreading propoganda in Kholinar, Venli experienced a vision of Odium during an Everstorm. During their meeting Odium overwhelms her, burning her body, and upbraids her for her restlessness. He affirms that she belongs to him. She collapsed on the floor afterward and tells Timbre that she has the wrong sister, as she feels unable to resist Odium. 
+塔冠城的宣讲结束后的一次灭世风暴中，温丽再次遇到了仇恨。仇恨对她心中的不安很不满，狠狠的责罚了她。灭世风暴过后，温丽向天音表示自己不如妹妹，无法抵抗仇恨。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* I-9 |
+| chapter | 《渡誓》第I-9章 |

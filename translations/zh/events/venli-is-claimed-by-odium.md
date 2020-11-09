@@ -1,10 +1,10 @@
-# Venli is claimed by Odium
-Venli's friends were taken by Fused during an Everstorm. After refusing for herself, Venli was claimed by Odium.
+# 温丽接受仇恨的安排
+在一场灭世风暴中，温丽的几个朋友的躯体被融族占据，温丽则被仇恨直接claimed。
 
 ## Details
-When nine listeners were chosen by Ulim to receive "new forms," Venli and Demid were among them. In the Everstorm, the Fused replaced their souls and possessed their bodies, with the sole exception of Venli. Odium himself protected her, and she was given envoyform instead. After realizing that the others were effectively dead, Venli once more spotted a strange spren, Timbre, whom she hid from the Fused. Afterwards, Venli became Odium's chief propagandist.
+当时，包括温丽和戴米德在内的九位听者被乌里姆选中，在灭世风暴中接受“新形态”。结果除温丽之外的几个听者的肉体都被融族占据。仇恨亲自保护了她，让她成为了envoyform。意识到几位朋友的灵魂都已经死去后，温丽再次发现了跟在自己身边的奇怪灵体天音，还把它藏了起来以避免被融族发现。此次灭世风暴后，温丽成为了仇恨的发言人。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* I-6 |
+| chapter | 《渡誓》第I-6章 |

@@ -1,12 +1,12 @@
-# Wind's Pleasure attacked
-The Wind's Pleasure was attacked by Ghostbloods. Jasnah became trapped in Shadesmar and is presumed dead. Shallan sank the ship in order to save the crew.
+# 风之愉悦号遭到袭击
+风之愉悦号受到了鬼血会歹徒的袭击。迦熙娜受伤逃往裂影界，后来一段时间世间皆认为她已死亡。沙兰为了拯救船员们的性命，弄沉了整艘船。
 
 ## Details
-One evening, after a long but satisfying day of study, Shallan visited Jasnah's cabin to borrow infused spheres for light. She found Jasnah in an exhausted, troubled state which left a strong impression on Shallan--both of Jasnah's humanity and of the importance and urgency of their task. Upon hearing Shallan's desire to help bear the weight of their task, Jasnah explained more of what she understood about the Voidbringers and the Desolations. She also gave Shallan the requested spheres and explained the importance of Stormlight, along with what little she knew of Shallan's ability to Lightweave. She also gave Shallan a copy of Words of Radiance to study the Knights Radiant further. Shallan then retired to her room but slept only for a while before she was awoken by shouts and smoke. 
+某天晚上，迦熙娜和沙兰师徒二人在船舱中探讨了很多有关灭世、虚渡和光辉骑士的话题，迦熙娜还给了沙兰一本《光辉真言》。
 
-Shallan quickly surmised that the ship was under attack. Upon peeking out of her cabin she saw several men throw Jasnah's body to the floor and stab her through the chest. The men spotted Shallan who retreated into her room, leaving her trapped. As the men began to break through her door, Shallan was able to conjure a basic Lightweaving of a form dashing from the room and out onto the deck. The men chased, giving Shallan time to move to Jasnah's room. With the crew captured and no other means of escape Shallan entered Shadesmar and managed to Soulcast the entire ship into water. Shallan lost consciousness as she sank into the dark, icy ocean.
+当晚，沙兰被喊叫声警醒，发现船舱内烟雾弥漫。惊慌来到迦熙娜的船舱时，她亲眼看到歹徒用刀子捅进了瘫倒在地的迦熙娜的胸口。她使用织光术勉强一时躲过了歹徒的追杀，但在船上被找到只是时间的问题。情急之中沙兰进入了裂影界，用塑魂术把整个船变成了水。此后她失去了知觉，掉进了黑暗冰冷的海中。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* Ch. 6 & 7 |
+| chapter | 《光辉真言》第6、7章 |
