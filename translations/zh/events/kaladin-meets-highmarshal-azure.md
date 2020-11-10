@@ -1,8 +1,8 @@
-# Kaladin meets Highmarshal Azure
-Kaladin met and joined the Wall Guard and was introduced to Highmarshal Azure.
+# 卡拉丁遇到轩元帅天青
+卡拉丁加入了护城卫队，并被介绍与轩元帅天青见面。
 
 ## Details
-While investigating the city of Kholinar, Kaladin found himself joining the city's Wall Guard, where he had the opportunity to meet Highmarshal Azure.
+在对寇林王城的调查中，卡拉丁发现自己无意中加入了王城的护城卫队，在那里他恰好有机会见到了轩元帅天青。
 
 ## Metadata
 | Field | Value |

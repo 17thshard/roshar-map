@@ -1,8 +1,8 @@
-# Kaladin leaves Alethkar
-Kaladin revealed himself as a Radiant to the singers he traveled with and returned to Urithiru during a highstorm.
+# 卡拉丁离开阿勒斯卡
+卡拉丁在一次飓风来临之时，向同行的歌者们展示了自己的光辉骑士身份并借机乘风回到了乌有斯麓。
 
 ## Details
-After following the band of Alethi singers all the way to the city of Revolar, Kaladin and Syl decided that they had learned all they could and keeping his disguise as a commoner was no longer worth the risk. Kaladin used the coming of a highstorm to make his escape, and travelled with the storm all the way back to Urithiru.
+在跟随一群阿勒斯卡歌者一路走到雷沃拉尔城之后，卡拉丁和茜尔认为他们已经获得了他们所能获取的所有信息，再继续伪装下去的风险远大于收获，于是卡拉丁趁着一次飓风到来之际正式离开，乘着飓风一路回到了乌有斯麓。
 
 ## Metadata
 | Field | Value |
