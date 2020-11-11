@@ -9,4 +9,4 @@
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | 《王者之路》插曲九 |
+| chapter | 《王者之路》插曲9 |
