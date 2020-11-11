@@ -251,21 +251,35 @@ export default {
     &:before {
       content: '“';
       position: absolute;
-      left: -1.7rem;
       top: 0.5rem;
       line-height: 1;
       font-size: 3rem;
       color: lighten(#1c1d26, 40%);
+
+      [dir=ltr] & {
+        left: -1.7rem;
+      }
+
+      [dir=rtl] & {
+        right: -1rem;
+      }
     }
 
     &:after {
       content: '”';
       position: absolute;
-      right: -1rem;
       bottom: -1.5rem;
       line-height: 1;
       font-size: 3rem;
       color: lighten(#1c1d26, 40%);
+
+      [dir=ltr] & {
+        right: -1rem;
+      }
+
+      [dir=rtl] & {
+        left: -1.7rem;
+      }
     }
   }
 }

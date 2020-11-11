@@ -137,25 +137,46 @@ export default {
 
     &-drag-handle {
       align-self: stretch;
-      margin-right: 0.25rem;
       width: 16px;
       cursor: move;
       background-repeat: no-repeat;
       background-position: 50%;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23242629' d='M7 2a2 2 0 1 0 .001 4.001A2 2 0 0 0 7 2m0 6a2 2 0 1 0 .001 4.001A2 2 0 0 0 7 8m0 6a2 2 0 1 0 .001 4.001A2 2 0 0 0 7 14m6-8a2 2 0 1 0-.001-4.001A2 2 0 0 0 13 6m0 2a2 2 0 1 0 .001 4.001A2 2 0 0 0 13 8m0 6a2 2 0 1 0 .001 4.001A2 2 0 0 0 13 14'/%3E%3C/svg%3E");
+
+      [dir=ltr] & {
+        margin-right: 0.25rem;
+      }
+
+      [dir=rtl] & {
+        margin-left: 0.25rem;
+      }
     }
 
     &-icon {
       width: 0.8rem;
       height: 0.8rem;
-      margin-right: 0.25rem;
       border-radius: 100%;
+
+      [dir=ltr] & {
+        margin-right: 0.25rem;
+      }
+
+      [dir=rtl] & {
+        margin-left: 0.25rem;
+      }
     }
 
     &-actions {
       display: flex;
       align-items: center;
-      margin-left: auto;
+
+      [dir=ltr] & {
+        margin-left: auto;
+      }
+
+      [dir=rtl] & {
+        margin-right: auto;
+      }
     }
 
     &-action {
@@ -170,8 +191,15 @@ export default {
       background: none;
       transition: color 0.2s ease-in-out;
       padding: 0;
-      margin-left: 0.25rem;
       font-size: 1.25rem;
+
+      [dir=ltr] & {
+        margin-left: 0.25rem;
+      }
+
+      [dir=rtl] & {
+        margin-right: 0.25rem;
+      }
 
       &:hover, &:active, &:focus {
         color: #ffad00;

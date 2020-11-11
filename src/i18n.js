@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
 import messages from '@/lang/en.lang.json'
+import store from '@/store'
 
 Vue.use(VueI18n)
 
@@ -16,6 +17,9 @@ const loadedLanguages = ['en', 'en-US'] // our default language that is preloade
 function setI18nLanguage (lang) {
   i18n.locale = lang
   document.querySelector('html').setAttribute('lang', lang)
+  const textDirection = i18n.t('text-direction')
+  document.querySelector('html').setAttribute('dir', textDirection)
+  store.commit('setTextDirection', textDirection)
   return lang
 }
 

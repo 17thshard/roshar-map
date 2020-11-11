@@ -117,6 +117,8 @@ export default {
 
     // #ifdef MAP_DEBUG
     this.stats = new Stats()
+    this.stats.dom.style.width = '80px'
+    this.stats.dom.style.right = '0px'
     document.body.appendChild(this.stats.dom)
     // #endif
 
@@ -560,12 +562,26 @@ export default {
   &__factions-legend {
     position: absolute;
     top: 2rem;
-    left: 2rem;
     z-index: 11;
+
+    [dir=ltr] & {
+      left: 2rem;
+    }
+
+    [dir=rtl] & {
+      right: 2rem;
+    }
 
     @media (max-width: 640px) {
       top: 6rem;
-      right: 2rem;
+
+      [dir=ltr] & {
+        right: 2rem;
+      }
+
+      [dir=rtl] & {
+        left: 2rem;
+      }
     }
 
     &-enter-active, &-leave-active {

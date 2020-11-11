@@ -10,11 +10,7 @@
     <Scrollbar
       ref="scroller"
       class="details__scroller"
-      :ops="{
-        vuescroll: { wheelScrollDuration: 400 },
-        bar: { onlyShowBarOnScroll: false, keepShow: true, background: '#482d00', opacity: 0.5, size: '0.5rem' },
-        rail: { size: '0.5rem', gutterOfSide: '0' }
-      }"
+      :ops="$store.state.scrollbarOptions"
     >
       <div class="details__content">
         <figure v-if="details.image !== undefined" class="details__image">
@@ -243,7 +239,6 @@ export default {
 <style lang="scss">
 .details {
   position: fixed;
-  left: 0;
   top: 0;
   bottom: 0;
   z-index: 80;
@@ -251,6 +246,30 @@ export default {
   max-width: 100%;
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
   overflow: hidden;
+
+  [dir=ltr] & {
+    left: 0;
+
+    &-enter {
+      transform: translateX(-100%);
+    }
+
+    &-leave-to {
+      transform: translateX(-100%);
+    }
+  }
+
+  [dir=rtl] & {
+    right: 0;
+
+    &-enter {
+      transform: translateX(100%);
+    }
+
+    &-leave-to {
+      transform: translateX(100%);
+    }
+  }
 
   &-enter-active {
     transition: transform 0.75s ease-out;
@@ -262,8 +281,6 @@ export default {
   }
 
   &-enter {
-    transform: translateX(-100%);
-
     .details__image {
       opacity: 0;
     }
@@ -290,15 +307,9 @@ export default {
     transform: translateX(0);
   }
 
-  &-leave-to {
-    transform: translateX(-100%);
-  }
-
   .details__close {
     position: absolute;
     top: 1rem;
-    right: 1rem;
-    margin-left: auto;
     cursor: pointer;
     appearance: none;
     outline: none;
@@ -315,6 +326,16 @@ export default {
     padding: 0.25rem;
     line-height: 1;
     display: flex;
+
+    [dir=ltr] & {
+      right: 1rem;
+      margin-left: auto;
+    }
+
+    [dir=rtl] & {
+      left: 1rem;
+      margin-right: auto;
+    }
 
     &:hover, &:active, &:focus {
       color: #ffad00 !important;
@@ -387,9 +408,17 @@ export default {
     &-art {
       position: relative;
       max-width: 100%;
-      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), 0 100%);
       background-color: #0f3562;
       background-attachment: fixed;
+
+      [dir=ltr] & {
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), 0 100%);
+      }
+
+      [dir=rtl] & {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 2rem));
+        background-position-x: right;
+      }
     }
 
     img {
@@ -402,12 +431,20 @@ export default {
     figcaption {
       max-width: 50%;
       z-index: 2;
-      text-align: right;
+      text-align: end;
       font-size: 0.8rem;
       color: lighten(#1c1d26, 30%);
       margin-top: -0.75rem;
-      margin-left: auto;
-      padding-right: 2rem;
+
+      [dir=ltr] & {
+        margin-left: auto;
+        padding-right: 2rem;
+      }
+
+      [dir=rtl] & {
+        margin-right: auto;
+        padding-left: 2rem;
+      }
     }
   }
 
@@ -428,8 +465,15 @@ export default {
       &:after {
         content: '◆';
         font-size: 0.8em;
-        margin: 0 0 0.125rem 0.4rem;
         opacity: 0.7;
+
+        [dir=ltr] & {
+          margin: 0 0 0.125rem 0.4rem;
+        }
+
+        [dir=rtl] & {
+          margin: 0 0.4rem 0.125rem 0;
+        }
       }
 
       &:last-child:after {
@@ -438,8 +482,15 @@ export default {
     }
 
     &-icon {
-      margin-right: 0.25rem;
       flex-shrink: 0;
+
+      [dir=ltr] & {
+        margin-right: 0.25rem;
+      }
+
+      [dir=rtl] & {
+        margin-left: 0.25rem;
+      }
     }
   }
 
@@ -447,7 +498,6 @@ export default {
     display: flex;
     align-items: center;
     padding: 0;
-    margin: 0 0 0 0.25rem;
     overflow: hidden;
     white-space: nowrap;
     transition: all 0.2s ease-in-out;
@@ -458,6 +508,14 @@ export default {
     border: none;
     background: none;
     font-size: 1em;
+
+    [dir=ltr] & {
+      margin: 0 0 0 0.25rem;
+    }
+
+    [dir=rtl] & {
+      margin: 0 0.25rem 0 0;
+    }
 
     &:hover {
       color: #0f3562;
@@ -481,7 +539,7 @@ export default {
     font-size: 2em;
     margin: 0;
     line-height: normal;
-    text-align: left;
+    text-align: start;
   }
 
   &__related {

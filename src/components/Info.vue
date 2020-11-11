@@ -7,7 +7,8 @@
       <div v-if="active" class="info__wrapper">
         <div :class="['info__bar', { 'info__bar--opaque': scrolled[subPage === null ? 'root' : subPage] === true }]">
           <button :class="['info__back', { 'info__back--active': subPage !== null }]" :title="$t('ui.back')" @click="subPage = null">
-            <ChevronLeftIcon />
+            <ChevronRightIcon v-if="$store.state.flipDirectionalIcons" />
+            <ChevronLeftIcon v-else />
           </button>
           <button :class="['info__close', { 'info__close--dark': subPage !== null }]" :title="$t('ui.close')" @click="close">
             <XIcon />
@@ -15,11 +16,7 @@
         </div>
         <Scrollbar
           :class="['info__scroller', 'info__scroller--root', { 'info__scroller--inactive': subPage !== null }]"
-          :ops="{
-            vuescroll: { wheelScrollDuration: 400 },
-            bar: { onlyShowBarOnScroll: false, keepShow: true, background: '#482d00', opacity: 0.5, size: '0.5rem' },
-            rail: { size: '0.5rem', gutterOfSide: '0' }
-          }"
+          :ops="$store.state.scrollbarOptions"
           @handle-scroll="onScroll(null, $event)"
         >
           <div class="info__content">
@@ -38,9 +35,19 @@
                 Map art by Spenser Farnes (Stoneward13)
               </div>
               <div class="info__socials">
-                <a class="info__social" href="https://discord.gg/nF3gxQCkwk?utm_source=Roshar%20Map&utm_medium=Icon" target="_blank" title="Discord">
+                <a
+                  class="info__social"
+                  href="https://discord.gg/nF3gxQCkwk?utm_source=Roshar%20Map&utm_medium=Icon"
+                  target="_blank"
+                  title="Discord"
+                >
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="feather">
-                    <path fill="none" stroke="currentColor" stroke-width="2" d="M4.334 4.636c1.351-.725 2.852-1.222 4.393-1.268l.205.25c-1.363.399-2.693.925-3.92 1.645-.507.312-1.023.624-1.462 1.029 1.106-.553 2.237-1.079 3.438-1.394.648-.183 1.302-.351 1.972-.428 1.604-.225 3.236-.325 4.85-.144a17.637 17.637 0 0 1 3.395.732 18.596 18.596 0 0 1 2.805 1.201c-.24-.243-.524-.434-.806-.622-1.295-.864-2.741-1.48-4.224-1.94.133-.123.22-.369.441-.33 1.947.124 3.819.886 5.4 2.01.114.074.243.144.291.28a28.333 28.333 0 0 1 2.208 6.201c.414 1.8.652 3.642.678 5.489.005.092.005.192-.06.267-1.05 1.466-2.709 2.417-4.451 2.805a9.254 9.254 0 0 1-1.777.218 81.691 81.691 0 0 1-1.355-1.674c.624-.162 1.215-.427 1.78-.733.74-.434 1.437-.982 1.926-1.694-.701.45-1.434.854-2.216 1.15a18.733 18.733 0 0 1-1.521.556c-.884.282-1.803.434-2.722.543-1.06.115-2.133.08-3.191-.04-1.1-.118-2.177-.395-3.226-.74-.865-.315-1.743-.625-2.524-1.122-.2-.126-.4-.252-.605-.368.309.477.743.856 1.181 1.21a7.55 7.55 0 0 0 2.402 1.2 69.246 69.246 0 0 1-1.182 1.462c-.094.098-.155.282-.323.245a9.398 9.398 0 0 1-2.44-.423c-1.086-.376-2.122-.947-2.937-1.767-.284-.281-.562-.582-.757-.934-.02-3.066.622-6.109 1.651-8.987.369-1.015.784-2.017 1.292-2.97.421-.36.909-.642 1.391-.915m3.583 6.412c-.729.082-1.364.596-1.65 1.262-.462.998-.147 2.308.77 2.935.464.32 1.069.435 1.614.282.599-.147 1.09-.602 1.355-1.15.445-.902.267-2.083-.465-2.785-.43-.4-1.036-.626-1.624-.544m7.376.018c-1.018.19-1.748 1.196-1.735 2.211-.013.8.386 1.615 1.08 2.034.46.294 1.05.356 1.57.2.579-.16 1.05-.61 1.304-1.144.462-.94.23-2.186-.579-2.863a1.994 1.994 0 0 0-1.64-.438z"/>
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      d="M4.334 4.636c1.351-.725 2.852-1.222 4.393-1.268l.205.25c-1.363.399-2.693.925-3.92 1.645-.507.312-1.023.624-1.462 1.029 1.106-.553 2.237-1.079 3.438-1.394.648-.183 1.302-.351 1.972-.428 1.604-.225 3.236-.325 4.85-.144a17.637 17.637 0 0 1 3.395.732 18.596 18.596 0 0 1 2.805 1.201c-.24-.243-.524-.434-.806-.622-1.295-.864-2.741-1.48-4.224-1.94.133-.123.22-.369.441-.33 1.947.124 3.819.886 5.4 2.01.114.074.243.144.291.28a28.333 28.333 0 0 1 2.208 6.201c.414 1.8.652 3.642.678 5.489.005.092.005.192-.06.267-1.05 1.466-2.709 2.417-4.451 2.805a9.254 9.254 0 0 1-1.777.218 81.691 81.691 0 0 1-1.355-1.674c.624-.162 1.215-.427 1.78-.733.74-.434 1.437-.982 1.926-1.694-.701.45-1.434.854-2.216 1.15a18.733 18.733 0 0 1-1.521.556c-.884.282-1.803.434-2.722.543-1.06.115-2.133.08-3.191-.04-1.1-.118-2.177-.395-3.226-.74-.865-.315-1.743-.625-2.524-1.122-.2-.126-.4-.252-.605-.368.309.477.743.856 1.181 1.21a7.55 7.55 0 0 0 2.402 1.2 69.246 69.246 0 0 1-1.182 1.462c-.094.098-.155.282-.323.245a9.398 9.398 0 0 1-2.44-.423c-1.086-.376-2.122-.947-2.937-1.767-.284-.281-.562-.582-.757-.934-.02-3.066.622-6.109 1.651-8.987.369-1.015.784-2.017 1.292-2.97.421-.36.909-.642 1.391-.915m3.583 6.412c-.729.082-1.364.596-1.65 1.262-.462.998-.147 2.308.77 2.935.464.32 1.069.435 1.614.282.599-.147 1.09-.602 1.355-1.15.445-.902.267-2.083-.465-2.785-.43-.4-1.036-.626-1.624-.544m7.376.018c-1.018.19-1.748 1.196-1.735 2.211-.013.8.386 1.615 1.08 2.034.46.294 1.05.356 1.57.2.579-.16 1.05-.61 1.304-1.144.462-.94.23-2.186-.579-2.863a1.994 1.994 0 0 0-1.64-.438z"
+                    />
                   </svg>
                 </a>
                 <a class="info__social" href="https://twitter.com/17thShard" target="_blank" title="Twitter">
@@ -82,11 +89,7 @@
         </Scrollbar>
         <Scrollbar
           :class="['info__scroller', 'info__scroller--language', { 'info__scroller--active': subPage === 'language' }]"
-          :ops="{
-            vuescroll: { wheelScrollDuration: 400 },
-            bar: { onlyShowBarOnScroll: false, keepShow: true, background: '#482d00', opacity: 0.5, size: '0.5rem' },
-            rail: { size: '0.5rem', gutterOfSide: '0' }
-          }"
+          :ops="$store.state.scrollbarOptions"
           @handle-scroll="onScroll('language', $event)"
         >
           <div class="info__content">
@@ -100,11 +103,7 @@
         </Scrollbar>
         <Scrollbar
           :class="['info__scroller', 'info__scroller--about', { 'info__scroller--active': subPage === 'about' }]"
-          :ops="{
-            vuescroll: { wheelScrollDuration: 400 },
-            bar: { onlyShowBarOnScroll: false, keepShow: true, background: '#482d00', opacity: 0.5, size: '0.5rem' },
-            rail: { size: '0.5rem', gutterOfSide: '0' }
-          }"
+          :ops="$store.state.scrollbarOptions"
           @handle-scroll="onScroll('about', $event)"
         >
           <div class="info__content">
@@ -114,11 +113,7 @@
         </Scrollbar>
         <Scrollbar
           :class="['info__scroller', 'info__scroller--credits', { 'info__scroller--active': subPage === 'credits' }]"
-          :ops="{
-            vuescroll: { wheelScrollDuration: 400 },
-            bar: { onlyShowBarOnScroll: false, keepShow: true, background: '#482d00', opacity: 0.5, size: '0.5rem' },
-            rail: { size: '0.5rem', gutterOfSide: '0' }
-          }"
+          :ops="$store.state.scrollbarOptions"
           @handle-scroll="onScroll('credits', $event)"
         >
           <div class="info__content">
@@ -135,14 +130,25 @@
 
 <script>
 import Scrollbar from 'vuescroll/dist/vuescroll-native'
-import { ChevronLeftIcon, FacebookIcon, GithubIcon, MenuIcon, TwitterIcon, XIcon, YoutubeIcon } from 'vue-feather-icons'
+import { ChevronLeftIcon, ChevronRightIcon, FacebookIcon, GithubIcon, MenuIcon, TwitterIcon, XIcon, YoutubeIcon } from 'vue-feather-icons'
 import { mapState } from 'vuex'
 import Markdown from '@/components/Markdown.vue'
 import availableLanguages from '@/lang/menu.json'
 
 export default {
   name: 'Info',
-  components: { Markdown, TwitterIcon, FacebookIcon, YoutubeIcon, GithubIcon, MenuIcon, XIcon, Scrollbar, ChevronLeftIcon },
+  components: {
+    Markdown,
+    TwitterIcon,
+    FacebookIcon,
+    YoutubeIcon,
+    GithubIcon,
+    MenuIcon,
+    XIcon,
+    Scrollbar,
+    ChevronLeftIcon,
+    ChevronRightIcon
+  },
   data () {
     return {
       availableLanguages,
@@ -182,7 +188,6 @@ export default {
 <style lang="scss">
 .info {
   position: fixed;
-  right: 0;
   top: 0;
   bottom: 0;
   pointer-events: none;
@@ -190,11 +195,18 @@ export default {
   width: 350px;
   max-width: 100%;
 
+  [dir=ltr] & {
+    right: 0;
+  }
+
+  [dir=rtl] & {
+    left: 0;
+  }
+
   &__button {
     display: flex;
     align-items: center;
     position: absolute;
-    right: 2rem;
     top: 2rem;
     font-size: 1rem;
     line-height: 1;
@@ -211,6 +223,14 @@ export default {
     color: #242629;
     pointer-events: auto;
     box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.5);
+
+    [dir=ltr] & {
+      right: 2rem;
+    }
+
+    [dir=rtl] & {
+      left: 2rem;
+    }
 
     &:hover, &:active, &:focus {
       background: saturate(darken(#F5ECDA, 10%), 5%);
@@ -247,12 +267,24 @@ export default {
       z-index: 70;
     }
 
-    &-enter, &-leave-to {
-      clip-path: circle(1px at calc(100% - 3.25rem) 3.25rem);
+    [dir=ltr] & {
+      &-enter, &-leave-to {
+        clip-path: circle(1px at calc(100% - 3.25rem) 3.25rem);
+      }
+
+      &-enter-to, &-leave {
+        clip-path: circle(100vh at calc(100% - 3.25rem) 3.25rem);
+      }
     }
 
-    &-enter-to, &-leave {
-      clip-path: circle(100vh at calc(100% - 3.25rem) 3.25rem);
+    [dir=rtl] & {
+      &-enter, &-leave-to {
+        clip-path: circle(1px at 3.25rem 3.25rem);
+      }
+
+      &-enter-to, &-leave {
+        clip-path: circle(100vh at 3.25rem 3.25rem);
+      }
     }
 
     h3 {
@@ -310,9 +342,16 @@ export default {
 
   &__close {
     color: #F5ECDA;
-    margin-left: auto;
     opacity: 1;
     pointer-events: auto;
+
+    [dir=ltr] & {
+      margin-left: auto;
+    }
+
+    [dir=rtl] & {
+      margin-right: auto;
+    }
 
     &--dark {
       color: #242629;
@@ -337,18 +376,37 @@ export default {
     min-height: 0;
     max-height: 100%;
     transition: transform 0.5s ease-in-out;
-    transform: translateX(100%);
 
-    &--root {
-      transform: translateX(0);
+    [dir=ltr] & {
+      transform: translateX(100%);
+
+      &--root {
+        transform: translateX(0);
+      }
+
+      &--active {
+        transform: translateX(0);
+      }
+
+      &--inactive {
+        transform: translateX(-100%);
+      }
     }
 
-    &--active {
-      transform: translateX(0);
-    }
-
-    &--inactive {
+    [dir=rtl] & {
       transform: translateX(-100%);
+
+      &--root {
+        transform: translateX(0);
+      }
+
+      &--active {
+        transform: translateX(0);
+      }
+
+      &--inactive {
+        transform: translateX(100%);
+      }
     }
 
     &:after {
@@ -417,8 +475,15 @@ export default {
     background-repeat: no-repeat;
     background-size: 90%;
     background-position: 50% 50%;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 14%));
     z-index: 63;
+
+    [dir=ltr] & {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 14%));
+    }
+
+    [dir=rtl] & {
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14%), 0 100%);
+    }
   }
 
   &__text {

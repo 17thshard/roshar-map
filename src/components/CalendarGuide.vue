@@ -18,7 +18,8 @@
       />
       <nav class="calendar-guide__navigation">
         <button class="calendar-guide__button calendar-guide__button--prev" :title="$t('ui.previous')" @click="prevStep">
-          <ChevronLeftIcon size="1x" :stroke-width="3" />
+          <ChevronRightIcon v-if="$store.state.flipDirectionalIcons" size="1x" :stroke-width="3" />
+          <ChevronLeftIcon v-else size="1x" :stroke-width="3" />
         </button>
         <ul class="calendar-guide__dots">
           <li
@@ -30,7 +31,8 @@
           />
         </ul>
         <button class="calendar-guide__button calendar-guide__button--next" :title="$t('ui.next')" @click="nextStep">
-          <ChevronRightIcon size="1x" :stroke-width="3" />
+          <ChevronLeftIcon v-if="$store.state.flipDirectionalIcons" size="1x" :stroke-width="3" />
+          <ChevronRightIcon v-else size="1x" :stroke-width="3" />
         </button>
       </nav>
     </section>
@@ -198,7 +200,14 @@ export default {
     padding: 0.25rem;
     line-height: 1;
     display: flex;
-    margin-left: auto;
+
+    [dir=ltr] & {
+      margin-left: auto;
+    }
+
+    [dir=rtl] & {
+      margin-right: auto;
+    }
 
     &:hover, &:active, &:focus {
       color: #ffad00 !important;
@@ -241,15 +250,31 @@ export default {
       color: lighten(#0f3562, 10%);
     }
 
-    &--prev {
-      &:hover, &:active, &:focus {
-        transform: translateX(-0.25rem);
+    [dir=ltr] & {
+      &--prev {
+        &:hover, &:active, &:focus {
+          transform: translateX(-0.25rem);
+        }
+      }
+
+      &--next {
+        &:hover, &:active, &:focus {
+          transform: translateX(0.25rem);
+        }
       }
     }
 
-    &--next {
-      &:hover, &:active, &:focus {
-        transform: translateX(0.25rem);
+    [dir=rtl] & {
+      &--prev {
+        &:hover, &:active, &:focus {
+          transform: translateX(0.25rem);
+        }
+      }
+
+      &--next {
+        &:hover, &:active, &:focus {
+          transform: translateX(-0.25rem);
+        }
       }
     }
   }
