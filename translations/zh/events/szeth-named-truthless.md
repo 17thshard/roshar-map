@@ -1,5 +1,5 @@
-# Szeth named Truthless
-Szeth was named Trutheless for claims concerning the return of the Voidbringers.
+# 泽斯被贬为无真奴
+泽斯因宣扬虚渡回归而被贬为无真奴。
 
 ## Details
-At some point during his youth, Szeth began hearing a voice in his head, possibly that of a spren. Perhaps as a result of this, he began saying that the Voidbringers were returning to Roshar. The Shin leaders, however, told him that his claims were false and, at the age of 27, named him Truthless. Likely due to his prior high status, he was given Jezrien's Honorblade before being sent away—something that wasn't done for other Truthless. After being made a slave and given an Oathstone, Szeth was traded to the Thaylen merchant Vstim. From then on, whoever owned his Oathstone owned Szeth, and Szeth was obliged by his honor to do as the owner commanded; with the exception of killing himself or giving up the Honorblade. Just after being exiled from Shinovar, Szeth visited Urithiru for the first time.
+泽斯年轻时曾在脑海中听到某种灵体的声音。他表示虚渡正在回归柔刹大陆，但深族的领袖认为他的言论是错误的，并在他二十七岁时将他贬为无真奴。由于泽斯地位崇高，流放前被授予了杰兹雷恩的荣刃，这是其他无真奴都没有的待遇。泽斯被卖给了泰勒拿商人乌斯提姆，从此以后，持有誓约石的人就是泽斯的主人，泽斯必须按照主人的命令行动，但不能遵从自杀或放弃碎瑛刃的命令。被逐出深国后，泽斯首次拜访了乌有斯麓。
