@@ -1,8 +1,8 @@
-# Dalinar and Navani wedding
-Dalinar and Navani were married atop Urithiru by the Stormfather.
+# 达力拿与纳瓦尼成婚
+达力拿与纳瓦尼在飓风之父的见证下于乌有斯麓塔顶成婚。
 
 ## Details
-After the Vorin church refused to sanction Dalinar and Navani's marriage, the pair arranged a wedding officiated by the Stormfather himself atop Urithiru.
+在沃林教堂拒绝批准达力拿和纳瓦尼成婚后，这对新人在飓风之父的亲自主持下在乌有斯麓塔顶完婚。
 
 ## Metadata
 | Field | Value |

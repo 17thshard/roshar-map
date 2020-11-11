@@ -1,8 +1,8 @@
-# Moash travels to Kholinar
-Moash pulled supplies to Kholinar with Sah and Khen's group.
+# 莫阿什行至寇林
+莫阿什拉着补给跟随着萨尔和肯恩的队伍来到了寇林城外。
 
 ## Details
-After being left in Revolar by the Fused who assaulted his group in the Frostlands, Moash fell in with the laborers hauling supplies from Revolar to Kholinar. On the way he fell in with Sah and Khen's group of singers.
+在冰霜之地被融族击杀了小队成员之后，莫阿什被留在了雷沃拉尔。之后莫阿什融入了从雷沃拉尔向寇林城运送补给的劳工中。在路上，他又加入了萨尔和肯恩的歌者小队。、
 
 ## Metadata
 | Field | Value |

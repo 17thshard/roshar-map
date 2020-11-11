@@ -1,8 +1,8 @@
-# Dalinar and Sadeas joint assaults
-After Sadeas cleared Dalinar's name, the two agreed to attempt joint plateau assaults. The first was successful and they decided to continue.
+# 达力拿和撒迪亚斯联合突击
+在撒迪亚斯帮达力拿洗清污名之后，两人同意尝试在破碎平原联合突袭。第一次的尝试很成功，因此他们决定继续下去。
 
 ## Details
-The tension between Dalinar and Sadeas eased after the latter's investigation into King Elhokar's saddle strap revealed that Dalinar was likely framed. The two discussed Dalinar's proposal of a joint plateau assault and agreed to look for the next opportunity to try the strategy out. The first attempt was a success, with the armies winning the gemheart and Dalinar saving Sadeas's life. The two agreed to continue implementing the strategy in the weeks to come.
+在撒迪亚斯对国王艾尔霍卡的马鞍带的调查显示达力拿可能是被冤枉的之后，二人之间的紧张关系得到了缓解。达力拿提出了两人联合在破碎平原突击的计划，经过讨论后，二人同意在下次的出兵中尝试联合策略。第一次的尝试很成功，两人的部队成功夺取了琼心石，达力拿还救了撒迪亚斯的命。于是两人决定在接下来的日子里继续施行联合计划。
 
 ## Metadata
 | Field | Value |

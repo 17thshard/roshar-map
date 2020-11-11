@@ -1,8 +1,8 @@
-# Moash and Graves attacked
-Moash and Graves' team was attacked by Fused in the Frostlands. Moash was brought to Revolar.
+# 莫阿什与格雷夫斯受袭
+莫阿什与格雷夫斯的小队在霜冻之地被融族攻击。莫阿什被带到了雷沃拉尔。
 
 ## Details
-Graves' team fled from the Shattered Plains on foot after the summoning of the Everstorm and their failure to assassinate Elhokar. Several weeks later, they were attacked in the Frostlands by a group of Fused. Moash managed to kill one, Leshwi, but the rest of the group was killed and Moash was taken to Revolar. Their Shardblades and Shardplate were seized.
+格雷夫斯的小队自从刺杀艾尔霍卡失败、灭世风暴开启之后，就从破碎平原步行逃离了。几周之后，他们在霜冻之地被一队融族袭击。莫阿什成功杀掉了一名叫莱什维的融族，但小队其他成员都被杀了，莫阿什也被融族带到了雷沃拉尔。他们的碎瑛刃和碎瑛甲都被带走了。
 
 ## Metadata
 | Field | Value |

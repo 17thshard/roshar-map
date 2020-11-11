@@ -1,5 +1,5 @@
-# Lift is born
+# 莉芙特出生
 
 
 ## Details
-Lift is born to her Reshi mother, and grew up in Ral Elorim.
+莉芙特的母亲是雷希人，她生长在拉尔艾洛林地区。

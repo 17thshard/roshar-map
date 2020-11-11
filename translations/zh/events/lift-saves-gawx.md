@@ -1,8 +1,8 @@
-# Lift saves Gawx
-Lift infiltrated the Bronze Palace in Azimir to steal some food. After being chased by Nale, she saved the life of Gawx and was granted immunity.
+# 莉芙特拯救高克斯
+莉芙特潜入了阿兹米尔的青铜宝殿想去偷点食物。在被纳尔追赶的路程中，她救了高克斯的性命并因此获得了赦免。
 
 ## Details
-After working with Gawx and his associates to infiltrate the Bronze Palace in Azimir, Lift went her own way in search of food to steal. Gawx followed her, despite her warnings. In the palace Lift encountered the Herald Nale, whom she names "Darkness." Lift managed to escape capture, but seized Gawx and slit is throat as a trick to make her return. Lift did return to save Gawx and was again captured by Nale, but after being healed Gawx was named Prime Aqasix and used his authority to demand that Lift be released.
+在和高克斯以及他的同伙商议好潜入阿兹米尔的青铜宝殿后，莉芙特自己去找食物偷了。尽管她一再警告，高克斯还是跟着她一起走。在宫殿里莉芙特遇到了令使纳尔，她管他叫作“黑煞”。尽管莉芙特成功逃脱追捕，但他们抓住了高克斯并威胁割开他的喉咙以逼迫她返回。莉芙特回来救援高克斯，然后再次被纳尔抓住，但在被救治后高克斯被命名为阿卡希克斯大帝，然后他用自己新获得的权力下令将莉芙特释放。
 
 ## Metadata
 | Field | Value |
