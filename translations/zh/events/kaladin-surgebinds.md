@@ -1,8 +1,8 @@
-# Kaladin Surgebinds
-Kaladin used Surgebinding consciously for the first time.
+# 卡拉丁使用飓能
+卡拉丁第一次有意识地使用飓能术。
 
 ## Details
-After realizing Kaladin was a Surgebinder, Teft tricked Kaladin into accidentally using his powers and then made him aware of what he had done. Unsure what to make of the magic, Kaladin sought out some time alone to consider his newly discovered powers. During this time he encountered Wit and heard the story of the Wandersail.
+在发现卡拉丁是一名飓能者之后，泰夫特骗卡拉丁在机缘巧合下使出了他的飓能，这使他认识到自己的能力。在不确定这种力量是如何产生的情况下，卡拉丁开始独自尝试使用新发现的力量。这时他遇到了须空，听到了徘帆的故事。
 
 ## Metadata
 | Field | Value |
