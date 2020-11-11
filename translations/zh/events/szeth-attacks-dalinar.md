@@ -1,10 +1,10 @@
-# Szeth attacks Dalinar
-Szeth arrived at the Shattered Plains to assassinate Dalinar, and was repelled with the help of Kaladin.
+# 泽斯袭击达力拿
+泽斯抵达破碎平原，意图刺杀达力拿，后被卡拉丁击退。
 
 ## Details
-During a highstorm, Szeth attacked King Elhokar's palace on the Shattered Plains, entering it through a hole cut in the wall with his Blade. On his way, he killed Beld and cut through Hobber's midriff, crippling the use of his legs, then proceeded to fight against Adolin, Kaladin, and Dalinar, who all believed he was there to assassinate Elhokar. He quickly gained the upper hand, Lashing Adolin to the ceiling and cutting through Kaladin's arm. However, he ultimately failed, as Kaladin managed to push him through his entryway. The two of them fell to the ground, both surviving. Szeth panicked when he saw Kaladin healing his arm, and when Kaladin told him he was a Windrunner, Szeth fled.
+泽斯在飓风期间袭击了艾尔霍卡国王在破碎平原上的行宫，通过碎瑛刃在外墙上切出的窟窿入内。途中，他杀了冲桥手贝尔德，刺中了冲桥手胡勃导致其双腿残废。他与阿多林、卡拉丁和达力拿交战，这三人均认为他图谋弑君。他很快占到上风，利用风行术将阿多林甩到天花板上，并切穿了卡拉丁的手臂，但最终还是失败了，被卡拉丁从入口推了出去。两人一同摔到地上，都活了下来。泽斯看到卡拉丁的手臂能自愈，非常惊恐。当卡拉丁告诉他自己是风行骑士时，他逃走了。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* Ch. 29 & 30 |
+| chapter | 《光辉真言》第29-30章 |
