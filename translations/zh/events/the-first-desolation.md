@@ -1,5 +1,5 @@
-# The First Desolation
-War broke out between the humans, backed by Honor and Cultivation, and the native singers, backed by Odium. The cycle of Desolations began and the Oathpact was formed.
+# 最初的灭世
+荣誉和培养支持的人类一方和仇恨支持的原住民听者一方爆发了战争。令使们和荣誉缔结了约誓，灭世轮回就此开启。
 
 ## Details
-The first Desolation occurred when mankind invaded Roshar. They had destroyed their previous home with surgebinding and came to Roshar seeking shelter. The singers granted them the land that would later become Shinovar. Dissatisfied with what they had been given, the humans decided to invade the rest of the continent. This was the first military conflict between humans and singers. A singer who witnessed the invasion wrote the Eila Stele as a warning against trusting humans.
+人类用飓能术摧毁了他们原来居住的星球逃入了柔刹。在接受了听者赠与的土地（也就是后来的深国）后，人类并没有满足，而是开始侵略整个大陆。双方展开了激烈的战争。听者写下了Eila Stele以警告后人不可相信人类。

@@ -1,7 +1,7 @@
-# The Parshendi discovered
-Gavilar and Dalinar discovered the tribe of listeners, naming them Parshendi.
+# 发现仆族智者
+迦维拉尔和达力拿发现了一支听者部落，将他们命名为仆族智者。
 
 ## Details
-In the years after the reunification of Alethkar, Gavilar began to lose his thirst for battle. He had started reading a book called _The Way of Kings_, trying to convince Dalinar and his other Highprinces to be peaceful and to follow the Alethi Codes of War. Like the other Highprinces, Dalinar resisted his brother's ideas, finding them unpalatable and strange--even un-Alethi. To try and change Gavilar's mind, Dalinar convinced him to go an expedition, a hunt for a chasmfiend. He suggested this hoping to remind Gavilar of the good times in their youth, to reawaken his brother's fighting spirit.
+迦维拉尔统一阿勒斯卡后，失去了对战斗的渴望。他开始爱上《王者之路》，要求达力拿及其他轩亲王遵循阿勒斯卡战争法典。达力拿对此非常不满，认为兄长的所作所为都很奇怪，甚至有违传统。为了让迦维拉尔换换心情，他拉上兄长一起外出狩猎深渊恶魔，希望兄长能借此机会重新找回年轻时的激情。
 
-In 1166, Dalinar and Gavilar set out on their expedition. In an unmapped forest south of the Shattered Plains, Dalinar met a Parshendi patrol. At first disbelieving what he thought were simple parshmen acting individually in a civilized society, Dalinar quickly accepted that the Parshendi were intelligent and organized, unlike their parshmen cousins. Dalinar brought Gavilar to meet them, and within days the Alethi and Parshendi could communicate well.
+1166年他们踏上了狩猎之旅。在破碎平原南部一片荒山野岭中，达力拿遭遇了一支仆族智者巡逻队。起初他一位这不过就是一群普通的仆族，但不久就接受了事实：比起他们的仆族远亲，这群仆族确实更聪明，也更社会化。达力拿把此事告知了迦维拉尔，人类和仆族智者不久就能开始交流。

@@ -1,5 +1,5 @@
-# The Recreance
-After the False Desolation, most orders of the Knights Radiant disbanded, leaving behind their Shardblades and Shardplate.
+# 光辉变节
+伪灭世之后，大部分光辉骑士团放弃了他们的誓言，抛弃了他们的碎瑛甲和碎瑛刃。
 
 ## Details
-The Day of Recreance was the final act of the Knights Radiant. Nine of the ten orders abandoned their Shardblades and Shardplate and broke their oaths, killing their spren. The Order of Skybreakers was the one order that did not participate and instead hid themselves away. For around two thousand years the reason for the Recreance remained unknown until it was rediscovered in the Eila Stele during the True Desolation. 
+九支光辉骑士团的骑士们放弃了他们的誓言，抛弃了他们的碎瑛甲和碎瑛刃，史称光辉变节。他们的此举杀死了与他们缔结纽带的灵体。唯有破天骑士团没有放弃誓言而是选择了销声匿迹。光辉变节的真相被掩埋了2000年左右，直到终极灭世来临，人类能够解读Eila Stele之后才得知了真相。

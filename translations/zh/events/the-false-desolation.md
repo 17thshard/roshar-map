@@ -1,5 +1,5 @@
-# The False Desolation
-The False Desolation was a war between humans and singers backed by the Unmade. At it's conclusion the singers become parshmen.
+# 伪灭世
+伪灭世是人类与歌者之间的一场战争。该战争有灭者参与。战后，听者成为了仆族。
 
 ## Details
-The False Desolation, considered pseudohistorical by the Vorin church, was a conflict between singers and humans sometime during the millenia after the Last Desolation. It is likely the conflict in which the Knights Radiant were fighting at the time of the Recreance, according to Jasnah Kholin. It resulted in the enslavement of singers as parshmen.
+伪灭世发生在最后的灭世之后数千年。沃林教会并不承认这一段历史。据迦熙娜·寇林研究，这一段历史大概发生在光辉变节时代左右。战后，歌者成为了所谓的“仆族”。

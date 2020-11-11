@@ -1,5 +1,6 @@
-# The Eighty's War
+# 八十夺城战
+埃穆尔和图卡之间的军事冲突，爆发于1168年。
 The Eighty's War began between Tukar and Emul.
 
 ## Details
-The Eighty's War was a military conflict on Roshar between the bordering nations of Emul and Tukar during the time of the Alethi War of Reckoning. The conflict arose over the city of Sesemalex Dar, which is situated on the border between the kingdoms. Emul claimed the city as their capital, but the Tukari wanted it for themselves.
+八十夺城战是发生在埃穆尔和图卡之间的军事冲突，时间上大体与阿勒斯卡的复仇战争同时。战争双方同时声明对瑟瑟马勒克达的所有权。

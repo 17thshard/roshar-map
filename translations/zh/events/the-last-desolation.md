@@ -1,5 +1,5 @@
-# The Last Desolation
-Nine Heralds abandoned the Oathpact. The cycle of Desolations seems to end and the Era of Solitude began.
+# 最后的灭世
+九位令使放弃了约誓。灭世的轮回似乎已经结束，孤独时代从此开始。
 
 ## Details
-At the end of what is called the Last Desolation, nine of ten Heralds managed to survive the fighting, which was an unusual occurrence. Fearful of the torture they would face on their return to Braize, the Heralds chose to break the Oathpact rather than return. Although they had been warned that lingering on Roshar would lead to another Desolation, Ishar told the others that Taln alone would be enough to maintain the Oathpact. Whether or not this was true mattered little to the Heralds as they only wished to avoid torture. The Heralds left their Honorblades in a circle and all walked in a different direction, telling people that humanity had finally won the war for good. Ishar's prediction turned out to be true, and Taln held back the Fused for 4500 years while mankind believed there would be no more Desolations. 
+在一场灭世战争中，除塔拉内外的九位令使在战后得以幸存。艾莎认为塔拉内可以独自支撑约誓，其他令使可以不返回诅咒之地。于是九位令使出于对无尽折磨的恐惧，一致放弃了约誓。他们把荣刃留在了战场，向世人宣称灭世的轮回已经结束，人类取得了最终胜利。4500年后，灭世再临。

@@ -1,9 +1,9 @@
-# The War of Loss
-Sadees, the Sunmaker, ended the Vorin church's Heirocracy and united much of eastern Roshar.
+# 失落战争
+造日王Sadees推翻了神权统治，统一了东部柔刹。
 
 ## Details
-Before the Hierocracy could spread to western Roshar, the Hierocracy became embroiled in the War of Loss, a conflict spearheaded by the man later known as the Sunmaker. The Sunmaker united together the ten princedoms of Alethkar for the first time since the fall of Alethela into one nation. It is unknown if any other factions joined them, but working together the Alethi forces fought the Hierocracy in truly epic battles, whose like has not been seen on Roshar since then. The Sunmaker managed to cast down the Hierocracy. Its fall led to much chaos and destruction, and many eastern cities were sacked and destroyed, with the notable exception of Kholinar.
+自白银十王国时代结束，阿勒瑟拉陷入分裂之后，造日王首次统一了阿勒斯卡十个公国。他还向整个沃林教的神权统治宣战，并推翻了后者的统治。战争造成了无穷的混乱与毁灭，柔刹东部很多城市都覆灭了，但塔冠城得以幸存。
 
-The Sunmaker himself interrogated the remaining priests and went through their correspondences. He claimed that he had found no proof of any of the visions that they had claimed to be receiving from the Almighty, stating that it had been a massive fraud on the part of the Church. The central leadership of the Vorin Church was destroyed. Vorinism was then shattered into the Devotaries, and ardents lost much of their power, only able to teach laws, not enforce them. They were no longer allowed to be involved in politics, unable to own property, and were actually considered the property of lighteyes. These events are still a source of embarrassment to modern day ardents, who prefer not to speak of them.
+造日王亲自审问了沃林教的祭祀、查阅了他们的往来书信，最终他声称沃林教所谓的“来自全能之主的消息”根本不存在，一切皆是教会的骗局。从此沃林教失去了权势，虔诚者失去了执法权，不能干政，也不能拥有财物——他们自己甚至都成为了光眼种的财物。时至今日，虔诚者们也羞于谈及此事。
 
-Sadees, after his win, claimed to have a mandate from the Almighty and crowned himself king of the united Alethkar. He decided to continue conquering the world, starting with Herdaz and going at least to Azimir, where he committed genocide killing ten percent of the Azish population. The kingdom he'd united during the war collapsed after his death.
+战后，造日王给自己加冕为阿勒斯卡国王，声称君权乃全能之主所赐。然而，阿勒斯卡并没有让他满足，他想要征服世界。他挥军攻打了赫达孜，向西至少打到了阿兹米尔。他在亚泽尔展开了大屠杀，至少杀掉了亚泽尔十分之一的人口。他死后，他的王国分崩离析。
