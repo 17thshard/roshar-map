@@ -1,10 +1,12 @@
-# Szeth's killing spree begins
-Szeth's oathstone was claimed by Taravangian, and the Assassin in White is commanded to assassinate several world leaders.
+# 泽斯大开杀戒
+泽斯的誓约石落到塔拉梵吉安手中，白衣刺客受命刺杀数名领导人。
 
 ## Details
-With Szeth under his control, Makkek set out to gain wealth, first by killing his fellow robbers and then by establishing a gambling den in Bornwater. On one of Makkek's missions, this time to eliminate a rival who had opened his own gambling place, Szeth infiltrated the local lord's mansion where his target, Gavashaw, resided. After entering Gavashaw's rooms, he met a mysterious stranger who knew of Szeth and his role in Gavilar's death, as well as his powers. After a short confrontation, the man revealed that both Makek and Gavashaw had been killed, and that Szeth's Oathstone was now in the hands of a new master. Thus, Szeth began to unwittingly serve the Diagram. Szeth's new masters gave him a list of high-ranking targets, all of whom were to be eliminated with the same skill displayed over five years prior in Kholinar. Szeth set out to do just that, carving a bloody path across the continent, slaying, among others, two Azish Primes. His second-to-last kill was King Hanavanar of Jah Keved, whom he killed along with his two Shardbearer guards and many others who were present. This led directly into the Veden civil war.
+马凯克通过操控泽斯的方式敛财，杀先是了同伙，再是在水垹镇开了赌场。在一次任务中，泽斯要铲除一个开赌场抢生意的人，那人名叫加瓦绍，是当地领主的宠臣。泽斯潜入领主的地产，进入加瓦绍的住处，遇见了一个神秘人，那人了解泽斯和他的力量，以及他在迦维拉尔之死中所扮演的角色。简短对峙后，神秘人表示马凯克和加瓦绍都已经死了，泽斯的誓约石已经易手。因此，泽斯开始无意为谶记社效命。
+
+泽斯的新主人给了他一份名单，要求他以五年前在塔冠城所展示的异能来铲除名单上罗列的君主高官。泽斯奉命行事，杀遍柔刹大陆，死者包括两名亚泽尔大帝。他所杀的倒数第二人是雅克维德国王哈纳瓦纳，直接导致该国内战爆发。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* I-6 |
+| chapter | 《王者之路》插曲6 |
