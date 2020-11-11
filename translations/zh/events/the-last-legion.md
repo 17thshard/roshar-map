@@ -1,7 +1,7 @@
-# The Last Legion
-Some singers abandoned their gods, choosing dullform and fleeing into the wild, and called themselves "the listeners." They eventually settled around the Shattered Plains.
+# 终极军团
+有一支歌者为了自由选择进入愚钝态以便逃离他们的众神。他们称自己为“听者”。他们最后在破碎平原安了家。
 
 ## Details
-The listeners were originally called the Last Legion, and like other singers in the Voidbringer army, they followed the commands of the Fused, who were the listeners' gods. The listeners lived in somewhere called the dark home (but this might have been metaphorical for being under Odium's influence, and not an actual place). The Last Legion was sent to fight in the farthest plains, probably the plains of Natanatan and the Shattered Plains. 
+这支歌者曾经和其他虚渡部队一样接受融族的领导，甚至把融族尊为神明。他们居住在某个叫dark home的地方（也许不是一个实际的地点而是用于比喻仇恨的影响）。这支“终极军团”接受了命令前往远东的平原，可能就是现在的纳塔纳坦平原和破碎平原。
 
-One day the Last Legion fled, leaving the forms of power for dullform. Despite being thus crippled, it would lead to freedom from their gods. These listeners composed many songs to remember their history and forms, such as the Song of Listing, Song of Secrets, and Song of Histories because they risked forgetting everything. They had only known how to transform into forms other than dullform and mateform with the help of gods.
+为了躲避众神的束缚，他们选择了进入愚钝态。为了避免以往自己种族的历史和形态，他们编了很多的歌谣来传唱。在很长一段时间里他们仅知道愚钝和交配两种形态。
