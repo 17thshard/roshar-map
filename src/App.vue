@@ -41,6 +41,7 @@ import CalendarGuide from '@/components/CalendarGuide.vue'
 import Tutorial from '@/components/Tutorial.vue'
 import FirstVisitWindow from '@/components/FirstVisitWindow.vue'
 import ErrorScreen from '@/components/ErrorScreen.vue'
+import '@/assets/fonts/hebrew.scss'
 
 export default {
   name: 'App',
@@ -120,7 +121,7 @@ body {
 }
 
 #app {
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Libre Baskerville', 'Hadasim CLM', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: absolute;
