@@ -2,7 +2,7 @@
   <transition-group tag="div" name="timeline__event" :class="['timeline', { 'timeline--excluded-by-lock': excludedByLock }]">
     <div
       key="bar"
-      :style="{ left: `${barOffset + offset}px`, ...(tag === 'all' ? { right: 0 } : { width: `${width}px` }), ...barStyles }"
+      :style="{ [offsetStyle]: `${barOffset + offset}px`, ...(tag === 'all' ? { [endStyle]: 0 } : { width: `${width}px` }), ...barStyles }"
       :class="['timeline__bar', { 'timeline__bar--separate': tag !== 'all' }]"
     />
     <template v-for="event in events">
@@ -10,7 +10,7 @@
         :key="event.id"
         :title="$t(`events.${event.id}.name`)"
         :class="['timeline__event', { 'timeline__event--active': activeEvent !== null && activeEvent.id === event.id }]"
-        :style="{ left: `${event.offset + offset}px` }"
+        :style="{ [offsetStyle]: `${event.offset + offset}px` }"
         :disabled="isDisabled(event)"
         @click="$emit('event-selected', event)"
       />
@@ -66,6 +66,12 @@ export default {
     },
     width () {
       return Math.max(...this.events.map(e => e.offset)) - Math.min(...this.events.map(e => e.offset))
+    },
+    offsetStyle () {
+      return this.$store.state.flipTimeline ? 'right' : 'left'
+    },
+    endStyle () {
+      return this.$store.state.flipTimeline ? 'left' : 'right'
     }
   }
 }
@@ -95,17 +101,36 @@ export default {
       bottom: 0;
     }
 
-    &:before {
-      left: -1.5rem;
-      right: 10rem;
-      border-top-left-radius: 0.3rem;
-      border-bottom-left-radius: 0.3rem;
-    }
-
     &:after {
       width: 10rem;
-      left: auto;
-      right: 0;
+    }
+
+    [dir=ltr] & {
+      &:before {
+        left: -1.5rem;
+        right: 10rem;
+        border-top-left-radius: 0.3rem;
+        border-bottom-left-radius: 0.3rem;
+      }
+
+      &:after {
+        left: auto;
+        right: 0;
+      }
+    }
+
+    [dir=rtl] & {
+      &:before {
+        right: -1.5rem;
+        left: 10rem;
+        border-top-right-radius: 0.3rem;
+        border-bottom-right-radius: 0.3rem;
+      }
+
+      &:after {
+        right: auto;
+        left: 0;
+      }
     }
 
     &--separate {
@@ -127,8 +152,12 @@ export default {
       background: rgba(var(--timeline-bar-color), var(--timeline-bar-alpha));
     }
 
-    &:after {
+    [dir=ltr] &:after {
       background: linear-gradient(to right, rgba(var(--timeline-bar-color), var(--timeline-bar-alpha)), rgba(var(--timeline-bar-color), 0));
+    }
+
+    [dir=rtl] &:after {
+      background: linear-gradient(to left, rgba(var(--timeline-bar-color), var(--timeline-bar-alpha)), rgba(var(--timeline-bar-color), 0));
     }
   }
 
@@ -140,10 +169,17 @@ export default {
     appearance: none;
     outline: none;
     padding: 0;
-    margin: 0 0 0 -0.5em;
     box-sizing: border-box;
     border: 0.5em solid;
     z-index: 15;
+
+    [dir=ltr] & {
+      margin: 0 0 0 -0.5em;
+    }
+
+    [dir=rtl] & {
+      margin: 0 -0.5em 0 0;
+    }
 
     @mixin diamond($base-color) {
       border-top-color: lighten($base-color, 10%);

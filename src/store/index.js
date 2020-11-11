@@ -312,6 +312,16 @@ const mutations = {
   },
   unlockTag (state) {
     state.filter.lockedTag = null
+  },
+  setTextDirection (state, direction) {
+    state.flipTimeline = direction === 'rtl'
+    state.flipDirectionalIcons = direction === 'rtl'
+    state.scrollbarOptions = {
+      vuescroll: { wheelScrollDuration: 400 },
+      scrollPanel: { verticalNativeBarPos: direction === 'ltr' ? 'right' : 'left' },
+      bar: { onlyShowBarOnScroll: false, keepShow: true, background: '#482d00', opacity: 0.5, size: '0.5rem' },
+      rail: { size: '0.5rem', gutterOfSide: '0' }
+    }
   }
 }
 
@@ -351,7 +361,15 @@ export default new Vuex.Store({
     calendarGuideOpen: false,
     goToDateOpen: false,
     settingsOpen: false,
-    infoOpen: false
+    infoOpen: false,
+    flipTimeline: false,
+    flipDirectionalIcons: false,
+    scrollbarOptions: {
+      vuescroll: { wheelScrollDuration: 400 },
+      scrollPanel: { verticalNativeBarPos: 'right' },
+      bar: { onlyShowBarOnScroll: false, keepShow: true, background: '#482d00', opacity: 0.5, size: '0.5rem' },
+      rail: { size: '0.5rem', gutterOfSide: '0' }
+    }
   },
   mutations,
   getters

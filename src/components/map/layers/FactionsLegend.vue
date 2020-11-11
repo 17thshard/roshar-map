@@ -46,7 +46,6 @@ export default {
 
     &:before {
       content: '';
-      margin-right: 0.5rem;
       width: 1rem;
       height: 1rem;
       box-sizing: border-box;
@@ -54,6 +53,14 @@ export default {
       transform: rotate(45deg);
       $border-color: desaturate(#0f3562, 10%);
       box-shadow: inset 0 -1px $border-color, inset 0 1px $border-color, inset -1px 0 $border-color, inset 1px 0 $border-color;
+
+      [dir=ltr] & {
+        margin-right: 0.5rem;
+      }
+
+      [dir=rtl] & {
+        margin-left: 0.5rem;
+      }
     }
 
     &--coalition:before {

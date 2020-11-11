@@ -41,6 +41,7 @@ import CalendarGuide from '@/components/CalendarGuide.vue'
 import Tutorial from '@/components/Tutorial.vue'
 import FirstVisitWindow from '@/components/FirstVisitWindow.vue'
 import ErrorScreen from '@/components/ErrorScreen.vue'
+import '@/assets/fonts/hebrew.scss'
 
 export default {
   name: 'App',
@@ -120,7 +121,7 @@ body {
 }
 
 #app {
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Libre Baskerville', 'Hadasim CLM', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: absolute;
@@ -139,13 +140,27 @@ body {
   box-sizing: border-box;
 
   &.app--details {
-    padding-left: 225px;
     transition-delay: 0.3s;
+
+    [dir=ltr] & {
+      padding-left: 225px;
+    }
+
+    [dir=rtl] & {
+      padding-right: 225px;
+    }
   }
 
   &.app--sidebar-active {
-    padding-right: 225px;
     transition-delay: 0.1s;
+
+    [dir=ltr] & {
+      padding-right: 225px;
+    }
+
+    [dir=rtl] & {
+      padding-left: 225px;
+    }
   }
 }
 
@@ -161,5 +176,10 @@ button {
   &-leave-to {
     opacity: 0;
   }
+}
+
+[dir=rtl] .__rail-is-vertical {
+  right: auto !important;
+  left: 0 !important;
 }
 </style>

@@ -16,11 +16,7 @@
 
         <Scrollbar
           class="settings__scroller"
-          :ops="{
-            vuescroll: { wheelScrollDuration: 400 },
-            bar: { onlyShowBarOnScroll: false, keepShow: true, background: '#482d00', opacity: 0.5, size: '0.5rem' },
-            rail: { size: '0.5rem', gutterOfSide: '0' }
-          }"
+          :ops="$store.state.scrollbarOptions"
           @handle-scroll="onScroll"
         >
           <section class="settings__layers">
@@ -156,7 +152,6 @@ export default {
 <style lang="scss">
 .settings {
   position: fixed;
-  right: 0;
   top: 0;
   bottom: 0;
   pointer-events: none;
@@ -164,11 +159,18 @@ export default {
   width: 350px;
   max-width: 100%;
 
+  [dir=ltr] & {
+    right: 0;
+  }
+
+  [dir=rtl] & {
+    left: 0;
+  }
+
   &__button {
     display: flex;
     align-items: center;
     position: absolute;
-    right: 5.5rem;
     top: 2rem;
     font-size: 1rem;
     line-height: 1;
@@ -185,14 +187,27 @@ export default {
     color: #242629;
     pointer-events: auto;
     box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.5);
-    transform-origin: calc(100% - 1rem) 50%;
+
+    [dir=ltr] & {
+      right: 5.5rem;
+      transform-origin: calc(100% - 1rem) 50%;
+
+      .feather {
+        margin-right: 0.5rem;
+      }
+    }
+
+    [dir=rtl] & {
+      left: 5.5rem;
+      transform-origin: 1rem 50%;
+
+      .feather {
+        margin-left: 0.5rem;
+      }
+    }
 
     &:hover, &:active, &:focus {
       background: saturate(darken(#F5ECDA, 10%), 5%);
-    }
-
-    .feather {
-      margin-right: 0.5rem;
     }
   }
 
@@ -221,12 +236,24 @@ export default {
       }
     }
 
-    &-enter, &-leave-to {
-      clip-path: circle(1px at calc(100% - 6.5rem) 3.25rem);
+    [dir=ltr] & {
+      &-enter, &-leave-to {
+        clip-path: circle(1px at calc(100% - 6.5rem) 3.25rem);
+      }
+
+      &-enter-to, &-leave {
+        clip-path: circle(100vh at 5.5rem 3.25rem);
+      }
     }
 
-    &-enter-to, &-leave {
-      clip-path: circle(100vh at 5.5rem 3.25rem);
+    [dir=rtl] & {
+      &-enter, &-leave-to {
+        clip-path: circle(1px at 6.5rem 3.25rem);
+      }
+
+      &-enter-to, &-leave {
+        clip-path: circle(100vh at 5.5rem 3.25rem);
+      }
     }
 
     h3 {
@@ -274,7 +301,6 @@ export default {
 
   &__close {
     display: block;
-    margin-left: auto;
     cursor: pointer;
     appearance: none;
     outline: none;
@@ -284,6 +310,14 @@ export default {
     transition: color 0.2s ease-in-out;
     padding: 0;
     height: 24px;
+
+    [dir=ltr] & {
+      margin-left: auto;
+    }
+
+    [dir=rtl] & {
+      margin-right: auto;
+    }
 
     &:hover, &:active, &:focus {
       color: #ffad00;
@@ -322,13 +356,20 @@ export default {
 
     &-check {
       display: block;
-      margin-right: 0.5rem;
       width: 1rem;
       height: 1rem;
       background: darken(#F5ECDA, 30%);
       padding: 0.25rem;
       box-sizing: border-box;
       position: relative;
+
+      [dir=ltr] & {
+        margin-right: 0.5rem;
+      }
+
+      [dir=rtl] & {
+        margin-left: 0.5rem;
+      }
 
       &:after {
         display: block;
@@ -371,8 +412,15 @@ export default {
     position: relative;
     display: flex;
     align-items: stretch;
-    margin-right: 0.5rem;
     clip-path: polygon(0.25rem 0, calc(100% - 0.25rem) 0, 100% 0.25rem, 100% calc(100% - 0.25rem), calc(100% - 0.25rem) 100%, 0.25rem 100%, 0 calc(100% - 0.25rem), 0 0.25rem);
+
+    [dir=ltr] & {
+      margin-right: 0.5rem;
+    }
+
+    [dir=rtl] & {
+      margin-left: 0.5rem;
+    }
 
     &-button {
       display: flex;
@@ -408,20 +456,36 @@ export default {
       bottom: 0;
       background: lighten(#0f3562, 10%);
       z-index: 0;
-      transition: left 0.3s ease-in-out;
+      transition: left 0.3s ease-in-out, right 0.3s ease-in-out;
       pointer-events: none;
     }
 
-    &--enabled:after {
-      left: 0;
+    [dir=ltr] & {
+      &--enabled:after {
+        left: 0;
+      }
+
+      &--separate:after {
+        left: 30px;
+      }
+
+      &--disabled:after {
+        left: 60px;
+      }
     }
 
-    &--separate:after {
-      left: 30px;
-    }
+    [dir=rtl] & {
+      &--enabled:after {
+        right: 0;
+      }
 
-    &--disabled:after {
-      left: 60px;
+      &--separate:after {
+        right: 30px;
+      }
+
+      &--disabled:after {
+        right: 60px;
+      }
     }
   }
 

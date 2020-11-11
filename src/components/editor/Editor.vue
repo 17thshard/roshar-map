@@ -1414,11 +1414,11 @@ export default {
 
       &-year {
         width: 50px;
-        text-align: right;
+        text-align: end;
       }
 
       &-rest {
-        text-align: left;
+        text-align: start;
       }
     }
   }

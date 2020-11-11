@@ -64,7 +64,8 @@
           <div class="go-to-date__field-focus" />
         </div>
         <button type="submit">
-          <ArrowRightIcon />
+          <ArrowLeftIcon v-if="$store.state.flipDirectionalIcons" />
+          <ArrowRightIcon v-else />
         </button>
       </section>
       <section v-if="error !== null" class="go-to-date__error">
@@ -75,11 +76,11 @@
 </template>
 
 <script>
-import { ArrowRightIcon, XIcon } from 'vue-feather-icons'
+import { ArrowRightIcon, ArrowLeftIcon, XIcon } from 'vue-feather-icons'
 
 export default {
   name: 'GoToDate',
-  components: { ArrowRightIcon, XIcon },
+  components: { ArrowRightIcon, ArrowLeftIcon, XIcon },
   data () {
     return {
       year: null,
@@ -229,7 +230,14 @@ export default {
     text-shadow: 0 2px 0 rgba(0, 0, 0, 0.75);
     display: flex;
     align-items: center;
-    margin: 0 3.5rem 0 0.5rem;
+
+    [dir=ltr] & {
+      margin: 0 3.5rem 0 0.5rem;
+    }
+
+    [dir=rtl] & {
+      margin: 0 0.5rem 0 3.5rem;
+    }
   }
 
   &__close {
@@ -245,7 +253,14 @@ export default {
     padding: 0.25rem;
     line-height: 1;
     display: flex;
-    margin-left: auto;
+
+    [dir=ltr] & {
+      margin-left: auto;
+    }
+
+    [dir=rtl] & {
+      margin-right: auto;
+    }
 
     &:hover, &:active, &:focus {
       color: #ffad00 !important;

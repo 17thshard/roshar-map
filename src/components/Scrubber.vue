@@ -15,10 +15,10 @@
     </transition>
     <transition name="scrubber__jump">
       <button
-        v-if="leftOverflowVisible"
-        class="scrubber__jump scrubber__jump--start"
-        :title="$t('ui.jump-to-start')"
-        @click="jumpToStart"
+        v-if="leftOverflowVisible && (!$store.state.flipTimeline || filter.separateTags.length === 0)"
+        class="scrubber__jump scrubber__jump--left"
+        :title="$store.state.flipTimeline ? $t('ui.jump-to-end') : $t('ui.jump-to-start')"
+        @click="$store.state.flipTimeline ? jumpToEnd() : jumpToStart()"
       >
         <ChevronsLeftIcon />
       </button>
@@ -26,19 +26,40 @@
     <div class="scrubber__bar">
       <div class="scrubber__indicator">
         <div class="scrubber__indicator-actions">
-          <button
-            class="scrubber__indicator-button scrubber__indicator-button--prev"
-            :title="$t('ui.previous-event')"
-            @click="gotoEvent(-1)"
-          >
-            {{ $t('ui.previous') }}
-          </button>
-          <span class="scrubber__indicator-year">
-            {{ currentDate }}
-          </span>
-          <button class="scrubber__indicator-button scrubber__indicator-button--next" :title="$t('ui.next-event')" @click="gotoEvent(1)">
-            {{ $t('ui.next') }}
-          </button>
+          <template v-if="this.$store.state.flipTimeline">
+            <button
+              class="scrubber__indicator-button scrubber__indicator-button--left"
+              :title="$t('ui.next-event')"
+              @click="gotoEvent(1)"
+            >
+              {{ $t('ui.next') }}
+            </button>
+            <span class="scrubber__indicator-year">
+              {{ currentDate }}
+            </span>
+            <button
+              class="scrubber__indicator-button scrubber__indicator-button--right"
+              :title="$t('ui.previous-event')"
+              @click="gotoEvent(-1)"
+            >
+              {{ $t('ui.previous') }}
+            </button>
+          </template>
+          <template v-else>
+            <button
+              class="scrubber__indicator-button scrubber__indicator-button--left"
+              :title="$t('ui.previous-event')"
+              @click="gotoEvent(-1)"
+            >
+              {{ $t('ui.previous') }}
+            </button>
+            <span class="scrubber__indicator-year">
+              {{ currentDate }}
+            </span>
+            <button class="scrubber__indicator-button scrubber__indicator-button--right" :title="$t('ui.next-event')" @click="gotoEvent(1)">
+              {{ $t('ui.next') }}
+            </button>
+          </template>
         </div>
       </div>
       <div
@@ -71,7 +92,7 @@
             <template v-for="{ year, offset, months, singleEvent } in years.filter(year => year.display)">
               <span
                 :key="year"
-                :style="{ left: `${offset + timelineOffset}px` }"
+                :style="{ [offsetStyle]: `${offset + timelineOffset}px` }"
                 class="scrubber__year"
               >
                 {{ year }}
@@ -79,7 +100,7 @@
               <span
                 v-for="{ month, offset: monthOffset } in months.slice(singleEvent ? 1 : 0).filter(m => m.display && (offset + m.offset) <= maxEventOffset)"
                 :key="`${year}.${month}`"
-                :style="{ left: `${offset + timelineOffset + monthOffset}px` }"
+                :style="{ [offsetStyle]: `${offset + timelineOffset + monthOffset}px` }"
                 :class="['scrubber__month', `scrubber__month--${month}`]"
               >
                 {{ $t(`numbers[${month}]`) }}
@@ -91,10 +112,10 @@
     </div>
     <transition name="scrubber__jump">
       <button
-        v-if="rightOverflowVisible && filter.separateTags.length === 0"
-        class="scrubber__jump scrubber__jump--end"
-        :title="$t('ui.jump-to-end')"
-        @click="jumpToEnd"
+        v-if="rightOverflowVisible && (filter.separateTags.length === 0 || $store.state.flipTimeline)"
+        class="scrubber__jump scrubber__jump--right"
+        :title="$store.state.flipTimeline ? $t('ui.jump-to-start') : $t('ui.jump-to-end')"
+        @click="$store.state.flipTimeline ? jumpToStart() : jumpToEnd()"
       >
         <ChevronsRightIcon />
       </button>
@@ -105,16 +126,17 @@
     >
       <transition name="scrubber__jump">
         <button
-          v-if="rightOverflowVisible"
-          :class="['scrubber__jump scrubber__jump--end', { 'scrubber__jump--end-offset': filter.separateTags.length > 0 }]"
+          v-if="(!$store.state.flipTimeline && rightOverflowVisible) || ($store.state.flipTimeline && leftOverflowVisible)"
+          class="scrubber__jump scrubber__jump--separated"
           :title="$t('ui.jump-to-end')"
           @click="jumpToEnd"
         >
-          <ChevronsRightIcon />
+          <ChevronsLeftIcon v-if="$store.state.flipTimeline" />
+          <ChevronsRightIcon v-else />
         </button>
       </transition>
       <button class="scrubber__separate-timelines-toggle" :title="$t('ui.separate-timelines')" @click="separateVisible = !separateVisible">
-        <ChevronRightIcon v-if="separateVisible" size="1x" />
+        <ChevronRightIcon v-if="separateVisible ^ $store.state.flipDirectionalIcons" size="1x" />
         <ChevronLeftIcon v-else size="1x" />
       </button>
       <div class="scrubber__separate-timelines-content">
@@ -203,6 +225,9 @@ export default {
     },
     filteredEvents () {
       return this.events.filter(event => this.$store.getters.isIncludedInNavigation(event))
+    },
+    offsetStyle () {
+      return this.$store.state.flipTimeline ? 'right' : 'left'
     }
   },
   watch: {
@@ -269,13 +294,13 @@ export default {
     scrollHorizontally (event) {
       const e = window.event || event
       const delta = Math.max(-1, Math.min(1, e.wheelDelta || -e.detail))
-      this.$refs.container.scrollLeft -= delta * 40
+      this.$refs.container.scrollLeft -= delta * 40 * (this.$store.state.flipTimeline ? -1 : 1)
       e.preventDefault()
     },
     onScroll () {
       this.updateOverflow()
 
-      const scroll = this.$refs.container.scrollLeft
+      const scroll = this.$store.state.flipTimeline ? -this.$refs.container.scrollLeft : this.$refs.container.scrollLeft
       const event = this.events.find(event => Math.abs(event.offset - scroll) <= 1)
       if (event !== undefined) {
         this.currentDate = formatDate(event.date)
@@ -322,11 +347,18 @@ export default {
     },
     updateOverflow () {
       const { container } = this.$refs
-      this.leftOverflowVisible = container.scrollLeft > this.timelineOffset
-      this.rightOverflowVisible = container.scrollLeft + container.clientWidth < container.scrollWidth - this.timelineOffset
+      const scroll = this.$store.state.flipTimeline ? -container.scrollLeft : container.scrollLeft
+      this.leftOverflowVisible = scroll > this.timelineOffset
+      this.rightOverflowVisible = scroll + container.clientWidth < container.scrollWidth - this.timelineOffset
+
+      if (this.$store.state.flipTimeline) {
+        const tmp = this.leftOverflowVisible
+        this.leftOverflowVisible = this.rightOverflowVisible
+        this.rightOverflowVisible = tmp
+      }
     },
     gotoEvent (dir) {
-      const scroll = this.$refs.container.scrollLeft
+      const scroll = this.$store.state.flipTimeline ? -this.$refs.container.scrollLeft : this.$refs.container.scrollLeft
 
       const gotoAndScroll = (id) => {
         let index = Math.max(0, Math.min(id, this.events.length - 1))
@@ -449,7 +481,7 @@ export default {
       this.scrollToEvent(lastEvent)
     },
     scrollTo (offset) {
-      this.$refs.container.scrollTo({ left: offset, behavior: 'smooth' })
+      this.$refs.container.scrollTo({ left: this.$store.state.flipTimeline ? -offset : offset, behavior: 'smooth' })
     }
   }
 }
@@ -565,19 +597,27 @@ export default {
       transform: translateX(0);
     }
 
-    &--start {
+    &--left {
       left: 2rem;
       --leave-position: -100%;
     }
 
-    &--end {
+    &--right {
       right: 2rem;
       --leave-position: 100%;
+    }
 
-      &-offset {
-        right: auto;
+    &--separated {
+      box-shadow: none;
+
+      [dir=ltr] & {
         left: -3rem;
-        box-shadow: none;
+        --leave-position: 100%;
+      }
+
+      [dir=rtl] & {
+        right: -3rem;
+        --leave-position: -100%;
       }
     }
 
@@ -586,12 +626,19 @@ export default {
       height: auto;
       bottom: 100%;
       margin-bottom: 2rem;
-      right: 2rem;
       border-radius: 2rem;
       padding: 0.75rem 0.75rem;
       background: #F5ECDA;
       color: #242629;
       z-index: 4;
+
+      [dir=ltr] & {
+        right: 2rem;
+      }
+
+      [dir=rtl] & {
+        left: 2rem;
+      }
 
       &:hover, &:focus, &:active {
         background: saturate(darken(#F5ECDA, 10%), 5%);
@@ -657,7 +704,7 @@ export default {
         transform-origin: 50% 50%;
       }
 
-      &--prev {
+      &--left {
         justify-content: flex-start;
         border-top-left-radius: 1rem;
         border-bottom-left-radius: 1rem;
@@ -678,7 +725,7 @@ export default {
         }
       }
 
-      &--next {
+      &--right {
         justify-content: flex-end;
         border-top-right-radius: 1rem;
         border-bottom-right-radius: 1rem;
@@ -787,8 +834,15 @@ export default {
 
   &__year, &__month {
     position: absolute;
-    transform: translateX(-50%);
     font-size: 0.7rem;
+
+    [dir=ltr] & {
+      transform: translateX(-50%);
+    }
+
+    [dir=rtl] & {
+      transform: translateX(50%);
+    }
 
     &:before {
       content: '';
@@ -822,7 +876,6 @@ export default {
 
   &__separate-timelines {
     position: absolute;
-    right: 0;
     top: 0;
     bottom: 0;
     display: flex;
@@ -830,11 +883,20 @@ export default {
     z-index: 16;
     filter: drop-shadow(-2px 0 6px rgba(0, 0, 0, 0.5));
     font-size: 14px;
-    transform: translateX(calc(100% - 1.5rem));
     transition: transform 0.2s ease-in;
 
+    [dir=ltr] & {
+      right: 0;
+      transform: translateX(calc(100% - 1.5rem));
+    }
+
+    [dir=rtl] & {
+      left: 0;
+      transform: translateX(calc(-100% + 1.5rem));
+    }
+
     &--visible {
-      transform: translateX(0);
+      transform: translateX(0) !important;
       transition: transform 0.2s ease-out;
     }
 
@@ -863,9 +925,17 @@ export default {
     }
 
     &-content {
-      padding: 0.5rem 1rem 0 0.75rem;
       margin-top: -1rem;
-      border-top-left-radius: 1rem;
+
+      [dir=ltr] & {
+        padding: 0.5rem 1rem 0 0.75rem;
+        border-top-left-radius: 1rem;
+      }
+
+      [dir=rtl] & {
+        padding: 0.5rem 0.75rem 0 1rem;
+        border-top-right-radius: 1rem;
+      }
 
       h3 {
         margin: 0;
