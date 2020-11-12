@@ -26,13 +26,13 @@
               <a href="#" target="_blank" @click.prevent="subPage = 'about'">{{ $t('ui.about') }}</a>
               <a href="#" target="_blank" @click.prevent="subPage = 'language'">{{ $t('ui.language') }}</a>
               <a href="#" target="_blank" @click.prevent="$emit('open-tutorial')">{{ $t('ui.help') }}</a>
-              <a href="https://brandonsanderson.com" target="_blank">Brandon Sanderson</a>
+              <a href="https://brandonsanderson.com" target="_blank">{{ $t('ui.brandon-sanderson') }}</a>
               <a href="https://coppermind.net" target="_blank">The Coppermind</a>
-              <a href="#" target="_blank" @click.prevent="subPage = 'credits'">Credits</a>
+              <a href="#" target="_blank" @click.prevent="subPage = 'credits'">{{ $t('ui.credits') }}</a>
             </nav>
             <footer class="info__footer">
               <div class="info__credits">
-                Map art by Spenser Farnes (Stoneward13)
+                {{ $t('ui.map-credits') }}
               </div>
               <div class="info__socials">
                 <a
@@ -117,7 +117,7 @@
           @handle-scroll="onScroll('credits', $event)"
         >
           <div class="info__content">
-            <h2>Credits</h2>
+            <h2>{{ $t('ui.credits') }}</h2>
             <div class="markdown info__text">
               <!-- CREDITS_TEXT -->
             </div>
