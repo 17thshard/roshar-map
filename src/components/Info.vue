@@ -32,7 +32,7 @@
             </nav>
             <footer class="info__footer">
               <div class="info__credits">
-                Map art by Spenser Farnes (Stoneward13)
+                {{ $t('ui.map-credits') }}
               </div>
               <div class="info__socials">
                 <a

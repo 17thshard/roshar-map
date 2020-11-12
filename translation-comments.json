@@ -61,6 +61,10 @@
     },
     "ui.brandon-sanderson": "Brandon Sanderson Link",
     "ui.credits": "Credits Link",
+    "ui.map-credits": {
+        "name": "Map Art Credits",
+        "context": "The creator of the art the map is based on would like to be attributed like this: 'Spenser Farnes (Stoneward13)'"
+    },
     "ui.more": "Event More Link",
     "ui.related": "Related Items Heading",
     "ui.date": "Date Label",
