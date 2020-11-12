@@ -59,6 +59,8 @@
         "context": "This message is displayed under the 'About' link in the main menu",
         "markdown": "block"
     },
+    "ui.brandon-sanderson": "Brandon Sanderson Link",
+    "ui.credits": "Credits Link",
     "ui.more": "Event More Link",
     "ui.related": "Related Items Heading",
     "ui.date": "Date Label",
