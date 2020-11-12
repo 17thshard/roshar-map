@@ -1,8 +1,8 @@
-# Dalinar & Venli Meet
-Dalinar and Venli met in a highstorm vision.
+# 达力拿与温丽会面
+达力拿与温丽在一场飓风带来的幻视中会面。
 
 ## Details
-Seeking to compromise with the singers, Dalinar had Stormfather pull Venli into a shared vision during a highstorm. The negotiations went nowhere, and were ended suddenly as Odium forced his way into the vision.
+为了寻求与歌者之间的和解之道，达力拿请飓风之父在一次飓风来临之际将温丽送入和他共享的幻视场景中。这次协商无果而终，最终因仇恨强行进入幻视而突然结束。
 
 ## Metadata
 | Field | Value |

@@ -1,8 +1,8 @@
-# Dalinar decides to abdicate
-Unable to make the highprinces cooperate and concerned for his own sanity, Dalinar decided to abdicate in favor of Adolin.
+# 达力拿决定退位
+由于无法让各位轩亲王通力合作，又考虑到自己的精神状况，达力拿决定让位给阿多林。
 
 ## Details
-With every highprince (aside from rivaling Sadeas) rejecting Dalinar's proposal of joint plateau assults to end the war on the Shattered Plains sooner, Dalinar found himself at a loss for how to unite the Alethi as his visions seemed to demand. Furthermore, between Adolin's strong objections to Dalinar's obsession with the visions and the sudden spells of revulsion accompanying Dalinar's experiences with the Thrill, Dalinar began to question his own sanity and ability to lead. He began making plans to abdicate his position in favor of Adolin.
+当所有的轩亲王（除了撒迪亚斯的对家）拒绝了达力拿提出的协同作战以尽早结束破碎平原战争的提议之后，达力拿发现自己无法做到幻视中对自己的要求，因为他不知道如何才能团结阿勒斯卡。更令他难过的是，囿于阿多林对自己如此笃信幻视的强烈反对与达力拿和激越感相抗的往事悉数回归之间，达力拿开始怀疑自己的精神状态和领导能力。达力拿开始制定计划准备让位给阿多林。
 
 ## Metadata
 | Field | Value |

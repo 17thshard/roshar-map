@@ -1,5 +1,5 @@
-# Oroden is born
+# 奥罗登出生
 
 
 ## Details
-Oroden, the younger brother of Kaladin, was born in Hearthstone to Lirin and Hesina.
+奥罗登在赫斯通镇生于李伦与赫希拿之家，他的哥哥是卡拉丁。

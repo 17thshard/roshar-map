@@ -1,8 +1,8 @@
-# Renarin discovers the gemstone archive
-Renarin discovered the gemstones in Urithiru's library.
+# 雷纳林发现宝石库藏
+雷纳林发现了乌有斯麓图书馆藏匿的宝石。
 
 ## Details
-Noting something strange about one wall of the library in Urithiru's basement, Renarin discovered that gems were contained within compartments in the wall. Further inspection revealed that filling the gemstones with Stormlight caused strange vibration patterns, which were decrypted into messages from Radiants around the time of the Recreance.
+在乌有斯麓地下室，雷纳林注意到了图书馆的一面墙的怪异之处，他发现了宝石被储存在了墙壁上的隔间内。经过深入调查后，他发现为宝石注入飓光后会引起奇特模式的震动，这些震动可以被解密为在光辉变节时期光辉骑士们留下的讯息。
 
 ## Metadata
 | Field | Value |

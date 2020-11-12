@@ -1,8 +1,8 @@
-# Dalinar wins Oathbringer
-Dalinar won the Shardblade Oathbringer upon killing its previous owner, Tanalan, at Rathalas.
+# 达力拿赢得渡誓
+达力拿在拉萨拉斯杀死了碎瑛刃渡誓的主人塔纳兰，从而赢得了这把碎瑛刃。
 
 ## Details
-During the campaign to unite Alethkar under Gavilar as king, the brothers found themselves attacking the city of Rathalas. With only Shardplate at the time, Dalinar reached and killed the city's ruler, Tanalan senior. The man's young son took up his father's Blade against Dalinar, but was easily swept aside by Dalinar. The Shardblade, Oathbringer, became Dalinar's. Though Dalinar led some to believe he killed the boy, Tanalan junior was allowed to escape.
+在团结阿勒斯卡地区以共尊迦维拉尔为王的战役中，兄弟俩需要攻打拉萨拉斯城。虽然达力拿当时只有碎瑛甲，但还是成功杀死了这座城的主人塔纳兰总督。塔纳兰的年轻儿子拿起了父亲的碎瑛刃与达力拿战斗，但却被达力拿轻松击败。达力拿赢得了这把名为渡誓的碎瑛刃。尽管达力拿让大家相信他杀了那个孩子，但小塔纳兰还是被他放走了。
 
 ## Metadata
 | Field | Value |

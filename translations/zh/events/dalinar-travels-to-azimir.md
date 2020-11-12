@@ -1,8 +1,8 @@
-# Dalinar travels to Azimir
-Dalinar travelled to Azimir and convinced the Azish to consider joining the coalition.
+# 达力拿探访阿兹米尔
+达力拿来到了阿兹米尔探访，以说服阿兹米尔人考虑加入联盟的事情。
 
 ## Details
-Dealinar travelled to Azimir via Oathgate bearing a series of trade deals organized by Queen Fen, a treatise from Navani, and an essay by Jasnah Kholin. The visit ultimately convinced the Prime Aqasix of Azir, and with him the rest of the Makabaki rulers, to visit Urithiru and join the coalition against Odium.
+达力拿通过誓约之门来到阿兹米尔探访，随身带着芬恩女王的一系列贸易协约、纳瓦尼和迦熙娜·寇林各自的论述文章。这次来访最终说服了亚泽尔阿卡希克斯大帝以及其他的马卡巴克地区统治者们，请他们来到乌有斯麓加入对抗仇恨的联盟。
 
 ## Metadata
 | Field | Value |

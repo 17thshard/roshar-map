@@ -1,8 +1,8 @@
-# Jasnah arrives in Urithiru
-Believed dead after the shipwreck off the coasts of the Frostlands, Jasnah shocked everyone with her sudden arrival in Urithiru.
+# 迦熙娜抵达乌有斯麓
+由于大家都认为迦熙娜已经霜冻之地的海难中丧生，迦熙娜突然到达乌有斯麓震惊了所有人。
 
 ## Details
-After returning to the Physical Realm, Jasnah travelled for a time with Wit before arriving alone at the Shattered Plains. With no means to contact her family upon her return and assassins presumably still interested in her demise, Jasnah chose to maintain her anonymitiy until her safe arrival in Urithiru.
+在返回实界域之后，迦熙娜随须空旅行了一段时间后独自返回了破碎平原。由于无法联络她的家人以告知她的回归，又加上还有刺客在对她的逝世感到怀疑，迦熙娜选择保持匿名直到她安全抵达乌有斯麓。
 
 ## Metadata
 | Field | Value |

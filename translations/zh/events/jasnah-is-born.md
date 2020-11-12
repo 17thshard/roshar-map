@@ -1,4 +1,4 @@
-# Jasnah is born
+# 迦熙娜出生
 
 ## Details
-Jasnah was born the first child of Gavilar and Navani Kholin.
+迦熙娜是作为迦维拉尔和纳瓦尼·寇林的第一个孩子出生的。

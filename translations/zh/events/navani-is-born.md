@@ -1,5 +1,5 @@
-# Navani is born
+# 纳瓦尼出生
 
 
 ## Details
-Navani was born to her parents in Alethkar.
+纳瓦尼在阿勒斯卡出生。

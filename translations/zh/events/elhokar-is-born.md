@@ -1,4 +1,4 @@
-# Elhokar is born
+# 艾尔霍卡出生
 
 ## Details
-Elhokar is born to Gavilar and Navani Kholin, several years behind his elder sister, Jasnah.
+艾尔霍卡生于迦维拉尔和纳瓦尼·寇林之家，比他的姐姐迦熙娜小几岁。

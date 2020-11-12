@@ -1,5 +1,5 @@
-# Gavinor is born
+# 迦维诺尔出生
 
 
 ## Details
-Gavinor is born to Elhokar and Aesudan Kholin.
+迦维诺尔生于艾尔霍卡和欧淑丹·寇林之家。

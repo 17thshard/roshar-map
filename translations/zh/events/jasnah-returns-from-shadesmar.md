@@ -1,8 +1,8 @@
-# Jasnah returns from Shadesmar
-Jasnah returned from Shadesmar after meeting with the highspren and encountered Wit waiting for her.
+# 迦熙娜从裂影界回归
+在与轩灵会晤后，迦熙娜从裂影界返回，并在那遇到了正在等待她的须空。
 
 ## Details
-Attacked by Ghostbloods aboard *Wind's Pleasure*, Jasnah accidentally transported herseful fully into Shadesmar and found immediate return to the Physical Realm impossible. She made the most of her time there, visiting the highspren to learn more of Roshar's past. Months later, Jasnah was able to transition back somewhere in the Unclaimed Hills, where she was greeted by Wit.
+在鬼血会登陆“风之愉悦号”开始袭击后，迦熙娜意外地将自己完整传送到了裂影界，并发现无法立刻返回实界域，她利用在裂影界的绝大多数时间拜访轩灵以学习柔刹的历史。几个月后，迦熙娜传送回实界域的无主山岭，在那里她遇到了须空。
 
 ## Metadata
 | Field | Value |

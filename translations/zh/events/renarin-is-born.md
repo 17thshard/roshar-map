@@ -1,5 +1,5 @@
-# Renarin is born
+# 雷纳林出生
 
 
 ## Details
-Renarin, younger brother of Adolin, was born to Evi and Dalinar Kholin.
+雷纳林出生于伊薇和达力拿·寇林之家，是阿多林的弟弟。
