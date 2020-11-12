@@ -145,7 +145,8 @@
         },
         "lock-timeline": "Lock navigation to timeline",
         "unlock-timeline": "Unlock navigation",
-        "translation-by": "Translation by"
+        "translation-by": "Translation by",
+        "image-credits": "by {credits}"
     },
     "entry-types": {
         "events": "Events",

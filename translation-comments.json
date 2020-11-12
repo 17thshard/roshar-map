@@ -162,7 +162,10 @@
     "ui.calendar-guide.date.name": "Title",
     "ui.calendar-guide.date.explanation": {
         "name": "Explanation",
-        "markdown": "block"
+        "markdown": "block",
+        "variables": {
+            "date": "Date that is displayed"
+        }
     },
     "ui.error-screen": "Error Screen",
     "ui.error-screen.message": {
@@ -199,6 +202,12 @@
     "ui.lock-timeline": "Lock Timeline Button",
     "ui.unlock-timeline": "Unlock Timeline Button",
     "ui.translation-by": "Translation Credits",
+    "ui.image-credits": {
+        "name": "Image Credits",
+        "variables": {
+            "credits": "Attribution for the image"
+        }
+    },
     "entry-types": "Entry Types",
     "entry-types.events": "Events",
     "entry-types.locations": "Locations",
