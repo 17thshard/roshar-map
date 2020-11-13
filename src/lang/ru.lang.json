@@ -3,6 +3,7 @@
   "text-direction": "ltr",
   "name": "Карта Рошара",
   "title": "{page} | «Архив буресвета»",
+  "logo": "roshar-ru.png",
   "ui": {
     "loading": "Загрузка...",
     "circa": "прим. {date}",
