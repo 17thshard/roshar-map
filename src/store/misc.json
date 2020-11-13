@@ -8,7 +8,7 @@
         "coppermind": "Diagram_(group)",
         "image": {
             "file": "misc/diagram.jpg",
-            "credits": "by [Ari Ibarra](https://coppermind.net/wiki/Coppermind:Artists/Ari_Ibarra)"
+            "credits": "[Ari Ibarra](https://coppermind.net/wiki/Coppermind:Artists/Ari_Ibarra)"
         }
     },
     {
@@ -18,7 +18,7 @@
         ],
         "image": {
             "file": "misc/ghostbloods.png",
-            "credits": "by [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)",
+            "credits": "[Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)",
             "size": 70,
             "offset": {
                 "x": 50,

@@ -22,7 +22,7 @@
               backgroundSize: `${width}px auto`
             }"
           />
-          <Markdown :content="details.image.credits || 'Credits have to be set!'" tag="figcaption" inline />
+          <Markdown :content="imageCredits" tag="figcaption" inline />
         </figure>
         <section class="details__text">
           <div ref="intersectionGuard" class="details__intersection-guard" />
@@ -116,6 +116,11 @@ export default {
   computed: {
     imageUrl () {
       return this.details.image !== undefined ? `${process.env.BASE_URL}img/${this.details.image.file}` : undefined
+    },
+    imageCredits () {
+      return this.details.image?.credits === undefined
+        ? 'Credits have to be set!'
+        : this.$t('ui.image-credits', { credits: this.details.image.credits })
     },
     baseTranslationKey () {
       return `${this.details.type}.${this.details.id}`

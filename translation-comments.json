@@ -59,6 +59,12 @@
         "context": "This message is displayed under the 'About' link in the main menu",
         "markdown": "block"
     },
+    "ui.brandon-sanderson": "Brandon Sanderson Link",
+    "ui.credits": "Credits Link",
+    "ui.map-credits": {
+        "name": "Map Art Credits",
+        "context": "The creator of the art the map is based on would like to be attributed like this: 'Spenser Farnes (Stoneward13)'"
+    },
     "ui.more": "Event More Link",
     "ui.related": "Related Items Heading",
     "ui.date": "Date Label",
@@ -162,7 +168,10 @@
     "ui.calendar-guide.date.name": "Title",
     "ui.calendar-guide.date.explanation": {
         "name": "Explanation",
-        "markdown": "block"
+        "markdown": "block",
+        "variables": {
+            "date": "Date that is displayed"
+        }
     },
     "ui.error-screen": "Error Screen",
     "ui.error-screen.message": {
@@ -199,6 +208,12 @@
     "ui.lock-timeline": "Lock Timeline Button",
     "ui.unlock-timeline": "Unlock Timeline Button",
     "ui.translation-by": "Translation Credits",
+    "ui.image-credits": {
+        "name": "Image Credits",
+        "variables": {
+            "credits": "Attribution for the image"
+        }
+    },
     "entry-types": "Entry Types",
     "entry-types.events": "Events",
     "entry-types.locations": "Locations",

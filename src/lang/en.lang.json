@@ -30,6 +30,9 @@
         "help": "Help",
         "about": "About",
         "aboutText": "Welcome to our Interactive Map and Timeline of Roshar!\n\nThis website allows you to explore the map of Roshar and the timeline of Brandon Sanderson's *Stormlight Archive* series. Clicking locations on the map will reveal details about it as well as related events and characters. Browsing the timeline at the bottom of the page allows you to jump between different events on the map and open up more information about those events. If you want to know even more, links to the Coppermind wiki are provided.\n\nThis is a fan-made project that is not affiliated with Dragonsteel Entertainment. All dates and locations are based on a combination of in-world references and our own estimates and assumptions. If you would like to dig further into the timeline of the series, or if you are curious about the references and assumptions used, please visit [Jofwu's Stormlight Archive Timeline project](https://docs.google.com/spreadsheets/d/1zq5bJoKE83ggDCjH43i1hZi0CIpB2iAx7v37zQPVFK0).\n\nMake sure you check out the tutorial if you haven't done so! We hope that you find this to be a fun, insightful, and helpful tool as you read *The Stormlight Archive*!",
+        "brandon-sanderson": "Brandon Sanderson",
+        "credits": "Credits",
+        "map-credits": "Map art by Spenser Farnes (Stoneward13)",
         "more": "More...",
         "related": "Related",
         "date": "Date",
@@ -145,7 +148,8 @@
         },
         "lock-timeline": "Lock navigation to timeline",
         "unlock-timeline": "Unlock navigation",
-        "translation-by": "Translation by"
+        "translation-by": "Translation by",
+        "image-credits": "by {credits}"
     },
     "entry-types": {
         "events": "Events",

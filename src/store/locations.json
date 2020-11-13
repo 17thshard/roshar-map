@@ -87,7 +87,7 @@
         "coppermind": "Alethkar",
         "image": {
             "file": "locations/Alethkar_Color.jpg",
-            "credits": "by [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)",
+            "credits": "[Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)",
             "size": 140,
             "offset": {
                 "x": 1,
@@ -442,7 +442,7 @@
         },
         "image": {
             "file": "locations/kharbranth.jpg",
-            "credits": "by [Grant M. Hansen](https://coppermind.net/wiki/Coppermind:Artists/Grant_M._Hansen)",
+            "credits": "[Grant M. Hansen](https://coppermind.net/wiki/Coppermind:Artists/Grant_M._Hansen)",
             "size": 200,
             "offset": {
                 "x": 65,
@@ -1302,7 +1302,7 @@
         "coppermind": "Reshi_Isles",
         "image": {
             "file": "locations/Reshi_Isles_Connor_Chamberlain.jpg",
-            "credits": "by [Connor Chamberlain](https://www.reddit.com/user/Daitengu_koh)"
+            "credits": "[Connor Chamberlain](https://www.reddit.com/user/Daitengu_koh)"
         },
         "related": [
             "events/rysn-in-the-reshi-isles",
@@ -1368,7 +1368,7 @@
         },
         "image": {
             "file": "locations/Map_ReshiSea.png",
-            "credits": "by [Otto Didact](Map_ReshiSea.png)",
+            "credits": "[Otto Didact](Map_ReshiSea.png)",
             "size": 205,
             "offset": {
                 "x": 50,
@@ -1448,7 +1448,7 @@
         },
         "image": {
             "file": "locations/Urithiru3_by_Jacobo_Montoya.jpg",
-            "credits": "by [Jacobo Montoya](https://coppermind.net/wiki/Coppermind:Artists/Jacobo_Montoya)",
+            "credits": "[Jacobo Montoya](https://coppermind.net/wiki/Coppermind:Artists/Jacobo_Montoya)",
             "size": 200,
             "offset": {
                 "x": 50,
@@ -1544,7 +1544,7 @@
         },
         "image": {
             "file": "locations/Whelan_Stormlight_Shallan.jpg",
-            "credits": "by [Michael Whelan](https://coppermind.net/wiki/Michael_Whelan)",
+            "credits": "[Michael Whelan](https://coppermind.net/wiki/Michael_Whelan)",
             "size": 150,
             "offset": {
                 "x": 100,
@@ -2296,7 +2296,7 @@
         "coppermind": "Purelake",
         "image": {
             "file": "locations/Purelake_1.jpeg",
-            "credits": "by [Bonnie Johnson](https://coppermind.net/wiki/Coppermind:Artists/Bonnie_Johnson)",
+            "credits": "[Bonnie Johnson](https://coppermind.net/wiki/Coppermind:Artists/Bonnie_Johnson)",
             "size": 155
         },
         "related": [
@@ -2371,7 +2371,7 @@
         ],
         "image": {
             "file": "locations/Kholinar_Illustratio_by_Daitengu_koh.jpg",
-            "credits": "by [Connor Chamberlain](https://www.artstation.com/conjchamberlain)",
+            "credits": "[Connor Chamberlain](https://www.artstation.com/conjchamberlain)",
             "size": 150,
             "offset": {
                 "x": 15,
@@ -2590,7 +2590,7 @@
         },
         "image": {
             "file": "locations/Thaylen_City.jpg",
-            "credits": "by [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)",
+            "credits": "[Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)",
             "size": 160,
             "offset": {
                 "x": 80,
@@ -2716,7 +2716,7 @@
         "coppermind": "Valley",
         "image": {
             "file": "locations/Cultivation_and_the_Nightwatcher_2.jpg",
-            "credits": "by [Kyle Pearson](https://coppermind.net/wiki/Coppermind:Artists/Kyle_Pearson)"
+            "credits": "[Kyle Pearson](https://coppermind.net/wiki/Coppermind:Artists/Kyle_Pearson)"
         },
         "related": [
             "characters/cultivation",
@@ -2771,7 +2771,7 @@
         },
         "image": {
             "file": "locations/Stormseat_Mosaic.jpeg",
-            "credits": "by [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)",
+            "credits": "[Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)",
             "size": 170,
             "offset": {
                 "x": 70,
@@ -2855,7 +2855,7 @@
         },
         "image": {
             "file": "locations/The_Horneater_Peaks_by_Yen_Shu_Liao.jpg",
-            "credits": "by [Yen Shu Liao](https://coppermind.net/wiki/Coppermind:Artists/Yen_Shu_Liao)",
+            "credits": "[Yen Shu Liao](https://coppermind.net/wiki/Coppermind:Artists/Yen_Shu_Liao)",
             "size": 200
         },
         "mapId": 29,
@@ -4587,7 +4587,7 @@
         "coppermind": "Frostlands",
         "image": {
             "file": "locations/Frostlands_map.jpeg",
-            "credits": "by [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)",
+            "credits": "[Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)",
             "offset": {
                 "x": 50,
                 "y": 10
@@ -5285,7 +5285,7 @@
         "coppermind": "Yeddaw",
         "image": {
             "file": "locations/Yeddaw.png",
-            "credits": "by [Ben McSweeney](https://coppermind.net/wiki/Coppermind:Artists/Ben_McSweeney)"
+            "credits": "[Ben McSweeney](https://coppermind.net/wiki/Coppermind:Artists/Ben_McSweeney)"
         },
         "related": [
             "events/lift-saves-the-stump",
@@ -6432,7 +6432,7 @@
         },
         "image": {
             "file": "locations/Honor's_Path_Kyle_Pearson.jpg",
-            "credits": "by [Kyle Pearson](https://coppermind.net/wiki/Coppermind:Artists/Kyle_Pearson)"
+            "credits": "[Kyle Pearson](https://coppermind.net/wiki/Coppermind:Artists/Kyle_Pearson)"
         },
         "coppermind": "Sea_of_Regret"
     },
@@ -6500,7 +6500,7 @@
         "shadesmar": true,
         "image": {
             "file": "locations/Honor's_Path_Kyle_Pearson.jpg",
-            "credits": "by [Kyle Pearson](https://coppermind.net/wiki/Coppermind:Artists/Kyle_Pearson)"
+            "credits": "[Kyle Pearson](https://coppermind.net/wiki/Coppermind:Artists/Kyle_Pearson)"
         },
         "coppermind": "Sea_of_Souls"
     },
@@ -6567,7 +6567,7 @@
         },
         "image": {
             "file": "locations/Sea_of_Lost_Lights.jpg",
-            "credits": "by [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)",
+            "credits": "[Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)",
             "size": 150,
             "offset": {
                 "x": 50,
