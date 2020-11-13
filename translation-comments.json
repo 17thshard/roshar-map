@@ -14,6 +14,10 @@
             "page": "Name of the page"
         }
     },
+    "logo": {
+        "name": "Logo File",
+        "context": "File name of the logo to be used in the menu, has to be in src/assets/logos"
+    },
     "meta": "Metadata",
     "meta.translator": "Translator Info",
     "meta.translator.url": "Website URL",
