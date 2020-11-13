@@ -3,6 +3,7 @@
     "text-direction": "ltr",
     "name": "Map of Roshar",
     "title": "{page} | The Stormlight Archive",
+    "logo": "roshar.png",
     "ui": {
         "loading": "Loading...",
         "circa": "ca. {date}",
