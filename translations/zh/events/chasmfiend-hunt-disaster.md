@@ -1,10 +1,10 @@
-# Chasmfiend hunt
-Elhokar was saved by Dalinar when his saddle strap broke during a Chasmfiend hunt gone wrong.
+# 深渊恶魔捕猎
+在一场深渊恶魔捕猎事故中，艾尔霍卡的鞍带断裂，被达力拿所救。
 
 ## Details
-#[Dalinar](characters/dalinar) and several highprinces attended #[Elhokar](characters/elhokar) on a hunting party out onto the Shattered Plains. Upon arriving at their destination, where a small chasmfiend was to be baited, an enormous chasmfiend found its way onto the adjacent plateau, catching the party by surprise. While attacking the beast, Elhokar's saddle strap broke, leaving him vulnerable before the greatshell. Dalinar held the chasmfiend back and they ultimately slew the monster. The broken saddle strap led to an investigation into an aleged assassination attempt.
+#[达力拿](characters/dalinar) 和其他几位轩亲王在一场破碎平原上的狩猎时伴随 #[艾尔霍卡](characters/elhokar)。在他们的目的地，一个小深渊恶魔本应被引来的地方，一个巨大的深渊恶魔却走上了相邻的高地，让狩猎队伍措手不及。在攻击这猛兽时，艾尔霍卡的鞍带断裂，使他在这巨壳生物面前十分脆弱。达力拿阻止了这头深渊恶魔并最终杀死了这巨兽。断裂的鞍带引发了一场对所谓刺杀行动的调查。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* Ch. 13 |
+| chapter | 《王者之路》第13章|

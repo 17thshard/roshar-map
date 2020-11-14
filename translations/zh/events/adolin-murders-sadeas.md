@@ -7,4 +7,4 @@
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* Ch. 89 |
+| chapter | 《光辉真言》第89章 |

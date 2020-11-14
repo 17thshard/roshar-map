@@ -9,4 +9,4 @@
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* Ch. 12 |
+| chapter | 《光辉真言》第12章 |

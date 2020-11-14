@@ -1,10 +1,11 @@
-# Battle of the Tower
-Kaladin saved Dalinar and Adolin's forces after betrayal at the hands of Sadeas.
+# 塔地之役
+卡拉丁在达力拿与阿多林的军队被撒迪亚斯背叛后救下了他们。
 
 ## Details
-Dalinar and Sadeas arranged a joint plateau run to the infamous plateau known as 'the Tower', where no Alethi army had yet proven victorious. As Dalinar's forces became engaged, Sadeas betrayed Dalinar, withdrawing his troops and leaving Dalinar surrounded. Kaladin and Bridge Four returned to the plateau, giving Dalinar, Adolin, and a remnant of their forces an opportunity to escape.
+
+达力拿与撒迪亚斯安排了一场在臭名昭著的塔地合作的高地战斗 - 还没有阿勒斯卡军队在塔地胜利过。在达力拿的军队进入战斗之后，撒迪亚斯背叛了达力拿，撤回他的军队并让达力拿被包围。卡拉丁和第四冲桥队回到高地之上，给达力拿，阿多林，和他们剩下的军队一个逃跑的机会。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* Ch. 65 |
+| chapter | 《王者之路》第65章 |

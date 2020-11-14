@@ -1,10 +1,10 @@
-# Bridge Four spear training
-Kaladin began training the bridge crew to fight with the spear in order to escape.
+# 第四冲桥队长矛练习
+卡拉丁开始训练冲桥队员用长矛作战而逃跑。
 
 ## Details
-After the disaster with the attempt to protect the bridge crew with the 'side carry' maneuver, Kaladin was left with the hopeless realization that protecting the men would ultimately prove impossible. On the day Rlain was assigned to Bridge Four, the crew was assigned chasm duty. Finding a spear in the chasms, Kaladin determined that Bridge Four's only option was to try fighting their way to freedom
+在尝试用“肩扛”操作保护冲桥队员的失败灾难后，卡拉丁意识到了保护大家最终是不可能的绝望事实。在瑞莱恩被委派到第四冲桥队的那一天，队员们被分配到了下沟任务。在深渊中找到一杆长矛后，卡拉丁认定第四冲桥队的唯一机会是尝试为他们的自由而战。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* Ch. 27 |
+| chapter | 《王者之路》第27章 |

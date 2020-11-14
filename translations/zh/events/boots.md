@@ -1,10 +1,10 @@
-# Boots!
-Shallan and Kaladin met for the first time, with Shallan pretending to be a Horneater princess.
+# 靴子！
+莎兰和卡拉丁第一次见面。莎兰假装是一个吃角族人公主。
 
 ## Details
-Unsure of the loyalties of an approaching group of soldiers, and at the prompting of Tyn, #[Shallan](characters/shallan) impersonated Horneater royalty at her first meeting with #[Kaladin](characters/kaladin) on the outskirts of the Shattered Plains. She demanded, and received, his boots in payment for a feigned slight.
+在破碎平原的边陲，由于不确定靠近的一队士兵的忠心，也由于缇恩的催使，莎兰便在和卡拉丁第一次见面时模仿了吃角族人贵族。佯装卡拉丁怠慢她，她索取并得到了卡拉丁的靴子作为赔偿。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* Ch. 28 |
+| chapter | 《光辉真言》第28章 |

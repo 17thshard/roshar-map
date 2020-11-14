@@ -1,10 +1,10 @@
-# Bridge Four trains squires
-After Kaladin returned to Urithiru, Bridge Four began training Bridge Four as Windrunner squires. Rock's family arrived on the Shattered Plains.
+# 第四冲桥队训练扈从
+在卡拉丁回到乌有斯麓后，开始训练第四冲桥队做风行者的扈从。 石头的家庭抵达破碎平原。
 
 ## Details
-After Kaladin returned from his mission in #[Alethkar](locations/alethkar), he began to see to the development of the growing Windrunners. Several members of Bridge Four showed signs of being Kaladin's squires, and in the coming weeks most of the crew, as well as some newcomers, would also take the steps to become squires or full Windrunners.
+卡拉丁从他在#[阿勒斯卡](locations/alethkar)的任务回来后，开始负责正在成长的风行骑士们的发展。几个第四冲桥队的成员出现成为卡拉丁扈从的迹象，而之后几周，大多数的队员和几个新成员也会开始走上成为扈从或完全的风行骑士的道路。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 35 |
+| chapter | 《渡誓》第35章 |

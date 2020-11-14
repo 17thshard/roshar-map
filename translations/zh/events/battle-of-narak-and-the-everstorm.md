@@ -1,10 +1,12 @@
-# Battle of Narak
-The Everstorm was summoned as Alethi armies faced off with the listeners at the Battle of Narak.
+# 纳拉克之役
+阿勒斯卡军队与听者在纳拉克对峙时，灭世风暴被召唤。
+
 
 ## Details
-The Alethi forces led by Dalinar Kholin arrived at #[Narak](locations/narak) on the final day of Renarin's cryptic countdown. A battle ensued as the stormform listener forces worked to summon the Everstorm. The Alethi proved victorious, but the Everstorm's arrival nearly wiped out all survivors.
+达力拿带领的阿勒斯卡军队在雷纳林神秘倒数的最后一天到达纳拉克。飓风态的听者们着手召唤灭世风暴，一场战役随即展开。阿勒斯卡人胜利了，但灭世风暴的到来险些抹去所有生还者。
+
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* Ch. 81 |
+| chapter | 《光辉真言》第81章 |
