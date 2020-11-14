@@ -1,12 +1,12 @@
-# The Lesson
+# 上课
 Shallan stole Jasnah's Soulcaster after Jasnah kills three thugs.
 
 ## Details
-An opportunity to steal the Soulcaster finally arrived soon after Jasnah began using Shallan as her bathing attendant. One evening, as the women conversed over the nature of Gavilar's early interactions with the Parshendi while Jasnah soaked in her bath with eyes closed, Shallan moved to swap their Soulcasters. Heart beating wildly, Shallan froze up and found herself unable to make the exchange. As she glumly attended to Jasnah while contemplating her weakness, the two began discussing the philosophy of morality. Having decided that Shallan's studies had been too academic of late, Jasnah became suddenly inspired to teach Shallan a hands-on philosophy lesson. She dressed and, despite the late hour, they made their way out of the Palanaeum and into the city itself. 
+沙兰终于赢得了迦熙娜的信任，在一个晚上迎来了帮王女入浴的机会。当时迦熙娜闭着眼睛与沙兰探讨迦维拉尔与仆族智者相遇的历史。沙兰本有机会下手掉包魂器，但迟迟没能下定决心。此时话题转向了道德的问题，迦熙娜发觉沙兰的哲学知识停留在表面，于是决定来一次现场教学。于是迦熙娜出浴更衣，带着沙兰走进了夜色中的卡哈巴兰斯。
 
-They walked the Ralinsa towards the theater district until coming to a dark side street which provided the most direct path. Jasnah explained that several murders had happened along this street in the previous two months and that the city watch had done nothing. After defending their right to use the road safely, Jasnah led them down the side street and revealed the gems of her Soulcaster. Four men with knives soon attacked, but as Shallan screamed in panic Jasnah swiftly Soulcasted one man into fire, another into quartz, and the final two into smoke as they ran. They returned to the Conclave on a palanquin. 
+迦熙娜明知道最近卡哈巴兰斯发生了几起命案，依然故意带沙兰走入了阴暗僻静的小路，甚至专门露出他魂器上的宝石。果然四位持刀歹徒向她们发起了攻击，迦熙娜镇定的用魂器把四个人变成了火、石英和烟。然后带着惊魂未定的沙兰乘轿子返回了大岩宫。
 
-Shallan, shocked and horrified by what Jasnah had done, argued with her tutor over the ethics of the encounter. Jasnah defended her actions then tasked Shallan with researching the various philosophies involved and building her own case on the matter. As Shallan helped Jasnah undress and prepare for bed, she suddenly spotted another opportunity to swap the Soulcasters. Galvanized by her disgust at what Jasnah had done with the device, Shallan checked that Jasnah wasn't looking and performed the theft unnoticed.
+在回去的路上，二人就迦熙娜的行为是否道德发起了争论，迦熙娜要去沙兰学习各种哲学理论，建立自己的哲学体系以评判这一次事件。回到大岩宫后，在帮助迦熙娜更衣入睡时，沙兰终于下定决心，趁迦熙娜不注意时掉包了这件对方用于杀掉四个人的魂器。
 
 ## Metadata
 | Field | Value |
