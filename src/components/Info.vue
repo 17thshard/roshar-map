@@ -20,7 +20,7 @@
           @handle-scroll="onScroll(null, $event)"
         >
           <div class="info__content">
-            <div class="info__logo" />
+            <div class="info__logo" :style="{ backgroundImage: `url('${logo}')` }" />
             <Markdown :content="$t('ui.welcome')" class="info__text" />
             <nav class="info__menu">
               <a href="#" target="_blank" @click.prevent="subPage = 'about'">{{ $t('ui.about') }}</a>
@@ -134,6 +134,7 @@ import { ChevronLeftIcon, ChevronRightIcon, FacebookIcon, GithubIcon, MenuIcon, 
 import { mapState } from 'vuex'
 import Markdown from '@/components/Markdown.vue'
 import availableLanguages from '@/lang/menu.json'
+import { escapeCssPath } from '@/utils'
 
 export default {
   name: 'Info',
@@ -159,6 +160,9 @@ export default {
   },
   computed: {
     ...mapState({ active: 'infoOpen' }),
+    logo () {
+      return escapeCssPath(require(`@/assets/logos/${this.$t('logo')}`))
+    },
     translatorLogo () {
       if (!this.$te('meta.translator.url')) {
         return undefined
@@ -471,7 +475,6 @@ export default {
     width: 100%;
     padding-bottom: 57%;
     background-color: #1c1d26;
-    background-image: url('../assets/logos/roshar.png');
     background-repeat: no-repeat;
     background-size: 90%;
     background-position: 50% 50%;

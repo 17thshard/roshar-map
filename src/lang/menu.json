@@ -8,6 +8,10 @@
         "name": "Español"
     },
     {
+      "code": "ru",
+      "name": "Русский"
+    },
+    {
         "code": "zh",
         "name": "中文"
     }
