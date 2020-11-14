@@ -1543,6 +1543,10 @@
             "shallan",
             "jasnah"
         ],
+        "image": {
+            "file": "events/Santhid_Ashley_Coad.png",
+            "credits": "[Ashley Coad](https://coppermind.net/wiki/Coppermind:Artists/Ashley_Coad)"
+        },
         "related": [
             "characters/shallan",
             "characters/jasnah",
