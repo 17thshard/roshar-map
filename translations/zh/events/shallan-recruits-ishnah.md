@@ -7,4 +7,4 @@ Ishnah began following Veil after having revealed herself to be a Ghostblood in 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 40 |
+| chapter | 《渡誓》第40章 |

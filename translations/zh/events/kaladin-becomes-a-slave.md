@@ -7,4 +7,4 @@
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* Ch. 47 & 51 |
+| chapter | 《王者之路》第47、51章 |

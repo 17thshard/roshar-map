@@ -7,4 +7,4 @@ Determined to continue bringing hope to her brothers, Shallan began seeking ways
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* Ch. 45 |
+| chapter | 《光辉真言》第45章 |

@@ -7,4 +7,4 @@
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 121 |
+| chapter | 《渡誓》第121章 |

@@ -7,4 +7,4 @@ As they began to return to Jasnah's alcove, Shallan confessed to Kabsal that she
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* Ch. 45 |
+| chapter | 《王者之路》第45章 |

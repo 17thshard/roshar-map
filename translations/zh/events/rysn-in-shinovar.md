@@ -1,10 +1,10 @@
-# Rysn in Shinovar
-Rysn and Vstim traded with the Shin. Rysn was given a pot of grass to tend.
+# 莱丝在深国
+莱丝与乌斯提姆行商至深国。乌斯提姆送给了莱丝一盆小草，让她用心培育。
 
 ## Details
-Rysn and Vstim travelled to Shinovar, where they met with Vstim's friend, Thresh. They traded scrap metal, the byproduct of Soulcasting practice, in exchange for chickens and other exotic Shin goods. Vstim asked Rysn to take a pot of Shin grass and tend it until it no longer seemed strange to her.
+乌斯提姆曾在深国结识了朋友塞雷什。这次又带着莱丝来到了深国行商。他们用塑魂者联系塑魂术造出来的废铜烂铁买下了深国的鸡和其他异国的货物。乌斯提姆送给了莱丝一盆小草，让她用心培育，直到不再觉得草奇怪为止。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* I-4 |
+| chapter | 《王者之路》第I-4章 |

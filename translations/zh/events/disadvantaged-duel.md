@@ -7,4 +7,4 @@ On his mission to win Shards for House Kholin, Adolin accepted a dueling challen
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* Ch. 56 & 57 |
+| chapter | 《光辉真言》第56、57章 |

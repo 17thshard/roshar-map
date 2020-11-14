@@ -1,10 +1,10 @@
-# Taln arrives in Kholinar
-Recently returned to Roshar, Taln arrived in Kholinar where he was awaited by Wit.
+# 塔恩来到塔冠城
+塔恩回到柔刹，来到了塔冠城，发现须空正在城门处等他。
 
 ## Details
-Around four and a half millennia later, not long after the Battle of the Tower, Talenel returned to Roshar from Damnation. It is uncertain how he returned or where precisely he arrived, but he was covered in condensation, and had twigs and leaves stuck in his beard. Taln quickly rushed to Kholinar, cutting through the city gate with his Honorblade to give warning to the Alethi that the True Desolation was upon them. Hoid knew when and where Taln would arrive, and was waiting in Kholinar for him. After his proclamation, Taln promptly collapsed. 
+四千五百年后，塔拉内从诅咒之地回到了柔刹，时间上就在塔地之战后不久。我们不清楚他是在哪里现身，但出现在塔冠城外时他湿漉漉的头发里满是污秽，垂在面前，与粘着木屑和碎叶的胡子缠在一起，肌肉泛着光，满是湿气，仿佛刚游过好长一段距离。塔恩用他的荣刃切开了塔冠城的城门，警告人类灭世即将到来，然后便重重倒在地上。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* Epilogue |
+| chapter | 《王者之路》尾声 |

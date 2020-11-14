@@ -7,4 +7,4 @@ The united human monarchs of Roshar met in Urithiru to formalize their relations
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 96 |
+| chapter | 《渡誓》第96章 |

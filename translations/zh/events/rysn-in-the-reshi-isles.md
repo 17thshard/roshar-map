@@ -1,10 +1,10 @@
-# Rysn in the Reshi Isles
-Rysn and Vstim traded with the Reshi. Rysn became paralyzed but was gifted a larkin.
+# 莱丝在雷希群岛
+莱丝与乌斯提姆行商至雷希群岛。莱丝在此处受伤瘫痪，但获赠了一只飓甲蜂。
 
 ## Details
-Rysn and Vstim arrived in the Reshi Isles, seeking to trade with the inhabitants of a Tai-na greatshell. Vstim pretended to be deathly ill, and required Rysn to make the trade in his place as a test. Thinking their livelihood must be on the line, Rysn took desparate measure to make the trade, falling from the greatshell in an attempt to prove her bravery. Rysn was left paralyzed from the waste down after the incident. The island gifted her with a living larkin.
+莱丝与乌斯提姆来到了雷希群岛，希望与居住在巨壳生物Tai-na上的居民们交易。为了考验莱丝，乌斯提姆佯装重病，派莱丝代替自己去面见对方。交易受挫后，为了证明自己的勇敢，绝望的莱丝爬上了巨壳生物的头，结果不慎摔下，造成了下半身瘫痪。岛民赠送了她一只活的飓甲蜂。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* I-3 |
+| chapter | 《光辉真言》第I-3章 |

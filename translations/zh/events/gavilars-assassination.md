@@ -7,4 +7,4 @@ After the discovering of the listeners near the Shattered Plains, Gavilar took a
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* Prologue |
+| chapter | 《王者之路》序幕 |

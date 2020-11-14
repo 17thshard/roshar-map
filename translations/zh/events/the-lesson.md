@@ -1,5 +1,5 @@
 # 上课
-Shallan stole Jasnah's Soulcaster after Jasnah kills three thugs.
+迦熙娜杀了四个歹徒后，沙兰偷走了她的魂器。
 
 ## Details
 沙兰终于赢得了迦熙娜的信任，在一个晚上迎来了帮王女入浴的机会。当时迦熙娜闭着眼睛与沙兰探讨迦维拉尔与仆族智者相遇的历史。沙兰本有机会下手掉包魂器，但迟迟没能下定决心。此时话题转向了道德的问题，迦熙娜发觉沙兰的哲学知识停留在表面，于是决定来一次现场教学。于是迦熙娜出浴更衣，带着沙兰走进了夜色中的卡哈巴兰斯。
@@ -11,4 +11,4 @@ Shallan stole Jasnah's Soulcaster after Jasnah kills three thugs.
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* Ch. 36 |
+| chapter | 《王者之路》第36章 |

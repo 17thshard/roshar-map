@@ -1,10 +1,10 @@
-# Trapped in Shadesmar
-Kaladin, Shallan, Adolin, and Azure became trapped in Shadesmar.
+# 被困裂影界
+卡拉丁、沙兰、阿多林、天青四人被困裂影界。
 
 ## Details
-With King Elhokar dead at the hand of Moash and the city of Kholinar fallen, Kaladin and Azure retreated from the palace to join Adolin and Shallan on the Oathgate platform. Upon trying to activate the Oathgate, Sja-anat revealed to Shallan that the Oathgate is a trap. With no alternate choices available, Adolin told her to proceed. Rather than finding themselves transported to Urithiru, the group became trapped in Shadesmar, along with their spren. With no way to return to the Physical Realm, they fled across the bead ocean.
+艾尔霍卡死于莫阿什之手后，塔冠城任务失败，卡拉丁和天青不得已撤退至塔冠城的誓约之门。灭者撒南忒警告沙兰誓约之门是个陷阱，但是四人无路可退只得激活了誓约之门。然而他们没有如愿回到乌有斯麓，而是跟他们的灵体一起进入了裂影界。他们无法回到实界域，只得在珠子的海洋中逃亡。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 87 |
+| chapter | 《渡誓》第87章 |

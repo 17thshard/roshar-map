@@ -7,4 +7,4 @@ Shallan helped her brother, Balat, and mother-in-law, Malise, make plans to flee
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* Ch. 73 |
+| chapter | 《光辉真言》第73章 |

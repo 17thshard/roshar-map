@@ -1,5 +1,5 @@
 # Scouring of Aimia
-The scouring of Aimia was a mysterious, destructive event that took place on the Rosharan island of Aimia.
+The scouring of Aimia是柔刹历史上的一个神秘事件。导致了艾米亚的覆灭。
 
 ## Details
-The scouring of Aimia was a mysterious, destructive event that took place on the Rosharan island of Aimia. The exact cause is unknown, and it seems to have left the entire island desolate. The lanceryn are believed to have all died off during the scouring.
+The scouring of Aimia是柔刹历史上的一个神秘事件。导致了艾米亚的覆灭。该事件之后，艾米亚变成一片荒芜。枪兽可能就是在这次事件中灭绝的。

@@ -1,5 +1,5 @@
-# Shattering of Adonalsium
-Adonalsium was shattered into sixteen Shards. The Shards of Honor and Cultivation settled on Roshar. Odium would follow later.
+# 阿多拿西破碎
+阿多拿西被破碎为十六块。十六位事件的参与者成为了神瑛。荣誉和培养前往柔刹，仇恨之后也前往柔刹。
 
 ## Details
-The Shattering of Adonalsium (or simply, the Shattering) was a pivotal moment in the history of the cosmere when Adonalsium was killed. Prior to this, there were no Shards, which have been the dominant influence in the cosmere we've seen so far.
+阿多拿西破碎事件是三界宙历史上的重要事件。在此之前三界宙中不存在神瑛，直到阿多拿西死后，才破碎为十六块神瑛。

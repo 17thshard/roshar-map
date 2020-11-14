@@ -7,4 +7,4 @@ Jasnah and Shallan took passage towards the Shattered Plains aboard the Wind's P
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* Ch. 1 |
+| chapter | 《光辉真言》第1章 |

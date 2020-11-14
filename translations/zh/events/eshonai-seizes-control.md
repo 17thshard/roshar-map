@@ -7,4 +7,4 @@ After adopting stormfom, Eshonai's mind was compromised by influence from her Vo
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* I-11 |
+| chapter | 《光辉真言》第I-11章 |

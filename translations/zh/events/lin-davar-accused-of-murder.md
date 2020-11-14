@@ -1,10 +1,10 @@
-# Lin Davar accused of murder
-Redin, King Hanavanar's bastard son, accuses Lin Davar of murdering his late wife and calls for witnesses to come forward.
+# 林·达瓦被指控谋杀
+国王哈纳瓦纳的私生子雷丁指控林·达瓦杀妻，同时召集目击者们前来作证。
 
 ## Details
-With the Tavinar family invited to the Davar estates for dinner one evening, King Hanavanar's bastard son, Redin, arrived and demanded entry. He called on Lin to confess to the murder of his wife and called for witnesses to come forward with any accusations or evidence.
+一天晚上塔维纳家族被邀请至达瓦的庄园共进晚餐，国王哈纳瓦纳的私生子雷丁突然来临并要求进入，他要求林承认杀妻的事实，并召集任何有证据证实指控的目击者前来作证。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* Ch. 39 |
+| chapter | 《光辉真言》第39章 |

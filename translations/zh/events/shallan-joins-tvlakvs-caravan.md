@@ -7,4 +7,4 @@ After washing ashore with no supplies after the attack on the *Wind's Pleasure*,
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* Ch. 11 & 13 |
+| chapter | 《光辉真言》第11、13章 |

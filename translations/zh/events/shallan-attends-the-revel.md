@@ -7,4 +7,4 @@ After drawing the eyes of the Cult of Moments, Shallan accepted her invitation t
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 78 |
+| chapter | 《渡誓》第78章 |

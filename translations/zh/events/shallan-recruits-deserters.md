@@ -7,4 +7,4 @@ On the journey to the Shattered Plains, Shallan emerged from her carriage one ev
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* Ch. 20 & 21 |
+| chapter | 《光辉真言》第20、21章 |

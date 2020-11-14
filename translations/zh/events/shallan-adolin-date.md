@@ -7,4 +7,4 @@ Shallan and Adolin went on their first date at a winehouse selected by Adolin. T
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* Ch. 49 |
+| chapter | 《光辉真言》第49章 |

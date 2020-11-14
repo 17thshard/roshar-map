@@ -7,4 +7,4 @@ Kaladin, Shallan, Adolin, and Azure reached Riino's lighthouse. Riino was in pos
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 97 & 99 |
+| chapter | 《渡誓》第97、99章 |

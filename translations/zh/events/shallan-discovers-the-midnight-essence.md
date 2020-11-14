@@ -7,4 +7,4 @@ While searching for secrets in the depths of Urithiru, Shallan used her Lightwea
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 25 |
+| chapter | 《渡誓》第25章 |

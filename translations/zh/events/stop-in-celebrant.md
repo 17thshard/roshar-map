@@ -1,10 +1,10 @@
-# Stop in Celebrant
-Kaladin, Shallan, Adolin, and Azure arrived in Celebrant. They spent some time purchasing supplies in the city before fleeing from the Fused aboard Honor's Path.
+# 在祭兰短暂修整
+卡拉丁、沙兰、阿多林、天青一行来到了祭兰。他们在此做了短暂的修整，购买了补给。发现此城已被融族控制后，他们搭荣灵的船Honor's Path逃离了此处。
 
 ## Details
-In Nan 1174 Kaladin, Shallan, Adolin, Sylphrena, Pattern, and Azure passed through Celebrant after getting stuck in Shadesmar following the Siege of Kholinar. The group arrived on a ship captained by Ico. They purchased clothing, weapons, and food in the market. Shallan sought passage on ships heading toward Cultivation's Perpendicularity or Thaylen City, but the group was ultimately forced to leave swiftly aboard Honor's Path, pursued by Fused. 
+1174年2月卡拉丁、沙兰、阿多林、天青以及他们的灵体一行在从塔冠城逃入裂影界后，搭乘Ico船长的船来到了祭兰。他们购买了衣服、武器和食物，还希望能搭上前往培养垂贯点或者泰勒拿城的船。但他们发现这座城市已被融族占领，只得慌忙搭上了荣灵的船Honor's Path逃离。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 102 |
+| chapter | 《渡誓》第102章 |

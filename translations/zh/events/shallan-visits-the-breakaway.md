@@ -7,4 +7,4 @@ Seeking clues for the investigation of Torol Sadeas's murderer, Shallan enterned
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 18 |
+| chapter | 《渡誓》第18章 |

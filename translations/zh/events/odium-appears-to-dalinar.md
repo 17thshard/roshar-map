@@ -7,4 +7,4 @@ As the True Desolation began #[Odium](characters/odium) focused on #[Dalinar Kho
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 56 & 57 |
+| chapter | 《渡誓》第56、57章 |

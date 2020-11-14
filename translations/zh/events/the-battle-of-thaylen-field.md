@@ -1,12 +1,12 @@
-# The Battle of Thaylen Field
-The Eila Stele was revealed as the coalition met in Thaylen City. The Everstorm arrived early, bringing Odium and his forces. A battle was fought and Odium is repelled when Dalinar summoned Honor's perpendicularity.
+# 泰勒拿之战
+在泰勒拿城召开的君主会议被蓄意破坏。仇恨带着灭世风暴兵临泰勒拿城下。达力拿打开荣誉的垂贯点后，仇恨撤退。
 
 ## Details
-Following the revelations of the Eila Stele, Thaylenah was one of the few countries to remain with Urithiru, mostly because they had no other choice in their weakened state. It was then that the Voidbringer armies, led by Odium himself, arrived on the shores of Thaylen City, having sailed there from the nearby country of Marat. Though the defenders attempted to prepare for battle, things changed dramatically when Odium first summoned a pair of thunderclasts, and then released Nergaoul upon the Amaram troops, turning them against the people they were supposed to protect. One of the thunderclasts breached the wall and made for the Thaylen Gemstone Reserve, intending to secure the King's Drop, a perfect gemstone that could trap Nergaoul. At the same time, Dalinar went down into the Thaylen Field to face Odium directly. In the ensuing confrontation, Dalinar managed to open Honor's Perpendicularity, providing the Knights Radiant present with much-needed Stormlight.
+Eila Stele的译稿被公开后，君主会议分崩离析。仇恨亲自率领虚渡军队从玛拉特出发由海路进军，登陆了泰勒拿城的海岸。芬恩女王虽然不信任达力拿，但面对敌军不得不与后者联手。战斗开始后，虚渡一方召唤了两只雷岩兽，并召唤了灭者涅戈耳，用激越感煽动了亚马兰军为自己作战。其中一只雷岩兽攻破了泰勒拿的城墙，捣毁了泰勒拿宝石储备行，夺走了King's Drop。同时达力拿冲上最前线，直面仇恨，并在仇恨的压力下打开了荣誉的垂贯点，为光辉骑士们提供了大量的飓光。
 
-What resulted was a pitched battle between the defending forces -- mostly the Knights Radiant and Thaylen troops, later reinforced by House Kholin soldiers brought by General Khal through the Oathgate -- and Odium's soldiers, consisting of the two thunderclasts, the Amaram army and the Fused. Much of the city was ruined in the process, although the wall was patched by Jasnah Kholin soulcasting the air in the breach into metal. Ultimately, Nergaoul was trapped in the King's Drop and the remaining Voidbringer forces withdrew.
+激战正式开始，人类一方的主力是几位光辉骑士与泰勒拿守军，不久后来自乌有斯麓的援军也加入了战团。仇恨一方则有雷岩兽、灭者、叛变的亚马兰军以及少量融族参战。迦熙娜用塑魂术修补了城墙，阻挡了敌军的入侵，但泰勒拿城还是在战斗中损失惨重。最后，达力拿把涅戈耳封入King's Drop，亚马兰军苏醒过来，虚渡军撤退，人类迎来了胜利。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 115–120 |
+| chapter | 《渡誓》第115至120章 |

@@ -7,4 +7,4 @@ After Dalinar spared the life of young Tanalan, the boy grew up in secret and ev
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 71, 75, & 76 |
+| chapter | 《渡誓》第71、75、76章 |

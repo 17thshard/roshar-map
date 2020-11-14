@@ -7,4 +7,4 @@ Seeking to retake the city of Kholinar, Elhokar's team travelled with Kaladin an
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 61 |
+| chapter | 《渡誓》第61章 |

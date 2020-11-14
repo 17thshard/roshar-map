@@ -7,4 +7,4 @@
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* Ch. 32, 34, & 35 |
+| chapter | 《王者之路》第32、34、35章 |

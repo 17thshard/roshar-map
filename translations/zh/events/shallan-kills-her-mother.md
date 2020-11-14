@@ -7,4 +7,4 @@ At the age of eleven, Shallan's mother discovered that her daughter was a Surgeb
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* Ch. 10 |
+| chapter | 《光辉真言》第10章 |
