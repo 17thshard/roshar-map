@@ -1,8 +1,8 @@
 # Riino's lighthouse
-Kaladin, Shallan, Adolin, and Azure reached Riino's lighthouse. The group found passage to Celebrant aboard a Reacher ship there.
+卡拉丁、沙兰、阿多林和天青一行来到了Riino的灯塔。他们在此处搭上了一条Reacher的船前往祭兰。
 
 ## Details
-Kaladin, Shallan, Adolin, and Azure reached Riino's lighthouse. Riino was in possession of a strange orb which reacted to Kaladin's touch, giving him visions that suggested Dalinar would soon need their aid in Thaylen City. Later, the group found passage to Celebrant aboard a Reacher ship.
+卡拉丁、沙兰、阿多林和天青一行来到了Riino的灯塔。卡拉丁摸了Riino的一颗奇怪的球体，产生了幻象。幻象中达力拿将在泰勒拿城遭遇危机。此后，他们在此处搭上了一条Reacher的船前往祭兰。
 
 ## Metadata
 | Field | Value |

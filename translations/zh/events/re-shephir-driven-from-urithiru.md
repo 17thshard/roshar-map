@@ -1,8 +1,8 @@
-# Re-Shephir driven from Urithiru
-With the help of Adolin and Bridge Four, Shallan found, confronted, and drove Re-Shephir out of Urithiru's libraries.
+# 驱逐瑞西法
+在阿多林和第四冲桥队的帮助下，沙兰找到了潜伏在乌有斯麓图书馆中的灭者瑞西法，并在战斗中驱逐了后者。
 
 ## Details
-After finding a Midnight Essence to be responsible for the murders in Urithiru, Shallan chased one into the tower's basement. After waiting for reinforcements to arrive, including Adolin and several members of Bridge Four, they entered the basement library and found the Unmade Re-Shephir. Fighting through the Midnight Essences, Shallan confronted the Unmade and was able to drive it out of the city.
+沙兰在调查发生在乌有斯麓的连续杀人案时找到了一只模拟人类的子夜元魂，并一路追踪它到了乌有斯麓的底部。等到阿多林带着第四冲桥队的一些成员赶到后，他们一起进入了乌有斯麓的底部，见到了灭者瑞西法。在战斗中，沙兰独自面对灭者，并把她驱逐出了乌有斯麓。
 
 ## Metadata
 | Field | Value |

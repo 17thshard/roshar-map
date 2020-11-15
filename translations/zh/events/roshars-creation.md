@@ -1,5 +1,5 @@
-# Roshar's Creation
-At some point in the distant past, Roshar was created or modified by Adonalsium.
+# 柔刹的诞生
+在远古的某个时段，柔刹被阿多拿西创造（改造）成型。
 
 ## Details
-The exact date of Roshar's creation is unclear. It is also unknown whether Roshar was created from nothing or whether the planet (and some lifeforms) were pre-existing in some way. In any case, Adonalsium was directly and intentionally involved with the development of the planet and the lifeforms making their home there.
+柔刹确切的诞生日期尚未可知，它到底是从虚无中被创造出来的，还是从之前就已经存在某种生命形式的星球被改造出来的也没人知道。无论如何，阿多拿西都直接并有意图地参与了这个星球的发展和生命的诞生。

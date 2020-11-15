@@ -1,8 +1,8 @@
-# Return to the Rift
-Dalinar burned Rathalas to the ground, killing Evi.
+# 再战Rift
+达力拿把拉萨拉斯烧作了焦土，也无意中烧死了伊薇。
 
 ## Details
-After Dalinar spared the life of young Tanalan, the boy grew up in secret and eventually gathered a rebellion against Gavilar. At his hometown, Rathalas, Tanalan conspired against Dalinar's armies, which had been sent by Gavilar to quell the rebellion. When their plot to assassinate Dalinar failed, the enraged highprince burned the entire city to the ground. Unknown to Dalinar, Evi had entered the city in hopes of making peace and died in the fires.
+达力拿曾经在拉萨拉斯一战中放过了当时还是小男孩的Tanalan。此时当年小孩已经长大，开始反抗迦维拉尔的统治。Tanalan用计算计了达力拿，但没能杀死后者。狂怒的达力拿把整个拉萨拉斯烧作了焦土。但达力拿不知道的是，妻子伊薇提前进了拉萨拉斯，恳求对方投降。结果达力拿无意中的烧死了伊薇。
 
 ## Metadata
 | Field | Value |
