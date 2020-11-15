@@ -1,8 +1,8 @@
-# Oathgate to Thaylen City opened
-Dalinar convinced Queen Fen to open the Oathgate between Thaylen City and Urithiru.
+# 泰勒拿城的誓约之门打开
+达力拿说服了芬恩女王，打开了泰勒拿城的誓约之门。
 
 ## Details
-After meeting with Fen in a highstorm vision, Dalinar was able to convince the queen to meet in person. Kaladin and Shallan flew to Thaylen City and opened the Oathgate for the first time. Dalinar travelled to Thaylen City and was able to convince Fen of his good intentions.
+达力拿把芬恩带到了一次幻象中，并在幻象中面对面的与她交谈，终于说服了她。之后，卡拉丁和沙兰在飓风来临之时飞往泰勒拿城，打开了誓约之门。达力拿通过誓约之门正式访问了泰勒拿城，深化了两国的同盟关系。
 
 ## Metadata
 | Field | Value |

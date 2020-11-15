@@ -1,8 +1,8 @@
-# Odium appears to Dalinar
-While viewing a vision of the Recreance with Navani and Jasnah, Odium revealed himself to Dalinar.
+# 仇恨出现在达力拿面前
+达力拿在带纳瓦妮和迦熙娜进入一次光辉变节的幻象时，仇恨出现在了达力拿面前。
 
 ## Details
-As the True Desolation began #[Odium](characters/odium) focused on #[Dalinar Kholin](characters/dalinar), whom he planned to set up as his champion. While viewing a vision of the Recreance with #[Navani](characters/navani) and #[Jasnah](characters/jasnah), a being entered the vision whom Dalinar interperetted to be a god before Odium revealed his identity. Though Dalinar refused to release Odium from his imprisonment, Odium asserted that Dalinar would eventually do so. He overwhelmed Dalinar by revealing a taste of his true form, and rejected Dalinar's proposal of a contest of champions before departing.
+最后的灭世中，#[仇恨](characters/odium)盯上了#[达力拿·寇林](characters/dalinar)，希望把他培养成自己的代理斗士。一次在达力拿带#[纳瓦妮](characters/navani)和#[迦熙娜](characters/jasnah)进入一次光辉变节的幻象时，仇恨在幻象中现身。达力拿在知道仇恨真实身份之前就察觉到对方是一位神。他拒绝将仇恨从桎梏中解放出来，仇恨认为这只是时间的问题而已。达力拿了解到仇恨的真实力量后，提议用代理斗士决斗的方式决定柔刹的命运，但仇恨拒绝了他的提议后离开了。
 
 ## Metadata
 | Field | Value |

@@ -1,8 +1,8 @@
-# Ishikk's visitors
-Three members of the Seventeenth Shard visit Ishikk on the Purelake.
+# 以什克的访客
+三位十七神瑛团的成员造访了生活在淳湖边的以什克。
 
 ## Details
-After a long day of fishing Ishikk returned to Maib's place, where he met with three members of the Seventeenth Shard who had hired him to search for Hoid. Ishikk reports that he has had no success locating the man in the region.
+结束了一天的打渔后，以什克回到了麦布的住处，遇到了三位十七神瑛团的成员。他们雇了以什克在淳湖寻找须空，但以什克回报并没有找到这个人。
 
 ## Metadata
 | Field | Value |

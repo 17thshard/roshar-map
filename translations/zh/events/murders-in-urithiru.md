@@ -1,8 +1,8 @@
-# Murders in Urithiru
-Four days after Sadeas's corpse was discovered a second body was found. Adolin was given the responsibility of investigating the murders.
+# 乌有斯麓连续杀人事件
+撒迪亚斯的尸体被发现四天后，一具新的尸体被发现，其死状与撒迪亚斯如出一辙。达力拿命阿多林调查这一连续杀人事件。
 
 ## Details
-Four days after Sadeas's corpse was discovered a second body, of a man similar in appearance to Sadeas, was found. Adolin was given the responsibility of investigating the murders by Dalinar. Though Adolin was unsure where to begin, knowing himself to be the original murderer, Shallan began to assist him with the case. She began to search for other related murders in the city.
+撒迪亚斯的尸体被发现四天后，一具新的尸体被发现，其死状与撒迪亚斯如出一辙。达力拿命阿多林调查这一连续杀人事件。虽然在外人眼中两次谋杀非常相似，但阿多林本人却对事件摸不着头脑，毕竟杀死撒迪亚斯的凶手正是自己。沙兰开始帮助阿多林调查城内的连续杀人事件。
 
 ## Metadata
 | Field | Value |
