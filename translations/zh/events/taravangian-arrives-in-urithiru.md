@@ -1,8 +1,8 @@
-# Taravangian arrives in Urithiru
-Taravangian and his followers, including the Dustbringer Malata, arrive in Urithiru.
+# 塔拉梵吉安抵达乌有斯麓
+塔拉梵吉安和包括归尘骑士玛拉塔在内的随从抵达乌有斯麓。
 
 ## Details
-After his failure to assassinate Dalinar, Taravangian decided on an alternate strategy. When Dalinar called for the unification of Roshar against the Voidbringer threat, following the advent of the Everstorm, Taravangian was the first and only king to initially agree. Shortly thereafter, with the help of his Radiant, Malata, Taravangian moved to Urithiru to be closer to Dalinar.
+刺杀达力拿失败后，塔拉梵吉安决定采取另一种策略。当灭世风暴来袭，达力拿召集各国共同对抗虚渡时，塔拉梵吉安是第一位也是唯一一位在一开始就响应的君主。不久后，在光辉骑士随从玛拉塔的协助下，塔拉梵吉安到访乌有斯麓，以接近达力拿。
 
 ## Metadata
 | Field | Value |
