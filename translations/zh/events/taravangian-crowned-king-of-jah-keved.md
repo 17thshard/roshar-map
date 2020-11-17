@@ -7,4 +7,4 @@
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | 《光辉真言》第I-14章 |
+| chapter | 《光辉真言》插曲14 |
