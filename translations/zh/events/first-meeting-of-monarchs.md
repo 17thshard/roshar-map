@@ -1,8 +1,8 @@
-# First meeting of monarchs
-Navani led the first meeting of the human coalition against Odium's forces.
+# 初次各国首脑会议
+纳瓦尼主持了人类联盟对抗仇恨部队的第一次会议。
 
 ## Details
-The united human monarchs of Roshar met in Urithiru to formalize their relationship and make plans concerning the war against Odium's forces. With Dalinar struggling under the return of his own memories of the past and Elhokar's failure in Kholinar, Navani took lead during the meeting on his behalf.
+被团结起来的柔刹各国首脑们在乌有斯麓聚会，以正式组建同盟关系，并针对与仇恨接下来的战争做出一些计划。因为达力拿依然被自己往昔的记忆归来以及艾尔霍卡在寇林城失利的事情所困扰，纳瓦尼以他的名义主持了这场会议。
 
 ## Metadata
 | Field | Value |
