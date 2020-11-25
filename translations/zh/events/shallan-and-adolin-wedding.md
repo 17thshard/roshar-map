@@ -1,8 +1,8 @@
-# Shallan and Adolin wedding
-Shallan and Adolin were married in Urithiru.
+# 沙兰与阿多林结婚
+沙兰与阿多林在乌有斯麓完婚。
 
 ## Details
-Overwhelmed by all the preparations, and wedding gifts--including a pair of boots from #[Kaladin](characters/kaladin) and Bridge Four--#[Shallan](characters/shallan) finally married #[Adolin](characters/adolin) in #[Urithiru](locations/urithiru) in the company of her brothers, wearing a lovely sapphire gown of and ancient style, with twin drooping sleeves that went far beyond her hands. Small rubies woven into the embroidery glowed with a complementary light. A golden vest draped over the shoulders, matched by the ornate headdress woven into her braids.
+虽然被婚礼所需要的准备程序之繁琐以及结婚礼物之丰富——包含一双卡拉丁和第四冲桥队送的新靴子——所吓到，沙兰还是在其他哥哥们的陪伴下，在乌有斯麓与阿多林完婚。她穿了一件可爱的传统款式蓝宝石礼服，两只袖子比胳膊还要长出很多。礼服上还刺绣着很多颗小巧的红宝石，使她更加光辉闪耀。她的肩上披着的金色礼服背心，与她精心打造的华美发髻相映成辉。
 
 ## Metadata
 | Field | Value |

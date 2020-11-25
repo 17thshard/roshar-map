@@ -1,5 +1,4 @@
-# Shallan is born
-
+# 沙兰出生
 
 ## Details
-Shallan was born to Lin Davar and her mother in Jah Keved. She was the youngest child of the family, with four older brothers.
+沙兰生于雅克维德公国林·达瓦之家，她是这个家族最小的孩子，还有四个哥哥。

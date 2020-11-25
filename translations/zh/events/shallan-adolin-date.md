@@ -1,8 +1,8 @@
-# Shallan & Adolin's first date
-Shallan and Adolin went on their first date at a winehouse selected by Adolin.
+# 沙兰和阿多林的初次约会
+沙兰和阿多林在一家阿多林选择的酒馆里初次约会。
 
 ## Details
-Shallan and Adolin went on their first date at a winehouse selected by Adolin. They got to know one another on a more personal level over the course of the date, and seemed to connect well despite--or perhaps because of--Shallan's unorthodox conversation topics. Shallan also took the opportunity to question Adolin about the chasmfiends. Convincing him that the Alethi and Parshendi may be hunting them to extinction, she asked him to speak with Dalinar about the possibility of travelling with the army to see a chrysalis for herself. After Adolin confided in her the details of their betrayal by Sadeas, Shallan explained the research into the Voidbringers that Jasnah had been working on, and asked for help in smoothing over the relationship with Navani. After the approaching highstorm was spotted, the two remained until the final seconds before the stormwall reached them before retreating into the shelter and making plans to speak again later.
+沙兰和阿多林在一家阿多林选择的酒馆里初次约会。随着约会的进行，两人对彼此的了解都加深了，或许恰恰是因为沙兰对离经叛道的话题的偏爱，两个人沟通得很好。沙兰也趁此机会问了阿多林关语深渊恶魔的事情。她告诉阿多林阿勒斯卡和仆族智者的杀戮竞赛可能要将深渊恶魔灭绝了，并请他与达力拿沟通商讨是否可以让她也随军出战，以便能亲眼观察蛹。阿多林向她诉说了关于撒迪亚斯背叛他们的事情之后，沙兰也解释了迦熙娜正在进行的关于虚渡的研究进展，并请他帮忙缓和她与纳瓦尼之间的关系。发现飓风即将来袭之后，两个人依然恋恋不舍一直呆在一起，直到飓风即将袭来的最后一刻，他们才不得不分开，并约好下次再聊。
 
 ## Metadata
 | Field | Value |
