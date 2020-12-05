@@ -2,6 +2,7 @@
     "textureLocale": "en",
     "name": "柔刹地图",
     "title": "{page} | 飓光志",
+    "logo": "roshar-zh.png",
     "ui": {
         "loading": "加载中……",
         "circa": "约{date}",
