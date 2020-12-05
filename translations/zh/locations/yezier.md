@@ -1,3 +1,3 @@
-# Yezier
+# 伊泽尔
 
-**Yezier** is a princedom in southwestern Roshar and one of the member states of the #[Azish Empire](locations/azir). It's ruled by a princess.
+**伊泽尔**位于西南，是#[亚泽尔帝国](locations/azir)的成员国。

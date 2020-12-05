@@ -1,5 +1,5 @@
-# Sea of Lost Lights
+# 失落之光海
 
 > The sea of beads rolling against itself began to sound soothing. Even rhythmic.
 
-The **Sea of Lost Lights** is a large sea in eastern Shadesmar, the subastral of Roshar. The origin of its name is unknown.
+**失落之光海**是位于裂影界中对应柔刹东部区域的巨大海域。

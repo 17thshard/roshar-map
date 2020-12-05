@@ -1,2 +1,4 @@
-# Rathalas
-**Rathalas**, also known as the **Rift**, was a city in in the northern part of the Eastern Crownlands near central #[Alethkar](locations/alethkar). The city was burnt to the ground in 1163 and has not since been rebuilt. The people of Rathalas are sometimes referred to as **Rifters** and have a distinct nasally accent. Rathalas was large enough to house tens of thousands of people.
+# 拉萨拉斯
+**拉萨拉斯**，又名**“天堑”**，位于#[阿勒斯卡](locations/alethkar)东部王领北部一座建造在地缝里的城市。拉萨拉斯非常巨大，能容纳数以万计的居民。
+
+这座城市焚毁于1163年，至今尚未重建。当地人说话带有浓厚的鼻音，有的人管他们叫**“天堑人”**。

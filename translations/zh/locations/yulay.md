@@ -1,7 +1,7 @@
-# Yulay
+# 玉威国
 
-**Yulay** is a kingdom in central Roshar.
+**玉威**是位于柔刹中部的国家。
 
-Yulay's territory primarily consists of a narrow strip of land between the southern shore of the #[Purelake](locations/purelake) and several mountainous areas. It borders #[Tu Bayla](locations/tu-bayla) to the east and #[Babatharnam](locations/babatharnam) to the west. The southern border with #[Azir](locations/azir) is mostly defined by mountains, with the exception of one large pass.
+玉威东临#[图拜拉](locations/tu-bayla)，西濒#[巴巴萨那姆](locations/babatharnam)，北望#[淳湖](locations/purelake)，南部则与#[亚泽尔](locations/azir)接壤。其国土形状狭长，湖山环伺，唯有南部群山中有一道山口。
 
-Before the return of the Knights Radiant, some people in Yulay talked about them and hoped that they would return.
+在光辉骑士回归之前，玉威有一些团体在讨论光辉骑士，希望他们能回归。

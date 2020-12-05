@@ -1,5 +1,3 @@
-# Shulin
+# 书林
 
-**Shulin** is a city in #[Alethkar](locations/alethkar) in Kholin princedom. It is near the border to the #[Unclaimed Hills](locations/unclaimed-hills).
-
-It is possible that the royal cartographer, Isasik Shulin, is from here.
+**书林**是#[阿勒斯卡](locations/alethkar)寇林公国境内一座靠近#[无主山岭](locations/unclaimed-hills)的城市。

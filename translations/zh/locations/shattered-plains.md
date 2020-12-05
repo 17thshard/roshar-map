@@ -1,2 +1,5 @@
-# The Shattered Plains
-The **Shattered Plains** are located on the border of the #[Frostlands](locations/frostlands) and #[Unclaimed Hills](locations/unclaimed-hills), formerly part of the Silver Kingdom of Natanatan. They are aptly named, as the terrain of the Plains consists of huge numbers of plateaus of various sizes, surrounded on all sides by deep chasms. It is unknown what caused the landscape to form this way, but during #[Kaladin's](characters/kaladin) dream he saw the entire area as a symmetrical pattern, radiating outwards from the center as if something massive had struck there.
+# 破碎平原
+
+**破碎平原**位于[霜冻之地](locations/frostlands) 与#[无主山岭](locations/unclaimed-hills)的交界处，曾是白银十王国之一纳塔纳坦的一部分。这个名字起的十分恰当，因为平原由许多大小不一的高地组成，深渊穿插环绕其间。至于是什么造就了这样的地形还不得而知。
+
+在#[卡拉丁](characters/kaladin)的梦中，他鸟瞰到破碎平原如同一个由中心向外辐射的对称图案，仿佛被某种外力由中心击碎一般。

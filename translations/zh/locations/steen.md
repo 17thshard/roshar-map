@@ -1,7 +1,7 @@
-# Steen
+# 斯提恩
 
-**Steen** is a kingdom at the tip of a peninsula in southwestern Roshar. As such, it only borders #[Liafor](locations/liafor).
+**斯提恩国**位于柔刹西南部一个半岛的末端，唯一的邻国是#[里亚弗](locations/liafor)。在白银王国纪元，它是马卡巴卡姆的一部分。
 
-During the Silver Kingdoms era, it was part of Makabakam. Noura describes them as a tricky bunch, and hints that they shouldn't be invited to the #[Urithiru](locations/urithiru) talks along with the other Makabak representatives.
+诺乌拉称斯提恩人非常狡诈，不应该让他们参与#[乌有斯麓](locations/urithiru)的会议。
 
-Beard tells a tale about him swimming across a vat of dyes when in service to the Steen merchant lords. The crew of _First Dreams_ on its trip to Akinah is made up of Steen mercenaries.
+在通往亚基纳的旅途上，_“初梦”号_的船员由斯提恩雇佣军组成。

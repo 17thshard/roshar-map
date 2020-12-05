@@ -1,5 +1,3 @@
-# Sea of Regret
+# 悔海
 
-The **Sea of Regret** is a large sea on Roshar's subastral of the Cognitive Realm. It is bordered by the #[Nexus of Truth](locations/nexus-of-truth), the #[Nexus of Transition](locations/nexus-of-transition), and the #[Sea of Souls](locations/sea-of-souls). In the Physical Realm, this sea corresponds to the western part of the continent of Roshar, including #[Shinovar](locations/shinovar) and #[Iri](locations/iri).
-
-The reason this part of Shadesmar is called the Sea of Regret is unclear.
+**悔海**是位于柔刹知界域的巨大海域。其与#[真之结域](locations/nexus-of-truth)、#[无常结域](locations/nexus-of-transition)和#[魂海](locations/sea-of-souls)相接。在实界域中，悔海的对应位置是柔刹西部，即#[深国](locations/shinovar)与#[伊里](locations/iri)的所在地。

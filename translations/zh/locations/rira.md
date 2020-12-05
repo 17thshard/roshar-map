@@ -1,6 +1,6 @@
-# Rira
-**Rira** is a kingdom in north-western Roshar, bordering on #[Iri](locations/iri) and #[Babatharnam](locations/babatharnam).
+# 里拉
+**里拉国**位于柔刹西北部，与#[伊里](locations/iri) 和#[巴巴萨那姆](locations/babatharnam)接壤。里拉不是一个军事强国，也不拥有塑魂师。
 
-In the Silver Kingdoms era, Rira was a part of #[Iri](locations/iri). Iri continues to be a major influence in Rira in the present day; however, there are some people in Rira who make an effort to keep themselves ideologically and religiously distinct from Iri, as well as the Vorin nations to the east. 
+在白银王国纪元，其为#[伊里](locations/iri)的一部分。时至今日，#[伊里](locations/iri)仍旧对里拉有着巨大影响，与此同时，也有着一群里拉人致力于让里拉在思想文化上与伊里和东部沃林教王国保持不同。
 
-Rira has an Oathgate which #[Jasnah Kholin](characters/jasnah) believes is located in the city of Kurth. Rira is not a current military power and does not possess soulcasters. Rira is also home to the Sunken Forests.
+里拉国内有一座誓约之门，#[迦熙娜](characters/jasnah)猜测这座誓约之门库尔兹城。

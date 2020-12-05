@@ -1,3 +1,3 @@
-# Rall Elorim
+# 拉尔艾洛林
 
-**Rall Elorim** is a city in the mountains of northern #[Iri](locations/iri) on Roshar and the most populous city in the nation. It is also known as the **City of Shadows** for cryptic reasons, and it contains an Oathgate.
+**拉尔艾洛林**也被称为**暗影城**，坐落于#[伊里](locations/iri)北部的群山之中，是该国人口最大的城市。城中有座誓约之门。
