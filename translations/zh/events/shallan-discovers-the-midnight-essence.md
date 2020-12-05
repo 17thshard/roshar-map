@@ -1,8 +1,8 @@
-# Shallan discovers the Midnight Essence
-Shallan discovered the Midnight Essence while searching for secrets in the depths of Urithiru.
+# 沙兰发现子夜元魂
+沙兰在探寻乌有斯麓深处蕴藏的秘密的时候，发现了子夜元魂。
 
 ## Details
-While searching for secrets in the depths of Urithiru, Shallan used her Lightweaving to perform a play from her childhood called "The Girl Who Looked Up". After finishing the play, she spoted a strange spren watching her in the back of the room. She chased the creature before it was able to elude her. The spren was later revealed to be Midnight Essence from Re-Shephir.
+在乌有斯麓地下探寻秘密的时候，沙兰用织光术再现了她童年时看过的一场戏剧，名叫“向上看的女孩”。演出结束之后，她发现一个奇怪的灵体正在屋子的后方观看这场演出。她在这个生物还没来得及躲避的时候就追上了它。后来，这个灵体被确认为是瑞西法的子夜元魂。
 
 ## Metadata
 | Field | Value |

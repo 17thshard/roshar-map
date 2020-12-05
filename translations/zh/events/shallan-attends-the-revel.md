@@ -1,8 +1,8 @@
-# Shallan attends the revel
-After drawing the eyes of the Cult of Moments, Shallan accepted her invitation to attend the revel.
+# 沙兰加入狂欢
+在成功画出瞬息教的眼睛之后，沙兰接受了她的邀请，加入了狂欢。
 
 ## Details
-After drawing the eyes of the Cult of Moments, Shallan accepted her invitation to attend the revel on Kholinar's Oathgate platform. She discovered Ashertmarn's presence there, and had to flee before she was drawn in by the Unmade's influence.
+在成功画出瞬息教的眼睛之后，沙兰接受了她的邀请，在寇林城的誓约之门平台上加入了狂欢。她发现亚舍芒也在这里后，便不得不在受到灭者的影响无法摆脱之前逃离这里。
 
 ## Metadata
 | Field | Value |

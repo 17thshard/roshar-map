@@ -1,8 +1,8 @@
-# Shallan becomes Jasnah's ward
-Shallan arrived in Kharbranth and became Jasnah's ward, planning to steal the princess's Soulcaster.
+# 沙兰成为迦熙娜的学徒
+沙兰到了卡哈巴兰斯，成为了迦熙娜的学徒，她计划趁机偷走迦熙娜的塑魂器。
 
 ## Details
-After months of chasing Jasnah Kholin from port to port, Shallan finally caught up with her in Karbranth. Her first petition was rejected outright, due to Shallan's lacking education. She approached Jasnah a second time that day in the Pallanaeum, after which Jasnah promised to give her another opportunity at a later date. With no time to spare due to her family's desparate financial situation, Shallan purchased books in the city and set about studying that night. Jasnah approached Shallan and accepted her as a ward.
+经过了几个月辗转在港口之间的追逐，沙兰终于在卡哈巴兰斯追上了迦熙娜。沙兰的第一次成为学徒的请求被当场拒绝，理由是她受过的教育水平太低。她在当天又再一次在轿子中与迦熙娜接触，迦熙娜终于同意给她一个机会，给了一个稍晚一些的期限。因为家族糟糕的财政状况，沙兰没有任何时间可供浪费，所以她直接去城里买了书，打算通宵学习。此时迦熙娜找到了沙兰，接受了她作为学徒的申请。
 
 ## Metadata
 | Field | Value |
