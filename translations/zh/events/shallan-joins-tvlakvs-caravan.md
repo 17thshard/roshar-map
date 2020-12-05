@@ -1,8 +1,8 @@
-# Shallan joins Tvlakv's caravan
-Shallan recruited Tvlakv's caravan to take her to the Shattered Plains, after washing ashore and crossing paths with them the previous day.
+# 沙兰加入图拉科夫车队
+在被冲到海岸边并偶遇图拉科夫车队之后，次日沙兰征召了图拉科夫车队将她带到破碎平原。
 
 ## Details
-After washing ashore with no supplies after the attack on the *Wind's Pleasure*, Shallan approached a group camping on the beach. In the morning, Shallan awoke to find the group was slaving caravan led by Tvlakv. Leveraging her status as a lighteyes with ties to nobility, Shallan ordered them to bring her to the Shattered Plains.
+在风之愉悦号遭到袭击之后，沙兰被水冲到了岸边，缺乏补给，正在此时她偶遇了在海滩宿营的车队。次日清晨，她发现这是图拉科夫的奴隶车队。她利用自己身为光眼种身份的特权，命令图拉科夫将她带往破碎平原。
 
 ## Metadata
 | Field | Value |

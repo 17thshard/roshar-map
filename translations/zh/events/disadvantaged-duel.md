@@ -1,8 +1,8 @@
-# Disadvantaged duel
-With the help of Kaladin and Renarin, Adolin defeated four Shardbearers in a duel
+# 不公平的决斗
+在卡拉丁与雷纳林的帮助下，阿多林在决斗中打败了四名碎瑛武士。
 
 ## Details
-On his mission to win Shards for House Kholin, Adolin accepted a dueling challenge from Relis Ruthar. Based on the careless wording of his acceptance, Adolin unwittingly accepted a duel against multiple Shardbearers. Relis was accompanied by Elit, Abrobadarm, and Jakamav on the day of the duel. Shortly after the duel began, Renarin donned his Shards and charged into the arena to help his brother, but he was unable to provide much assistance due to his inability to handle his screaming Shardblade. Kaladin also jumped into the ring and, with subtle use of his Surgebinding powers, was able to turn the tides. Adolin arose victorious, though his ultimate plan to demand a duel with Sadeas was interrupted by Kaladin's own demand for vengeance against Amaram.
+为了帮寇林家族赢得碎瑛武器，阿多林接受了瑞里斯·鲁特哈的发出的挑战邀请，因为答应挑战时候的无心之语，阿多林不知不觉接受了自己需要面对多名碎瑛武士的事实。当天瑞里斯与艾立特、阿布罗巴达和雅卡马夫共四人参与了对决。 决斗开始后不久，雷纳林带着自己的碎瑛武器冲入竞技场来帮助他的哥哥，但他无法掌控碎瑛刃，因为他能听到碎瑛刃的尖叫声，所以他几乎无法提供任何的帮助。卡拉丁也加入了战局，因为他可以使用飓能术，所以他扭转了战局。阿多林最终获得了胜利，但他想要挑战撒迪亚斯的终极计划却被卡拉丁想要即刻向亚马兰复仇的决心给打乱了。
 
 ## Metadata
 | Field | Value |
