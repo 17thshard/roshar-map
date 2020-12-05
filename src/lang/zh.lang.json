@@ -3,6 +3,13 @@
     "name": "柔刹地图",
     "title": "{page} | 飓光志",
     "logo": "roshar-zh.png",
+    "meta": {
+        "translator": {
+            "url": "https://coppermind.huijiwiki.com/wiki/%E4%B8%89%E7%95%8C%E5%AE%99%E6%97%85%E8%80%85",
+            "name": "三界宙旅者",
+            "logo": "logo-zh.png"
+        }
+    },
     "ui": {
         "loading": "加载中……",
         "circa": "约{date}",
@@ -24,7 +31,7 @@
         "jump-to-start": "跳转至页首",
         "jump-to-end": "跳转至页尾",
         "coppermind": "了解更多",
-        "welcome": "欢迎来到布兰登·桑德森所著史诗奇幻系列《飓光志》的非官方互动地图和时间轴！",
+        "welcome": "欢迎使用《飓光志》饭制互动地图，尽情感受布兰登·桑德森的瑰丽世界吧！",
         "language": "语言",
         "languageHeading": "选择语言",
         "help": "帮助",
@@ -148,7 +155,7 @@
         },
         "lock-timeline": "锁住时间轴导航",
         "unlock-timeline": "解锁导航",
-        "translation-by": "译者："
+        "translation-by": "汉化团队"
     },
     "entry-types": {
         "events": "事件",
