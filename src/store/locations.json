@@ -1002,6 +1002,10 @@
             ]
         },
         "coppermind": "Shinovar",
+        "image": {
+            "file": "locations/Shinovar_Adam_Marin.png",
+            "credits": "[Adam J. Marin](https://coppermind.net/wiki/File:Farmer_by_Adam_J_Marin.png)"
+        },
         "related": [
             "characters/szeth",
             "events/szeth-is-born",

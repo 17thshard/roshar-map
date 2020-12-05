@@ -58,7 +58,7 @@ Obviously this project would not exist without the fantastic books by [Brandon S
 
 The following is a list of all the artists that are either official artists or have gracefully granted this project permission to use their pieces as images for events, locations, characters, or other items:
 
- * [Adam J. Marin](https://imgur.com/gallery/Bw2k31X)
+ * [Adam J. Marin](https://www.adamjmarin.com)
  * [Alex Allen](https://coppermind.net/wiki/Coppermind:Artists/Alex_Allen)
  * [Antti Hakosaari](https://coppermind.net/wiki/Coppermind:Artists/Antti_Hakosaari)
  * [Ari Ibarra](https://coppermind.net/wiki/Coppermind:Artists/Ari_Ibarra)
@@ -85,6 +85,7 @@ The following is a list of all the artists that are either official artists or h
  * [Howard Lyon](https://coppermind.net/wiki/Howard_Lyon)
  * [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)
  * [Jacobo Montoya](https://coppermind.net/wiki/Coppermind:Artists/Jacobo_Montoya)
+ * [Jill Andersen](https://coppermind.net/wiki/Coppermind:Artists/Jill_Andersen)
  * [Jordi Rapture](https://coppermind.net/wiki/Coppermind:Artists/Jordi_Rapture)
  * [Jules Aguimatang](https://coppermind.net/wiki/Coppermind:Artists/Jules_Aguimatang)
  * [Krystian Biskup](https://imgur.com/gallery/Bw2k31X)
