@@ -1,5 +1,5 @@
 # 夜铎
 
-> No, **this** was impressive. A majestic city cut **out of the starvin' ground**.
+> 但山下那座城市可厉害了，竟然是在饿死他的地里挖出来的。
 
 **夜铎** 是#[塔石科](locations/tashikk)国的城市。
