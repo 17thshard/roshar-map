@@ -1,7 +1,5 @@
-# Tarat Sea
+# 塔拉特海
 
-The **Tarat Sea** is a gulf of the #[Southern Depths](locations/southern-depths) on Roshar.
+**塔拉特海**是#[南之深渊](locations/southern-depths)中的一片海湾。
 
-It is surrounded by the southern coasts of #[Alethkar](locations/alethkar), #[Jah Keved](locations/jah-keved), #[Triax](locations/triax), #[Tu Fallia](locations/tu-fallia), #[Greater Hexi](locations/greater-hexi), the northern coast of #[Frostlands](locations/frostlands), and the city-state of #[Kharbranth](locations/kharbranth) and opens into Longbrow's Straits. There are a number of islands near the coasts of Triax, Tu Fallia and Greater Hexi. Many of the southern rivers in Alethkar and Jah Keved, including the Deathbend River, flow into the Tarat Sea.
-
-The war-room prior to the Battle of Thaylen Field featured a map of the gulf, marking the locations of parts of the Azish and Kharbranth fleets. After the battle, #[Kaladin](characters/kaladin) is sent to find Skar, Drehy and Gavinor Kholin and flies over the gulf from Kharbranth to meet them.
+海湾北岸有#[阿勒斯卡](locations/alethkar)、#[雅克维德](locations/jah-keved)、#[特里雅克斯](locations/triax)、#[图法利亚](locations/tu-fallia)、#[大赫西](locations/greater-hexi)等国家，南岸则是#[霜冻之地](locations/frostlands)和#[卡哈巴兰斯](locations/kharbranth)。这片海域通往长眉海峡。海域中有众多岛屿。大陆上有很多河流注入塔拉特海。

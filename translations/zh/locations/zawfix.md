@@ -1,7 +1,7 @@
-# Zawfix
+# 索瓦菲斯
 
-**Zawfix** is a city in northeastern #[Azir](locations/azir) on Roshar. It lies at the foot of a mountain range between Azir and #[Yulay](locations/yulay).
+**索瓦菲斯**是#[亚泽尔](locations/azir)北部的一座城市，坐落于亚泽尔与#[玉威](locations/yulay)之间的一座山脉的山脚下。
 
-Zawfix has shanties built inside of old mines to protect them from highstorms. When #[Lift](characters/lift) encounters shanties in #[Yeddaw](locations/yeddaw), she recalls seeing them in Zawfix.
+索瓦菲斯人会在废弃矿井中的小屋里躲避飓风。#[莉芙特](characters/lift)在#[夜铎](locations/yeddaw)遇到这种小屋时回忆起过在索瓦菲斯的经历。
 
-It is said that when the Sunmaker invaded Azir, he murdered ten percent of the population, and that highstorms piled bones as high as buildings in Zawfix.
+据说造日王曾在亚泽尔屠杀了十分之一的人口，飓风把尸骨堆积到一起，与索瓦菲斯的建筑一样高。

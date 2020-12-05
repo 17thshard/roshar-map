@@ -1,7 +1,7 @@
-# Reshi Sea
+# 雷希海
 
-The **Reshi Sea** is a body of water in northern Roshar. It contains the #[Reshi Isles](locations/reshi-isles) and is separated from the #[Purelake](locations/purelake) by #[Marabethia](locations/marabethia). It borders #[Iri](locations/iri), #[Rira](locations/rira), #[Babatharnam](locations/babatharnam), #[Tu Bayla](locations/tu-bayla), #[Jah Keved](locations/jah-keved), and #[Herdaz](locations/herdaz).
+**雷希海**是柔刹大陆北部的一片海域。其北部是#[雷希群岛](locations/reshi-isles)；南部是#[玛拉贝提亚](locations/marabethia)。东西两侧则被#[伊里](locations/iri)、#[里拉](locations/rira)、#[巴巴萨那姆](locations/babatharnam)、#[图拜拉](locations/tu-bayla)、#[雅克维德](locations/jah-keved)以及#[赫达孜](locations/herdaz)等国家环绕。
 
-The Reshi Sea is deeper than the purelake, but is shallow enough that Tai-na legs are able to reach the bottom of making it shallow enough to be warm nearly all the time.
+雷希海比淳湖要深，但依然不足以没过Tai-na的腿。此处的水温常年比较温暖。
 
-Ashir and Geranid live on a small island in the Reshi Sea.
+虔诚者阿述尔与葛兰蒂住在雷希海的一座小岛上。

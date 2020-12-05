@@ -1,5 +1,5 @@
 # 深国
-> The world is changing outside, but the Shin seem determined to remain the same.
+> 外部世界一直在变化，但深族似乎下定决心要保持本来面目。
 
 **深国**位于柔刹主大陆最西端。
 

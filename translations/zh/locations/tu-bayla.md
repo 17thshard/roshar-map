@@ -1,7 +1,7 @@
-# Tu Bayla
+# 图拜拉
 
-**Tu Bayla** is a nation on Roshar.
+**图拜拉**是柔刹大陆上的一个王国。#[鲁帕拉特](locations/ru-parat)和#[纳米尔村](locations/fu-namir)在其境内。
 
-#[Ru Parat](locations/ru-parat) and #[Fu Namir](locations/fu-namir) are cities in the region. It borders #[Jah Keved](locations/jah-keved) to the east, the #[Reshi Sea](locations/reshi-sea) to the north, a mountain range to the south, and shares land borders with #[Yulay](locations/yulay) and #[Marabethia](locations/marabethia) to the west, as well as forming the eastern coast of the #[Purelake](locations/purelake). It seems to have at least one river that runs into the Purelake and another that runs into the Reshi Sea, and may also claim some of the Reshi isles close to its coast. It is formed from parts of the Silver Kingdoms of Sela Tales and Valhav.
+其东部是#[雅克维德](locations/jah-keved)，北部是#[雷希海](locations/reshi-sea)，南部是一片崇山峻岭，西部则是#[玉威](locations/yulay)、#[玛拉贝提亚](locations/marabethia)以及#[淳湖](locations/purelake)。靠近雷希海的几座岛可能也是其领土。国境内有一条河汇入淳湖，另一条河汇入雷希海。在白银王国时代，它目前的领土分属瑟拉塔勒和瓦尔哈瓦。
 
-Its people are nomadic. Tyn grew up there. #[Urithiru](locations/urithiru) lays in the mountain ranges to the south of Tu Bayla.
+此处的人民是游牧民族。缇恩就是在这里长大的。#[乌有斯麓](locations/urithiru)就在其南部的群山之中。

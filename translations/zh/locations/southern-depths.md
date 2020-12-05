@@ -1,5 +1,5 @@
-# Southern Depths
+# 南之深渊
 
-The **Southern Depths** is the ocean to the south of Roshar. It lies off the coast of #[Tukar](locations/tukar), #[Marat](locations/marat), and #[Thaylenah](locations/thaylenah). It is presumably quite deep. It also likely extends to the south pole of the planet.
+**南之深渊**是柔刹大陆南方的大洋。其北面是大陆上的#[图卡](locations/tukar)、#[玛拉特](locations/marat)以及#[Thaylenah](locations/thaylenah)等几个王国，南面则似乎一直延伸至南极。从名字判断它似乎很深。
 
-It was said if one controls #[Thaylenah](locations/thaylenah) and #[Thaylen City](locations/thaylen-city), one could control the entire Southern Depths. This strategic importance led to Voidbringer forces to Thaylen City near the beginning of the True Desolation. A Thaylen merchant ship tried to scout for Voidbringers in the Southern Depths near Marat and spotted a large number of ships at dock along the coast. The ship relayed the information via spanreed. Then, figures with glowing eyes—the Fused\—rose from a nearby city, attacking the ship, and the ship was never seen from again. Shortly thereafter, the Voidbringer forces launched from Marat to Thaylen City, using the Everstorm to propel them quickly across the Southern Depths, triggering the Battle of Thaylen Fields.
+据称控制#[泰勒拿](locations/thaylenah)以及#[泰勒拿城](locations/thaylen-city)的人就可以控制整个南之深渊。虚渡方面在终极灭世的开始阶段就准备占领泰勒拿。泰勒拿方面的巡逻船曾经遭到从附近城市起飞的虚渡的攻击。此后虚渡军从玛拉特出发，在灭世风暴的掩护下登录了泰勒拿海岸，泰勒拿城之战就此爆发。
