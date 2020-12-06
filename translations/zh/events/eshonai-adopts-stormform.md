@@ -1,8 +1,7 @@
-# Eshonai adopts stormform
-After Venli discovered and captured the correct spren, and with the blessing of the Five, Eshonai adopted stormform.
-
+# 伊舒娜使用飓风态
+在温丽发现并捉到正确的灵体，伊舒娜得到五元老的祝福后，伊舒娜使用了飓风态。
 ## Details
-After Venli's discovery of the correct spren to create stormform, the Five determined that testing the new form would be wise. Eshonai demanded that she be allowed an opportunity to test the form first for herself, and this permission was granted to her.
+在温丽发现创造飓风态的正确灵体后，五元老决定对新形态进行测试是明智的。伊舒娜要求第一次测试新形态的机会给自己。这个要求被准许了。
 
 ## Metadata
 | Field | Value |

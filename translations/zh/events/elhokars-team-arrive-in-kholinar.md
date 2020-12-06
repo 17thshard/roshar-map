@@ -1,9 +1,7 @@
-# Elhokar's team arrive in Kholinar
-After camping outside the city the day before, Elhokar's team entered Kholinar under cover and met with Adolin's tailor.
-
+# 艾尔霍卡的队伍抵达塔冠城
+提前一天在城市外扎营后，艾尔霍卡的队伍偷偷进入塔冠城并与阿多林的裁缝相见。
 ## Details
-Seeking to retake the city of Kholinar, Elhokar's team travelled with Kaladin and several Windrunners to the city in secret. Finding evidence of several Unmade in the city, they opted to camp a day outside and sneak into the city the following day in disguise. From there they investigated the Unmade taking up residence in the city and laid plans to retake the Oathgate platform.
-
+为了夺回塔冠城，艾尔霍卡的队伍和卡拉丁与其他几个风行骑士秘密地到了这座城市。由于城中有数个灭者存在的迹象，他们选择在城外扎营一晚，第二天再伪装着潜入城市。之后他们调查了灭者在城中盘踞的情况，并定下了夺回誓约之门平台的计划。
 ## Metadata
 | Field | Value |
 | ----- | ----- |

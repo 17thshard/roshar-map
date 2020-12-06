@@ -1,8 +1,7 @@
-# Eshonai seizes control
-Eshonai seizes control of her people from the Five and began pushing for the adoption of stormform.
-
+# 伊舒娜夺得控制
+伊舒娜从五元老那里夺得对仆族智者的控制并开始推动飓风态的使用。
 ## Details
-After adopting stormfom, Eshonai's mind was compromised by influence from her Voidspren. She began to push for all of her people to adopt the new form, going so far as to interfere with the Five's leadership.
+在使用飓风态后，伊舒娜的心智被来自她的虚灵的影响所危害。她开始推动所有的仆族智者使用这种新的形态，甚至开始干涉五元老的领导。
 
 ## Metadata
 | Field | Value |
