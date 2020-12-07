@@ -1,8 +1,8 @@
-# Shallan draws a Cryptic
-Shallan accidentally drew a Cryptic while she and Jasnah joined Taravangian for lunch.
+# 沙兰绘出秘灵
+沙兰与迦熙娜在和塔拉梵吉安共进午餐的时候，意外画出了一只秘灵。
 
 ## Details
-As Shallan and Jasnah were studying one day, Taravangian approached and asked to join the pair for lunch. Afterward, the king asked for a portrait by Shallan. As Shallan sketched Taravangian she found herself accidentally drawing a strange creature standing behind him. She discarded the drawing, pretending to have made a mistake, and promised to make another.
+在沙兰和迦熙娜共同研究的当天，塔拉梵吉安找到她们，请求和她们共进午餐。之后，塔拉梵吉安国王请求沙兰为自己画像。在沙兰为他绘画的过程中，意外发现她无意中画出了一只站在国王身后的奇特生物。她把那张画作废弃了，假装自己失手犯错，并许诺重画一张。
 
 ## Metadata
 | Field | Value |
