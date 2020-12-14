@@ -1,8 +1,8 @@
-# Shallan kills her father.
-Shallan killed her father after he killed his wife and foiled Balat's plans to run away. Lin Davar's Soulcaster is damaged.
+# 沙兰弑父
+在父亲杀死母亲后，沙兰杀了她的父亲，并阻止了巴拉特的逃跑计划。林·达瓦的塑魂器受损。
 
 ## Details
-Shallan helped her brother, Balat, and mother-in-law, Malise, make plans to flee as Lin Davar's anger and abuse grew stronger. On the evening the pair were to leave, Lin revealed that he had discovered their plans, killing Malise. Shallan poisoned her father's wine before he began to attack Balat, and when the poison didn't prove potent enough she used her necklace to strangle him.
+沙兰帮助她的哥哥巴拉特以及她的岳母玛丽瑟制定了逃跑计划，因为林·达瓦的暴戾之气日渐增长。在他们即将动身离开的那天晚上，林表示自己已经早就发现了他们的计划，并杀死了玛丽瑟。沙兰在她的父亲想要攻击巴拉特之前就在酒里下毒了，当她发现毒效不够强的时候，便不得不用项链勒死了她的父亲。
 
 ## Metadata
 | Field | Value |

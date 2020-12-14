@@ -1,8 +1,8 @@
-# Shallan kills her mother.
-Shallan killed her mother with her Shardblade.
+# 沙兰弑母
+沙兰用碎瑛刃杀了自己的母亲。
 
 ## Details
-At the age of eleven, Shallan's mother discovered that her daughter was a Surgebinder. Her mother and a friend confronted Lin, trying to argue that something must be done about Shallan. The argument became a fight after the unfamiliar man drew a knife, apparently intended for Shallan. She watched as her father and the man struggled, her father scoring a cut on the man's arm before being pinned to the ground. Her mother seized the knife and moved for Shallan, prompting Shallan to summon Pattern as a Shardblade in self-defense. After killing both her mother and the associate, Shallan dropped the Blade and fell into a state of intense shock. Lin placed the Shardblade in his strongbox and held Shallan while singing "Sleep My Baby Dear" to soothe her.
+在沙兰十一岁的时候，她的母亲发现她是一名飓能者。她的母亲和一位朋友一起与林摊牌，力辩要对沙兰做些什么措施。争辩后来演变为厮打，因为那名外人拔出了刀，意欲杀死沙兰。她看着自己的父亲与那人缠斗，她的母亲则抓住刀与沙兰对峙，要她召唤图腾来作为碎瑛刃自卫。在杀死了她母亲及朋友之后，她丢掉了碎瑛刃，陷入了强烈的惊愕状态中。林把碎瑛刃放进了保险柜，并抱着沙兰哼唱“睡吧我的宝贝”来舒缓她的情绪。 
 
 ## Metadata
 | Field | Value |
