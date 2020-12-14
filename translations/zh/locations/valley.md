@@ -1,4 +1,4 @@
 # 山谷
-> Vines, ferns, flowers, and grasses grew together in a wall of underbrush. Trees stretched above them, and these weren't the durable stumpweights of his homeland. These were gnarled, tall, and twisted, with branches that wound together. They were overgrown with draping moss and vines, lifespren bobbing about them in plentitude.
+> 丛生的藤蔓、蕨叶和花草位于一片矮树丛之中，上面长着盘根错节的大树，表面爬满苔藓和藤条，许多生灵一起一伏地飘荡在周围。
 
 夜妖在此处。
