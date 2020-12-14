@@ -1,6 +1,6 @@
 # 索瓦菲斯
 
-**索瓦菲斯**是#[亚泽尔](locations/azir)北部的一座城市，坐落于亚泽尔与#[玉威](locations/yulay)之间的一座山脉的山脚下。
+**索瓦菲斯**是#[亚泽尔](locations/azir)东北部的一座城市，坐落于亚泽尔与#[玉威](locations/yulay)之间的一座山脉的山脚下。
 
 索瓦菲斯人会在废弃矿井中的小屋里躲避飓风。#[莉芙特](characters/lift)在#[夜铎](locations/yeddaw)遇到这种小屋时回忆起过在索瓦菲斯的经历。
 
