@@ -1,4 +1,4 @@
 # 图卡
-> The judgment of the final storm has come to destroy all men, and only his path will lead to deliverance.
+> 终极风暴的审判已经降下，要毁灭所有人类，唯有走上他的道路才能获得解脱。
 
-**图卡** 是由神祭司太紫穆所统治的国家。
+**图卡**是由神祭司太紫穆所统治的国家。
