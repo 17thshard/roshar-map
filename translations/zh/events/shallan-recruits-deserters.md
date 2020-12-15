@@ -1,4 +1,4 @@
-# Shallan recruits deserters
+# 沙兰招募一群逃兵
 Shallan recruited several deserters, including Vathah, Gaz, and Red, and saves Tyn and her caravan from bandits.
 
 ## Details

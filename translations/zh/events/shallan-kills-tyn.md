@@ -1,8 +1,8 @@
-# Shallan kills Tyn
-Shallan used her Shardblade to kill Tyn, after her identity is discovered.
+# 沙兰杀死缇恩
+在身份暴露之后，沙兰用碎瑛刃杀死了缇恩。
 
 ## Details
-With a highstorm approaching at night and the sun soon setting, Tyn and Shallan decided to spend one last night in camp after reaching the Shattered Plains. Tyn invited Shallan to attend her later during a meeting with an informant via spanreed so that they could inquire for more information. As they met with the informant, Shallan learned that her own family's own highprince, Valam, was preparing to assault Vedenar itself. The informant continued with information on the deserters Shallan had recruited. To Shallan's dismay, Tyn insisted that they should turn the men over in exchange for reward. Her resistance prompted a firm lecture from Tyn, which left Shallan distracted by how to handle the situation. A new message soon came with news regarding the presumed death of Jasnah Kholin. As Shallan began to realize that Tyn was involved with the Ghostbloods, additional information came through about Jasnah's ward--Shallan herself. Tyn quickly realized the truth and attacked Shallan. Pattern was able to distract the woman for a short time by using Jasnah's voice, but when she finally approached Shallan with sword drawn, Shallan swiftly summoned Pattern as a Shardblade and pierced her through the chest. A moment latter Shallan's men poured into the room, having been warned by Pattern, to find Shallan with her Shardblade and Tyn dead on the ground. Shallan swore them to silence and set them about searching through Tyn's things. Only then did Shallan notice that the informant had continued writing with a request from the Ghostbloods for a meeting in the warcamps. Seeing an opportunity to discover how much the Ghostbloods knew, Shallan responded affirmatively.
+因为飓风将至，缇恩和沙兰决定在到达破碎平原后露营一晚。在与线人通过对芦传讯时，沙兰得知自己家族的轩亲王瓦拉姆准备独自袭击魏德纳。线人还提供了关于沙兰招募的逃兵的信息。 让沙兰沮丧的是，缇恩坚持应该将逃兵们上缴换取奖励。另一条讯息时关于迦熙娜·寇林的死讯。当沙兰意识到缇恩是鬼血会成员后，关于她自己是迦熙娜的学徒的信息也被发了过来。缇恩迅速觉察到事情真相，并攻击了沙兰。图腾利用迦熙娜的声音短暂地吸引了缇恩的注意力，沙兰趁此机会杀死了她。片刻后沙兰的下属闯进来发现缇恩已死，沙兰手提碎瑛刃命令他们保持沉默，并搜寻缇恩的物品。此刻沙兰才意识到线人还在传讯，鬼血会想要在军营中会面。为探寻鬼血会的秘密，沙兰回以肯定答复。
 
 ## Metadata
 | Field | Value |
