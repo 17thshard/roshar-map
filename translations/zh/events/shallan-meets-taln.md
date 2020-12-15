@@ -1,10 +1,10 @@
-# Shallan meets Taln.
-On a mission for the Ghostbloods, Shallan met with the Herald Taln. Afterward, she is welcomed as a member of the Ghostbloods.
+# 沙兰初遇塔恩
+在一次鬼血会的任务中，沙兰初次遇到了令使塔拉内。此次任务后，沙兰正式成为鬼血会成员。
 
 ## Details
-A note from Mraize eventually came, directing Shallan to seek further instructions at a specific time and location. Shallan arrived early, hoping to catch the delivery of these instructions, but after a long wait with no arrivals she began to wonder if the Ghostbloods were attempting to watch her in turn. She had Pattern search the windows of the tenement she waited on and was able to trick a spying Iyatil into revealing herself. The masked woman explained that the instructions provided were supposed to be carried out immediately, so that the Ghostbloods could watch Veil at work. When Shallan pressed, she explained that her task was to investigate a strange madman who had arrived in the warcamps under the custody of one of Dalinar Kholin's most trusted footmen. Determined to impress the Ghostbloods, Shallan invited Iyatil to join her on the task.
+调查亚马兰的任务过后，鬼血会又给沙兰下达了新的指令。这一次从鬼血会接受任务时，沙兰设计当场抓到了准备跟踪自己的伊雅蒂。伊雅蒂向沙兰传达了此次鬼血会布置的任务：调查一个由达力拿的亲信护送来到破碎平原的疯子。大胆的沙兰当场邀请伊雅蒂一起执行任务，以便让后者能亲眼看到自己的能耐。
 
-The women rode a palanquin to the temple complex in Dalinar's warcamps, where Shallan simply used her own identity to gain entrance while Iyatil was distracted. They reached the building where the man--none other than the Herald Talenel--was being kept, along with other mentally ill patients. Shallan then convinced the ardents that Iyatil was possessed by a Voidbringer, giving her a distraction to slip through unnoticed as well as a mean to escape from Iyatil's observation, and snuck into Taln's dimly lit room. Though the crazed man reacted minimally at first, constantly reciting his repetitive speech about his nature and purpose, an attempt to Surgebind by Shallan caused him to snap into a brief intense lucidity in which he seemed to recognize her as a Knight Radiant. Dazed after drawing her Shardblade in fear, Shallan was unable to leave before Meridas Amaram arrived with Bordin to question the man himself. Shallan hid behind a Lightweaving as the brightlord asked questions of the man without success, revealing to Shallan that he believed the words of the Herald to be true. After the two new arrivals departed, Shallan returned to Iyatil with information about Taln's rambling speech and the arrival of Amaram. Later that evening she delivered a full report via spanreed. Upon receipt, Mraize welcomed Shallan as a full member of the Ghostbloods.
+二人乘轿子混入疯人所在的虔诚院后，沙兰向虔诚者谎称伊雅蒂是自己的妹妹，被虚渡附了体，不肯摘下那奇怪的面具。趁着虔诚者们的注意力被伊雅蒂吸引走，沙兰用织光术混进了疯人所在的寝室，见到了自称令使塔拉内的疯人。沙兰记录了他不断重复的呓语，正准备换上织光术的外貌离开时，她的飓能术似乎暂时唤醒了塔恩。塔恩认出了她是一位光辉骑士，然后就重新回到了喃喃呓语的状态。没等沙兰离开，亚马兰就在伯丁的陪同下进了塔恩的寝室。沙兰只得躲在用织光术临时造的藏身之所里，听亚马兰向塔恩问话。虽然亚马兰没问出任何新消息，但明显他相信眼前的疯人真的是令使塔拉内。亚马兰离开后，沙兰把疯人的呓语和亚马兰来访的事都汇报给了伊雅蒂，并在当晚通过对芦详细的提交了报告。穆里兹对此次任务很满意，认可沙兰成为鬼血会的正式成员。
 
 ## Metadata
 | Field | Value |

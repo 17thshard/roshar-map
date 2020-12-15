@@ -1,8 +1,8 @@
-# Shallan meets Ghostbloods
-Shallan entered the warcamps and met with the Ghostbloods for the first time.
+# 沙兰初遇鬼血会
+沙兰来到破碎平原的呃军营后，初次遭遇了鬼血会。
 
 ## Details
-On her first night in the warcamps, Shallan found Tyn's spanreed flashing. She responded to Tyn's messenger, successfully imitating the woman, and learned that the Ghostbloods desired to meet within the hour. Unable to delay the meeting, Shallan explained that she--Tyn--was wounded, and that her apprentice would appear for the meeting instead. Shallan practiced her Lightweaving as she waited for the meeting to be coordinated, inventing a false identity to use as Tyn's supposed apprentice--a false identity she would soon come to name "Veil." With everything organized and her identity covered by an illusion, Shallan snuck out of her room and into the night. Shallan eventually located the building she had been directed to in Sebarial's camp. The guard at the entrance allowed her to enter and then led her down into a basement and through a trapdoor. In the stately room below, Shallan met Mraize and an audience of silent onlookers, including masked Iyatil. Though disappointed not to see Tyn herself, Mraize decided to spare "Veil's" life, intrigued by her boldness. He asked Shallan, whom he calls "little knife," to have Tyn infiltrate Brightlord Amaram's palace in search of "hidden secrets." Shallan then left the hideout and returned home, using a Lightweaving along the way to elude a pursuing Iyatil.
+来到破碎平原的军营后的一个第一个晚上，沙兰发现缇恩的对芦闪动起来。沙兰模仿缇恩的口吻和对方笔谈起来，发现对方是一个叫鬼血会的组织，要求缇恩马上接头。沙兰伪装的缇恩表示自己受了伤，会派手下前往。于是沙兰以缇恩为原型，创造了“浣纱”这一身份，并启程用这个身份前去赴约。浣纱在鬼血会的窝点见到了穆里兹、伊雅蒂及其他几个成员。穆里兹赏识浣纱的勇敢，没有杀她，要她向“主人”缇恩转达此次的任务：调查光明贵人亚马兰，挖掘他的秘密。会面结束后，沙兰离开了鬼血会的窝点，并用织光术摆脱了伊雅蒂的跟踪。
 
 ## Metadata
 | Field | Value |

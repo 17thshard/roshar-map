@@ -1,8 +1,8 @@
 # 沙兰招募一群逃兵
-Shallan recruited several deserters, including Vathah, Gaz, and Red, and saves Tyn and her caravan from bandits.
+沙兰招募了一批逃兵，其中包括瓦沙尔、盖兹和Red。她还拯救了缇恩的商队。
 
 ## Details
-On the journey to the Shattered Plains, Shallan emerged from her carriage one evening just as they moved near enough to determine a the caravan ahead was under attack. As they approached while the sun set, they encountered Tyn--the head of the new caravan's guard--who explained that the bandits who attacked them were still nearby. As this group began to attack again, Shallan turned with Bluth to confront the group of bandits following behind. Finding these men to be deserters from the Shattered Plains, Shallan appealed to their sense of honor and made promises of forgiven debts and pardons. She succeeded in convincing them, with a Lightweaving to aid her, and these men charged off to join the battle. They proved victorious, but not without cost. Shallan found Bluth dead, among dozens of his comrades. He was however clutching the sketch Shallan had drawn of him earlier in the day, indicating that Bluth was inspired by Shallan's sketch to uphold a sense of honor that Bluth originally assumed he had abandoned, resulting in a surprising amount of dead bandits surrounding Bluth's body in the aftermath of the battle. It is assumed that the inspiration of honor from Shallan's sketch inspired Bluth to risk everything, including his own life, for the chance of becoming the person he saw as himself in Shallan's sketch. Shallan then spoke with the caravan's owner, Macob, and they agreed to accompany one another to the warcamps at the Shattered Plains. Shallan then seized Tvlakv's slaves, claiming them as payment in exchange for saving his life. She purchased his wagons as well, despite his protests which were stifled by Shallan's tentative ownership of her own new band of mercenaries.
+跟随奴隶贩子图拉科夫前往破碎平原的途中，商队受到了匪徒的攻击。绝望中沙兰只身一人来到了附近的一群逃兵面前，恳请他们出手相助。她向逃兵们许诺荣誉和赦免，并用织光术增强了自己的威势，最终成功的说服了逃兵，带领他们击败了匪徒。此战之后，她收获了一批忠实的部下，摆脱了图拉科夫的掌控，解救了奴隶贩子手中的努力，还与另一只商队的护卫缇恩熟络了起来。此后直至破碎平原的旅途中，沙兰成为了这只混合团队的领袖。
 
 ## Metadata
 | Field | Value |
