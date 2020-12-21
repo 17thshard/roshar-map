@@ -7,4 +7,4 @@
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | 《王者之路》第I-1章 |
+| chapter | 《王者之路》插曲1 |
