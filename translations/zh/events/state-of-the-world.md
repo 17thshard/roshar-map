@@ -1,8 +1,8 @@
-# State of the World
-The present state of the world following the Battle of Thaylen Field.
+# 世界现状
+泰勒拿之战过后的世界现状。
 
 ## Details
-> Dalinar walked through the illusion, holding his hand over Iri, Rira, and Babatharnam. “Change this part of the land to a burning gold.” [...] By reports via spanreed, most of the lesser kingdoms surrounding the Purelake had been captured by Iri—which had moved, accompanied by Fused, to secure land they’d eyed for generations. This secured for them three total Oathgates. Shallan painted those kingdoms on the map a vivid gold at Dalinar’s request. Azir and its protectorates she painted a pattern of blue and maroon, the symbol the Azish scribes had chosen for the coalition between their kingdoms. [...] She continued shading the landscape colors at Dalinar’s request. Marat and those around it went gold, as did—unfortunately—Alethkar. Lands that hadn’t yet committed, like Shinovar and Tukar, she turned green. The result was a depressing view of a continent, with far too little of it colored the shades of their coalition.
+> 达力拿穿过幻象，抬手按住伊里、里拉和巴巴萨那姆所在的区域。“把这块地区变成亮金色。”【……】根据对芦传来的报告，淳湖周围的小国大都被伊里占领了。为了得到世代觊觎的地盘，他们在融族的陪同下行动，总共到手了三座誓约之门。在达力拿的要求下，沙兰把地图上那些国家涂成了亮金色。她为亚泽尔和它的保护国画上蓝色和栗色的图案，这是亚泽尔的文官为国家间的联盟所挑选的标志。【……】在达力拿的要求下，她继续为地形着色。玛拉特和周边国家都变成了金色，阿勒斯卡也不幸如此，而深国和图卡这样的国家还没有表态，她就变成了绿色，结果呈现出一片压抑的大陆图景，蒙上多国联盟颜色的区域少之又少。
 
 ## Metadata
 | Field | Value |
