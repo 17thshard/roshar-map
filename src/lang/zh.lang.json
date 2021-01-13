@@ -32,10 +32,10 @@
         "jump-to-end": "跳转至页尾",
         "coppermind": "了解更多",
         "welcome": "欢迎使用《飓光志》饭制互动地图，尽情感受布兰登·桑德森的瑰丽世界吧！",
-        "language": "语言",
+        "language": "切换语言",
         "languageHeading": "选择语言",
-        "help": "帮助",
-        "about": "关于",
+        "help": "新手引导",
+        "about": "关于本站",
         "aboutText": "欢迎使用柔刹互动地图和时间轴！\n\n本站功能如下：\n\n1）点击地名了解详情及相关的事件和角色。\n\n2）浏览底部的时间轴，跳转至不同事件了解详情。3）欲知更多，可点击“红铜智库”英文维基（Coppermind）的链接查看。\n\n本项目由民间发起，与龙钢娱乐公司无关，所有日期和地点均基于书中信息及粉丝推测。欲深入挖掘系列的时间线或是建站所用的参考资料，请访问[Jofwu的飓光志时间轴项目](https://docs.google.com/spreadsheets/d/1zq5bJoKE83ggDCjH43i1hZi0CIpB2iAx7v37zQPVFK0).\n\n使用前请务必查看教程！希望本站能成为您阅读《飓光志》的好帮手！",
         "brandon-sanderson": "布兰登·桑德森",
         "credits": "鸣谢",
@@ -48,14 +48,14 @@
         "dismiss": "关闭",
         "first-visit": {
             "heading": "欢迎",
-            "intro": "**剧透警告！**本互动地图含有至《渡誓》结尾的剧透，请谨慎阅览。\n\n您似乎是首次光临，需要帮助吗？\n\n您始终可以在右上方的菜单中找到本教程。",
-            "calendar": "历法说明",
-            "tutorial": "显示提示"
+            "intro": "**警告！**本站包含《光辉真言》之后的剧透，现在跑还来得及！\n\n不懂得玩？猛戳下方新手引导开启教程！\n\n不小心关掉了教程？戳右上角小圆点！",
+            "calendar": "柔刹历法简介",
+            "tutorial": "新手引导"
         },
         "tutorial": {
             "title": "教程",
             "explanation": "点击任意红点学习如何使用本互动地图。",
-            "calendar": "历法说明",
+            "calendar": "柔刹历法简介",
             "hints": {
                 "settings-button": {
                     "title": "设置菜单",
