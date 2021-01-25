@@ -919,7 +919,7 @@
         ],
         "coppermind": "Shallan_Davar#Cutting_the_Thorns",
         "image": {
-            "file": "events/Middlefest_Marie_Seeberger.jpg",
+            "file": "events/Under_the_Jella_Trees_by_Marie_Seeberger.jpg",
             "credits": "[Marie Seeberger](https://coppermind.net/wiki/Coppermind:Artists/Marie_Seeberger)"
         }
     },
@@ -1633,6 +1633,10 @@
             "characters/jasnah",
             "misc/ghostbloods"
         ],
+        "image": {
+            "file": "events/Changing_Ship_by_Marie_Seeberger.jpg",
+            "credits": "[Marie Seeberger](https://coppermind.net/wiki/Coppermind:Artists/Marie_Seeberger)"
+        },
         "coppermind": "Shallan_Davar#The_Wind.27s_Pleasure"
     },
     {
@@ -1762,8 +1766,8 @@
         ],
         "coppermind": "Shallan_Davar#Tyn.27s_Apprentice",
         "image": {
-            "file": "events/Boots_Jill_Andersen.png",
-            "credits": "[Jill Andersen](https://coppermind.net/wiki/Coppermind:Artists/Jill_Andersen)"
+            "file": "events/Boots_by_Marie_Seeberger.jpg",
+            "credits": "[Marie Seeberger](https://coppermind.net/wiki/Coppermind:Artists/Marie_Seeberger)"
         }
     },
     {
@@ -1857,13 +1861,8 @@
         ],
         "tieBreaker": 2,
         "image": {
-            "file": "events/Shallan_shardblade1_full.jpg",
-            "credits": "[Sheep](https://coppermind.net/wiki/Coppermind:Artists/Sheep)",
-            "size": 150,
-            "offset": {
-                "x": 60,
-                "y": 0
-            }
+            "file": "events/In_Control_by_Marie_Seeberger.jpg",
+            "credits": "[Marie Seeberger](https://coppermind.net/wiki/Coppermind:Artists/Marie_Seeberger)"
         },
         "related": [
             "characters/shallan",
@@ -2319,7 +2318,7 @@
             "renarin"
         ],
         "image": {
-            "file": "events/Dalinar_and_Navani_by_Marie_Seeberger.jpg",
+            "file": "events/Marriage_by_Marie_Seeberger.jpg",
             "credits": "[Marie Seeberger](https://coppermind.net/wiki/Coppermind:Artists/Marie_Seeberger)"
         },
         "related": [
@@ -2379,6 +2378,10 @@
             "renarin",
             "dalinar"
         ],
+        "image": {
+            "file": "events/Murders-in-urithiru_by_Marie_Seeberger.jpg",
+            "credits": "[Marie Seeberger](https://coppermind.net/wiki/Coppermind:Artists/Marie_Seeberger)"
+        },
         "related": [
             "characters/dalinar",
             "characters/adolin",
@@ -2403,6 +2406,10 @@
             "kaladin"
         ],
         "coppermind": "Kaladin#Finding_the_Parshmen",
+        "image": {
+            "file": "events/Kaladin-joins-singers_by_Marie_Seeberger.jpg",
+            "credits": "[Marie Seeberger](https://coppermind.net/wiki/Coppermind:Artists/Marie_Seeberger)"
+        },
         "related": [
             "characters/kaladin"
         ]
