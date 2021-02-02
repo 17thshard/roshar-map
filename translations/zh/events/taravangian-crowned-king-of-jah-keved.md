@@ -1,10 +1,10 @@
-# Taravangian crowned king of Jah Keved
-Taravangian arrived in Vedenar following a deadly battle and claimed the throne. Szeth is reassured and sent to assassinate Dalinar again.
+# 塔拉梵吉安加冕雅克维德国王
+塔拉梵吉安在惨烈的雅克维德内战中抵达魏德纳，登基为王，再次派泽斯刺杀达力拿。
 
 ## Details
-The Diagram showed that to save human kind, Taravangian needed to unite Roshar under his rule. Using Szeth to assassinate Jah Keved's king, Hanavanar, Taravangian caused the nation to be plunged into a devastating succession war, which wiped out all of the remaining highprinces. Taravangian arrived at the city in time for the death of the last Veden Highprince, Valam, who named him king of Jah Keved. Taravangian was able to fulfill his plot without anyone suspecting his intervention.
+《谶记》昭示塔拉梵吉安必须一统柔刹才能拯救人类。他利用泽斯刺杀了雅克维德国王哈纳瓦纳，致使该国陷入毁灭性的继位战争，所有在位的轩亲王均被铲除。塔拉梵吉安在最后一位轩亲王瓦拉姆死前抵达魏德纳，被指名为雅克维德的新国王，在不受怀疑的情况下实现了自己的计划。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* I-14 |
+| chapter | 《光辉真言》插曲14 |

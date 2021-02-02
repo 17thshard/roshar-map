@@ -1,5 +1,3 @@
-# Expanse of the Broken Sky
+# 碎天外域
 
-The **Expanse of the Broken Sky** is a location in Shadesmar that corresponds to an unknown planet.
-
-It is bordered by the #[Sea of Lost Lights](locations/sea-of-lost-lights).
+**碎天外域**是裂影界中的一片区域，在#[失落光海](locations/sea-of-lost-lights)以外。该方向有某颗未知星球。

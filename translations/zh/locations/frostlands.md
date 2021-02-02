@@ -1,5 +1,5 @@
-# Frostlands
+# 霜冻之地
 
-The **Frostlands** are the lawless, sparsely populated southeastern lands of Roshar. They are located outside the boundaries of #[Alethkar](locations/alethkar). They receive the strongest highstorms out of all of Roshar, due to the Frostlands being closest to the Origin out of all of the Stormlands, i.e. Eastern Roshar.
+**霜冻之地**是柔刹大陆东南方一块不毛之地，紧邻#[阿勒斯卡](locations/alethkar)。由于离飓风之源最近，所以此地的飓风也是最猛烈的。
 
-Prominent locations in the Frostlands include #[Kharbranth](locations/kharbranth), the #[Unclaimed Hills](locations/unclaimed-hills), the #[Shattered Plains](locations/shattered-plains), Dawn's Shadow, #[New Natanan](locations/new-natanan), and the #[Shallow Crypts](locations/shallow-crypts).
+霜冻之地中有以下一些地点：#[卡哈巴兰斯](locations/kharbranth)、#[无主山岭](locations/unclaimed-hills)、#[破碎平原](locations/shattered-plains)、#[晨曦之影](locations/dawns-shadow)、#[新纳塔楠](locations/new-natanan)、#[浅滩地穴](locations/shallow-crypts).

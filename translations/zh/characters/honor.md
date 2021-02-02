@@ -1,5 +1,5 @@
-# Honor
+# 荣誉
 
-> I am . . . I was . . . God. The one you call the Almighty, the creator of mankind. And now I am dead. #[Odium](characters/odium) has killed me. I am sorry.
+> 我……我曾是神。我被你们称为全能之主、人类的创造者。现在，我死了，#[仇恨](characters/odium)杀了我。我很抱歉。
 
-**Honor** is one of the sixteen Shards of Adonalsium, and one of the three, alongside #[Cultivation](characters/cultivation) and #[Odium](characters/odium), present in the Rosharan system. The original Vessel of Honor was called Tanavast. Following his death at the hands of Odium, Honor was Splintered. Honor’s Investiture is typically associated with the color blue-white.
+**荣誉**是阿多拿西的十六神瑛之一，目前与#[培养](characters/cultivation)和#[仇恨](characters/odium)共同在柔刹星系中栖息。荣誉的原始载体名为塔那万斯特，在仇恨将其杀死之后，荣誉的神力不再完整，散落为瑛灵。荣誉的神能通常与蓝白色相关。

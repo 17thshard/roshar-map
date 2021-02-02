@@ -1,10 +1,10 @@
-# Meeting with Graves
-Moash convinced Kaladin to meet with Graves and hear the man's plan to assassinate King Elhokar.
+# 与格雷夫斯会面
+莫阿什说服卡拉丁与格雷夫斯会面，听取他刺杀艾尔霍卡国王的计划。
 
 ## Details
-Moash convinced Kaladin to meet with Graves and hear the man's plan to assassinate King Elhokar. Though Kaladin initially agreed to the meeting with no intention of aiding in the conspiracy, he later agreed to help the group after being thrown into prison by Elhokar for his accusations against Amaram.
+莫阿什说服卡拉丁与格雷夫斯会面，听取他刺杀艾尔霍卡国王的计划。虽然最初卡拉丁同意会面却并不想成为他们的帮凶，但后来在因为对亚马兰的指控而被关进狱中之后，他还是同意了帮助这个组织。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* Ch. 46 |
+| chapter | 《光辉真言》第46章 |

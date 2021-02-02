@@ -1,3 +1,3 @@
-# Desh
+# 德施
 
-**Desh** is a kingdom in southwestern Roshar during the Era of Solitude and a member state of the #[Azish empire](locations/azir).
+**德施**是柔刹西南部的一个国家，隶属于#[亚泽尔帝国](locations/azir)。

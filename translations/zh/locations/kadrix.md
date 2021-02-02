@@ -1,5 +1,3 @@
-# Kadrix
+# 喀德克岛
 
-**Kadrix** is the largest Reshi island on Roshar.
-
-The inhabitants of Kadrix ride greatshells.
+**喀德克岛**是雷希群岛中最大的岛屿。岛上居民会骑巨壳生物。

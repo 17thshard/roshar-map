@@ -1,7 +1,7 @@
-# Sesemalex Dar
+# 瑟瑟马勒克达
 
-**Sesemalex Dar** is the capital of the kingdom of #[Emul](locations/emul) on Roshar during the Era of Solitude.
+**瑟瑟马勒克达**是#[埃穆尔](locations/emul)的首都。
 
-It is one of the most ancient cities in the world. It is said that the city—and the entire kingdom of Emul—was named by Jezrien himself. Some people such as Au-nak believe Sesemalex Dar is a Dawncity. The Emuli believe that Sesemalex Dar is their ancestral homeland and often proclaim of its religious significance.
+这座城市是柔刹世界最古老的城市之一，甚至被认为是破晓之城之一，据说是杰兹雷恩亲口命名的。这座城市的形态布局事关埃穆尔宗教的核心，他们宣称此地是其先祖的家园，是杰兹雷恩赠给他们的礼物。
 
-The city of Sesemalex Dar sits on a stone plain on west coast of Emul. The design of Sesemalex Dar is intricate and often said to be spectacular, built in enormous gashes in the ground to protect it from highstorms. Each trough has a lip of rock diverting water from flowing into the city and a complex drainage system of cracks to help it weather highstorms, as well stone of a unique composition that also helps with the drainage. The pattern of the Sesemalex Dar is central to the Emuli religion. The structure of the city is very similar to #[Yeddaw](locations/yeddaw) and many consider visiting Yeddaw to be the closest thing to seeing Sesemalex Dar itself.
+瑟瑟马勒克达是大陆西南部重要的交通枢纽，建造在巨大的岩沟之中。其布局非常惊人，能够抵御飓风，每条岩沟边上还都有突起，防止水从周围岩地涌入，这样结合岩缝组成的排水系统，使得该城免于洪灾。那里的岩石质地很特别，可以渗水。此外，该城还是一座得天独厚的良港。

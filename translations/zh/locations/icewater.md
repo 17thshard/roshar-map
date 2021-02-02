@@ -1,7 +1,5 @@
-# Icewater
+# 冰水城
 
-**Icewater** is a city on an island in the #[Southern Depths](locations/southern-depths) along the southern edge of Roshar during the Era of Solitude.
+**冰水城**是柔刹的一座海港城市，位于#[南之深渊](locations/southern-depths)的一座岛屿的北端，尚不确定它是自治城邦还是隶属于#[图卡](locations/tukar)。
 
-Icewater is a port city on the north side of the island. It is unknown if it is autonomous or if it is under the control of #[Tukar](locations/tukar) or some other nation.
-
-#[Rysn](characters/rysn) once travelled with Vstim to Icewater and bargained with pirates.
+#[莱丝](characters/rysn)在学徒期间曾跟随乌斯提姆来到此城与海盗交易。

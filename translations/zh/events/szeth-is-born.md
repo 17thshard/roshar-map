@@ -1,2 +1,2 @@
-# Szeth is born
-Szeth is born in Shinovar.
+# 泽斯出生
+泽斯在深国出生。

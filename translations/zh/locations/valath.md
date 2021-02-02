@@ -1,7 +1,3 @@
-# Valath
+# 瓦拉瑟
 
-**Valath** is a city in #[Jah Keved](locations/jah-keved) next to the #[Horneater Peaks](locations/horneater-peaks).
-
-It is likely in Valam princedom, maybe even the capital.
-
-Valath is the location of the Holy Enclave, and though the Palanaeum has more tomes and scrolls, the Holy Enclave clearly has many tomes themselves.
+**瓦拉瑟**是#[雅克维德](locations/jah-keved)境内一座紧挨着#[吃角族群峰](locations/horneater-peaks)的城市，其中有一处拥有许多典籍藏书的圣地。

@@ -1,5 +1,5 @@
-# Lurnip famine
-Emul was devastated by a lurnip famine.
+# 芦菁饥荒
+埃穆尔遭遇了一场芦菁饥荒。
 
 ## Details
-Emul was devastated by a lurnip famine, and much of the population suffered from starvation.
+一场芦菁饥荒后，埃穆尔荒芜了几十年，农作物被毁，人民挨饿。

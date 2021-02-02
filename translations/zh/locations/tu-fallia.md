@@ -1,7 +1,5 @@
-# Tu Fallia
+# 图法利亚
 
-**Tu Fallia** is a small kingdom in southern Roshar. It borders #[Greater Hexi](locations/greater-hexi), #[Triax](locations/triax), #[Emul](locations/emul), and #[Tu Bayla](locations/tu-bayla). It is on the edge of the #[Tarat Sea](locations/tarat-sea).
+**图法利亚**是柔刹南部的一个小国，紧靠#[塔拉特海](locations/tarat-sea)，与#[大赫西](locations/greater-hexi)、#[特里雅克斯](locations/triax)、#[埃穆尔](locations/emul)、#[图拜拉](locations/tu-bayla)接壤。在白银王国纪元，其为马卡巴卡姆的一部分。
 
-During the Silver Kingdoms era, Tu Fallia was a part of Makabakam.
-
-The Unmade Re-Shephir fled down a tunnel from #[Urithiru](locations/urithiru) into the mountain foothills of Tu Fallia.
+灭者瑞西法曾利用#[乌有斯麓](locations/urithiru)的一条暗道逃往图法利亚的山区。

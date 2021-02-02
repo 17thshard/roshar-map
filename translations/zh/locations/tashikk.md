@@ -1,2 +1,2 @@
-# Tashikk
-**Tashikk** is a princedom on Roshar that is a major ally to #[Azir](locations/azir). The people of Tashikk are called the Tashikki.
+# 塔石科
+**塔石科**是#[亚泽尔帝国](locations/azir)的主要成员国之一。

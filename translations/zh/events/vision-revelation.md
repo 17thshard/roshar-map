@@ -1,12 +1,10 @@
-# Vision revelation
-Navani uncovered evidence that Dalinar's visions may be real when she recognized he was speaking Dawnchant.
+# 揭示达力拿的幻象
+纳瓦妮发现达力拿在幻象中所讲的语言竟是晨颂文，这说明幻象本身也可能是真实的。
 
 ## Details
-Because Navani was so exacting in her words and thoughts, as well as the only woman in the warcamps he knew he could trust, Dalinar chose her to record his visions. She scribed expertly, picking out details from him, and knowing when to prod him for more. She was business-like and careful and recorded his visions without complaint. 
-
-While she listened to Dalinar's visions she realized that what he was saying had too much order to be gibberish. She discovered a phrase from the Analectics that matched what Dalinar was babbling during his fits. She told him that it was a line from a song, a chant by the Vanrial, written in the Dawnchant by the Heralds. Navani was able to use Dalinar's visions as a guide to help her scholars translate the Dawnchant.
+在记录达力拿幻象的过程中，纳瓦妮发现达力拿的“胡话”实际上音节很有规律。在记录某次达力拿幻象中的发音后，纳瓦妮发现这段发音与梵蕊尔修会的赞美诗《集萃》完全相同，而后者据说是令使用晨颂文——一种早已失传的语言——所写。纳瓦妮希望以此为突破口，揭开晨颂文之谜。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* Ch. 60 |
+| chapter | 《王者之路》第60章 |

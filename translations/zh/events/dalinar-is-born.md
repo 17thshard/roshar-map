@@ -1,5 +1,5 @@
-# Dalinar is born
+# 达力拿出生
 
 
 ## Details
-Dalinar was born into a minor Kholin house a few years behind his elder brother, Gavilar.
+达力拿出生于一个叫寇林的小家族，比他的哥哥迦维拉尔小几岁。

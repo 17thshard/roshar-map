@@ -1,7 +1,7 @@
-# Kurth
+# 库尔兹
 
-**Kurth**, also known as the **City of Lightning** is a city in northeastern #[Rira](locations/rira). It is situated on an island in the #[Reshi Sea](locations/reshi-sea) just off the east coast of the main Riran landmass.
+**库尔兹**又称“雷光城”，是#[里拉](locations/rira)东北部的城市，位于#[雷希海](locations/reshi-sea)的一座岛屿上，毗邻里拉主大陆的东海岸。
 
-Kurth was once the capital of the Silver Kingdom of Rishir, and an Oathgate was constructed there to serve the nation and its people. After the fall of Rishir, the city became a part of the nation of Rira. In the course of her research into the Oathgates, #[Jasnah Kholin](characters/jasnah) identified Kurth as the likely site of an Oathgate. While planning how to unite the nations of Roshar in the wake of the Everstorm, members of #[Dalinar Kholin's](characters/dalinar) coalition hoped to open and secure the Kurth Oathgate. During the Last Desolation, the forces of #[Odium](characters/odium) secured the city and held its Oathgate by allying themselves with the Rirans and #[Iriali](locations/iri).
+库尔兹曾是白银王国里舍尔的首都，境内建有一座誓约之门。里舍尔灭国后，该城市成为了里拉的一部分。在研究誓约之门的过程中，#[迦熙娜·寇林](characters/jasnah)认为库尔兹可能是誓约之门的所在地。灭世风暴出现后，#[达力拿·寇林](characters/dalinar)领导的联盟成员计划联合柔刹各国，希望开启并保护库尔兹的誓约之门。在终极灭世期间，#[仇恨](characters/odium)的大军通过与里拉人和#[伊里](locations/iri)人结盟，占领了这座城市并守住了誓约之门。
 
-Kurth is well-known as far away as #[Alethkar](locations/alethkar). In his youth, #[Kaladin](characters/kaladin) had heard stories about Kurth, #[Rall Elorim](locations/rall-elorim), and other faraway locales that encouraged his desire to join Torol Sadeas' army in order to see what other lands are like.
+库尔兹的名声远播#[阿勒斯卡](locations/alethkar)。#[卡拉丁](characters/kaladin)年少时就听说过库尔兹、#[拉尔艾洛林](locations/rall-elorim)和其他异域之地的传说，这激发了他加入托洛尔·撒迪亚斯的军队放眼看世界的愿望。

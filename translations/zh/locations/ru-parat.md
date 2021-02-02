@@ -1,5 +1,3 @@
-# Ru Parat
+# 鲁帕拉特
 
-**Ru Parat** is a city in #[Tu Bayla](locations/tu-bayla) in central Roshar. It may be the nation's capital.
-
-It is located in the north, close to the shore of the #[Reshi Sea](locations/reshi-sea).
+**鲁帕拉特**是#[图拜拉](locations/tu-bayla)北部的城市，与#[雷希海](locations/reshi-sea)相接。

@@ -1,4 +1,4 @@
-# Shinovar
-> The world is changing outside, but the Shin seem determined to remain the same.
+# 深国
+> 外部世界一直在变化，但深族似乎下定决心要保持本来面目。
 
-**Shinovar** is a nation on the western mainland of Roshar. Due to the #[mountains](locations/misted-mountains) separating it from the rest of the continent, Shinovar is distinct both ecologically and culturally from the rest of Roshar. Shinovar natives are known as the **Shin**.
+**深国**位于柔刹主大陆最西端。由于#[迷雾山脉](locations/misted-mountains)的阻隔，深国有着和其它地区截然不同的生态与文化。 

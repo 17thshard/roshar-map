@@ -1,4 +1,3 @@
-# Kholinar
-**Kholinar** is the capital city of the Kholin princedom in #[Alethkar](locations/alethkar), Roshar. It's symmetrical in shape, built around enormous stone formations known as _the windblades_ for their unmistakable shape.
+# 塔冠城
 
-It is the place where Talenel, Herald of the Almighty, announced to the world that the Desolation had come.
+**塔冠城**是#[阿勒斯卡](locations/alethkar)寇林公国的首府，整体规划呈对称状，依傍天然的风刃山地貌而建。这里也是全能之主的令使塔拉内向全世界宣告灭世来临的地方。

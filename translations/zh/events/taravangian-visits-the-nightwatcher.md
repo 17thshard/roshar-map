@@ -1,5 +1,5 @@
-# Taravangian visits the Nightwatcher
-Following revelations from Gavilar, Taravangian visited the Nightwatcher and asked for "capacity to save humankind" from the coming Desolation.
+# 塔拉梵吉安寻访夜妖
+依据迦维拉尔透露的信息，塔拉梵吉安寻访夜妖，请求夜妖赐予他“拯救人类的能力”作为恩惠，以应对即临的灭世。
 
 ## Details
-Following revelations from Gavilar, Taravangian visited the Nightwatcher and asked for "capacity to save humankind" from the coming Desolation. He was granted great intelligence and great compassion, but the apparent curse of not having them at the same time. As a result, he wakes up every morning with a fluctuation of both. Despite his apparent belief that this boon and curse were granted by the Nightwatcher, Cultivation was actually the one responsible.
+依据迦维拉尔透露的信息，塔拉梵吉安寻访夜妖，请求夜妖赐予他“拯救人类的能力”作为恩惠，以应对即临的灭世。他因此拥有了过人的智商和情商，却也得到了无法同时拥有两者的诅咒。这导致他每天早晨醒来，两者的数值都会产生波动。虽然他认为恩惠和诅咒都是夜妖给予的，但这背后的推手其实是培养。

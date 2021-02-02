@@ -1,3 +1,3 @@
-# Varikev
+# 瓦利科夫
 
-**Varikev** is a city in northern #[Alethkar](locations/alethkar) in Roion princedom. It lies along Hoel Bay.
+**瓦利科夫**是#[阿勒斯卡](locations/alethkar)北部罗伊翁公国的一座城市，与豪尔湾相接。

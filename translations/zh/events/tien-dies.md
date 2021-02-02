@@ -1,10 +1,10 @@
-# Tien dies
-Tien dies in battle.
+# 提恩之死
+提恩在战斗中死亡。
 
 ## Details
-Less than four months after being drafted, Tien was killed during battle against Brightlord Hallaw. During the encounter, he was assigned to Sheler’s company under the squad leader Varth along with two other undertrained messenger boys. Unable to use the boys effectively in combat, Varth positioned the three at the front of the lines, to act as a distraction for the enemy. He saw the three messengers as liabilities due to their lack of training. Tien and the two other messengers were killed by an enemy lighteyes, after Varth pulled his squad pulled back, leaving the three of them exposed to the enemy. Kaladin, who had been looking for his brother during the battle, arrived moments before Tien was struck down and killed. He lay on the battlefield with his brother’s corpse for hours, not returning to camp until long after the battle had ended. Tien’s parents received notice of his death from Kaladin, shortly after the incident.
+入伍不足四个月，提恩就死于一次与光明贵人哈劳之间的战斗中。当时他属于光明贵人谢勒的部下，在瓦兹的小队中与其他两位训练不足的预备役男孩一起参战。瓦兹认为三人派不上用场，就把他们放在小队队形最尖端的位置用于吸引敌方注意。当敌军杀到，他的小队稍稍后撤，把三个男孩作为诱饵完全暴露出来，等敌军分心砍杀男孩们的时候他才让小队扑上去。卡拉丁稍晚一步赶到，亲眼目睹了弟弟的死亡。他抱着提恩的尸体哭泣了很久。提恩死后，卡拉丁写信给父母，通知了弟弟的死讯。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* Ch. 67 |
+| chapter | 《王者之路》第67章 |
