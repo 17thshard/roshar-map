@@ -214,21 +214,28 @@
             "events/battle-of-kholinar",
             "events/battle-of-narak-and-the-everstorm",
             "events/re-shephir-driven-from-urithiru",
+            "events/shallan-adolin-date",
             "events/shallan-and-adolin-wedding",
             "events/shallan-and-kaladin-in-the-chasms",
             "events/shallan-attends-the-revel",
             "events/shallan-becomes-jasnahs-ward",
+            "events/shallan-bonds-testament",
             "events/shallan-confronts-jasnah",
+            "events/shallan-discovers-the-midnight-essence",
             "events/shallan-draws-a-cryptic",
             "events/shallan-is-born",
+            "events/shallan-joins-tvlakvs-caravan",
             "events/shallan-kills-her-father",
             "events/shallan-kills-her-mother",
+            "events/shallan-kills-tyn",
             "events/shallan-meets-ghostbloods",
+            "events/shallan-meets-taln",
             "events/shallan-meets-wit",
             "events/shallan-recruits-deserters",
             "events/shallan-recruits-ishnah",
             "events/shallan-sees-pattern",
             "events/shallan-visits-shadesmar",
+            "events/shallan-visits-the-breakaway",
             "events/stop-in-celebrant",
             "events/the-battle-of-thaylen-field",
             "events/the-lesson",
@@ -249,9 +256,10 @@
             "characters/venli",
             "events/battle-of-narak-and-the-everstorm",
             "events/eshonai-adopts-stormform",
+            "events/eshonai-is-born",
             "events/eshonai-seizes-control",
             "events/the-parshendi-discovered",
-            "locations/narak"
+            "locations/shattered-plains"
         ],
         "coppermind": "Eshonai",
         "image": {
@@ -268,9 +276,10 @@
             "events/eshonai-adopts-stormform",
             "events/the-battle-of-thaylen-field",
             "events/the-parshendi-discovered",
+            "events/venli-is-born",
             "events/venli-is-claimed-by-odium",
             "events/venli-relocated-to-marat",
-            "locations/narak"
+            "locations/shattered-plains"
         ],
         "image": {
             "file": "characters/Venli_-_XVI._The_Tower_.jpg",
@@ -400,6 +409,7 @@
         "related": [
             "events/rysn-in-shinovar",
             "events/rysn-in-the-reshi-isles",
+            "events/rysn-is-born",
             "events/the-battle-of-thaylen-field",
             "locations/thaylenah"
         ],
