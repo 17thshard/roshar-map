@@ -1215,6 +1215,10 @@ export default {
     }
   }
 
+  input[type=file] {
+    pointer-events: auto;
+  }
+
   &__menu {
     position: fixed;
     top: 0;
@@ -1253,7 +1257,6 @@ export default {
     display: flex;
     align-items: center;
     margin: 0 1rem;
-    pointer-events: auto;
 
     label, select, input, button {
       margin-right: 0.5rem;
