@@ -14,18 +14,18 @@
 <script>
 import {
   Group,
+  LuminanceFormat,
   Mesh,
   NearestFilter,
   PerspectiveCamera,
   PlaneBufferGeometry,
   RepeatWrapping,
+  RGBFormat,
   Scene,
   ShaderMaterial,
   Vector2,
   Vector3,
   WebGLRenderer,
-  RGBFormat,
-  LuminanceFormat,
   // eslint-disable-next-line camelcase
   RGB_S3TC_DXT1_Format
 } from 'three'
@@ -48,6 +48,7 @@ import SilverKingdoms from '@/components/map/layers/SilverKingdoms'
 import Oathgates from '@/components/map/layers/Oathgates'
 import Shadesmar from '@/components/map/layers/Shadesmar'
 import FactionsLegend from '@/components/map/layers/FactionsLegend.vue'
+import Measurement from '@/components/map/Measurement'
 
 export default {
   name: 'Map',
@@ -73,7 +74,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['layersActive']),
+    ...mapState(['layersActive', 'measurementActive']),
     activeLocation () {
       return this.transitions && this.$route.name === 'locations' ? this.$store.state.mappings.locations[this.$route.params.id] : null
     },
@@ -98,6 +99,9 @@ export default {
       if (newSpeed !== undefined) {
         this.controls.keyboardSpeed = Number.parseFloat(newSpeed)
       }
+    },
+    measurementActive () {
+      this.measurement.reset()
     }
   },
   mounted () {
@@ -187,6 +191,11 @@ export default {
 
       this.controls = new MapControls(this.camera, this.renderer.domElement)
       this.controls.addEventListener('click', ({ position }) => {
+        if (this.measurementActive) {
+          this.measurement.click(position)
+          return
+        }
+
         this.textActiveProgress = 1
         const location = this.queryHover(position.x, position.y)
 
@@ -198,6 +207,11 @@ export default {
           } else {
             this.$store.commit('unselectEvent')
           }
+        }
+      })
+      this.controls.addEventListener('move', ({ position }) => {
+        if (this.measurementActive) {
+          this.measurement.updateHover(position)
         }
       })
       const customSpeed = this.$route.query.speed
@@ -286,9 +300,19 @@ export default {
         oathgates: new Oathgates(textures),
         factions: new Factions(textures.factions)
       }
+      this.measurement = new Measurement()
 
       this.scene = new Scene()
-      this.scene.add(this.plane, this.layers.graticule, this.textPlane, this.highlights, this.layers.factions, this.layers.silverKingdoms, this.layers.oathgates)
+      this.scene.add(
+        this.plane,
+        this.layers.graticule,
+        this.textPlane,
+        this.highlights,
+        this.layers.factions,
+        this.layers.silverKingdoms,
+        this.layers.oathgates,
+        this.measurement
+      )
 
       this.composer.addPass(new RenderPass(this.scene, this.camera))
       this.shatteringPass = new ShatteringPass()
@@ -401,6 +425,11 @@ export default {
 
       document.body.style.cursor = 'initial'
 
+      if (this.measurementActive) {
+        document.body.style.cursor = 'crosshair'
+        this.measurement.update(this.camera, timestamp, delta)
+      }
+
       this.updateTextHighlights(delta)
 
       this.textPlane.material.uniforms.HoveredItem.value = this.lastHoveredItem !== null ? this.lastHoveredItem : 0
@@ -445,7 +474,7 @@ export default {
       }
     },
     queryHover (x, y) {
-      if (this.hoverTexture === undefined) {
+      if (this.hoverTexture === undefined || this.measurementActive) {
         return null
       }
 
