@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import VueDragscroll from 'vue-dragscroll'
 import VueGtag from 'vue-gtag'
-import App from './App.vue'
-import store from './store'
 import { i18n } from '@/i18n'
 import Editor from '@/components/editor/Editor.vue'
 import { router } from '@/routes'
+import store from './store'
+import App from './App.vue'
 
 const editor = window.location.hash.includes('editor')
 Vue.config.productionTip = false
