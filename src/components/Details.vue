@@ -17,7 +17,7 @@
           <div
             class="details__image-art"
             :style="{
-              backgroundImage: `url('${escapeCssPath(imageUrl)}')`,
+              backgroundImage: imageSrcSet.css,
               paddingBottom: `${(imageAspect * 100).toFixed(3)}%`,
               backgroundSize: `${width}px auto`
             }"
@@ -95,7 +95,7 @@
 import Scrollbar from 'vuescroll/dist/vuescroll-native'
 import { BookIcon, CalendarIcon, HelpCircleIcon, XIcon } from 'vue-feather-icons'
 import Markdown from '@/components/Markdown.vue'
-import { escapeCssPath, formatDate } from '@/utils'
+import { getEntryImageSrcSet, formatDate } from '@/utils'
 
 export default {
   name: 'Details',
@@ -114,8 +114,11 @@ export default {
     }
   },
   computed: {
+    imageSrcSet () {
+      return this.details.image !== undefined ? getEntryImageSrcSet(this.details.image.file) : undefined
+    },
     imageUrl () {
-      return this.details.image !== undefined ? `${process.env.BASE_URL}img/${this.details.image.file}` : undefined
+      return this.imageSrcSet !== undefined ? this.imageSrcSet.sources[0].url : undefined
     },
     imageCredits () {
       return this.details.image?.credits === undefined
@@ -167,7 +170,7 @@ export default {
         let image
         if (linkDetails.image !== undefined) {
           image = {
-            backgroundImage: `url("${process.env.BASE_URL}img/${linkDetails.image.file}")`
+            backgroundImage: getEntryImageSrcSet(linkDetails.image.file).css
           }
 
           if (linkDetails.image.offset !== undefined) {
@@ -233,7 +236,6 @@ export default {
     window.removeEventListener('resize', this.onResize)
   },
   methods: {
-    escapeCssPath,
     onResize () {
       this.width = this.$el.clientWidth
     }
