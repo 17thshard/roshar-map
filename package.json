@@ -51,9 +51,12 @@
     "imagemin": "^7.0.1",
     "imagemin-webp": "^6.0.0",
     "imagemin-zopfli": "^7.0.0",
+    "js-string-escape": "^1.0.1",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "webpack-image-resize-loader": "^4.0.2",
+    "webpack-image-srcset-loader": "file:../webpack-image-srcset-loader"
   },
   "eslintConfig": {
     "root": true,

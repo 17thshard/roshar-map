@@ -9,6 +9,29 @@ module.exports = {
       .end()
 
     config.module
+      .rule('images-srcset')
+      .before('images')
+      .test(/\.(png|jpe?g|webp|tiff?)$/i)
+      // if the import url looks like "some.png?srcset..."
+      .oneOf('srcset')
+      .resourceQuery(/srcset/)
+      .use('cache')
+      .loader('cache-loader')
+      .end()
+      .use('srcset')
+      .loader('webpack-image-srcset-loader')
+      .options({
+        sizes: ['1x', '2x'],
+        esModule: false,
+        scaleUp: false
+      })
+
+    config.module
+      .rule('images')
+      .test(/\.(png|jpe?g|gif|webp|dds)(\?.*)?$/)
+      .end()
+
+    config.module
       .rule('images')
       .use('url-loader')
       .loader('url-loader')
@@ -21,9 +44,20 @@ module.exports = {
       .end()
 
     config.module
-      .rule('images')
-      .test(/\.(png|jpe?g|gif|webp|dds)(\?.*)?$/)
+      .rule('images-resize')
+      .after('images')
+      .test(/\.(png|jpe?g|webp|tiff?)$/i)
+      .oneOf('srcset')
+      .resourceQuery(/srcset/)
+      .use('cache')
+      .loader('cache-loader')
       .end()
+      .use('resize')
+      .loader('webpack-image-resize-loader')
+      .end()
+      .use('max-size')
+      .loader(path.resolve('build/loaders/image-max-size-loader.js'))
+      .options({ maxWidth: 1000 })
 
     config.module
       .rule('html-credits')
