@@ -8,6 +8,13 @@
     <transition name="map__factions-legend">
       <FactionsLegend v-if="layers.factions !== undefined && layers.factions.t > 0.5" class="map__factions-legend" />
     </transition>
+    <transition name="map__measurement-result">
+      <MeasurementResult
+        v-if="measurementActive && measurementResult !== null"
+        :measurement="measurementResult"
+        class="map__measurement-result"
+      />
+    </transition>
   </div>
 </template>
 
@@ -49,10 +56,11 @@ import Oathgates from '@/components/map/layers/Oathgates'
 import Shadesmar from '@/components/map/layers/Shadesmar'
 import FactionsLegend from '@/components/map/layers/FactionsLegend.vue'
 import Measurement from '@/components/map/Measurement'
+import MeasurementResult from '@/components/map/MeasurementResult.vue'
 
 export default {
   name: 'Map',
-  components: { FactionsLegend },
+  components: { MeasurementResult, FactionsLegend },
   props: {
     transitions: {
       type: Boolean
@@ -70,7 +78,8 @@ export default {
       tutorialReferencePosition: {
         x: 0,
         y: 0
-      }
+      },
+      measurementResult: null
     }
   },
   computed: {
@@ -100,7 +109,11 @@ export default {
         this.controls.keyboardSpeed = Number.parseFloat(newSpeed)
       }
     },
-    measurementActive () {
+    measurementActive (active) {
+      if (active) {
+        this.measurementResult = {}
+      }
+
       this.measurement.reset()
     }
   },
@@ -192,7 +205,7 @@ export default {
       this.controls = new MapControls(this.camera, this.renderer.domElement)
       this.controls.addEventListener('click', ({ position }) => {
         if (this.measurementActive) {
-          this.measurement.click(position)
+          this.measurementResult = this.measurement.click(position)
           return
         }
 
@@ -207,11 +220,6 @@ export default {
           } else {
             this.$store.commit('unselectEvent')
           }
-        }
-      })
-      this.controls.addEventListener('move', ({ position }) => {
-        if (this.measurementActive) {
-          this.measurement.updateHover(position)
         }
       })
       const customSpeed = this.$route.query.speed
@@ -588,7 +596,7 @@ export default {
     pointer-events: none;
   }
 
-  &__factions-legend {
+  &__factions-legend, &__measurement-result {
     position: absolute;
     top: 2rem;
     z-index: 11;

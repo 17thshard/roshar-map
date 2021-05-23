@@ -153,7 +153,7 @@
     </button>
     <button
       :class="['scrubber__button', 'scrubber__button--measure', { 'scrubber__button--measure-active': $store.state.measurementActive }]"
-      :title="$t('ui.measure')"
+      :title="$t('ui.measurement.button')"
       @click="$store.commit('toggleMeasurement')"
     >
       <CompassIcon size="1x" />
