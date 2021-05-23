@@ -134,12 +134,24 @@ export default {
     }
 
     &--separate {
-      &:before {
-        right: 0;
+      [dir=ltr] & {
+        &:before {
+          right: 0;
+        }
+
+        &:after {
+          left: 100%;
+        }
       }
 
-      &:after {
-        left: 100%;
+      [dir=rtl] & {
+        &:before {
+          left: 0;
+        }
+
+        &:after {
+          right: 100%;
+        }
       }
     }
   }
