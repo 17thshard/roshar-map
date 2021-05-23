@@ -328,12 +328,12 @@ const mutations = {
 const getters = {
   isIncludedInNavigation (state) {
     return (event) => {
-      return !getters.isDisabled(state)(event) && (state.filter.lockedTag === null || event.tags.includes(state.filter.lockedTag))
+      return !getters.isDisabled(state)(event) && (state.filter.lockedTag === null || (event.tags !== undefined && event.tags.includes(state.filter.lockedTag)))
     }
   },
   isDisabled (state) {
     return (event) => {
-      return state.filter.tags.some(t => event.tags.includes(t))
+      return state.filter.tags.some(t => event.tags !== undefined && event.tags.includes(t))
     }
   }
 }

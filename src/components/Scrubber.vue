@@ -204,13 +204,13 @@ export default {
       result.all = []
 
       this.events.forEach((event) => {
-        const separatedAssignments = this.filter.separateTags.filter(t => event.tags.includes(t))
+        const separatedAssignments = this.filter.separateTags.filter(t => event.tags !== undefined && event.tags.includes(t))
 
         separatedAssignments.forEach((t) => {
           result[t].push(event)
         })
 
-        if (separatedAssignments.length < event.tags.length || event.tags.length === 0) {
+        if (event.tags === undefined || separatedAssignments.length < event.tags.length || event.tags.length === 0) {
           result.all.push(event)
         }
       })
@@ -247,7 +247,7 @@ export default {
         return
       }
 
-      const event = this.events.find(event => event.tags.includes(tag))
+      const event = this.events.find(event => event.tags !== undefined && event.tags.includes(tag))
       if (event === undefined) {
         return
       }
