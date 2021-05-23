@@ -8971,7 +8971,7 @@ shallow-clone@^3.0.0:
   dependencies:
     kind-of "^6.0.2"
 
-sharp@^0.28.1:
+sharp@^0.28.1, sharp@^0.28.2:
   version "0.28.2"
   resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.28.2.tgz#31c6ebdf8ddb9b4ca3e30179e3f4a73f0c7474e4"
   integrity sha512-CdmySbsQVe/+ZM2j9zzvUfWumM0L0iHj1kpxJMFuyWvSuBULebvGCdOLb1f5vbbBrIGroX714Fx1wiWaKniz4A==
@@ -10402,14 +10402,16 @@ webpack-image-resize-loader@^4.0.2:
     schema-utils "^3.0.0"
     sharp "^0.28.1"
 
-"webpack-image-srcset-loader@file:../webpack-image-srcset-loader":
-  version "5.0.2"
+webpack-image-srcset-loader@^5.0.3:
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/webpack-image-srcset-loader/-/webpack-image-srcset-loader-5.0.3.tgz#92809237b1740cb8cf070bf23f00c4742cb708a2"
+  integrity sha512-l3SW/43HtFakW3FXyhdet3poSyyxA4kCaD1X3Lscz6O29G7ABIHXimuiyYCEbQDpeU5p8qIKHbHhNxNWs/C+bQ==
   dependencies:
     "@calvin-l/webpack-loader-util" "^1.0.2"
     js-string-escape "^1.0.1"
     loader-utils "^2.0.0"
     schema-utils "^3.0.0"
-    sharp "^0.28.1"
+    sharp "^0.28.2"
 
 webpack-log@^2.0.0:
   version "2.0.0"
