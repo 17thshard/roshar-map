@@ -257,6 +257,21 @@
         ]
     },
     {
+        "id": "the-war-of-loss",
+        "date": [
+            675
+        ],
+        "circa": true,
+        "coordinates": {
+            "x": 719.8,
+            "y": 275.9
+        },
+        "tags": [
+            "history"
+        ],
+        "coppermind": "War_of_Loss"
+    },
+    {
         "id": "kings-drop-in-reserve",
         "date": [
             950
