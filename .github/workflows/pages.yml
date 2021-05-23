@@ -24,7 +24,7 @@ jobs:
             ${{ runner.OS }}-build-
             ${{ runner.OS }}-
       - name: Install build dependencies
-        run: sudo apt-get install autoconf libtool pkg-config nasm build-essential libpng16-dev
+        run: sudo apt-get install autoconf libtool pkg-config nasm build-essential libpng-dev
       - name: Install dependencies
         uses: Borales/actions-yarn@v2.1.0
         with:
