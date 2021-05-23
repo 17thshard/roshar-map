@@ -108,7 +108,7 @@
 
 <script>
 import VueTagsInput from '@johmun/vue-tags-input'
-import { escapeCssPath } from '@/utils'
+import { getEntryImageSrcSet } from '@/utils'
 
 export default {
   name: 'MiscProperties',
@@ -148,7 +148,7 @@ export default {
       }
 
       const styles = {
-        backgroundImage: `url("${this.imageBaseUrl}/${escapeCssPath(this.misc.image.file)}")`
+        backgroundImage: getEntryImageSrcSet(this.misc.image.file).css
       }
 
       if (this.misc.image.offset !== undefined) {
