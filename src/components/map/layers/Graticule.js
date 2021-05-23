@@ -6,7 +6,7 @@ export default class Graticule extends Group {
   constructor (textures) {
     super()
 
-    this.position.set(0, 0, 1)
+    this.position.set(0, 0, 0.01)
     this.frustumCulled = false
 
     this.enabled = false

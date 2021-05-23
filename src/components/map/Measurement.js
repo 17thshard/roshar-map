@@ -2,8 +2,8 @@ import { Group, Vector3 } from 'three'
 import MultiLine from '@/components/map/layers/MultiLine'
 import Highlight from '@/components/map/layers/Highlight'
 
-const CENTER_X = 4
-const CENTER_Y = -45
+const CENTER_X = 4.549
+const CENTER_Y = -44.632
 const RENDERED_RADIUS = 2125 / (2 * Math.PI)
 const INV_RENDERED_RADIUS = 1 / RENDERED_RADIUS
 const realRadius = 5663
