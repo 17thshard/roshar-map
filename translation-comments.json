@@ -218,6 +218,55 @@
             "credits": "Attribution for the image"
         }
     },
+    "ui.measurement": "Measurement",
+    "ui.measurement.button": "Button",
+    "ui.measurement.title": "Measurement",
+    "ui.measurement.explanation": {
+        "name": "Explanation",
+        "markdown": "block"
+    },
+    "ui.measurement.labels": "Labels",
+    "ui.measurement.labels.start": "Start point",
+    "ui.measurement.labels.end": "End point",
+    "ui.measurement.labels.distance": "Calculated distance",
+    "ui.measurement.coordinates": "Coordinates",
+    "ui.measurement.coordinates.full": {
+        "name": "Full",
+        "variables": {
+            "latitude": "Formatted latitude value",
+            "longitude": "Formatted longitude value"
+        }
+    },
+    "ui.measurement.coordinates.north": {
+        "name": "Northern Latitude Format",
+        "variables": {
+            "degrees": "Latitude value in degrees (always greater than or equal to zero)"
+        }
+    },
+    "ui.measurement.coordinates.south": {
+        "name": "Southern Latitude Format",
+        "variables": {
+            "degrees": "Latitude value in degrees (always greater than or equal to zero)"
+        }
+    },
+    "ui.measurement.coordinates.east": {
+        "name": "Eastern Longitude Format",
+        "variables": {
+            "degrees": "Longitude value in degrees (always greater than or equal to zero)"
+        }
+    },
+    "ui.measurement.coordinates.west": {
+        "name": "Western Longitude Format",
+        "variables": {
+            "degrees": "Longitude value in degrees (always greater than or equal to zero)"
+        }
+    },
+    "ui.measurement.distance": {
+        "name": "Distance Format",
+        "variables": {
+            "distance": "Distance value in kilometers"
+        }
+    },
     "entry-types": "Entry Types",
     "entry-types.events": "Events",
     "entry-types.locations": "Locations",

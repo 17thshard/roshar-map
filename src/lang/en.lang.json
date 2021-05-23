@@ -150,7 +150,25 @@
         "lock-timeline": "Lock navigation to timeline",
         "unlock-timeline": "Unlock navigation",
         "translation-by": "Translation by",
-        "image-credits": "by {credits}"
+        "image-credits": "by {credits}",
+        "measurement": {
+            "button": "Measure distances",
+            "title": "Measurement",
+            "explanation": "Click any two points to calculate their positions and the distance between them.",
+            "labels": {
+                "start": "Start",
+                "end": "End",
+                "distance": "Distance"
+            },
+            "coordinates": {
+                "full": "{latitude}, {longitude}",
+                "north": "{degrees}°N",
+                "south": "{degrees}°S",
+                "east": "{degrees}°E",
+                "west": "{degrees}°W"
+            },
+            "distance": "{distance}km"
+        }
     },
     "entry-types": {
         "events": "Events",
