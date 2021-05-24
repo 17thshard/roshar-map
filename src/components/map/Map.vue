@@ -186,9 +186,7 @@ export default {
         factions: { hqAvailable: true, lossy: true, pixelFormat: RGBFormat },
         oathgates_text: { hqAvailable: true, localized: true, pixelFormat: LuminanceFormat },
         silver_kingdoms: { hqAvailable: true, pixelFormat: LuminanceFormat },
-        silver_kingdoms_text: { hqAvailable: true, localized: true, pixelFormat: LuminanceFormat },
-        graticule: { hqAvailable: true, lossy: true, pixelFormat: RGBFormat },
-        graticule_text: { hqAvailable: true, pixelFormat: LuminanceFormat }
+        silver_kingdoms_text: { hqAvailable: true, localized: true, pixelFormat: LuminanceFormat }
       }
 
       return this.textureManager.load(textures)
@@ -303,7 +301,7 @@ export default {
 
       this.layers = {
         shadesmar: new Shadesmar(),
-        graticule: new Graticule(textures),
+        graticule: new Graticule(),
         silverKingdoms: new SilverKingdoms(textures),
         oathgates: new Oathgates(textures),
         factions: new Factions(textures.factions)

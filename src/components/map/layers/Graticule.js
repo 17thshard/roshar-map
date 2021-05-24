@@ -1,13 +1,66 @@
-import { Group, Mesh, PlaneBufferGeometry, ShaderMaterial } from 'three'
-import graticuleFragmentShader from '@/components/map/layers/graticuleFragmentShader'
+import { Group } from 'three'
 import { clamp01 } from '@/utils'
+import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial'
+import { LineGeometry } from 'three/examples/jsm/lines/LineGeometry'
+import { Line2 } from 'three/examples/jsm/lines/Line2'
+import { project } from '@/projection'
+
+const MIN_LAT = -40
+const MAX_LAT = 22
+const MIN_LNG = -55
+const MAX_LNG = 55
+
+function buildLines (largeMaterial, smallMaterial) {
+  const lines = []
+
+  for (let latD = MIN_LAT; latD < MAX_LAT; latD++) {
+    const points = []
+
+    for (let lngD = MIN_LNG; lngD < MAX_LNG; lngD++) {
+      const lat = Math.PI * 0.01 * latD
+      const lng = Math.PI * 0.01 * lngD
+      const projected = project({ lat, lng })
+      points.push(projected.x, projected.y, 0.001)
+    }
+
+    const geometry = new LineGeometry()
+    geometry.setPositions(points)
+
+    const line = new Line2(geometry, latD % 10 === 0 ? largeMaterial : smallMaterial)
+    line.computeLineDistances()
+    line.scale.set(1, 1, 1)
+
+    lines.push(line)
+  }
+
+  for (let lngD = MIN_LNG; lngD < MAX_LNG; lngD++) {
+    const points = []
+
+    for (let latD = MIN_LAT; latD < MAX_LAT; latD++) {
+      const lat = Math.PI * 0.01 * latD
+      const lng = Math.PI * 0.01 * lngD
+      const projected = project({ lat, lng })
+      points.push(projected.x, projected.y, 0)
+    }
+
+    const geometry = new LineGeometry()
+    geometry.setPositions(points)
+
+    const line = new Line2(geometry, lngD % 10 === 0 ? largeMaterial : smallMaterial)
+    line.computeLineDistances()
+    line.scale.set(1, 1, 1)
+
+    lines.push(line)
+  }
+
+  return lines
+}
 
 export default class Graticule extends Group {
-  constructor (textures) {
+  constructor () {
     super()
 
     this.position.set(0, 0, 0.01)
-    this.frustumCulled = false
 
     this.enabled = false
     this.entering = true
@@ -15,39 +68,32 @@ export default class Graticule extends Group {
 
     this.dimming = false
 
-    this.init(textures)
+    this.init()
   }
 
   init (textures) {
-    const geo = new PlaneBufferGeometry(2, 2, 1, 1)
-    const bordersMaterial = new ShaderMaterial({
-      // language=GLSL
-      vertexShader: `
-        varying vec2 vUv;
-
-        void main() {
-          vUv = uv;
-
-          gl_Position = projectionMatrix * modelViewMatrix * vec4(position * vec3(512, 256, 1.0), 1.0);
-        }
-      `,
-      fragmentShader: graticuleFragmentShader,
-      uniforms: {
-        Texture: { value: textures.graticule },
-        TextTexture: { value: textures.graticule_text },
-        Opacity: { value: this.t }
-      },
-      extensions: {
-        derivatives: true
-      },
+    this.largeMaterial = new LineMaterial({
+      color: 0x000000,
+      linewidth: 0.002,
+      vertexColors: false,
+      dashed: false,
+      alphaToCoverage: false,
+      depthTest: false,
       transparent: true,
-      depthTest: false
+      opacity: 0.5
+    })
+    this.smallMaterial = new LineMaterial({
+      color: 0x000000,
+      linewidth: 0.001,
+      vertexColors: false,
+      dashed: false,
+      alphaToCoverage: false,
+      depthTest: false,
+      transparent: true,
+      opacity: 0.5
     })
 
-    this.plane = new Mesh(geo, bordersMaterial)
-    this.plane.frustumCulled = false
-
-    this.add(this.plane, this.plane)
+    this.add(...buildLines(this.largeMaterial, this.smallMaterial))
   }
 
   enter () {
@@ -76,6 +122,7 @@ export default class Graticule extends Group {
       this.t = 0
     }
 
-    this.plane.material.uniforms.Opacity.value = this.t * 0.3
+    this.largeMaterial.opacity = this.t * 0.3
+    this.smallMaterial.opacity = this.t * 0.3
   }
 }
