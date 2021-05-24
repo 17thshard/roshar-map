@@ -154,7 +154,7 @@
         "measurement": {
             "button": "Measure distances",
             "title": "Measurement",
-            "explanation": "Click any two points to calculate their positions and the distance between them.",
+            "explanation": "Click any two points to calculate their positions and the distance between them.\n\nNote that the Rosharan degree (°ᴿ) ranges from 0 to 200.",
             "labels": {
                 "start": "Start",
                 "end": "End",
@@ -162,10 +162,10 @@
             },
             "coordinates": {
                 "full": "{latitude}, {longitude}",
-                "north": "{degrees}°N",
-                "south": "{degrees}°S",
-                "east": "{degrees}°E",
-                "west": "{degrees}°W"
+                "north": "{degrees}°ᴿN",
+                "south": "{degrees}°ᴿS",
+                "east": "{degrees}°ᴿE",
+                "west": "{degrees}°ᴿW"
             },
             "distance": "{distance}km"
         }

@@ -59,8 +59,7 @@ export default {
   font-size: 14px;
   filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.5));
   cursor: auto;
-  min-width: 220px;
-  max-width: 250px;
+  max-width: 300px;
 
   &:before {
     content: '';
