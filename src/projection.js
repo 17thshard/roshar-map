@@ -3,10 +3,10 @@
 
 // Projection is centered on 30 Earth degrees south
 const CENTER_LAT = -Math.PI / 6
-const CENTER_X = 4.549
-const CENTER_Y = -13.05
+const CENTER_X = 5
+const CENTER_Y = -8.25
 // "Radius" of Roshar in our rendered system
-const RENDERED_RADIUS = 2125 / (2 * Math.PI)
+const RENDERED_RADIUS = 2080 / (2 * Math.PI)
 const INV_RENDERED_RADIUS = 1 / RENDERED_RADIUS
 // Real radius of Roshar in km
 const realRadius = 5663
