@@ -3555,7 +3555,7 @@
         "coppermind": "Ruthar",
         "image": {
             "file": "events/Map_of_Eastern_Makabak.jpg",
-            "credits": "[Isaac Stewart ](https://coppermind.net/wiki/Coppermind:Artists/Isaac_Stewart)"
+            "credits": "[Isaac Stewart](https://coppermind.net/wiki/Coppermind:Artists/Isaac_Stewart)"
         },
         "related": [
             "locations/emul","characters/jasnah","characters/dalinar","characters/renarin","characters/wit","characters/szeth"
@@ -3577,6 +3577,10 @@
             "row","shallan","adolin"
         ],
         "coppermind": "True_Desolation",
+	"image": {
+	    "file": "events/The_Strength_Of_A_Soldier_by_Dejan_Delic.png",
+	    "credits": "[Dejan Delic](https://coppermind.net/wiki/Coppermind:Artists/Dejan_Delic)"
+	},
         "related": [
             "locations/lasting-integrity","characters/shallan","characters/adolin"
         ],
