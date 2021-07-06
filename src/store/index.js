@@ -6,6 +6,7 @@ import baseCharacters from '@/store/characters.json'
 import baseMisc from '@/store/misc.json'
 import tagCategories from '@/store/tags.json'
 import { inverseLerp } from '@/utils'
+import search from '@/store/search'
 
 Vue.use(Vuex)
 
@@ -339,6 +340,9 @@ const getters = {
 }
 
 export default new Vuex.Store({
+  modules: {
+    search
+  },
   state: {
     events,
     years,

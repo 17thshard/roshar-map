@@ -1,6 +1,7 @@
 {
-    "textureLocale": "en",
+    "texture-locale": "en",
     "text-direction": "ltr",
+    "search-language": "en",
     "name": "Map of Roshar",
     "title": "{page} | The Stormlight Archive",
     "logo": "roshar.png",
