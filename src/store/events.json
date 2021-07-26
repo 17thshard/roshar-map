@@ -765,6 +765,7 @@
         "tags": [
             "dalinar","eshonai","row"
         ],
+        "coppermind": "Listener#History",
         "related": [
             "characters/dalinar","characters/gavilar","characters/eshonai","characters/venli"
         ]
@@ -782,7 +783,7 @@
         "tags": [
             "twok","kaladin"
         ],
-        "coppermind": "Ulim",
+        "coppermind": "Hearthstone#History",
         "related": [
             "characters/kaladin","locations/hearthstone"
         ]
@@ -800,7 +801,7 @@
         "tags": [
             "wor","shallan"
         ],
-        "coppermind": "Hearthstone#History",
+        "coppermind": "Shallan#Early_Childhood",
         "image": {
             "file": "events/Shallan_and_her_mother.jpg",
             "credits": "[Sheep](https://coppermind.net/wiki/Coppermind:Artists/Sheep)"
@@ -822,7 +823,7 @@
         "tags": [
             "history"
         ],
-        "coppermind": "Shallan#Early_Childhood",
+        "coppermind": "Eighty's_War",
         "related": [
             "locations/emul","locations/tukar","locations/sesemalex-dar"
         ],
@@ -841,7 +842,7 @@
         "tags": [
             "twok","wor","ob","dalinar","szeth","navani","adolin","renarin","jasnah","eshonai","venli"
         ],
-        "coppermind": "Eighty's_War",
+        "coppermind": "Assassination_of_Gavilar",
         "image": {
             "file": "events/Reluctant_Villain_by_Art_Dem.jpg",
             "credits": "[Artem Demura](https://coppermind.net/wiki/Coppermind:Artists/Artem_Demura)",
@@ -868,7 +869,7 @@
         "tags": [
             "ob","dalinar"
         ],
-        "coppermind": "Assassination_of_Gavilar",
+        "coppermind": "Dalinar_Kholin#Gavilar.27s_Death_and_Dalinar.27s_Transformation",
         "image": {
             "file": "events/Seeking_Forgiveness_Jordi_Rapture.jpg",
             "credits": "[Jordi Rapture](https://coppermind.net/wiki/Coppermind:Artists/Jordi_Rapture)",
@@ -894,7 +895,7 @@
         "tags": [
             "twok","kaladin"
         ],
-        "coppermind": "Dalinar_Kholin#Gavilar.27s_Death_and_Dalinar.27s_Transformation",
+        "coppermind": "Kaladin#A_decision_made",
         "image": {
             "file": "events/Stormblessed_by_BBQShapez.png",
             "credits": "[BBQShapez](https://coppermind.net/wiki/Coppermind:Artists/BBQShapez)",
@@ -921,7 +922,7 @@
         "tags": [
             "taravangian"
         ],
-        "coppermind": "Kaladin#A_decision_made",
+        "coppermind": "Taravangian#The_Nightwatcher_and_the_creation_of_the_Diagram",
         "image": {
             "file": "events/Cultivation_and_the_Nightwatcher_2.jpg",
             "credits": "[Kyle Pearson](https://coppermind.net/wiki/Coppermind:Artists/Kyle_Pearson)",
@@ -947,7 +948,7 @@
         "tags": [
             "twok","kaladin"
         ],
-        "coppermind": "Taravangian#The_Nightwatcher_and_the_creation_of_the_Diagram",
+        "coppermind": "Kaladin#Tien.27s_Death",
         "image": {
             "file": "events/Driven_by_Guilt_by_Ari_Ibarra.jpg",
             "credits": "[Ari Ibarra](https://coppermind.net/wiki/Coppermind:Artists/Ari_Ibarra)",
@@ -973,7 +974,7 @@
         "tags": [
             "wor","shallan"
         ],
-        "coppermind": "Kaladin#Tien.27s_Death",
+        "coppermind": "Shallan_Davar#Cutting_the_Thorns",
         "related": [
             "characters/shallan"
         ]
@@ -988,7 +989,7 @@
             "x": 738.7,
             "y": 250.4
         },
-        "coppermind": "Shallan_Davar#Cutting_the_Thorns",
+        "coppermind": "Gavinor",
         "image": {
             "file": "events/Gavinor_Shuravf.jpg",
             "credits": "[Shuravf](https://coppermind.net/wiki/Coppermind:Artists/Shuravf)"
@@ -1010,7 +1011,7 @@
         "tags": [
             "wor","shallan"
         ],
-        "coppermind": "Gavinor",
+        "coppermind": "Shallan_Davar#Cutting_the_Thorns",
         "image": {
             "file": "events/Under_the_Jella_Trees_by_Marie_Seeberger.jpg",
             "credits": "[Marie Seeberger](https://coppermind.net/wiki/Coppermind:Artists/Marie_Seeberger)"
@@ -1032,7 +1033,7 @@
         "tags": [
             "twok","kaladin"
         ],
-        "coppermind": "Shallan_Davar#Cutting_the_Thorns",
+        "coppermind": "Kaladin#Fighting_the_Shardbearer",
         "image": {
             "file": "events/Stormblessed_by_ThomasW.jpg",
             "credits": "[ThomasW](https://coppermind.net/wiki/Coppermind:Artists/ThomasW)",
@@ -1055,7 +1056,7 @@
         "tags": [
             "twok","rysn"
         ],
-        "coppermind": "Kaladin#Fighting_the_Shardbearer",
+        "coppermind": "Rysn#Shinovar",
         "image": {
             "file": "events/Rysn.jpg",
             "credits": "[botanicaxu](https://botanicaxu.tumblr.com/post/165173520094/oathbringer-countdown-70-days-rysn-larkin)"
@@ -1078,7 +1079,7 @@
         "tags": [
             "wor","shallan"
         ],
-        "coppermind": "Rysn#Shinovar",
+        "coppermind": "Shallan_Davar#The_Perfect_Daughter",
         "related": [
             "characters/shallan"
         ],
@@ -1094,7 +1095,7 @@
             "x": 734.1,
             "y": 196.3
         },
-        "coppermind": "Shallan_Davar#The_Perfect_Daughter",
+        "coppermind": "",
         "image": {
             "file": "events/Darkeyes_by_Gal_Or.jpg",
             "credits": "[Gal Or](https://coppermind.net/wiki/File:Darkeyes_by_Gal_Or.jpg)",
