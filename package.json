@@ -18,7 +18,7 @@
     "deep-diff": "^1.0.2",
     "hammerjs": "^2.0.8",
     "is-mobile": "^2.2.2",
-    "jszip": "^3.5.0",
+    "jszip": "^3.7.0",
     "register-service-worker": "^1.7.1",
     "seedrandom": "^3.0.5",
     "simple-markdown": "^0.7.2",
