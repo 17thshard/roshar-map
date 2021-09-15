@@ -3086,7 +3086,6 @@
         ],
         "hideMarker": true,
         "coppermind": "Shallan_Davar#Battle_of_Thaylen_Field_and_Aftermath",
-        "coppermind": "True_Desolation",
         "specialEffect": "factions",
         "related": [
             "characters/dalinar","characters/odium"
@@ -3107,7 +3106,7 @@
             "ds"
         ],
         "hideMarker": true,
-        "coppermind": "First_Dreams",
+        "coppermind": "True_Desolation",
         "related": [
             "locations/southern-depths"
         ]
@@ -3126,7 +3125,7 @@
         "tags": [
             "ds","rysn"
         ],
-        "coppermind": "Summary:Dawnshard",
+        "coppermind": "First_Dreams",
         "image": {
             "file": "events/Wandersail_(1174_ship).jpg",
             "credits": "[Casta](https://coppermind.net/wiki/Coppermind:Artists/Casta)"
@@ -3149,7 +3148,7 @@
         "tags": [
             "ds","rysn"
         ],
-        "coppermind": "Summary:Dawnshard#Chapter_11",
+        "coppermind": "Summary:Dawnshard",
         "image": {
             "file": "events/Rysn_Dawnshard_mural.jpg",
             "credits": "[Connor Chamberlain](https://coppermind.net/wiki/Coppermind:Artists/Connor_Chamberlain)"
@@ -3169,7 +3168,7 @@
             "x": 412.7,
             "y": 392.4
         },
-        "coppermind": "Vivenna#On_Roshar",
+        "coppermind": "Summary:Dawnshard#Chapter_11",
         "image": {
             "file": "locations/Lasting_Integrity_US_Cover_Crop.jpg",
             "credits": "[Michael Whelan](https://coppermind.net/wiki/Coppermind:Artists/Michael_Whelan)"
@@ -3194,7 +3193,7 @@
         "tags": [
             "shallan"
         ],
-        "coppermind": "Shallan_Davar#The_War_Continues_.281174-1175.29",
+        "coppermind": "Vivenna#On_Roshar",
         "related": [
             "locations/shattered-plains","characters/shallan"
         ]
@@ -3211,7 +3210,7 @@
             "x": 768,
             "y": 363.6
         },
-        "coppermind": "Fourth_Bridge",
+        "coppermind": "Shallan_Davar#The_War_Continues_.281174-1175.29",
         "image": {
             "file": "events/Fourth_Bridge_by_Esther_Shrader.jpg",
             "credits": "[Esther Schrader](https://coppermind.net/wiki/Coppermind:Artists/Esther_Schrader)"
@@ -3235,7 +3234,7 @@
         "tags": [
             "row","kaladin","moash","navani","dalinar","lift","renarin"
         ],
-        "coppermind": "Hearthstone#History",
+        "coppermind": "Fourth_Bridge",
         "image": {
             "file": "events/Renarin_confronting_Moash_by_rspixart.jpeg",
             "credits": "[rspixart](https://coppermind.net/wiki/Coppermind:Artists/rspixart)"
@@ -3260,7 +3259,7 @@
         "tags": [
             "row","shallan","adolin"
         ],
-        "coppermind": "Ialai_Sadeas#Return_to_the_Shattered_Plains_and_Death",
+        "coppermind": "Hearthstone#History",
         "related": [
             "locations/shattered-plains","characters/shallan","characters/adolin"
         ],
@@ -3281,7 +3280,7 @@
         "tags": [
             "row","venli"
         ],
-        "coppermind": "Fused#The_Nine",
+        "coppermind": "Ialai_Sadeas#Return_to_the_Shattered_Plains_and_Death",
         "related": [
             "locations/kholinar","characters/venli"
         ]
@@ -3301,7 +3300,7 @@
         "tags": [
             "row","kaladin"
         ],
-        "coppermind": "Kaladin#Retirement",
+        "coppermind": "Fused#The_Nine",
         "image": {
             "file": "events/Battle_of_the_Bedsheets_by_Pam_Hage.jpg",
             "credits": "[Pam Hage](https://coppermind.net/wiki/Coppermind:Artists/Pam_Hage)"
@@ -3325,7 +3324,7 @@
         "tags": [
             "row"
         ],
-        "coppermind": "Fourth_Bridge",
+        "coppermind": "Kaladin#Retirement",
         "image": {
             "file": "events/Navani's_Notebook_-_The_Fourth_Bridge.jpg",
             "credits": "[Kelley Harris](https://coppermind.net/wiki/Coppermind:Artists/Kelley_Harris)"
@@ -3349,7 +3348,7 @@
         "tags": [
             "row","dalinar","navani","lift","renarin","adolin","shallan","jasnah"
         ],
-        "coppermind": "Summary:Rhythm_of_War#Chapter_19",
+        "coppermind": "Fourth_Bridge",
         "related": [
             "locations/urithiru","characters/shallan","characters/navani","characters/dalinar","characters/renarin","characters/adolin","characters/lift"
         ]
@@ -3369,7 +3368,7 @@
         "tags": [
             "row","shallan","adolin"
         ],
-        "coppermind": "Nohadon's_Stairways",
+        "coppermind": "Summary:Rhythm_of_War#Chapter_19",
         "related": [
             "locations/nohadons-stairways","characters/shallan","characters/adolin"
         ],
@@ -3391,7 +3390,7 @@
         "tags": [
             "row","kaladin"
         ],
-        "coppermind": "Noril",
+        "coppermind": "Nohadon's_Stairways",
         "related": [
             "locations/urithiru","characters/kaladin"
         ]
@@ -3411,7 +3410,7 @@
         "tags": [
             "row","taravangian"
         ],
-        "coppermind": "Diagram_(group)",
+        "coppermind": "Noril",
         "related": [
             "locations/urithiru","characters/taravangian"
         ]
@@ -3431,7 +3430,7 @@
         "tags": [
             "row","shallan","adolin"
         ],
-        "coppermind": "Nameless",
+        "coppermind": "Diagram_(group)",
         "related": [
             "locations/nameless","characters/shallan","characters/adolin"
         ],
@@ -3454,7 +3453,7 @@
             "row","taravangian"
         ],
         "hideMarker": true,
-        "coppermind": "True_Desolation",
+        "coppermind": "Nameless",
         "related": [
             "characters/taravangian"
         ]
@@ -3474,7 +3473,7 @@
         "tags": [
             "row","navani","kaladin","venli","lift"
         ],
-        "coppermind": "Urithiru#True_Desolation",
+        "coppermind": "True_Desolation",
         "image": {
             "file": "events/Raboniel_by_Petar_Penev.jpg",
             "credits": "[Petar Penev](https://coppermind.net/wiki/Coppermind:Artists/Petar_Penev)"
@@ -3498,7 +3497,7 @@
         "tags": [
             "row","navani","kaladin"
         ],
-        "coppermind": "Kaladin#Capture_of_Urithiru",
+        "coppermind": "Urithiru#True_Desolation",
         "related": [
             "locations/urithiru","characters/kaladin","characters/navani"
         ]
@@ -3518,7 +3517,7 @@
         "tags": [
             "row","venli"
         ],
-        "coppermind": "Venli#Urithiru",
+        "coppermind": "Kaladin#Capture_of_Urithiru",
         "related": [
             "locations/urithiru","characters/venli"
         ]
@@ -3538,7 +3537,7 @@
         "tags": [
             "row","jasnah","wit","dalinar","renarin"
         ],
-        "coppermind": "Ruthar",
+        "coppermind": "Venli#Urithiru",
         "image": {
             "file": "events/The_Queen_and_Her_Wit_by_Morby.jpg",
             "credits": "[Morby](https://coppermind.net/wiki/Coppermind:Artists/Morby)"
@@ -3562,7 +3561,7 @@
         "tags": [
             "row","jasnah","wit","dalinar","renarin","szeth"
         ],
-        "coppermind": "True_Desolation",
+        "coppermind": "Ruthar",
         "image": {
             "file": "events/Map_of_Eastern_Makabak.jpg",
             "credits": "[Isaac Stewart](https://coppermind.net/wiki/Coppermind:Artists/Isaac_Stewart)"
@@ -3586,7 +3585,7 @@
         "tags": [
             "row","shallan","adolin"
         ],
-        "coppermind": "Adolin_Kholin#Caravanning_to_Lasting_Integrity",
+        "coppermind": "True_Desolation",
 	"image": {
 	    "file": "events/The_Strength_Of_A_Soldier_by_Dejan_Delic.png",
 	    "credits": "[Dejan Delic](https://coppermind.net/wiki/Coppermind:Artists/Dejan_Delic)"
@@ -3611,7 +3610,7 @@
         "tags": [
             "row","navani","kaladin"
         ],
-        "coppermind": "Kaladin#Capture_of_Urithiru",
+        "coppermind": "Adolin_Kholin#Caravanning_to_Lasting_Integrity",
         "related": [
             "locations/urithiru","characters/kaladin","characters/navani"
         ]
@@ -3631,7 +3630,7 @@
         "tags": [
             "row","navani"
         ],
-        "coppermind": "Lights#Warlight",
+        "coppermind": "Kaladin#Capture_of_Urithiru",
         "image": {
             "file": "events/The_Lights_of_Roshar_by_Connor_Chamberlain.jpg",
             "credits": "[Connor Chamberlain](https://coppermind.net/wiki/Coppermind:Artists/Connor_Chamberlain)"
@@ -3655,7 +3654,7 @@
         "tags": [
             "row","taravangian","dalinar","szeth","renarin"
         ],
-        "coppermind": "True_Desolation",
+        "coppermind": "Lights#Warlight",
         "image": {
             "file": "events/Map_of_Eastern_Makabak.jpg",
             "credits": "[Isaac Stewart ](https://coppermind.net/wiki/Coppermind:Artists/Isaac_Stewart)"
@@ -3703,7 +3702,7 @@
         "tags": [
             "row","kaladin","wit"
         ],
-        "coppermind": "Summary:Rhythm_of_War#Chapter_80",
+        "coppermind": "True_Desolation",
         "image": {
             "file": "events/The Dog and the Dragon by RadiantShard.png",
             "credits": "[RadiantShard](https://www.reddit.com/r/Stormlight_Archive/comments/kdnvpx/the_dog_and_the_dragon/)"
@@ -3727,7 +3726,6 @@
         "tags": [
             "row","shallan","adolin"
         ],
-        "coppermind": "Adolin_Kholin#The_Trial",
         "image": {
             "file": "locations/Lasting_Integrity_Interior.jpeg",
             "credits": "[Connor Chamberlain](https://coppermind.net/wiki/Coppermind:Artists/Connor_Chamberlain)"
@@ -3753,7 +3751,7 @@
         "tags": [
             "row","navani"
         ],
-        "coppermind": "Rhythm#The_Pure_Tones",
+        "coppermind": "Adolin_Kholin#The_Trial",
         "image": {
             "file": "events/Navani's_Notebook_-_Experiments.jpg",
             "credits": "[Kelley Harris](https://coppermind.net/wiki/Coppermind:Artists/Kelley_Harris)"
@@ -3778,7 +3776,7 @@
         "tags": [
             "row","shallan","adolin"
         ],
-        "coppermind": "Adolin_Kholin#The_Trial",
+        "coppermind": "Rhythm#The_Pure_Tones",
         "image": {
             "file": "locations/Lasting_Integrity_Interior.jpeg",
             "credits": "[Connor Chamberlain](https://coppermind.net/wiki/Coppermind:Artists/Connor_Chamberlain)"
@@ -3804,7 +3802,7 @@
         "tags": [
             "row","navani"
         ],
-        "coppermind": "Lights#Anti-Lights",
+        "coppermind": "Adolin_Kholin#The_Trial",
         "image": {
             "file": "events/Navani_and_Raboniel_by_Esther_Schrader.jpg",
             "credits": "[Esther Schrader](https://coppermind.net/wiki/Coppermind:Artists/Esther_Schrader)"
@@ -3829,7 +3827,7 @@
         "tags": [
             "row","shallan","adolin"
         ],
-        "coppermind": "Shallan#The_War_Continues_.281174-1175.29",
+        "coppermind": "Lights#Anti-Lights",
         "image": {
             "file": "events/Shallan_and_Veil_by_clarinking.jpg",
             "credits": "[clarinking](https://coppermind.net/wiki/Coppermind:Artists/clarinking)"
@@ -3855,7 +3853,7 @@
         "tags": [
             "row","shallan","adolin"
         ],
-        "coppermind": "Adolin_Kholin#The_Trial",
+        "coppermind": "Shallan#The_War_Continues_.281174-1175.29",
         "image": {
             "file": "events/Mayalaran_by_Nozomi.jpg",
             "credits": "[Nozomi](https://coppermind.net/wiki/Coppermind:Artists/Nozomi)"
@@ -3881,7 +3879,7 @@
         "tags": [
             "row","navani","lift","kaladin","venli"
         ],
-        "coppermind": "Urithiru",
+        "coppermind": "Adolin_Kholin#The_Trial",
         "image": {
             "file": "events/RoW_beta_cover_cropped.jpg",
             "credits": "[botanicaxu](https://coppermind.net/wiki/Coppermind:Artists/botanicaxu)"
@@ -3906,7 +3904,7 @@
         "tags": [
             "row","dalinar","szeth"
         ],
-        "coppermind": "Ishar",
+        "coppermind": "Urithiru",
         "image": {
             "file": "events/Ishar_Endsheet.jpg",
             "credits": "[Dan dos Santos](https://coppermind.net/wiki/Coppermind:Artists/Dan_dos_Santos)"
@@ -3931,7 +3929,7 @@
         "tags": [
             "row","dalinar","odium"
         ],
-        "coppermind": "Odium",
+        "coppermind": "Ishar",
         "image": {
             "file": "characters/Odium_-_XV_the_Devil.jpg",
             "credits": "[Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
@@ -3983,7 +3981,7 @@
         "tags": [
             "row","venli"
         ],
-        "coppermind": "Listener",
+        "coppermind": "Odium",
         "image": {
             "file": "events/Venli_and_Jaxlim_by_Rspixart.jpeg",
             "credits": "[rspixart](https://coppermind.net/wiki/Coppermind:Artists/rspixart)"
@@ -4005,7 +4003,7 @@
         "tags": [
             "row","shallan","adolin"
         ],
-        "coppermind": "Shallan#The_War_Continues_.281174-1175.29",
+        "coppermind": "Listener",
         "image": {
             "file": "events/Seon_Box_and_Ala_by_Connor_Chamberlain.jpg",
             "credits": "[Connor Chamberlain](https://coppermind.net/wiki/Coppermind:Artists/Connor_Chamberlain)"
@@ -4031,6 +4029,7 @@
         "tags": [
             "row","wit","odium","taravangian"
         ],
+        "coppermind": "Shallan#The_War_Continues_.281174-1175.29",
         "image": {
             "file": "characters/Odium_-_XV_the_Devil.jpg",
             "credits": "[Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
