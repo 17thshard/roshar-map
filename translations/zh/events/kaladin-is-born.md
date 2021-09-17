@@ -1,5 +1,4 @@
-# Kaladin is born
-
+# 卡拉丁出生
 
 ## Details
-Kaladin was born to Lirin and Hesina in Hearthstone.
+卡拉丁出生在赫斯通，父亲是李伦，母亲是赫希拿。

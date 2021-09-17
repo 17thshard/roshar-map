@@ -1,7 +1,5 @@
-# Fu Namir
+# 纳米尔村
 
-**Fu Namir** is a city on the border of #[Yulay](locations/yulay) and #[Tu Bayla](locations/tu-bayla) on Roshar during the Era of Solitude.
+**纳米尔村**是#[淳湖](locations/purelake)岸边的一个小村庄，位于#[玉威](locations/yulay)与#[图拜拉](locations/tu-bayla)的边境附近。
 
-It is located on the southern coast of the #[Purelake](locations/purelake).
-
-In 1173, Ishikk searched for #[Hoid](characters/wit) in Fu Namir for several members of the Seventeenth Shard.
+1173年，以什克在纳米尔村为十七神瑛团搜索#[须空](characters/wit)的行踪。

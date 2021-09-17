@@ -1,5 +1,5 @@
-# Vedenar
+# 魏德纳
 
-> Vedenar, one of the great cities of the world, was now little more than a heap of rubble and ash.
+> 魏德纳一度位列世界级大都市之林，现在却已燃烧殆尽，化为齑粉。
 
-**Vedenar** is the capital city of #[Jah Keved](locations/jah-keved) on Roshar.
+**魏德纳**是#[雅克维德](locations/jah-keved)的首都。

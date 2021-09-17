@@ -1,7 +1,7 @@
-# Adolin is born
-Adolin was born to Dalinar and Evi Kholin.
+# 阿多林出生
+达力拿与伊薇得子阿多林。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 49 |
+| chapter | 《渡誓》第49章 |

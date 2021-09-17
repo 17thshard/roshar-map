@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import VueDragscroll from 'vue-dragscroll'
 import VueGtag from 'vue-gtag'
-import App from './App.vue'
-import store from './store'
 import { i18n } from '@/i18n'
 import { router } from '@/routes'
+import App from './App.vue'
+import store from './store'
 import './registerServiceWorker'
 
 Vue.config.productionTip = false

@@ -1,3 +1,3 @@
-# Northgrip
+# 北爪城
 
-**Northgrip** is a city in northeast #[Jah Keved](locations/jah-keved) on Roshar. It lies on a bay adjacent to the eastern #[Reshi Sea](locations/reshi-sea), near the border with #[Herdaz](locations/herdaz). It is the largest city in northern Jah Keved.
+**北爪城**位于#[雅克维德](locations/jah-keved)东北部，是该国北部最大的城市，依傍东#[雷希海](locations/reshi-sea)海湾，靠近#[赫达孜](locations/herdaz)边界。

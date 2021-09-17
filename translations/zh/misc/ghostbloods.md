@@ -1,3 +1,3 @@
-# The Ghostbloods
+# 鬼血会
 
-The **Ghostbloods** are a secret organization on Roshar. Members are required to get a tattoo of three overlapping diamonds somewhere on their bodies. They appear to be at odds with Amaram and the Sons of Honor.
+**鬼血会**是柔刹的一个秘密组织，成员必须在体表任意位置文上三个彼此重叠的菱形符号。他们似乎与亚马兰及其所在的荣誉之子意见不合。

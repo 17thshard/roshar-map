@@ -1,4 +1,4 @@
-# Liafor
-> I do think the coat is splendid, but I worry that the short cut might be trending out of fashion. What is the latest from Liafor?
+# 里亚弗
+> 我是觉得这件外套很好看，然而短装只怕快落伍了。里亚弗最近在流行什么呢？
 
-**Liafor** is a kingdom on a peninsula in south-west Roshar. It is known as a center of fashion on Roshar.
+**里亚弗**是柔刹西南方半岛上的王国，以引领全球时尚而闻名。

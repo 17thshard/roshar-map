@@ -1,3 +1,3 @@
-# Revolar
+# 雷沃拉尔
 
-**Revolar** is a city in Vamah princedom and one of the larger cities in the region. It is located close to a tributary of the Windrunner River which forms the eastern border between Vamah princedom and Ruthar princedom. Revolar is no more than a few weeks away from #[Hearthstone](locations/hearthstone) by foot.
+**雷沃拉尔**是瓦马尔公国内的一座城市，也是附近区域最大的城市之一，坐落于风行河的一条支流沿岸。从#[赫斯通](locations/hearthstone)步行至雷沃拉尔不会超过几周的时间。

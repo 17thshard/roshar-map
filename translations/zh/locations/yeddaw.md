@@ -1,5 +1,5 @@
-# Yeddaw
+# 夜铎
 
-> No, **this** was impressive. A majestic city cut **out of the starvin' ground**.
+> 山下那座城市可厉害了，竟然是在饿死他的地里挖出来的。
 
-**Yeddaw** is a city in #[Tashikk](locations/tashikk) on Roshar.
+**夜铎**是#[塔石科](locations/tashikk)的一座城市。

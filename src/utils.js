@@ -39,3 +39,22 @@ export function parseColorToCssVar (hexColor) {
 export function escapeCssPath (path) {
   return path.replace('\'', '\\\'').replace('(', '\\(').replace(')', '\\)')
 }
+
+export function getEntryImageSrcSet (path) {
+  return parseSrcSet(require(`@/assets/entries/${path}?srcset`))
+}
+
+export function parseSrcSet (srcSet) {
+  const sources = srcSet.split(',').map((source) => {
+    const [, url, size] = /^(.+)\s+(\d+x)$/.exec(source.trim())
+
+    return { url, size }
+  })
+
+  const baseCss = `image-set(${sources.map(source => `url('${escapeCssPath(source.url)}') ${source.size}`).join(', ')})`
+
+  return {
+    sources,
+    css: [`url('${escapeCssPath(sources[0].url)}')`, `-webkit-${baseCss}`, baseCss]
+  }
+}

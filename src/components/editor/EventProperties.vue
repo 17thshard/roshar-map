@@ -208,7 +208,7 @@
 
 <script>
 import VueTagsInput from '@johmun/vue-tags-input'
-import { escapeCssPath } from '@/utils'
+import { getEntryImageSrcSet } from '@/utils'
 
 export default {
   name: 'EventProperties',
@@ -254,7 +254,7 @@ export default {
       }
 
       const styles = {
-        backgroundImage: `url("${this.imageBaseUrl}/${escapeCssPath(this.event.image.file)}")`
+        backgroundImage: getEntryImageSrcSet(this.event.image.file).css
       }
 
       if (this.event.image.offset !== undefined) {

@@ -1,4 +1,4 @@
-# Urithiru
-> Urithiru was said to be the center of the Silver Kingdoms, a city that held ten thrones, one for each king. It was the most majestic, most amazing, most important city in all the world.
+# 乌有斯麓
+> 据说，乌有斯麓是白银十王国的中心，十王国的王座都在这座城市，分属十位国王。它是全世界最宏伟、最惊人、最重要的城市。
 
-**Urithiru** is a tower-city on Roshar that functioned as the home of the Knights Radiant and the central point of the Silver Kingdoms during the Heraldic Epochs. In the present day, it serves as the headquarters of the forces opposing #[Odium](characters/odium), including the refounded Knights Radiant, as well as the remaining Alethi soldiers and nobility. The current Queen of Alethkar rules from Urithiru.
+**乌有斯麓**是柔刹大陆的一座塔城，是光辉骑士的总部。在令使时代是白银十王国的中心。目前部分光辉骑士和阿勒斯卡难民驻扎于此。达力拿在此集结了对抗#[仇恨](characters/odium)的联盟。这里也成为了阿勒斯卡流亡政府的所在。

@@ -1,5 +1,3 @@
-# Nexus of Transition
+# 无常结域
 
-The **Nexus of Transition** is a region on Roshar's subastral of the Cognitive Realm. It is bordered by the #[Sea of Regret](locations/sea-of-regret), the #[Sea of Souls](locations/sea-of-souls), and the #[Sea of Lost Lights](locations/sea-of-lost-lights).
-
-In the Physical Realm, the Nexus of Transition corresponds to the #[Reshi Sea](locations/reshi-sea). Much of the Nexus of Transition is mountainous.
+**无常结域**是知界域在柔刹位面（即裂影界）的一片多山地带，毗邻#[悔海](locations/sea-of-regret)、#[魂海](locations/sea-of-souls)和#[失落光海](locations/sea-of-lost-lights)，在实界域中等同于#[雷希海](locations/reshi-sea)。

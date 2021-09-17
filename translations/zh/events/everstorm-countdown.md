@@ -1,10 +1,8 @@
-# Everstorm countdown
-Renarin began scribing a countdown to the Everstorm.
-
+# 灭世风暴倒计时
+雷纳林开始在墙上涂写灭世风暴的倒计时。
 ## Details
-Granted some measure of uncontrollable futuresight by his bond with his corrupted Truthwatcher spren, Glys, Renarin began to scribe glyphs counting down to the coming of the Battle of Narak and the summoning of the Everstorm.
-
+被他与他腐化的识真骑士灵体格里斯之间的纽带赋予某种无法控制的预知未来的能力，雷纳林开始涂写纳拉克之战与召唤灭世风暴倒计时的符号。
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* Ch. 4 |
+| chapter | 《光辉真言》第4章 |

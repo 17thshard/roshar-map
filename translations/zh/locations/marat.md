@@ -1,4 +1,4 @@
-# Marat
-> Szeth knew that Marat was rich in culture, full of people as proud as you’d find in any nation—but of almost no value on the political scale.
+# 玛拉特
+> 玛拉特打通了东部的沃林教诸王国与中西部的马卡巴克诸王国，文化繁荣，民族自强，但几乎没有政治地位。
 
-**Marat** is a small kingdom in southern Roshar. It is part of the Makabaki region.
+**玛拉特**是柔刹南部的小国，隶属于马卡巴克地区。

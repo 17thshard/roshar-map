@@ -1,4 +1,4 @@
-# Kharbranth
-> Kharbranth is one of the most sheltered major cities in the world, and the bells are a symbol of that. It’s said they were first erected to warn that a highstorm was blowing, since the winds were so soft that people didn’t always notice.
+# 卡哈巴兰斯
+> 世上没有几座大城市的防风设施比卡哈巴兰斯更牢靠，那些铃铛就是安全的象征。据说，挂铃起初是为了预警飓风，因为预兆很轻微，人们有时不会察觉。
 
-Kharbranth, City of Bells, is an independent city-state on Roshar, ruled by King #[Taravangian](characters/taravangian). It is one of the five Vorin nations and home to the Palanaeum, the largest library on Roshar. Kharbranth is known for the quality of its hospitals, and people come from all over the world to study medicine from Kharbranth's surgeons. The Kharbranthian royal colors are burnt orange and white, and have become synonymous around Roshar as the colors of surgeons, medicine, and healing.
+卡哈巴兰斯是柔刹大陆上的自由城邦，又称“铃城”，由国王#[塔拉梵吉安](characters/taravangian)统治，是五大沃林教国家之一，坐落着全柔刹最大图书馆——帕拉奈图书馆。卡哈巴兰斯的医院也久负盛名，世界各地的人们都会来到这儿学习医术。卡哈巴兰斯王室的主色调是焦橙色和白色，已经成为救死扶伤的代名词。

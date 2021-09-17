@@ -1,2 +1,2 @@
-# Emul
-**Emul** is a Makabaki kingdom located in southwestern Roshar during the Era of Solitude. The citizens of Emul are referred to as Emuli. Traditionally a rather independent kingdom, the Desolation and war with #[Tukar](locations/tukar) has greatly weakened Emul and left it dependent on others for aid.
+# 埃穆尔
+**埃穆尔**是个马卡巴克王国，位于柔刹西南方。埃穆尔本是个独立王国，但近来受到与#[图卡](locations/tukar)之间战争以及灭世的影响，国力衰弱，需要别国的保护。

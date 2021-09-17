@@ -1,3 +1,3 @@
-# Unclaimed Hills
+# 无主山岭
 
-The **Unclaimed Hills** is a geographical region in eastern Roshar that contains the #[Shattered Plains](locations/shattered-plains).
+**无主山岭**位于柔刹东部，#[破碎平原](locations/shattered-plains)即在此地。

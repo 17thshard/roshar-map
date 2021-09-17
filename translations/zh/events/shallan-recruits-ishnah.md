@@ -1,10 +1,10 @@
-# Shallan recruits Ishnah
-Shallan recruited Ishnah after the woman made several attempts to prove her value.
+# 沙兰招募伊什娜
+伊什娜向沙兰多次证明了自己的能力和决心，于是沙兰决定招募伊什娜。
 
 ## Details
-Ishnah began following Veil after having revealed herself to be a Ghostblood in All's Alley, hoping to become a member herself. Shallan rejected the woman after their first encounter. Later, while discussing the usefulness of the soldiers, Veil noticed a washwoman observing them nearby. Recognizing the woman as Ishnah, Veil questioned her. She soon discovered that Ishnah was once a spy and hoped to join the Ghostbloods by proving herself. Seeing this as an opportunity to learn more about being a spy, Veil gave Ishnah the option of teaching her men how to be spies in exchange for promising to see if she would be worthy to join the Ghostbloods.
+浣纱在万有巷酒馆向伊什娜暗示了自己是鬼血会成员，此后伊什娜一直希望也能加入。一次浣纱在酒馆和沙兰手下的士兵们讨论他们的前途时，发现了伪装成洗衣妇监视自己的伊什娜。经过一番盘问，浣纱发现伊什娜原来就做过间谍，于是她就借口测试后者的能力，让后者训练这批士兵做间谍。这一方面可以为自己培养一支忠诚又专业的队伍，另一方面自己也可以偷学到间谍的技巧，可谓一举两得。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 40 |
+| chapter | 《渡誓》第40章 |

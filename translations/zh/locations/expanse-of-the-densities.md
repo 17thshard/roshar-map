@@ -1,5 +1,7 @@
-# Expanse of the Densities
+# 密实外域
 
-The **Expanse of the Densities** is the Rosharan term for the Selish subastral of the Cognitive Realm. After Splintering Devotion and Dominion, #[Odium](characters/odium) pushed their Investiture into the Cognitive Realm. Due to the contained nature of the space, that Investiture is in an incredibly dangerous and highly pressurized state, similar to plasma. This Investiture fills the region as a deadly storm known as the Dor and is the reason Rosharans call the region the Expanse of the Densities. It strains #[Hoid's](characters/wit) resources to safely travel there, but he has done it on occasion.
+**密实外域**是柔刹世界对知界域中的瑟尔世界的称呼。临近柔刹裂影界地图中的[真之结域](locations/nexus-of-truth)。
 
-It can be accessed from Devotion's Perpendicularity near Elantris, the other Perpendicularity on Sel, or by traveling there from another region of the Cognitive Realm; it is adjacent to to the #[Nexus of Truth](locations/nexus-of-truth) on the Rosharan map of Shadesmar.
+#[仇恨](characters/odium)杀害忠爱与支配两位神瑛后，把他们的神能推入了知界域，这导致该处的神能有极高的浓度和压力十分危险，类似于等离子状态。这些像死亡风暴搬充斥满整个区域的神能就是瑟尔世界的“铎”。柔刹人把这片充满神能的区域称作密实外域。即使是#[须空](characters/wit)也无法轻易进出瑟尔。
+
+瑟尔世界有两个神潭可以通往知界域（也就是柔刹所谓的密实外域），其中忠爱的神潭位于伊岚翠城附近。

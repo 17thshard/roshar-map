@@ -1,5 +1,5 @@
-# Longbrow's Straits
+# 长眉海峡
 
-**Longbrow's Straits** is a waterway that separates the island of #[Thaylenah](locations/thaylenah) from the #[Frostlands](locations/frostlands) on mainland Roshar. The straits are presumably named for the characteristic long eyebrows of the Thaylen people.
+**长眉海峡**是分隔#[泰勒拿](locations/thaylenah)本岛与柔刹大陆上的#[霜冻之地](locations/frostlands)的海峡，得名于某位古人。
 
-The straits are lined by tall, sleek lighthouses for navigation. Various creatures live in the water, including santhids, khornaks, redwaters, and schools of small fish. The straits become narrow near Klna City, but in some areas they are wide enough that it can be difficult to see land.
+海峡在克尔纳城附近变窄，但某些区域却很宽，一眼望不到陆地。海峡沿岸设有高大华丽的灯塔，用来指引船只的方向。海域中生活着龟壳水母、沟蝻、赤水怪和成群的小鱼。

@@ -85,7 +85,6 @@ The following is a list of all the artists that are either official artists or h
  * [Howard Lyon](https://coppermind.net/wiki/Howard_Lyon)
  * [Isaac Stewart](https://coppermind.net/wiki/Isaac_Stewart)
  * [Jacobo Montoya](https://coppermind.net/wiki/Coppermind:Artists/Jacobo_Montoya)
- * [Jill Andersen](https://coppermind.net/wiki/Coppermind:Artists/Jill_Andersen)
  * [Jordi Rapture](https://coppermind.net/wiki/Coppermind:Artists/Jordi_Rapture)
  * [Jules Aguimatang](https://coppermind.net/wiki/Coppermind:Artists/Jules_Aguimatang)
  * [Krystian Biskup](https://imgur.com/gallery/Bw2k31X)

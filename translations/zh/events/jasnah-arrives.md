@@ -1,10 +1,10 @@
-# Jasnah arrives in Urithiru
-Believed dead after the shipwreck off the coasts of the Frostlands, Jasnah eventually returned to the Physical Realm and arrived in Urithiru.
+# 迦熙娜抵达乌有斯麓
+由于大家都认为迦熙娜已经在霜冻之地的海难中丧生，迦熙娜突然到达乌有斯麓震惊了所有人。
 
 ## Details
-Attacked by Ghostbloods aboard *Wind's Pleasure*, Jasnah accidentally transported herseful fully into Shadesmar and found immediate return to the Physical Realm impossible. Months later, Jasnah was able to transition back somewhere in the Unclaimed Hills, where she was greeted by Wit. Jasnah carefully returned to the Shattered Plains only to find the Warcamps abandoned and the tower city of Urithiru rediscovered.
+在返回实界域之后，迦熙娜随须空旅行了一段时间后独自返回了破碎平原。由于无法联络她的家人以告知她的回归，又加上还有刺客在对她的逝世感到怀疑，迦熙娜选择保持匿名直到她安全抵达乌有斯麓。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 32 |
+| chapter | 《渡誓》第32章 |

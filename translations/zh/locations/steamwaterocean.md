@@ -1,5 +1,5 @@
-# Steamwater Ocean
+# 蒸腾海
 
-The **Steamwater Ocean** is a body of water to the northeast of Roshar.
+**蒸腾海**位于柔刹西北部。
 
-#[Dalinar Kholin](characters/dalinar) proposed to Evi that they and Adolin take a vacation to the Steamwater, as Evi had grown tired of the wind and cold in #[Alethkar](locations/alethkar). There is no indication that they ever took this trip.
+在伊薇厌倦#[阿勒斯卡](locations/alethkar)糟糕的飓风天气时，#[达力拿·寇林](characters/dalinar)曾提议带上阿多林一起去蒸腾海旅行。

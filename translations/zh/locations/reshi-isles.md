@@ -1,6 +1,4 @@
-# Reshi Isles
-The **Reshi Isles** are a collection of islands on the northern edge of Roshar in the #[Reshi Sea](locations/reshi-sea). People from the Reshi Isles are called **Reshi**.
+# 雷希群岛
+**雷希群岛**是位于#[雷希海](locations/reshi-sea)上的岛群，已知其中的岛屿有 #[奎里岛](locations/quili)、#[阿布里岛](locations/abri)、喀德克岛、#[苏米岛](locations/sumi)、#[阿拉克岛](locations/arak)与阿卡克岛。
 
-They include the islands of Kadrix, #[Quili](locations/quili), #[Abri](locations/abri), #[Arak](locations/arak) and #[Sumi](locations/sumi). According to #[Dalinar's](characters/dalinar) memories the people of the **Akak Reshi** were destroyed.
-
-One of the smaller islands is home to the ardents Geranid and her husband Ashir.
+虔诚者葛兰蒂和她的丈夫就居住于雷希群岛的一座小岛上。

@@ -1,10 +1,10 @@
-# Dalinar confronts the Thrill in Vedenar
-While visiting Vedenar the Thrill confronted Dalinar heavily, causing him to flee to Urithiru.
+# 达力拿在魏德纳与激越感对峙
+在魏德纳期间，达力拿与激越感正面对峙，最终他因不敌逃回乌有斯麓。
 
 ## Details
-Following the failure of Elhokar's team at the Battle of Kholinar, Dalinar took an opportunity to visit troops in Vedenar. While visiting troops who had fought in the Veden civil war, Nergaoul (the Thrill) confronted Dalinar. Already struggling mentally after the apparent loss of Adolin and the rest of Elhokar's team, and facing excommunication by the Vorin church leadership, Dalinar summoned Stormfather as a sort of Shardblade against the spren's will and fled back to Urithiru via Oathgate. There he turned to alcohol to dull his pain, leaving him incapacitated for a week.
+艾尔霍卡的部队在寇林之战中失利后，达力拿找到机会去魏德纳检阅士兵。在检阅参与魏德纳内战的部队时，涅戈耳（激越感）与达力拿正面对峙。由于失去了阿多林以及其他艾尔霍卡突击小队成员的消息，达力拿的精神已经饱受折磨，而面对着沃林教领袖们的驱逐命令，达力拿最终违抗了飓风之父的灵体意志，强行召唤出碎瑛刃并通过誓约之门逃回了乌有斯麓。他转投酒精以麻醉自己消除痛苦，结果醉倒了一周。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 100 |
+| chapter | 《渡誓》第100章 |

@@ -1,5 +1,5 @@
-# Moash
+# 莫阿什
 
-> He couldn't be blamed. He was a product of his culture.
+> 不能怪到他头上。他是阿勒斯卡文化的必然产物。
 
-**Moash**, also known as **Vyre**, is an Alethi man on Roshar. Originally a bridgeman in Bridge Four, he becomes a soldier and bodyguard under #[Kaladin](characters/kaladin); eventually, he betrays Bridge Four and switches sides to the #[Diagram](misc/diagram), then the Fused, serving them as a slave, warrior and assassin. He's the current holder of Jezrien's Honorblade.
+**莫阿什**又名**惟宁**，阿勒斯卡人，起初是第四冲桥队的一名冲桥手，后来成为#[卡拉丁](characters/kaladin)手下的战士和护卫，最终背叛了第四冲桥队，投靠了#[谶记社](misc/diagram)，接着又投靠了融族，作为他们手下的奴隶、战士和刺客，杀死了先王#[艾尔霍卡](characters/elhokar)，现在是杰兹雷恩的荣刃的持有者。
