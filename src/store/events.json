@@ -3444,7 +3444,8 @@
         "related": [
             "characters/jasnah",
             "locations/urithiru"
-        ]
+        ],
+        "tieBreaker": 1
     },
     {
         "id": "shallan-and-adolin-wedding",
@@ -3463,7 +3464,7 @@
             "shallan",
             "adolin"
         ],
-        "coppermind": "True_Desolation",
+        "coppermind": "Summary:Oathbringer#Chapter_122:_A_Debt_Repaid",
         "image": {
             "file": "events/Adolin_&_Shallan_-_VI._the_Lovers_.png",
             "credits": "[Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
@@ -3478,9 +3479,9 @@
         "id": "state-of-the-world",
         "date": [
             1174,
-            3,
-            1,
-            1
+            2,
+            9,
+            5
         ],
         "coordinates": {
             "x": 512,
@@ -3505,11 +3506,12 @@
             "moash"
         ],
         "hideMarker": true,
-        "coppermind": "First_Dreams",
+        "coppermind": "True_Desolation",
         "specialEffect": "factions",
         "related": [
             "characters/dalinar",
-            "characters/odium"
+            "characters/adolin",
+            "characters/shallan",
         ]
     },
     {
@@ -3527,7 +3529,7 @@
             "ds"
         ],
         "hideMarker": true,
-        "coppermind": "Summary:Dawnshard",
+        "coppermind": "First_Dreams",
         "related": [
             "locations/southern-depths"
         ]
