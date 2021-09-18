@@ -967,14 +967,15 @@
         ]
     },
     {
-        "id": "taravangian-visits-the-nightwatcher",
+        "id": "creation-of-the-diagram",
         "date": [
-            1169,
-            1
+            1168,
+            7
         ],
         "coordinates": {
-            "x": 484.1,
-            "y": 333.8
+            "x": 512,
+            "y": 256,
+            "zoom": 0
         },
         "tags": [
             "taravangian"
@@ -989,9 +990,7 @@
             }
         },
         "related": [
-            "characters/cultivation",
             "characters/taravangian",
-            "locations/valley",
             "misc/diagram"
         ]
     },
@@ -4509,7 +4508,7 @@
         "tieBreaker": 4
     },
     {
-        "id": "taravangian ascends",
+        "id": "taravangian-ascends",
         "date": [
             1175,
             4,
@@ -4623,5 +4622,24 @@
             "characters/odium"
         ],
         "tieBreaker": 2
+    },
+    {
+        "id": "venli-meets-ulim",
+        "date": [
+            1166,
+            9
+        ],
+        "coordinates": {
+            "x": 767.7,
+            "y": 363.7
+        },
+        "tags": [
+            "venli",
+            "row"
+        ],
+        "coppermind": "Summary:Rhythm_of_War#Chapter_57:_Child_of_Odium",
+        "related": [
+            "characters/venli"
+        ]
     }
 ]
