@@ -9,4 +9,4 @@ Dalinar and Adolin argue over who should become the next King of Alethkar, with 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* 122|
+| chapter | *Rhythm of War* 66|
