@@ -592,7 +592,7 @@ export default {
       transform: translateX(var(--leave-position));
     }
 
-    &-enter-to, &-leave-from {
+    &-enter-to, &-leave {
       opacity: 1;
       transform: translateX(0);
     }

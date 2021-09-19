@@ -296,17 +296,11 @@ const mutations = {
   closeGoToDate (state) {
     state.goToDateOpen = false
   },
-  openSettings (state) {
-    state.settingsOpen = true
+  openMenu (state, name) {
+    state.openedMenu = name
   },
-  closeSettings (state) {
-    state.settingsOpen = false
-  },
-  openInfo (state) {
-    state.infoOpen = true
-  },
-  closeInfo (state) {
-    state.infoOpen = false
+  closeMenu (state) {
+    state.openedMenu = null
   },
   lockTag (state, tag) {
     state.filter.lockedTag = tag
@@ -364,8 +358,7 @@ export default new Vuex.Store({
     },
     calendarGuideOpen: false,
     goToDateOpen: false,
-    settingsOpen: false,
-    infoOpen: false,
+    openedMenu: null,
     flipTimeline: false,
     flipDirectionalIcons: false,
     scrollbarOptions: {

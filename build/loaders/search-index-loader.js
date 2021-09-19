@@ -19,9 +19,8 @@ module.exports = function (source) {
     }
 
     this.ref('id')
-    this.field('name', { boost: 2 })
+    this.field('name', { boost: 4 })
     this.field('details')
-    this.metadataWhitelist = ['position']
 
     searchable.forEach((entryType) => {
       const entries = messages[entryType] ?? []
