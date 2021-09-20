@@ -64,12 +64,16 @@
             "history"
         ],
         "hideMarker": true,
-        "coppermind": "Spren#Creation"
+        "coppermind": "Spren#Creation",
+        "image": {
+            "file": "events/Shallan's_Sketchbook_-_Cultivationspren.jpg",
+            "credits": "[Ben McSweeney](https://coppermind.net/wiki/Coppermind:Artists/Ben_McSweeney)"
+        }
     },
     {
         "id": "ashyn-exodus",
         "date": [
-            -6000
+            -6100
         ],
         "circa": true,
         "coordinates": {
@@ -90,7 +94,7 @@
     {
         "id": "the-first-desolation",
         "date": [
-            -5980
+            -6080
         ],
         "circa": true,
         "coordinates": {
@@ -883,6 +887,8 @@
             "twok",
             "wor",
             "ob",
+            "ds",
+            "row",
             "dalinar",
             "szeth",
             "navani",
@@ -904,7 +910,10 @@
         "related": [
             "locations/kholinar",
             "characters/gavilar",
-            "characters/szeth"
+            "characters/szeth",
+            "characters/dalinar",
+            "characters/eshonai",
+            "characters/venli"
         ],
         "tieBreaker": 1
     },
@@ -938,6 +947,31 @@
         ]
     },
     {
+        "id": "creation-of-the-diagram",
+        "date": [
+            1168,
+            7
+        ],
+        "coordinates": {
+            "x": 512,
+            "y": 256,
+            "zoom": 0
+        },
+        "tags": [
+            "taravangian"
+        ],
+        "hideMarker": true,
+        "coppermind": "Taravangian#The_Nightwatcher_and_the_creation_of_the_Diagram",
+        "image": {
+            "file": "misc/diagram.jpg",
+            "credits": "[Ari Ibarra](https://coppermind.net/wiki/Coppermind:Artists/Ari_Ibarra)"
+        },
+        "related": [
+            "characters/taravangian",
+            "misc/diagram"
+        ]
+    },
+    {
         "id": "kaladin-joins-the-army",
         "date": [
             1168,
@@ -964,34 +998,6 @@
         "related": [
             "characters/kaladin",
             "locations/hearthstone"
-        ]
-    },
-    {
-        "id": "creation-of-the-diagram",
-        "date": [
-            1168,
-            7
-        ],
-        "coordinates": {
-            "x": 512,
-            "y": 256,
-            "zoom": 0
-        },
-        "tags": [
-            "taravangian"
-        ],
-        "coppermind": "Taravangian#The_Nightwatcher_and_the_creation_of_the_Diagram",
-        "image": {
-            "file": "events/Cultivation_and_the_Nightwatcher_2.jpg",
-            "credits": "[Kyle Pearson](https://coppermind.net/wiki/Coppermind:Artists/Kyle_Pearson)",
-            "offset": {
-                "x": 0,
-                "y": 30
-            }
-        },
-        "related": [
-            "characters/taravangian",
-            "misc/diagram"
         ]
     },
     {
@@ -1085,6 +1091,30 @@
         ]
     },
     {
+        "id": "rysn-in-shinovar",
+        "date": [
+            1172,
+            6
+        ],
+        "coordinates": {
+            "x": 319.4,
+            "y": 294.2
+        },
+        "tags": [
+            "twok",
+            "rysn"
+        ],
+        "coppermind": "Rysn#Shinovar",
+        "image": {
+            "file": "events/Rysn.jpg",
+            "credits": "[botanicaxu](https://botanicaxu.tumblr.com/post/165173520094/oathbringer-countdown-70-days-rysn-larkin)"
+        },
+        "related": [
+            "characters/rysn"
+        ],
+        "tieBreaker": 0
+    },
+    {
         "id": "kaladin-becomes-a-slave",
         "date": [
             1172,
@@ -1107,30 +1137,6 @@
         "related": [
             "characters/kaladin"
         ]
-    },
-    {
-        "id": "rysn-in-shinovar",
-        "date": [
-            1172,
-            10
-        ],
-        "coordinates": {
-            "x": 319.4,
-            "y": 294.2
-        },
-        "tags": [
-            "twok",
-            "rysn"
-        ],
-        "coppermind": "Rysn#Shinovar",
-        "image": {
-            "file": "events/Rysn.jpg",
-            "credits": "[botanicaxu](https://botanicaxu.tumblr.com/post/165173520094/oathbringer-countdown-70-days-rysn-larkin)"
-        },
-        "related": [
-            "characters/rysn"
-        ],
-        "tieBreaker": 0
     },
     {
         "id": "shallan-kills-her-father",
@@ -1207,7 +1213,7 @@
         "id": "rysn-in-the-reshi-isles",
         "date": [
             1173,
-            5
+            1
         ],
         "coordinates": {
             "x": 510,
@@ -3769,7 +3775,8 @@
             "y": 318.3
         },
         "tags": [
-            "row"
+            "row",
+            "kaladin"
         ],
         "coppermind": "Fourth_Bridge",
         "image": {
