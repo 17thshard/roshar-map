@@ -13,7 +13,7 @@
         />
       </svg>
     </div>
-    <router-link class="search-result__name" :to="`${$route.params.locale}/${entry}`">
+    <router-link class="search-result__name" :to="`${$route.params.locale}/${entry}`" @click.native="$emit('use')">
       {{ $t(`${baseTranslationKey}.name`) }}
     </router-link>
     <small class="search-result__type">
@@ -67,7 +67,7 @@ export default {
 <style lang="scss">
 .search-result {
   display: grid;
-  align-items: flex-start;
+  justify-items: flex-start;
   padding: 0.25rem;
   grid-template-columns: auto 1fr;
   grid-gap: 0 0.5rem;

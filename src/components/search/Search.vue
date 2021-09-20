@@ -1,16 +1,22 @@
 <template>
-  <div :class="['search', { 'search--open': open }]">
+  <div
+    ref="root"
+    :class="['search', { 'search--open': open, 'search--closing': closing }]"
+    :style="{ '--left': `${left}px`, '--right': `${right}px` }"
+    @animationend="onAnimationEnd"
+  >
     <button :disabled="open" class="search__button" :title="$t('ui.search.title')" @click="$emit('open')">
       <SearchIcon size="1x" />
     </button>
     <transition name="search__content">
-      <div v-show="open" class="search__content">
+      <div v-if="open" class="search__content">
         <input
           key="field"
           ref="field"
           v-model="query"
           type="search"
           class="search__field"
+          :placeholder="$t('ui.search.prompt')"
           @focusin="fieldFocused = true"
           @focusout="fieldFocused = false"
         >
@@ -26,6 +32,7 @@
         :results="searchResults"
         :loading="loadingIndex"
         :empty-query="query.trim().length === 0"
+        @result-use="$emit('close')"
       />
     </transition>
   </div>
@@ -46,12 +53,19 @@ export default {
       query: '',
       loadingIndex: true,
       searchResults: [],
-      fieldFocused: false
+      fieldFocused: false,
+      left: 0,
+      right: 0,
+      closing: false
     }
   },
   watch: {
     async open (value) {
       if (value) {
+        const rect = this.$refs.root.getBoundingClientRect()
+        this.left = rect.left
+        this.right = window.innerWidth - rect.right
+        this.closing = false
         this.query = ''
         this.$nextTick(() => {
           this.$refs.field.focus()
@@ -59,6 +73,8 @@ export default {
         await this.$store.dispatch('search/loadIndex', this.$t('sourceFile'))
         this.loadingIndex = false
         this.search(this.query)
+      } else {
+        this.closing = true
       }
     },
     query (value) {
@@ -79,6 +95,11 @@ export default {
 
       const index = this.$store.state.search.loadedIndices[this.$t('sourceFile')]
       this.searchResults = index.search(query).map(result => result.ref)
+    },
+    onAnimationEnd (event) {
+      if (event.animationName === 'search--closing') {
+        this.closing = false
+      }
     }
   }
 }
@@ -88,6 +109,7 @@ export default {
 .search {
   position: relative;
   display: flex;
+  z-index: 60;
 
   &:before {
     content: '';
@@ -99,7 +121,7 @@ export default {
     left: 0;
     bottom: 0;
     right: 0;
-    z-index: 2;
+    z-index: 62;
   }
 
   &__button {
@@ -119,7 +141,7 @@ export default {
     color: #242629;
     pointer-events: auto;
     background: transparent;
-    z-index: 3;
+    z-index: 63;
 
     &:hover, &:active, &:focus, &:disabled {
       background: saturate(darken(#F5ECDA, 10%), 5%);
@@ -136,7 +158,7 @@ export default {
     display: flex;
     width: 300px;
     min-width: 0;
-    z-index: 3;
+    z-index: 63;
 
     &-enter-active, &-leave-active {
       transition: all 0.5s ease-in-out;
@@ -185,7 +207,7 @@ export default {
     top: 100%;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 61;
     transform-origin: top center;
 
     &-enter-active, &-leave-active {
@@ -207,6 +229,76 @@ export default {
 
     &-enter-to {
       max-height: 200px !important;
+    }
+  }
+
+  @media (max-width: 640px) {
+    &:after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.5);
+      transition: opacity 0.5s ease-in-out;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    &--open, &--closing {
+      position: fixed;
+      left: 2rem;
+      right: 2rem;
+      top: 2rem;
+      z-index: 70;
+      animation: 0.5s ease-in-out search--opening;
+
+      &:after {
+        pointer-events: auto;
+        opacity: 1;
+      }
+    }
+
+    &--closing {
+      animation: 0.5s ease-in-out 0.3s search--closing;
+
+      &:after {
+        opacity: 0;
+      }
+    }
+
+    &__content {
+      transition: none;
+      max-width: 100% !important;
+
+      &-enter-active {
+        .search__button {
+          transition-delay: 0.4s;
+        }
+      }
+    }
+
+    @keyframes search--opening {
+      from {
+        left: var(--left);
+        right: var(--right);
+      }
+      to {
+        left: 2rem;
+        right: 2rem;
+      }
+    }
+
+    @keyframes search--closing {
+      from {
+        left: 2rem;
+        right: 2rem;
+      }
+      to {
+        left: var(--left);
+        right: var(--right);
+      }
     }
   }
 }

@@ -154,6 +154,7 @@
         "image-credits": "by {credits}",
         "search": {
             "title": "Search",
+            "prompt": "Search...",
             "loading": "Search will be ready shortly...",
             "empty-query": "Enter your search terms above for results to appear here",
             "no-results": "Unfortunately, we couldn't find anything for those search terms"

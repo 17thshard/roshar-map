@@ -12,7 +12,7 @@
           {{ $t('ui.search.no-results') }}
         </li>
         <li v-for="result in results" :key="result">
-          <SearchResult :entry="result" />
+          <SearchResult :entry="result" @use="$emit('result-use')" />
         </li>
       </ul>
     </Scrollbar>
@@ -46,7 +46,7 @@ export default {
   padding: 1rem;
   width: 100%;
   border-radius: 1.25rem;
-  max-height: calc(min(600px, 100vh - 6rem));
+  max-height: calc(min(600px, 100vh - 7rem));
   overflow: hidden;
   background: #F5ECDA url(../../assets/paper.png);
   box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.5);
@@ -55,6 +55,7 @@ export default {
     position: relative;
     z-index: 1;
     display: flex;
+    flex-direction: column;
     align-items: stretch;
     justify-content: stretch;
     min-height: 0;
@@ -62,12 +63,11 @@ export default {
     width: 100%;
 
     .__panel {
-      width: 100%;
+      min-width: 100%;
       height: auto !important;
     }
 
     .__view {
-      z-index: 60 !important;
       display: flex;
       align-items: stretch;
       width: auto !important;

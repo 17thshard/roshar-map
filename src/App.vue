@@ -196,11 +196,10 @@ body {
   .app__actions {
     position: fixed;
     top: 2rem;
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-columns: repeat(3, minmax(0, max-content));
+    display: flex;
     grid-gap: 1rem;
     max-width: calc(100% - 4rem);
+    z-index: 60;
 
     [dir=ltr] & {
       right: 2rem;
