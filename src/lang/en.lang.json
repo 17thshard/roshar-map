@@ -150,7 +150,30 @@
         "lock-timeline": "Lock navigation to timeline",
         "unlock-timeline": "Unlock navigation",
         "translation-by": "Translation by",
-        "image-credits": "by {credits}"
+        "image-credits": "by {credits}",
+        "share": "Share"
+    },
+    "sharing": {
+        "title": "Share",
+        "twitter": {
+            "button-text": "Tweet",
+            "template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
+        },
+        "facebook": {
+            "button-text": "Facebook"
+        },
+        "reddit": {
+            "button-text": "Reddit",
+            "template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
+        },
+        "tumblr": {
+            "button-text": "Tumblr",
+            "template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
+        },
+        "more": {
+            "button-text": "More...",
+            "template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
+        }
     },
     "entry-types": {
         "events": "Events",

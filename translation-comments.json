@@ -218,6 +218,42 @@
             "credits": "Attribution for the image"
         }
     },
+    "sharing": "Sharing",
+    "sharing.title": "Share Section Title",
+    "sharing.twitter": "Twitter",
+    "sharing.twitter.button-text": "Button Label",
+    "sharing.twitter.template": {
+        "name": "Tweet Template",
+        "variables": {
+            "entry": "Name of the shared entry"
+        }
+    },
+    "sharing.facebook": "Twitter",
+    "sharing.facebook.button-text": "Button Label",
+    "sharing.reddit": "Reddit",
+    "sharing.reddit.button-text": "Button Label",
+    "sharing.reddit.template": {
+        "name": "Title Template",
+        "variables": {
+            "entry": "Name of the shared entry"
+        }
+    },
+    "sharing.tumblr": "Tumblr",
+    "sharing.tumblr.button-text": "Button Label",
+    "sharing.tumblr.template": {
+        "name": "Title Template",
+        "variables": {
+            "entry": "Name of the shared entry"
+        }
+    },
+    "sharing.more": "Additional Share Options",
+    "sharing.more.button-text": "Button Label",
+    "sharing.more.template": {
+        "name": "Message Template",
+        "variables": {
+            "entry": "Name of the shared entry"
+        }
+    },
     "entry-types": "Entry Types",
     "entry-types.events": "Events",
     "entry-types.locations": "Locations",
