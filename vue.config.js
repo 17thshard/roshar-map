@@ -33,11 +33,14 @@ module.exports = {
         .resourceQuery(/srcset/)
         .use('cache')
         .loader('cache-loader')
+        .options({
+          cacheIdentifier: 'fixed-widths'
+        })
         .end()
         .use('srcset')
         .loader('webpack-image-srcset-loader')
         .options({
-          sizes: ['1x', '2x'],
+          sizes: ['500w', '1000w'],
           esModule: false,
           scaleUp: false
         })
@@ -66,7 +69,7 @@ module.exports = {
         .options({
           context: './src/assets',
           name: 'img/[path][name].[hash:8].[ext]',
-          postTransformPublicPath: p => `${p} + ' 1x'`
+          postTransformPublicPath: p => `${p} + ' 500w'`
         })
         .end()
         .end()

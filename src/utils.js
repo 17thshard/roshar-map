@@ -52,9 +52,9 @@ export function getEntryImageSrcSet (path) {
 
 export function parseSrcSet (srcSet) {
   const sources = srcSet.split(',').map((source) => {
-    const [, url, size] = /^(.+)\s+(\d+x)$/.exec(source.trim())
+    const [, url, size] = /^(.+)\s+(\d+)w$/.exec(source.trim())
 
-    return { url, size }
+    return { url, size: `${Number.parseInt(size) / 500}x` }
   })
 
   const baseCss = `image-set(${sources.map(source => `url('${escapeCssPath(source.url)}') ${source.size}`).join(', ')})`
