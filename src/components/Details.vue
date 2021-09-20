@@ -56,16 +56,16 @@
           <h3>{{ $t('ui.share') }}</h3>
           <TwitterButton
             :btn-text="$t('sharing.twitter.button-text')"
-            :description="$t('sharing.twitter.template', { entry: $t(`${baseTranslationKey}.name`) })"
+            :description="$t('sharing.twitter.entry-template', { entry: $t(`${baseTranslationKey}.name`) })"
           />
           <FacebookButton :btn-text="$t('sharing.facebook.button-text')" />
           <RedditButton
             :btn-text="$t('sharing.reddit.button-text')"
-            :title="$t('sharing.reddit.template', { entry: $t(`${baseTranslationKey}.name`) })"
+            :title="$t('sharing.reddit.entry-template', { entry: $t(`${baseTranslationKey}.name`) })"
           />
           <TumblrButton
             :btn-text="$t('sharing.tumblr.button-text')"
-            :description="$t('sharing.tumblr.template', { entry: $t(`${baseTranslationKey}.name`) })"
+            :description="$t('sharing.tumblr.entry-template', { entry: $t(`${baseTranslationKey}.name`) })"
           />
           <button v-if="nativeShareSupported" class="details__share-more-button" @click="shareNatively">
             {{ $t('sharing.more') }}
@@ -278,7 +278,7 @@ export default {
       navigator.share({
         url: window.location.href,
         title: document.title,
-        description: this.$t('sharing.more.template', { entry: this.$t(`${this.baseTranslationKey}.name`) })
+        description: this.$t('sharing.more.entry-template', { entry: this.$t(`${this.baseTranslationKey}.name`) })
       })
     }
   }
