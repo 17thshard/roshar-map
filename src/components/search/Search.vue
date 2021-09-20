@@ -14,7 +14,7 @@
           @focusin="fieldFocused = true"
           @focusout="fieldFocused = false"
         >
-        <button key="close-button" class="search__button" :title="$t('close')" @click="$emit('close')">
+        <button key="close-button" class="search__button" :title="$t('ui.close')" @click="$emit('close')">
           <XIcon size="1x" />
         </button>
       </div>
@@ -186,6 +186,7 @@ export default {
     left: 0;
     right: 0;
     z-index: 1;
+    transform-origin: top center;
 
     &-enter-active, &-leave-active {
       transition: all 0.5s ease-in-out;
@@ -196,12 +197,15 @@ export default {
     }
 
     &-enter, &-leave-to {
-      transform: translateY(-3.5rem);
+      transform: translateY(-3.25rem);
       max-height: 0 !important;
     }
 
     &-enter-to, &-leave {
       transform: translateY(0);
+    }
+
+    &-enter-to {
       max-height: 200px !important;
     }
   }

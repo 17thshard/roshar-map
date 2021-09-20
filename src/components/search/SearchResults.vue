@@ -41,10 +41,11 @@ export default {
 .search-results {
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   box-sizing: border-box;
   padding: 1rem;
   width: 100%;
-  border-radius: 1rem;
+  border-radius: 1.25rem;
   max-height: calc(min(600px, 100vh - 6rem));
   overflow: hidden;
   background: #F5ECDA url(../../assets/paper.png);
@@ -58,8 +59,10 @@ export default {
     justify-content: stretch;
     min-height: 0;
     flex: 1;
+    width: 100%;
 
     .__panel {
+      width: 100%;
       height: auto !important;
     }
 
@@ -75,6 +78,11 @@ export default {
     padding: 0;
     margin: 0;
     list-style-type: none;
+    width: 100%;
+
+    li {
+      width: 100%;
+    }
   }
 
   &__placeholder {
