@@ -155,24 +155,25 @@
     },
     "sharing": {
         "title": "Share",
+        "global-message": "Check out the Interactive Map & Timeline of Roshar!",
         "twitter": {
             "button-text": "Tweet",
-            "template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
+            "entry-template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
         },
         "facebook": {
             "button-text": "Facebook"
         },
         "reddit": {
             "button-text": "Reddit",
-            "template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
+            "entry-template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
         },
         "tumblr": {
             "button-text": "Tumblr",
-            "template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
+            "entry-template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
         },
         "more": {
             "button-text": "More...",
-            "template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
+            "entry-template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
         }
     },
     "entry-types": {
