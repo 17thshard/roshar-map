@@ -2418,7 +2418,9 @@
             "events/founding-of-the-knights-radiant-and-urithiru",
             "events/re-shephir-driven-from-urithiru",
             "events/taravangian-arrives-in-urithiru",
-            "events/urithiru-rediscovered"
+            "events/urithiru-rediscovered",
+            "events/kaladin-promoted",
+            "events/coalition-convenes"
         ]
     },
     {
@@ -4094,6 +4096,7 @@
             "events/shallan-attends-the-revel",
             "events/taln-arrives-in-kholinar",
             "events/trapped-in-shadesmar",
+            "events/raboniel-arrives",
             "locations/alethkar"
         ],
         "image": {
@@ -4915,6 +4918,7 @@
             "events/oroden-is-born",
             "events/roshone-arrives-in-hearthstone",
             "events/wistiow-dies",
+            "events/hearthstone-evacuated",
             "locations/alethkar"
         ]
     },
