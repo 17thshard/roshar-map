@@ -4897,6 +4897,15 @@
             ]
         },
         "coppermind": "Hearthstone",
+        "image": {
+            "file": "events/Thepathtohearthstone.png",
+            "credits": "[Ashley Coad](https://coppermind.net/wiki/Coppermind:Artists/Ashley_Coad)",
+            "size": 250,
+            "offset": {
+                "x": 10,
+                "y": 50
+            }
+        },
         "related": [
             "characters/kaladin",
             "events/kaladin-begins-training",
