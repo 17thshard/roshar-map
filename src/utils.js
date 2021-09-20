@@ -41,7 +41,13 @@ export function escapeCssPath (path) {
 }
 
 export function getEntryImageSrcSet (path) {
-  return parseSrcSet(require(`@/assets/entries/${path}?srcset`))
+  try {
+    return parseSrcSet(require(`@/assets/entries/${path}?srcset`))
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.error(`Could not retrieve entry image '${path}'`)
+    throw e
+  }
 }
 
 export function parseSrcSet (srcSet) {
