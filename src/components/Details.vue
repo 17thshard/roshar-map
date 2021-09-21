@@ -68,7 +68,7 @@
             :description="$t('sharing.tumblr.entry-template', { entry: $t(`${baseTranslationKey}.name`) })"
           />
           <button v-if="nativeShareSupported" class="details__share-more-button" @click="shareNatively">
-            {{ $t('sharing.more') }}
+            {{ $t('sharing.more.button-text') }}
           </button>
         </section>
         <section v-if="anyRelated" class="details__related">
