@@ -751,6 +751,7 @@
         },
         "related": [
             "characters/taravangian",
+            "events/creation-of-the-diagram",
             "events/shallan-becomes-jasnahs-ward",
             "events/shallan-confronts-jasnah",
             "events/shallan-visits-shadesmar",
@@ -1525,7 +1526,8 @@
         },
         "coppermind": "Aimia",
         "related": [
-            "events/scouring-of-aimia"
+            "events/scouring-of-aimia",
+            "events/wandersail-arrival"
         ]
     },
     {
@@ -2414,13 +2416,26 @@
         "coppermind": "Urithiru",
         "related": [
             "characters/dalinar",
+            "events/coalition-convenes",
+            "events/diagram-disbands",
+            "events/dog-and-dragon",
             "events/first-meeting-of-monarchs",
             "events/founding-of-the-knights-radiant-and-urithiru",
-            "events/re-shephir-driven-from-urithiru",
-            "events/taravangian-arrives-in-urithiru",
-            "events/urithiru-rediscovered",
+            "events/fourth-bridge-arrival",
+            "events/kaladin-helps-noril",
             "events/kaladin-promoted",
-            "events/coalition-convenes"
+            "events/navani-creates-antilight",
+            "events/navanis-tone-discovery",
+            "events/re-shephir-driven-from-urithiru",
+            "events/second-node-destroyed",
+            "events/shadesmar-envoy-departs",
+            "events/taravangian-arrives-in-urithiru",
+            "events/third-node-destroyed",
+            "events/urithiru-captured",
+            "events/urithiru-liberated",
+            "events/urithiru-rediscovered",
+            "events/venli-frees-rlain",
+            "events/warlight-discovered"
         ]
     },
     {
@@ -2586,12 +2601,17 @@
             "events/battle-of-the-tower",
             "events/disadvantaged-duel",
             "events/eshonai-is-born",
+            "events/ialai-assassinated",
             "events/kaladin-joins-bridge-four",
             "events/shallan-and-kaladin-in-the-chasms",
             "events/shallan-meets-ghostbloods",
+            "events/shallan-undercover",
             "events/szeth-attacks-dalinar",
             "events/the-last-legion",
+            "events/the-parshendi-discovered",
             "events/venli-is-born",
+            "events/venli-meets-ulim",
+            "events/wit-meets-odium",
             "locations/narak"
         ]
     },
@@ -2860,8 +2880,15 @@
         },
         "coppermind": "Emul",
         "related": [
+            "events/dalinar-meets-odium",
+            "events/dalinar-visits-taravangian",
+            "events/end-of-emul-campaign",
             "events/lurnip-famine",
+            "events/ruthar-replaced",
+            "events/taravangian-ascends",
+            "events/taravangians-treachery",
             "events/the-eightys-war",
+            "events/war-in-emul",
             "locations/sesemalex-dar"
         ]
     },
@@ -3048,6 +3075,7 @@
         },
         "coppermind": "Tukar",
         "related": [
+            "events/dalinar-meets-ishar",
             "events/the-eightys-war",
             "locations/sesemalex-dar"
         ]
@@ -4500,6 +4528,7 @@
             "events/kings-drop-in-reserve",
             "events/oathgate-to-thaylen-city-opened",
             "events/the-battle-of-thaylen-field",
+            "events/wandersail-departure",
             "locations/thaylenah"
         ]
     },
@@ -4679,8 +4708,7 @@
         },
         "related": [
             "characters/cultivation",
-            "events/dalinar-visits-the-nightwatcher",
-            "events/taravangian-visits-the-nightwatcher"
+            "events/dalinar-visits-the-nightwatcher"
         ]
     },
     {
@@ -4803,6 +4831,8 @@
             "events/bridge-four-begins-training-squires",
             "events/eshonai-adopts-stormform",
             "events/eshonai-seizes-control",
+            "events/fourth-bridge-arrival",
+            "events/fourth-bridge-departure",
             "locations/shattered-plains"
         ]
     },
@@ -7803,7 +7833,10 @@
                 }
             ]
         },
-        "coppermind": "Southern_Depths"
+        "coppermind": "Southern_Depths",
+        "related": [
+            "events/first-dreams-discovered"
+        ]
     },
     {
         "id": "tarat-sea",
@@ -12867,35 +12900,35 @@
     {
         "id": "sea-of-souls",
         "coordinates": {
-            "x": 517.7,
-            "y": 311
+            "x": 506.5,
+            "y": 328.5
         },
         "mapId": 85,
         "points": {
             "en": [
                 {
-                    "x": 476.1456582633053,
-                    "y": 313.0935251798561
+                    "x": 466.8,
+                    "y": 332.4
                 },
                 {
-                    "x": 518.5562224889956,
-                    "y": 303.27098321342925
+                    "x": 512.9333333333333,
+                    "y": 322
                 },
                 {
-                    "x": 555.6398559423769,
-                    "y": 303.8848920863309
+                    "x": 542.6666666666666,
+                    "y": 324.1333333333333
                 },
                 {
-                    "x": 555.6398559423769,
-                    "y": 316.36770583533166
+                    "x": 542.1333333333333,
+                    "y": 333.8666666666667
                 },
                 {
-                    "x": 518.9659863945578,
-                    "y": 318.0047961630695
+                    "x": 508.5333333333333,
+                    "y": 333.6
                 },
                 {
-                    "x": 480.0384153661464,
-                    "y": 327.2134292565947
+                    "x": 469.73333333333335,
+                    "y": 343.3333333333333
                 }
             ],
             "es": [
@@ -14411,8 +14444,8 @@
                     "y": 316.3
                 },
                 {
-                    "x": 734.1,
-                    "y": 316.2
+                    "x": 734.1333333333333,
+                    "y": 317.6
                 },
                 {
                     "x": 735.2,
@@ -14519,355 +14552,277 @@
     {
         "id": "nameless",
         "coordinates": {
-            "x": 705.7,
-            "y": 316.7
+            "x": 453.2,
+            "y": 382.8
         },
         "mapId": 95,
         "points": {
             "en": [
                 {
-                    "x": 704.1,
-                    "y": 316.3
+                    "x": 480.93333333333334,
+                    "y": 383.3333333333333
                 },
                 {
-                    "x": 734.1,
-                    "y": 316.2
+                    "x": 451.8666666666667,
+                    "y": 383.8666666666667
                 },
                 {
-                    "x": 735.2,
-                    "y": 326.9
+                    "x": 452.26666666666665,
+                    "y": 374.8
                 },
                 {
-                    "x": 702.2,
-                    "y": 326.7
+                    "x": 480.85333333333335,
+                    "y": 375.04
                 }
             ],
             "es": [
                 {
-                    "x": 704.1,
-                    "y": 316.3
+                    "x": 446.93333333333334,
+                    "y": 373.3333333333333
                 },
                 {
-                    "x": 734.1,
-                    "y": 316.2
+                    "x": 449.77777777777777,
+                    "y": 387.91111111111115
                 },
                 {
-                    "x": 735.2,
-                    "y": 326.9
+                    "x": 486.93333333333334,
+                    "y": 386.6666666666667
                 },
                 {
-                    "x": 702.2,
-                    "y": 326.7
+                    "x": 486.0444444444445,
+                    "y": 372.62222222222226
                 }
             ],
             "ru": [
                 {
-                    "x": 700.0431465403841,
-                    "y": 320.18521441725863
+                    "x": 448,
+                    "y": 372.8
                 },
                 {
-                    "x": 700.7166535122336,
-                    "y": 326.51617995264405
+                    "x": 483.55555555555554,
+                    "y": 373.15555555555557
                 },
                 {
-                    "x": 707.047619047619,
-                    "y": 328.6714022625625
+                    "x": 484.6222222222222,
+                    "y": 384.71111111111105
                 },
                 {
-                    "x": 717.1502236253618,
-                    "y": 327.8631938963431
-                },
-                {
-                    "x": 721.0565640620889,
-                    "y": 328.80610365693235
-                },
-                {
-                    "x": 724.5588003157064,
-                    "y": 327.1896869244935
-                },
-                {
-                    "x": 737.7595369639569,
-                    "y": 327.72849250197316
-                },
-                {
-                    "x": 738.1636411470666,
-                    "y": 319.9158116285188
-                },
-                {
-                    "x": 734.1225993159695,
-                    "y": 317.6258879242305
-                },
-                {
-                    "x": 721.9994738226783,
-                    "y": 316.81767955801104
-                },
-                {
-                    "x": 708.7987371744277,
-                    "y": 316.81767955801104
-                },
-                {
-                    "x": 702.4677716390423,
-                    "y": 316.4135753749013
+                    "x": 447.11111111111114,
+                    "y": 386.3111111111111
                 }
             ],
             "zh": [
                 {
-                    "x": 702.7102154273801,
-                    "y": 312.8888888888889
+                    "x": 445.68888888888887,
+                    "y": 371.73333333333335
                 },
                 {
-                    "x": 732.9534398888117,
-                    "y": 311.82222222222225
+                    "x": 471.28888888888883,
+                    "y": 372.26666666666665
                 },
                 {
-                    "x": 735.2,
-                    "y": 326.9
+                    "x": 475.73333333333335,
+                    "y": 385.6
                 },
                 {
-                    "x": 702.2,
-                    "y": 326.7
+                    "x": 448.1777777777778,
+                    "y": 386.1333333333333
                 }
             ]
         },
         "shadesmar": true,
         "coppermind": "Nameless",
         "related": [
+            "events/nameless-arrival"
         ]
     },
     {
         "id": "nohadons-stairways",
         "coordinates": {
-            "x": 705.7,
-            "y": 316.7
+            "x": 485.9,
+            "y": 317.5
         },
         "mapId": 96,
         "points": {
             "en": [
                 {
-                    "x": 704.1,
-                    "y": 316.3
+                    "x": 546.6666666666666,
+                    "y": 309.8666666666667
                 },
                 {
-                    "x": 734.1,
-                    "y": 316.2
+                    "x": 547.2,
+                    "y": 319.46666666666664
                 },
                 {
-                    "x": 735.2,
-                    "y": 326.9
+                    "x": 487.8666666666667,
+                    "y": 318.26666666666665
                 },
                 {
-                    "x": 702.2,
-                    "y": 326.7
+                    "x": 487.46666666666664,
+                    "y": 308.93333333333334
                 }
             ],
             "es": [
                 {
-                    "x": 704.1,
-                    "y": 316.3
+                    "x": 488.88888888888886,
+                    "y": 294.7555555555556
                 },
                 {
-                    "x": 734.1,
-                    "y": 316.2
+                    "x": 481.59999999999997,
+                    "y": 307.5555555555556
                 },
                 {
-                    "x": 735.2,
-                    "y": 326.9
+                    "x": 511.11111111111114,
+                    "y": 303.46666666666664
                 },
                 {
-                    "x": 702.2,
-                    "y": 326.7
+                    "x": 504.88888888888886,
+                    "y": 294.93333333333334
                 }
             ],
             "ru": [
                 {
-                    "x": 700.0431465403841,
-                    "y": 320.18521441725863
+                    "x": 483.3777777777778,
+                    "y": 292.8
                 },
                 {
-                    "x": 700.7166535122336,
-                    "y": 326.51617995264405
+                    "x": 485.68888888888887,
+                    "y": 303.1111111111111
                 },
                 {
-                    "x": 707.047619047619,
-                    "y": 328.6714022625625
+                    "x": 500.6222222222222,
+                    "y": 299.37777777777774
                 },
                 {
-                    "x": 717.1502236253618,
-                    "y": 327.8631938963431
-                },
-                {
-                    "x": 721.0565640620889,
-                    "y": 328.80610365693235
-                },
-                {
-                    "x": 724.5588003157064,
-                    "y": 327.1896869244935
-                },
-                {
-                    "x": 737.7595369639569,
-                    "y": 327.72849250197316
-                },
-                {
-                    "x": 738.1636411470666,
-                    "y": 319.9158116285188
-                },
-                {
-                    "x": 734.1225993159695,
-                    "y": 317.6258879242305
-                },
-                {
-                    "x": 721.9994738226783,
-                    "y": 316.81767955801104
-                },
-                {
-                    "x": 708.7987371744277,
-                    "y": 316.81767955801104
-                },
-                {
-                    "x": 702.4677716390423,
-                    "y": 316.4135753749013
+                    "x": 499.55555555555554,
+                    "y": 291.2
                 }
             ],
             "zh": [
                 {
-                    "x": 702.7102154273801,
-                    "y": 312.8888888888889
+                    "x": 472.35555555555555,
+                    "y": 300.0888888888889
                 },
                 {
-                    "x": 732.9534398888117,
-                    "y": 311.82222222222225
+                    "x": 476.44444444444446,
+                    "y": 310.93333333333334
                 },
                 {
-                    "x": 735.2,
-                    "y": 326.9
+                    "x": 487.11111111111114,
+                    "y": 309.8666666666667
                 },
                 {
-                    "x": 702.2,
-                    "y": 326.7
+                    "x": 489.24444444444447,
+                    "y": 298.1333333333333
                 }
             ]
         },
         "shadesmar": true,
         "coppermind": "Nohadon's Staircases",
         "related": [
+            "events/shadesmar-envoy-departs"
         ]
     },
     {
         "id": "lasting-integrity",
         "coordinates": {
-            "x": 705.7,
-            "y": 316.7
+            "x": 408.7,
+            "y": 391.1
         },
         "mapId": 97,
         "points": {
             "en": [
                 {
-                    "x": 704.1,
-                    "y": 316.3
+                    "x": 364.8,
+                    "y": 382.5777777777777
                 },
                 {
-                    "x": 734.1,
-                    "y": 316.2
+                    "x": 364.44444444444446,
+                    "y": 391.46666666666664
                 },
                 {
-                    "x": 735.2,
-                    "y": 326.9
+                    "x": 412.08888888888885,
+                    "y": 392.3555555555556
                 },
                 {
-                    "x": 702.2,
-                    "y": 326.7
+                    "x": 413.5111111111111,
+                    "y": 382.4
                 }
             ],
             "es": [
                 {
-                    "x": 704.1,
-                    "y": 316.3
+                    "x": 375.11111111111114,
+                    "y": 392.5333333333333
                 },
                 {
-                    "x": 734.1,
-                    "y": 316.2
+                    "x": 412.9777777777778,
+                    "y": 398.5777777777778
                 },
                 {
-                    "x": 735.2,
-                    "y": 326.9
+                    "x": 414.4,
+                    "y": 382.0444444444445
                 },
                 {
-                    "x": 702.2,
-                    "y": 326.7
+                    "x": 380.9777777777778,
+                    "y": 379.73333333333335
                 }
             ],
             "ru": [
                 {
-                    "x": 700.0431465403841,
-                    "y": 320.18521441725863
+                    "x": 376.5333333333333,
+                    "y": 381.15555555555557
                 },
                 {
-                    "x": 700.7166535122336,
-                    "y": 326.51617995264405
+                    "x": 419.9111111111111,
+                    "y": 384
                 },
                 {
-                    "x": 707.047619047619,
-                    "y": 328.6714022625625
+                    "x": 416.7111111111111,
+                    "y": 397.5111111111111
                 },
                 {
-                    "x": 717.1502236253618,
-                    "y": 327.8631938963431
-                },
-                {
-                    "x": 721.0565640620889,
-                    "y": 328.80610365693235
-                },
-                {
-                    "x": 724.5588003157064,
-                    "y": 327.1896869244935
-                },
-                {
-                    "x": 737.7595369639569,
-                    "y": 327.72849250197316
-                },
-                {
-                    "x": 738.1636411470666,
-                    "y": 319.9158116285188
-                },
-                {
-                    "x": 734.1225993159695,
-                    "y": 317.6258879242305
-                },
-                {
-                    "x": 721.9994738226783,
-                    "y": 316.81767955801104
-                },
-                {
-                    "x": 708.7987371744277,
-                    "y": 316.81767955801104
-                },
-                {
-                    "x": 702.4677716390423,
-                    "y": 316.4135753749013
+                    "x": 369.06666666666666,
+                    "y": 392.5333333333333
                 }
             ],
             "zh": [
                 {
-                    "x": 702.7102154273801,
-                    "y": 312.8888888888889
+                    "x": 375.46666666666664,
+                    "y": 379.55555555555554
                 },
                 {
-                    "x": 732.9534398888117,
-                    "y": 311.82222222222225
+                    "x": 417.9555555555555,
+                    "y": 382.2222222222222
                 },
                 {
-                    "x": 735.2,
-                    "y": 326.9
+                    "x": 413.3333333333333,
+                    "y": 402.1333333333333
                 },
                 {
-                    "x": 702.2,
-                    "y": 326.7
+                    "x": 370.84444444444443,
+                    "y": 391.46666666666664
                 }
             ]
         },
         "shadesmar": true,
         "coppermind": "Lasting Integrity",
         "related": [
-        ]
+            "events/adolin-murders-sadeas",
+            "events/adolin-trial-day-1",
+            "events/adolin-trial-day-2",
+            "events/adolin-trial-day-3",
+            "events/azure-leaves-lasting-integrity",
+            "events/lasting-integrity-arrival",
+            "events/shallan-leaves-ghostbloods",
+            "events/veil-reintegrated"
+        ],
+        "image": {
+            "file": "locations/Lasting_Integrity_US_Cover_Crop.jpg",
+            "credits": "[Michael Whelan](https://coppermind.net/wiki/Coppermind:Artists/Michael_Whelan)",
+            "offset": {
+                "x": 0,
+                "y": 40
+            }
+        }
     }
 ]
