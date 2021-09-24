@@ -1,11 +1,36 @@
 [
     {
-        "id": "tags",
+        "id": "books",
         "tags": [
             {
-                "id": "history",
-                "color": "#785c54",
-                "alpha": 0.6
+                "id": "twok",
+                "color": "#165a9e",
+                "alpha": 0.5
+            },
+            {
+                "id": "wor",
+                "color": "#950025",
+                "alpha": 0.5
+            },
+            {
+                "id": "ed",
+                "color": "#cdcdcd",
+                "alpha": 1
+            },
+            {
+                "id": "ob",
+                "color": "#ebca65",
+                "alpha": 0.75
+            },
+            {
+                "id": "ds",
+                "color": "#cdcdcd",
+                "alpha": 0.5
+            },
+            {
+                "id": "row",
+                "color": "#921892",
+                "alpha": 0.5
             }
         ]
     },
@@ -90,36 +115,21 @@
         ]
     },
     {
-        "id": "books",
+        "id": "tags",
         "tags": [
             {
-                "id": "twok",
-                "color": "#165a9e",
+                "id": "history",
+                "color": "#785c54",
+                "alpha": 0.6
+            },
+            {
+                "id": "diagram",
+                "color": "#999791",
                 "alpha": 0.5
             },
             {
-                "id": "wor",
+                "id": "ghostbloods",
                 "color": "#950025",
-                "alpha": 0.5
-            },
-            {
-                "id": "ed",
-                "color": "#cdcdcd",
-                "alpha": 1
-            },
-            {
-                "id": "ob",
-                "color": "#ebca65",
-                "alpha": 0.75
-            },
-            {
-                "id": "ds",
-                "color": "#cdcdcd",
-                "alpha": 0.5
-            },
-            {
-                "id": "row",
-                "color": "#921892",
                 "alpha": 0.5
             }
         ]
