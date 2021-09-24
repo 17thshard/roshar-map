@@ -33,6 +33,16 @@
                 "alpha": 0.5
             },
             {
+                "id": "eshonai",
+                "color": "#921892",
+                "alpha": 0.5
+            },
+            {
+                "id": "venli",
+                "color": "#921892",
+                "alpha": 0.5
+            },
+            {
                 "id": "adolin",
                 "color": "#0f3462",
                 "alpha": 0.75
@@ -43,9 +53,9 @@
                 "alpha": 0.5
             },
             {
-                "id": "lift",
-                "color": "#cdcdcd",
-                "alpha": 1
+                "id": "navani",
+                "color": "#999791",
+                "alpha": 0.5
             },
             {
                 "id": "jasnah",
@@ -53,23 +63,13 @@
                 "alpha": 0.5
             },
             {
+                "id": "lift",
+                "color": "#cdcdcd",
+                "alpha": 1
+            },
+            {
                 "id": "rysn",
                 "color": "#999791",
-                "alpha": 0.5
-            },
-            {
-                "id": "navani",
-                "color": "#999791",
-                "alpha": 0.5
-            },
-            {
-                "id": "eshonai",
-                "color": "#921892",
-                "alpha": 0.5
-            },
-            {
-                "id": "venli",
-                "color": "#921892",
                 "alpha": 0.5
             },
             {
@@ -119,6 +119,41 @@
             },
             {
                 "id": "row",
+                "color": "#921892",
+                "alpha": 0.5
+            }
+        ]
+    },
+    {
+        "id": "spoilers",
+        "tags": [
+            {
+                "id": "twoks",
+                "color": "#165a9e",
+                "alpha": 0.5
+            },
+            {
+                "id": "wors",
+                "color": "#950025",
+                "alpha": 0.5
+            },
+            {
+                "id": "eds",
+                "color": "#cdcdcd",
+                "alpha": 1
+            },
+            {
+                "id": "obs",
+                "color": "#ebca65",
+                "alpha": 0.75
+            },
+            {
+                "id": "dss",
+                "color": "#cdcdcd",
+                "alpha": 0.5
+            },
+            {
+                "id": "rows",
                 "color": "#921892",
                 "alpha": 0.5
             }
