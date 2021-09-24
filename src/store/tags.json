@@ -123,40 +123,5 @@
                 "alpha": 0.5
             }
         ]
-    },
-    {
-        "id": "spoilers",
-        "tags": [
-            {
-                "id": "twoks",
-                "color": "#165a9e",
-                "alpha": 0.5
-            },
-            {
-                "id": "wors",
-                "color": "#950025",
-                "alpha": 0.5
-            },
-            {
-                "id": "eds",
-                "color": "#cdcdcd",
-                "alpha": 1
-            },
-            {
-                "id": "obs",
-                "color": "#ebca65",
-                "alpha": 0.75
-            },
-            {
-                "id": "dss",
-                "color": "#cdcdcd",
-                "alpha": 0.5
-            },
-            {
-                "id": "rows",
-                "color": "#921892",
-                "alpha": 0.5
-            }
-        ]
     }
 ]
