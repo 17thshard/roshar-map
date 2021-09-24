@@ -194,8 +194,7 @@
     "tagCategories": {
         "tags": "Tags",
         "characters": "Characters",
-        "books": "Books",
-        "spoilers": "Spoilers"
+        "books": "Books"
     },
     "tags": {
         "general": "General",
@@ -208,12 +207,6 @@
         "ob": "Oathbringer",
         "ds": "Dawnshard",
         "row": "Rhythm of War",
-        "twoks": "The Way of Kings",
-        "wors": "Words of Radiance",
-        "eds": "Edgedancer",
-        "obs": "Oathbringer",
-        "dss": "Dawnshard",
-        "rows": "Rhythm of War",
         "adolin": "Adolin",
         "renarin": "Renarin",
         "lift": "Lift",
