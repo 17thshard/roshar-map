@@ -75,6 +75,7 @@ The following is a list of all the artists that are either official artists or h
  * [Casey Fallon](https://coppermind.net/wiki/Coppermind:Artists/Casey_Fallon)
  * [Caio Santos](https://coppermind.net/wiki/Coppermind:Artists/Caio_Santos)
  * [Connor Chamberlain](https://www.artstation.com/conjchamberlain)
+ * [Damako Art](https://coppermind.net/wiki/Coppermind:Artists/Damako_Art)
  * [Eduard Coll](https://www.artstation.com/eduardcoll)
  * [Ellie L.](https://coppermind.net/wiki/Coppermind:Artists/Ellie_L.)
  * [Evan Monteiro](https://coppermind.net/wiki/Coppermind:Artists/Evan_Monteiro)
