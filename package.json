@@ -55,6 +55,7 @@
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11",
+    "warnings-to-errors-webpack-plugin": "^2.2.0",
     "webpack-image-resize-loader": "^4.0.2",
     "webpack-image-srcset-loader": "^5.0.3"
   },

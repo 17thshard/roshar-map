@@ -1,8 +1,17 @@
 const path = require('path')
+const WarningsToErrorsPlugin = require('warnings-to-errors-webpack-plugin')
 
 module.exports = {
   productionSourceMap: false,
+  configureWebpack: {
+    optimization: {
+      noEmitOnErrors: true,
+    }
+  },
   chainWebpack: (config) => {
+    config.plugin('warnings-to-errors')
+      .use(WarningsToErrorsPlugin)
+
     config.resolveLoader
       .modules
       .add(path.resolve(__dirname, 'build/loaders'))
@@ -34,7 +43,7 @@ module.exports = {
         .use('cache')
         .loader('cache-loader')
         .options({
-          cacheIdentifier: 'fixed-widths'
+          cacheIdentifier: 'min-width'
         })
         .end()
         .use('srcset')
@@ -44,6 +53,10 @@ module.exports = {
           esModule: false,
           scaleUp: false
         })
+        .end()
+        .use('min-size')
+        .loader(path.resolve('build/loaders/image-min-size-loader.js'))
+        .options({ minWidth: 500 })
 
       config.module
         .rule('images-resize')
@@ -55,11 +68,15 @@ module.exports = {
         .end()
         .use('resize')
         .loader('webpack-image-resize-loader')
-        .end()
-        .use('max-size')
-        .loader(path.resolve('build/loaders/image-max-size-loader.js'))
-        .options({ maxWidth: 1000 })
     } else {
+      config.module
+        .rule('validate-images')
+        .resourceQuery(/srcset/)
+        .pre()
+        .use('min-size')
+        .loader(path.resolve('build/loaders/image-min-size-loader.js'))
+        .options({ minWidth: 500 })
+
       config.module
         .rule('images')
         .oneOf('srcset')

@@ -79,7 +79,7 @@
         >
           <Timeline
             v-for="(timelineEvents, tag) in timelines"
-            :key="tag"
+            :key="`t-${tag}`"
             :tag="tag"
             :offset="timelineOffset"
             :events="timelineEvents"
