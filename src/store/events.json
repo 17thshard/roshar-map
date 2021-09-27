@@ -851,7 +851,7 @@
         ],
         "coordinates": {
             "x": 760.7,
-            "y": 346.6
+            "y": 358.6
         },
         "tags": [
             "venli",
@@ -1680,6 +1680,10 @@
             "renarin"
         ],
         "coppermind": "Dalinar_Kholin#Dalinar_Reaches_Out",
+        "image": {
+            "file": "events/Marriage_by_Marie_Seeberger.jpg",
+            "credits": "[Marie Seeberger](https://coppermind.net/wiki/Coppermind:Artists/Marie_Seeberger)"
+        },
         "related": [
             "characters/dalinar",
             "characters/navani",
@@ -1766,7 +1770,7 @@
         "image": {
             "file": "events/The_Leap_by_Grant_Hansen.jpg",
             "credits": "[Grant M. Hansen](https://coppermind.net/wiki/Coppermind:Artists/Grant_M._Hansen)",
-            "size": 170,
+            "size": 180,
             "offset": {
                 "x": 25,
                 "y": 0
@@ -2593,8 +2597,8 @@
         ],
         "coppermind": "Dalinar_Kholin#Leading_the_Knights_Radiant_.281174_-_.29",
         "image": {
-            "file": "events/Marriage_by_Marie_Seeberger.jpg",
-            "credits": "[Marie Seeberger](https://coppermind.net/wiki/Coppermind:Artists/Marie_Seeberger)"
+            "file": "events/True_Love_by_Artur_Mosca.jpg",
+            "credits": "[Artur Felipe Mósca](https://coppermind.net/wiki/Coppermind:Artists/Artur_Felipe_M%C3%B3sca)"
         },
         "related": [
             "characters/dalinar",
@@ -2838,6 +2842,14 @@
             "kaladin"
         ],
         "coppermind": "Kaladin#Revolar",
+        "image": {
+            "file": "events/Parting_the_Highstorm_by_Esther_Schrader.jpg",
+            "credits": "[Esther Schrader](https://coppermind.net/wiki/Coppermind:Artists/Esther_Schrader)",
+            "offset": {
+                "x": 50,
+                "y": 0
+            }
+        },
         "related": [
             "characters/kaladin",
             "locations/revolar"
@@ -3123,6 +3135,10 @@
             "shallan"
         ],
         "coppermind": "Siege_of_Kholinar",
+        "image": {
+            "file": "events/Making_Plans_by_Marie_Seeberger.jpg",
+            "credits": "[Marie Seeberger](https://coppermind.net/wiki/Coppermind:Artists/Marie_Seeberger)"
+        },
         "related": [
             "characters/kaladin",
             "characters/adolin",
@@ -4641,12 +4657,7 @@
         "coppermind": "Adolin_Kholin#The_Trial",
         "image": {
             "file": "events/Mayalaran_by_Nozomi.jpg",
-            "credits": "[Nozomi](https://coppermind.net/wiki/Coppermind:Artists/Nozomi)",
-            "size": 150,
-            "offset": {
-                "x": 50,
-                "y": 50
-            }
+            "credits": "[Nozomi](https://coppermind.net/wiki/Coppermind:Artists/Nozomi)"
         },
         "related": [
             "locations/lasting-integrity",
@@ -4889,6 +4900,7 @@
         "tags": [
             "row"
         ],
+        "hideMarker": true,
         "coppermind": "True_Desolation",
         "image": {
             "file": "characters/Odium_-_XV_the_Devil.jpg",
@@ -4916,6 +4928,7 @@
             "odium",
             "dalinar"
         ],
+        "hideMarker": true,
         "coppermind": "True_Desolation",
         "image": {
             "file": "characters/Odium_-_XV_the_Devil.jpg",
