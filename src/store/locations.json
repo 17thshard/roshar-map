@@ -4249,6 +4249,10 @@
             ]
         },
         "coppermind": "Rathalas",
+        "image": {
+            "file": "locations/Rathalas_by_Connor_Chamberlain.jpg",
+            "credits": "[Marie Seeberger](https://coppermind.net/wiki/Coppermind:Artists/Marie_Seeberger)"
+        },
         "related": [
             "events/dalinar-wins-oathbringer",
             "events/return-to-the-rift",
