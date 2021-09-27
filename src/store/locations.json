@@ -14842,9 +14842,10 @@
         "image": {
             "file": "locations/Lasting_Integrity_US_Cover_Crop.jpg",
             "credits": "[Michael Whelan](https://coppermind.net/wiki/Coppermind:Artists/Michael_Whelan)",
+            "size": 150,
             "offset": {
-                "x": 0,
-                "y": 40
+                "x": 50,
+                "y": 50
             }
         }
     }
