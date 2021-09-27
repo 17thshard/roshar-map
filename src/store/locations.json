@@ -12919,8 +12919,8 @@
             ]
         },
         "image": {
-            "file": "locations/Honor's_Path_Kyle_Pearson.jpg",
-            "credits": "[Kyle Pearson](https://coppermind.net/wiki/Coppermind:Artists/Kyle_Pearson)"
+            "file": "locations/Over_the_sea_of_spheres_by_Zamoraalma.png",
+            "credits": "[Zamoraalma](https://www.artstation.com/Zamoraalma)"
         },
         "coppermind": "Sea_of_Regret"
     },
@@ -13047,8 +13047,13 @@
         },
         "shadesmar": true,
         "image": {
-            "file": "locations/Honor's_Path_Kyle_Pearson.jpg",
-            "credits": "[Kyle Pearson](https://coppermind.net/wiki/Coppermind:Artists/Kyle_Pearson)"
+            "file": "locations/Sea_of_Souls.jpg",
+            "credits": "[Isaac Stewart](https://coppermind.net/wiki/Coppermind:Artists/Isaac_Stewart)",
+            "size": 150,
+            "offset": {
+                "x": 50,
+                "y": 50
+            }
         },
         "coppermind": "Sea_of_Souls"
     },
