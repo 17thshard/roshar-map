@@ -850,8 +850,8 @@
             9
         ],
         "coordinates": {
-            "x": 767.7,
-            "y": 363.7
+            "x": 760.7,
+            "y": 346.6
         },
         "tags": [
             "venli",
@@ -4108,16 +4108,14 @@
             3
         ],
         "coordinates": {
-            "x": 512,
-            "y": 256,
-            "zoom": 0
+            "x": 434.7,
+            "y": 337.2
         },
         "tags": [
             "row",
             "taravangian",
             "diagram"
         ],
-        "hideMarker": true,
         "coppermind": "True_Desolation",
         "related": [
             "characters/taravangian",
