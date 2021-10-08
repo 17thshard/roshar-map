@@ -14857,5 +14857,257 @@
                 "y": 50
             }
         }
+    },
+    {
+        "id": "astral-banks",
+        "coordinates": {
+            "x": 200,
+            "y": 200
+        },
+        "shadesmar": true,
+        "mapId": 98,
+        "image": {
+            "file": "locations/Over_the_sea_of_spheres_by_Zamoraalma.png",
+            "credits": "[Zamoraalma](https://www.artstation.com/Zamoraalma)"
+        },
+        "coppermind": "Astral Banks"
+    },
+    {
+        "id": "empyrean-gulf",
+        "coordinates": {
+            "x": 200,
+            "y": 200
+        },
+        "shadesmar": true,
+        "mapId": 99,
+        "image": {
+            "file": "locations/Over_the_sea_of_spheres_by_Zamoraalma.png",
+            "credits": "[Zamoraalma](https://www.artstation.com/Zamoraalma)"
+        },
+        "coppermind": "Empyrean Gulf"
+    },
+    {
+        "id": "radiant-depths",
+        "coordinates": {
+            "x": 200,
+            "y": 200
+        },
+        "shadesmar": true,
+        "mapId": 100,
+        "image": {
+            "file": "locations/Over_the_sea_of_spheres_by_Zamoraalma.png",
+            "credits": "[Zamoraalma](https://www.artstation.com/Zamoraalma)"
+        },
+        "coppermind": "Radiant Depths"
+    },
+    {
+        "id": "basin-of-the-veiled-sun",
+        "coordinates": {
+            "x": 200,
+            "y": 200
+        },
+        "shadesmar": true,
+        "mapId": 101,
+        "image": {
+            "file": "locations/Over_the_sea_of_spheres_by_Zamoraalma.png",
+            "credits": "[Zamoraalma](https://www.artstation.com/Zamoraalma)"
+        },
+        "coppermind": "Basin of the Veiled Sun"
+    },
+    {
+        "id": "glasswater-deep",
+        "coordinates": {
+            "x": 200,
+            "y": 200
+        },
+        "shadesmar": true,
+        "mapId": 102,
+        "image": {
+            "file": "locations/Over_the_sea_of_spheres_by_Zamoraalma.png",
+            "credits": "[Zamoraalma](https://www.artstation.com/Zamoraalma)"
+        },
+        "coppermind": "Glasswater Deep"
+    },
+    {
+        "id": "salavashi-trench",
+        "coordinates": {
+            "x": 200,
+            "y": 200
+        },
+        "shadesmar": true,
+        "mapId": 103,
+        "image": {
+            "file": "locations/Over_the_sea_of_spheres_by_Zamoraalma.png",
+            "credits": "[Zamoraalma](https://www.artstation.com/Zamoraalma)"
+        },
+        "coppermind": "Salavashi Trench"
+    },
+    {
+        "id": "luminous-shadows",
+        "coordinates": {
+            "x": 200,
+            "y": 200
+        },
+        "shadesmar": true,
+        "mapId": 104,
+        "image": {
+            "file": "locations/Over_the_sea_of_spheres_by_Zamoraalma.png",
+            "credits": "[Zamoraalma](https://www.artstation.com/Zamoraalma)"
+        },
+        "coppermind": "Luminous Shadows"
+    },
+    {
+        "id": "thaylen-sea",
+        "coordinates": {
+            "x": 200,
+            "y": 200
+        },
+        "shadesmar": true,
+        "mapId": 105,
+        "image": {
+            "file": "locations/Over_the_sea_of_spheres_by_Zamoraalma.png",
+            "credits": "[Zamoraalma](https://www.artstation.com/Zamoraalma)"
+        },
+        "coppermind": "Thaylen Sea"
+    },
+    {
+        "id": "sea-of-oracles",
+        "coordinates": {
+            "x": 200,
+            "y": 200
+        },
+        "shadesmar": true,
+        "mapId": 106,
+        "image": {
+            "file": "locations/Over_the_sea_of_spheres_by_Zamoraalma.png",
+            "credits": "[Zamoraalma](https://www.artstation.com/Zamoraalma)"
+        },
+        "coppermind": "Sea of Oracles"
+    },
+    {
+        "id": "sea-of-oracles",
+        "coordinates": {
+            "x": 200,
+            "y": 200
+        },
+        "shadesmar": true,
+        "mapId": 106,
+        "image": {
+            "file": "locations/Over_the_sea_of_spheres_by_Zamoraalma.png",
+            "credits": "[Zamoraalma](https://www.artstation.com/Zamoraalma)"
+        },
+        "coppermind": "Sea of Oracles"
+    },
+    {
+        "id": "kholinar-oathgate",
+        "coordinates": {
+            "x": 210,
+            "y": 210
+        },
+        "mapId": 107,
+        "shadesmar": true,
+        "coppermind": "Oathgate",
+        "image": {
+            "file": "events/Oathgate_by_Artem_Demura.png",
+            "credits": "[Artem Demura](https://coppermind.net/wiki/Coppermind:Artists/Artem_Demura)"
+        }
+    },
+    {
+        "id": "narak-oathgate",
+        "coordinates": {
+            "x": 210,
+            "y": 210
+        },
+        "mapId": 108,
+        "shadesmar": true,
+        "coppermind": "Oathgate",
+        "image": {
+            "file": "events/Oathgate_by_Artem_Demura.png",
+            "credits": "[Artem Demura](https://coppermind.net/wiki/Coppermind:Artists/Artem_Demura)"
+        }
+    },
+    {
+        "id": "thaylen-city-oathgate",
+        "coordinates": {
+            "x": 210,
+            "y": 210
+        },
+        "mapId": 109,
+        "shadesmar": true,
+        "coppermind": "Oathgate",
+        "image": {
+            "file": "events/Oathgate_by_Artem_Demura.png",
+            "credits": "[Artem Demura](https://coppermind.net/wiki/Coppermind:Artists/Artem_Demura)"
+        }
+    },
+    {
+        "id": "vedenar-oathgate",
+        "coordinates": {
+            "x": 210,
+            "y": 210
+        },
+        "mapId": 110,
+        "shadesmar": true,
+        "coppermind": "Oathgate",
+        "image": {
+            "file": "events/Oathgate_by_Artem_Demura.png",
+            "credits": "[Artem Demura](https://coppermind.net/wiki/Coppermind:Artists/Artem_Demura)"
+        }
+    },
+    {
+        "id": "azimir-oathgate",
+        "coordinates": {
+            "x": 210,
+            "y": 210
+        },
+        "mapId": 111,
+        "shadesmar": true,
+        "coppermind": "Oathgate",
+        "image": {
+            "file": "events/Oathgate_by_Artem_Demura.png",
+            "credits": "[Artem Demura](https://coppermind.net/wiki/Coppermind:Artists/Artem_Demura)"
+        }
+    },
+    {
+        "id": "panatham-oathgate",
+        "coordinates": {
+            "x": 210,
+            "y": 210
+        },
+        "mapId": 112,
+        "shadesmar": true,
+        "coppermind": "Oathgate",
+        "image": {
+            "file": "events/Oathgate_by_Artem_Demura.png",
+            "credits": "[Artem Demura](https://coppermind.net/wiki/Coppermind:Artists/Artem_Demura)"
+        }
+    },
+    {
+        "id": "kurth-oathgate",
+        "coordinates": {
+            "x": 210,
+            "y": 210
+        },
+        "mapId": 113,
+        "shadesmar": true,
+        "coppermind": "Oathgate",
+        "image": {
+            "file": "events/Oathgate_by_Artem_Demura.png",
+            "credits": "[Artem Demura](https://coppermind.net/wiki/Coppermind:Artists/Artem_Demura)"
+        }
+    },
+    {
+        "id": "rall-elorim-oathgate",
+        "coordinates": {
+            "x": 210,
+            "y": 210
+        },
+        "mapId": 114,
+        "shadesmar": true,
+        "coppermind": "Oathgate",
+        "image": {
+            "file": "events/Oathgate_by_Artem_Demura.png",
+            "credits": "[Artem Demura](https://coppermind.net/wiki/Coppermind:Artists/Artem_Demura)"
+        }
     }
 ]
