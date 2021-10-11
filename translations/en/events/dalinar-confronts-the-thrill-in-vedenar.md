@@ -1,4 +1,4 @@
-# Dalinar confronts the Thrill in Vedenar
+# The Thrill confronts Dalinar
 While visiting Vedenar the Thrill confronted Dalinar heavily, causing him to flee to Urithiru.
 
 ## Details

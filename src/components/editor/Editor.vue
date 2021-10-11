@@ -441,7 +441,7 @@ export default {
     availableTags () {
       const set = new Set()
       this.events.forEach((event) => {
-        event.tags.forEach(t => set.add(t))
+        (event.tags ?? []).forEach(t => set.add(t))
       })
 
       return [...set]
@@ -864,7 +864,7 @@ export default {
       this.events.splice(index, 1)
     },
     addLocation () {
-      this.selectedLocation = { id: 'new-location', coordinates: { x: 0, y: 0 } }
+      this.selectedLocation = { id: 'new-location', coordinates: { x: 0, y: 0 }, points: {} }
       this.locations.push(this.selectedLocation)
     },
     deleteLocation (index) {
@@ -1114,7 +1114,7 @@ export default {
       const svgString = `
       <svg xmlns='http://www.w3.org/2000/svg' shape-rendering="crispEdges" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
         ${
-        locations.filter(l => l.points[this.textureLocale] !== undefined).map((location) => {
+        locations.filter(l => l.points !== undefined && l.points[this.textureLocale] !== undefined).map((location) => {
           let hexId = Number.parseInt(location.mapId, 10).toString(16)
 
           if (location.shadesmar && base === undefined) {
