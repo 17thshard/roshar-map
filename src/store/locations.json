@@ -4126,7 +4126,8 @@
             "events/taln-arrives-in-kholinar",
             "events/trapped-in-shadesmar",
             "events/raboniel-arrives",
-            "locations/alethkar"
+            "locations/alethkar",
+			"locations/kholinar-oathgate"
         ],
         "image": {
             "file": "locations/Kholinar_Illustratio_by_Daitengu_koh.jpg",
@@ -4534,7 +4535,8 @@
             "events/oathgate-to-thaylen-city-opened",
             "events/the-battle-of-thaylen-field",
             "events/wandersail-departure",
-            "locations/thaylenah"
+            "locations/thaylenah",
+			"locations/thaylen-city-oathgate"
         ]
     },
     {
@@ -4838,7 +4840,8 @@
             "events/eshonai-seizes-control",
             "events/fourth-bridge-arrival",
             "events/fourth-bridge-departure",
-            "locations/shattered-plains"
+            "locations/shattered-plains",
+			"locations/narak-oathgate"
         ]
     },
     {
@@ -5395,7 +5398,8 @@
         "coppermind": "Rall_Elorim",
         "related": [
             "characters/lift",
-            "locations/iri"
+            "locations/iri",
+			"locations/rall-elorim-oathgate"
         ]
     },
     {
@@ -5489,7 +5493,8 @@
         },
         "coppermind": "Kurth",
         "related": [
-            "locations/rira"
+            "locations/rira",
+			"locations/kurth-oathgate"
         ]
     },
     {
@@ -5586,7 +5591,8 @@
             ]
         },
         "related": [
-            "locations/babatharnam"
+            "locations/babatharnam",
+			"locations/panatham-oathgate"
         ],
         "coppermind": "Panatham"
     },
@@ -5702,7 +5708,8 @@
         "related": [
             "events/dalinar-travels-to-azimir",
             "events/lift-saves-gawx",
-            "locations/azir"
+            "locations/azir",
+			"locations/azimir-oathgate"
         ],
         "coppermind": "Azimir"
     },
@@ -5816,7 +5823,8 @@
             "events/dalinar-confronts-the-thrill-in-vedenar",
             "events/szeth-assassinates-hanavanar",
             "events/taravangian-crowned-king-of-jah-keved",
-            "locations/jah-keved"
+            "locations/jah-keved",
+			"locations/vedenar-oathgate"
         ]
     },
     {

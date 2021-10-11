@@ -3326,7 +3326,8 @@
             "characters/kaladin",
             "characters/shallan",
             "characters/adolin",
-            "locations/kholinar"
+            "locations/kholinar",
+			"locations/kholinar-oathgate"
         ],
         "tieBreaker": 1,
         "shadesmar": true,
@@ -3358,7 +3359,8 @@
         "related": [
             "characters/adolin",
             "characters/kaladin",
-            "characters/shallan"
+            "characters/shallan",
+            "locations/riinos-lighthouse"
         ],
         "tieBreaker": 0,
         "shadesmar": true
@@ -3571,7 +3573,8 @@
             "characters/lift",
             "characters/odium",
             "characters/szeth",
-            "locations/thaylen-city"
+            "locations/thaylen-city",
+			"locations/thaylen-city-oathgate"
         ],
         "tieBreaker": 0,
         "perpendicularity": true
