@@ -4753,7 +4753,7 @@
         },
         "related": [
             "locations/shattered-plains",
-            "characers/dalinar",
+            "characters/dalinar",
             "characters/odium"
         ],
         "tieBreaker": 4
@@ -4785,7 +4785,7 @@
         },
         "related": [
             "locations/shattered-plains",
-            "characers/dalinar",
+            "characters/dalinar",
             "characters/taravangian",
             "characters/szeth"
         ],
@@ -4819,7 +4819,7 @@
         },
         "related": [
             "locations/shattered-plains",
-            "characers/venli"
+            "characters/venli"
         ],
         "tieBreaker": 0
     },
@@ -4879,7 +4879,7 @@
         },
         "related": [
             "locations/shattered-plains",
-            "characers/wit",
+            "characters/wit",
             "characters/taravangian",
             "characters/odium"
         ],
@@ -4936,7 +4936,7 @@
             "credits": "[Tara Spruit](https://coppermind.net/wiki/Coppermind:Artists/taratjah)"
         },
         "related": [
-            "characers/dalinar",
+            "characters/dalinar",
             "characters/odium"
         ]
     }
