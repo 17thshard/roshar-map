@@ -1,0 +1,4 @@
+# Rall Elorim Oathgate
+The **Rall Elorim Oathgate** in Shadesmar marks the Cognitive Realm reflection of the Oathgate located in #[Rall Elorim](locations/rall-elorim). It is located in the northern tip of the #[Sea of Regret](locations/sea-of-regret), between the #[Nexus of Truth](locations/nexus-of-truth) and the #[Nexus of Transition](locations/nexus-of-transition).
+
+The Oathgate is represented by a flat platform of a material akin to white marble, the size of the control building. The platform itself is watched over by a pair of enormous spren, both the size of buildings, each wearing a set of armor and holding a spear. One of the spren is white, while the other is shimmering black. 

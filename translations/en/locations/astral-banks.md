@@ -1,0 +1,2 @@
+# Astral Banks
+The **Astral Banks** is a body of water in the #[Sea of Souls](locations/sea-of-souls), part of the Rosharan subastral of the Cognitive Realm. In the Physical Realm, it corresponds to the nation of #[Tukar](locations/tukar). On its northern shores is the Oathbound Spires and Justice Untarnished, and to its south is #[Lasting Integrity](locations/lasting-integrity) and Brilliance Eternal, and a small rest stop that Nazh believes has "acceptable" snack choices.
