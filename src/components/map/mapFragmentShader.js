@@ -20,6 +20,10 @@ export default `
   uniform highp float PerpPeriod;
   uniform highp float DimTransition;
   uniform highp float Time;
+  uniform int CityDotsCount;
+  uniform highp vec2 CityDots[34];
+  uniform int ShadesmarCityDotsCount;
+  uniform highp vec2 ShadesmarCityDots[34];
 
   float wave(float aa, float value, float threshold, float opacity, float scale) {
     float waveDist = abs(-threshold * COLOR_CONV + value - 0.5);
@@ -57,11 +61,19 @@ export default `
   }
 
   void main() {
+    vec2 mapPos = vUv * vec2(1024, 512) - vec2(512, 256);
     highp vec2 maxGrad2 = fwidth(vUv * vec2(1024, 512));
     highp float maxGrad = max(maxGrad2.x, maxGrad2.y);
 
     vec4 texel1 = Sample(BgTexture, 1., 1., vUv, maxGrad);
     vec4 texel2 = Sample(ShadesmarBgTexture, 0., -1., vUv, maxGrad);
+
+    for(int i = 0; i < CityDotsCount; i++) {
+      texel1.rgb *= smoothstep(1., 1.2, length(mapPos - CityDots[i])) * 0.6 + 0.4;
+    }
+    for(int i = 0; i < ShadesmarCityDotsCount; i++) {
+      texel2.rgb *= smoothstep(1., 1.2, length(mapPos - ShadesmarCityDots[i])) * 0.6 + 0.4;
+    }
 
     vec4 transitionTexel = texture2D(TransitionTexture, vUv);
     float r = Transition * 1.2 - 0.1;
@@ -69,10 +81,10 @@ export default `
 
     vec4 color = mix(texel1, texel2, 1.0 - mixf);
 
-    vec2 mapPos = (vUv * vec2(1024, 512) - vec2(512, 256)) - PerpLocation;
-    float distance = length(mapPos);
+    vec2 perpOffset = mapPos - PerpLocation;
+    float distance = length(perpOffset);
     if (PerpTransition > 0. && distance < 20.) {
-      float angle = atan(mapPos.x, mapPos.y);
+      float angle = atan(perpOffset.x, perpOffset.y);
       vec2 perturbation = perturbations(PerpPeriod * angle);
 
       if (angle < -3.05 || angle > 3.05) {

@@ -207,6 +207,15 @@ export default {
 
       this.highlights = new Group()
 
+      const [cityDots, shadesmarCityDots] = Object.values(this.$store.state.mappings.locations)
+        .filter(l => l.cityDot)
+        .reduce(
+          (result, l) => {
+            result[l.shadesmar === true ? 1 : 0].push(new Vector2(l.coordinates.x - 512, 256 - l.coordinates.y))
+            return result
+          },
+          [[], []]
+        )
       const geo = new PlaneBufferGeometry(2, 2, 1, 1)
       this.mapMaterial = new ShaderMaterial({
         // language=GLSL
@@ -230,7 +239,13 @@ export default {
           PerpLocation: { value: new Vector2() },
           PerpPeriod: { value: 3.05355 },
           DimTransition: { value: this.dimmingProgress },
-          Time: { value: 0 }
+          Time: { value: 0 },
+          CityDotsCount: { value: cityDots.length },
+          CityDots: { value: new Array(34).fill(new Vector2()).map((v, i) => i < cityDots.length ? cityDots[i] : v) },
+          ShadesmarCityDotsCount: { value: shadesmarCityDots.length },
+          ShadesmarCityDots: {
+            value: new Array(34).fill(new Vector2()).map((v, i) => i < shadesmarCityDots.length ? shadesmarCityDots[i] : v)
+          }
         },
         extensions: {
           derivatives: true
@@ -288,7 +303,15 @@ export default {
       }
 
       this.scene = new Scene()
-      this.scene.add(this.plane, this.layers.graticule, this.textPlane, this.highlights, this.layers.factions, this.layers.silverKingdoms, this.layers.oathgates)
+      this.scene.add(
+        this.plane,
+        this.layers.graticule,
+        this.textPlane,
+        this.highlights,
+        this.layers.factions,
+        this.layers.silverKingdoms,
+        this.layers.oathgates
+      )
 
       this.composer.addPass(new RenderPass(this.scene, this.camera))
       this.shatteringPass = new ShatteringPass()
@@ -432,6 +455,8 @@ export default {
       }
 
       if (hoveredItem !== null) {
+        // eslint-disable-next-line no-console
+        console.log(hoveredItem)
         document.body.style.cursor = 'pointer'
       }
 
