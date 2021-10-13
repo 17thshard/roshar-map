@@ -155,7 +155,10 @@
         },
         "lock-timeline": "锁住时间轴导航",
         "unlock-timeline": "解锁导航",
-        "translation-by": "汉化团队"
+        "translation-by": "汉化团队",
+        "measurement": {
+            "distance-unit": "metric"
+        }
     },
     "entry-types": {
         "events": "事件",

@@ -14,7 +14,7 @@
         </tr>
         <tr v-if="measurement.distance">
           <th>{{ $t('ui.measurement.labels.distance') }}</th>
-          <td>{{ $t('ui.measurement.distance', { distance: measurement.distance.toFixed(0) }) }}</td>
+          <td>{{ $t('ui.measurement.distance', { distance: localizedDistance.toFixed(0) }) }}</td>
         </tr>
       </table>
     </div>
@@ -23,6 +23,7 @@
 
 <script>
 import Markdown from '@/components/Markdown.vue'
+
 export default {
   name: 'MeasurementResult',
   components: { Markdown },
@@ -30,6 +31,15 @@ export default {
     measurement: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    localizedDistance () {
+      if (this.$t('ui.measurement.distance-unit') === 'imperial') {
+        return this.measurement.distance * 0.621
+      }
+
+      return this.measurement.distance
     }
   },
   methods: {

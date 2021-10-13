@@ -167,7 +167,8 @@
                 "east": "{degrees}°ᴿE",
                 "west": "{degrees}°ᴿW"
             },
-            "distance": "{distance}km"
+            "unit": "imperial",
+            "distance": "{distance} mi"
         }
     },
     "entry-types": {
