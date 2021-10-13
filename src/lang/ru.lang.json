@@ -150,10 +150,7 @@
     "lock-timeline": "Запретить навигацию по временной линии",
     "unlock-timeline": "Разрешить навигацию",
     "translation-by": "Перевод:",
-    "image-credits": "Арт: {credits}",
-    "measurement": {
-      "distance-unit": "metric"
-    }
+    "image-credits": "Арт: {credits}"
   },
   "entry-types": {
     "events": "События",

@@ -14,7 +14,7 @@
         </tr>
         <tr v-if="measurement.distance">
           <th>{{ $t('ui.measurement.labels.distance') }}</th>
-          <td>{{ $t('ui.measurement.distance', { distance: localizedDistance.toFixed(0) }) }}</td>
+          <td>{{ $t('ui.measurement.distance', { distanceKm: measurement.distance.toFixed(0), distanceMi: mileDistance.toFixed(0) }) }}</td>
         </tr>
       </table>
     </div>
@@ -34,12 +34,8 @@ export default {
     }
   },
   computed: {
-    localizedDistance () {
-      if (this.$t('ui.measurement.distance-unit') === 'imperial') {
-        return this.measurement.distance * 0.621
-      }
-
-      return this.measurement.distance
+    mileDistance () {
+      return this.measurement.distance * 0.621
     }
   },
   methods: {
