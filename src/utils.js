@@ -41,14 +41,20 @@ export function escapeCssPath (path) {
 }
 
 export function getEntryImageSrcSet (path) {
-  return parseSrcSet(require(`@/assets/entries/${path}?srcset`))
+  try {
+    return parseSrcSet(require(`@/assets/entries/${path}?srcset`))
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.error(`Could not retrieve entry image '${path}'`)
+    throw e
+  }
 }
 
 export function parseSrcSet (srcSet) {
   const sources = srcSet.split(',').map((source) => {
-    const [, url, size] = /^(.+)\s+(\d+x)$/.exec(source.trim())
+    const [, url, size] = /^(.+)\s+(\d+)w$/.exec(source.trim())
 
-    return { url, size }
+    return { url, size: `${Number.parseInt(size) / 500}x` }
   })
 
   const baseCss = `image-set(${sources.map(source => `url('${escapeCssPath(source.url)}') ${source.size}`).join(', ')})`

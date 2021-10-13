@@ -51,6 +51,16 @@
 
           Shadesmar
         </label>
+        <label for="location-properties__city-dot">
+          <input
+            id="location-properties__city-dot"
+            :checked="location.cityDot"
+            type="checkbox"
+            @input="$event.target.checked ? $set(location, 'cityDot', true) : $delete(location, 'cityDot')"
+          >
+
+          City Dot
+        </label>
       </div>
 
       <label for="location-properties__id">Map ID</label>
