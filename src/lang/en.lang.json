@@ -162,13 +162,13 @@
             },
             "coordinates": {
                 "full": "{latitude}, {longitude}",
-                "north": "{degrees}°ᴿN",
-                "south": "{degrees}°ᴿS",
-                "east": "{degrees}°ᴿE",
-                "west": "{degrees}°ᴿW"
+                "north": "{degrees}°ᴿ N",
+                "south": "{degrees}°ᴿ S",
+                "east": "{degrees}°ᴿ E",
+                "west": "{degrees}°ᴿ W"
             },
             "unit": "imperial",
-            "distance": "{distanceMi} mi/{distanceKm} km"
+            "distance": "{distanceMi} mi / {distanceKm} km"
         }
     },
     "entry-types": {

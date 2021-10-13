@@ -261,14 +261,11 @@
             "degrees": "Longitude value in degrees (always greater than or equal to zero)"
         }
     },
-    "ui.measurement.distance-unit": {
-        "name": "Distance Unit",
-        "context": "Must be one of 'imperial' for miles or 'metric' for kilometers"
-    },
     "ui.measurement.distance": {
         "name": "Distance Format",
         "variables": {
-            "distance": "Distance value in the chosen unit"
+            "distanceKm": "Distance value in kilometers",
+            "distanceMi": "Distance value in miles"
         }
     },
     "entry-types": "Entry Types",
