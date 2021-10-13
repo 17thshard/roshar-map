@@ -228,7 +228,9 @@ export default {
             gl_Position = projectionMatrix * modelViewMatrix * vec4(position * vec3(512, 256, 1.0), 1.0);
           }
         `,
-        fragmentShader,
+        fragmentShader: fragmentShader
+          .replace('#define CITY_DOTS_COUNT 0', `#define CITY_DOTS_COUNT ${cityDots.length}`)
+          .replace('#define SHADESMAR_CITY_DOTS_COUNT 0', `#define SHADESMAR_CITY_DOTS_COUNT ${shadesmarCityDots.length}`),
         uniforms: {
           BgTexture: { value: textures.map_bg },
           OutlineTexture: { value: textures.map },
@@ -240,12 +242,8 @@ export default {
           PerpPeriod: { value: 3.05355 },
           DimTransition: { value: this.dimmingProgress },
           Time: { value: 0 },
-          CityDotsCount: { value: cityDots.length },
-          CityDots: { value: new Array(34).fill(new Vector2()).map((v, i) => i < cityDots.length ? cityDots[i] : v) },
-          ShadesmarCityDotsCount: { value: shadesmarCityDots.length },
-          ShadesmarCityDots: {
-            value: new Array(34).fill(new Vector2()).map((v, i) => i < shadesmarCityDots.length ? shadesmarCityDots[i] : v)
-          }
+          CityDots: { value: cityDots },
+          ShadesmarCityDots: { value: shadesmarCityDots }
         },
         extensions: {
           derivatives: true
@@ -455,8 +453,6 @@ export default {
       }
 
       if (hoveredItem !== null) {
-        // eslint-disable-next-line no-console
-        console.log(hoveredItem)
         document.body.style.cursor = 'pointer'
       }
 

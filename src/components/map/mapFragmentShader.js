@@ -7,6 +7,8 @@ export default `
   #define ALPHA .65
   #define PI 3.141592653589793
   #define COLOR_CONV 0.00392156862
+  #define CITY_DOTS_COUNT 0
+  #define SHADESMAR_CITY_DOTS_COUNT 0
 
   varying highp vec2 vUv;
 
@@ -20,10 +22,8 @@ export default `
   uniform highp float PerpPeriod;
   uniform highp float DimTransition;
   uniform highp float Time;
-  uniform int CityDotsCount;
-  uniform highp vec2 CityDots[34];
-  uniform int ShadesmarCityDotsCount;
-  uniform highp vec2 ShadesmarCityDots[34];
+  uniform highp vec2 CityDots[CITY_DOTS_COUNT];
+  uniform highp vec2 ShadesmarCityDots[SHADESMAR_CITY_DOTS_COUNT];
 
   float wave(float aa, float value, float threshold, float opacity, float scale) {
     float waveDist = abs(-threshold * COLOR_CONV + value - 0.5);
@@ -68,10 +68,10 @@ export default `
     vec4 texel1 = Sample(BgTexture, 1., 1., vUv, maxGrad);
     vec4 texel2 = Sample(ShadesmarBgTexture, 0., -1., vUv, maxGrad);
 
-    for(int i = 0; i < CityDotsCount; i++) {
+    for(int i = 0; i < CITY_DOTS_COUNT; i++) {
       texel1.rgb *= smoothstep(1., 1.2, length(mapPos - CityDots[i])) * 0.6 + 0.4;
     }
-    for(int i = 0; i < ShadesmarCityDotsCount; i++) {
+    for(int i = 0; i < SHADESMAR_CITY_DOTS_COUNT; i++) {
       texel2.rgb *= smoothstep(1., 1.2, length(mapPos - ShadesmarCityDots[i])) * 0.6 + 0.4;
     }
 
