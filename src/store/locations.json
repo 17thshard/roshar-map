@@ -758,7 +758,8 @@
             "events/the-lesson",
             "misc/diagram"
         ],
-        "coppermind": "Kharbranth"
+        "coppermind": "Kharbranth",
+        "cityDot": true
     },
     {
         "id": "thaylenah",
@@ -2436,7 +2437,8 @@
             "events/urithiru-rediscovered",
             "events/venli-frees-rlain",
             "events/warlight-discovered"
-        ]
+        ],
+        "cityDot": true
     },
     {
         "id": "shattered-plains",
@@ -4127,7 +4129,7 @@
             "events/trapped-in-shadesmar",
             "events/raboniel-arrives",
             "locations/alethkar",
-			"locations/kholinar-oathgate"
+            "locations/kholinar-oathgate"
         ],
         "image": {
             "file": "locations/Kholinar_Illustratio_by_Daitengu_koh.jpg",
@@ -4138,7 +4140,8 @@
                 "y": 0
             }
         },
-        "coppermind": "Kholinar"
+        "coppermind": "Kholinar",
+        "cityDot": true
     },
     {
         "id": "rathalas",
@@ -4258,7 +4261,8 @@
             "events/dalinar-wins-oathbringer",
             "events/return-to-the-rift",
             "locations/alethkar"
-        ]
+        ],
+        "cityDot": true
     },
     {
         "id": "new-natanan",
@@ -4341,7 +4345,8 @@
                 }
             ]
         },
-        "coppermind": "New_Natanan"
+        "coppermind": "New_Natanan",
+        "cityDot": true
     },
     {
         "id": "thaylen-city",
@@ -4536,8 +4541,9 @@
             "events/the-battle-of-thaylen-field",
             "events/wandersail-departure",
             "locations/thaylenah",
-			"locations/thaylen-city-oathgate"
-        ]
+            "locations/thaylen-city-oathgate"
+        ],
+        "cityDot": true
     },
     {
         "id": "valley",
@@ -4841,8 +4847,9 @@
             "events/fourth-bridge-arrival",
             "events/fourth-bridge-departure",
             "locations/shattered-plains",
-			"locations/narak-oathgate"
-        ]
+            "locations/narak-oathgate"
+        ],
+        "cityDot": true
     },
     {
         "id": "hearthstone",
@@ -4958,7 +4965,8 @@
             "events/wistiow-dies",
             "events/hearthstone-evacuated",
             "locations/alethkar"
-        ]
+        ],
+        "cityDot": true
     },
     {
         "id": "horneater-peaks",
@@ -5276,7 +5284,8 @@
         "related": [
             "events/kaladin-leaves-alethkar",
             "locations/alethkar"
-        ]
+        ],
+        "cityDot": true
     },
     {
         "id": "rall-elorim",
@@ -5399,8 +5408,9 @@
         "related": [
             "characters/lift",
             "locations/iri",
-			"locations/rall-elorim-oathgate"
-        ]
+            "locations/rall-elorim-oathgate"
+        ],
+        "cityDot": true
     },
     {
         "id": "kurth",
@@ -5494,8 +5504,9 @@
         "coppermind": "Kurth",
         "related": [
             "locations/rira",
-			"locations/kurth-oathgate"
-        ]
+            "locations/kurth-oathgate"
+        ],
+        "cityDot": true
     },
     {
         "id": "panatham",
@@ -5592,9 +5603,10 @@
         },
         "related": [
             "locations/babatharnam",
-			"locations/panatham-oathgate"
+            "locations/panatham-oathgate"
         ],
-        "coppermind": "Panatham"
+        "coppermind": "Panatham",
+        "cityDot": true
     },
     {
         "id": "azimir",
@@ -5709,9 +5721,10 @@
             "events/dalinar-travels-to-azimir",
             "events/lift-saves-gawx",
             "locations/azir",
-			"locations/azimir-oathgate"
+            "locations/azimir-oathgate"
         ],
-        "coppermind": "Azimir"
+        "coppermind": "Azimir",
+        "cityDot": true
     },
     {
         "id": "vedenar",
@@ -5824,8 +5837,9 @@
             "events/szeth-assassinates-hanavanar",
             "events/taravangian-crowned-king-of-jah-keved",
             "locations/jah-keved",
-			"locations/vedenar-oathgate"
-        ]
+            "locations/vedenar-oathgate"
+        ],
+        "cityDot": true
     },
     {
         "id": "akak",
@@ -6045,7 +6059,8 @@
         "related": [
             "locations/alethkar"
         ],
-        "coppermind": "Varikev"
+        "coppermind": "Varikev",
+        "cityDot": true
     },
     {
         "id": "shulin",
@@ -6163,7 +6178,8 @@
         "coppermind": "Shulin",
         "related": [
             "locations/alethkar"
-        ]
+        ],
+        "cityDot": true
     },
     {
         "id": "karanak",
@@ -6269,7 +6285,8 @@
         "related": [
             "locations/alethkar"
         ],
-        "coppermind": "Karanak"
+        "coppermind": "Karanak",
+        "cityDot": true
     },
     {
         "id": "dumadari",
@@ -6379,7 +6396,8 @@
         "related": [
             "locations/alethkar"
         ],
-        "coppermind": "Dumadari"
+        "coppermind": "Dumadari",
+        "cityDot": true
     },
     {
         "id": "unclaimed-hills",
@@ -6688,7 +6706,8 @@
                 }
             ]
         },
-        "coppermind": "Dawn's_Shadow"
+        "coppermind": "Dawn's_Shadow",
+        "cityDot": true
     },
     {
         "id": "ocean-of-origins",
@@ -8572,7 +8591,8 @@
         "related": [
             "locations/thaylenah"
         ],
-        "coppermind": "Klna"
+        "coppermind": "Klna",
+        "cityDot": true
     },
     {
         "id": "frostlands",
@@ -8907,7 +8927,8 @@
         "coppermind": "Shallow_Crypts",
         "related": [
             "locations/frostlands"
-        ]
+        ],
+        "cityDot": true
     },
     {
         "id": "northgrip",
@@ -9049,7 +9070,8 @@
         "coppermind": "Northgrip",
         "related": [
             "locations/jah-keved"
-        ]
+        ],
+        "cityDot": true
     },
     {
         "id": "elanar",
@@ -9163,7 +9185,8 @@
         "coppermind": "Elanar",
         "related": [
             "locations/jah-keved"
-        ]
+        ],
+        "cityDot": true
     },
     {
         "id": "valath",
@@ -9273,7 +9296,8 @@
         "related": [
             "locations/jah-keved"
         ],
-        "coppermind": "Valath"
+        "coppermind": "Valath",
+        "cityDot": true
     },
     {
         "id": "silnasen",
@@ -9391,7 +9415,8 @@
         "related": [
             "locations/jah-keved"
         ],
-        "coppermind": "Silnasen"
+        "coppermind": "Silnasen",
+        "cityDot": true
     },
     {
         "id": "bavland",
@@ -10186,7 +10211,8 @@
             "locations/emul",
             "locations/tukar"
         ],
-        "coppermind": "Sesemalex_Dar"
+        "coppermind": "Sesemalex_Dar",
+        "cityDot": true
     },
     {
         "id": "yeddaw",
@@ -10305,7 +10331,8 @@
         "related": [
             "events/lift-saves-the-stump",
             "locations/tashikk"
-        ]
+        ],
+        "cityDot": true
     },
     {
         "id": "berizhet",
@@ -10423,7 +10450,8 @@
         "related": [
             "locations/liafor"
         ],
-        "coppermind": "Berizhet"
+        "coppermind": "Berizhet",
+        "cityDot": true
     },
     {
         "id": "yezier",
@@ -10974,7 +11002,8 @@
                     "y": 296.9777777777778
                 }
             ]
-        }
+        },
+        "cityDot": true
     },
     {
         "id": "steen",
@@ -11208,7 +11237,8 @@
                 }
             ]
         },
-        "coppermind": "Icewater"
+        "coppermind": "Icewater",
+        "cityDot": true
     },
     {
         "id": "misted-mountains",
@@ -11767,7 +11797,8 @@
         "coppermind": "Fu_Namir",
         "related": [
             "locations/yulay"
-        ]
+        ],
+        "cityDot": true
     },
     {
         "id": "tu-bayla",
@@ -12076,7 +12107,8 @@
         "coppermind": "Ru_Parat",
         "related": [
             "locations/tu-bayla"
-        ]
+        ],
+        "cityDot": true
     },
     {
         "id": "kasitor",
@@ -12190,7 +12222,8 @@
         "coppermind": "Kasitor",
         "related": [
             "locations/iri"
-        ]
+        ],
+        "cityDot": true
     },
     {
         "id": "eila",
@@ -12288,7 +12321,8 @@
                 }
             ]
         },
-        "coppermind": "Eila"
+        "coppermind": "Eila",
+        "cityDot": true
     },
     {
         "id": "quili",
@@ -14618,7 +14652,8 @@
         "related": [
             "events/stop-in-celebrant",
             "locations/sea-of-lost-lights"
-        ]
+        ],
+        "cityDot": true
     },
     {
         "id": "nameless",
@@ -14707,7 +14742,8 @@
             "events/nameless-arrival",
             "locations/radiant-depths",
             "locations/sea-of-souls"
-        ]
+        ],
+        "cityDot": true
     },
     {
         "id": "nohadons-stairways",
@@ -14796,7 +14832,8 @@
             "events/shadesmar-envoy-departs",
             "locations/sea-of-souls",
             "locations/urithiru"
-        ]
+        ],
+        "cityDot": true
     },
     {
         "id": "lasting-integrity",
@@ -14900,7 +14937,8 @@
                 "x": 0,
                 "y": 30
             }
-        }
+        },
+        "cityDot": true
     },
     {
         "id": "astral-banks",
