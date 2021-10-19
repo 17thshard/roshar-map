@@ -8,24 +8,31 @@
     <transition name="map__factions-legend">
       <FactionsLegend v-if="layers.factions !== undefined && layers.factions.t > 0.5" class="map__factions-legend" />
     </transition>
+    <transition name="map__measurement-result">
+      <MeasurementResult
+        v-if="measurementActive && measurementResult !== null"
+        :measurement="measurementResult"
+        class="map__measurement-result"
+      />
+    </transition>
   </div>
 </template>
 
 <script>
 import {
   Group,
+  LuminanceFormat,
   Mesh,
   NearestFilter,
   PerspectiveCamera,
   PlaneBufferGeometry,
   RepeatWrapping,
+  RGBFormat,
   Scene,
   ShaderMaterial,
   Vector2,
   Vector3,
   WebGLRenderer,
-  RGBFormat,
-  LuminanceFormat,
   // eslint-disable-next-line camelcase
   RGB_S3TC_DXT1_Format
 } from 'three'
@@ -48,10 +55,12 @@ import SilverKingdoms from '@/components/map/layers/SilverKingdoms'
 import Oathgates from '@/components/map/layers/Oathgates'
 import Shadesmar from '@/components/map/layers/Shadesmar'
 import FactionsLegend from '@/components/map/layers/FactionsLegend.vue'
+import Measurement from '@/components/map/Measurement'
+import MeasurementResult from '@/components/map/MeasurementResult.vue'
 
 export default {
   name: 'Map',
-  components: { FactionsLegend },
+  components: { MeasurementResult, FactionsLegend },
   props: {
     transitions: {
       type: Boolean
@@ -69,11 +78,12 @@ export default {
       tutorialReferencePosition: {
         x: 0,
         y: 0
-      }
+      },
+      measurementResult: null
     }
   },
   computed: {
-    ...mapState(['layersActive']),
+    ...mapState(['layersActive', 'measurementActive']),
     activeLocation () {
       return this.transitions && this.$route.name === 'locations' ? this.$store.state.mappings.locations[this.$route.params.id] : null
     },
@@ -98,6 +108,13 @@ export default {
       if (newSpeed !== undefined) {
         this.controls.keyboardSpeed = Number.parseFloat(newSpeed)
       }
+    },
+    measurementActive (active) {
+      if (active) {
+        this.measurementResult = {}
+      }
+
+      this.measurement.reset()
     }
   },
   mounted () {
@@ -169,9 +186,7 @@ export default {
         factions: { hqAvailable: true, lossy: true, pixelFormat: RGBFormat },
         oathgates_text: { hqAvailable: true, localized: true, pixelFormat: LuminanceFormat },
         silver_kingdoms: { hqAvailable: true, pixelFormat: LuminanceFormat },
-        silver_kingdoms_text: { hqAvailable: true, localized: true, pixelFormat: LuminanceFormat },
-        graticule: { hqAvailable: true, lossy: true, pixelFormat: RGBFormat },
-        graticule_text: { hqAvailable: true, pixelFormat: LuminanceFormat }
+        silver_kingdoms_text: { hqAvailable: true, localized: true, pixelFormat: LuminanceFormat }
       }
 
       return this.textureManager.load(textures)
@@ -187,6 +202,11 @@ export default {
 
       this.controls = new MapControls(this.camera, this.renderer.domElement)
       this.controls.addEventListener('click', ({ position }) => {
+        if (this.measurementActive) {
+          this.measurementResult = this.measurement.click(position)
+          return
+        }
+
         this.textActiveProgress = 1
         const location = this.queryHover(position.x, position.y)
 
@@ -207,6 +227,15 @@ export default {
 
       this.highlights = new Group()
 
+      const [cityDots, shadesmarCityDots] = Object.values(this.$store.state.mappings.locations)
+        .filter(l => l.cityDot)
+        .reduce(
+          (result, l) => {
+            result[l.shadesmar === true ? 1 : 0].push(new Vector2(l.coordinates.x - 512, 256 - l.coordinates.y))
+            return result
+          },
+          [[], []]
+        )
       const geo = new PlaneBufferGeometry(2, 2, 1, 1)
       this.mapMaterial = new ShaderMaterial({
         // language=GLSL
@@ -219,7 +248,9 @@ export default {
             gl_Position = projectionMatrix * modelViewMatrix * vec4(position * vec3(512, 256, 1.0), 1.0);
           }
         `,
-        fragmentShader,
+        fragmentShader: fragmentShader
+          .replace('#define CITY_DOTS_COUNT 0', `#define CITY_DOTS_COUNT ${cityDots.length}`)
+          .replace('#define SHADESMAR_CITY_DOTS_COUNT 0', `#define SHADESMAR_CITY_DOTS_COUNT ${shadesmarCityDots.length}`),
         uniforms: {
           BgTexture: { value: textures.map_bg },
           OutlineTexture: { value: textures.map },
@@ -230,7 +261,9 @@ export default {
           PerpLocation: { value: new Vector2() },
           PerpPeriod: { value: 3.05355 },
           DimTransition: { value: this.dimmingProgress },
-          Time: { value: 0 }
+          Time: { value: 0 },
+          CityDots: { value: cityDots },
+          ShadesmarCityDots: { value: shadesmarCityDots }
         },
         extensions: {
           derivatives: true
@@ -281,14 +314,24 @@ export default {
 
       this.layers = {
         shadesmar: new Shadesmar(),
-        graticule: new Graticule(textures),
+        graticule: new Graticule(),
         silverKingdoms: new SilverKingdoms(textures),
         oathgates: new Oathgates(textures),
         factions: new Factions(textures.factions)
       }
+      this.measurement = new Measurement()
 
       this.scene = new Scene()
-      this.scene.add(this.plane, this.layers.graticule, this.textPlane, this.highlights, this.layers.factions, this.layers.silverKingdoms, this.layers.oathgates)
+      this.scene.add(
+        this.plane,
+        this.layers.graticule,
+        this.textPlane,
+        this.highlights,
+        this.layers.factions,
+        this.layers.silverKingdoms,
+        this.layers.oathgates,
+        this.measurement
+      )
 
       this.composer.addPass(new RenderPass(this.scene, this.camera))
       this.shatteringPass = new ShatteringPass()
@@ -401,6 +444,11 @@ export default {
 
       document.body.style.cursor = 'initial'
 
+      if (this.measurementActive) {
+        document.body.style.cursor = 'crosshair'
+        this.measurement.update(this.camera, timestamp, delta)
+      }
+
       this.updateTextHighlights(delta)
 
       this.textPlane.material.uniforms.HoveredItem.value = this.lastHoveredItem !== null ? this.lastHoveredItem : 0
@@ -445,7 +493,7 @@ export default {
       }
     },
     queryHover (x, y) {
-      if (this.hoverTexture === undefined) {
+      if (this.hoverTexture === undefined || this.measurementActive) {
         return null
       }
 
@@ -559,7 +607,7 @@ export default {
     pointer-events: none;
   }
 
-  &__factions-legend {
+  &__factions-legend, &__measurement-result {
     position: absolute;
     top: 2rem;
     z-index: 11;

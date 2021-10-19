@@ -116,6 +116,17 @@ export default {
       }
 
       this.$router.replace(`/${this.$route.params.locale}`)
+    },
+    details (newDetails) {
+      if (newDetails === null) {
+        return
+      }
+
+      if (newDetails.type === 'events') {
+        this.$store.commit('selectEvent', newDetails)
+      } else {
+        this.$store.commit('unselectEvent')
+      }
     }
   },
   methods: {

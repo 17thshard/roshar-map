@@ -43,7 +43,7 @@
         "dismiss": "Dismiss",
         "first-visit": {
             "heading": "Welcome",
-            "intro": "**Spoilers upto the end of *Oathbringer* ahead!** Continue at your own risk.\n\nIt looks like this is your first use of this app. Would you like some help?\n\nYou can always find help later on from the menu to the top right.",
+            "intro": "**Spoilers up to the end of *Dawnshard* and *Rhythm of War* ahead!** Continue at your own risk.\n\nIt looks like this is your first use of this app. Would you like some help?\n\nYou can always find help later on from the menu to the top right.",
             "calendar": "Explain dates",
             "tutorial": "Show hints"
         },
@@ -152,12 +152,55 @@
         "unlock-timeline": "Unlock navigation",
         "translation-by": "Translation by",
         "image-credits": "by {credits}",
+        "share": "Share",
+        "measurement": {
+            "button": "Measure distances",
+            "title": "Measurement",
+            "explanation": "Click any two points to calculate their positions and the distance between them.\n\nNote that the Rosharan degree (°ᴿ) ranges from 0 to 200.",
+            "labels": {
+                "start": "Start",
+                "end": "End",
+                "distance": "Distance"
+            },
+            "coordinates": {
+                "full": "{latitude}, {longitude}",
+                "north": "{degrees}°ᴿ N",
+                "south": "{degrees}°ᴿ S",
+                "east": "{degrees}°ᴿ E",
+                "west": "{degrees}°ᴿ W"
+            },
+            "unit": "imperial",
+            "distance": "{distanceMi} mi / {distanceKm} km"
+        },
         "search": {
             "title": "Search",
             "prompt": "Search...",
             "loading": "Search will be ready shortly...",
             "empty-query": "Enter your search terms above for results to appear here",
             "no-results": "Unfortunately, we couldn't find anything for those search terms"
+        }
+    },
+    "sharing": {
+        "title": "Share",
+        "global-message": "Check out the Interactive Map & Timeline of Roshar!",
+        "twitter": {
+            "button-text": "Tweet",
+            "entry-template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
+        },
+        "facebook": {
+            "button-text": "Facebook"
+        },
+        "reddit": {
+            "button-text": "Reddit",
+            "entry-template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
+        },
+        "tumblr": {
+            "button-text": "Tumblr",
+            "entry-template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
+        },
+        "more": {
+            "button-text": "More...",
+            "entry-template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
         }
     },
     "entry-types": {
@@ -213,6 +256,7 @@
         "wor": "Words of Radiance",
         "ed": "Edgedancer",
         "ob": "Oathbringer",
+        "ds": "Dawnshard",
         "row": "Rhythm of War",
         "adolin": "Adolin",
         "renarin": "Renarin",
@@ -226,6 +270,8 @@
         "wit": "Wit",
         "moash": "Moash",
         "venli": "Venli",
-        "history": "History"
+        "history": "History",
+        "diagram": "The Diagram",
+        "ghostbloods": "The Ghostbloods"
     }
 }

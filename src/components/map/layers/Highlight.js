@@ -15,7 +15,7 @@ const State = {
 }
 
 export default class Highlight extends Group {
-  constructor (x, y, size, startVisible) {
+  constructor (x, y, size, startVisible, color) {
     super()
     this.position.set(x, y, 1)
     this.frustumCulled = false
@@ -23,10 +23,10 @@ export default class Highlight extends Group {
     this.state = startVisible === true ? State.VISIBLE : State.ENTERING
     this.size = size !== undefined ? size : 0.2
 
-    this.init()
+    this.init(color ?? new Vector3(15 / 255, 53 / 255, 98 / 255))
   }
 
-  init () {
+  init (color) {
     const geo = new PlaneBufferGeometry(1, 1, 1, 1)
     const mat = new ShaderMaterial({
       // language=GLSL
@@ -138,7 +138,7 @@ export default class Highlight extends Group {
         InnerRingThickness: { value: 0.1 },
         Brightness: { value: 1 },
         WhitePoint: { value: 3 },
-        Color: { value: new Vector3(15 / 255, 53 / 255, 98 / 255) }
+        Color: { value: color }
       },
       depthTest: false,
       premultipliedAlpha: true,

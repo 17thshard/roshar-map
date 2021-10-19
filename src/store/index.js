@@ -317,18 +317,21 @@ const mutations = {
       bar: { onlyShowBarOnScroll: false, keepShow: true, background: '#482d00', opacity: 0.5, size: '0.5rem' },
       rail: { size: '0.5rem', gutterOfSide: '0' }
     }
+  },
+  toggleMeasurement (state) {
+    state.measurementActive = !state.measurementActive
   }
 }
 
 const getters = {
   isIncludedInNavigation (state) {
     return (event) => {
-      return !getters.isDisabled(state)(event) && (state.filter.lockedTag === null || event.tags.includes(state.filter.lockedTag))
+      return !getters.isDisabled(state)(event) && (state.filter.lockedTag === null || (event.tags !== undefined && event.tags.includes(state.filter.lockedTag)))
     }
   },
   isDisabled (state) {
     return (event) => {
-      return state.filter.tags.some(t => event.tags.includes(t))
+      return state.filter.tags.some(t => event.tags !== undefined && event.tags.includes(t))
     }
   }
 }
@@ -361,6 +364,7 @@ export default new Vuex.Store({
     openedMenu: null,
     flipTimeline: false,
     flipDirectionalIcons: false,
+    measurementActive: false,
     scrollbarOptions: {
       vuescroll: { wheelScrollDuration: 400 },
       scrollPanel: { verticalNativeBarPos: 'right' },

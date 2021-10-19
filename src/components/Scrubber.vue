@@ -79,7 +79,7 @@
         >
           <Timeline
             v-for="(timelineEvents, tag) in timelines"
-            :key="tag"
+            :key="`t-${tag}`"
             :tag="tag"
             :offset="timelineOffset"
             :events="timelineEvents"
@@ -151,6 +151,13 @@
     >
       <CalendarIcon size="1x" />
     </button>
+    <button
+      :class="['scrubber__button', 'scrubber__button--measure', { 'scrubber__button--measure-active': $store.state.measurementActive }]"
+      :title="$t('ui.measurement.button')"
+      @click="$store.commit('toggleMeasurement')"
+    >
+      <CompassIcon size="1x" />
+    </button>
     <transition name="go-to-date">
       <GoToDate v-if="$store.state.goToDateOpen" @submit="scrollToDate" />
     </transition>
@@ -159,7 +166,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import { CalendarIcon, ChevronLeftIcon, ChevronRightIcon, ChevronsLeftIcon, ChevronsRightIcon } from 'vue-feather-icons'
+import { CalendarIcon, ChevronLeftIcon, ChevronRightIcon, ChevronsLeftIcon, ChevronsRightIcon, CompassIcon } from 'vue-feather-icons'
 import Timeline from '@/components/Timeline.vue'
 import EventCard from '@/components/EventCard.vue'
 import { formatDate, lerp } from '@/utils'
@@ -178,7 +185,8 @@ export default {
     ChevronsRightIcon,
     CalendarIcon,
     ChevronLeftIcon,
-    ChevronRightIcon
+    ChevronRightIcon,
+    CompassIcon
   },
   data () {
     return {
@@ -204,13 +212,13 @@ export default {
       result.all = []
 
       this.events.forEach((event) => {
-        const separatedAssignments = this.filter.separateTags.filter(t => event.tags.includes(t))
+        const separatedAssignments = this.filter.separateTags.filter(t => event.tags !== undefined && event.tags.includes(t))
 
         separatedAssignments.forEach((t) => {
           result[t].push(event)
         })
 
-        if (separatedAssignments.length < event.tags.length || event.tags.length === 0) {
+        if (event.tags === undefined || separatedAssignments.length < event.tags.length || event.tags.length === 0) {
           result.all.push(event)
         }
       })
@@ -247,7 +255,7 @@ export default {
         return
       }
 
-      const event = this.events.find(event => event.tags.includes(tag))
+      const event = this.events.find(event => event.tags !== undefined && event.tags.includes(tag))
       if (event === undefined) {
         return
       }
@@ -572,7 +580,7 @@ export default {
     box-sizing: border-box;
     white-space: nowrap;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
-    transition: 0.2s ease-in-out background;
+    transition: 0.2s ease-in-out background, 0.2s ease-in-out color, 0.2s ease-in-out border;
 
     &:hover, &:active, &:focus {
       background: lighten(#0f3562, 10%);
@@ -621,17 +629,22 @@ export default {
       }
     }
 
-    &--date {
-      width: auto;
-      height: auto;
+    &--date, &--measure {
+      width: 2.5rem;
+      height: 2.5rem;
       bottom: 100%;
       margin-bottom: 2rem;
       border-radius: 2rem;
-      padding: 0.75rem 0.75rem;
       background: #F5ECDA;
       color: #242629;
       z-index: 4;
 
+      &:hover, &:focus, &:active {
+        background: saturate(darken(#F5ECDA, 10%), 5%);
+      }
+    }
+
+    &--date {
       [dir=ltr] & {
         right: 2rem;
       }
@@ -639,9 +652,25 @@ export default {
       [dir=rtl] & {
         left: 2rem;
       }
+    }
 
-      &:hover, &:focus, &:active {
-        background: saturate(darken(#F5ECDA, 10%), 5%);
+    &--measure {
+      [dir=ltr] & {
+        right: 5rem;
+      }
+
+      [dir=rtl] & {
+        left: 5rem;
+      }
+
+      &-active {
+        background: #0f3562;
+        border: 0.25rem solid #F5ECDA;
+        color: #cad5e6;
+
+        &:hover, &:focus, &:active {
+          background: lighten(#0f3562, 10%);
+        }
       }
     }
   }
