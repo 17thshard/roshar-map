@@ -52,25 +52,6 @@
             {{ $t('ui.coppermind') }}
           </a>
         </section>
-        <section class="details__share">
-          <h3>{{ $t('ui.share') }}</h3>
-          <TwitterButton
-            :btn-text="$t('sharing.twitter.button-text')"
-            :description="$t('sharing.twitter.entry-template', { entry: $t(`${baseTranslationKey}.name`) })"
-          />
-          <FacebookButton :btn-text="$t('sharing.facebook.button-text')" />
-          <RedditButton
-            :btn-text="$t('sharing.reddit.button-text')"
-            :title="$t('sharing.reddit.entry-template', { entry: $t(`${baseTranslationKey}.name`) })"
-          />
-          <TumblrButton
-            :btn-text="$t('sharing.tumblr.button-text')"
-            :description="$t('sharing.tumblr.entry-template', { entry: $t(`${baseTranslationKey}.name`) })"
-          />
-          <button v-if="nativeShareSupported" class="details__share-more-button" @click="shareNatively">
-            {{ $t('sharing.more.button-text') }}
-          </button>
-        </section>
         <section v-if="anyRelated" class="details__related">
           <h3>{{ $t('ui.related') }}</h3>
           <div
@@ -104,6 +85,25 @@
               {{ $t(link.translationKey) }}
             </router-link>
           </div>
+        </section>
+        <section class="details__share">
+          <h3>{{ $t('ui.share') }}</h3>
+          <TwitterButton
+            :btn-text="$t('sharing.twitter.button-text')"
+            :description="$t('sharing.twitter.entry-template', { entry: $t(`${baseTranslationKey}.name`) })"
+          />
+          <FacebookButton :btn-text="$t('sharing.facebook.button-text')" />
+          <RedditButton
+            :btn-text="$t('sharing.reddit.button-text')"
+            :title="$t('sharing.reddit.entry-template', { entry: $t(`${baseTranslationKey}.name`) })"
+          />
+          <TumblrButton
+            :btn-text="$t('sharing.tumblr.button-text')"
+            :description="$t('sharing.tumblr.entry-template', { entry: $t(`${baseTranslationKey}.name`) })"
+          />
+          <button v-if="nativeShareSupported" class="details__share-more-button" @click="shareNatively">
+            {{ $t('sharing.more.button-text') }}
+          </button>
         </section>
       </div>
     </Scrollbar>
