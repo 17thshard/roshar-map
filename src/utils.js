@@ -1,3 +1,37 @@
+export function compareEvents (a, b) {
+  if (a.date === undefined) {
+    return 1
+  } else if (b.date === undefined) {
+    return -1
+  }
+
+  let j = 0
+
+  for (let i = 0; i < a.date.length; i++) {
+    if (j === b.date.length - 1 && b.date[j] !== a.date[i]) {
+      return a.date[i] - b.date[j]
+    }
+
+    if (a.date[i] !== b.date[j]) {
+      return a.date[i] - b.date[j]
+    }
+
+    j += 1
+  }
+
+  if (j !== b.date.length) {
+    return -1
+  }
+
+  if (a.tieBreaker !== undefined && b.tieBreaker !== undefined) {
+    return a.tieBreaker - b.tieBreaker
+  } else if (a.tieBreaker !== undefined) {
+    return 1
+  }
+
+  return -1
+}
+
 export function smootherstep (t) {
   if (t <= 0) {
     return 0

@@ -150,7 +150,50 @@
         "lock-timeline": "Lock navigation to timeline",
         "unlock-timeline": "Unlock navigation",
         "translation-by": "Translation by",
-        "image-credits": "by {credits}"
+        "image-credits": "by {credits}",
+        "share": "Share",
+        "measurement": {
+            "button": "Measure distances",
+            "title": "Measurement",
+            "explanation": "Click any two points to calculate their positions and the distance between them.\n\nNote that the Rosharan degree (°ᴿ) ranges from 0 to 200.",
+            "labels": {
+                "start": "Start",
+                "end": "End",
+                "distance": "Distance"
+            },
+            "coordinates": {
+                "full": "{latitude}, {longitude}",
+                "north": "{degrees}°ᴿ N",
+                "south": "{degrees}°ᴿ S",
+                "east": "{degrees}°ᴿ E",
+                "west": "{degrees}°ᴿ W"
+            },
+            "unit": "imperial",
+            "distance": "{distanceMi} mi / {distanceKm} km"
+        }
+    },
+    "sharing": {
+        "title": "Share",
+        "global-message": "Check out the Interactive Map & Timeline of Roshar!",
+        "twitter": {
+            "button-text": "Tweet",
+            "entry-template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
+        },
+        "facebook": {
+            "button-text": "Facebook"
+        },
+        "reddit": {
+            "button-text": "Reddit",
+            "entry-template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
+        },
+        "tumblr": {
+            "button-text": "Tumblr",
+            "entry-template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
+        },
+        "more": {
+            "button-text": "More...",
+            "entry-template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
+        }
     },
     "entry-types": {
         "events": "Events",

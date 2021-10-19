@@ -5,7 +5,7 @@ import baseLocations from '@/store/locations.json'
 import baseCharacters from '@/store/characters.json'
 import baseMisc from '@/store/misc.json'
 import tagCategories from '@/store/tags.json'
-import { inverseLerp } from '@/utils'
+import { compareEvents, inverseLerp } from '@/utils'
 
 Vue.use(Vuex)
 
@@ -13,34 +13,7 @@ const DETAIL_CUTOFF_YEAR = 1173
 const TIMELINE_YEAR_DISTANCE = 50
 const TIMELINE_TIE_DISTANCE = 30
 
-const events = baseEvents.sort(
-  (a, b) => {
-    let j = 0
-
-    for (let i = 0; i < a.date.length; i++) {
-      if (j === b.date.length - 1 && b.date[j] !== a.date[i]) {
-        return a.date[i] - b.date[j]
-      }
-
-      if (a.date[i] !== b.date[j]) {
-        return a.date[i] - b.date[j]
-      }
-
-      j += 1
-    }
-
-    if (j !== b.date.length) {
-      return -1
-    }
-
-    if (a.tieBreaker !== undefined && b.tieBreaker !== undefined) {
-      return a.tieBreaker - b.tieBreaker
-    } else if (a.tieBreaker !== undefined) {
-      return 1
-    }
-
-    return -1
-  }).map((event, index) => ({
+const events = baseEvents.sort(compareEvents).map((event, index) => ({
   ...event,
   month: (event.date[1] ?? 1) - 1,
   index
@@ -322,6 +295,9 @@ const mutations = {
       bar: { onlyShowBarOnScroll: false, keepShow: true, background: '#482d00', opacity: 0.5, size: '0.5rem' },
       rail: { size: '0.5rem', gutterOfSide: '0' }
     }
+  },
+  toggleMeasurement (state) {
+    state.measurementActive = !state.measurementActive
   }
 }
 
@@ -364,6 +340,7 @@ export default new Vuex.Store({
     infoOpen: false,
     flipTimeline: false,
     flipDirectionalIcons: false,
+    measurementActive: false,
     scrollbarOptions: {
       vuescroll: { wheelScrollDuration: 400 },
       scrollPanel: { verticalNativeBarPos: 'right' },

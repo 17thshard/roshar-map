@@ -218,6 +218,100 @@
             "credits": "Attribution for the image"
         }
     },
+    "ui.measurement": "Measurement",
+    "ui.measurement.button": "Button",
+    "ui.measurement.title": "Measurement",
+    "ui.measurement.explanation": {
+        "name": "Explanation",
+        "markdown": "block"
+    },
+    "ui.measurement.labels": "Labels",
+    "ui.measurement.labels.start": "Start point",
+    "ui.measurement.labels.end": "End point",
+    "ui.measurement.labels.distance": "Calculated distance",
+    "ui.measurement.coordinates": "Coordinates",
+    "ui.measurement.coordinates.full": {
+        "name": "Full",
+        "variables": {
+            "latitude": "Formatted latitude value",
+            "longitude": "Formatted longitude value"
+        }
+    },
+    "ui.measurement.coordinates.north": {
+        "name": "Northern Latitude Format",
+        "variables": {
+            "degrees": "Latitude value in degrees (always greater than or equal to zero)"
+        }
+    },
+    "ui.measurement.coordinates.south": {
+        "name": "Southern Latitude Format",
+        "variables": {
+            "degrees": "Latitude value in degrees (always greater than or equal to zero)"
+        }
+    },
+    "ui.measurement.coordinates.east": {
+        "name": "Eastern Longitude Format",
+        "variables": {
+            "degrees": "Longitude value in degrees (always greater than or equal to zero)"
+        }
+    },
+    "ui.measurement.coordinates.west": {
+        "name": "Western Longitude Format",
+        "variables": {
+            "degrees": "Longitude value in degrees (always greater than or equal to zero)"
+        }
+    },
+    "ui.measurement.distance": {
+        "name": "Distance Format",
+        "variables": {
+            "distanceKm": "Distance value in kilometers",
+            "distanceMi": "Distance value in miles"
+        }
+    },
+    "sharing": "Sharing",
+    "sharing.title": "Share Section Title",
+    "sharing.global-message": {
+        "name": "Global Message",
+        "context": "Message used when sharing the whole site from supported devices"
+    },
+    "sharing.twitter": "Twitter",
+    "sharing.twitter.button-text": "Button Label",
+    "sharing.twitter.entry-template": {
+        "name": "Entry Tweet",
+        "variables": {
+            "entry": "Name of the shared entry"
+        },
+        "context": "Tweet text used when sharing individual entries"
+    },
+    "sharing.facebook": "Twitter",
+    "sharing.facebook.button-text": "Button Label",
+    "sharing.reddit": "Reddit",
+    "sharing.reddit.button-text": "Button Label",
+    "sharing.reddit.entry-template": {
+        "name": "Entry Title",
+        "variables": {
+            "entry": "Name of the shared entry"
+        },
+        "context": "Post title used when sharing individual entries"
+    },
+    "sharing.tumblr": "Tumblr",
+    "sharing.tumblr.button-text": "Button Label",
+    "sharing.tumblr.entry-template": {
+        "name": "Entry Caption",
+        "variables": {
+            "entry": "Name of the shared entry"
+        },
+        "context": "Caption used when sharing individual entries"
+    },
+    "sharing.more": "Additional Share Options",
+    "sharing.more.button-text": "Button Label",
+    "sharing.more.entry-template": {
+        "name": "Entry Message",
+        "variables": {
+            "entry": "Name of the shared entry"
+        },
+        "context": "Message used when sharing individual entries"
+    },
     "entry-types": "Entry Types",
     "entry-types.events": "Events",
     "entry-types.locations": "Locations",
