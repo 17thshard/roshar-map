@@ -151,7 +151,26 @@
         "unlock-timeline": "Unlock navigation",
         "translation-by": "Translation by",
         "image-credits": "by {credits}",
-        "share": "Share"
+        "share": "Share",
+        "measurement": {
+            "button": "Measure distances",
+            "title": "Measurement",
+            "explanation": "Click any two points to calculate their positions and the distance between them.\n\nNote that the Rosharan degree (°ᴿ) ranges from 0 to 200.",
+            "labels": {
+                "start": "Start",
+                "end": "End",
+                "distance": "Distance"
+            },
+            "coordinates": {
+                "full": "{latitude}, {longitude}",
+                "north": "{degrees}°ᴿ N",
+                "south": "{degrees}°ᴿ S",
+                "east": "{degrees}°ᴿ E",
+                "west": "{degrees}°ᴿ W"
+            },
+            "unit": "imperial",
+            "distance": "{distanceMi} mi / {distanceKm} km"
+        }
     },
     "sharing": {
         "title": "Share",

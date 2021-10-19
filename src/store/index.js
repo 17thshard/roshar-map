@@ -322,6 +322,9 @@ const mutations = {
       bar: { onlyShowBarOnScroll: false, keepShow: true, background: '#482d00', opacity: 0.5, size: '0.5rem' },
       rail: { size: '0.5rem', gutterOfSide: '0' }
     }
+  },
+  toggleMeasurement (state) {
+    state.measurementActive = !state.measurementActive
   }
 }
 
@@ -364,6 +367,7 @@ export default new Vuex.Store({
     infoOpen: false,
     flipTimeline: false,
     flipDirectionalIcons: false,
+    measurementActive: false,
     scrollbarOptions: {
       vuescroll: { wheelScrollDuration: 400 },
       scrollPanel: { verticalNativeBarPos: 'right' },
