@@ -114,7 +114,7 @@
 import Scrollbar from 'vuescroll/dist/vuescroll-native'
 import { BookIcon, CalendarIcon, HelpCircleIcon, XIcon } from 'vue-feather-icons'
 import Markdown from '@/components/Markdown.vue'
-import { formatDate, getEntryImageSrcSet } from '@/utils'
+import { formatDate, getEntryImageSrcSet, compareEvents } from '@/utils'
 import FacebookButton from 'vue-share-buttons/src/components/FacebookButton'
 import RedditButton from 'vue-share-buttons/src/components/RedditButton'
 import TumblrButton from 'vue-share-buttons/src/components/TumblrButton'
@@ -191,7 +191,7 @@ export default {
         return []
       }
 
-      return this.details.related.map((link) => {
+      const result = this.details.related.map((link) => {
         const [type, id] = link.split('/', 2)
         const linkDetails = this.$store.state.mappings[type][id]
 
@@ -221,12 +221,24 @@ export default {
           type,
           translationKey: `${type}.${id}.name`,
           url: link,
-          image
+          image,
+          date: linkDetails.date,
+          tieBreaker: linkDetails.tieBreaker
         }
       }).reduce((acc, relatedItem) => {
         acc[relatedItem.type] = [...(acc[relatedItem.type] ?? []), relatedItem]
         return acc
       }, {})
+
+      Object.keys(result).forEach((type) => {
+        if (type === 'events') {
+          result[type].sort(compareEvents)
+        } else {
+          result[type].sort((a, b) => this.$t(a.translationKey).localeCompare(this.$t(b.translationKey)))
+        }
+      })
+
+      return result
     }
   },
   watch: {
