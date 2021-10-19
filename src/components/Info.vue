@@ -26,6 +26,7 @@
               <a href="#" target="_blank" @click.prevent="subPage = 'about'">{{ $t('ui.about') }}</a>
               <a href="#" target="_blank" @click.prevent="subPage = 'language'">{{ $t('ui.language') }}</a>
               <a href="#" target="_blank" @click.prevent="$emit('open-tutorial')">{{ $t('ui.help') }}</a>
+              <a v-if="nativeShareSupported" href="#" target="_blank" @click.prevent="shareNatively">{{ $t('sharing.title') }}</a>
               <a href="https://brandonsanderson.com" target="_blank">{{ $t('ui.brandon-sanderson') }}</a>
               <a href="https://coppermind.net" target="_blank">The Coppermind</a>
               <a href="#" target="_blank" @click.prevent="subPage = 'credits'">{{ $t('ui.credits') }}</a>
@@ -155,7 +156,8 @@ export default {
       availableLanguages,
       leaveActive: false,
       subPage: null,
-      scrolled: {}
+      scrolled: {},
+      nativeShareSupported: navigator.share !== undefined
     }
   },
   computed: {
@@ -184,6 +186,13 @@ export default {
     },
     onScroll (page, event) {
       this.$set(this.scrolled, page === null ? 'root' : page, event.process > 0)
+    },
+    shareNatively () {
+      navigator.share({
+        url: process.env.VUE_APP_PUBLIC_URL,
+        title: document.title,
+        description: this.$t('sharing.global-message')
+      })
     }
   }
 }
