@@ -234,7 +234,7 @@ export default {
         if (type === 'events') {
           result[type].sort(compareEvents)
         } else {
-          result[type].sort((a, b) => this.$t(a.translationKey).localeCompare(this.$t(b.translationKey)))
+          result[type].sort((a, b) => this.$t(a.translationKey).localeCompare(this.$t(b.translationKey), this.$i18n.locale))
         }
       })
 
