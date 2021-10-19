@@ -30,6 +30,7 @@
     "vue-gtag": "^1.10.0",
     "vue-i18n": "^8.18.2",
     "vue-router": "^3.3.4",
+    "vue-share-buttons": "^1.1.0",
     "vuedraggable": "^2.24.0",
     "vuescroll": "^4.16.0",
     "vuex": "^3.4.0"
@@ -55,6 +56,7 @@
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11",
+    "warnings-to-errors-webpack-plugin": "^2.2.0",
     "webpack-image-resize-loader": "^4.0.2",
     "webpack-image-srcset-loader": "^5.0.3"
   },
