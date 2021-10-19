@@ -222,6 +222,12 @@
             "credits": "Attribution for the image"
         }
     },
+    "ui.search": "Search",
+    "ui.search.title": "Button Text",
+    "ui.search.prompt": "Search Field Prompt",
+    "ui.search.loading": "Loading Text",
+    "ui.search.empty-query": "Empty Query Text",
+    "ui.search.no-results": "No Results Text",
     "entry-types": "Entry Types",
     "entry-types.events": "Events",
     "entry-types.locations": "Locations",
