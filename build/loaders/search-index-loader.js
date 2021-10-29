@@ -1,3 +1,4 @@
+const fs = require('fs')
 const lunr = require('lunr')
 require('lunr-languages/lunr.stemmer.support')(lunr)
 
@@ -71,30 +72,77 @@ module.exports = function (source) {
     this.cacheable()
   }
 
+  this.async()
+
   const messages = typeof source === 'string' ? JSON.parse(source) : source
+  const load = async (key) => {
+    const path = await new Promise((resolve, reject) => this.resolve(
+      this.rootContext,
+      `@/store/${key}.json`,
+      (error, result) => error !== null ? reject(error) : resolve(result)
+    ))
+    this.addDependency(path)
+    return JSON.parse(fs.readFileSync(path)).reduce(
+      (acc, entry) => {
+        acc[entry.id] = entry
+        return acc
+      },
+      {}
+    )
+  }
 
-  const searchable = ['events', 'locations', 'characters', 'misc']
-  const index = lunr(function () {
-    const lunrLanguage = messages['search-language']
-    this.tokenizer = nGramTokenizer
-    if (lunrLanguage !== 'en') {
-      require(`lunr-languages/lunr.${lunrLanguage}`)(lunr)
-      this.use(lunr[lunrLanguage])
-    }
+  async function buildIndex () {
+    const searchable = (await Promise.all(['events', 'locations', 'characters', 'misc'].map(async key => ({
+      key,
+      value: await load(key)
+    })))).reduce(
+      (acc, entry) => {
+        acc[entry.key] = entry.value
+        return acc
+      },
+      {}
+    )
+    return lunr(function () {
+      const lunrLanguage = messages['search-language']
+      this.tokenizer = nGramTokenizer
+      if (lunrLanguage !== 'en') {
+        require(`lunr-languages/lunr.${lunrLanguage}`)(lunr)
+        this.use(lunr[lunrLanguage])
+      }
 
-    this.pipeline.add(removeDuplicates)
+      this.pipeline.add(removeDuplicates)
 
-    this.ref('id')
-    this.field('name', { boost: 10 })
-    this.field('details')
+      this.ref('id')
+      this.field('name', { boost: 10 })
+      this.field('details')
+      this.field('artist')
 
-    searchable.forEach((entryType) => {
-      const entries = messages[entryType] ?? []
-      Object.keys(entries).forEach(id => this.add({ ...entries[id], id: `${entryType}/${id}` }, { boost: entryType !== 'events' ? 2 : 1 }))
+      Object.entries(searchable).forEach(([entryType, entryData]) => {
+        const entries = messages[entryType] ?? []
+        Object.keys(entries).forEach((id) => {
+          const entry = entryData[id]
+          let artist
+          if (entry !== undefined && entry.image !== undefined && entry.image.credits !== undefined) {
+            const markdownResult = /^\[([^\]]+)]\(.*\)$/.exec(entry.image.credits)
+            artist = markdownResult !== null ? markdownResult[1] : entry.image.credits
+          }
+          this.add(
+            { ...entries[id], id: `${entryType}/${id}`, artist },
+            { boost: entryType !== 'events' ? 2 : 1 }
+          )
+        })
+      })
     })
-  })
+  }
 
-  return JSON.stringify(index)
-    .replace(/\u2028/g, '\\u2028')
-    .replace(/\u2029/g, '\\u2029')
+  buildIndex()
+    .then(index =>
+      this.callback(
+        null,
+        JSON.stringify(index)
+          .replace(/\u2028/g, '\\u2028')
+          .replace(/\u2029/g, '\\u2029')
+      )
+    )
+    .catch(error => this.callback(error))
 }
