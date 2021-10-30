@@ -1,0 +1,2 @@
+# The Luminous Shallows
+The **Luminous Shallows** is a location in the #[Sea of Lost Lights](locations/sea-of-lost-lights), near the #[Glasswater Deep](locations/glasswater-deep) and the Caretaker of Laughter. In the Physical Realm, this corresponds to the southern peninsula of #[Frostlands](locations/frostlands), the section that contains the #[Shallow Crypts](locations/shallow-crypts).
