@@ -358,7 +358,7 @@ export default {
 
       if (event !== null && event.specialEffect === 'factions') {
         this.enterLayer('factions')
-      } else if (oldEvent !== null && oldEvent.specialEffect === 'factions' && !this.layersActive.factions) {
+      } else if (oldEvent !== null && oldEvent.specialEffect === 'factions') {
         this.leaveLayer('factions')
       }
 

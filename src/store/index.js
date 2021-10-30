@@ -331,8 +331,7 @@ export default new Vuex.Store({
       shadesmar: false,
       graticule: false,
       silverKingdoms: false,
-      oathgates: false,
-      factions: false
+      oathgates: false
     },
     calendarGuideOpen: false,
     goToDateOpen: false,
