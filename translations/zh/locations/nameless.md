@@ -1,4 +1,4 @@
-# Nameless
-**Nameless** is an independent coastal outpost in Shadesmar. The town is located in the southern portion of the #[Sea of Souls](locations/sea-of-souls), sits on the edge of the Radiant Depths, and is near the peninsula that leads to Abiding Light. Nameless resides on free lands that are not owned or controlled by the Fused or the honorspren. The town sits on a barren obsidian field that is sparse in vegetation. 
+# 未名镇
+**未名镇**是柔刹知界域中一座独立的海边城镇，位于#[魂海](locations/sea-of-souls)南岸，北面就是[光辉深渊](locations/radiant-depths)和通往久光塔的半岛。未名镇所处的地带目前不属于融族和荣灵任何一方的管辖。此地是一片荒芜的黑曜石地，植被稀少。
 
-The settlement is quite small and its four streets can be walked in less than half an hour. It is a busy way-stop for travelers who are looking to buy or sell goods. Space exists outside where caravans can set up camp while they stay in the town, and a small port, that consists of a simple stone dock, can be utilized by those traveling by ship. Most, if not all, of the residents of the town are merchants, who have either temporarily or permanently settled due to the location’s propensity towards trade.
+城镇规模很小，只有四条街，不到半个小时就可以逛完。主要居民是定居在此的商人。过往的旅客也可以在这里买卖物品，商队可以在城镇外的空地扎营。此外，未名镇还有一个小的石制码头可供往来的船舶停靠。

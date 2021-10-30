@@ -1,2 +1,2 @@
-# Nohadon's Stairways
-**Nohadon's Stairways** is the equivalent of #[Urithiru](locations/urithiru) in the Cognitive Realm. It is located in the southern portion of the #[Sea of Souls](locations/sea-of-souls). There are ten elevated pillars, corresponding to the ten Oathgates. Each pillar has a long spiraling ramp, leading to the sea of beads below, and the Oathgate's gatekeepers are on the top of the pillars. The tower itself is reflected as mountains of light and colors, very bright, but not casting shadows.
+# 诺哈东之梯
+知界域中的**诺哈东之梯**对应实界域的#[乌有斯麓](locations/urithiru)，坐落于#[魂海](locations/sea-of-souls)南岸。整个建筑由十根高耸的柱子构成，每一根对应一座誓约之门。柱子上有长长的阶梯盘旋下降至下方的珠海。柱子的顶端有守护灵体把守。乌有斯麓本身在知界域看起来是大量的光芒和色彩，但不会投下阴影。
