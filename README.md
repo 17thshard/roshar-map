@@ -59,6 +59,7 @@ Obviously this project would not exist without the fantastic books by [Brandon S
 The following is a list of all the artists that are either official artists or have gracefully granted this project permission to use their pieces as images for events, locations, characters, or other items:
 
  * [Adam J. Marin](https://www.adamjmarin.com)
+ * [Aleah Lauren](https://www.instagram.com/prophecywine/)
  * [Alex Allen](https://coppermind.net/wiki/Coppermind:Artists/Alex_Allen)
  * [Antti Hakosaari](https://coppermind.net/wiki/Coppermind:Artists/Antti_Hakosaari)
  * [Ari Ibarra](https://coppermind.net/wiki/Coppermind:Artists/Ari_Ibarra)
