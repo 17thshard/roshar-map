@@ -7,4 +7,4 @@ The day after #[Hearthstone](locations/hearthstone) was evacuated the rulers of 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* Ch. 14 |
+| chapter | 《纷争之韵》第14章 |

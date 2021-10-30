@@ -9,4 +9,4 @@ She attempts to hide her discovery from those watching her as she seeks a Light 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* Ch. 97|
+| chapter | 《纷争之韵》第97章 |

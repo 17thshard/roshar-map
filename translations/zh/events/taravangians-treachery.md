@@ -11,4 +11,4 @@ With Taravangian's orders sent, Veden armies in #[Jah Keved](locations/jah-keved
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* I-6 |
+| chapter | 《纷争之韵》插曲6 |

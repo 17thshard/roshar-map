@@ -7,4 +7,4 @@ After spending a month in disguise as Chanasha Hasareh, #[Shallan](characters/sh
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* Ch. 7 |
+| chapter | 《纷争之韵》第7章 |

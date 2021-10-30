@@ -11,4 +11,4 @@ Wit regains consciousness in the hallway, unaware of what happened, and returns 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* Epilogue|
+| chapter | 《纷争之韵》尾声 |

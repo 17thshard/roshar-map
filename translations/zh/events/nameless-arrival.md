@@ -9,4 +9,4 @@ Meanwhile, Adolin enters the town with a small group of his soldiers, and is tra
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* Ch. 29 & 30 |
+| chapter | 《纷争之韵》第29、30章 |

@@ -9,4 +9,4 @@ Wit tells of a dog who, after jealously regarding one in the sky, determines to 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* Ch. 80 |
+| chapter | 《纷争之韵》第80章 |

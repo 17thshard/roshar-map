@@ -11,4 +11,4 @@ As Radiant whispers encouragement to her, Shallan makes one last struggle with h
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* 93|
+| chapter | 《纷争之韵》第93章 |

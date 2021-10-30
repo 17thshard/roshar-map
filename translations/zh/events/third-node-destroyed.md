@@ -11,4 +11,4 @@ Kaladin uses the glove fabrial and makes his way to the Breakaway, trying to act
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* 70|
+| chapter | 《纷争之韵》第70章 |

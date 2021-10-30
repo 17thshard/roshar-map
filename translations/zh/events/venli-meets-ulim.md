@@ -7,4 +7,4 @@ After Gavilar's second visit to the listeners on the #[Shattered Plains](locatio
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* Ch. 57 |
+| chapter | 《纷争之韵》第57章 |

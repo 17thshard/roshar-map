@@ -9,5 +9,5 @@ Venli finds Raboniel in #[Dalinar's](characters/dalinar) former rooms accompanie
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* Ch. 60|
+| chapter | 《纷争之韵》第60章 |
 

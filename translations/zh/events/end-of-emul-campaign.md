@@ -9,4 +9,4 @@ Meanwhile, #[Jasnah](characters/jasnah) relaxes in her tent with #[Wit](characte
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* 98 & 99|
+| chapter | 《纷争之韵》第98、99章 |

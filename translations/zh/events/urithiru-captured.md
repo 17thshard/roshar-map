@@ -12,4 +12,4 @@ As Raboniel's forces search the city for Radiants, Teft is found and nearly take
 
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* 37-43|
+| chapter | 《纷争之韵》第37至43章 |

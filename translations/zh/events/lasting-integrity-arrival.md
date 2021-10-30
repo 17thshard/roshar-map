@@ -11,4 +11,4 @@ While Godeke binds their wounds, a shocked Notum resists the idea of traveling w
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* 34-36|
+| chapter | 《纷争之韵》第34至36章 |

@@ -9,5 +9,5 @@ Jasnah and Wit join the Mink at the war table, where Jasnah begins making sugges
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* Ch. 50|
+| chapter | 《纷争之韵》第50章 |
 

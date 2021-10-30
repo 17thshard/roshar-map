@@ -13,4 +13,4 @@ Navani bonds with the Sibling and restores the tower as Kaladin speaks his Fourt
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* Ch. 100 & 102-111|
+| chapter | 《纷争之韵》第100、102至111章 |

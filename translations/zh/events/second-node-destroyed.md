@@ -9,4 +9,4 @@ Kaladin follows the Sibling's light, fighting off guards as he encounters them, 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* 55, 58, & 59|
+| chapter | 《纷争之韵》第55、58、59章 |

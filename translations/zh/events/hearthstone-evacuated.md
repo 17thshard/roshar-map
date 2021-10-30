@@ -7,4 +7,4 @@ While the *Fourth Bridge* was being tested on its maiden voyage over the #[Steam
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* Ch. 1-9 |
+| chapter | 《纷争之韵》第1至9章 |

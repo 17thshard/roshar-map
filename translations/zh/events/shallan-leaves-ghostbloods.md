@@ -7,4 +7,4 @@ Shallan calls Mraize and declares that she will no longer be working for the Gho
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* Ch. 115|
+| chapter | 《纷争之韵》第115章 |

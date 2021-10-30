@@ -7,4 +7,4 @@ Dalinar visits Taravangian and they discuss the ethics of what Taravangian has d
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* 66|
+| chapter | 《纷争之韵》第66章 |

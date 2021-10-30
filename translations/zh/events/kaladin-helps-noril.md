@@ -7,4 +7,4 @@ Teft joins #[Kaladin](characters/kaladin) in a search for Noril, a missing refug
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* Ch. 25 |
+| chapter | 《纷争之韵》第25章 |

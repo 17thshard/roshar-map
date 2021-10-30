@@ -7,4 +7,4 @@ Venli is reunited with her mother and the rest of the listeners who survived amo
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* Ch. 115|
+| chapter | 《纷争之韵》第115章 |

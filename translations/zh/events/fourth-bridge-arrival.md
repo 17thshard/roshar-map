@@ -7,5 +7,5 @@ The 'Fourth Bridge' arrives at the #[Shattered Plains](locations/shattered-plain
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* Ch. 18 |
+| chapter | 《纷争之韵》第18章 |
 

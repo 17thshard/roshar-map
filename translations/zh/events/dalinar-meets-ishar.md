@@ -9,4 +9,4 @@ The group from the coalition waits to be sure Ishar is not returning before land
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* 111|
+| chapter | 《纷争之韵》第111章 |

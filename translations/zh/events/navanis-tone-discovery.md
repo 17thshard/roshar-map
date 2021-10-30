@@ -9,4 +9,4 @@ Raboniel leaves Navani to her work but later returns with metal plates and two s
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* Ch. 89|
+| chapter | 《纷争之韵》第89章 |

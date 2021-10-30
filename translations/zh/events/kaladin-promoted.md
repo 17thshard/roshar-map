@@ -9,4 +9,4 @@ Two weeks later, Dalinar announces Kaladin's change in status, and Kaladin promo
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* Ch. 12 & 15 |
+| chapter | 《纷争之韵》第12、15章 |

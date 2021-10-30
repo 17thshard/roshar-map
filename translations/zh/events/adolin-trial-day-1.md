@@ -9,4 +9,4 @@ After the trial, #[Shallan](characters/shallan) climbs a tree and falls to the g
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* 87 |
+| chapter | 《纷争之韵》第87章 |

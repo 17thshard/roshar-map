@@ -7,4 +7,4 @@ Taravangian meets with the inner circle of the Diagram and the group disbands.
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* I-3 |
+| chapter | 《纷争之韵》插曲3 |

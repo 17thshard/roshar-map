@@ -7,4 +7,4 @@ The coalition of monarchs gathers in #[Urithiru](locations/urithiru) to plan the
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* Ch. 19 |
+| chapter | 《纷争之韵》第19章 |

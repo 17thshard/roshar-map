@@ -7,4 +7,4 @@ Working with Raboneil, Navani discovers that harmonizing the rhythms of Stormlig
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* Ch. 76|
+| chapter | 《纷争之韵》第76章 |

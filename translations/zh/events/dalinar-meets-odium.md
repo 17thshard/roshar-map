@@ -9,4 +9,4 @@ Odium expresses interest in making an agreement that day, so he describes his te
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* 112|
+| chapter | 《纷争之韵》第112章 |

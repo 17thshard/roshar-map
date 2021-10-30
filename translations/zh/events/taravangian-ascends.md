@@ -9,4 +9,4 @@ Taravangian starts adjusting to the power of Odium. He discovers that Rayse had 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* 113 & 114|
+| chapter | 《纷争之韵》第113、114章 |

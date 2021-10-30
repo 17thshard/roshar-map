@@ -9,4 +9,4 @@
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* Ch. 45 |
+| chapter | 《纷争之韵》第45章 |

@@ -9,4 +9,4 @@ When the battle is over, Jasnah arrives at her tent and speaks with the Mink, wh
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* 64|
+| chapter | 《纷争之韵》第64章 |

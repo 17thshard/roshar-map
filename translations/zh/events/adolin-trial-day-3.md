@@ -7,4 +7,4 @@ The final day of Adolin's trial by witness in Lasting Integrity.
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* 94|
+| chapter | 《纷争之韵》第94章 |

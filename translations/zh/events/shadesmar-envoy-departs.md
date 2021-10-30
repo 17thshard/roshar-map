@@ -9,4 +9,4 @@ Adolin thanks the gatekeepers as the group regards their surroundings. He takes 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* Ch. 21 & 22 |
+| chapter | 《纷争之韵》第21、22章 |
