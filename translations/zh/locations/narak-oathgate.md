@@ -1,4 +1,4 @@
-# Narak Oathgate
-The **Narak Oathgate** in Shadesmar marks the Cognitive Realm reflection of the Oathgate located in #[Narak](locations/narak). It is located in the #[Sea of Lost Lights](locations/sea-of-lost-lights) and the #[Sea of Oracles](locations/sea-of-oracles).
+# 纳拉克誓约之门
+裂影界中的**纳拉克誓约之门**对应着实界域中位于#[纳拉克](locations/narak)的誓约之门。它坐落于#[失落之光海](locations/sea-of-lost-lights)和#[圣言海](locations/sea-of-oracles)。
 
-The Oathgate is represented by a flat platform of a material akin to white marble, the size of the control building. The platform itself is watched over by a pair of enormous spren, both the size of buildings, each wearing a set of armor and holding a spear. One of the spren is white, while the other is shimmering black. 
+誓约之门在裂影界是一个平台，有实界域誓约之门控制室的大小，颜色接近白色大理石。有一白一黑两个巨大的灵体守卫着誓约之门，他们都身着铠甲，手持长矛，身形有平台大小。 

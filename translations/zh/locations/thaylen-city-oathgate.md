@@ -1,4 +1,4 @@
-# Thaylen City Oathgate
-The **Thaylen City Oathgate** in Shadesmar marks the Cognitive Realm reflection of the Oathgate located in #[Thaylen City](locations/thaylen-city). The Thaylen City Oathgate is located on the northern edge of the #[Thaylen Sea](locations/thaylen-sea), with a bridge connecting to it from the nearby land.
+# 泰勒拿城誓约之门
+裂影界中的**泰勒拿城誓约之门**对应着实界域中位于#[泰勒拿城](locations/thaylen-city)的誓约之门。它坐落于#[泰勒拿海](locations/thaylen-sea)北岸，与附近的陆地有桥相连。
 
-The Oathgate is represented by a flat platform of a material akin to white marble, the size of the control building. The platform itself is watched over by a pair of enormous spren, both the size of buildings, each wearing a set of armor and holding a spear. One of the spren is white, while the other is shimmering black. 
+誓约之门在裂影界是一个平台，有实界域誓约之门控制室的大小，颜色接近白色大理石。有一白一黑两个巨大的灵体守卫着誓约之门，他们都身着铠甲，手持长矛，身形有平台大小。 

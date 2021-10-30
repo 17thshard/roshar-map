@@ -1,4 +1,4 @@
-# Panatham Oathgate
-The **Panatham Oathgate** in Shadesmar marks the Cognitive Realm reflection of the Oathgate located in #[Panatham](locations/panatham). It is located in the #[Sea of Regret](locations/sea-of-regret). The nearest land is the western end of the island corresponding to the #[Purelake](locations/purelake) in the Physical Realm.
+# 帕纳撒誓约之门
+裂影界中的**帕纳撒誓约之门**对应着实界域中位于#[帕纳撒](locations/panatham)的誓约之门。它坐落于#[悔海](locations/sea-of-regret)。实界域中的#[淳湖](locations/purelake)所在地是距离帕纳撒誓约之门最近的陆地，位于该誓约之门的西方。
 
-The Oathgate is represented by a flat platform of a material akin to white marble, the size of the control building. The platform itself is watched over by a pair of enormous spren, both the size of buildings, each wearing a set of armor and holding a spear. One of the spren is white, while the other is shimmering black. 
+誓约之门在裂影界是一个平台，有实界域誓约之门控制室的大小，颜色接近白色大理石。有一白一黑两个巨大的灵体守卫着誓约之门，他们都身着铠甲，手持长矛，身形有平台大小。

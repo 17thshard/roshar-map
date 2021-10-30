@@ -1,4 +1,4 @@
-# Kurth Oathgate
-The **Kurth Oathgate** in Shadesmar marks the Cognitive Realm reflection of the Oathgate located in #[Kurth](locations/kurth). It is located adjacent to shore in a lake corresponding to the island that Kurth is situated on in the #[Reshi Sea](locations/reshi-sea). It is just south of the #[Nexus of Transition](locations/nexus-of-transition).
+# 库尔兹誓约之门
+裂影界中的**库尔兹誓约之门**对应着实界域中位于#[库尔兹](locations/kurth)的誓约之门。在实界域，库尔兹坐落于#[雷希海](locations/reshi-sea)中的一个岛上，这个岛在裂影界中对应一个湖，库尔兹的誓约之门就在这个湖附近。该誓约之门北方就是#[无常结域](locations/nexus-of-transition)。
 
-The Oathgate is represented by a flat platform of a material akin to white marble, the size of the control building. The platform itself is watched over by a pair of enormous spren, both the size of buildings, each wearing a set of armor and holding a spear. One of the spren is white, while the other is shimmering black. 
+誓约之门在裂影界是一个平台，有实界域誓约之门控制室的大小，颜色接近白色大理石。有一白一黑两个巨大的灵体守卫着誓约之门，他们都身着铠甲，手持长矛，身形有平台大小。 
