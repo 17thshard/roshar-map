@@ -1,6 +1,6 @@
-# Lasting Integrity
-**Lasting Integrity** is the honorspren capital in Shadesmar. The fortress is located in the southern section of the #[Sea of Souls](locations/sea-of-souls), near the #[Nexus of Imagination](locations/nexus-of-imagination), the #[Expanse of Vibrance](locations/expanse-of-vibrance), and 长明. Lasting Integrity sits on a cliff overlooking a northern bay that is part of the Astral Banks, the reflection of the country of #[Tukar](locations/tukar). 
+# 永节堡
+**永节堡**是荣灵在裂影界的首都。这座城池位于#[魂海](locations/sea-of-souls)南部，靠近#[想象结域](locations/nexus-of-imagination)、#[明动外域](locations/expanse-of-vibrance)以及长明。永节堡建在悬崖之上，向北俯瞰着星域浅滩的海湾。这片海域在实界域中是#[图卡](locations/tukar)。
 
-It is several hundreds of feet tall, rectangular and made of blue stone. The building is hollow in the middle, with no roof, and stands on its smaller side, pointing upwards into the sky. It is in a highly strategic position, and gives the impression that it has been deliberately fortified. Visitors must cross a bridge to reach the entrance and guards stand watch outside of the walls. The outside wall is sheer, with no windows or ornamentation. On top of the fortress are battlements, and a guardrail to prevent people from falling. The internal dimensions of the tower are large enough that someone can stand on the battlements and see the bottom of the fortress without the structures on the walls completely impeding their view. 
+永节堡高逾数百英尺，外形呈柱状立方体，由蓝色石材制成。内部为完全挑空结构，没有封顶。城堡地处战略要地，防备森严。访客需要夸过一座桥才能到达城堡的入口，城墙外有守卫把守。外墙完全垂直，没有窗户或任何装饰。城堡顶端有垛口和护栏以防跌落。城堡内部面积很大，站在垛口可以一眼望穿到底部，不会被建筑遮挡视线。
 
-Gravity works differently within Lasting Integrity, with each internal wall having its own gravitational 'field' that allows people to treat each internal surface as if they were the ground. When someone changes from one plane to another, their sense of gravity will switch to align with the new surface they are on.
+在永节堡内部，重力的运作方式会发生变化。每一面内墙都有自己的“重力场”，因此人们可以像站在平地一般站在墙上。当从一面内墙跨到另一面内墙，人的感官也会切换到新的重力方向。
