@@ -1,2 +1,2 @@
-# Astral Banks
-The **Astral Banks** is a body of water in the #[Sea of Souls](locations/sea-of-souls), part of the Rosharan subastral of the Cognitive Realm. In the Physical Realm, it corresponds to the nation of #[Tukar](locations/tukar). On its northern shores is the Oathbound Spires and Justice Untarnished, and to its south is #[Lasting Integrity](locations/lasting-integrity) and Brilliance Eternal, and a small rest stop that Nazh believes has "acceptable" snack choices.
+# 星堤
+**星堤**是柔刹世界知界域的一片海域，属于#[魂海](locations/sea-of-souls)，对应实界域的#[图卡](locations/tukar)。Oathbound Spires和Justice Untarnished在其北部海岸，南部则是#[永节堡](locations/lasting-integrity)、Brilliance Eternal以及一个纳兹认为有“还不错”的小吃的一个小型聚落。
