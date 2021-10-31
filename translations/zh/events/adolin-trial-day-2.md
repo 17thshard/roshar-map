@@ -1,10 +1,10 @@
-# Adolin's trial - Day 2
-The second day of Adolin's trial by witness in Lasting Integrity.
+# 阿多林的审判-第二天
+阿多林在永节堡接受审判的第二天。
 
 ## Details
-#[Adolin](characters/adolin) arrives for the second day of his trial and takes the stand. As he speaks he is continually interrupted by the honorspren audience, who do everything they can to disrupt him with their own accusations. The trial devolves into a full fledged argument, and Adolin finally gives up, inviting the honorspren to continue their attack as it is clear that they did not have honorable intentions in this trial. The audience is initially cowed, but their anger reignites when they learn that Adolin knew about the recently deadeye Cryptic he had found in the market.
+审判的第二天来临。#[阿多林](characters/adolin)的发言屡屡被荣灵打断。一开始阿多林还尝试辩解但荣灵根本听不进去，场面变为一边倒的控诉。阿多林明白这场审判毫无荣誉可言，只得一味忍耐。最后，阿多林承认在市场中见到过最近死亡的秘灵，这彻底点燃了观众们的怒火。
 
-#[Shallan](characters/shallan) joins Adolin after the trial, and Adolin is certain that he will be locked away and put on display. Shallan says that she'll break him out with the Stormlight she stole, but Adolin says that leaving him would be the honorable thing to do, and may even convince some of the honorspren to bond more Radiants. Shallan reflects on whether to impersonate Kelek to save Adolin, and just as she decides to do it, Veil changes her mind to keep her from doing it. Formless surfaces and takes over, and tells Adolin that he may be surprised by what the High Judge does. 
+审判后，阿多林认为自己肯定会被判决有罪入狱。#[沙兰](characters/shallan)表示到时候就用偷来的飓光带阿多林逃亡，但阿多林反对这个计划，称自己服从判决才是荣誉所在，可能还能打动一些荣灵加入人类。沙兰又有一计想要假冒卡拉克，被浣纱阻止。此时Formless人格出现，意味深长的说明天High Judge可能会有惊人之举。
 
 ## Metadata
 | Field | Value |

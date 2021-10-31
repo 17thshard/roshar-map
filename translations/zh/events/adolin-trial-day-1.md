@@ -1,10 +1,12 @@
-# Adolin's trial - Day 1
-The first day of Adolin's trial by witness in Lasting Integrity.
+# 阿多林的审判-第一天
+阿多林在永节堡接受审判的第一天。
 
 ## Details
-#[Adolin](characters/adolin) arrives at his trial, where the judge and the spren audience await. They discuss the terms of the trial, and Sekeir calls his witnesses. The first, Amuna, brings two of her deadeye charges and testifies to the travesty that killed them. The second witness is Blended. She not only says that humans should not be trusted, but that they might even consider bonding with the Fused as the rightful heirs of the land. However, she would rather no bonds happen in order to ensure that no spren will be killed. The third witness is Notum. He appears in uniform, and Adolin realizes that Notum has been told that if he will testify against Adolin, they will end his exile. Notum begins to speak, looking at the paper he brought, but then stops and says, “Honor is not dead so long as he lives in the hearts of men.” The crowd erupts, and Notum continues to bellow this phrase as he is dragged from the room. Adolin goes to speak to Kelek and asks what happened. Kelek tells him that the stakes of this trial are much more than he thought because some spren are considering joining the highspren and the Fused, and Adolin could tip the scales in the opposite direction.
+#[Adolin](characters/adolin)来到了法庭，法官和灵体观众已经在等候。他们首先讨论了审判的条款，然后Sekeir开始传唤证人。第一位证人阿穆娜带来了两位亡眼灵，控诉人类的暴行。第二位证人Blended不仅表达了对人类的不信，甚至呼吁灵体应该考虑与融族连结，声称后者才是这片土地合法的继承人。同时她也表示倾向于完全不与任何一方连结以避免惨剧发生。第三位证人是身着制服的Notum。阿多林察觉到荣灵们已经向Notum许诺只要发言控诉人类，就能结束流亡恢复身份。Notum开始照着手里的稿子念发言，但最终大声的说“Honor is not dead so long as he lives in the hearts of men.”此言一出，台下观众一片混乱，Notum一边继续大声疾呼一边被拖出了法庭。
 
-After the trial, #[Shallan](characters/shallan) climbs a tree and falls to the ground, faking a severe injury. Pattern plays along, and they convince the honorspren to take her to where their Stormlight is kept. They do so, and she steals a sphere, replacing it with a dun one and pretending that she had drained in to heal herself. The honorspren are appalled at how she could consume so much Stormlight, and they shuffle her from the room. 
+阿多林向卡拉克询问当前的情况。卡拉克告诉他此次审判意义重大，因为已经有灵体认为应该加入轩灵和融族一方。阿多林一行的出现激起了灵体对人类的古老仇恨，很可能推动灵体们作出人类不愿看到的选择。
+
+审判后，#[沙兰](characters/shallan)爬上了一棵树并假装摔伤。图腾也跟着演了一出戏，说服荣灵把沙兰带到了保管飓光的房间。沙兰用一颗已经黯淡无光的宝石偷换了一颗注满飓光的，假装是疗伤耗尽了宝石中的飓光。荣灵看到沙兰消耗了大量的飓光非常震撼，赶忙将沙兰赶了出去。
 
 ## Metadata
 | Field | Value |
