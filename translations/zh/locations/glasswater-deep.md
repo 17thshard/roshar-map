@@ -1,2 +1,2 @@
-# The Glasswater Deep
-The **Glasswater Deep** is a location in the #[Sea of Lost Lights](locations/sea-of-lost-lights). It is adjacent to Ravizadth and Emberdark, and hits the Emberdark Channel and South Hallen Channel. It is near the #[Luminous Shallows](locations/luminous-shallows). In the Physical Realm, it is the northern part of the #[Frostlands](locations/frostlands), lying on the same peninsula that #[Kharbranth](locations/kharbranth) is on to its west.
+# 澄水深渊
+**澄水深渊**是柔刹世界知界域的一片海域，位于#[失落之光海](locations/sea-of-lost-lights)，邻近Ravizadth和Emberdark。这篇海域北抵Emberdark Channel和South Hallen Channel，东临#[光明浅滩](locations/luminous-shallows)。在实界域澄水深渊对应#[霜冻之地](locations/frostlands)的北部半岛区域，西抵#[卡哈巴兰斯](locations/kharbranth)。

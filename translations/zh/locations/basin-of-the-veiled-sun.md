@@ -1,2 +1,2 @@
-# Basin of the Veiled Sun
-The **Basin of the Veiled Sun** is a body of water in the #[Sea of Souls](locations/sea-of-souls), part of the Rosharan subastral of the Cognitive Realm. It is located west of #[Urithiru](locations/urithiru), north of Perpetual Sobriety, and north of the #[Azimir Oathgate](locations/azimir-oathgate). North of that Oathgate, Nazh notes that something is weird in the basin, and intends to report back to Khriss in person regarding it. In the Physical Realm, it corresponds to territory in #[Azir](locations/azir).
+# 蔽日海盆
+**蔽日海盆**是柔刹世界知界域一处海域，位于#[魂海](locations/sea-of-souls)。其东方是#[乌有斯麓](locations/urithiru)，南方是Perpetual Sobriety以及#[阿兹米尔誓约之门](locations/azimir-oathgate)。纳兹在其地图中标明海盆中有些怪事，需要向克丽丝当面汇报。在实界域中，蔽日海盆在#[亚泽尔](locations/azir)境内。

@@ -1,3 +1,2 @@
-# The Empyrean Gulf
-The **Empyrean Gulf** is a body of water in the #[Sea of Souls](locations/sea-of-souls), part of the Rosharan subastral of the Cognitive Realm. In the Physical Realm, the Empyrean Gulf corresponds to the nation of #[Emul](locations/emul). It is surrounded by peninsulas with a variety of settlements and locations: one that contains Perpetual Sobriety and Ageless Beauty, one with Justice Untarnished and the Oathbound Spires, and one with the lighthouse Abiding Light.
-
+# 苍穹湾
+**苍穹湾**是柔刹世界知界域一片海域，位于#[魂海](locations/sea-of-souls)，在知界域中对应#[埃穆尔](locations/emul)。苍穹湾周边有诸多半岛，包括Perpetual Sobriety和永美所在的半岛、Justice Untarnished和Oathbound Spires所在的半岛以及久光塔所在的半岛。
