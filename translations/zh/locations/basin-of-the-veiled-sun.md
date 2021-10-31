@@ -1,2 +1,2 @@
 # 蔽日海盆
-**蔽日海盆**是柔刹世界知界域一处海域，位于#[魂海](locations/sea-of-souls)。其东方是#[乌有斯麓](locations/urithiru)，南方是Perpetual Sobriety以及#[阿兹米尔誓约之门](locations/azimir-oathgate)。纳兹在其地图中标明海盆中有些怪事，需要向克丽丝当面汇报。在实界域中，蔽日海盆在#[亚泽尔](locations/azir)境内。
+**蔽日海盆**是柔刹世界知界域一处海域，位于#[魂海](locations/sea-of-souls)。其东方是#[乌有斯麓](locations/urithiru)，南方是长清以及#[阿兹米尔誓约之门](locations/azimir-oathgate)。纳兹在其地图中标明海盆中有些怪事，需要向克丽丝当面汇报。在实界域中，蔽日海盆在#[亚泽尔](locations/azir)境内。

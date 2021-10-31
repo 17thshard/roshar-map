@@ -1,2 +1,2 @@
 # 圣言海
-**圣言海**是#[失落之光海](locations/sea-of-lost-lights)的一片海域。它位于#[祭兰](locations/celebrant)、Emberdark以及Burning Gardens以南；#[澄水深渊](locations/glasswater-deep)以北；西侧边界未知。#[萨拉瓦西海沟](locations/salavashi-trench)就位于这片海域。在实界域中，圣言海至少包含死弯河以北的#[阿勒斯卡](locations/alethkar)大部分领土。此外由于圣言海的南岸在实界域中已经抵达#[塔拉特海](locations/tarat-sea)，所以[雅克维德](locations/jah-keved)的部分国土应该在知界域也属于此海域。
+**圣言海**是#[失落之光海](locations/sea-of-lost-lights)的一片海域。它位于#[祭兰](locations/celebrant)、黑烬以及焚园以南；#[澄水深渊](locations/glasswater-deep)以北；西侧边界未知。#[萨拉瓦西海沟](locations/salavashi-trench)就位于这片海域。在实界域中，圣言海至少包含死弯河以北的#[阿勒斯卡](locations/alethkar)大部分领土。此外由于圣言海的南岸在实界域中已经抵达#[塔拉特海](locations/tarat-sea)，所以[雅克维德](locations/jah-keved)的部分国土应该在知界域也属于此海域。

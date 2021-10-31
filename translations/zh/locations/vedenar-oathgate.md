@@ -1,4 +1,4 @@
 # 魏德纳誓约之门
-裂影界中的**魏德纳誓约之门**对应着实界域中位于#[魏德纳](locations/vedenar)的誓约之门。它坐落于#[失落之光海](locations/sea-of-lost-lights)和#[圣言海](locations/sea-of-oracles)。它离海岸很近，接近Burning Gardens。
+裂影界中的**魏德纳誓约之门**对应着实界域中位于#[魏德纳](locations/vedenar)的誓约之门。它坐落于#[失落之光海](locations/sea-of-lost-lights)和#[圣言海](locations/sea-of-oracles)。它离海岸很近，接近焚园。
 
 誓约之门在裂影界是一个平台，有实界域誓约之门控制室的大小，颜色接近白色大理石。有一白一黑两个巨大的灵体守卫着誓约之门，他们都身着铠甲，手持长矛，身形有平台大小。 
