@@ -1,5 +1,5 @@
-# Dynastic collapse in Bayala
-The ruling dynasty of Bayala collapses, perhaps under the influence of Ashertmarn.
+# 巴雅拉王朝覆灭
+巴雅拉王朝覆灭。其背后推手可能是亚舍芒。
 
 ## Details
-The ruling dynasty collapses following "great debauchery" in the court of Bayala. Hessi believes the influence of the Unmade Ashertmarn may be to blame for these events.
+巴雅拉王朝在“great debauchery”后覆灭。赫熹认为事件的背后推手可能是亚舍芒。
