@@ -1,5 +1,5 @@
-# Azure departs Lasting Integrity
-Azure departs from the Honorspren stronghold of Lasting Integrity.
+# 天青离开永节堡
+天青离开了荣灵的都市永节堡。
 
 ## Details
-After her travels with Kaladin, Shallan, and Adolin through Shadesmar, Azure continued with Notum and the Honorspren to Lasting Integrity. She remained there for roughly half a year before departing for reasons apparently unknown to the Honorspren. She was the last human to leave the city before the arrival of Shallan and Adolin in 1175.
+与卡拉丁、沙兰、阿多林三人在知界域分开后，天青与Notum一同来到了永节堡，并居住了半年左右。荣灵们都不知道她为什么离开。在1175年沙兰和阿多林来到永节堡之前，天青是该城市最后一位人类旅客。

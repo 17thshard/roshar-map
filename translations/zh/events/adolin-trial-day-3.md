@@ -1,8 +1,8 @@
-# Adolin's trial - Day 3
-The final day of Adolin's trial by witness in Lasting Integrity.
+# 阿多林的审判-第三天
+阿多林在永节堡接受审判的最后一天。
 
 ## Details
-#[Adolin](characters/adolin) arrives at the forum for the last day of his trial to find out that Sekeir will be sitting as High Judge in Kelek's place. Sekeir begins by giving a speech condemning Adolin and all humans and then calls for the final witness: Mayalaran. As he continues with his accusations Maya grows more and more distressed and Adolin keeps asking him to let her go. Finally, as the High Judge refuses judgement, claiming that Maya's condemnation is all that's needed to judge Adolin, Maya and Adolin share a moment of connection and Maya speaks. She reveals that the ancient spren were not betrayed by their Knights Radiant, but decided together with them to break their bonds. Most of the gathered spren disperse, shocked by the news, but Blended approaches to speak with Adolin who tells him that she is worried what could have convinced spren to choose death.
+#[阿多林](characters/adolin)发现最后一天Sekeir代替卡拉克成为了High Judge。Sekeir首先发言控诉了阿多林以及他所代表的全体人类，然后请出了最终证人：玛雅拉兰，并声称自己作为High Judge有权力引导无法说话的证人。目睹了玛雅在法庭中惊慌失措的样子，阿多林请求放过玛雅直接宣判，但Sekeir却声称让玛雅苦恼的正是人类。阿多林在一瞬间感受到了在法庭上不停挣扎的玛雅的苦闷和愤怒，进行了精神上的交流。终于玛雅开口说出了真相：古老的灵体们是和他们的光辉骑士一起决定放弃誓言。在场的所有观众无不感到震撼，大部分惊慌逃窜。Blended告诉阿多林，古老灵体们愿意放弃生命来阻止的事情是什么尚不明确，但肯定让人担心。
 
 ## Metadata
 | Field | Value |
