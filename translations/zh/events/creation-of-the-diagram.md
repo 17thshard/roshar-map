@@ -1,5 +1,5 @@
-# Creation of the Diagram
-Not long after his visit to the Valley, Taravangian creates the Diagram.
+# 写出谶记
+造访山谷后不久塔拉梵吉安写出了《谶记》。
 
 ## Details
-#[Taravangian](characters/taravangian) visited #[the Valley](locations/valley) not long after #[Dalinar](characters/dalinar), where he too had an encounter that left him changed. In the weeks that followed, Taravangian experienced a singular "day of brilliance" in which his intelligence reached an unprecedented high. On that day, Taravangian penned the Diagram, which would shape all of his future plans for saving Roshar.
+#[达力拿](characters/dalinar)造访#[山谷](locations/valley)后不久，#[塔拉梵吉安](characters/taravangian)也前往山谷并和前者一样遇到了培养，接受了祝福和诅咒。几周后，塔拉梵吉安经历了人生中智力最高的一天。他在这一天写就了《谶记》。这本书指导了他此后所有拯救柔刹的行动。
