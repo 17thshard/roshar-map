@@ -3353,8 +3353,13 @@
         ],
         "coppermind": "Riino's_lighthouse",
         "image": {
-            "file": "events/Lighthouse_LittleGreyDragon.jpg",
-            "credits": "[LittleGreyDragon](https://coppermind.net/wiki/Coppermind:Artists/LittleGreyDragon)"
+            "file": "events/Invested by Aleah Lauren.jpg",
+            "credits": "[Aleah Lauren](https://www.instagram.com/prophecywine/)",
+            "size": 130,
+            "offset": {
+                "x": 40,
+                "y": 50
+            }
         },
         "related": [
             "characters/adolin",
@@ -4112,6 +4117,10 @@
             "adolin"
         ],
         "coppermind": "Nameless",
+        "image": {
+            "file": "events/Sphere by Aleah Lauren.jpg",
+            "credits": "[Aleah Lauren](https://www.instagram.com/prophecywine/)"
+        },
         "related": [
             "locations/nameless",
             "characters/shallan",
