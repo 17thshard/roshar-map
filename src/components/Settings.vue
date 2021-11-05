@@ -35,7 +35,7 @@
                 :checked="layerActive"
                 @input="$store.commit('toggleLayer', { layer, value: $event.target.checked })"
               >
-              <span :class="['settings__layer-check', { 'settings__layer-check--temporary': isLayerEnabledByEvent(layer) }]" />
+              <span :class="['settings__layer-check', { 'settings__layer-check--temporary': isLayerEnabledTemporarily(layer) }]" />
               {{ $t(`layers.${layer}`) }}
             </label>
           </section>
@@ -131,16 +131,20 @@ export default {
     enableTagSeparation (tag) {
       this.$store.commit('enableTagSeparation', tag)
     },
-    isLayerEnabledByEvent (layer) {
+    isLayerEnabledTemporarily (layer) {
       const activeEvent = this.$store.state.activeEvent
-      if (activeEvent === null) {
-        return false
+      if (activeEvent !== null) {
+        if (layer === 'shadesmar') {
+          return activeEvent.shadesmar === true
+        } else if (layer === 'factions') {
+          return activeEvent.specialEffect === 'factions'
+        }
       }
 
-      if (layer === 'shadesmar') {
-        return activeEvent.shadesmar === true
-      } else if (layer === 'factions') {
-        return activeEvent.specialEffect === 'factions'
+      if (this.$route.name === 'locations') {
+        const activeLocation = this.$store.state.mappings.locations[this.$route.params.id]
+
+        return layer === 'shadesmar' && activeLocation.shadesmar === true
       }
 
       return false
