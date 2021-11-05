@@ -1,8 +1,8 @@
-# Dalinar visits Taravangian
-Dalinar visits Taravangian and they discuss the ethics of what Taravangian has done.
+# 达力拿拜访塔拉梵吉安
+达力拿拜访了塔拉梵吉安，二人讨论了塔拉梵吉安的背叛背后的道德问题。
 
 ## Details
-#[Dalinar](characters/dalinar) experiments with his Bondsmith powers and learns how to see someone's Connections to others. He leaves to talk to #[Taravangian](characters/taravangian). Dalinar asks why Taravangian betrayed them, and Taravangian explains that he knows that they are going to lose and this is the only way he can save at least #[Kharbranth](locations/kharbranth). He says that #[Cultivation](characters/cultivation) granted him the capacity to stop what was coming, and on his one transcendently brilliant day this was the path he saw. Dalinar tells him that he doesn't think that Taravangian could have seen the future perfectly and that he, Dalinar, has to believe that it is possible to defeat Odium. Taravangian wishes he were dealing with the Dalinar from before because he believes that that Dalinar would see the necessity of joining Odium. Taravangian believes that monarchs cannot allow themselves to be bound by oaths because they have to be able to engage in the kind of ignoble behavior that he has had to be willing for. He says that he could die happy if Dalinar saves mankind and he knows he was wrong, but Dalinar believes that Taravangian's actions prove that he had just wanted the power. After Dalinar leaves, #[Szeth's](characters/szeth) proffered opinion reinforces his feeling that they cannot trust Taravangian. 
+#[达力拿](characters/dalinar)拜访了#[塔拉梵吉安](characters/taravangian)。他问塔拉梵吉安为什么要背叛人类联盟，后者解释说自己寻访夜妖，从#[培养](characters/cultivation)处获得了每日不同的智力，在智力巅峰的一天他预见到了未来——人类注定失败，自己最多也只能保住#[卡哈巴兰斯](locations/kharbranth)。达力拿驳斥了塔拉梵吉安未来已定的论调，表示自己终将战胜仇恨。塔拉梵吉安表示如果真有人类胜利的一天，自己将接受自己的错误欣然赴死。达力拿认为塔拉梵吉安并非为了拯救人类，只是自己想要掌控权力。离开塔拉梵吉安的房间后，#[泽斯](characters/szeth)也向进达力拿进言决不能相信塔拉梵吉安。
 
 ## Metadata
 | Field | Value |
