@@ -1,10 +1,10 @@
-# Kaladin's future unclear
-Kaladin discuses his future with Zahel after being "promoted" by Dalinar.
+# 卡拉丁前路不明
+卡拉丁“晋升”后，与扎赫尔谈了自己的未来。
 
 ## Details
-After returning from the battle in #[Hearthstone](locations/hearthstone), #[Kaladin](characters/kaladin) is summoned by #[Dalinar](characters/dalinar) and informed that he will be removed from the front lines of the war as the effects of his battle shock continue to worsen. Dalinar offers a promotion to Kaladin, so that he can continue serving in the military off the battlefield, but Kaladin is skeptical that this is a viable option.
+从#[赫斯通](locations/hearthstone)返回后，[达力拿](characters/dalinar)召见了#[卡拉丁](characters/kaladin)，要把他撤离一线，因为卡拉丁的心理创伤已经十分严重。达力拿的方案是让卡拉丁晋升到一个可以脱离战场的职位，但卡拉丁对这个安排深感不安。
 
-Two weeks later, Dalinar announces Kaladin's change in status, and Kaladin promotes Sigzil and Skar to take over his previous duties. Immediately after the meeting, he goes to the sparring grounds in search of Zahel. Hearing that he is on laundry duty, Kaladin walks toward an outdoor area where they hang clothes to dry. When Kaladin explains that he has been forced into retirement, the pair discuss a possible future for Kaladin in the ardentia. Telling Kaladin to prove that he belongs there, Zahel initiates a fight. Kaladin summons Syl as a sword, and Zahel strikes back at him with the laundry; as they fight, Zahel gets Kaladin to search out why he really fights. He asks if Kaladin believes in the Almighty, and they discuss the topic until Kaladin finds himself on the ground with his own knife to his head. Zahel tells him to return when he can truly hate the fight. Kaladin asks him if he is like #[Wit](characters/wit), which leads to an explanation of Zahel's understanding of Invested entities before Kaladin finally leaves him. 
+两周后，达力拿召开会议正式公布了卡拉丁的晋升，西吉格尔和斯卡接替了他的职责。会后，卡拉丁去训练场找扎赫尔，听说后者被安排去洗衣服，最后在户外的晾衣服区找到了他。卡拉丁向扎赫尔吐露自己有意以教官的身份进入虔诚会训练新兵。扎赫尔要求卡拉丁证明自己能在此立足，并首先发起了攻击。卡拉丁召唤了碎瑛刃，但面对仅用布料战斗的扎赫尔却处于下风。交手中，扎赫尔要卡拉丁回想自己为什么而战，进而讨论了关于全能之主的信仰。这场交手以卡拉丁落败告终。扎赫尔指出卡拉丁内心深处依然热爱战斗，他要卡拉丁真正痛恨战斗时再回来。卡拉丁问起扎赫尔是否是像#[知策](characters/wit)那样的人。扎赫尔讲了很多Invested entities的知识，卡拉丁似懂非懂。
 
 ## Metadata
 | Field | Value |
