@@ -1,8 +1,10 @@
-# The listeners reunited
-Venli is reunited with her mother and the rest of the listeners who survived among the Shattered Plains.
+# 听者重逢
+温丽在破碎平原与母亲以及其他幸存的听者重逢。
 
 ## Details
-#[Venli](characters/venli) and her group from #[Urithiru](locations/urithiru) find the listeners on the #[Shattered Plains](locations/shattered-plains). Venli approaches alone; when Thude recognizes her, he at first runs away before he sees Venli draw in Stormlight. The other listeners all look at her with suspicion and hostility, but they allow her into the camp to see her mother. She brings a Reacher with her in the hope that the spren and her mother can bond so Jaxlim's mind can begin to heal, promising Thude that there are hundreds more willing to bond singers. Kneeling before her mother, Venli sings the first song Jaxlim had ever taught her; afterwards, she reasons with Thude about their mutual need for allies. A chasmfiend shows itself, and Venli realizes that that was how the group escaped the chasms the night of the everstorm. Jaxlim suddenly recognizes Venli, and Venli hears a female voice in her mind finally accepting her second Ideal. 
+#[温丽](characters/venli)和他在#[乌有斯麓](locations/urithiru)的同伴们在#[破碎平原](locations/shattered-plains)找到了其他幸存的听者。
+
+图德认出了温丽，当他发现温丽可以使用飓光第一反应是惊恐的跑开。所有幸存的听者都对温丽表示怀疑并抱有敌意，但还是允许她进入营地去见母亲。她带来了导灵，希望灵体能与Jaxlim连结以治好她的精神疾病。他还向图德承诺还有数百灵体愿意与听者缔结连结。温丽跪在母亲面前，哼起了母亲教自己的第一首歌。她告诉图德为了独立的生存下去，他们需要和光辉骑士们成为伙伴。此时一只深渊恶魔出现，图德告诉温丽灭世风暴来临之夜，族人们是靠着这只深渊恶魔才逃离了深沟。忽然Jaxlim恢复了神志认出了温丽，温丽也听到一个女性的声音在她的脑海中说她的第二真言终于被接受了。
 
 ## Metadata
 | Field | Value |
