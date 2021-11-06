@@ -1,4 +1,4 @@
-# First of the Final Ten Days
+# 最后十日-第一天
 
 ## Details
-On the first of the "Final Ten Days", El writes a ketek in anticipation of #[Odium's](characters/odium) victory at the #[contest of champions](events/contest-of-champions).
+最后十日的第一天，El写了一篇回文诗预测#[仇恨](characters/odium)一方将在#[代理斗士决斗](events/contest-of-champions)中胜出。

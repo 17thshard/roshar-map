@@ -1,5 +1,5 @@
-# The Fourth Bridge departs
-The *Fourth Bridge* departs from the Shattered Plains.
+# “第四飞桥”号出发
+*“第四飞桥”号*从破碎平原出发。
 
 ## Details
-The *Fourth Bridge* departs from the #[Shattered Plains](locations/shattered-plains) on its maiden voyage. The plan is to take the ship north, out over the #[Steamwater Ocean](locations/steamwater-ocean).
+*“第四飞桥”号*从#[破碎平原](locations/shattered-plains)出发，开始了处女航，计划是一路向北飞向#[蒸腾海](locations/steamwater-ocean)。
