@@ -1,4 +1,4 @@
-# Eshonai is born
+# 伊舒娜出生
 
 ## Details
-Eshonai is born, the first daughter of Jaxlim.
+伊舒娜出生。她是Jaxlim的长女。
