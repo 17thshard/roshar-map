@@ -8,4 +8,4 @@ Approximately one month after departing from #[Thaylen City](locations/thaylen-c
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Dawnshard* Ch. 11 |
+| chapter | 《晨瑛》第11章 |

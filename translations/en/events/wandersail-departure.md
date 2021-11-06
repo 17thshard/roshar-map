@@ -7,4 +7,4 @@ Under the command of #[Rysn](characters/rysn), and with support from #[Navani Kh
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Dawnshard* Ch. 4 |
+| chapter | 《晨瑛》第4章 |
