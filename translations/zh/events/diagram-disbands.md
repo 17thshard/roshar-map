@@ -1,8 +1,8 @@
-# The Diagram disbands
-Taravangian meets with the inner circle of the Diagram and the group disbands.
+# 谶记社解散
+塔拉梵吉安接见了谶记社的核心成员，并将组织解散。
 
 ## Details
-#[Taravangian](characters/taravangian) gathers his friends to tell them farewell in his chambers at #[Urithiru](locations/urithiru). Later that day, he plans to leave for #[Emul](locations/emul) with #[Dalinar](characters/dalinar) and #[Jasnah](characters/jasnah), while the rest of the #[Diagram](misc/diagram) would go back to #[Kharbranth](locations/kharbranth). In Emul, Taravangian intends to have his armies betray the coalition, fulfiling his part of the agreement with 3[Odium](odium). #[Jah Keved](locations/jah-keved) too will turn against the coalition at that time. He announces to his group that the Diagram has served its purpose and now has to be disbanded. Kharbranth is to distance itself from Taravangian's actions, so that the city may be able to stay out of the war. After his friends leave the room, Taravangian reassures himself that saving a single city was really all he could’ve done, and he throws his copy of the Diagram into the fire.
+#[塔拉梵吉安](characters/taravangian)将#[谶记社](misc/diagram)的核心成员召集至他在#[乌有斯麓](locations/urithiru)的房间。他计划自己跟随#[达力拿](characters/dalinar)和#[迦熙娜](characters/jasnah)前往#[埃穆尔](locations/emul)，其余成员则返回#[卡哈巴兰斯](locations/kharbranth)。根据他与[仇恨](characters/odium)的协议，他的军队将在埃穆尔背叛联军，#[雅克维德](locations/jah-keved)届时也将反叛。他声明谶记社已达到设立当初的目标，正式解散。此后卡哈巴兰斯将与切断关系，可以置身战争之外。朋友们离开后，塔拉梵吉安扪心自问拯救一座城市已经是极限，然后将《谶记》投入火中烧毁。
 
 ## Metadata
 | Field | Value |
