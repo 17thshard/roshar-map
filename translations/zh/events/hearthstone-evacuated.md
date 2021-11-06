@@ -1,8 +1,8 @@
-# Hearthstone Evacuated
-The town of Hearthstone was evacuated by the *“第四飞桥”号* on its maiden voyage.
+# 撤离赫斯通
+*“第四飞桥”号*在其处女航中带领赫斯通的乡亲们撤离。
 
 ## Details
-While the *“第四飞桥”号* was being tested on its maiden voyage over the #[Steamwater Ocean](locations/steamwaterocean), #[Kaladin](characters/kaladin) proposed a more rigorous test opportunity: rescuing the inhabitants of #[Hearthstone](locations/hearthstone) along with the infamous #[Herdazian](locations/herdaz) general, the Mink. On the morning of the ship's arrival, Kaladin was spotted by the enemy while scouting ahead. As the residents of Hearthstone began boarding, the Windrunners acompanying the ship rose to defend against an arriving group of Fused. After sparring with Leshwi, Kaladin was drawn away into a trap set by the Pursuer. Kaladin defeated the Pursuer and his men, but failed to save Roshone from #[Moash](characters/moash). #[Renarin](characters/renarin) was able to drive Moash away and rescue Kaladin from his former friend. The Fused were held off, and the *“第四飞桥”号* began its return journey to #[Narak](locations/narak).
+在*“第四飞桥”号*飞跃#[蒸腾海](locations/steamwaterocean)的处女航中，#[卡拉丁](characters/kaladin)提出了一个更大胆的计划：拯救#[赫斯通](locations/hearthstone)的难民以及著名#[赫达孜](locations/herdaz)将领“水貂”。飞船在一个早晨抵达赫斯通。敌人发现了先行探路的卡拉丁，纠集融族发起了攻击。风行骑士们一边护送村民登船一边与敌人战斗。卡拉丁先是与Leshwi交手，不久又落入了Pursuer的圈套。终于击退了Pursuer后，卡拉丁又遭遇了#[莫阿什](characters/moash)，亲眼目睹了荣寿死于后者之手。危急时刻是#[雷纳林](characters/renarin)出手把卡拉丁救了出来。击退融族后，*“第四飞桥”号*飞往#[纳拉克](locations/narak)。
 
 ## Metadata
 | Field | Value |
