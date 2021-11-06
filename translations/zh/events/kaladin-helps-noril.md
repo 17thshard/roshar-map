@@ -1,8 +1,8 @@
-# Kaladin helps Noril
-Kaladin and Teft locate Noril, a missing refugee suffering from a mental illness, and make plans to help him and others recover.
+# 卡拉丁帮助Noril
+卡拉丁和泰夫特找到了受到精神疾病折磨的Noril，计划帮助他和像他一样的病人们。
 
 ## Details
-Teft joins #[Kaladin](characters/kaladin) in a search for Noril, a missing refugee from #[Hearthstone](locations/hearthstone). The ardent at the first devotary they go to tells them that Noril had tried to kill himself, so they had sent him to the Devotary of Mercy. Following her directions, Kaladin and Teft find the devotary on the fourth floor. The ardent there refuses to divulge patient information until Teft summons Phendorana and proves that they are of sufficient rank to authorize the request. After looking up the room number, the ardent leads them to Noril. On the way, Kaladin and Teft are both disillusioned by seeing the way that all the patients are locked up in the dark. They convince Noril to come out to a balcony to talk, and when Kaladin and Teft prove that they understand how he feels, Noril begins to open up to them. Kuno, shocked to see Noril speaking, discusses with Kaladin the standard of care for those with mental illness. He admits that they need to do better but sees no way to change the established system; Kaladin asks that Noril be released into his care and warns Kuno that he will be back for the others. 
+泰夫特和#[卡拉丁](characters/kaladin)一起寻找走失的#[赫斯通](locations/hearthstone)居民Noril。他们找到了第一家虔诚会，虔诚者告诉他们Noril有自杀倾向因此被送往了Devotary of Mercy。二人找到了这家位于四层的虔诚会。虔诚者起初拒绝透露病患的信息，直到泰夫特表明了身份才带他们去找Noril的病房。二人发现这家虔诚会的病人们都被关在漆黑的房间之中。找到Noril后，他们说服后者来到阳台来谈话。Noril逐渐发觉面前的两人和自己一样饱受精神疾病的困扰，打开了心扉。见到Noril愿意开口说话，虔诚者Kuno大为震惊，与卡拉丁讨论起了虔诚会运营的问题。他承认病人应该接受更好的治疗，但也表示自己无力改变现状。卡拉丁表示今后由自己来照看Noril，并表示会回来接走其他的病人。
 
 ## Metadata
 | Field | Value |
