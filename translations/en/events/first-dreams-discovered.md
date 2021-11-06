@@ -7,4 +7,4 @@ A Thaylen ship under the command of Captain Smta was crossing the #[Southern Dep
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | 《晨瑛》序章 |
+| chapter | *Dawnshard* Prologue |
