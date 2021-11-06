@@ -1,4 +1,4 @@
-# Venli is born
+# 温丽出生
 
 ## Details
-Venli is born, the second daughter of Jaxlim.
+温丽出生。她是Jaxlim的次女。
