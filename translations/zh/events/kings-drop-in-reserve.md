@@ -1,5 +1,5 @@
-# King's Drop in Gemstone Reserve
-The King's Drop is placed in the Thaylen Gemstone Reserve.
+# 藏于储备行的御明珠
+泰勒拿储备行保管了御明珠。
 
 ## Details
-The King's Drop, a large and famous ruby with very few imperfections, is placed in the Thaylen Gemstone Reserve, where it would remain for over two hundred years without losing any substantial quantity of stored Stormlight.
+御明珠是一颗有名的巨大红宝石，几乎完美无瑕，保存于泰勒拿储备行。即使再过两千年，这颗宝石中的飓光也几乎不会泄露出去。
