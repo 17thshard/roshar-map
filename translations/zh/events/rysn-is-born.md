@@ -1,5 +1,4 @@
-# Rysn is born
-
+# 莱丝出生
 
 ## Details
-Rysn is born in Thaylenah.
+莱丝出生于泰勒拿。
