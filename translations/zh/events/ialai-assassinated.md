@@ -1,8 +1,8 @@
-# Ialai Sadeas is assassinated
-Under the disguisde of Chanasha, Shallan infiltrates the Sons of Honor and assassinates Ialai Sadeas.
+# 雅莱·撒迪亚斯遇刺
+沙兰伪装成商人恰娜莎·哈萨雷潜入荣誉之子组织，并暗杀了雅莱·撒迪亚斯。
 
 ## Details
-After spending a month in disguise as Chanasha Hasareh, #[Shallan](characters/shallan) finally succeeds in attracting the attention of the Sons of Honor. Though the group who seizes her initially refuses to introduce her to Ialai, Shallan claims to have secret blueprints of the *“第四飞桥”号*. A sudden attack forces the group to take quick action and they decide to bring Shallan directly to Ialai Sadeas. At their meeting, Ialai suspects that Shallan is a Ghostblood agent sent to assassinate her. Shallan, under the influence of "Formless", ultimately decides to follow through with the assassination, but at the last moment Radiant seizes control and performs the act herself in order to protect Shallan from the guilt. Radiant does not immediately confess to the assassination, leaving Shallan with concern that a member of the Unseen Court is a Ghostblood spy.
+#[沙兰](characters/shallan)伪装成商人恰娜莎·哈萨雷，花了一个月时间终于引起了荣誉之子的注意。起初，虽然沙兰声称自己有*“第四飞桥”号*的图纸，但该组织并不信任沙兰。在一次受到突然袭击时，组织决定加速计划，带沙兰面见雅莱·撒迪亚斯。会谈中，雅莱怀疑沙兰是鬼血会派来行刺自己的刺客，接受了死亡的命运。沙兰受到了Formless的影响决定行刺，但最后关头骑士人格为了保护沙兰的心理，接管了沙兰的神志毒杀了雅莱。事后，骑士人格没有马上坦白，导致沙兰不知谁是凶手，一直怀疑Unseen Court中有鬼血会的奸细。
 
 ## Metadata
 | Field | Value |
