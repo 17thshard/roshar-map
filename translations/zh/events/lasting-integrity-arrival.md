@@ -1,12 +1,14 @@
-# Arrival at Lasting Integrity
-The coalition delegation led by Adolin and Shallan arrives at Lasting Integrity.
+# 抵达永节堡
+由阿多林和沙兰率领的人类使节团抵达永节堡。
 
 ## Details
-On their final day of travel, #[Adolin](characters/adolin) and #[Shallan](characters/shallan) take some time alone to spot a starspren before packing up. Around midday, Felt brings news that hte Tukari caravan has split off from trailing them. Calling for a break, Adolin follows the scout onto an outcropping and discusses the situation with him, telling him to keep a watch on them during their break. While on the way back to Gallant, he realizes what the Tukari are chasing Notum.
+旅途的最后一日#[阿多林](characters/adolin)有了片刻与#[沙兰](characters/shallan)独处的时间。他们一起看了星灵。中午左右，菲尔特带来消息：一路跟随他们的图卡人已经拐上了另一条路。听到这个消息，阿多林登上了一处高地想亲眼确认一下，忽然意识到图卡人在追的不是他们而是Notum，一马当先追了过去。
 
-After riding in close enough to see the Tukari stabbing Notum repeatedly, Adolin confronts the Tukari alone with his greatsword. He drives them away from Notum, using his momentum to intimidate them and thin their numbers. As soon as they back off, however, their leader organizes them so they can surround him. Adolin receives a spear through the abdomen, but he keeps fighting and soon finds that Maya has brought a sword and come to help him. With his back now guarded and Gallant's looming presence helping as well, he is able to kill or scare off the remaining Tukari. A group from the diplomatic mission arrive to find the Tukari gone and the wounded Adolin holding Notum. 
+追近一看，这群图卡人果然在围攻Notum。阿多林没有等待伙伴而是独自冲了上去。面对敌人的围攻阿多林寡不敌众，腹部被敌人戳中。不久Maya也持剑加入了战团，虽然她并不会战斗，但每日与阿多林一起练习的剑姿还是唬住了敌人。她成功的保护了阿多林的背后，争取到了时间。图卡人眼见阿多林的增援就要赶来，只得撤退。
 
-While Godeke binds their wounds, a shocked Notum resists the idea of traveling with Adolin and his group. Adolin orders them to move out immediately, so Shallan decides to check her cube before leaving. Discovering that it has been touched, she realizes that Pattern is the only one who has had access to it. Reaching Lastinng Integrity, Adolin puts up a strong front as three honorspren arrive and immediately dismiss him. He hands over the letters from Dalinar and Jasnah, which the spren tear up without reading. Realizing that he has no options left, Adolin declares that he has come to face the judgement of the honorspren for his ancestors' actions in the Recreance. The spren agree to admit him on those terms and concede that he may bring two others with him, as well as Maya. Adolin directs a few to take word back to #[Dalinar](characters/dalinar) and the rest to camp out nearby. He takes Shallan and Pattern with him and enters the fortress in chains. 
+戈德奇为他们包扎了伤口。Notum不愿与阿多林他们同行，因为自己是被流放之人，只会给阿多林添麻烦，但阿多林依然坚持不能弃伤员于不顾。阿多林命令大家尽快收拾行囊离开此地。沙兰动身前检查了她的cube，发现cube被人动过。剩下的嫌疑人只剩下图腾。
+
+一行终于来到永节堡的大门前，荣灵们不肯放他们入城。阿多林递上了达力拿和迦熙娜的信件，不料荣灵们看都不看一眼直接撕毁。无计可施的阿多林大声宣布他是来为祖先变节的罪行来接受审判的。荣灵们准许他带Maya以及两位随从入城。阿多林派小队人马回去给达力拿送信，安排其他人暂时在城外驻扎，之后带了Maya、沙兰和图腾一起，被荣灵捆进了永节堡。
 
 ## Metadata
 | Field | Value |
