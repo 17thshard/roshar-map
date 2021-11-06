@@ -1,11 +1,10 @@
-# The “第四飞桥”号 arrives
-The '“第四飞桥”号' arrives at Narak and the refugees move in to Urithiru. Kaladin decides to work with his father as a surgeon.
+# “第四飞桥”号抵达纳拉克
+“第四飞桥”号抵达纳拉克，难民们经由誓约之门前往乌有斯麓。卡拉丁决心跟随父亲成为手术师。
 
 ## Details
-The '“第四飞桥”号' arrives at the #[Shattered Plains](locations/shattered-plains) after four weeks of travel, and #[Kaladin](characters/kaladin) operates the Oathgate to travel there and greet the ship. An hour later, he leads his parents up to the sixth floor of #[Urithiru](locations/urithiru) to show them the neighborhood that has been arranged for the former #[Hearthstone](locations/hearthstone) residents. Syl, Hesina, and Lirin banter in the hallways before they reach the rooms. Kaladin shows them around the area, assuming that Lirin disapproves of the arrangements because of his silence. Syl excitedly leads the group to the rooms they have prepared for Kaladin's family and gives them a tour of a sitting room with a full bookshelf, Oroden's room, and a fully stocked surgery. Lirin finally admits that he thinks his kind of medical care is obsolete now, but Kaladin is able to explain to him that it isn't. At Syl's prompting, Kaladin tells his overjoyed parents that he has retired from battle and wants to be a surgeon with his father. 
+“第四飞桥”号经过了四周的飞行抵达了#[破碎平原](locations/shattered-plains)。然后#[卡拉丁](characters/kaladin)带领难民们经由誓约之门来到了#[乌有斯麓](locations/urithiru)。卡拉丁的家人和#[赫斯通](locations/hearthstone)的乡亲们被安排住在六层。卡拉丁带父母在附近参观了一圈，担心沉默不语的父亲并不开心。茜儿带大家参观了卡拉丁家人的房间，尤其是一个拥有各种医疗器械的手术室。李伦担心自己的医术已经过时，卡拉丁宽慰了父亲。在茜儿的鼓励下，卡拉丁告诉父母自己已经从战斗前线退下，会跟随父亲成为手术师。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
 | chapter | 《纷争之韵》第18章 |
-
