@@ -100,6 +100,7 @@ The following is a list of all the artists that are either official artists or h
  * [Michael Whelan](https://coppermind.net/wiki/Michael_Whelan)
  * [Neirr](https://coppermind.net/wiki/Coppermind:Artists/Neirr)
  * [Nick Vidic](https://coppermind.net/wiki/Coppermind:Artists/Nick_Vidic)
+ * [Nozomi](https://coppermind.net/wiki/Coppermind:Artists/Nozomi)
  * [Otto Didact](https://coppermind.net/wiki/User:Otto_didact)
  * [Petar Penev](https://coppermind.net/wiki/Coppermind:Artists/Petar_Penev)
  * [Randy Vargas](https://coppermind.net/wiki/Coppermind:Artists/Randy_Vargas)
