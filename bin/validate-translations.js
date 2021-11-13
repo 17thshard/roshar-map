@@ -5,6 +5,12 @@ const events = JSON.parse(fs.readFileSync('./src/store/events.json', 'utf8')).ma
 const locations = JSON.parse(fs.readFileSync('./src/store/locations.json', 'utf8')).map(l => l.id)
 const characters = JSON.parse(fs.readFileSync('./src/store/characters.json', 'utf8')).map(l => l.id)
 const misc = JSON.parse(fs.readFileSync('./src/store/misc.json', 'utf8')).map(l => l.id)
+const allReference = new Set([
+  ...events.map(name => `events/${name}`),
+  ...locations.map(name => `locations/${name}`),
+  ...characters.map(name => `characters/${name}`),
+  ...misc.map(name => `misc/${name}`)
+])
 
 let errors = false
 
@@ -45,5 +51,14 @@ function checkLangFiles (lang, type, reference) {
       console.error(`Found translation for unknown ${type} entry '${entryId}' in locale '${lang}'`)
       errors = true
     }
+    const fullPath = `${dirPath}/${entry.name}`
+    const content = fs.readFileSync(fullPath).toString()
+    const links = [...content.matchAll(/]\(([^(]*)\)/g)].flat().filter((match, i) => i % 2 === 1)
+    links.forEach((link) => {
+      if (!allReference.has(link)) {
+        console.error(`Found broken link ${link} in file ${fullPath}`)
+        errors = true
+      }
+    })
   })
 }
