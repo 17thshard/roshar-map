@@ -53,7 +53,7 @@ function checkLangFiles (lang, type, reference) {
     }
     const fullPath = `${dirPath}/${entry.name}`
     const content = fs.readFileSync(fullPath).toString()
-    const links = [...content.matchAll(/]\(([^)]*)\)/g)].flat().filter((match, i) => i % 2 === 1)
+    const links = [...content.matchAll(/[^_]\[[^\]]*\]\(([^)]*)\)/g)].flat().filter((_, i) => i % 2 === 1)
     links.forEach((link) => {
       if (!allReference.has(link)) {
         console.error(`Found broken link ${link} in file ${fullPath}`)
