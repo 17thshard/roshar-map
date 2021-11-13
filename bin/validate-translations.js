@@ -28,7 +28,7 @@ if (errors) {
   process.exit(1)
 }
 
-function checkLang (lang) {
+function checkLang(lang) {
   console.log(`Validating translations for locale '${lang}'`)
 
   checkLangFiles(lang, 'events', events)
@@ -37,7 +37,7 @@ function checkLang (lang) {
   checkLangFiles(lang, 'misc', misc)
 }
 
-function checkLangFiles (lang, type, reference) {
+function checkLangFiles(lang, type, reference) {
   const dirPath = `./translations/${lang}/${type}`
 
   if (!fs.existsSync(dirPath)) {
@@ -55,7 +55,7 @@ function checkLangFiles (lang, type, reference) {
     const content = fs.readFileSync(fullPath).toString()
     const links = [...content.matchAll(/[^_]\[[^\]]*\]\(([^)]*)\)/g)].flat().filter((_, i) => i % 2 === 1)
     links.forEach((link) => {
-      if (!allReference.has(link)) {
+      if (!link.startsWith('http') && !allReference.has(link)) {
         console.error(`Found broken link ${link} in file ${fullPath}`)
         errors = true
       }
