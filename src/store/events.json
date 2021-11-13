@@ -4731,8 +4731,9 @@
         ],
         "coppermind": "Ishar",
         "image": {
-            "file": "events/Ishar_Endsheet.jpg",
-            "credits": "[Dan dos Santos](https://coppermind.net/wiki/Coppermind:Artists/Dan_dos_Santos)"
+            "file": "events/Ishar's_Cryptic_by_Nozomi.png",
+            "credits": "[Nozomi](https://coppermind.net/wiki/Coppermind:Artists/Nozomi)",
+            "size": 170
         },
         "related": [
             "locations/tukar",
