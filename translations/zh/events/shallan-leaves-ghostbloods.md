@@ -1,8 +1,8 @@
-# Shallan leaves the Ghostbloods
-Shallan calls Mraize and declares that she will no longer be working for the Ghostbloods.
+# 沙兰退出鬼血会
+沙兰联系穆里兹，宣布退出鬼血会。
 
 ## Details
-#[Adolin](characters/adolin) and #[Shallan](characters/shallan), in a room with their three spren, think that Testament looks better since Adolin's talk with her. They use Shallan's Seon, Ala, to contact Mraize, and Shallan tells him that, instead of killing Kelek, Veil has reintegrated herself with Shallan. Mraize tries to entice her back to the #[Ghostbloods](misc/ghostbloods) with both promises of secrets and threats against her family, but Shallan is adamant and tells him that she will get to Ba-Ado-Mishram before the Ghostbloods can. Before ending the call, she tells Mraize the Ghostbloods had better vacate #[Urithiru](locations/urithiru) before she returns and gives him messages from herself and from #[Wit](characters/wit) to deliver to Thaidakar when his avatar next visits.
+#[沙兰](characters/shallan)与#[阿多林](characters/adolin)及三位灵体在一起，用侍灵与穆里兹通话。她告诉对方浣纱没有杀死卡拉克，而且已经与自己融合。面对穆里兹的威逼利诱，沙兰态度坚决表示要退出#[鬼血会](misc/ghostbloods)，并会在鬼血会之前找到巴阿多弥什兰。她警告穆里兹和鬼血会最好趁她回去前就离开#[乌有斯麓](locations/urithiru)，甚至表示不怕他们的老大萨尔达卡，并给萨尔达卡留了#[知策](characters/wit)的口信。
 
 ## Metadata
 | Field | Value |
