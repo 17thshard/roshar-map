@@ -1,13 +1,12 @@
-# Jasnah duels Ruthar
-With the fallout of Taravangian's betrayal handled, the coalition resumes their next offensive in Emul. Jasnah duels with Ruthar and removes his title.
+# 迦熙娜与鲁特哈决斗
+处理了塔拉梵吉安背叛事件后，人类联盟重新聚集起来，商讨进军埃穆尔。迦熙娜与鲁特哈决斗，并剥夺了后者的爵位。
 
 ## Details
-#[Dalinar](characters/dalinar) is in the command tent with the other leaders as they plan their next offensive. The meeting ends, and Dalinar is joined by #[Jasnah](characters/jasnah). She questions his decision not to be more active in the battle, and he explains that he wants to focus on learning more about his Bondsmith powers and leave the battle to the Mink. They discuss the importance of pushing #[Odium](characters/odium) to an accord. #[Wit](characters/wit) joins the conversation and says that Odium will not proceed with a contest of champions unless he is afraid, and Dalinar expresses his concern that they are being manipulated. Dalinar expresses frustration at having to work with leaders whose government includes so much bureaucracy, and Jasnah says that she would like to be the end of the Alethi monarchy, which Dalinar does not like.
+#[达力拿](characters/dalinar)在军帐中与诸位将领讨论下一步的军事行动。会后，#[迦熙娜](characters/jasnah)询问他为什么离开一线，他回答说军事上的事情准备交给“水貂”，自己则希望专注于学习铸契骑士的能力。话题转到如何让#[仇恨](characters/odium)接受协议，此时#[知策](characters/wit)加入了谈话，说仇恨若不是陷入恐惧断不会接受代理斗士的决斗，必须逼迫他。达力拿则表示害怕早就中了敌人的操控而不自知。达力拿还表示自己很不适应这个联盟复杂的官僚机构，迦熙娜说阿勒斯卡的王权很可能在她这里终结。
 
-Jasnah and Wit join the Mink at the war table, where Jasnah begins making suggestions regarding the battle plans. Dalinar turns his attention to the conversation of the leaders, and he can tell that the Highprince Ruthar is getting angry at Jasnah's intrusion. He realizes that Jasnah is doing this intentionally to get a reaction out of Ruthar, and it works. Ruthar loudly begins to criticize what Jasnah is doing, and she calls to Wit. He begins to insult Ruthar mercilessly, then reveals the fact that he beats his children. Ruthar challenges Wit to combat; when Wit chooses Jasnah as his champion, Ruthar refuses to fight, so Jasnah stabs him in the throat. Jasnah calls for Renarin, who heals him, and then she names Ruthar forfeit of his title. Dalinar expresses disappointment at how Jasnah handled the situation, and Jasnah announces that she did it in part to justify the elimination of the barbaric practice of trial by sword.
+迦熙娜和知策走到战局图前，开始与“水貂”探讨作战计划。达力拿发觉轩亲王鲁特哈对迦熙娜的行为很不满，然后进一步意识到迦熙娜是故意这么做以激怒鲁特哈。果然，鲁特哈开始大声的批判迦熙娜，迦熙娜则让知策口下不留情的挖苦对方，甚至揭出了鲁特哈对自己孩子施虐的事情。鲁特哈勃然大怒，要找知策决斗，而知策选择迦熙娜作为代理斗士。鲁特哈拒绝与女士作战，而迦熙娜一剑刺穿了他的喉咙。迦熙娜马上让雷纳林给他治伤，然后剥夺了他的爵位。达力拿对迦熙娜处理问题的方式表示不满，迦熙娜回应称她这样做的部分原因是为了证明消除刀剑审判的野蛮做法是合理的。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
 | chapter | 《纷争之韵》第50章 |
-
