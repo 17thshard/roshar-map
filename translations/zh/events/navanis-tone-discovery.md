@@ -1,10 +1,10 @@
-# Navani named "Voice of Lights"
-Raboniel names Navani "Voice of Lights" and gifts her metal plates used in an ancient style of singer music, which gives Navani the final clue she needs to create anti-Light.
+# 纳瓦妮被授予“Voice of Lights”头衔
+Raboniel赐予纳瓦妮“Voice of Lights”的头衔，并给她提供了金属plates用于重现古老的歌者音乐。纳瓦妮从中找到了制造反虚光的线索。
 
 ## Details
-#[Navani](characters/navani) is fully engrossed in her work, completely oblivious to everything except her lab as she tries to find anti-Light. She uses the sand that Raboniel gave her, which starts black and turns white when exposed to Investiture. Navani and Raboniel discuss where the sand came from and how you have to travel through Shadesmar to get to other worlds. As they work, Raboniel asks why Navani does not believe herself a true scholar, declaring that she believes Navani to be one. Raboniel gives her the title "Voice of Lights," telling her that she is an equal to herself; Navani, on the other hand, is convinced that she has Raboniel fooled. Navani is getting better at interpreting the rhythms, and she can tell that Raboniel has a different purpose in mind behind this project than to kill #[Odium](characters/odium). Navani tries to convince Raboniel to negotiate a treaty with her, but she refuses. 
+#[Navani](characters/navani)废寝忘食的进行着反光能的研究。Raboniel告诉她实验中用到的那种测量神能的白沙来自其他世界。Raboniel称赞纳瓦妮是真正的学者，截止目前的学术成就已经足以让她在听者中拥有和自己等同的地位，并赐予了她“Voice of Lights”的头衔。纳瓦妮已经能越来越熟练的掌握听者的韵律，因此发觉了Raboniel的谎言——Raboniel的真正目的绝不是杀死#[仇恨](characters/odium)。听说歌者们已经快要找到最后一个node，纳瓦妮试图说服Raboniel，但被拒绝。
 
-Raboniel leaves Navani to her work but later returns with metal plates and two singers to help her create the Rhythm of War using an ancient method of music. After Raboniel leaves, Navani tries to speak with the Sibling and finally hears a response. The Sibling says that they are weak and cold and don't want to die, and soon their voice fades away. Navani looks around her lab and realizes that the music left patterns in the sand. She then realizes that Stormlight and Voidlight are not just illumination or a substance that bears properties of fluid. They are sounds and vibrations, and therefore, she is convinced she can find an opposite vibration to produce anti-Light.
+Raboniel给纳瓦妮找来了金属plates以及两位歌者，以帮助纳瓦妮用古老音乐的方法创造纷争之韵。Raboniel离开后，纳瓦妮与Sibling通信。Sibling说they感到冰冷虚弱，不想死去，然后声音就渐渐消失了。纳瓦妮看到音乐在沙盘上留下的图样，意识到飓光和虚光不仅仅是光或者是某种流体，也是声音和震动。因此她确信能找到一种完全相反的振动，从而制造反虚光。
 
 ## Metadata
 | Field | Value |
