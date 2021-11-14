@@ -1,5 +1,5 @@
-# Shallan goes undercover
-Shallan goes undercover as Chanasha in order to infiltrate the Sons of Honor.
+# 沙兰潜入荣誉之子
+沙兰伪装成恰娜莎·哈萨雷，潜入荣誉之子。
 
 ## Details
-Red was the first of the Unseen Court embedded into the Sons of Honor, however the lower rank of the persona he assumed limited the information he was able to obtain. In order to infiltrate the higher levels of the organization, Shallan bribed the lighteyed merchant Chanasha Hasareh and assumed her identity, planning to catch the attention of the Sons of Honor and be inducted into their organization.
+Unseen Court首先派出了Red潜入荣誉之子，但他伪装的身份太低，无法进入高层，因此没拿到什么有价值的情报。沙兰亲自出马，收买了光眼种商人恰娜莎·哈萨雷，伪装成后者希望引起荣誉之子的注意以潜入组织的高层。
