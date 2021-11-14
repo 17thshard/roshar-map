@@ -1,5 +1,5 @@
-# Shallan bonds Testament
-Shallan begins to bond the Cryptic whom she would later name Testament.
+# 沙兰与Testament缔结纽带
+沙兰开始与一位秘灵缔结纽带。后来她为这位秘灵取名为Testament。
 
 ## Details
-Shallan met Testament while playing in her father's gardens as a child and the two began to form a Nahel bond. Testament encouraged Shallan to stand against the darkness threatening her family and served as a companion as Shallan suffered isolation under parents who fought over her future.
+年幼的沙兰在父亲的花园中玩的时候遇见了Testament，开始缔结拿赫尔纽带。
