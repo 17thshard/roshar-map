@@ -1,0 +1,4 @@
+# Puerta Jurada de Panazam
+La **Puerta Jurada de Panazam** de Shadesmar marca el reflejo de la Puerta Jurada ubicada en #[Panazam](locations/panatham). La masa de tierra más cercana es el extemo occidental que se corresponde con el #[Lagopuro](locations/purelake) en el Reino Físico.
+
+La Puerta Jurada está representada por una plataforma plana de un material parecido al mármol blanco, del tamaño del edificio de control. La propia en esí misma está custodiada por dos gigantescos spren, ambos del tamaño de un edificio, equipados con armadura y lanza. Uno de los spren es blanco, mientras que el otro es de un color negro brillante. 
