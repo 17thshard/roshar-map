@@ -1,8 +1,8 @@
-# Raboniel and the Nine
-Raboninel arrives on Roshar and the Nine convene to hear out her plan to seize Urithiru.
+# Raboninel面见the Nine
+Raboninel来到柔刹，the Nine召集会议听取了她夺取乌有斯麓的计划。
 
 ## Details
-The day after #[Hearthstone](locations/hearthstone) was evacuated the rulers of the Fused and the singers, the Nine, convene in #[Kholinar](locations/kholinar) to discuss the future of the war. Raboniel, a former member of the Nine herself, approaches the Nine with bold plans for a strategy to seize #[Urithiru](locations/urithiru). The Nine approve and Raboniel sets her plans into motion. Leshwi lends #[Venli](characters/venli) to Raboniel to act as her spy.
+撤离#[赫斯通](locations/hearthstone)之后的那一天，融族领导the Nine在#[塔冠城](locations/kholinar)召集会议商讨作战计划。Raboniel在会上提出了自己大胆的计划——夺取#[乌有斯麓](locations/urithiru)。The Nine同意了这一计划，让Raboniel着手实施。Leshwi把#[温丽]](characters/venli)派到了Raboniel身边充当间谍。
 
 ## Metadata
 | Field | Value |
