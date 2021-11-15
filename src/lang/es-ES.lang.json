@@ -1,5 +1,6 @@
 {
     "textureLocale": "es",
+    "text-direction": "ltr",
     "name": "Mapa de Roshar",
     "title": "{page} | El archivo de las tormentas",
     "meta": {
@@ -36,6 +37,9 @@
         "help": "Ayuda",
         "about": "Acerca de",
         "aboutText": "¡Bienvenido a nuestro mapa interactivo y línea temporal de Roshar!\n\nEsta web te permitirá explorar el mapa de Roshar y la saga *El archivo de las tormentas* de Brandon Sanderson. Hacer click en las diferentes ubicaciones del mapa te revelará detalles sobre la misma, así como sucesos y personajes relacionados. Navegar por la línea temporal en la zona inferior de la página te permitirá saltar entre diferentes sucesos del mapa y desplegar más información sobre los mismos. Si quieres saber todavía más, también hay enlaces a la wiki de Coppermind, pero ten en cuenta que por ahora solo están disponibles en inglés.\n\nEste es un proyecto desarrollado por fans, que no está relacionado con Dragonsteel Entertainment. Todas las fechas y ubicaciones están basadas en una combinación de referencias *in-world* y nuestras propias estimaciones. Si quieres profundizar más en la línea temporal de la saga, o si tienes curiosidad sobre las referencias y las estimaciones empleadas, por favor, visita [el proyecto de línea temporal del Archivo de las Tormentas hecho por Jofwu]https://docs.google.com/spreadsheets/d/1zq5bJoKE83ggDCjH43i1hZi0CIpB2iAx7v37zQPVFK0).\n\n¡Asegúrate de revisar el tutorial en caso de no haberlo hecho todavía! Esperamos que esta te parezca una herramienta divertida, esclarecedora y útil mientras lees *El archivo de las tormentas*",
+        "brandon-sanderson": "Brandon Sanderson",
+        "credits": "Credits",
+        "map-credits": "Map art by Spenser Farnes (Stoneward13)",
         "more": "Más...",
         "related": "Relacionado",
         "date": "Fecha",
@@ -151,7 +155,51 @@
         },
         "lock-timeline": "Fijar navegación a la línea temporal",
         "unlock-timeline": "Desbloquear navegación",
-        "translation-by": "Traducido por"
+        "translation-by": "Traducido por",
+        "image-credits": "by {credits}",
+        "share": "Share",
+        "measurement": {
+            "button": "Measure distances",
+            "title": "Measurement",
+            "explanation": "Click any two points to calculate their positions and the distance between them.\n\nNote that the Rosharan degree (°ᴿ) ranges from 0 to 200.",
+            "labels": {
+                "start": "Start",
+                "end": "End",
+                "distance": "Distance"
+            },
+            "coordinates": {
+                "full": "{latitude}, {longitude}",
+                "north": "{degrees}°ᴿ N",
+                "south": "{degrees}°ᴿ S",
+                "east": "{degrees}°ᴿ E",
+                "west": "{degrees}°ᴿ W"
+            },
+            "unit": "imperial",
+            "distance": "{distanceMi} mi / {distanceKm} km"
+        }
+    },
+    "sharing": {
+        "title": "Share",
+        "global-message": "Check out the Interactive Map & Timeline of Roshar!",
+        "twitter": {
+            "button-text": "Tweet",
+            "entry-template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
+        },
+        "facebook": {
+            "button-text": "Facebook"
+        },
+        "reddit": {
+            "button-text": "Reddit",
+            "entry-template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
+        },
+        "tumblr": {
+            "button-text": "Tumblr",
+            "entry-template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
+        },
+        "more": {
+            "button-text": "More...",
+            "entry-template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
+        }
     },
     "entry-types": {
         "events": "Eventos",
@@ -206,6 +254,7 @@
         "wor": "Palabras radiantes",
         "ed": "Danzante del filo",
         "ob": "Juramentada",
+        "ds": "Esquirla del amanecer",
         "row": "El ritmo de la guerra",
         "adolin": "Adolin",
         "renarin": "Renarin",
@@ -219,6 +268,8 @@
         "wit": "Sagaz",
         "moash": "Moash",
         "venli": "Venli",
-        "history": "Historia"
+        "history": "Historia",
+        "diagram": "The Diagram",
+        "ghostbloods": "The Ghostbloods"
     }
 }
