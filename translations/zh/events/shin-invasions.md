@@ -1,5 +1,5 @@
-# Shin invasions
-A series of invasions by the Shin threatened the rest of Roshar.
+# 深入入侵
+深族大举入侵柔刹腹地。
 
 ## Details
-A series of invasions by the Shin threatened the rest of Roshar. According to legend, the Shin attacked with spears on horseback. Their dominance has been compared to the Heirocracy and the reign of the Sunmaker.
+深族大举入侵柔刹腹地。根据传说，他们手持长矛在马上作战。后世把深族入侵与造日王的统治以及神权统治相提并论。
