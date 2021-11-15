@@ -1,5 +1,5 @@
-# Intelligent spren created
-The sapient spren of Roshar are created.
+# 创造智慧灵体
+有智慧的灵体被创造出来。
 
 ## Details
-The sapient spren of Roshar are created. The exact method of their creation--whether they were shaped by Honor from raw Investiture or whether they were created from their "cousin" spren--is unknown.
+有智慧的灵体被创造出来。创造的方法未知，可能是由荣誉直接用神能创造，也可能是以他们的“表亲”灵体为基础创造。
