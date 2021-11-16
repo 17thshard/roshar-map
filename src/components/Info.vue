@@ -71,7 +71,7 @@
               </div>
 
               <a href="https://17thshard.com" target="_blank" title="17th Shard Forums">
-                <img class="info__forum-logo" src="@/assets/logos/17s.png" alt="17th Shard">
+                <img class="info__forum-logo" src="@/assets/logos/17s.svg" alt="17th Shard">
               </a>
 
               <template v-if="translatorLogo !== undefined">
