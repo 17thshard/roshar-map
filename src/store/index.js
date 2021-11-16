@@ -5,7 +5,7 @@ import baseLocations from '@/store/locations.json'
 import baseCharacters from '@/store/characters.json'
 import baseMisc from '@/store/misc.json'
 import tagCategories from '@/store/tags.json'
-import { inverseLerp } from '@/utils'
+import { compareEvents, inverseLerp } from '@/utils'
 import search from '@/store/search'
 
 Vue.use(Vuex)
@@ -14,34 +14,7 @@ const DETAIL_CUTOFF_YEAR = 1173
 const TIMELINE_YEAR_DISTANCE = 50
 const TIMELINE_TIE_DISTANCE = 30
 
-const events = baseEvents.sort(
-  (a, b) => {
-    let j = 0
-
-    for (let i = 0; i < a.date.length; i++) {
-      if (j === b.date.length - 1 && b.date[j] !== a.date[i]) {
-        return a.date[i] - b.date[j]
-      }
-
-      if (a.date[i] !== b.date[j]) {
-        return a.date[i] - b.date[j]
-      }
-
-      j += 1
-    }
-
-    if (j !== b.date.length) {
-      return -1
-    }
-
-    if (a.tieBreaker !== undefined && b.tieBreaker !== undefined) {
-      return a.tieBreaker - b.tieBreaker
-    } else if (a.tieBreaker !== undefined) {
-      return 1
-    }
-
-    return -1
-  }).map((event, index) => ({
+const events = baseEvents.sort(compareEvents).map((event, index) => ({
   ...event,
   month: (event.date[1] ?? 1) - 1,
   index
@@ -356,8 +329,7 @@ export default new Vuex.Store({
       shadesmar: false,
       graticule: false,
       silverKingdoms: false,
-      oathgates: false,
-      factions: false
+      oathgates: false
     },
     calendarGuideOpen: false,
     goToDateOpen: false,

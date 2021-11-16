@@ -346,7 +346,10 @@ export default {
 
       if (event !== null && event.shadesmar) {
         this.enterLayer('shadesmar')
-      } else if (oldEvent !== null && oldEvent.shadesmar && !this.layersActive.shadesmar) {
+      } else if (
+        oldEvent !== null && oldEvent.shadesmar &&
+        !this.layersActive.shadesmar && !(this.activeLocation !== null && this.activeLocation.shadesmar)
+      ) {
         this.leaveLayer('shadesmar')
       }
 
@@ -358,7 +361,7 @@ export default {
 
       if (event !== null && event.specialEffect === 'factions') {
         this.enterLayer('factions')
-      } else if (oldEvent !== null && oldEvent.specialEffect === 'factions' && !this.layersActive.factions) {
+      } else if (oldEvent !== null && oldEvent.specialEffect === 'factions') {
         this.leaveLayer('factions')
       }
 
@@ -385,7 +388,10 @@ export default {
     onLocationChanged (location, oldLocation) {
       if (location !== null && location.shadesmar) {
         this.enterLayer('shadesmar')
-      } else if (oldLocation !== null && oldLocation.shadesmar && !this.layersActive.shadesmar) {
+      } else if (
+        oldLocation !== null && oldLocation.shadesmar &&
+        !this.layersActive.shadesmar && !(this.activeEvent !== null && this.activeEvent.shadesmar)
+      ) {
         this.leaveLayer('shadesmar')
       }
 
