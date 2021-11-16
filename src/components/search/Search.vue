@@ -1,6 +1,7 @@
 <template>
   <div
     ref="root"
+    data-tutorial-id="search"
     :class="['search', { 'search--open': open, 'search--closing': closing }]"
     :style="{ '--left': `${left}px`, '--right': `${right}px` }"
     @animationend="onAnimationEnd"

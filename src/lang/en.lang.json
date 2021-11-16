@@ -60,6 +60,10 @@
                     "title": "Menu",
                     "text": "Find helpful links and language settings"
                 },
+                "search": {
+                    "title": "Search",
+                    "text": "Search for events, characters, locations, and more"
+                },
                 "timeline": {
                     "title": "Timeline",
                     "text": "Navigate this timeline by scrubbing or scrolling and click on any of the diamonds to view the associated event"
@@ -83,6 +87,14 @@
                 "settings-separate-timelines": {
                     "title": "Separate Timelines",
                     "text": "Once you've started displaying a filter as separate timeline, you can find it labeled here. Use the drag handle to change the order the timelines are displayed in"
+                },
+                "measure-button": {
+                    "title": "Measurements",
+                    "text": "Measure distances on the map and get exact coordinates for locations"
+                },
+                "go-to-date-button": {
+                    "title": "Go to Date",
+                    "text": "Jump to an arbitrary date on the timeline"
                 }
             }
         },

@@ -81,12 +81,20 @@ export default {
           detailsPlacement: 'bottom-end',
           detailsOffset: [-10, -10],
           isVisible: () => this.openedMenu === null && this.$route.name === 'root',
-          getPosition: rect => ({ x: rect.x + rect.height * 0.1, y: rect.y + rect.height * 0.9 })
+          getPosition: rect => ({ x: rect.x + rect.width * 0.1, y: rect.y + rect.height * 0.9 })
+        },
+        search: {
+          visible: false,
+          position: { x: 0, y: 0 },
+          detailsPlacement: 'bottom-end',
+          detailsOffset: [-10, -10],
+          isVisible: () => this.openedMenu === null && this.$route.name === 'root',
+          getPosition: rect => ({ x: rect.x + rect.width * 0.1, y: rect.y + rect.height * 0.9 })
         },
         timeline: {
           visible: false,
           position: { x: 0, y: 0 },
-          isVisible: () => !this.eventActive && this.openedMenu === null && this.$route.name === 'root' && this.$route.name === 'root',
+          isVisible: () => !this.eventActive && this.openedMenu === null && this.$route.name === 'root',
           getPosition: rect => ({ x: rect.x + rect.width * 0.5 + 75, y: rect.y })
         },
         event: {
@@ -100,6 +108,20 @@ export default {
           position: { x: 0, y: 0 },
           isVisible: () => this.openedMenu === null && this.$route.name === 'root',
           getPosition: rect => ({ x: rect.x, y: rect.y })
+        },
+        'measure-button': {
+          visible: false,
+          position: { x: 0, y: 0 },
+          detailsOffset: [-10, -10],
+          isVisible: () => !this.eventActive && this.openedMenu === null && this.$route.name === 'root',
+          getPosition: rect => ({ x: rect.x + rect.width * 0.1, y: rect.y + rect.height * 0.1 })
+        },
+        'go-to-date-button': {
+          visible: false,
+          position: { x: 0, y: 0 },
+          detailsOffset: [-10, -10],
+          isVisible: () => !this.eventActive && this.openedMenu === null && this.$route.name === 'root',
+          getPosition: rect => ({ x: rect.x + rect.width * 0.1, y: rect.y + rect.height * 0.1 })
         }
       },
       activeMarker: null,
