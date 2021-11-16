@@ -124,7 +124,7 @@ export default {
       this.renderer.setSize(window.innerWidth, window.innerHeight)
       this.renderer.sortObjects = false
 
-      this.textureManager = new TextureManager(this.renderer, this.$t('textureLocale'))
+      this.textureManager = new TextureManager(this.renderer, this.$t('texture-locale'))
 
       this.composer = new EffectComposer(this.renderer)
     } catch (error) {

@@ -1,6 +1,7 @@
 {
-    "textureLocale": "en",
+    "texture-locale": "en",
     "text-direction": "ltr",
+    "search-language": "en",
     "name": "Map of Roshar",
     "title": "{page} | The Stormlight Archive",
     "logo": "roshar.png",
@@ -170,6 +171,13 @@
             },
             "unit": "imperial",
             "distance": "{distanceMi} mi / {distanceKm} km"
+        },
+        "search": {
+            "title": "Search",
+            "prompt": "Search...",
+            "loading": "Search will be ready shortly...",
+            "empty-query": "Enter your search terms above for results to appear here",
+            "no-results": "Unfortunately, we couldn't find anything for those search terms"
         }
     },
     "sharing": {

@@ -1,11 +1,15 @@
 {
-    "textureLocale": {
+    "texture-locale": {
         "name": "Texture Locale",
         "context": "This refers to a directory in *src/assets/textures/localized*. Only change this away from 'en' if you already had the textures translated!"
     },
     "text-direction": {
         "name": "Text Direction",
         "context": "Can be either 'ltr' for left-to-right languages (default) or 'rtl' for right-to-left-languages"
+    },
+    "search-language": {
+        "name": "Search Language",
+        "context": "Data to use for preparing translations for search. Consult the team on what to use here!"
     },
     "name": "Application Name",
     "title": {
@@ -268,6 +272,12 @@
             "distanceMi": "Distance value in miles"
         }
     },
+    "ui.search": "Search",
+    "ui.search.title": "Button Text",
+    "ui.search.prompt": "Search Field Prompt",
+    "ui.search.loading": "Loading Text",
+    "ui.search.empty-query": "Empty Query Text",
+    "ui.search.no-results": "No Results Text",
     "sharing": "Sharing",
     "sharing.title": "Share Section Title",
     "sharing.global-message": {

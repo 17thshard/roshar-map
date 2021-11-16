@@ -6,6 +6,7 @@ import baseCharacters from '@/store/characters.json'
 import baseMisc from '@/store/misc.json'
 import tagCategories from '@/store/tags.json'
 import { compareEvents, inverseLerp } from '@/utils'
+import search from '@/store/search'
 
 Vue.use(Vuex)
 
@@ -268,17 +269,11 @@ const mutations = {
   closeGoToDate (state) {
     state.goToDateOpen = false
   },
-  openSettings (state) {
-    state.settingsOpen = true
+  openMenu (state, name) {
+    state.openedMenu = name
   },
-  closeSettings (state) {
-    state.settingsOpen = false
-  },
-  openInfo (state) {
-    state.infoOpen = true
-  },
-  closeInfo (state) {
-    state.infoOpen = false
+  closeMenu (state) {
+    state.openedMenu = null
   },
   lockTag (state, tag) {
     state.filter.lockedTag = tag
@@ -315,6 +310,9 @@ const getters = {
 }
 
 export default new Vuex.Store({
+  modules: {
+    search
+  },
   state: {
     events,
     years,
@@ -335,8 +333,7 @@ export default new Vuex.Store({
     },
     calendarGuideOpen: false,
     goToDateOpen: false,
-    settingsOpen: false,
-    infoOpen: false,
+    openedMenu: null,
     flipTimeline: false,
     flipDirectionalIcons: false,
     measurementActive: false,

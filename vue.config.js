@@ -5,7 +5,7 @@ module.exports = {
   productionSourceMap: false,
   configureWebpack: {
     optimization: {
-      noEmitOnErrors: true,
+      noEmitOnErrors: true
     }
   },
   chainWebpack: (config) => {

@@ -1,5 +1,6 @@
 {
-    "textureLocale": "es",
+    "texture-locale": "es",
+    "search-language": "es",
     "text-direction": "ltr",
     "name": "Mapa de Roshar",
     "title": "{page} | El archivo de las tormentas",

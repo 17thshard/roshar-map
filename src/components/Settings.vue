@@ -1,15 +1,11 @@
 <template>
-  <div :class="['settings', { 'settings--active': active }]">
-    <button data-tutorial-id="settings-button" class="settings__button" @click="open">
-      <SlidersIcon size="1x" />
-      {{ $t('ui.settings') }}
-    </button>
+  <div :class="['settings', { 'settings--open': open }]">
     <transition name="settings__content">
-      <div v-if="active" class="settings__content">
+      <div v-if="open" class="settings__content">
         <div :class="['settings__bar', { 'settings__bar--active': scrolled }]">
           <h2>{{ $t('ui.settings') }}</h2>
 
-          <button class="settings__close" :title="$t('ui.close')" @click="close">
+          <button class="settings__close" :title="$t('ui.close')" @click="$emit('close')">
             <XIcon />
           </button>
         </div>
@@ -81,14 +77,17 @@
 
 <script>
 import Scrollbar from 'vuescroll/dist/vuescroll-native'
-import { EyeIcon, EyeOffIcon, GitBranchIcon, SlidersIcon, XIcon } from 'vue-feather-icons'
+import { EyeIcon, EyeOffIcon, GitBranchIcon, XIcon } from 'vue-feather-icons'
 import { mapState } from 'vuex'
 import tagCategories from '@/store/tags.json'
 import SeparateTimelineOverview from '@/components/SeparateTimelineOverview.vue'
 
 export default {
   name: 'Settings',
-  components: { SeparateTimelineOverview, SlidersIcon, XIcon, EyeIcon, EyeOffIcon, GitBranchIcon, Scrollbar },
+  components: { SeparateTimelineOverview, XIcon, EyeIcon, EyeOffIcon, GitBranchIcon, Scrollbar },
+  props: {
+    open: Boolean
+  },
   data () {
     return {
       scrolled: false,
@@ -96,22 +95,19 @@ export default {
     }
   },
   computed: {
-    ...mapState(['events', 'filter']),
-    ...mapState({ active: 'settingsOpen' }),
+    ...mapState(['events', 'filter', 'openedMenu']),
     separateHeight () {
       return Math.max(92, (this.filter.separateTags.length + 1) * 24 + 64)
     }
   },
+  watch: {
+    active (value) {
+      if (value) {
+        this.scrolled = false
+      }
+    }
+  },
   methods: {
-    open () {
-      this.$store.commit('openSettings')
-      this.scrolled = false
-      this.$emit('open')
-    },
-    close () {
-      this.$store.commit('closeSettings')
-      this.$emit('close')
-    },
     onScroll (event) {
       this.scrolled = event.process > 0
     },
@@ -171,50 +167,6 @@ export default {
     left: 0;
   }
 
-  &__button {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: 2rem;
-    font-size: 1rem;
-    line-height: 1;
-    appearance: none;
-    outline: none;
-    box-sizing: border-box;
-    border: none;
-    z-index: 61;
-    background: #F5ECDA;
-    border-radius: 2rem;
-    padding: 0.75rem 1.5rem;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    color: #242629;
-    pointer-events: auto;
-    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.5);
-
-    [dir=ltr] & {
-      right: 5.5rem;
-      transform-origin: calc(100% - 1rem) 50%;
-
-      .feather {
-        margin-right: 0.5rem;
-      }
-    }
-
-    [dir=rtl] & {
-      left: 5.5rem;
-      transform-origin: 1rem 50%;
-
-      .feather {
-        margin-left: 0.5rem;
-      }
-    }
-
-    &:hover, &:active, &:focus {
-      background: saturate(darken(#F5ECDA, 10%), 5%);
-    }
-  }
-
   &__content {
     z-index: 50;
     position: absolute;
@@ -234,10 +186,6 @@ export default {
     &-enter-active, &-leave-active {
       z-index: 60;
       transition: clip-path 0.5s ease-in-out;
-
-      & ~ .settings__button {
-        z-index: 61;
-      }
     }
 
     [dir=ltr] & {
@@ -273,16 +221,8 @@ export default {
     }
   }
 
-  &--active {
+  &--open {
     z-index: 60;
-
-    .settings__button {
-      cursor: default !important;
-      box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-      pointer-events: none;
-      opacity: 0;
-      transform: scale(0);
-    }
   }
 
   &__bar {

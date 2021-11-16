@@ -8,7 +8,7 @@ Vue.use(VueI18n)
 export const i18n = new VueI18n({
   locale: 'en-US',
   fallbackLocale: 'en-US',
-  messages: { en: messages },
+  messages: { en: { ...messages, sourceFile: 'en' } },
   silentFallbackWarn: true
 })
 
@@ -37,6 +37,7 @@ export function loadLanguageAsync (lang, locale) {
   // If the language hasn't been loaded yet
   return import(/* webpackChunkName: "lang-[request]" */ '@/lang/' + lang + '.lang.json').then(
     (messages) => {
+      messages.default.sourceFile = lang
       i18n.setLocaleMessage(lang, messages.default)
       loadedLanguages.push(lang)
       return setI18nLanguage(locale)
