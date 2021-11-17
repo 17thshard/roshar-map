@@ -1,13 +1,12 @@
-# Venli frees Rlain
-After discovering Rlain has been captured as prisoner, Venli petitions Raboniel to release him into her charge.
+# 温丽解救瑞莱恩
+温丽发现瑞莱恩被捕入狱，请求Raboniel把他放了出来并派到自己手下。
 
 ## Details
-#[Venli](characters/venli) goes to see Rlain. The guard tells her that he is considered a human sympathizer, but she manages to convince him to let her speak with Rlain alone. Rlain recognizes her, and as they exchange their stories, Venli realizes that they have overlapping goals. She tells him that she has saved #[Kaladin's](characters/kaladin) family, and she promises to help get him out.
+#[温丽](characters/venli)找到了瑞莱恩。瑞莱恩也认出了她。二人交换了这段时间的经历，发现目前有一致的目标。温丽告诉他自己已经救出了#[卡拉丁](characters/kaladin)的家人，并承诺会把瑞莱恩也救出去。
 
-Venli finds Raboniel in #[Dalinar's](characters/dalinar) former rooms accompanied by some fused, some humans, and 穆里兹. 穆里兹 is making a deal for access to the Oathgates, and he presents #[Lift](characters/lift) in a cage as a gift. When 穆里兹 is gone, Venli asks Raboniel if Rlain can be released into her care, as he is the only other of her kind left; Raboniel agrees. She leaves and arrives at her room, where she attempts to swear the next ideal. Her words are rejected, which makes sense to her as she realizes that she cannot be true to the ideal, having watched a human child carted away in a cage. 
+之后温丽找到了Raboniel，发现了穆里兹正在跟Raboniel谈话。穆里兹希望能自由访问誓约之门，作为交换他把关在笼子里的#[莉芙特](characters/lift)交给了Raboniel。穆里兹离开后，温丽向Raboniel提出请求，希望把最后一个同族瑞莱恩派到自己手下，Raboniel同意了。回到房间后，温丽说出了下一条光辉骑士的誓言，但是被拒绝了。她心里明白，刚刚自己目睹了一个无助的小女孩被关在笼子里却无动于衷，肯定不是荣誉的行为。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
 | chapter | 《纷争之韵》第60章 |
-
