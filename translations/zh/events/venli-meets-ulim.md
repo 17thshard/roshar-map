@@ -1,8 +1,8 @@
-# Venli meets Ulim
-Venli releases Ulim from his gemstone and the two begin plotting.
+# 温丽遇见乌里姆
+温丽将乌里姆从宝石中释放出来。
 
 ## Details
-After Gavilar's second visit to the listeners on the #[Shattered Plains](locations/shattered-plains), Axindweth gave #[Venli](characters/venli) a gemstone containing the Voidspren Ulim. In a highstorm not long after the departure of the humans, against the warnings of Stormfather, Venli releases Ulim from his cage and the two begin plotting together
+迦维拉尔第二次拜访#[破碎平原](locations/shattered-plains)上的听者后，亚克辛德维丝给了#[温丽](characters/venli)一颗宝石，里面关着虚灵乌里姆。人类离开不久后的一场飓风中温丽不顾飓风之父的警告，释放了乌里姆。
 
 ## Metadata
 | Field | Value |
