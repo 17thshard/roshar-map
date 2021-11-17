@@ -134,7 +134,7 @@ export default {
     opacity: 0;
   }
 
-  &-enter-to, &-leave-from {
+  &-enter-to, &-leave {
     opacity: 1;
   }
 

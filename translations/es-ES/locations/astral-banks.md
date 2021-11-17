@@ -1,0 +1,2 @@
+# Las Orillas Astrales
+Las **Orillas Astrales** son una masa de agua del #[mar de las Almas](locations/sea-of-souls), que forma parte del subastral roshariano del Reino Cognitivo. En el reino Físico se corresponde con la nación de #[Tukar](locations/tukar). En la orilla septentrional se encuentran Las Agujas Juratorias y Justicia Inmaculada, y al sur están #[Integridad Duradera](locations/lasting-integrity) y Brillantez Eterna, junto a un apeadero que ofrece una variedad aceptable de tentempies al parecer de Nazh.

@@ -145,6 +145,7 @@
       </div>
     </div>
     <button
+      data-tutorial-id="go-to-date-button"
       class="scrubber__jump scrubber__jump--date"
       :title="$t('ui.go-to-date.heading')"
       @click="$store.commit('openGoToDate')"
@@ -152,6 +153,7 @@
       <CalendarIcon size="1x" />
     </button>
     <button
+      data-tutorial-id="measure-button"
       :class="['scrubber__button', 'scrubber__button--measure', { 'scrubber__button--measure-active': $store.state.measurementActive }]"
       :title="$t('ui.measurement.button')"
       @click="$store.commit('toggleMeasurement')"
@@ -600,7 +602,7 @@ export default {
       transform: translateX(var(--leave-position));
     }
 
-    &-enter-to, &-leave-from {
+    &-enter-to, &-leave {
       opacity: 1;
       transform: translateX(0);
     }

@@ -1,16 +1,13 @@
 <template>
-  <div :class="['info', { 'info--active': active, 'info--leave-active': leaveActive }]">
-    <button data-tutorial-id="menu-button" class="info__button" :title="$t('ui.menu')" @click="open">
-      <MenuIcon size="1x" />
-    </button>
+  <div :class="['info', { 'info--open': open, 'info--leave-active': leaveActive }]">
     <transition name="info__wrapper" @before-leave="leaveActive = true" @after-leave="leaveActive = false">
-      <div v-if="active" class="info__wrapper">
+      <div v-if="open" class="info__wrapper">
         <div :class="['info__bar', { 'info__bar--opaque': scrolled[subPage === null ? 'root' : subPage] === true }]">
           <button :class="['info__back', { 'info__back--active': subPage !== null }]" :title="$t('ui.back')" @click="subPage = null">
             <ChevronRightIcon v-if="$store.state.flipDirectionalIcons" />
             <ChevronLeftIcon v-else />
           </button>
-          <button :class="['info__close', { 'info__close--dark': subPage !== null }]" :title="$t('ui.close')" @click="close">
+          <button :class="['info__close', { 'info__close--dark': subPage !== null }]" :title="$t('ui.close')" @click="$emit('close')">
             <XIcon />
           </button>
         </div>
@@ -74,7 +71,7 @@
               </div>
 
               <a href="https://17thshard.com" target="_blank" title="17th Shard Forums">
-                <img class="info__forum-logo" src="@/assets/logos/17s.png" alt="17th Shard">
+                <img class="info__forum-logo" src="@/assets/logos/17s.svg" alt="17th Shard">
               </a>
 
               <template v-if="translatorLogo !== undefined">
@@ -131,11 +128,11 @@
 
 <script>
 import Scrollbar from 'vuescroll/dist/vuescroll-native'
-import { ChevronLeftIcon, ChevronRightIcon, FacebookIcon, GithubIcon, MenuIcon, TwitterIcon, XIcon, YoutubeIcon } from 'vue-feather-icons'
-import { mapState } from 'vuex'
+import { ChevronLeftIcon, ChevronRightIcon, FacebookIcon, GithubIcon, TwitterIcon, XIcon, YoutubeIcon } from 'vue-feather-icons'
 import Markdown from '@/components/Markdown.vue'
 import availableLanguages from '@/lang/menu.json'
 import { escapeCssPath } from '@/utils'
+import { mapState } from 'vuex'
 
 export default {
   name: 'Info',
@@ -145,11 +142,13 @@ export default {
     FacebookIcon,
     YoutubeIcon,
     GithubIcon,
-    MenuIcon,
     XIcon,
     Scrollbar,
     ChevronLeftIcon,
     ChevronRightIcon
+  },
+  props: {
+    open: Boolean
   },
   data () {
     return {
@@ -161,7 +160,6 @@ export default {
     }
   },
   computed: {
-    ...mapState({ active: 'infoOpen' }),
     logo () {
       return escapeCssPath(require(`@/assets/logos/${this.$t('logo')}`))
     },
@@ -171,19 +169,18 @@ export default {
       }
 
       return require(`@/assets/logos/${this.$t('meta.translator.logo')}`)
+    },
+    ...mapState(['openedMenu'])
+  },
+  watch: {
+    active (value) {
+      if (value) {
+        this.scrolled = {}
+        this.subPage = null
+      }
     }
   },
   methods: {
-    open () {
-      this.scrolled = {}
-      this.subPage = null
-      this.$store.commit('openInfo')
-      this.$emit('open')
-    },
-    close () {
-      this.$store.commit('closeInfo')
-      this.$emit('close')
-    },
     onScroll (page, event) {
       this.$set(this.scrolled, page === null ? 'root' : page, event.process > 0)
     },
@@ -216,49 +213,7 @@ export default {
     left: 0;
   }
 
-  &__button {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: 2rem;
-    font-size: 1rem;
-    line-height: 1;
-    appearance: none;
-    outline: none;
-    box-sizing: border-box;
-    border: none;
-    z-index: 71;
-    background: #F5ECDA;
-    border-radius: 2rem;
-    padding: 0.75rem 0.75rem;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    color: #242629;
-    pointer-events: auto;
-    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.5);
-
-    [dir=ltr] & {
-      right: 2rem;
-    }
-
-    [dir=rtl] & {
-      left: 2rem;
-    }
-
-    &:hover, &:active, &:focus {
-      background: saturate(darken(#F5ECDA, 10%), 5%);
-    }
-  }
-
-  &--active &__button {
-    cursor: default !important;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    pointer-events: none;
-    opacity: 0;
-    transform: scale(0);
-  }
-
-  &--active, &--leave-active {
+  &--open, &--leave-active {
     z-index: 70;
   }
 

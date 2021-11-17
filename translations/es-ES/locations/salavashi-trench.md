@@ -1,0 +1,2 @@
+# Fosa Salavashi
+La **fosa Salavashi** es una masa de agua ubicada entre el #[mar de las Luces Perdidas](locations/sea-of-lost-lights) y el #[mar de los Oráculos](locations/sea-of-oracles). La fosa es un reflejo de los montes del Hacedor de Soles en el Reino Físico por lo que ningún río del mar de las Luces Perdidas atraviesa la fosa. Parece haber heredado el nombre de la ciudad de Salavashi que se encuentra al sur de los montes del Hacedor de Soles.

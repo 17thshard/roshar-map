@@ -1,0 +1,2 @@
+# Las escaleras de Nohadon
+**Las escaleras de Nohadon** es el equivalente de #[Urithiru](locations/urithiru) dentro del Reino Cognitivo. Están ubicadas en la zona septentrional del #[mar de las Almas](locations/sea-of-souls). Hay diez pilares elevados, que se corresponden con las diez Puertas Juradas. Cada pilar tiene una larga rampa que baja en espiral en dirección al mar de cuentas, mientras los guardianes de las Puertas Juradas están en la parte superior de los pilares. La propia torre se ve reflejada como montañas de luz y color, muy brillante, pero no emite sombras.

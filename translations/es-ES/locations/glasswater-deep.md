@@ -1,0 +1,2 @@
+# Profundidades de Aguacristalina
+Las **Profundidades de Aguacristalina** es una zona del #[Mar de las Luces Perdidas](locations/sea-of-lost-lights). Se encuentra adyacente a Ravizadth y Ascuaoscura, y baña el canal de Ascuaoscura y el canal de Hallen Sur. Está cerca de los #[Bajíos Luminosos](locations/luminous-shallows). En el Reino Físico se corresponde con la zona septentrional de #[las Tierras Heladas](locations/frostlands), dentro de la misma península donde se encuentra #[Kharbranth](locations/kharbranth) al oeste.
