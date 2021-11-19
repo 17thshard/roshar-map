@@ -1,12 +1,12 @@
-# Veil reintegrates with Shallan
-Before following through with 穆里兹's orders, Shallan accepts her memories of Testament and rejects Formless.
+# 浣纱人格与沙兰合并
+沙兰没有执行穆里兹的命令，而是接受了自己背誓的记忆。
 
 ## Details
-#[Shallan](characters/shallan), as Formless, rises early the day of #[Adolin's](characters/adolin) final judgement. Adolin speaks to her about the mistake often made when judging strength and weakness before she convinces him to stay in bed. Formless plans her entry into Kelek's house but is interrupted by both Veil speaking up from deep within her and by Pattern. She Lightweaves an illusion of Lusintia around herself, but then Pattern makes a final attempt to speak with her and she firmly tells him to stay in the house.
+#[阿多林](characters/adolin)审判最终日的早晨，Formless占据了#[沙兰](characters/shallan)的意识。她准备按照鬼血会的计划行刺卡拉克，浣纱和图腾都表示反对。她用织光术化作Lusintia出门了。
 
-Pattern catches up with Formless on the way to Kelek's house, and he delivers a message from Wit: Shallan deserves to be trusted and loved. Formless turns away from him again and goes on alone. Radiant interrupts her by confessing that she killed Ialai Sadeas just as Formless gets to the house, but she musters her determination to go through with her plan and enters anyway. Just after drawing 穆里兹's knife, Formless feels Stormlight leaving her and looks around to see Veil. Veil accuses her of really just being Shallan, and she admits the truth but still feels like she wants to take this step and join the Ghostbloods. Veil keeps telling Shallan that she really is strong while Shallan admits to killing her parents. Then Shallan accepts Veil's memories and sees that the Cryptic she had bonded as a child was not Pattern at all, but Testament.
+路上，图腾追上了她，向她传达了知策的口信：Shallan deserves to be trusted and loved。骑士人格也坦白了是自己杀死了雅莱·撒迪亚斯。然而他们都没能说服Formless。进入卡拉克的居所后，Formless拔出了穆里兹给的匕首。她忽然感到飓光离自己而去，环顾四周发现浣纱站在自己身边。浣纱犀利的指出Formless其实就是沙兰本人。沙兰承认了事实，但依然想要执行鬼血会的计划。
 
-As Radiant whispers encouragement to her, Shallan makes one last struggle with herself, reaching for the door to Kelek's room before finally turning away and creating a Stormlight reproduction of the scene when she killed Testament. At the conclusion of the scene, Veil integrates herself into Shallan and Kelek walks into the room. Shallan admits that she had been sent by the Ghostbloods to kill him and asks him to go easy on Adolin in the trial. As they converse, a group of honorspren burst into the house and accuse them of collusion. Despite their denials, Sekeir orders Kelek sequestered. 
+浣纱把沙兰多年来一直不愿接受的记忆还给了沙兰：当年与沙兰缔结纽带的不是图腾而是Testament，沙兰用Testament杀死了母亲。沙兰用织光术再现了背誓的场景，终于接受了这段记忆。浣纱人格完成了使命，与沙兰合并。此时卡拉克走进了房间，沙兰对他坦白自己本是受鬼血会的命令前来暗杀的刺客。沙兰提出用自己的情报交换卡拉克放阿多林一马。此时一群荣灵闯了进来，控诉法官与嫌疑人串通。虽然二人对此矢口否认，Sekeir还是要求卡拉克避嫌。
 
 ## Metadata
 | Field | Value |
