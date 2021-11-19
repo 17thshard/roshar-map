@@ -104,6 +104,12 @@
         "name": "Text",
         "markdown": "inline"
     },
+    "ui.tutorial.hints.search": "Search",
+    "ui.tutorial.hints.search.title": "Title",
+    "ui.tutorial.hints.search.text": {
+        "name": "Text",
+        "markdown": "inline"
+    },
     "ui.tutorial.hints.timeline": "Timeline",
     "ui.tutorial.hints.timeline.title": "Title",
     "ui.tutorial.hints.timeline.text": {
@@ -137,6 +143,18 @@
     "ui.tutorial.hints.settings-separate-timelines": "Separate Timelines",
     "ui.tutorial.hints.settings-separate-timelines.title": "Title",
     "ui.tutorial.hints.settings-separate-timelines.text": {
+        "name": "Text",
+        "markdown": "inline"
+    },
+    "ui.tutorial.hints.measure-button": "Measure Button",
+    "ui.tutorial.hints.measure-button.title": "Title",
+    "ui.tutorial.hints.measure-button.text": {
+        "name": "Text",
+        "markdown": "inline"
+    },
+    "ui.tutorial.hints.go-to-date-button": "Go To Date Button",
+    "ui.tutorial.hints.go-to-date-button.title": "Title",
+    "ui.tutorial.hints.go-to-date-button.text": {
         "name": "Text",
         "markdown": "inline"
     },
@@ -380,5 +398,6 @@
     "tags.wit": "Wit",
     "tags.moash": "Moash",
     "tags.venli": "Venli",
-    "tags.history": "History"
+    "tags.history": "History",
+    "changelog": "Changelog"
 }

@@ -47,6 +47,9 @@
     <transition name="loading__fade">
       <ErrorScreen v-if="errored" />
     </transition>
+    <transition name="changelog" :duration="{ enter: 1000, leave: 300 }">
+      <Changelog v-if="ready && showChangelog" @close="showChangelog = false" />
+    </transition>
   </div>
 </template>
 
@@ -61,6 +64,7 @@ import CalendarGuide from '@/components/CalendarGuide.vue'
 import Tutorial from '@/components/Tutorial.vue'
 import FirstVisitWindow from '@/components/FirstVisitWindow.vue'
 import ErrorScreen from '@/components/ErrorScreen.vue'
+import Changelog, { VERSION as CHANGELOG_VERSION } from '@/components/Changelog.vue'
 import '@/assets/fonts/hebrew.scss'
 import Search from '@/components/search/Search.vue'
 import { mapMutations, mapState } from 'vuex'
@@ -79,7 +83,8 @@ export default {
     Settings,
     Scrubber,
     MenuIcon,
-    SlidersIcon
+    SlidersIcon,
+    Changelog
   },
   data () {
     return {
@@ -87,7 +92,8 @@ export default {
       errored: false,
       mapTransitions: false,
       tutorialActive: window.localStorage.tutorialStarted === 'true' && window.localStorage.tutorialDone !== 'true',
-      firstVisit: window.localStorage.tutorialStarted !== 'true' && window.localStorage.tutorialDone !== 'true'
+      firstVisit: window.localStorage.tutorialStarted !== 'true' && window.localStorage.tutorialDone !== 'true',
+      showChangelog: window.localStorage.changelogVersion !== CHANGELOG_VERSION
     }
   },
   computed: {
