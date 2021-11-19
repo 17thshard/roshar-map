@@ -1,10 +1,10 @@
-# War in Emul continues
-The coalition's military campaign continues, with Jasnah marching alongside the soldiers into battle.
+# 埃穆尔之战
+联军在埃穆尔的军事行动继续，迦熙娜亲自投入了战争。
 
 ## Details
-#[Jasnah](characters/jasnah) is going into war, thinking of how inadequate the descriptions and depictions of war have been in her studies. She is wearing her Shardplate, dulled so as to not reveal who she is. She at first is determined to confront the enemy without using her powers so that she can fully understand the feeling of war. She fights with a Fused capable of growing carapace vines over her and decides to use her powers after all, Soulcasting the air to oil and slamming steel and flint together to light everyone near her on fire. She loses herself in the battle, and eventually an Edgedancer medic convinces her to rest. #[Wit](characters/wit) brings her fruit, and they discuss her experience and what she is trying to prove to herself and others. They discuss the future of battle, and she returns to war.
+#[迦熙娜](characters/jasnah)认为纸上得来终觉浅，身着碎瑛甲亲身投入了埃穆尔的战斗中。她与一位融族战士缠斗，使用塑魂术击败了对方。退出战场休息的时候，她与#[知策](characters/wit)探讨了亲身经历战争的感受以及证明自己的渴望。他们还探讨了未来战争的走向，然后迦熙娜继续投入了战斗。
 
-When the battle is over, Jasnah arrives at her tent and speaks with the Mink, who assures her she made the right decision and that they won the day. He also tells her that something has disturbed Wit, whom she finds in her tent writing. Wit tells her that one of the Sleepless was disguised in his things, and that their secrets have been compromised. He decides to divulge what he knows of Thaidakar and the #[Ghostbloods](misc/ghostbloods). 
+战斗结束后，迦熙娜回到营帐见到了“水貂”。“水貂”表示他们赢得了胜利，迦熙娜的决策很成功。之后她又见到了知策，知策说在自己的随身物品中发现了无眠者，所以他们的机密已经被泄露。然后他向迦熙娜透露了萨尔达卡和#[鬼血会](misc/ghostbloods)的实情。
 
 ## Metadata
 | Field | Value |
