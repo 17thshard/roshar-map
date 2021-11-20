@@ -1,10 +1,10 @@
-# Second node destroyed
-The Sibling calls for Kaladin to aid them by destroying the second of their four nodes.
+# 第二个node被毁
+Sibling请求卡拉丁帮助自己，毁掉第二个node。
 
 ## Details
-#[Kaladin](characters/kaladin) leaves Dabbid to watch Teft while he goes to learn what he can about the Oathgates and how they are still working. He uses Adhesion to climb up and down the side of the tower but is too slow to be able to see the Oathgates in operation. Syl warns Kaladin of some scouts, and they realize that the scouts must be communicating with those operating the Oathgates using spanreeds. Kaladin resolves to steal the spanreed, so he sends Syl to follow them. He trails them to a spanreed hub and finds a ventilation shaft that he can use to get above the room while avoiding detection. He does, and then uses Adhesion to pull up a group of spanreeds. Kaladin returns to the hall and finds the Sibling blinking a light at him. They tell him that the occupying force has found another node and that they need him to save them.
+#[卡拉丁](characters/kaladin)让达彼德帮忙照看泰夫特，自己外出侦查。他发现塔内的听者能够与誓约之门联系，应该是有可以使用的对芦。他想方设法从听者那里偷到了对芦。Sibling用闪光的方式联系卡拉丁，告诉他敌人已经发现了第二个node，请求卡拉丁救自己。
 
-Kaladin follows the Sibling's light, fighting off guards as he encounters them, having to use different maneuvers than those to which he is accustomed. The Sibling leads him through a hidden passageway between two shops, and he runs into a woodworker. He comes out eventually at an open air tunnel to see Raboniel infusing the node and the Pursuer standing by. The Pursuer and Kaladin fight, and Syl stops the Pursuer from killing him by pretending to be a Voidspren. Eventually, the Pursuer has to take a brief break, and Kaladin has a short exchange with Raboniel. When the Pursuer returns, Kaladin tricks him into giving chase and enlists the Sibling's help to lock him in a room. Kaladin then returns to the node and destroys it with a rock. Suddenly exhausted, he is taken by surprise and Raboniel stabs him in the chest. As Kaladin realizes that he is unable to heal quickly, Raboniel manipulates him into not killing her and tells him to flee. 
+卡拉丁跟随Sibling的闪光的指引找到了node，却发现Raboniel和Pursuer先他一步已经抵达。他与Pursuer缠斗，并巧妙的借助Sibling的帮助将Pursuer锁进了一个房间。卡拉丁赶回去毁掉了node。Raboniel似乎并不在意node被毁，趁卡拉丁不备刺伤了他。卡拉丁想要继续与Raboniel战斗，但后者威胁说自己就算死了也会很快重生，而且会占有一个无辜听者的身体。卡拉丁只得逃走。
 
 ## Metadata
 | Field | Value |
