@@ -1,14 +1,14 @@
-# Urithiru liberated
-Navani bonds with the Sibling and restores the tower as Kaladin speaks his Fourth Ideal and leads the defense of the tower with support from Venli and Rlain.
+# 乌有斯麓解放
+纳瓦妮与Sibling缔结纽带恢复了乌有斯麓的防御。卡拉丁说出第四真言，领导塔内的战斗。温丽和瑞莱恩也贡献了力量。
 
 ## Details
-#[Kaladin](characters/kaladin) wakes from his nightmares, and the Sibling speaks to him, telling him the enemy has found the final node. Kaladin wakes Teft, informing him of the situation, and they decide to proceed with their plans to evacuate as many Radiants from the tower as possible. As they approach the atrium, the Pursuer engages Kaladin in battle. During their fight, Moash kills Phendorana with anti-Stormlight and kills Teft, dropping the body in front of Kaladin. With Kaladin in a daze, the Pursuer attacks again, prompting Kaladin to fight back with unprecedented rate. After killing the Pursuer, Kaladin chases a Heavenly One who races to the top of the tower with Lirin before throwing the man from the top of the tower. Kaladin leaps after him.
+#[卡拉丁](characters/kaladin)从Sibling处得知敌人已经找到了最后一个node。他唤醒了泰夫特，二人计划尽可能的带依然昏迷的光辉骑士们撤离。他们来到中庭，卡拉丁与等候在此的Pursuer战斗。此时莫阿什现身，用反光能匕首杀死了Phendorana，又在卡拉丁面前杀了泰夫特。狂怒的卡拉丁杀死了Pursuer，然后一路追击一位劫持了李伦的Heavenly One直至塔顶。融族把李伦扔下了乌有斯麓，卡拉丁跟着跳了下去。
 
-#[Venli](characters/venli), having returned to the tower after deciding to help Kaladin's familiy escape, watches the fight between Kaladin and the Pursuer. As the Pursuer's soldiers begin to attack the unconscious Radiants, the humans defending them, Venli confesses to Leshwi that she is a Knight Radiant, and Leshwi orders her Fused to join in the cause of the humans.
+#[温丽](characters/venli)决定帮助卡拉丁一家逃跑，回到了乌有斯麓。她目睹了卡拉丁和Pursuer的战斗。当Pursuer的部下开始袭击昏迷的光辉骑士，温丽向Leshwi坦露自己也是光辉骑士的一员。Leshwi命令部下帮助人类保护光辉骑士。
 
-#[Navani](characters/navani) hears a commotion when the final node is destroyed, leaving the crystal pillar clear to approach. She takes a dagger charged with anti-Voidlight and sneaks towards Raboniel, activating a painrial hidden among the boxes in the corridor on her way. Raboniel tells Navani she should flee, but promptly walks into the painrial trap. She stabs Raboniel, but when the painrial runs out she realizes the Fused is still alive. While speaking with the dying Raboniel, Moash returns from killing Teft, marching toward Navani. Navani stumbles toward the crystal pillar and speaks to the Sibling, ultimately convincing them to bond her instead of Rlain just as Moash reaches her.
+#[Navani](characters/navani)发觉最后一个node已经被摧毁，水晶柱完全暴露了出来。她握着一把注满反虚光的匕首偷偷接近Raboniel，并用布下了painrial的陷阱。Raboniel踩进了陷阱，纳瓦妮用匕首袭击她。与濒死的Raboniel谈话时，刚刚杀了泰夫特的莫阿什走了过来。危急之中，纳瓦妮说服Sibling与自己缔结了纽带。
 
-#[Dalinar](characters/dalinar) is able to Connect Kaladin to a vision of Tien, which inspires Kaladin to speak his Fourth Ideal. With newly formed Shardplate, Kaladin saves Lirin and returns to the battle inside the atrium. Navani and the Sibling work to flush Urithiru of Voidlight, reactivating the towers' defenses, rendering the Fused powerless and liberating the tower.
+#[Dalinar](characters/dalinar)让卡拉丁在幻境中与提恩相见，促使卡拉丁终于说出了第四真言。卡拉丁获得了碎瑛甲，救下了父亲，返回中庭加入战斗。Navani与Sibling重新激活了乌有斯麓的防御系统，融族无力抵御只得逃走。乌有斯麓获得了解放。
 
 ## Metadata
 | Field | Value |
