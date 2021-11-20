@@ -1,12 +1,8 @@
-# Third node destroyed
-The Sibling calls for Kaladin to aid them by destroying the third of their four nodes.
+# 第三个node被毁
+Sibling请求卡拉丁帮忙摧毁了第三个node。
 
 ## Details
-#[Kaladin](characters/kaladin) wakes from another nightmare to Syl telling him that they’ve received news that the Fused are corrupting another node. They couldn't wake him, so Dabbid has already left. Kaladin catches up to him, and Dabbid hands over his spear and says "Life. Before. Death." Kaladin takes the spear and goes.
-
-#[Navani](characters/navani) tries to stall Raboniel, but the Fused seems to be expecting this. Navani believes it’s a deliberate distraction, and she has a terrible realization that they have been able to hear her communications with the Sibling.
-
-Kaladin uses the glove fabrial and makes his way to the Breakaway, trying to act as though he is using his normal powers. When he arrives, he finds the Pursuer, and they begin to fight. The Heavenly Ones arrive, and Kaladin deals enough damage to the Pursuer to force him to leave and recover. Kaladin goes to Leshwi and motions for a duel, and she accepts. They fight, though Leshwi questions Kaladin as to why he cannot use his powers like normal. She realizes that the fight is a sham, and they argue about whose people should rule. Kaladin leaves abruptly, follows Syl to the well, and dives in. He finds Raboniel and destroys the sapphire before she can finish corrupting it. He starts to make his way out but gets trapped inside with Syl on the outside of the well. He follows the pipes and eventually comes out at a reservoir in the tower. Exiting the reservoir, Kaladin climbs up to the ground floor of the tower, where he encounters guards. To evade them, he jumps out of the tower and into the highstorm. 
+#[卡拉丁](characters/kaladin)的境遇每况愈下。他从噩梦中惊醒，听茜尔说敌人已经找到了第三个node，连忙追了出去。他被Pursuer和Heavenly Ones拦住了去路，用纳瓦妮的手套法器与Pursuer恶战了一番。终于勉强打退了Pursuer，卡拉丁无力面对众多Heavenly Ones，只能寄希望于能跟Leshwi单挑，同时暗中让茜尔去寻找node。Leshwi接受了卡拉丁的挑战，但一交手就发现他无法使出原本的力量，要求他投降。二人争执中，茜尔在水井下找到了node。卡拉丁用手套引导自己冲入了井中，赶在Raboniel腐化node之前摧毁了它。任务完成后，卡拉丁和茜尔向上飞去。茜尔率先飞出了井口，但Pursuer用井盖封住了卡拉丁的去路。无奈之下卡拉丁只得一路向井底潜去，沿着水路从连通的地下水库钻出了水面。他极度虚弱，与茜尔失去了联系，飓光也几乎无法治愈他的伤口。卡拉丁挣扎着来到了乌有斯麓的一层，面对大量敌军，他向下纵身一跃，消失在袭来的飓风中。
 
 ## Metadata
 | Field | Value |
