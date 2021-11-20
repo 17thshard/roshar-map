@@ -1,14 +1,14 @@
-# Urithiru captured
-Following Taravangian's betrayal, Raboniel leads her forces in an assault on Urithiru. Navani is barely able to establish the Sibling's defenses before the tower is fully captured.
+# 乌有斯麓沦陷
+塔拉梵吉安背叛后，Raboniel率领军队占领了乌有斯麓。纳瓦妮勉强临时保住了Sibling。
 
 ## Details
-As #[Taravangian](characters/taravangian) betrays the coalition, Raboniel's forces sneak in through the basements of #[Urithiru](locations/urithiru) in a surprise attack on the tower city. After corrupting a portion of the crystal pillar with Voidlight, the tower's defenses are inverted such that most of the Knights Radiant in the tower are immediately rendered unconscious. Various Fused and and their singer armies assault the city, and #[characters/Venli](characters/venli) watches on as Raboniel attempts to fully corrupt the crystal pillar.
+#[塔拉梵吉安](characters/taravangian)背叛后，Raboniel率军潜入并占领了#[乌有斯麓](locations/urithiru)。她用虚光腐蚀了乌有斯麓的水晶柱，逆转了塔的防御措施，从而使歌者们可以自由的进入乌有斯麓。绝大部分的光辉骑士也因此失去了知觉。她还希望进一步完全腐化水晶柱。#[温丽](characters/venli)目睹了这一切。
 
-#[Navani](characters/navani) is questioning Dabbid when the tower's defenses are disabled. They quickly determine that the city is under attack and send runners to organize the available military leaders as Dabbid helps Navani make contact with the Sibling. Meanwhile, #[Kaladin](characters/kaladin) carries an unconscious Teft to his family's quarters, and decides to lay low after realizing that the tower is defenseless. Working deep into the night, Navani organizes a desperate resistance. The Sibling informs her that they will soon fall to Raboniel's corruption unless Navani is able to activate a backup defense system to protect the crystal pillar. While Teofil leads a suicide mission to attack at the heart of the tower, Navani locates one of the tower's defense nodes and fills it with Stormlight to activate the fabrial. Finally, she destroys the node itself.
+#[纳瓦妮](characters/navani)发觉了塔的异常情况，在达彼德的帮助下开始组织军事力量抵抗入侵者，同时联系Sibling。与此同时，#[卡拉丁](characters/kaladin)扛着不省人事的泰夫特躲进了家中。整个居民区已经被占领，他不得不暂时低调行事。Sibling告诉纳瓦妮Raboniel正在腐化自己，必须尽快激活备用防御系统。凭借Teofil小队自杀式的抵抗所争取到的时间，纳瓦妮找到了乌有斯麓的防御node中的一个。她向node注入了飓光，激活了法器，然后摧毁了node。
 
-Navani is captured and brought to Raboniel, making her way through the corpses of the soldiers who had fought and died to give them the time they needed to protect the tower. Navani agrees to surrender under the condition that the people in the tower will be allowed to continue living and working, but the unconscious Radiants are to be delivered to the Fused. Raboniel asks Navani about her sketches and praises her remarkable engineering ability. Raboniel offers to hire her to work on fabrial projects, and Navani considers this, as this would both give her the ability to keep an eye on what she is doing and give her the opportunity to uncover some of Raboniel's ancient secrets. 
+最终Navani被捕，同意向Raboniel投降以换取塔内居民的生命。但所有昏迷不醒的光辉骑士落入了敌人手中。看了纳瓦妮的笔记后，Raboniel感到纳瓦妮是个有用的工程师，要她协助自己研究法器。纳瓦妮忍辱负重答应了下来。
 
-As Raboniel's forces search the city for Radiants, Teft is found and nearly taken before Kaladin decides to fight back. He carries Teft deep into the tower looking for a place to hide.
+Raboniel的手下深入扫荡了塔的内部，卡拉丁被迫带着泰夫特杀出一条血路，逃向了乌有斯麓的深处。
 
 | Field | Value |
 | ----- | ----- |
