@@ -1,5 +1,6 @@
 {
     "texture-locale": "zh",
+    "text-direction": "ltr",
     "search-language": "zh",
     "name": "柔刹地图",
     "title": "{page} | 飓光志",
@@ -66,6 +67,10 @@
                     "title": "菜单",
                     "text": "寻找外部链接和语言设置。"
                 },
+                "search": {
+                    "title": "搜索",
+                    "text": "搜索事件、人物、地点以及各种信息"
+                },
                 "timeline": {
                     "title": "时间线",
                     "text": "拖动时间轴并点击任意菱形符号查看相关事件。"
@@ -89,6 +94,14 @@
                 "settings-separate-timelines": {
                     "title": "单独时间轴",
                     "text": "开启单独时间轴后，该时间轴的名称会出现在下方，拖动名称调整显示顺序。"
+                },
+                "measure-button": {
+                    "title": "测量",
+                    "text": "在地图上测量两点之间的距离，以及获取地点的经纬度"
+                },
+                "go-to-date-button": {
+                    "title": "跳转日期",
+                    "text": "在时间线上跳转至任意日期"
                 }
             }
         },
@@ -156,7 +169,58 @@
         },
         "lock-timeline": "锁住时间轴导航",
         "unlock-timeline": "解锁导航",
-        "translation-by": "汉化团队"
+        "translation-by": "汉化团队",
+        "image-credits": "by {credits}",
+        "share": "分享",
+        "measurement": {
+            "button": "测量",
+            "title": "测量",
+            "explanation": "在地图上点击两个点以测量距离，以及获取它们的经纬度。\n\n注意柔刹的经纬度(°ᴿ)范围是0至200。",
+            "labels": {
+                "start": "起点",
+                "end": "终点",
+                "distance": "距离"
+            },
+            "coordinates": {
+                "full": "{latitude}, {longitude}",
+                "north": "{degrees}°ᴿ N",
+                "south": "{degrees}°ᴿ S",
+                "east": "{degrees}°ᴿ E",
+                "west": "{degrees}°ᴿ W"
+            },
+            "unit": "英制",
+            "distance": "{distanceMi} 英里 / {distanceKm} 公里"
+        },
+        "search": {
+            "title": "检索",
+            "prompt": "请输入检索关键字",
+            "loading": "请稍候……",
+            "empty-query": "请输入检索关键字",
+            "no-results": "很抱歉，未能找到相符的检索结果"
+        }
+    },   
+    "sharing": {
+        "title": "分享",
+        "global-message": "快来体验《飓光志》饭制互动地图吧！",
+        "twitter": {
+            "button-text": "Tweet",
+            "entry-template": "快来《飓光志》饭制互动地图查看\"{entry}\"吧！"
+        },
+        "facebook": {
+            "button-text": "Facebook"
+        },
+        "reddit": {
+            "button-text": "Reddit",
+            "entry-template": "快来《飓光志》饭制互动地图查看\"{entry}\"吧！"
+        },
+        "tumblr": {
+            "button-text": "Tumblr",
+            "entry-template": "快来《飓光志》饭制互动地图查看\"{entry}\"吧！"
+        },
+        "more": {
+            "button-text": "更多",
+            "entry-template": "快来《飓光志》饭制互动地图查看\"{entry}\"吧！"
+        }
     },
     "entry-types": {
         "events": "事件",
@@ -211,6 +275,7 @@
         "wor": "《光辉真言》",
         "ed": "《缘舞》",
         "ob": "《渡誓》",
+        "ds": "《晨瑛》",
         "row": "《纷争之韵》",
         "adolin": "阿多林",
         "renarin": "雷纳林",
@@ -224,6 +289,9 @@
         "wit": "知策",
         "moash": "莫阿什",
         "venli": "温丽",
-        "history": "历史"
-    }
+        "history": "历史",
+        "diagram": "《谶记》",
+        "ghostbloods": "鬼血会"
+    },
+    "changelog":  "Welcome to the updated Map & Timeline of Roshar! We've added all events, locations, and characters from both *Dawnshard* and *Rhythm of War*, so if you have not read those titles yet, be careful!\n\n## What's new?\n\nBesides all the current book content, we've been hard at work on new features and general improvements to the map and timeline. Here are the most memorable ones:\n\n * 🔎 **Search:** You can now search events, locations, characters, and more! This feature can be found in the top-right corner next to the settings menu button. \n * 📐 **Measurements:** We consulted the royal cartographer Isasik Shulin and did the math! Accessible from the compass-looking button to the top right of the timeline, you may now measure distances across Roshar and get coordinates for any location on the continent. As a bonus, the graticule we draw on the map should now be more accurate, too!<br>*Note that measurements are based on our own research and might not be entirely accurate.*\n * 🤝 **Sharing:** While we don't exactly have Spanreed technology, there now are easily accessible sharing buttons in the details views of everything you can view on the map and timeline! Twitter, Facebook, and Reddit are supported by default, but on supported devices such phones, you can use any available sharing option.\n * 📍 **Updated Shadesmar Map:** We found a perpendicularity and had the chance to explore Roshar's Cognitive subastral! The map of Shadesmar has been updated with all locations we know so far.\n\nIf you find any issues or errors with any of these changes, feel free to let us know in our [feedback thread](https://www.17thshard.com/forum/topic/92801-interactive-map-and-timeline-of-roshar-feedback/) or with a [GitHub issue](https://github.com/Palanaeum/roshar-map/issues)!\n\nHave fun exploring this updated experience!"
 }
