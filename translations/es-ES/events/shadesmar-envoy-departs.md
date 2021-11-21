@@ -1,0 +1,16 @@
+# Partida de la delegación de la coalición
+Adolin lidera la delegación de la coalición hacia la capital de los honorspren en Shadesmar, donde el grupo se embarca en un navío de cumbrespren para cubrir el primer tramo de su viaje. 
+
+## Details
+Mientras #[Adolin](characters/adolin) intenta decidir qué vestir en Shadesmar, #[Shallan](characters/shallan) se acerca y le reprocha dedicar tanto tiempo a elegir la ropa. Más tarde, cuando Adolin se reúne con quienes esperan en la plataforma de la Puerta Jurada, da instrucciones a sus armeros sobre qué hacer con sus esquirlas en caso de que no entren en Shadesmar, y habla con Beryl antes de acercarse a enseñarle a Godeke quien lleva a Galante por las riendas y enseñarle la colección de espadas que viajará consigo durante la expedición. Cuando el Danzante del Filo se va, Zu dice a Adolin que debería convertirse en Radiante para tener una hoja esquirlada. Al llegar la Tocón, el grupo está completo.
+
+Adolin mira mientras #[Jasnah](characters/jasnah) observa como los Tejedores de Luz proceden hacer una última prueba para transformar obsidiana en grano de lavis. Tras una exitosa transformación, #[Dalinar](characters/dalinar) dedica unas palabras al grupo, que aplaude educadamente, para luego escuchar las palabras de Jasnah y #[Taravangian](characters/taravangian). Todos, a excepción de Adolin y Dalinar se adentran en el edificio de control, y Dalinar aprovecha el momento para aleccionar secamente a Adolin para que evite los errores que cometió en el pasadom, mientras el joven Kholin se siente incomprendido y ninguneado y lucha para contener toda la rabia contenida que siente por la muerte de su madre. Dalinar deja ir a su hijo con la expectativa de que se convierta en Radiante, y así, Adolin se une a los demás para que Shallan y Patrón les transfieran a Shadesmar.
+
+Conforme el grupo empieza a explorar el entorno, Adolin da las gracias a los guardianes de la puerta y hace un recuento del grupo. Es entonces cuando Shallan señala a Maya. Adolin se apresura a saludarla y a presentarla a todos, hasta que Soñando-aunque-Despierta se comporta bruscamente. Más tarde, cuando Adolin redistribuye la carga de Galante, se percata de que el corcel tiene una tenue sombre de luz apenas imperceptible. Colocando un brazo por encima del hombro de Shallan, Adolin se dispone a bajar por la rampa cuando Patrón aparece por detrás y abraza a los dos, encantado de volver a tener pies. Durante el resto de descenso, Adolin aprovecha para hablar con el resto del equipo y aprende algunos detalles sobre el pasado de Zu, debate sobre el Todopoderoso con Godeke, y habla con Arshqqam gracias a la traducción que ofrece su spren. Tras discutir los planes con Shallan, Ua'pam comenta que a Adolin que su primo debería caerle bien.
+
+Tras pagar a los cumbrespren, abordan la barcaza y trasladan sus posesiones a la cubierta. Adolin aprovecha para mimar a Galante y se da cuenta de que Maya les esta mirando, así que la enseña a cuidar del ryshadio. Mientras, Shallan revisa su cofre y entra en pánico tras darse cuenta de que alguien ha empleado su cubo, posiblemente para contactar con Mraize.
+
+## Metadata
+| Field | Value |
+| ----- | ----- |
+| chapter | *El ritmo de la guerra* Caps. 21 & 22 |

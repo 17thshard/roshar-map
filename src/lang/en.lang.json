@@ -181,7 +181,6 @@
                 "east": "{degrees}°ᴿ E",
                 "west": "{degrees}°ᴿ W"
             },
-            "unit": "imperial",
             "distance": "{distanceMi} mi / {distanceKm} km"
         },
         "search": {
