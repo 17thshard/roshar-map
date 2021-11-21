@@ -1,12 +1,12 @@
-# Taravangian's treachery
-Taravangian meets with the inner circle of the Diagram and the group disbands.
+# 塔拉梵吉安的背叛
+塔拉梵吉安 meets with the inner circle of the 《谶记》 and the group disbands.
 
 ## Details
-#[Taravangian](characters/taravangian) waits with his armies for #[Odium](characters/odium) to give him the signal to betray #[Dalinar's](characters/dalinar) armies. He is having a dumb day, and as he wishes that he were smart, he realizes that smart Taravangian had failed. He considers that, contrary to what he had thought, the curse wasn't that he wasn't smart on some days, but instead that he could not be both smart and compassionate at the same time. He gets out some of the sheets from the Diagram and wonders why the Diagram cannot see #[Renarin Kholin](characters/renarin).
+在智商陷入低谷的一天，#[塔拉梵吉安](characters/taravangian)在等待#[仇恨](characters/odium)的指令。他终于明白培养给他的诅咒不是会变笨，而是智商和同情心无法同时在线。他阅读自己的《谶记》，不明白为什么看不穿#[雷纳林·寇林](characters/renarin)。
 
-Odium pulls Taravangian into a vision and tells him that is time to send the orders. As he rambles about his plans, Taravangian realizes that Odium also failed, because he had expected Dalinar to turn. Taravangian manages to maneuver Odium into showing him his plans, and he looks for the blacked out place that reveals that Odium, like him, cannot see the future of Renarin and those that are close to him. Taravangian also realizes that Odium is terrified of Szeth and the sword that he carries and, finally, that Odium can be defeated; he commits to not giving up. Odium ends the vision, and Taravangian sends the message to his troops to betray Dalinar's soldiers. Minutes later, he is arrested. 
+仇恨把塔拉梵吉安拉进了幻象，要求他按照计划行动。塔拉梵吉安认识到仇恨也处处失败，比如他让达力拿倒向自己的计划破产；又比如仇恨也无法看穿雷纳林。塔拉梵吉安还发觉仇恨害怕泽斯手中的那把剑。他决定不能放弃，要找机会打败仇恨。幻象结束后，塔拉梵吉安按照计划向#[雅克维德](locations/jah-keved)的军队发出了信号。遭遇了背叛的阿勒斯卡人被迫撤退。不久后塔拉梵吉安被捕。
 
-With Taravangian's orders sent, Veden armies in #[Jah Keved](locations/jah-keved) turn on their allies and force the nearby Alethi to retreat. Raboniel's forces simultaneously launch their attack on #[Urithiru](locations/urithiru).
+同时Raboniel也率领军队攻占了#[乌有斯麓](locations/urithiru)。
 
 ## Metadata
 | Field | Value |
