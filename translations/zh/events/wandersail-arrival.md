@@ -1,8 +1,8 @@
-# The Wandersail reaches Aimia
-The *Wandersail* arrives at Aimia where its crew encounters the Sleepless defending the island.
+# “徘帆号”抵达艾米亚
+“徘帆号”抵达艾米亚岛。船员们遭遇了岛上无眠者的攻击。
 
 ## Details
-Approximately one month after departing from #[Thaylen City](locations/thaylen-city), the *Wandersail* reaches the #[Aimian](locations/aimia) island of Akinah, where its crew encounters the Sleepless defending the island. #[Rysn](characters/rysn) takes up the Dawnshard that the Sleepless have been guarding and makes a deal with them to spare her crew. The crew would return with a newly discovered cache of Soulcasters, but news of the Dawnshard would remain a secret.
+从#[泰勒拿城](locations/thaylen-city)起航后，“徘帆号”经历了约一个月的航行抵达了#[艾米亚](locations/aimia)岛的亚基纳城遗址。船员们在此遭遇了守护岛屿的无眠者。#[莱丝](characters/rysn)意外的takes up了无眠者们守护的晨瑛，并与无眠者们做出了约定：船员们可以带着岛上的魂器离开，自己会保守晨瑛的秘密。
 
 
 ## Metadata
