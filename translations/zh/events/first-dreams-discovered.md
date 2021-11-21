@@ -1,8 +1,8 @@
-# First Dreams discovered
-The ship *First Dreams* is discovered in the Southern Depths.
+# 发现“初梦”号
+人们在南之深渊发现了“初梦”号。
 
 ## Details
-A Thaylen ship under the command of Captain Smta was crossing the #[Southern Depths](locations/southern-depths) when crew member Yalb spotted a ship on the horizon. They approached the ship, later identified as *First Dreams*, and found it crewless.
+Smta船长带领一条泰勒拿船只穿越#[南之深渊](locations/southern-depths)时，船员幺伯发现海平面上有船只。他们靠近后发现这是无人的“初梦”号。
 
 ## Metadata
 | Field | Value |
