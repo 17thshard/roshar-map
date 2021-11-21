@@ -1,12 +1,10 @@
-# Wit meets with Odium
-Odium and Wit meet face to face, and Odium destroys some of Wit's memories without him realizing.
+# 知策与仇恨会面
+知策与仇恨进行了面对面的会谈。仇恨摧毁了知策的一些记忆，但知策对此毫无察觉。
 
 ## Details
-#[Wit](characters/wit) has left the others and is now at the Pinnacle. He does tricks for an "audience," a group of spren corrupted by Sja-anat, and explains the importance of subtlety in magic tricks and storytelling. Design contemplates that Wit's tricks with a coin don't work that well on Roshar because coins aren't used to trade there. Wit eventually tells Design to go bother someone else and moves to Elhokar's sitting room.
+#[知策](characters/wit)来到了艾尔霍卡位于破碎平原的废弃行宫，准备与仇恨进行千年来首次会面。他首先为附近的腐化灵体们表演了一段硬币戏法，然后支开了Design，独自走进了艾尔霍卡的客厅。
 
-Soon after, #[Odium](characters/odium) arrives, shows his rage at Wit's contract, and threatens him. However, Odium also asks Wit what his choice of champion would be, which surprises Wit. As the latter leaves the room and walks in the hallways, he ponders whether or not Rayse is growing more thoughtful. Realizing that Wit might have doubts about his identity, Odium attacks Wit. Odium's voice is thoughtful and soft, and Wit feels true horror as he realizes his enemy isn't Rayse any longer. Odium then destroys some of Wit's memories, held in his Breaths. 
-
-Wit regains consciousness in the hallway, unaware of what happened, and returns to Elhokar's sitting room where the scene happens once again, Odium playing the angry brute more convincingly this time. Wit leaves after saying a different quip than the previous time but has trouble whistling, the loss of Breaths preventing him from using perfect pitch. He wonders if something is wrong as the inconsistencies linked to his memory loss piles up. However, he considers that this encounter went exactly as planned. 
+不久，#[仇恨](characters/odium)现身。由于知策的插手，仇恨此前被迫与达力拿签订了一份很被动的协议。他对此大为光火，对知策放了些狠话。知策毫不在意，吹着口哨离开了房间。但是回想起仇恨竟然问自己“如果自己处在仇恨的位置会选择谁作为代理斗士”这种问题，知策察觉到事情不对劲，因为雷瑟不可能问出这种问题。仇恨也察觉出这个问题不妙，出手攻击了知策，毁掉了知策用于存储记忆的一些灵息。最后关头知策意识到面前这个仇恨已经不再是熟悉的雷瑟，但为时已晚。等他清醒过来，已经完全忘记了刚才发生的事情，他重新与仇恨进行了会面。这次仇恨没有路出马脚。知策对这次会面很满意，认为完全符合自己的设想。他吹着口哨走出了房间，但怎么都吹不在调上。因为失去了部分灵息让他失去了绝对音准。
 
 ## Metadata
 | Field | Value |
