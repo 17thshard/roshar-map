@@ -1,8 +1,8 @@
-# The Wandersail departs
-The *Wandersail* departs from Thaylen City on a voyage to Aimia.
+# “徘帆号”起航
+“徘帆号”从泰勒拿城起航，前往艾米亚。
 
 ## Details
-Under the command of #[Rysn](characters/rysn), and with support from #[Navani Kholin](characters/navani), the ship *Wandersail* departs from #[Thaylen City](locations/thaylen-city) on a voyage to #[Aimia](locations/aimia).
+在#[纳瓦妮·寇林](characters/navani)的支持下，#[莱丝](characters/rysn)率领“徘帆号”从#[泰勒拿城](locations/thaylen-city)起航，前往#[艾米亚](locations/aimia)。
 
 ## Metadata
 | Field | Value |
