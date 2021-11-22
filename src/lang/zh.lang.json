@@ -188,7 +188,6 @@
                 "east": "{degrees}°ᴿ E",
                 "west": "{degrees}°ᴿ W"
             },
-            "unit": "英制",
             "distance": "{distanceMi} 英里 / {distanceKm} 公里"
         },
         "search": {
