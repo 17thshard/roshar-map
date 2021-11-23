@@ -32,6 +32,8 @@
  * Detailed timeline of the history of Roshar, spanning from pre-history to current events in the published books
  * Summaries of events, locations, and characters including links to related items and further details on the [Coppermind Wiki](https://coppermind.net)
  * Localized content, currently available in the following languages besides English:
+   * Chinese
+   * Russian
    * Spanish
  * Layers on top of the map that can be enabled at any time, displaying useful additional information
    * Overlay the borders of the historic Silver Kingdoms
