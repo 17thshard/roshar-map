@@ -1,5 +1,5 @@
 # 塔拉梵吉安的背叛
-塔拉梵吉安 meets with the inner circle of the 《谶记》 and the group disbands.
+塔拉梵吉安等待仇恨的命令，背叛达力拿。
 
 ## Details
 在智商陷入低谷的一天，#[塔拉梵吉安](characters/taravangian)在等待#[仇恨](characters/odium)的指令。他终于明白培养给他的诅咒不是会变笨，而是智商和同情心无法同时在线。他阅读自己的《谶记》，不明白为什么看不穿#[雷纳林·寇林](characters/renarin)。
