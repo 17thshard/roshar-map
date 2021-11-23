@@ -4446,7 +4446,12 @@
         "coppermind": "True_Desolation",
         "image": {
             "file": "events/Jasnah_by_Elisgardor.jpg",
-            "credits": "[Elisgardor](https://coppermind.net/wiki/Coppermind:Artists/Elisgardor)"
+            "credits": "[Elisgardor](https://coppermind.net/wiki/Coppermind:Artists/Elisgardor)",
+            "size": 125,
+            "offset": {
+                "x": 50,
+                "y": 50
+            }
         },
         "related": [
             "locations/emul",
