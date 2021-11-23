@@ -1,6 +1,7 @@
 {
-    "textureLocale": "es",
+    "texture-locale": "es",
     "text-direction": "ltr",
+    "search-language": "es-ES",
     "name": "Mapa de Roshar",
     "title": "{page} | El archivo de las tormentas",
     "meta": {
@@ -65,6 +66,10 @@
                     "title": "Menú",
                     "text": "Aquí encontrarás enlaces de ayuda y ajustes de idioma"
                 },
+                "search": {
+                    "title": "Buscar",
+                    "text": "Busca eventos, personajes, ubicaciones y más"
+                },
                 "timeline": {
                     "title": "Línea temporal",
                     "text": "Navega por esta línea temporal arrastrándola o desplazándola con el ratón y haciendo click en cualquiera de los diamantes para ver un evento asociado"
@@ -88,6 +93,14 @@
                 "settings-separate-timelines": {
                     "title": "Líneas temporales separadas",
                     "text": "Una vez has activado un filtro como línea temporal separada, puedes verla etiquetada aquí. Utiliza el control de arrastre para cambiar el orden en que se muestran"
+                },
+                "measure-button": {
+                    "title": "Medir",
+                    "text": "Mide distancias en el mapa y obtén coordenadas exactas para las ubicaciones"
+                },
+                "go-to-date-button": {
+                    "title": "Ir a fecha",
+                    "text": "Desplázate hasta una fecha concreta de la línea temporal"
                 }
             }
         },
@@ -176,6 +189,13 @@
             },
             "unit": "imperial",
             "distance": "{distanceMi} mi / {distanceKm} km"
+        },
+        "search": {
+            "title": "Buscar",
+            "prompt": "Buscando...",
+            "loading": "Tu búsqueda estarta en breve...",
+            "empty-query": "Introduce arriba los términos que quieres buscar para que aparezcan aquí",
+            "no-results": "Lamentablemente, no hemos encontrado nada con esos términos"
         }
     },
     "sharing": {
