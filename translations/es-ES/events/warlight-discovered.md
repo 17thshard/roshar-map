@@ -6,7 +6,7 @@ Trabajando con Rabeniel, Navani descubre que armonizar los ritmos de la luz torm
 
 Navani se pregunta si los ritmos de la luz tormentosa y la luz del vacío se podrían armonizar, pero Rabeniel responde que la luz tormentosa es demasiado ordenada y la luz del vacío demasiado caótica. Con todo, Navani la convence para intentarlo. Rabeniel canta empleando el tono y el ritmo d la luz del vacío, y con algo de esfuerzo, Navani hace lo mismo con la luz tormentosa. Al rato, consiguen que sus ritmos armonicen y ambas luces se mezclan con éxito e infunden una esfera. Rabeniel reconoce el ritmo de la luz como el ritmo de la guerra y se sorprende de que ambas luces no se destruyan entre sí.
 
-Navani le pregunta por sus motivaciones, y ella sugiere que el descubrimiento podría permitirles matar a un dios, de la misma manera en que Honor fue asesinado. Es entonces cuando Navani se da cuenta de que #[characters/Gavilar](gavilar) había estado buscando la manera de matar a una deidad. Y más aún: se da cuenta de que ha descubierto el opuesto a la luz del vacío, y que eso era lo que contenía la esfera que acabó con la vida de sus eruditas.
+Navani le pregunta por sus motivaciones, y ella sugiere que el descubrimiento podría permitirles matar a un dios, de la misma manera en que Honor fue asesinado. Es entonces cuando Navani se da cuenta de que #[Gavilar](characters/gavilar) había estado buscando la manera de matar a una deidad. Y más aún: se da cuenta de que ha descubierto el opuesto a la luz del vacío, y que eso era lo que contenía la esfera que acabó con la vida de sus eruditas.
 
 Rabeniel se dispone a marchar, agradeciendo su ayuda a Navani y le dice que, a pesar de haber ganado su gratitud, no va a poder abandonar #[Urithiru](locations/urithiru).
 
