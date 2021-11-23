@@ -1,6 +1,7 @@
 {
-    "textureLocale": "en",
+    "texture-locale": "en",
     "text-direction": "ltr",
+    "search-language": "en",
     "name": "Map of Roshar",
     "title": "{page} | The Stormlight Archive",
     "logo": "roshar.png",
@@ -42,7 +43,7 @@
         "dismiss": "Dismiss",
         "first-visit": {
             "heading": "Welcome",
-            "intro": "**Spoilers upto the end of *Oathbringer* ahead!** Continue at your own risk.\n\nIt looks like this is your first use of this app. Would you like some help?\n\nYou can always find help later on from the menu to the top right.",
+            "intro": "**Spoilers up to the end of *Dawnshard* and *Rhythm of War* ahead!** Continue at your own risk.\n\nIt looks like this is your first use of this app. Would you like some help?\n\nYou can always find help later on from the menu to the top right.",
             "calendar": "Explain dates",
             "tutorial": "Show hints"
         },
@@ -58,6 +59,10 @@
                 "menu-button": {
                     "title": "Menu",
                     "text": "Find helpful links and language settings"
+                },
+                "search": {
+                    "title": "Search",
+                    "text": "Search for events, characters, locations, and more"
                 },
                 "timeline": {
                     "title": "Timeline",
@@ -82,6 +87,14 @@
                 "settings-separate-timelines": {
                     "title": "Separate Timelines",
                     "text": "Once you've started displaying a filter as separate timeline, you can find it labeled here. Use the drag handle to change the order the timelines are displayed in"
+                },
+                "measure-button": {
+                    "title": "Measurements",
+                    "text": "Measure distances on the map and get exact coordinates for locations"
+                },
+                "go-to-date-button": {
+                    "title": "Go to Date",
+                    "text": "Jump to an arbitrary date on the timeline"
                 }
             }
         },
@@ -150,7 +163,56 @@
         "lock-timeline": "Lock navigation to timeline",
         "unlock-timeline": "Unlock navigation",
         "translation-by": "Translation by",
-        "image-credits": "by {credits}"
+        "image-credits": "by {credits}",
+        "share": "Share",
+        "measurement": {
+            "button": "Measure distances",
+            "title": "Measurement",
+            "explanation": "Click any two points to calculate their positions and the distance between them.\n\nNote that the Rosharan degree (°ᴿ) ranges from 0 to 200.",
+            "labels": {
+                "start": "Start",
+                "end": "End",
+                "distance": "Distance"
+            },
+            "coordinates": {
+                "full": "{latitude}, {longitude}",
+                "north": "{degrees}°ᴿ N",
+                "south": "{degrees}°ᴿ S",
+                "east": "{degrees}°ᴿ E",
+                "west": "{degrees}°ᴿ W"
+            },
+            "distance": "{distanceMi} mi / {distanceKm} km"
+        },
+        "search": {
+            "title": "Search",
+            "prompt": "Search...",
+            "loading": "Search will be ready shortly...",
+            "empty-query": "Enter your search terms above for results to appear here",
+            "no-results": "Unfortunately, we couldn't find anything for those search terms"
+        }
+    },
+    "sharing": {
+        "title": "Share",
+        "global-message": "Check out the Interactive Map & Timeline of Roshar!",
+        "twitter": {
+            "button-text": "Tweet",
+            "entry-template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
+        },
+        "facebook": {
+            "button-text": "Facebook"
+        },
+        "reddit": {
+            "button-text": "Reddit",
+            "entry-template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
+        },
+        "tumblr": {
+            "button-text": "Tumblr",
+            "entry-template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
+        },
+        "more": {
+            "button-text": "More...",
+            "entry-template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
+        }
     },
     "entry-types": {
         "events": "Events",
@@ -205,6 +267,7 @@
         "wor": "Words of Radiance",
         "ed": "Edgedancer",
         "ob": "Oathbringer",
+        "ds": "Dawnshard",
         "row": "Rhythm of War",
         "adolin": "Adolin",
         "renarin": "Renarin",
@@ -218,6 +281,9 @@
         "wit": "Wit",
         "moash": "Moash",
         "venli": "Venli",
-        "history": "History"
-    }
+        "history": "History",
+        "diagram": "The Diagram",
+        "ghostbloods": "The Ghostbloods"
+    },
+    "changelog":  "Welcome to the updated Map & Timeline of Roshar! We've added all events, locations, and characters from both *Dawnshard* and *Rhythm of War*, so if you have not read those titles yet, be careful!\n\n## What's new?\n\nBesides all the current book content, we've been hard at work on new features and general improvements to the map and timeline. Here are the most memorable ones:\n\n * 🔎 **Search:** You can now search events, locations, characters, and more! This feature can be found in the top-right corner next to the settings menu button. \n * 📐 **Measurements:** We consulted the royal cartographer Isasik Shulin and did the math! Accessible from the compass-looking button to the top right of the timeline, you may now measure distances across Roshar and get coordinates for any location on the continent. As a bonus, the graticule we draw on the map should now be more accurate, too!<br>*Note that measurements are based on our own research and might not be entirely accurate.*\n * 🤝 **Sharing:** While we don't exactly have Spanreed technology, there now are easily accessible sharing buttons in the details views of everything you can view on the map and timeline! Twitter, Facebook, and Reddit are supported by default, but on supported devices such phones, you can use any available sharing option.\n * 📍 **Updated Shadesmar Map:** We found a perpendicularity and had the chance to explore Roshar's Cognitive subastral! The map of Shadesmar has been updated with some of the locations we know so far.\n\nIf you find any issues or errors with any of these changes, feel free to let us know in our [feedback thread](https://www.17thshard.com/forum/topic/92801-interactive-map-and-timeline-of-roshar-feedback/) or with a [GitHub issue](https://github.com/Palanaeum/roshar-map/issues)!\n\nHave fun exploring this updated experience!"
 }

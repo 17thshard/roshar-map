@@ -76,7 +76,7 @@ router.afterEach((to, from) => {
   const oldLocale = from.params.locale
   const newLocale = to.params.locale
 
-  if (oldLocale !== undefined && i18n.t('textureLocale', newLocale) !== i18n.t('textureLocale', oldLocale)) {
+  if (oldLocale !== undefined && i18n.t('texture-locale', newLocale) !== i18n.t('texture-locale', oldLocale)) {
     location.reload()
   }
 })

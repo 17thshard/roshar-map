@@ -1,6 +1,7 @@
 {
-  "textureLocale": "ru",
+  "texture-locale": "ru",
   "text-direction": "ltr",
+  "search-language": "ru",
   "name": "Карта Рошара",
   "title": "{page} | «Архив буресвета»",
   "logo": "roshar-ru.png",

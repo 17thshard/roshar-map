@@ -1,9 +1,7 @@
 # build stage
-FROM node:14.5-alpine as build-stage
+FROM node:14.5-stretch-slim as build-stage
 
 ARG PUBLIC_URL=/
-
-RUN apk --no-cache add autoconf automake libtool make tiff jpeg zlib zlib-dev pkgconf nasm file gcc musl-dev
 
 WORKDIR /app
 COPY package.json yarn.lock /app/

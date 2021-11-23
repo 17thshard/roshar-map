@@ -54,25 +54,25 @@ export default {
           position: { x: 0, y: 0 },
           detailsPlacement: 'bottom-end',
           detailsOffset: [-10, -10],
-          isVisible: () => !this.settingsOpen && !this.infoOpen && this.$route.name === 'root',
+          isVisible: () => this.openedMenu === null && this.$route.name === 'root',
           getPosition: rect => ({ x: rect.x + rect.height * 0.1, y: rect.y + rect.height * 0.9 })
         },
         'settings-layers': {
           visible: false,
           position: { x: 0, y: 0 },
-          isVisible: () => this.settingsOpen,
+          isVisible: () => this.openedMenu === 'settings',
           getPosition: rect => ({ x: rect.x + rect.width + 15, y: rect.y + rect.height * 0.5 })
         },
         'settings-filters': {
           visible: false,
           position: { x: 0, y: 0 },
-          isVisible: () => this.settingsOpen,
+          isVisible: () => this.openedMenu === 'settings',
           getPosition: rect => ({ x: rect.x + rect.width + 15, y: rect.y + rect.height * 0.5 })
         },
         'settings-separate-timelines': {
           visible: false,
           position: { x: 0, y: 0 },
-          isVisible: () => this.settingsOpen,
+          isVisible: () => this.openedMenu === 'settings',
           getPosition: rect => ({ x: rect.x + rect.width + 15, y: rect.y + rect.height * 0.5 })
         },
         'menu-button': {
@@ -80,13 +80,21 @@ export default {
           position: { x: 0, y: 0 },
           detailsPlacement: 'bottom-end',
           detailsOffset: [-10, -10],
-          isVisible: () => !this.settingsOpen && !this.infoOpen && this.$route.name === 'root',
-          getPosition: rect => ({ x: rect.x + rect.height * 0.1, y: rect.y + rect.height * 0.9 })
+          isVisible: () => this.openedMenu === null && this.$route.name === 'root',
+          getPosition: rect => ({ x: rect.x + rect.width * 0.1, y: rect.y + rect.height * 0.9 })
+        },
+        search: {
+          visible: false,
+          position: { x: 0, y: 0 },
+          detailsPlacement: 'bottom-end',
+          detailsOffset: [-10, -10],
+          isVisible: () => this.openedMenu === null && this.$route.name === 'root',
+          getPosition: rect => ({ x: rect.x + rect.width * 0.1, y: rect.y + rect.height * 0.9 })
         },
         timeline: {
           visible: false,
           position: { x: 0, y: 0 },
-          isVisible: () => !this.eventActive && !this.settingsOpen && !this.infoOpen && this.$route.name === 'root' && this.$route.name === 'root',
+          isVisible: () => !this.eventActive && this.openedMenu === null && this.$route.name === 'root',
           getPosition: rect => ({ x: rect.x + rect.width * 0.5 + 75, y: rect.y })
         },
         event: {
@@ -98,8 +106,22 @@ export default {
         location: {
           visible: false,
           position: { x: 0, y: 0 },
-          isVisible: () => !this.settingsOpen && !this.infoOpen && this.$route.name === 'root',
+          isVisible: () => this.openedMenu === null && this.$route.name === 'root',
           getPosition: rect => ({ x: rect.x, y: rect.y })
+        },
+        'measure-button': {
+          visible: false,
+          position: { x: 0, y: 0 },
+          detailsOffset: [-10, -10],
+          isVisible: () => !this.eventActive && this.openedMenu === null && this.$route.name === 'root',
+          getPosition: rect => ({ x: rect.x + rect.width * 0.1, y: rect.y + rect.height * 0.1 })
+        },
+        'go-to-date-button': {
+          visible: false,
+          position: { x: 0, y: 0 },
+          detailsOffset: [-10, -10],
+          isVisible: () => !this.eventActive && this.openedMenu === null && this.$route.name === 'root',
+          getPosition: rect => ({ x: rect.x + rect.width * 0.1, y: rect.y + rect.height * 0.1 })
         }
       },
       activeMarker: null,
@@ -107,7 +129,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['settingsOpen', 'infoOpen']),
+    ...mapState(['openedMenu']),
     ...mapState({ eventActive: state => state.activeEvent !== null })
   },
   watch: {
@@ -190,7 +212,7 @@ export default {
         this.popper.update()
       }
 
-      this.hideWindow = ((this.infoOpen || this.settingsOpen) && window.innerWidth < 800) || this.$route.name !== 'root'
+      this.hideWindow = (this.openedMenu !== null && window.innerWidth < 800) || this.$route.name !== 'root'
 
       this.lastAnimationRequest = requestAnimationFrame(this.update)
     },
@@ -239,7 +261,7 @@ export default {
     opacity: 0;
   }
 
-  &-enter-to, &-leave-from {
+  &-enter-to, &-leave {
     opacity: 1;
   }
 
@@ -278,7 +300,7 @@ export default {
       opacity: 0;
     }
 
-    &-enter-to, &-leave-from {
+    &-enter-to, &-leave {
       opacity: 1;
     }
 
@@ -336,7 +358,7 @@ export default {
       }
     }
 
-    &-enter-to, &-leave-from {
+    &-enter-to, &-leave {
       opacity: 1;
 
       .tutorial__details-text {
