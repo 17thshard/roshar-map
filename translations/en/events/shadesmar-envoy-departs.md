@@ -1,4 +1,4 @@
-# The coaltion delegation departs
+# The coalition delegation departs
 Adolin leads the coalition delegation to the honorspren into Shadesmar, where the group boards a peakspren ship for the first leg of their journey.
 
 ## Details

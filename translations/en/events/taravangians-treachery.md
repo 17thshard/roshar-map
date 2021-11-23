@@ -1,5 +1,5 @@
 # Taravangian's treachery
-Taravangian meets with the inner circle of the Diagram and the group disbands.
+Taravangian awaits Odium's signal to betray Dalinar's armies.
 
 ## Details
 #[Taravangian](characters/taravangian) waits with his armies for #[Odium](characters/odium) to give him the signal to betray #[Dalinar's](characters/dalinar) armies. He is having a dumb day, and as he wishes that he were smart, he realizes that smart Taravangian had failed. He considers that, contrary to what he had thought, the curse wasn't that he wasn't smart on some days, but instead that he could not be both smart and compassionate at the same time. He gets out some of the sheets from the Diagram and wonders why the Diagram cannot see #[Renarin Kholin](characters/renarin).
