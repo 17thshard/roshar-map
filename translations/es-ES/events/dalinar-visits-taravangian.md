@@ -6,7 +6,7 @@ Dalinar visita a Taravangian y discuten la ética tras los actos cometidos por e
 
 Taravangian desearía haber tratado con el antiguo Dalinar, porque el Espina Negra vería la necesidad de aliarse con Odium. Taravangian cree, además, que los monarcas no pueden permitirse estar atados por juramentos, porque deben ser capaces de adoptar el mismo tipo de comportamientos innobles que él ha tenido que afrontar, y confiesa que moriría feliz si Dalinar consiguiera salvar a la humanidad y sabiéndose equivocado, pero Dalinar cree que las acciones de Taravangian tan solo prueban su ansia de poder. 
 
-Tras la partida de Dalinar, la opinión que comparte #[Szeth's](characters/szeth) contribuye a reforzar su sentimiento de que no pueden fiarse del anciano.
+Tras la partida de Dalinar, la opinión que comparte #[Szeth](characters/szeth) contribuye a reforzar su sentimiento de que no pueden fiarse del anciano.
 
 ## Metadata
 | Field | Value |
