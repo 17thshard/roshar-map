@@ -1,5 +1,5 @@
 # La coalición se reúne
-La coalición de monarcas se reúne en Urithiru con el fin de planificar los príxmos pasos a seguir en la guerra.
+La coalición de monarcas se reúne en Urithiru con el fin de planificar los próximos pasos a seguir en la guerra.
 
 ## Details
 La coalición de monarcas se reúne en #[Urithiru](locations/urithiru) a fin de planificar los próximos pasos a seguir en la guerra. #[Navani](characters/navani) se topa con #[Taravangian](characters/taravangian) y la forma en que él le explica antes de que Noura de inicio a la reunión, que siempre he visionado un futuro para Roshar, le resulta tan sincera como aterradora.
