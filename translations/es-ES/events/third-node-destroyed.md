@@ -2,7 +2,7 @@
 El Hermano llama a Kaladin para que les ayude a destruir el tercer y cuarto nodo.
 
 ## Details
-#[Kaladin](characters/kaladin) despierta de otra pesadilla y Syl le informa de que han recibido noticias de que los Fusionados están corrompiendo otro nodo. Como no podçian despertarle, Dabbid ua está en camino. Kaladin le alcanza y Dabbid le entrega su lanza pronunciando las palabras "Vida. Antes que. Muerte." Kaladin toma la lanza y se marcha.
+#[Kaladin](characters/kaladin) despierta de otra pesadilla y Syl le informa de que han recibido noticias de que los Fusionados están corrompiendo otro nodo. Como no podían despertarle, Dabbid ya está en camino. Kaladin le alcanza y Dabbid le entrega su lanza pronunciando las palabras "Vida. Antes que. Muerte." Kaladin toma la lanza y se marcha.
 
 #[Navani](characters/navani) intenta entretener a Rabeniel, pero la Fusionada parece estar esperando una maniobra semejante. Navani cree que se trata de una distracción intencionada, y en ese momento se da cuenta de que los Fusionados eran capaces de escuchar sus conversaciones con el Hermano.
 

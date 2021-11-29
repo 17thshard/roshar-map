@@ -3,7 +3,7 @@ Odium y Sagaz se encuentran cara a cara y Odium destruye parte de las memorias d
 
 
 ## Details
-#[Sagaz](characters/wit) se ha separado del grupo y se encuentra en los pasillos del antiguo palacio de Elhokar. Mientras realiza trucos para su "audiencia", un grupo de spren corruptos por Sja-anat a la vez que explica la importancia de la sutileza en los trucos de magia y la narración. Diseño comenta que los trucos de sagaz con unas monedas no funcionan igual de bien en Roshar ya que aquí las monedas no se utilizan para comerciar. Sagaz finalmente le dice a Diseño que vaya a molestar a otra persona y se adentra en la sala de estar de Elhokar. 
+#[Sagaz](characters/wit) se ha separado del grupo y se encuentra en los pasillos del antiguo palacio de Elhokar. Mientras realiza trucos para su "audiencia", un grupo de spren corruptos por Sja-anat, a la vez que explica la importancia de la sutileza en los trucos de magia y la narración. Diseño comenta que los trucos de Sagaz con unas monedas no funcionan igual de bien en Roshar ya que aquí las monedas no se utilizan para comerciar. Sagaz finalmente le dice a Diseño que vaya a molestar a otra persona y se adentra en la sala de estar de Elhokar. 
 
 Poco después llega #[Odium](characters/odium) furioso por el contrato de Sagaz y lo amenaza. Sin embargo también le pregunta a Sagaz cuál sería su elección de campeón, lo que sorprende a este último. Mientras Sagaz sale de la habitación se pregunta si Rayse se está volviendo más pensativo. Al darse cuenta de que Sagaz podría tener dudas sobre su identidad, Odium le ataca y Sagaz siente verdadero terror cuando se da cuenta de que su enemigo ya no es Rayse. Odium destruye algunos de los recuerdos de Sagaz, contenidos en sus alientos.
 
