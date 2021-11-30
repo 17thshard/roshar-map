@@ -1,0 +1,4 @@
+# Puerta Jurada de Rall Elorim
+La **Puerta Jurada de Rall Elorim** de Shadesmar marca el reflejo de la Puerta Jurada ubicada en #[Rall Elorim](locations/rall-elorim). Está situada en la punta septentrional del #[mar del Pesar](locations/sea-of-regret), entre el #[Nexo de la Verdad](locations/nexus-of-truth) y el #[Nexo de la Transición](locations/nexus-of-transition).
+
+La Puerta Jurada está representada por una plataforma plana de un material parecido al mármol blanco, del tamaño del edificio de control. La propia en esí misma está custodiada por dos gigantescos spren, ambos del tamaño de un edificio, equipados con armadura y lanza. Uno de los spren es blanco, mientras que el otro es de un color negro brillante. 

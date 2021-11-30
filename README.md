@@ -61,10 +61,12 @@ Obviously this project would not exist without the fantastic books by [Brandon S
 The following is a list of all the artists that are either official artists or have gracefully granted this project permission to use their pieces as images for events, locations, characters, or other items:
 
  * [Adam J. Marin](https://www.adamjmarin.com)
+ * [Aleah Lauren](https://www.instagram.com/prophecywine/)
  * [Alex Allen](https://coppermind.net/wiki/Coppermind:Artists/Alex_Allen)
  * [Antti Hakosaari](https://coppermind.net/wiki/Coppermind:Artists/Antti_Hakosaari)
  * [Ari Ibarra](https://coppermind.net/wiki/Coppermind:Artists/Ari_Ibarra)
  * [Artem Demura](https://coppermind.net/wiki/Coppermind:Artists/Artem_Demura)
+ * [Artur Felipe Mósca](https://coppermind.net/wiki/Coppermind:Artists/Artur_Felipe_M%C3%B3sca)
  * [Art Noob](https://coppermind.net/wiki/Coppermind:Artists/Art_Noob)
  * [AshfellEverdawn](https://www.reddit.com/user/AshfellEverdawn)
  * [Ashley Coad](https://coppermind.net/wiki/Coppermind:Artists/Ashley_Coad)
@@ -75,10 +77,14 @@ The following is a list of all the artists that are either official artists or h
  * [Bonnie Johnson](https://coppermind.net/wiki/Coppermind:Artists/Bonnie_Johnson)
  * [botanicaxu](https://coppermind.net/wiki/Coppermind:Artists/botanicaxu)
  * [Casey Fallon](https://coppermind.net/wiki/Coppermind:Artists/Casey_Fallon)
- * [Eduard Coll](https://www.artstation.com/eduardcoll)
+ * [Caio Santos](https://coppermind.net/wiki/Coppermind:Artists/Caio_Santos)
  * [Connor Chamberlain](https://www.artstation.com/conjchamberlain)
+ * [Damako Art](https://coppermind.net/wiki/Coppermind:Artists/Damako_Art)
+ * [Eduard Coll](https://www.artstation.com/eduardcoll)
+ * [Elisgardor](https://coppermind.net/wiki/Coppermind:Artists/Elisgardor)
  * [Ellie L.](https://coppermind.net/wiki/Coppermind:Artists/Ellie_L.)
  * [Evan Monteiro](https://coppermind.net/wiki/Coppermind:Artists/Evan_Monteiro)
+ * [Esther Schrader](https://coppermind.net/wiki/Coppermind:Artists/Esther_Schrader)
  * [Exmakina](https://coppermind.net/wiki/Coppermind:Artists/Exmakina)
  * [FelCandy](https://coppermind.net/wiki/Coppermind:Artists/FelCandy)
  * [Gal Or](https://coppermind.net/wiki/File:Darkeyes_by_Gal_Or.jpg)
@@ -96,6 +102,7 @@ The following is a list of all the artists that are either official artists or h
  * [Michael Whelan](https://coppermind.net/wiki/Michael_Whelan)
  * [Neirr](https://coppermind.net/wiki/Coppermind:Artists/Neirr)
  * [Nick Vidic](https://coppermind.net/wiki/Coppermind:Artists/Nick_Vidic)
+ * [Nozomi](https://coppermind.net/wiki/Coppermind:Artists/Nozomi)
  * [Otto Didact](https://coppermind.net/wiki/User:Otto_didact)
  * [Petar Penev](https://coppermind.net/wiki/Coppermind:Artists/Petar_Penev)
  * [Randy Vargas](https://coppermind.net/wiki/Coppermind:Artists/Randy_Vargas)
@@ -108,10 +115,11 @@ The following is a list of all the artists that are either official artists or h
  * [Vladora](https://coppermind.net/wiki/Coppermind:Artists/Vladora)
  * [Xabi Gazte](https://coppermind.net/wiki/Coppermind:Artists/Xabi_Gazte)
  * [Yen Shu Liao](https://coppermind.net/wiki/Coppermind:Artists/Yen_Shu_Liao)
+ * [Zamoraalma](https://www.artstation.com/Zamoraalma)
 
 A very special thanks goes out to Reddit user [Stoneward13](https://www.reddit.com/user/Stoneward13) for letting use and modify his awesome high resolution versions of the Roshar and Shadesmar maps.
 
-We also thank the amazing people at [cosmere.es](https://cosmere.es/) for going through the monumental effort of translating everything to Spanish and fixing errors in the English text along the way!
+We also thank the amazing people at [Cosmere.es](https://cosmere.es/), [The Cosmerenauts](https://coppermind.huijiwiki.com/wiki/%E4%B8%89%E7%95%8C%E5%AE%99%E6%97%85%E8%80%85), and everyone else in our translation Discord server for going through the monumental effort of translating everything to several other languages, and fixing errors in the English text along the way!
 
 Finally, the general appearance and concept of the map derives heavily from the [interactive map](http://witchernetflix.com/) of "The Continent" for Netflix's *The Witcher* series.
 

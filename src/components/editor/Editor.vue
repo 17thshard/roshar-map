@@ -629,7 +629,9 @@ export default {
             gl_Position = projectionMatrix * modelViewMatrix * vec4(position * vec3(512, 256, 0), 1.0);
           }
         `,
-        fragmentShader: mapFragmentShader,
+        fragmentShader: mapFragmentShader
+          .replace('#define CITY_DOTS_COUNT 0', '#define CITY_DOTS_COUNT 1')
+          .replace('#define SHADESMAR_CITY_DOTS_COUNT 0', '#define SHADESMAR_CITY_DOTS_COUNT 1'),
         uniforms: {
           BgTexture: { value: textures.map_bg },
           OutlineTexture: { value: textures.map },
@@ -639,7 +641,9 @@ export default {
           PerpTransition: { value: 0 },
           PerpLocation: { value: new Vector2() },
           PerpPeriod: { value: 3.05355 },
-          Time: { value: 0 }
+          Time: { value: 0 },
+          CityDots: { value: [new Vector2(-1000, -1000)] },
+          ShadesmarCityDots: { value: [new Vector2(-1000, -1000)] }
         },
         extensions: {
           derivatives: true

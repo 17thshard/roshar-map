@@ -5,7 +5,8 @@ import baseLocations from '@/store/locations.json'
 import baseCharacters from '@/store/characters.json'
 import baseMisc from '@/store/misc.json'
 import tagCategories from '@/store/tags.json'
-import { inverseLerp } from '@/utils'
+import { compareEvents, inverseLerp } from '@/utils'
+import search from '@/store/search'
 
 Vue.use(Vuex)
 
@@ -13,34 +14,7 @@ const DETAIL_CUTOFF_YEAR = 1173
 const TIMELINE_YEAR_DISTANCE = 50
 const TIMELINE_TIE_DISTANCE = 30
 
-const events = baseEvents.sort(
-  (a, b) => {
-    let j = 0
-
-    for (let i = 0; i < a.date.length; i++) {
-      if (j === b.date.length - 1 && b.date[j] !== a.date[i]) {
-        return a.date[i] - b.date[j]
-      }
-
-      if (a.date[i] !== b.date[j]) {
-        return a.date[i] - b.date[j]
-      }
-
-      j += 1
-    }
-
-    if (j !== b.date.length) {
-      return -1
-    }
-
-    if (a.tieBreaker !== undefined && b.tieBreaker !== undefined) {
-      return a.tieBreaker - b.tieBreaker
-    } else if (a.tieBreaker !== undefined) {
-      return 1
-    }
-
-    return -1
-  }).map((event, index) => ({
+const events = baseEvents.sort(compareEvents).map((event, index) => ({
   ...event,
   month: (event.date[1] ?? 1) - 1,
   index
@@ -295,17 +269,11 @@ const mutations = {
   closeGoToDate (state) {
     state.goToDateOpen = false
   },
-  openSettings (state) {
-    state.settingsOpen = true
+  openMenu (state, name) {
+    state.openedMenu = name
   },
-  closeSettings (state) {
-    state.settingsOpen = false
-  },
-  openInfo (state) {
-    state.infoOpen = true
-  },
-  closeInfo (state) {
-    state.infoOpen = false
+  closeMenu (state) {
+    state.openedMenu = null
   },
   lockTag (state, tag) {
     state.filter.lockedTag = tag
@@ -322,23 +290,29 @@ const mutations = {
       bar: { onlyShowBarOnScroll: false, keepShow: true, background: '#482d00', opacity: 0.5, size: '0.5rem' },
       rail: { size: '0.5rem', gutterOfSide: '0' }
     }
+  },
+  toggleMeasurement (state) {
+    state.measurementActive = !state.measurementActive
   }
 }
 
 const getters = {
   isIncludedInNavigation (state) {
     return (event) => {
-      return !getters.isDisabled(state)(event) && (state.filter.lockedTag === null || event.tags.includes(state.filter.lockedTag))
+      return !getters.isDisabled(state)(event) && (state.filter.lockedTag === null || (event.tags !== undefined && event.tags.includes(state.filter.lockedTag)))
     }
   },
   isDisabled (state) {
     return (event) => {
-      return state.filter.tags.some(t => event.tags.includes(t))
+      return state.filter.tags.some(t => event.tags !== undefined && event.tags.includes(t))
     }
   }
 }
 
 export default new Vuex.Store({
+  modules: {
+    search
+  },
   state: {
     events,
     years,
@@ -355,15 +329,14 @@ export default new Vuex.Store({
       shadesmar: false,
       graticule: false,
       silverKingdoms: false,
-      oathgates: false,
-      factions: false
+      oathgates: false
     },
     calendarGuideOpen: false,
     goToDateOpen: false,
-    settingsOpen: false,
-    infoOpen: false,
+    openedMenu: null,
     flipTimeline: false,
     flipDirectionalIcons: false,
+    measurementActive: false,
     scrollbarOptions: {
       vuescroll: { wheelScrollDuration: 400 },
       scrollPanel: { verticalNativeBarPos: 'right' },

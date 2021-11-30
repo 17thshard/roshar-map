@@ -1,0 +1,2 @@
+# Basin of the Veiled Sun
+The **Basin of the Veiled Sun** is a body of water in the #[Sea of Souls](locations/sea-of-souls), part of the Rosharan subastral of the Cognitive Realm. It is located west of #[Urithiru](locations/urithiru), north of Perpetual Sobriety, and north of the #[Azimir Oathgate](locations/azimir-oathgate). North of that Oathgate, Nazh notes that something is weird in the basin, and intends to report back to Khriss in person regarding it. In the Physical Realm, it corresponds to territory in #[Azir](locations/azir).

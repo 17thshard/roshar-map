@@ -1,0 +1,12 @@
+# The Dog and the Dragon
+Wit tells Kaladin the story of The Dog and the Dragon.
+
+## Details
+While suffering from his injuries after destroying the third node in #[Urithiru](locations/urithiru), #[Kaladin](characters/kaladin) suffers nightmares under the influence of #[Odium](characters/odium) through #[Moash](characters/moash). As he stumbles through relentless storms in a vision of what appears to be Braize, Kaladin is tormented by his friends, who blame him for everything he was unable to do, and by a terrible wind that whispers hatred. He sees a warm light in the distance, and he fights to get there. Falling into a pit of crem, he is saved by the person inside the light: #[Wit](characters/wit). Wit tells him that he is in a nightmare sent from Odium to torture him and passes over a bowl of Rock’s stew. Wit tells Kaladin that they’ll only have a short time together, and Kaladin admits that he is close to giving up. He asks Wit for a story, and Wit excitedly obliges.
+
+Wit tells of a dog who, after jealously regarding one in the sky, determines to become a dragon. He tries to gain colorful scales like a dragon by planting and watering a crop and rolling in the resulting seeds. In trying to learn to speak like a dragon, he learns only to write. Wishing to learn to fly like a dragon, he rigs up a harness for himself and uses a pulley in the barn to lower himself. The other dogs laugh at him after each attempt, and he realizes he can never become a dragon. Then the farmer's youngest child falls into the well. As the family watches frantically, the dog attaches his harness to the well's rope and writes instructions to lower him. He rescues the child, so the family rewards him well that night with food and a place inside by the fire. Wit ends the story by stating that the dog thought he was an utter failure because he hadn't met his original goal. Kaladin, outraged by the ending, eventually realizes that Wit was making a comment on his unreasonable expectations of himself. He asks for the real ending, but thinks that the dog's sense of satisfaction will never be his to have. Wit reminds him that though things would have to get even worse, they would get better again--then worse again, then better again. Though this is how life goes, the important thing to remember is that there will be sunshine again. Kaladin, revived and hopeful, pushes back into the storm. 
+
+## Metadata
+| Field | Value |
+| ----- | ----- |
+| chapter | *Rhythm of War* Ch. 80 |

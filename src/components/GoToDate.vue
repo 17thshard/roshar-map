@@ -201,7 +201,7 @@ export default {
     }
   }
 
-  &-enter-to, &-leave-from {
+  &-enter-to, &-leave {
     opacity: 1;
 
     .go-to-date {

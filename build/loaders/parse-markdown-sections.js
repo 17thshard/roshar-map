@@ -24,7 +24,7 @@ module.exports = function parseSections (content, ignoreOutsideOfSections) {
     if (currentSection === undefined && ignoreOutsideOfSections === true) {
       return
     } else if (currentSection === undefined) {
-      throw new Error('Line found outside of section')
+      throw new Error('Line found outside of section: ' + line)
     }
 
     currentSection.content += line + '\n'

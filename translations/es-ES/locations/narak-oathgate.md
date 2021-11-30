@@ -1,0 +1,4 @@
+# Puerta Jurada de Narak
+La **Puerta Jurada de Narak** en Shadesmar marca el reflejo de la Puerta Jurada ubicada en #[Narak](locations/narak). Está ubicada entre el #[mar de las Luces Perdidas](locations/sea-of-lost-lights) y el #[mar de los Oráculos](locations/sea-of-oracles).
+
+La Puerta Jurada está representada por una plataforma plana de un material parecido al mármol blanco, del tamaño del edificio de control. La propia en esí misma está custodiada por dos gigantescos spren, ambos del tamaño de un edificio, equipados con armadura y lanza. Uno de los spren es blanco, mientras que el otro es de un color negro brillante. 

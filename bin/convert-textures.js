@@ -20,9 +20,7 @@ const textures = {
   factions: { lossy: true, hqAvailable: true },
   oathgates_text: { hqAvailable: true, localized: true },
   silver_kingdoms: { hqAvailable: true },
-  silver_kingdoms_text: { hqAvailable: true, localized: true },
-  graticule: { hqAvailable: true, lossy: true },
-  graticule_text: { hqAvailable: true }
+  silver_kingdoms_text: { hqAvailable: true, localized: true }
 }
 
 const basePath = './src/assets/textures'
