@@ -1,5 +1,6 @@
 {
     "texture-locale": "zh",
+    "text-direction": "ltr",
     "search-language": "zh",
     "name": "柔刹地图",
     "title": "{page} | 飓光志",
@@ -66,6 +67,10 @@
                     "title": "菜单",
                     "text": "寻找外部链接和语言设置。"
                 },
+                "search": {
+                    "title": "搜索",
+                    "text": "搜索事件、人物、地点以及各种信息"
+                },
                 "timeline": {
                     "title": "时间线",
                     "text": "拖动时间轴并点击任意菱形符号查看相关事件。"
@@ -89,6 +94,14 @@
                 "settings-separate-timelines": {
                     "title": "单独时间轴",
                     "text": "开启单独时间轴后，该时间轴的名称会出现在下方，拖动名称调整显示顺序。"
+                },
+                "measure-button": {
+                    "title": "测量",
+                    "text": "在地图上测量两点之间的距离，以及获取地点的经纬度"
+                },
+                "go-to-date-button": {
+                    "title": "跳转日期",
+                    "text": "在时间线上跳转至任意日期"
                 }
             }
         },
@@ -156,7 +169,57 @@
         },
         "lock-timeline": "锁住时间轴导航",
         "unlock-timeline": "解锁导航",
-        "translation-by": "汉化团队"
+        "translation-by": "汉化团队",
+        "image-credits": "by {credits}",
+        "share": "分享",
+        "measurement": {
+            "button": "测量",
+            "title": "测量",
+            "explanation": "在地图上点击两个点以测量距离，以及获取它们的经纬度。\n\n注意柔刹的经纬度(°ᴿ)范围是0至200。",
+            "labels": {
+                "start": "起点",
+                "end": "终点",
+                "distance": "距离"
+            },
+            "coordinates": {
+                "full": "{latitude}, {longitude}",
+                "north": "{degrees}°ᴿ N",
+                "south": "{degrees}°ᴿ S",
+                "east": "{degrees}°ᴿ E",
+                "west": "{degrees}°ᴿ W"
+            },
+            "distance": "{distanceMi} 英里 / {distanceKm} 公里"
+        },
+        "search": {
+            "title": "检索",
+            "prompt": "请输入检索关键字",
+            "loading": "请稍候……",
+            "empty-query": "请输入检索关键字",
+            "no-results": "很抱歉，未能找到相符的检索结果"
+        }
+    },   
+    "sharing": {
+        "title": "分享",
+        "global-message": "快来体验《飓光志》饭制互动地图吧！",
+        "twitter": {
+            "button-text": "Tweet",
+            "entry-template": "快来《飓光志》饭制互动地图查看\"{entry}\"吧！"
+        },
+        "facebook": {
+            "button-text": "Facebook"
+        },
+        "reddit": {
+            "button-text": "Reddit",
+            "entry-template": "快来《飓光志》饭制互动地图查看\"{entry}\"吧！"
+        },
+        "tumblr": {
+            "button-text": "Tumblr",
+            "entry-template": "快来《飓光志》饭制互动地图查看\"{entry}\"吧！"
+        },
+        "more": {
+            "button-text": "更多",
+            "entry-template": "快来《飓光志》饭制互动地图查看\"{entry}\"吧！"
+        }
     },
     "entry-types": {
         "events": "事件",
@@ -211,6 +274,7 @@
         "wor": "《光辉真言》",
         "ed": "《缘舞》",
         "ob": "《渡誓》",
+        "ds": "《晨瑛》",
         "row": "《纷争之韵》",
         "adolin": "阿多林",
         "renarin": "雷纳林",
@@ -224,6 +288,9 @@
         "wit": "知策",
         "moash": "莫阿什",
         "venli": "温丽",
-        "history": "历史"
-    }
+        "history": "历史",
+        "diagram": "《谶记》",
+        "ghostbloods": "鬼血会"
+    },
+    "changelog":  "欢迎来到新版柔刹互动地图！我们添加了《晨瑛》和《纷争之韵》中的新事件、新地点和新人物，如果你还没读过这两部作品要小心剧透！\n\n## 全 新 版 本\n\n除了书中的内容，我们还添加了如下功能：\n\n * 🔎 **检索：** 现在你可以检索事件、地点、人物以及各种信息！点击右上角的检索按钮来尝试吧。\n\n * 📐 **测量：** 在王室绘图师伊萨斯克·书林的帮助下，我们增加了测量地图的功能。点击时间线右上的那个罗盘图标来体验吧！现在你不仅可以测量距离，还可以获得一个地点精确的经纬度！<br>*注意数据并非来自官方，可能与实际有出入。*\n\n * 🤝 **分享：** 虽然没有对芦，但你还是可以点击分享按钮将你感兴趣的一切分享给好友。去详情页试试看吧。\n\n* 📍 **裂影界地图更新：** 我们穿越了垂贯点，探索了柔刹的知界域！裂影界地图标记了部分已知的地点。\n\n如果你找到了bug，请速速加群397465279向我们反馈！柔刹旅途愉快！"
 }

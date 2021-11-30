@@ -1,0 +1,2 @@
+# 泰勒拿海
+**泰勒拿海**是柔刹知界域内的一片海域，位于#[失落之光海](locations/sea-of-lost-lights)以南，#[想象结域](locations/nexus-of-imagination)以北，对应实界域中的#[泰勒拿](locations/thaylenah)岛。这片海域距离失落之光海的#[澄水深渊](locations/glasswater-deep)和#[光明浅滩](locations/luminous-shallows)都很近，但从地图上来看没有直接的水路联通。#[泰勒拿城誓约之门](locations/thaylen-city-oathgate)在这片海域的北岸。纳兹在其绘制的地图的泰勒拿城誓约之门西北部的湖上标注自己恨这个湖。这个湖对应实界域的#[长眉海峡](locations/longbrows-straits)。
