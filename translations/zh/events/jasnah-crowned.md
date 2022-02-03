@@ -1,10 +1,10 @@
-# Jasnah crowned
-Jasnah was crowned queen of Alethkar.
+# 迦熙娜加冕为王
+迦熙娜加冕为阿勒斯卡的女王。
 
 ## Details
-Following the Battle of Thaylen Field and the confirmation of King Elhokar's death, Jasnah was named Queen of Alethkar.
+在泰勒拿之战以及艾尔霍卡国王的死讯得到证实后，迦熙娜加冕为阿勒斯卡的女王。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 122 |
+| chapter | 《渡誓》第122章 |

@@ -1,10 +1,10 @@
-# Gavilar's assassination
-Gavilar Kholin was assassinated by Szeth on behalf of the listeners. Highprinces swore the Vengeance Pact, and the War of Reckoning began.
+# 迦维拉尔遇刺
+听者一族雇泽斯刺杀了迦维拉尔。阿勒斯卡众轩亲王宣誓复仇，于是人类和听者间的复仇之战开始了。
 
 ## Details
-After the discovering of the listeners near the Shattered Plains, Gavilar took a sudden interest in their people and eventually invited them to Kholinar to sign a treaty. Finding Eshonai wandering the halls of the palace, Gavilar spoke with her alone, revealing a dark, myserious sphere and speaking of plans to bring on the return of the listener gods. Eshonai took this news back to her leaders, who purchased Szeth and arranged the assassination of Gavilar that very night. Szeth succesfully assassinated Gavilar and fled the city. The listener leaders gave themselves up while the rest of their people fled to the Shattered Plains. In the following days, the Alethi highprinces swore the Vengeance Pact and sent armies to the Shattered Plains to fight the War of Reckoning.
+在无主山岭中发现了听者后，迦维拉尔对这个种族十分感兴趣，并邀请他们到塔冠城签署和平条约。当晚他发现了在塔冠城中游荡的迦熙娜，就给她看了神秘的黑色晶球，并透露了想要唤醒听者神明的计划。伊舒娜把这个消息带回给听者的首脑，他们决定当夜就雇人刺杀迦维拉尔。泽斯成功地杀死了迦维拉尔，逃离了塔冠城。听者的首脑对罪行供认不讳，欣然赴死。新王艾尔霍卡即位后，众轩亲王向他起誓复仇，于是人类和听者间的复仇之战在破碎平原打响。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *The Way of Kings* Prologue |
+| chapter | 《王者之路》序幕 |

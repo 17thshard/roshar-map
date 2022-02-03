@@ -2,4 +2,4 @@
 
 
 ## Details
-Lift is born to her Reshi mother, and grew up in Ral Elorim.
+Lift is born to her Reshi mother, and grew up in Rall Elorim.

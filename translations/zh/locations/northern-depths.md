@@ -1,3 +1,3 @@
-# Northern Depths
+# 北之深渊
 
-The **Northern Depths** is the ocean to the north of Roshar and the #[Reshi Isles](locations/reshi-isles). It is presumably quite deep.
+**北之深渊**是柔刹大陆及#[雷希群岛](locations/reshi-isles)以北的海洋。

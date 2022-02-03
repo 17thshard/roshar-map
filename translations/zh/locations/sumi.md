@@ -1,3 +1,3 @@
-# Sumi
+# 苏米岛
 
-**Sumi** is one of the #[Reshi Isles](locations/reshi-isles). It is north of #[Herdaz](locations/herdaz) and south of the island of #[Arak](locations/arak).
+**苏米岛**是#[雷希群岛](locations/reshi-isles)之一，位于#[赫达孜](locations/herdaz)以北，#[阿拉克岛](locations/arak)以南。

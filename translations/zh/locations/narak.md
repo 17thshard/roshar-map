@@ -1,7 +1,7 @@
-# Narak
-> They blame our people  
-> For the loss of that land.  
-> The city that once covered it  
-> Did range the eastern strand.
+# 纳拉克
+> 彼地陷落，  
+> 族人遭责。  
+> 往日之城，  
+> 延至东岸。
 
-**Stormseat** was the capital city of the historic Silver Kingdom of Natanatan on Roshar. During the War of Reckoning, it's called **Narak**, or Exile, and serves as the home of the listeners.
+**飓座**是白银王国纳塔纳坦的首都。在复仇之战期间称作**纳拉克**或放逐之地，是听者一族的家园。

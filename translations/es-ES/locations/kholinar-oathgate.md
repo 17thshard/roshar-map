@@ -1,0 +1,4 @@
+# Puerta Jurada de Kholinar
+La **Puerta Jurada de Kholinar** en Shadesmar marca el reflejo de la Puerta Jurada ubicada en #[Kholinar](locations/kholinar) en el Reino Cognitivo. La Puerta Jurada de Kolinar es apenas visible desde tierra, la península de un afluente del río Corredor del Viento.
+
+La Puerta Jurada está representada por una plataforma plana de un material parecido al mármol blanco, del tamaño del edificio de control. La propia en esí misma está custodiada por dos gigantescos spren, ambos del tamaño de un edificio, equipados con armadura y lanza. Uno de los spren es blanco, mientras que el otro es de un color negro brillante.

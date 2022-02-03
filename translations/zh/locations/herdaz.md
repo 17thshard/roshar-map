@@ -1,2 +1,2 @@
-# Herdaz
-**Herdaz** is a kingdom in north-eastern Roshar. The people from Herdaz are called Herdazians, and can be found in many surrounding countries.
+# 赫达孜
+**赫达孜**是柔刹东北部的一个国家。赫达孜人在附近的国家中很常见。

@@ -1,7 +1,7 @@
-# Shallow Crypts
+# 浅滩地穴
 
-> I wouldn’t send my own brother ashore there without guards, and he’s killed seventeen men with his bare hands, he has.
+> 不敢送我兄弟独自上岸，除非配上几个守卫，而他曾徒手干掉过十七个人，我没有吹牛。
 
-The **Shallow Crypts** is a port settlement on the southern edge of the #[Frostlands](locations/frostlands).
+**浅滩地穴**是#[霜冻之地](locations/frostlands)南部海岸上的一座城镇。
 
-The Shallow Crypts is considered to be a very dangerous city by sailors who know it well. The city itself is unremarkable in appearance. It is surrounded by several similar sister cities in the same region. Due to the location of the Shallow Crypts, there is a commonly traveled corridor running through the sparsely populated Frostlands that connects the city with the #[Shattered Plains](locations/shattered-plains) and the Alethi warcamps. Even in this corridor, it can be expensive to run a caravan to the Plains without sufficient wares. The people of the Shallow Crypts often trade slaves to caravans of merchants, who transport them to the Shattered Plains for sale. The city also does some trade by sea, managed by the harbormaster.
+水手们普遍认为浅滩地穴是危险的城市。这座城市本身不起眼，但却是这片贫瘠的土地中不多的贸易港。商队会从此处穿越霜冻之地前往#[破碎平原](locations/shattered-plains)，在阿勒斯卡的军营间寻找商机。这些商人中不乏奴隶贩子，把奴隶贩卖至破碎平原。

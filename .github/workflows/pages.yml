@@ -13,6 +13,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
 
       - name: Cache node modules
         uses: actions/cache@v1
@@ -23,21 +26,17 @@ jobs:
             ${{ runner.OS }}-build-${{ env.cache-name }}-
             ${{ runner.OS }}-build-
             ${{ runner.OS }}-
+      - name: Install build dependencies
+        run: sudo apt-get install autoconf libtool pkg-config nasm build-essential libpng-dev
       - name: Install dependencies
-        uses: Borales/actions-yarn@v2.1.0
-        with:
-          cmd: install
+        run: yarn install
       - name: Validate translations
-        uses: Borales/actions-yarn@v2.1.0
-        with:
-          cmd: validateTranslations
+        run: yarn validateTranslations
       - name: Build for production
-        uses: Borales/actions-yarn@v2.1.0
+        run: yarn build
         env:
           VUE_APP_PUBLIC_URL: https://roshar.17thshard.com/
           VUE_APP_GA_ID: ${{ secrets.GA_ID }}
-        with:
-          cmd: build
       - name: Create CNAME
         uses: finnp/create-file-action@master
         env:

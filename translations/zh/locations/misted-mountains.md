@@ -1,3 +1,3 @@
-# Misted Mountains
+# 迷雾山脉
 
-The **Misted Mountains** are a mountain range located on the eastern border of #[Shinovar](locations/shinovar) on Roshar.
+**迷雾山脉**是位于#[深国](locations/shinovar)东部边境的山脉。

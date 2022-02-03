@@ -1,6 +1,6 @@
-# Marabethia
-> The Marabethians have a saying for those who refuse to see the truth of a situation. 'You have eyes of red and blue', they say. Red for blood dripping. Blue for the water. It is said that these two things are all the \[criminals\] see. Usually they are attacked within one day. And yet, most still wish to take that chance. They prefer the false hope
+# 玛拉贝提亚
+> 玛拉贝提亚人有句俗语，用来形容不愿意面对真相的人：“你有一对红蓝之眼”。红色是伤口滴下的血，蓝色是海水。据说，这两者是倒挂的犯人能看到的一切。他们一般不出一天就会遭到攻击。可大多数人仍想碰碰运气，宁可选择虚幻的希望。
 
-**Marabethia** is a nation on Roshar occupying the isthmus separating the #[Purelake](locations/purelake) from the #[Reshi Sea](locations/reshi-sea). It is in the north, in Selay lands beside the sea.
+**玛拉贝提亚**是柔刹北部的沿海国家，位于分隔#[淳湖](locations/purelake)和#[雷希海](locations/reshi-sea)的地峡上.
 
-The Marabethian people are known to have a great fondness for debate; the city has many pedestals at intersections where men can stand and proclaim his arguments. The residents are known to carry around overripe fruit for discouraging those they disagree with.
+玛拉贝提亚人以热衷辩论著称。城中每个街角都设有高台，供人站上去发表观点。据说，每个玛拉贝提亚人都随身带一袋烂水果，以便在听到不认同的观点时丢向发言人。

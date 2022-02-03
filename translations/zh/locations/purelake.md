@@ -1,6 +1,6 @@
-# The Purelake
-> The Purelake seemed to extend forever, wide as an ocean... Rock outcrops broke the lake near the coast, but inward the Purelake grew placid, more empty.
+# 淳湖
+> 淳湖像大海一般宽广，似乎无边无际，靠近湖岸的地方还有岩石露出湖面，而越往中心去，则越显平静和空旷。
 
-The **Purelake** is a shallow inland lake located in north central Roshar. The people of the region are known as **Purelakers** and are ethnically Selay.
+**淳湖**是柔刹中北部的内陆浅水湖。原住民属于瑟莱一族，但他们更乐意称自己为**淳湖人**。
 
-The Purelake is influenced, in some way, by #[Cultivation](characters/cultivation). It is unknown if she has a secondary perpendicularity in the Purelake.
+淳湖一定程度上受#[培养](characters/cultivation)影响，尚不知此处是否有第二个垂贯点。

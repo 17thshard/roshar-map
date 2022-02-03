@@ -1,3 +1,3 @@
-# Greater Hexi
+# 大赫西
 
-**Greater Hexi** is a small nation in southern Roshar during the Era of Solitude.
+**大赫西**是柔刹南部的一个小国。

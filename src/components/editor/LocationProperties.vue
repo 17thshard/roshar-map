@@ -51,6 +51,16 @@
 
           Shadesmar
         </label>
+        <label for="location-properties__city-dot">
+          <input
+            id="location-properties__city-dot"
+            :checked="location.cityDot"
+            type="checkbox"
+            @input="$event.target.checked ? $set(location, 'cityDot', true) : $delete(location, 'cityDot')"
+          >
+
+          City Dot
+        </label>
       </div>
 
       <label for="location-properties__id">Map ID</label>
@@ -166,7 +176,7 @@
 
 <script>
 import VueTagsInput from '@johmun/vue-tags-input'
-import { escapeCssPath } from '@/utils'
+import { getEntryImageSrcSet } from '@/utils'
 
 export default {
   name: 'LocationProperties',
@@ -206,7 +216,7 @@ export default {
       }
 
       const styles = {
-        backgroundImage: `url("${this.imageBaseUrl}/${escapeCssPath(this.location.image.file)}")`
+        backgroundImage: getEntryImageSrcSet(this.location.image.file).css
       }
 
       if (this.location.image.offset !== undefined) {

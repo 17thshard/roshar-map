@@ -1,5 +1,3 @@
-# Nexus of Truth
+# 真之结域
 
-The **Nexus of Truth** is a region on Roshar's subastral of the Cognitive Realm. It is bordered by the #[Sea of Regret](locations/sea-of-regret), and leads to the #[Expanse of the Densities](locations/expanse-of-the-densities).
-
-In the Physical Realm, the Nexus of Truth corresponds the oceans northwest of #[Iri](locations/iri) and #[Shinovar](locations/shinovar).
+**真之结域**是知界域在柔刹位面（即裂影界）的一片区域，毗邻#[悔海](locations/sea-of-regret)，通往#[密实外域](locations/expanse-of-the-densities)，在实界域中等同于#[伊里](locations/iri)和#[深国](locations/shinovar)西北面的海洋。

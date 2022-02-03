@@ -1,3 +1,3 @@
-# Triax
+# 特里雅克斯
 
-**Triax** is a small kingdom in southern Roshar.
+**特里雅克斯**是柔刹南部一个小国。

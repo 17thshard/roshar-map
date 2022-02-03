@@ -1,7 +1,7 @@
-# Dumadari
+# 杜马大理
 
-**Dumadari** is a city on Roshar at the border of #[Jah Keved](locations/jah-keved) and #[Alethkar](locations/alethkar).
+**杜马大理**是一座位于#[雅克维德](locations/jah-keved)和#[阿勒斯卡](locations/alethkar)边境的城市。
 
-In 1168, shortly after the death of #[Gavilar Kholin](characters/gavilar), Dalinar plans to take an army via Dumadari and sail to #[New Natanan](locations/new-natanan) to set up a base on the #[Shattered Plains](locations/shattered-plains) before the rest of the Alethi armies arrive. He uses the journey as a cover for visiting the Nightwatcher.
+1168年, #[迦维拉尔·寇林](characters/gavilar)死后不久，达力拿试图前往夜妖处寻求帮助。为了掩盖这一目的，他对外宣称准备在复仇之战中走另一条行军路线：从杜马大理登船航行至#[新纳坦楠](locations/new-natanan)，然后在阿勒斯卡主力军抵达前在#[破碎平原](locations/shattered-plains)立稳脚跟。
 
-In 1173, Princess #[Jasnah Kholin](characters/jasnah) visited Dumadari, likely while doing research of some sort. When Brightness Shallan Davar wrote to Jasnah requesting to become her ward, Jasnah invited her to come to Dumadari in two weeks for consideration. Jasnah did not believe that Shallan would arrive in Dumadari before she herself had left, but she did not know where she would be traveling next. Shallan was shocked that Jasnah had responded, but she arrived in Dumadari after Jasnah's departure. However, Jasnah had left a note in Dumadari requesting that Shallan follow Jasnah to her next destination.
+1173年#[迦熙娜·寇林](characters/jasnah)曾途径杜马大理并做了短暂停留。当她收到沙兰请求拜入门下的来信后，要求后者两周内赶到杜马大理才肯考虑。实际上迦熙娜并不在意沙兰是否能及时赶到，在离开时给沙兰留下口信要求她继续追寻自己。

@@ -1,3 +1,3 @@
-# Karanak
+# 卡拉纳克
 
-**Karanak** is a city in southern #[Alethkar](locations/alethkar) in Bethab princedom. It is near Mevan Bay and runs along the Deathbend River.
+**卡拉纳克**是#[阿勒斯卡](locations/alethkar)南部贝特哈夫公国的一座城市，位于死弯河沿岸，邻近梅凡湾。

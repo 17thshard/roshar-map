@@ -17,12 +17,12 @@
           <div
             class="details__image-art"
             :style="{
-              backgroundImage: `url('${escapeCssPath(imageUrl)}')`,
+              backgroundImage: imageSrcSet.css,
               paddingBottom: `${(imageAspect * 100).toFixed(3)}%`,
               backgroundSize: `${width}px auto`
             }"
           />
-          <Markdown :content="details.image.credits || 'Credits have to be set!'" tag="figcaption" inline />
+          <Markdown :content="imageCredits" tag="figcaption" inline />
         </figure>
         <section class="details__text">
           <div ref="intersectionGuard" class="details__intersection-guard" />
@@ -86,6 +86,25 @@
             </router-link>
           </div>
         </section>
+        <section class="details__share">
+          <h3>{{ $t('ui.share') }}</h3>
+          <TwitterButton
+            :btn-text="$t('sharing.twitter.button-text')"
+            :description="$t('sharing.twitter.entry-template', { entry: $t(`${baseTranslationKey}.name`) })"
+          />
+          <FacebookButton :btn-text="$t('sharing.facebook.button-text')" />
+          <RedditButton
+            :btn-text="$t('sharing.reddit.button-text')"
+            :title="$t('sharing.reddit.entry-template', { entry: $t(`${baseTranslationKey}.name`) })"
+          />
+          <TumblrButton
+            :btn-text="$t('sharing.tumblr.button-text')"
+            :description="$t('sharing.tumblr.entry-template', { entry: $t(`${baseTranslationKey}.name`) })"
+          />
+          <button v-if="nativeShareSupported" class="details__share-more-button" @click="shareNatively">
+            {{ $t('sharing.more.button-text') }}
+          </button>
+        </section>
       </div>
     </Scrollbar>
   </div>
@@ -95,11 +114,26 @@
 import Scrollbar from 'vuescroll/dist/vuescroll-native'
 import { BookIcon, CalendarIcon, HelpCircleIcon, XIcon } from 'vue-feather-icons'
 import Markdown from '@/components/Markdown.vue'
-import { escapeCssPath, formatDate } from '@/utils'
+import { formatDate, getEntryImageSrcSet, compareEvents } from '@/utils'
+import FacebookButton from 'vue-share-buttons/src/components/FacebookButton'
+import RedditButton from 'vue-share-buttons/src/components/RedditButton'
+import TumblrButton from 'vue-share-buttons/src/components/TumblrButton'
+import TwitterButton from 'vue-share-buttons/src/components/TwitterButton'
 
 export default {
   name: 'Details',
-  components: { Markdown, HelpCircleIcon, XIcon, CalendarIcon, BookIcon, Scrollbar },
+  components: {
+    Markdown,
+    HelpCircleIcon,
+    XIcon,
+    CalendarIcon,
+    BookIcon,
+    Scrollbar,
+    FacebookButton,
+    RedditButton,
+    TumblrButton,
+    TwitterButton
+  },
   props: {
     details: {
       type: Object,
@@ -110,12 +144,21 @@ export default {
     return {
       reachedHeading: false,
       imageAspect: 1,
-      width: 1
+      width: 1,
+      nativeShareSupported: navigator.share !== undefined
     }
   },
   computed: {
+    imageSrcSet () {
+      return this.details.image !== undefined ? getEntryImageSrcSet(this.details.image.file) : undefined
+    },
     imageUrl () {
-      return this.details.image !== undefined ? `${process.env.BASE_URL}img/${this.details.image.file}` : undefined
+      return this.imageSrcSet !== undefined ? this.imageSrcSet.sources[0].url : undefined
+    },
+    imageCredits () {
+      return this.details.image?.credits === undefined
+        ? 'Credits have to be set!'
+        : this.$t('ui.image-credits', { credits: this.details.image.credits })
     },
     baseTranslationKey () {
       return `${this.details.type}.${this.details.id}`
@@ -148,7 +191,7 @@ export default {
         return []
       }
 
-      return this.details.related.map((link) => {
+      const result = this.details.related.map((link) => {
         const [type, id] = link.split('/', 2)
         const linkDetails = this.$store.state.mappings[type][id]
 
@@ -162,7 +205,7 @@ export default {
         let image
         if (linkDetails.image !== undefined) {
           image = {
-            backgroundImage: `url("${process.env.BASE_URL}img/${linkDetails.image.file}")`
+            backgroundImage: getEntryImageSrcSet(linkDetails.image.file).css
           }
 
           if (linkDetails.image.offset !== undefined) {
@@ -178,12 +221,24 @@ export default {
           type,
           translationKey: `${type}.${id}.name`,
           url: link,
-          image
+          image,
+          date: linkDetails.date,
+          tieBreaker: linkDetails.tieBreaker
         }
       }).reduce((acc, relatedItem) => {
         acc[relatedItem.type] = [...(acc[relatedItem.type] ?? []), relatedItem]
         return acc
       }, {})
+
+      Object.keys(result).forEach((type) => {
+        if (type === 'events') {
+          result[type].sort(compareEvents)
+        } else {
+          result[type].sort((a, b) => this.$t(a.translationKey).localeCompare(this.$t(b.translationKey), this.$i18n.locale))
+        }
+      })
+
+      return result
     }
   },
   watch: {
@@ -228,9 +283,15 @@ export default {
     window.removeEventListener('resize', this.onResize)
   },
   methods: {
-    escapeCssPath,
     onResize () {
       this.width = this.$el.clientWidth
+    },
+    shareNatively () {
+      navigator.share({
+        url: window.location.href,
+        title: document.title,
+        description: this.$t('sharing.more.entry-template', { entry: this.$t(`${this.baseTranslationKey}.name`) })
+      })
     }
   }
 }
@@ -285,7 +346,7 @@ export default {
       opacity: 0;
     }
 
-    .details__text, .details__related {
+    .details__text, .details__share, .details__related {
       opacity: 0;
       transform: translateY(50px);
     }
@@ -542,7 +603,31 @@ export default {
     text-align: start;
   }
 
-  &__related {
+  &__read-more {
+    display: block;
+    text-align: center;
+    border: 2px solid #0f3562;
+    text-transform: uppercase;
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 0.75rem 1rem;
+    position: relative;
+    border-radius: 3px;
+    margin: 0 1rem;
+    transition: all 0.3s ease-in-out;
+    background-image: linear-gradient(0deg, #0f3562 0%, #0f3562 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0 !important;
+    background-position: 50% 100%;
+
+    &:hover, &:active, &:focus {
+      color: #f6f8fa;
+      background-size: 100% 100% !important;
+    }
+  }
+
+  &__share, &__related {
     transition: opacity 1s ease-out, transform 1s ease-out;
     transition-delay: 0.75s, 0.75s;
     max-width: 100%;
@@ -558,7 +643,85 @@ export default {
       font-weight: 600;
       margin: 0 0 1rem;
     }
+  }
 
+  &__share {
+    text-align: center;
+
+    h3 {
+      text-align: left;
+      margin-bottom: 0.5rem;
+    }
+
+    .share-button, &-more-button {
+      padding: 0.5rem 0.25rem;
+      min-height: 0;
+
+      &__icon {
+        width: 1rem;
+        height: 1rem;
+      }
+
+      &__text {
+        font-size: 1em;
+        margin-left: 0;
+      }
+    }
+
+    &-more-button {
+      $main-color: hsl(214, 5%, 29%);
+      $focus-color: hsla(215, 5%, 54%, 0.4);
+      $hover-color: hsla(215, 5%, 29%, 0.9);
+      $painted-color: hsla(214, 4%, 19%, 1);
+      display: inline-block;
+      min-height: 32px;
+      padding: 0.5rem 0.5rem;
+      margin: 4px;
+      color: #fff;
+      background-color: $main-color;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-weight: 400;
+      vertical-align: top;
+      user-select: none;
+      border: none;
+      border-radius: 4px;
+      box-shadow: none;
+      text-rendering: auto;
+      text-indent: 0;
+      text-align: center;
+      letter-spacing: normal;
+      word-spacing: normal;
+      text-shadow: none;
+      transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+      &:disabled {
+        opacity: 0.9;
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px $focus-color;
+      }
+
+      &:hover {
+        background-color: $hover-color;
+      }
+
+      &:not(:disabled):not(.disabled) {
+        cursor: pointer;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @media (max-width: 768px) {
+        margin: 2px;
+      }
+    }
+  }
+
+  &__related {
     &-group {
       display: flex;
       flex-wrap: wrap;
@@ -671,37 +834,6 @@ export default {
     left: 0;
     right: 0;
     height: 1px;
-  }
-
-  @mixin diamond($base-color) {
-    border-left-color: lighten($base-color, 10%);
-    border-top-color: saturate(lighten($base-color, 20%), 10%);
-    border-right-color: lighten($base-color, 15%);
-    border-bottom-color: $base-color;
-  }
-
-  &__read-more {
-    display: block;
-    text-align: center;
-    border: 2px solid #0f3562;
-    text-transform: uppercase;
-    color: inherit;
-    text-decoration: none;
-    font-size: 1.2em;
-    padding: 0.75rem 1rem;
-    position: relative;
-    border-radius: 3px;
-    margin: 0 1rem;
-    transition: all 0.3s ease-in-out;
-    background-image: linear-gradient(0deg, #0f3562 0%, #0f3562 100%);
-    background-repeat: no-repeat;
-    background-size: 100% 0 !important;
-    background-position: 50% 100%;
-
-    &:hover, &:active, &:focus {
-      color: #f6f8fa;
-      background-size: 100% 100% !important;
-    }
   }
 }
 </style>

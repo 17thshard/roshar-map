@@ -1,10 +1,12 @@
-# Amaram's arrival
-Amaram arrived on the Shattered Plains.
+# 亚马兰的到来
+亚马兰抵达破碎平原。
+
 
 ## Details
-Amaram arrived on the Shattered Plains shortly after the Battle of the Tower, with secretive plans relating to his involvement with the Sons of Honor. His arrival caused Kaladin to doubt Dalinar's honor and drove a wedge in their relationship for a time.
+塔地之战不久之后，亚马兰带着与他和荣誉之子牵连有关的秘密计划抵达破碎平原。他的到达让卡拉丁质疑达力拿的荣誉感并暂时在他们的关系间打下楔子。
+
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Words of Radiance* Ch. 12 |
+| chapter | 《光辉真言》第12章 |

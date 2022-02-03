@@ -1,3 +1,3 @@
-# Azimir
+# 阿兹米尔
 
-**Azimir** is the capital city of #[Azir](locations/azir), and the seat of the Prime Aqasix, the leader of the Azish Empire.
+**阿兹米尔**是#[亚泽尔](locations/azir)的首都，阿卡希克斯大帝在此城统治他的亚泽尔帝国。

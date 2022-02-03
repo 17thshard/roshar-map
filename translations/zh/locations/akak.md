@@ -1,7 +1,7 @@
-# Akak
+# 阿卡克岛
 
-**Akak** is one of the #[Reshi Isles](locations/reshi-isles), located just to the north of #[Alethkar](locations/alethkar).
+**阿卡克岛**是#[雷希群岛](locations/reshi-isles)的一座岛屿，位于#[阿勒斯卡](locations/alethkar)正北方。
 
-#[Dalinar](characters/dalinar), as general, fought and destroyed the Akak Reshi, some time around the year 1155, and claimed the island for Alethkar.
+约1155年，#[达力拿](characters/dalinar)在征战期间征服了该岛，把它划入了阿勒斯卡的领土。
 
-The zatalef is a cephalopod that lives at least in Akak, perhaps in other Reshi Isles.
+岛上可能生存着一种蝙蝠状的头足类动物。

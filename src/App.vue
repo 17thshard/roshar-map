@@ -11,8 +11,27 @@
     <transition name="scrubber" duration="1500" @after-enter="onScrubberLoaded">
       <Scrubber v-if="ready" />
     </transition>
-    <Info @open="sidebarActive = true" @open-tutorial="tutorialActive = true" @close="sidebarActive = false" />
-    <Settings @open="sidebarActive = true" @close="sidebarActive = false" />
+    <div class="app__actions">
+      <Search :open="openedMenu === 'search'" @open="openMenu('search')" @close="closeMenu" />
+      <button
+        data-tutorial-id="settings-button"
+        :class="['app__actions-button', 'app__actions-button--wide', {'app__actions-button--hidden': openedMenu === 'settings'}]"
+        @click="openMenu('settings')"
+      >
+        <SlidersIcon size="1x" />
+        {{ $t('ui.settings') }}
+      </button>
+      <button
+        data-tutorial-id="menu-button"
+        :class="['app__actions-button', {'app__actions-button--hidden': openedMenu === 'info'}]"
+        :title="$t('ui.menu')"
+        @click="openMenu('info')"
+      >
+        <MenuIcon size="1x" />
+      </button>
+    </div>
+    <Info :open="openedMenu === 'info'" @open-tutorial="tutorialActive = true" @close="closeMenu" />
+    <Settings :open="openedMenu === 'settings'" @close="closeMenu" />
     <transition name="calendar-guide">
       <CalendarGuide v-if="$store.state.calendarGuideOpen" />
     </transition>
@@ -28,10 +47,14 @@
     <transition name="loading__fade">
       <ErrorScreen v-if="errored" />
     </transition>
+    <transition name="changelog" :duration="{ enter: 1000, leave: 300 }">
+      <Changelog v-if="ready && showChangelog" @close="showChangelog = false" />
+    </transition>
   </div>
 </template>
 
 <script>
+import { MenuIcon, SlidersIcon } from 'vue-feather-icons'
 import Scrubber from '@/components/Scrubber.vue'
 import Settings from '@/components/Settings.vue'
 import LoadingIndicator from '@/components/LoadingIndicator.vue'
@@ -41,11 +64,15 @@ import CalendarGuide from '@/components/CalendarGuide.vue'
 import Tutorial from '@/components/Tutorial.vue'
 import FirstVisitWindow from '@/components/FirstVisitWindow.vue'
 import ErrorScreen from '@/components/ErrorScreen.vue'
+import Changelog, { VERSION as CHANGELOG_VERSION } from '@/components/Changelog.vue'
 import '@/assets/fonts/hebrew.scss'
+import Search from '@/components/search/Search.vue'
+import { mapMutations, mapState } from 'vuex'
 
 export default {
   name: 'App',
   components: {
+    Search,
     ErrorScreen,
     FirstVisitWindow,
     Tutorial,
@@ -54,16 +81,19 @@ export default {
     Info,
     LoadingIndicator,
     Settings,
-    Scrubber
+    Scrubber,
+    MenuIcon,
+    SlidersIcon,
+    Changelog
   },
   data () {
     return {
       ready: false,
       errored: false,
       mapTransitions: false,
-      sidebarActive: false,
       tutorialActive: window.localStorage.tutorialStarted === 'true' && window.localStorage.tutorialDone !== 'true',
-      firstVisit: window.localStorage.tutorialStarted !== 'true' && window.localStorage.tutorialDone !== 'true'
+      firstVisit: window.localStorage.tutorialStarted !== 'true' && window.localStorage.tutorialDone !== 'true',
+      showChangelog: window.localStorage.changelogVersion !== CHANGELOG_VERSION
     }
   },
   computed: {
@@ -75,6 +105,10 @@ export default {
       }
 
       return null
+    },
+    ...mapState(['openedMenu']),
+    sidebarActive () {
+      return this.openedMenu === 'settings' || this.openedMenu === 'info'
     }
   },
   watch: {
@@ -88,6 +122,17 @@ export default {
       }
 
       this.$router.replace(`/${this.$route.params.locale}`)
+    },
+    details (newDetails) {
+      if (newDetails === null) {
+        return
+      }
+
+      if (newDetails.type === 'events') {
+        this.$store.commit('selectEvent', newDetails)
+      } else {
+        this.$store.commit('unselectEvent')
+      }
     }
   },
   methods: {
@@ -102,13 +147,15 @@ export default {
     },
     onScrubberLoaded () {
       this.mapTransitions = true
-    }
+    },
+    ...mapMutations(['openMenu', 'closeMenu'])
   }
 }
 </script>
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
 
 body {
   margin: 0;
@@ -121,7 +168,7 @@ body {
 }
 
 #app {
-  font-family: 'Libre Baskerville', 'Hadasim CLM', serif;
+  font-family: 'Libre Baskerville', 'Hadasim CLM', 'Merriweather', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: absolute;
@@ -160,6 +207,77 @@ body {
 
     [dir=rtl] & {
       padding-left: 225px;
+    }
+  }
+
+  .app__actions {
+    position: fixed;
+    top: 2rem;
+    display: flex;
+    grid-gap: 1rem;
+    max-width: calc(100% - 4rem);
+    z-index: 60;
+
+    [dir=ltr] & {
+      right: 2rem;
+    }
+
+    [dir=rtl] & {
+      left: 2rem;
+    }
+
+    &-button {
+      display: flex;
+      align-items: center;
+      position: relative;
+      font-size: 1rem;
+      line-height: 1;
+      appearance: none;
+      outline: none;
+      box-sizing: border-box;
+      border: none;
+      z-index: 61;
+      background: #F5ECDA;
+      border-radius: 2rem;
+      padding: 0.75rem 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      color: #242629;
+      pointer-events: auto;
+      box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.5);
+
+      &:hover, &:active, &:focus {
+        background: saturate(darken(#F5ECDA, 10%), 5%);
+      }
+
+      &--wide {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+
+      &--hidden {
+        cursor: default !important;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+        pointer-events: none;
+        opacity: 0;
+        transform: scale(0);
+      }
+
+      [dir=ltr] & {
+        transform-origin: calc(100% - 1rem) 50%;
+
+        &--wide .feather {
+          margin-right: 0.5rem;
+        }
+      }
+
+      [dir=rtl] & {
+        transform-origin: 1rem 50%;
+
+        &--wide .feather {
+          margin-left: 0.5rem;
+        }
+      }
     }
   }
 }

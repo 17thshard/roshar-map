@@ -1,10 +1,10 @@
-# Moash arrives outside Kholinar
-Moash's group arrived in a town on the outskirts of Kholinar where the singers are staging their seige of the city.
+# 莫阿什抵达塔冠城外
+莫阿什所在的队伍到达了塔冠城郊的一座小镇，歌者们在这里开始做围攻王城的准备。
 
 ## Details
-After hauling supplies for weeks on foot from Revolar, Moash arrived on the outskirts of Kholinar to find the city under seige and Odium's forces preparing for a final assault on the city.
+在从雷沃拉尔徒步运输补给几周之后，莫阿什终于到达了塔冠城郊的一座小镇，他发现塔冠城正在被围困，仇恨的部队正在准备对王城的最后一次突袭。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 51 |
+| chapter | 《渡誓》第51章 |

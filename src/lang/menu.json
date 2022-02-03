@@ -1,10 +1,18 @@
 [
-    {
-        "code": "en-US",
-        "name": "English"
-    },
-    {
-        "code": "es-ES",
-        "name": "Español"
-    }
+  {
+    "code": "en-US",
+    "name": "English"
+  },
+  {
+    "code": "es-ES",
+    "name": "Español"
+  },
+  {
+    "code": "ru",
+    "name": "Русский"
+  },
+  {
+    "code": "zh",
+    "name": "中文"
+  }
 ]

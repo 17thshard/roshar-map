@@ -1,10 +1,10 @@
-# Moash kills Jezrien
-Moash was given a strange golden dagger by the singers, which he used to assassinate the Herald Jezrien.
+# 莫阿什杀死杰兹雷恩
+歌者们把一柄奇特的金色匕首给了莫阿什，他用它杀死了令使杰兹雷恩。
 
 ## Details
-After impressing the Fused during the battle to take Kholinar, Moash was given a strange golden dagger and commanded to assassinate the Herald Jezrien. Moash succeeded, and was given the name Vyre. 
+在夺取塔冠城的战斗中，莫阿什的表现令融族侧目，因此他被赐予了一柄奇特的金色匕首，并被命令杀死令使杰兹雷恩。莫阿什成功了，然后被赐予了“惟宁”这个名字。
 
 ## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Oathbringer* Ch. 121 |
+| chapter | 《渡誓》第121章 |

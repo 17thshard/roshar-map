@@ -1,5 +1,5 @@
-# Kaladin begins training
-At the age of 9 Kaladin began training to be a surgeon with his father, Lirin.
+# 卡拉丁开始学医
+自九岁起，卡拉丁跟随父亲李伦学医。
 
 ## Details
-At the age of 9 Kaladin began training to be a surgeon with his father, Lirin.
+居住在#[赫斯通](locations/hearthstone)的时候，卡拉丁从年少时期就开始跟随父亲接受手术师的培训，却并没有意识到父亲希望在他长大后把他送去卡哈巴兰斯。

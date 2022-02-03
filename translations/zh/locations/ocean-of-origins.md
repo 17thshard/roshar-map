@@ -1,7 +1,7 @@
-# Ocean of Origins
+# 飓源海
 
-The **Ocean of Origins** is a body of water east of Roshar, towards the Origin.
+**飓源海**是柔刹东部朝向飓风之源的一片水域。
 
-The shores of the Ocean of Origins are sparsely populated, with the cities of #[New Natanan](locations/new-natanan) and Dawn's Shadow being the only notable settlements. This is likely because highstorms make landfall there, and as such hit that coast with the greatest force. To the East, the Ocean of Origins presumably connects to the #[Endless Ocean](locations/endless-ocean) on the opposite side of the planet, while from North and South, it's bracketed by #[Steamwater Ocean](locations/steamwaterocean) and #[Southern Depths](locations/southern-depths).
+飓源海沿岸是飓风登陆的位置，人烟稀少，著名的宜居地只有#[新纳塔楠](locations/new-natanan)和晨曦之影。飓源海或东临另一个半球的#[无尽海](locations/endless-ocean)，北接#[蒸腾海](locations/steamwaterocean)，南接#[南之深渊](locations/southern-depths)。
 
-The Origin of Storms, where the highstorms originate, lies at the far end of the Ocean of Origins. There are multiple legends talking about there being an inhabited island there, populated by people called Uvara in some versions of the story. The version told in New Natanan says that they are sailors who were lost while travelling the Ocean of Origins and that one day, they will come back to reclaim Natanatan.
+飓风之源是飓风的生成地，位于飓源海东端。多个传说均提到那里有一座岛屿，岛上的居民在某些版本中自称乌法拉人，而在新纳塔楠的传说中，这些人是迷失在飓源海上的水手，终有一天会夺回纳塔纳坦。

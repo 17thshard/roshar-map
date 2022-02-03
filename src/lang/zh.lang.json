@@ -1,213 +1,296 @@
 {
-    "textureLocale": "en",
-    "name": "Map of Roshar",
-    "title": "{page} | The Stormlight Archive",
+    "texture-locale": "zh",
+    "text-direction": "ltr",
+    "search-language": "zh",
+    "name": "柔刹地图",
+    "title": "{page} | 飓光志",
+    "logo": "roshar-zh.png",
+    "meta": {
+        "translator": {
+            "url": "https://coppermind.huijiwiki.com/wiki/%E4%B8%89%E7%95%8C%E5%AE%99%E6%97%85%E8%80%85",
+            "name": "三界宙旅者",
+            "logo": "logo-zh.png"
+        }
+    },
     "ui": {
-        "loading": "Loading...",
-        "circa": "ca. {date}",
-        "menu": "Menu",
-        "settings": "Settings",
-        "layers": "Layers",
-        "filters": "Filters",
-        "close": "Close",
-        "back": "Back",
-        "separate-timelines": "Separate timelines",
-        "enable": "Enable",
-        "disable": "Disable",
-        "display-separately": "Display separately",
-        "stop-display-separately": "No longer display separately",
-        "previous-event": "Previous Event",
-        "next-event": "Next Event",
-        "previous": "Previous",
-        "next": "Next",
-        "jump-to-start": "Jump to start",
-        "jump-to-end": "Jump to end",
-        "coppermind": "More on the Coppermind",
-        "welcome": "Welcome to the unofficial interactive map and timeline of Brandon Sanderson's *The Stormlight Archive* series of books!",
-        "language": "Language",
-        "languageHeading": "Language Selection",
-        "help": "Help",
-        "about": "About",
-        "aboutText": "Lorem ipsum dolor sit _[tn](En inglés, el apodo que le otorga Hoid es Slammer, no tenemos aún traducción oficial al español, pero el término hace referencia a una forma coloquial de referirse a la cárcel. Esta información no se ha mencionado de forma oficial en los libros, proviene de una [WoB de Brandon](https://wob.coppermind.net/events/134-general-signed-books-2016/#e9472))_, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        "more": "More...",
-        "related": "Related",
-        "date": "Date",
-        "date-help": "How to read this?",
-        "chapter": "Chapter",
-        "dismiss": "Dismiss",
+        "loading": "加载中……",
+        "circa": "约{date}",
+        "menu": "菜单",
+        "settings": "设置",
+        "layers": "模式",
+        "filters": "过滤器",
+        "close": "关闭",
+        "back": "返回",
+        "separate-timelines": "单独时间轴",
+        "enable": "允许",
+        "disable": "不允许",
+        "display-separately": "单独显示",
+        "stop-display-separately": "不再单独显示",
+        "previous-event": "前一个事件",
+        "next-event": "后一个事件",
+        "previous": "上一个",
+        "next": "下一个",
+        "jump-to-start": "跳转至页首",
+        "jump-to-end": "跳转至页尾",
+        "coppermind": "了解更多",
+        "welcome": "欢迎使用《飓光志》饭制互动地图，尽情感受布兰登·桑德森的瑰丽世界吧！",
+        "language": "切换语言",
+        "languageHeading": "选择语言",
+        "help": "新手引导",
+        "about": "本站介绍",
+        "aboutText": "欢迎使用《飓光志》互动地图！\n\n本站由粉丝制作，与官方无关。站点内所有内容来源于原著书籍，由粉丝挑选整理而成。如有兴趣深入挖掘系列的时间线或本站建站所用的参考资料，可访问[Jofwu的飓光志时间轴项目](https://docs.google.com/spreadsheets/d/1zq5bJoKE83ggDCjH43i1hZi0CIpB2iAx7v37zQPVFK0)。\n\n本站功能如下：\n\n1）点击地图上地名了解该地点相关信息；\n\n2）点击底部的时间轴上的时间点，了解该时期的重大事件；\n\n3）想深入了解飓光志信息？点击右边栏“红铜智库”进入英文维基，或在搜索引擎搜索关键词“红铜智库”进入**简体中文布兰登·桑德森主题维基站**。\n\n**★简体中文汉化团队★**\n\n技术：卢斯 波顿、一根木棍鱼\n\n美术：botanica、洋葱\n\n翻译：botanica、卢斯 波顿、猛猛大王、青疯、一根木棍鱼\n\n（按首字母音序排列，排名不分先后）",
+        "brandon-sanderson": "布兰登·桑德森",
+        "credits": "鸣谢",
+        "map-credits": "地图由斯潘塞·法内斯绘制",
+        "more": "更多……",
+        "related": "相关条目",
+        "date": "日期",
+        "date-help": "如何解读？",
+        "chapter": "章节",
+        "dismiss": "关闭",
         "first-visit": {
-            "heading": "Welcome",
-            "intro": "It looks like this is your first use of this app. Would you like some help?\n\nYou can always find help later on from the menu to the top right.",
-            "calendar": "Explain dates",
-            "tutorial": "Show hints"
+            "heading": "欢迎",
+            "intro": "**警告！**本站包含《光辉真言》之后的剧透，现在跑还来得及！\n\n不懂得玩？猛戳下方新手引导开启教程！\n\n不小心关掉了教程？戳右上角小圆点！",
+            "calendar": "柔刹历法简介",
+            "tutorial": "新手引导"
         },
         "tutorial": {
-            "title": "Tutorial",
-            "explanation": "Click on any of the red dots to find out what you can do with the app.",
-            "calendar": "Explain calendar & dates",
+            "title": "教程",
+            "explanation": "点击任意红点学习如何使用本互动地图。",
+            "calendar": "柔刹历法简介",
             "hints": {
                 "settings-button": {
-                    "title": "Settings Menu",
-                    "text": "Adjust display & filter settings for the map and timeline"
+                    "title": "设置菜单",
+                    "text": "为地图和时间轴调整显示和过滤设置。"
                 },
                 "menu-button": {
-                    "title": "Menu",
-                    "text": "Find helpful links and language settings"
+                    "title": "菜单",
+                    "text": "寻找外部链接和语言设置。"
+                },
+                "search": {
+                    "title": "搜索",
+                    "text": "搜索事件、人物、地点以及各种信息"
                 },
                 "timeline": {
-                    "title": "Timeline",
-                    "text": "Navigate this timeline by scrubbing or scrolling and click on any of the diamonds to view the associated event"
+                    "title": "时间线",
+                    "text": "拖动时间轴并点击任意菱形符号查看相关事件。"
                 },
                 "event": {
-                    "title": "Event Details",
-                    "text": "Click the \"More\" link to get a detailed summary, related information and where to find the event in the book, if applicable"
+                    "title": "事件详情",
+                    "text": "点击\"更多\"查看事件详情、相关信息和事件在书中的位置。"
                 },
                 "location": {
-                    "title": "Location Details",
-                    "text": "Click on any named location to view a detailed description and associated information"
+                    "title": "地点详情",
+                    "text": "点击任意地点查看详情和相关信息。"
                 },
                 "settings-layers": {
-                    "title": "Layers",
-                    "text": "Layers can provide additional useful information on top of the map view. They can be toggled at any time"
+                    "title": "模式",
+                    "text": "使用模式功能为原始地图添加更多信息，图层随时可以切换。"
                 },
                 "settings-filters": {
-                    "title": "Filters",
-                    "text": "Filters allow you to decide which events are displayed on the timeline. You may hide them completely or create a separate timeline that focuses on the filtered item"
+                    "title": "过滤器",
+                    "text": "使用过滤器功能决定时间轴上显示的事件。事件可以完全隐藏，也可以设置单独时间轴，只看选定信息。"
                 },
                 "settings-separate-timelines": {
-                    "title": "Separate Timelines",
-                    "text": "Once you've started displaying a filter as separate timeline, you can find it labeled here. Use the drag handle to change the order the timelines are displayed in"
+                    "title": "单独时间轴",
+                    "text": "开启单独时间轴后，该时间轴的名称会出现在下方，拖动名称调整显示顺序。"
+                },
+                "measure-button": {
+                    "title": "测量",
+                    "text": "在地图上测量两点之间的距离，以及获取地点的经纬度"
+                },
+                "go-to-date-button": {
+                    "title": "跳转日期",
+                    "text": "在时间线上跳转至任意日期"
                 }
             }
         },
         "calendar-guide": {
-            "title": "The Rosharan Calendar",
+            "title": "柔刹历",
             "start": {
-                "name": "Start",
-                "explanation": "This is one year in the Rosharan calendar. It corresponds to 1.1 years on Earth."
+                "name": "开始",
+                "explanation": "这是柔刹历的1年，等同于1.1个地球年。"
             },
             "day": {
-                "name": "Day",
-                "explanation": "Each day is 20 Rosharan hours long."
+                "name": "日",
+                "explanation": "1天长20个小时。"
             },
             "week": {
-                "name": "Week",
-                "explanation": "Each week is 5 days long."
+                "name": "周",
+                "explanation": "1周有5天。"
             },
             "month": {
-                "name": "Month",
-                "explanation": "Each month spans 50 days, or 10 weeks."
+                "name": "月",
+                "explanation": "1个月有10周，共计50天。"
             },
             "year": {
-                "name": "Year",
-                "explanation": "A year amounts to 10 months, 100 weeks, or 500 days."
+                "name": "年",
+                "explanation": "1年有10个月和100周，共计500天。"
             },
             "date": {
-                "name": "Dates",
-                "explanation": "Dates are written as the year first, month second, week third, and day last. The numbers are separated by periods.\n\nFor example, this date in year 1173 is written: {date}"
+                "name": "日期",
+                "explanation": "书写日期时，年份在前，其后依次是月份、周数和日数，以半角句号分隔。\n\n例：下图所示的日期写作{date}。"
             }
         },
         "error-screen": {
-            "message": "Whoops... Looks like the app cannot be loaded in your browser for some reason.\n\nPlease consider visiting using a [modern browser](https://browsehappy.com).",
-            "report-intro": "Think this is an actual error?",
-            "report-button": "Report on GitHub"
+            "message": "糟糕！本互动地图似乎无法在您的浏览器中加载，\n\n请考虑使用新版本的浏览器。",
+            "report-intro": "如果您认为确实存在错误，",
+            "report-button": "请前往GitHub报错。"
         },
         "translatorNote": {
             "abbreviation": "TN",
-            "full": "Translator's Note"
+            "full": "翻译说明"
         },
         "go-to-date": {
-            "heading": "Go to Date",
+            "heading": "跳转日期",
             "fields": {
                 "year": {
-                    "label": "Year",
+                    "label": "年",
                     "placeholder": "YYYY"
                 },
                 "month": {
-                    "label": "Month",
+                    "label": "月",
                     "placeholder": "MM"
                 },
                 "week": {
-                    "label": "Week",
+                    "label": "周",
                     "placeholder": "WW"
                 },
                 "day": {
-                    "label": "Day",
+                    "label": "日",
                     "placeholder": "DD"
                 }
             },
             "errors": {
-                "year-required": "You must fill out the year!",
-                "month-required": "You must fill out the month!",
-                "week-required": "You must fill out the week!"
+                "year-required": "必须填写年份！",
+                "month-required": "必须填写月份！",
+                "week-required": "必须填写周数！"
             }
+        },
+        "lock-timeline": "锁住时间轴导航",
+        "unlock-timeline": "解锁导航",
+        "translation-by": "汉化团队",
+        "image-credits": "by {credits}",
+        "share": "分享",
+        "measurement": {
+            "button": "测量",
+            "title": "测量",
+            "explanation": "在地图上点击两个点以测量距离，以及获取它们的经纬度。\n\n注意柔刹的经纬度(°ᴿ)范围是0至200。",
+            "labels": {
+                "start": "起点",
+                "end": "终点",
+                "distance": "距离"
+            },
+            "coordinates": {
+                "full": "{latitude}, {longitude}",
+                "north": "{degrees}°ᴿ N",
+                "south": "{degrees}°ᴿ S",
+                "east": "{degrees}°ᴿ E",
+                "west": "{degrees}°ᴿ W"
+            },
+            "distance": "{distanceMi} 英里 / {distanceKm} 公里"
+        },
+        "search": {
+            "title": "检索",
+            "prompt": "请输入检索关键字",
+            "loading": "请稍候……",
+            "empty-query": "请输入检索关键字",
+            "no-results": "很抱歉，未能找到相符的检索结果"
+        }
+    },   
+    "sharing": {
+        "title": "分享",
+        "global-message": "快来体验《飓光志》饭制互动地图吧！",
+        "twitter": {
+            "button-text": "Tweet",
+            "entry-template": "快来《飓光志》饭制互动地图查看\"{entry}\"吧！"
+        },
+        "facebook": {
+            "button-text": "Facebook"
+        },
+        "reddit": {
+            "button-text": "Reddit",
+            "entry-template": "快来《飓光志》饭制互动地图查看\"{entry}\"吧！"
+        },
+        "tumblr": {
+            "button-text": "Tumblr",
+            "entry-template": "快来《飓光志》饭制互动地图查看\"{entry}\"吧！"
+        },
+        "more": {
+            "button-text": "更多",
+            "entry-template": "快来《飓光志》饭制互动地图查看\"{entry}\"吧！"
         }
     },
     "entry-types": {
-        "events": "Events",
-        "locations": "Locations",
-        "characters": "Characters",
-        "misc": "Miscellaneous"
+        "events": "事件",
+        "locations": "地点",
+        "characters": "角色",
+        "misc": "其他"
     },
     "numbers": [
-        "Jes",
-        "Nan",
-        "Chach",
-        "Vev",
-        "Palah",
-        "Shash",
-        "Betab",
-        "Kak",
-        "Tanat",
-        "Ishi"
+        "一",
+        "二",
+        "三",
+        "四",
+        "五",
+        "六",
+        "七",
+        "八",
+        "九",
+        "十"
     ],
     "layers": {
-        "shadesmar": "Shadesmar",
-        "silverKingdoms": "Silver Kingdoms",
-        "oathgates": "Oathgate Locations",
-        "factions": "Current State of the World"
+        "shadesmar": "裂影界",
+        "graticule": "经纬线",
+        "silverKingdoms": "白银十王国",
+        "oathgates": "誓约之门位置",
+        "factions": "世界现状"
     },
     "factions": {
         "coalition": {
-            "name": "Dalinar's Coalition of Monarchs",
+            "name": "达力拿领导的君主联盟",
             "style": "Blue and maroon checkered"
         },
         "odium": {
-            "name": "Odium's Forces",
+            "name": "仇恨势力",
             "style": "Gold"
         },
         "neutral": {
-            "name": "Neutral",
+            "name": "中立势力",
             "style": "Green"
         }
     },
     "tagCategories": {
-        "tags": "Tags",
-        "characters": "Characters",
-        "books": "Books"
+        "tags": "标签",
+        "characters": "角色",
+        "books": "作品"
     },
     "tags": {
-        "general": "General",
-        "dalinar": "Dalinar",
-        "kaladin": "Kaladin",
-        "shallan": "Shallan",
-        "twok": "The Way of Kings",
-        "wor": "Words of Radiance",
-        "ed": "Edgedancer",
-        "ob": "Oathbringer",
-        "row": "Rhythm of War",
-        "adolin": "Adolin",
-        "renarin": "Renarin",
-        "lift": "Lift",
-        "szeth": "Szeth",
-        "rysn": "Rysn",
-        "jasnah": "Jasnah",
-        "navani": "Navani",
-        "eshonai": "Eshonai",
-        "taravangian": "Taravangian",
-        "wit": "Wit",
-        "moash": "Moash",
-        "venli": "Venli",
-        "history": "History"
-    }
+        "general": "通用",
+        "dalinar": "达力拿",
+        "kaladin": "卡拉丁",
+        "shallan": "沙兰",
+        "twok": "《王者之路》",
+        "wor": "《光辉真言》",
+        "ed": "《缘舞》",
+        "ob": "《渡誓》",
+        "ds": "《晨瑛》",
+        "row": "《纷争之韵》",
+        "adolin": "阿多林",
+        "renarin": "雷纳林",
+        "lift": "莉芙特",
+        "szeth": "泽斯",
+        "rysn": "莱丝",
+        "jasnah": "迦熙娜",
+        "navani": "纳瓦妮",
+        "eshonai": "伊舒娜",
+        "taravangian": "塔拉梵吉安",
+        "wit": "知策",
+        "moash": "莫阿什",
+        "venli": "温丽",
+        "history": "历史",
+        "diagram": "《谶记》",
+        "ghostbloods": "鬼血会"
+    },
+    "changelog":  "欢迎来到新版柔刹互动地图！我们添加了《晨瑛》和《纷争之韵》中的新事件、新地点和新人物，如果你还没读过这两部作品要小心剧透！\n\n## 全 新 版 本\n\n除了书中的内容，我们还添加了如下功能：\n\n * 🔎 **检索：** 现在你可以检索事件、地点、人物以及各种信息！点击右上角的检索按钮来尝试吧。\n\n * 📐 **测量：** 在王室绘图师伊萨斯克·书林的帮助下，我们增加了测量地图的功能。点击时间线右上的那个罗盘图标来体验吧！现在你不仅可以测量距离，还可以获得一个地点精确的经纬度！<br>*注意数据并非来自官方，可能与实际有出入。*\n\n * ⚠️ **剧透过滤器：** 你可以在设置中设定过滤器，在时间线上过滤剧透的内容！<br>*注意过滤器对详情页面的“相关条目”中不生效。*\n\n * 🤝 **分享：** 虽然没有对芦，但你还是可以点击分享按钮将你感兴趣的一切分享给好友。去详情页试试看吧。\n\n* 📍 **裂影界地图更新：** 我们穿越了垂贯点，探索了柔刹的知界域！裂影界地图标记了部分已知的地点。\n\n如果你找到了bug，请速速加群397465279向我们反馈！柔刹旅途愉快！"
 }

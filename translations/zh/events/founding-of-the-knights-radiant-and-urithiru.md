@@ -1,5 +1,5 @@
-# Founding of the Knights Radiant
-During the Heraldic Epochs, humans began developing Nahel bonds with spren. Urithiru is constructed and the Knights Radiant were established.
+# 光辉骑士团成立
+在令使纪元时期，人类开始研究与灵体之间的拿赫尔纽带，他们建造了乌有斯麓，成立了光辉骑士团。
 
 ## Details
-Sometime during the Desolations, humans began to develop special bonds withspren, called Nahel bonds, granting them the powers of Surgebinding. The Knights Radiant were eventually founded to give organization and leadership to these Surgebinders. The tower city of Urithiru was erected around the same time, and served as the headquarters of the Knights Radiant.
+在灭世时期的某个阶段，人类开始研发与灵体之间的特别纽带，即拿赫尔纽带，这让他们可以拥有使用飓能的力量。最终，光辉骑士团成立，其目的是带领和组织这些飓能者。乌有斯麓塔城也是在同一时期建立起来，作为光辉骑士团的总部而存在。

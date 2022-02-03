@@ -1,4 +1,4 @@
-# Thaylenah
-> We are going to need to administrate trade through the Oathgates. I wonder, who has excellent expertise in shipping, caravans, and trade in general…?
+# 泰勒拿
+> 我们需要通过誓约之门来管理贸易事宜。还有哪国精通航运、贩运和买卖？
 
-**Thaylenah** is an island kingdom in the South of Roshar, with capital in #[Thaylen City](locations/thaylen-city). The people and language of Thaylenah are called the Thaylen.
+**泰勒拿**是位于柔刹南部的岛国, 其首都是#[泰勒拿城](locations/thaylen-city)。

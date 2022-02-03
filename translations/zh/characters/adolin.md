@@ -1,5 +1,5 @@
-# Adolin Kholin
+# 阿多林·寇林
 
-> My father thinks I'm a better man than he is. Unfortunately for you, he's wrong.
+> 我父亲认为，我在做人方面强得过他。可惜，一旦碰上你，他就错了。
 
-**Adolin Kholin** is a lighteyed Alethi prince and third in line to the throne of Alethkar. He is considered to be one of the best swordsmen in all of Alethkar. Adolin is the son of #[Dalinar Kholin](characters/dalinar), the elder brother of #[Renarin Kholin](characters/renarin) and husband of Shallan Davar who are members of the Knights Radiant. He is the current Highprince of the Kholin princedom.
+**阿多林·寇林**是阿勒斯卡的光眼种王子，王位的第三顺位继承人，目前担任寇林公国的轩亲王。他是#[达力拿·寇林](characters/dalinar)的长子，#[雷纳林·寇林](characters/renarin)的兄长和#[沙兰·达瓦](characters/shallan)的丈夫。他被认为是全阿勒斯卡最好的剑士之一。

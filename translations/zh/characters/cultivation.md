@@ -1,6 +1,6 @@
-# Cultivation
+# 培养
 
-> I control all things that can be grown, nurtured.  
-> That includes the thorns.
+> 一切能够生长和养育的东西，都尽在我的掌握。  
+> 这其中就包括荆棘。
 
-**Cultivation** is one of the sixteen Shards of Adonalsium. She resides on Roshar, having originally come there with #[Honor](characters/honor) before #[Odium's](characters/odium) arrival. Its Vessel's name is unknown, although #[Hoid](characters/wit) calls her **Slammer**. Cultivation’s Investiture is typically associated with the color green.
+**培养**是阿多拿西的十六神瑛之一。 她在#[仇恨](characters/odium)到来之前，就已经和#[荣誉](characters/honor)一起来到柔刹栖息。其载体的名字未知，不过#[须空](characters/wit)称之为“狱卒”。培养的神能通常与绿色相关。

@@ -19,14 +19,10 @@ export default `
     vec3 innerGlowColor = vec3(213. / 255., 106. / 255., 15. / 255.);
 
     float innerGlow = smoothstep(-innerGlowSize / 255. - aa, .0, value);
-    if (value < .0) {
-      col = mix(col, vec4(innerGlowColor, Opacity), innerGlow * 0.5 * (innerGlow + (1. - innerGlow) * noise));
-    }
+    col = mix(col, vec4(innerGlowColor, Opacity), max(-sign(value), .0) * innerGlow * 0.5 * (innerGlow + (1. - innerGlow) * noise));
 
     float outerGlow = smoothstep(aa + outerGlowSize / 255., .0 / 255., value);
-    if (value > .0) {
-      col = vec4(.0, .0, .0, .35 * outerGlow * Opacity);
-    }
+    col = mix(col, vec4(.0, .0, .0, .35 * outerGlow * Opacity), max(sign(value), .0));
 
     float stroke = smoothstep(aa * 0.5 + strokeSize / 255., 0., abs(value - 1. / 255.)) / (1. + maxGrad);
 

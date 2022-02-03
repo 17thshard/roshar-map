@@ -23,7 +23,7 @@
 
 <script>
 import Markdown from '@/components/Markdown.vue'
-import { escapeCssPath } from '@/utils'
+import { getEntryImageSrcSet } from '@/utils'
 
 export default {
   name: 'EventPreview',
@@ -60,7 +60,7 @@ export default {
   methods: {
     buildImageStyles (image) {
       const styles = {
-        backgroundImage: `url("${this.imageBaseUrl}/${escapeCssPath(image.file)}")`
+        backgroundImage: getEntryImageSrcSet(image.file).css
       }
 
       if (image.offset !== undefined) {
