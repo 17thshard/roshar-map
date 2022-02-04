@@ -165,31 +165,31 @@
     "translation-by": "Перевод:",
     "image-credits": "Арт: {credits}",
     "share": "Поделиться"
-  },
-  "measurement": {
-    "button": "Измерить расстояние",
-    "title": "Измерения",
-    "explanation": "Щелкните на любых двух точках карты, чтобы вычислить координаты и расстояние между ними\n\nИмейте в виду, что рошарский градус (°ᴿ) измеряется от 0 до 200.",
-    "labels": {
-      "start": "Начало",
-      "end": "Конец",
-      "distance": "Расстояние"
-    },
-    "coordinates": {
-      "full": "{latitude}, {longitude}",
-      "north": "{degrees}°ᴿ С",
-      "south": "{degrees}°ᴿ Ю",
-      "east": "{degrees}°ᴿ В",
-      "west": "{degrees}°ᴿ З"
-    },
+    "measurement": {
+      "button": "Измерить расстояние",
+      "title": "Измерения",
+      "explanation": "Щелкните на любых двух точках карты, чтобы вычислить координаты и расстояние между ними\n\nИмейте в виду, что рошарский градус (°ᴿ) измеряется от 0 до 200.",
+      "labels": {
+        "start": "Начало",
+        "end": "Конец",
+        "distance": "Расстояние"
+      },
+      "coordinates": {
+        "full": "{latitude}, {longitude}",
+        "north": "{degrees}°ᴿ С",
+        "south": "{degrees}°ᴿ Ю",
+        "east": "{degrees}°ᴿ В",
+        "west": "{degrees}°ᴿ З"
+      },
     "distance": "{distanceKm} км"
-  },
-  "search": {
-    "title": "Поиск",
-    "prompt": "Поиск...",
-    "loading": "Ищем...",
-    "empty-query": "Введите ключевые слова выше",
-    "no-results": "К сожалению, ничего не найдено"
+    },
+    "search": {
+      "title": "Поиск",
+      "prompt": "Поиск...",
+      "loading": "Ищем...",
+      "empty-query": "Введите ключевые слова выше",
+      "no-results": "К сожалению, ничего не найдено"
+	}
   },
   "sharing": {
     "title": "Поделиться",
