@@ -9,9 +9,7 @@
         >
           <Markdown :content="$t('changelog')" advanced />
         </Scrollbar>
-        <button class="changelog__confirm" @click="dismiss">
-          Okay!
-        </button>
+        <Markdown tag="button" :content="$t('ui.dismiss')" inline class="changelog__confirm" @click.native="dismiss" />
       </div>
     </div>
   </div>
