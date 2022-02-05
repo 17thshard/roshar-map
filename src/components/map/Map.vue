@@ -27,7 +27,6 @@ import {
   PerspectiveCamera,
   PlaneBufferGeometry,
   RepeatWrapping,
-  RGBFormat,
   Scene,
   ShaderMaterial,
   Vector2,
@@ -176,14 +175,14 @@ export default {
   methods: {
     loadTextures () {
       const textures = {
-        map_bg: { hqAvailable: true, lossy: true, pixelFormat: RGBFormat, compressedPixelFormat: RGB_S3TC_DXT1_Format },
-        map: { hqAvailable: true, pixelFormat: RGBFormat },
-        shadesmar_map_bg: { lossy: true, pixelFormat: RGBFormat, compressedPixelFormat: RGB_S3TC_DXT1_Format },
+        map_bg: { hqAvailable: true, lossy: true, compressedPixelFormat: RGB_S3TC_DXT1_Format },
+        map: { hqAvailable: true },
+        shadesmar_map_bg: { lossy: true, compressedPixelFormat: RGB_S3TC_DXT1_Format },
         transition: { pixelFormat: LuminanceFormat },
         text_pattern: { pixelFormat: LuminanceFormat },
-        map_text: { hqAvailable: true, localized: true, pixelFormat: RGBFormat },
-        shadesmar_map_text: { hqAvailable: true, localized: true, pixelFormat: RGBFormat },
-        factions: { hqAvailable: true, lossy: true, pixelFormat: RGBFormat },
+        map_text: { hqAvailable: true, localized: true },
+        shadesmar_map_text: { hqAvailable: true, localized: true },
+        factions: { hqAvailable: true, lossy: true },
         oathgates_text: { hqAvailable: true, localized: true, pixelFormat: LuminanceFormat },
         silver_kingdoms: { hqAvailable: true, pixelFormat: LuminanceFormat },
         silver_kingdoms_text: { hqAvailable: true, localized: true, pixelFormat: LuminanceFormat }
