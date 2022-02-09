@@ -13,7 +13,11 @@
         />
       </svg>
     </div>
-    <router-link class="search-result__name" :to="`${$route.params.locale}/${entry}`" @click.native="$emit('use')">
+    <router-link
+      class="search-result__name"
+      :to="{ name: details.type, params: { locale: $route.params.locale, id: details.id } }"
+      @click.native="$emit('use')"
+    >
       {{ $t(`${baseTranslationKey}.name`) }}
     </router-link>
     <small class="search-result__type">

@@ -65,7 +65,7 @@
             <router-link
               v-for="link in related[type]"
               :key="link.translationKey"
-              :to="`/${$route.params.locale}/${link.url}`"
+              :to="{ name: type, params: { locale: $route.params.locale, id: link.id } }"
               class="details__related-link"
             >
               <div class="details__related-link-icon">
@@ -219,8 +219,8 @@ export default {
 
         return {
           type,
+          id,
           translationKey: `${type}.${id}.name`,
-          url: link,
           image,
           date: linkDetails.date,
           tieBreaker: linkDetails.tieBreaker
