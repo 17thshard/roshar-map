@@ -99,7 +99,7 @@ export default {
       this.searchResults = index.search(query).map(result => result.ref)
 
       if (this.$gtag) {
-        debounce(() => this.$gtag.event('search', { event_category: 'engagement', search_term: query }))
+        this.track(this.$gtag, query)
       }
     },
     onResultUse (result) {
@@ -112,7 +112,8 @@ export default {
       if (event.animationName === 'search--closing') {
         this.closing = false
       }
-    }
+    },
+    track: debounce((gtag, query) => gtag.event('search', { event_category: 'engagement', search_term: query }))
   }
 }
 </script>
