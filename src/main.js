@@ -19,7 +19,20 @@ if (process.env.VUE_APP_GA_ID !== undefined) {
           send_page_view: true
         }
       },
-      disableScriptLoad: process.env.NODE_ENV !== 'production'
+      disableScriptLoad: process.env.NODE_ENV !== 'production',
+      pageTrackerTemplate (to) {
+        if (to.name === 'root') {
+          return {
+            page_title: 'Home Page',
+            page_path: to.fullPath
+          }
+        }
+
+        return {
+          page_title: `Details: ${to.name}/${to.params.id}`,
+          page_path: to.fullPath
+        }
+      }
     },
     router
   )

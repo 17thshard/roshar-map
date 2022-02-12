@@ -74,12 +74,18 @@ export function escapeCssPath (path) {
   return path.replace('\'', '\\\'').replace('(', '\\(').replace(')', '\\)')
 }
 
-export function getEntryImageSrcSet (path) {
+export function getEntryImageSrcSet (path, gtag) {
   try {
     return parseSrcSet(require(`@/assets/entries/${path}?srcset`))
   } catch (e) {
     // eslint-disable-next-line no-console
     console.error(`Could not retrieve entry image '${path}'`)
+    if (gtag) {
+      this.$gtag.exception({
+        description: `Could not retrieve entry image '${path}: ${e.message ?? e}'`,
+        fatal: false
+      })
+    }
     throw e
   }
 }

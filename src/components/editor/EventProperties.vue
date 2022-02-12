@@ -254,7 +254,7 @@ export default {
       }
 
       const styles = {
-        backgroundImage: getEntryImageSrcSet(this.event.image.file).css
+        backgroundImage: getEntryImageSrcSet(this.event.image.file, this.$gtag).css
       }
 
       if (this.event.image.offset !== undefined) {

@@ -60,7 +60,7 @@ export default {
   methods: {
     buildImageStyles (image) {
       const styles = {
-        backgroundImage: getEntryImageSrcSet(image.file).css
+        backgroundImage: getEntryImageSrcSet(image.file, this.$gtag).css
       }
 
       if (image.offset !== undefined) {

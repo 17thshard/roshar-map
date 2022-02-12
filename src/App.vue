@@ -138,12 +138,25 @@ export default {
   methods: {
     onReady () {
       this.ready = true
+
+      if (this.$gtag) {
+        this.$gtag.time({
+          name: 'load',
+          value: Math.round(performance.now()),
+          event_category: 'Map Readiness'
+        })
+      }
     },
     onError (error) {
       this.errored = true
       // eslint-disable-next-line no-console
       console.error(error)
-      this.$ga.exception(error.message ?? error)
+      if (this.$gtag) {
+        this.$gtag.exception({
+          description: error.message ?? error,
+          fatal: true
+        })
+      }
     },
     onScrubberLoaded () {
       this.mapTransitions = true

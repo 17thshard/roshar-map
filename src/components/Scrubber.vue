@@ -250,6 +250,12 @@ export default {
         return
       }
 
+      if (this.$gtag) {
+        this.$gtag.pageview({
+          page_title: `Preview: events/${event.id}`
+        })
+      }
+
       this.scrollToEvent(event)
     },
     'filter.latestSeparatedTag' (tag, oldTag) {
