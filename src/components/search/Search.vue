@@ -33,7 +33,7 @@
         :results="searchResults"
         :loading="loadingIndex"
         :empty-query="query.trim().length === 0"
-        @result-use="$emit('close')"
+        @result-use="onResultUse"
       />
     </transition>
   </div>
@@ -42,6 +42,7 @@
 <script>
 import { SearchIcon, XIcon } from 'vue-feather-icons'
 import SearchResults from '@/components/search/SearchResults.vue'
+import { debounce } from '@/utils'
 
 export default {
   name: 'Search',
@@ -96,6 +97,16 @@ export default {
 
       const index = this.$store.state.search.loadedIndices[this.$t('sourceFile')]
       this.searchResults = index.search(query).map(result => result.ref)
+
+      if (this.$gtag) {
+        debounce(() => this.$gtag.event('search', { event_category: 'engagement', search_term: query }))
+      }
+    },
+    onResultUse (result) {
+      if (this.$gtag) {
+        this.$gtag.event('view_search_results', { event_category: 'engagement', search_term: this.query, search_result: result })
+      }
+      this.$emit('close')
     },
     onAnimationEnd (event) {
       if (event.animationName === 'search--closing') {

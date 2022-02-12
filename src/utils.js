@@ -104,3 +104,16 @@ export function parseSrcSet (srcSet) {
     css: [`url('${escapeCssPath(sources[0].url)}')`, `-webkit-${baseCss}`, baseCss]
   }
 }
+
+export function debounce (func, timeout = 300) {
+  let timer
+  return (...args) => {
+    clearTimeout(timer)
+    timer = setTimeout(
+      () => {
+        func.apply(this, args)
+      },
+      timeout
+    )
+  }
+}

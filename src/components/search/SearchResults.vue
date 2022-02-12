@@ -12,7 +12,7 @@
           {{ $t('ui.search.no-results') }}
         </li>
         <li v-for="result in results" :key="result">
-          <SearchResult :entry="result" @use="$emit('result-use')" />
+          <SearchResult :entry="result" @use="$emit('result-use', result)" />
         </li>
       </ul>
     </Scrollbar>
