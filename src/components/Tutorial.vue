@@ -10,7 +10,7 @@
           <button @click="dismiss">
             {{ $t('ui.dismiss') }}
           </button>
-          <button @click="$store.commit('openCalendarGuide')">
+          <button @click="explainDates">
             {{ $t('ui.tutorial.calendar') }}
           </button>
         </div>
@@ -138,6 +138,10 @@ export default {
         return
       }
 
+      if (this.$gtag) {
+        this.$gtag.event('tutorial_view', { event_category: 'engagement', event_label: value })
+      }
+
       this.$nextTick(() => {
         this.popper = createPopper(document.querySelector(`#tutorial__marker--${value}`), this.$refs.details, {
           placement: this.markers[value].detailsPlacement ?? 'top-start',
@@ -231,6 +235,12 @@ export default {
       if (!this.$refs.details.contains(e.target) && !e.target.classList.contains('tutorial__marker')) {
         this.activeMarker = null
         e.stopPropagation()
+      }
+    },
+    explainDates () {
+      this.$store.commit('openCalendarGuide')
+      if (this.$gtag) {
+        this.$gtag.pageview('Calendar Guide')
       }
     }
   }

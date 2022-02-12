@@ -126,6 +126,9 @@ export default {
     },
     enableTagSeparation (tag) {
       this.$store.commit('enableTagSeparation', tag)
+      if (this.$gtag) {
+        this.$gtag.event('settings_separate', { event_category: 'engagement', event_label: tag })
+      }
     },
     isLayerEnabledTemporarily (layer) {
       const activeEvent = this.$store.state.activeEvent

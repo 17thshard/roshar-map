@@ -30,13 +30,13 @@
         <MenuIcon size="1x" />
       </button>
     </div>
-    <Info :open="openedMenu === 'info'" @open-tutorial="tutorialActive = true" @close="closeMenu" />
+    <Info :open="openedMenu === 'info'" @open-tutorial="openTutorial" @close="closeMenu" />
     <Settings :open="openedMenu === 'settings'" @close="closeMenu" />
     <transition name="calendar-guide">
       <CalendarGuide v-if="$store.state.calendarGuideOpen" />
     </transition>
     <transition name="first-visit-window" appear>
-      <FirstVisitWindow v-if="ready && firstVisit" @open-tutorial="tutorialActive = true" @close="firstVisit = false" />
+      <FirstVisitWindow v-if="ready && firstVisit" @open-tutorial="openTutorial" @close="firstVisit = false" />
     </transition>
     <transition name="tutorial">
       <Tutorial v-if="ready && tutorialActive" @close="tutorialActive = false" />
@@ -160,6 +160,13 @@ export default {
     },
     onScrubberLoaded () {
       this.mapTransitions = true
+    },
+    openTutorial () {
+      this.tutorialActive = true
+
+      if (this.$gtag) {
+        this.$gtag.pageview('Tutorial')
+      }
     },
     ...mapMutations(['openMenu', 'closeMenu'])
   }

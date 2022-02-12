@@ -202,6 +202,11 @@ export default {
       this.controls.addEventListener('click', ({ position }) => {
         if (this.measurementActive) {
           this.measurementResult = this.measurement.click(position)
+
+          if (this.$gtag) {
+            this.$gtag.event('measurement_use', { event_category: 'engagement' })
+          }
+
           return
         }
 
