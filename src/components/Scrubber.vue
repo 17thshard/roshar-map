@@ -252,7 +252,8 @@ export default {
 
       if (this.$gtag) {
         this.$gtag.pageview({
-          page_title: `Preview: events/${event.id}`
+          page_title: `Preview: events/${event.id}`,
+          page_path: `/preview/events/${event.id}`
         })
       }
 
@@ -506,14 +507,14 @@ export default {
     },
     openGoToDate () {
       if (this.$gtag) {
-        this.$gtag.pageview('Go to Date')
+        this.$gtag.pageview({ page_title: 'Go To Date', page_path: '/go-to-date', page_location: '' })
       }
 
       this.$store.commit('openGoToDate')
     },
     toggleMeasurement () {
       if (!this.$store.state.measurementActive && this.$gtag) {
-        this.$gtag.pageview('Measuring')
+        this.$gtag.pageview({ page_title: 'Measuring', page_path: '/measurement', page_location: '' })
       }
 
       this.$store.commit('toggleMeasurement')

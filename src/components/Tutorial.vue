@@ -240,7 +240,7 @@ export default {
     explainDates () {
       this.$store.commit('openCalendarGuide')
       if (this.$gtag) {
-        this.$gtag.pageview('Calendar Guide')
+        this.$gtag.pageview({ page_title: 'Calendar Guide', page_path: '/calendar-guide', page_location: '' })
       }
     }
   }

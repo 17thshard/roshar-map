@@ -162,11 +162,11 @@ export default {
       this.mapTransitions = true
     },
     openTutorial () {
-      this.tutorialActive = true
-
-      if (this.$gtag) {
-        this.$gtag.pageview('Tutorial')
+      if (this.$gtag && !this.tutorialActive) {
+        this.$gtag.pageview({ page_title: 'Tutorial', page_path: '/tutorial', page_location: '' })
       }
+
+      this.tutorialActive = true
     },
     ...mapMutations(['openMenu', 'closeMenu'])
   }
