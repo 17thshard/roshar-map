@@ -48,6 +48,8 @@ export default {
 </script>
 
 <style lang="scss">
+@use "sass:math";
+
 .changelog {
   position: fixed;
   top: 0;
@@ -214,7 +216,7 @@ export default {
 
     &-wrapper {
       position: relative;
-      padding-bottom: #{9 / 16 * 100%};
+      padding-bottom: #{math.div(9, 16) * 100%};
     }
 
     iframe {

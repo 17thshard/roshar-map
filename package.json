@@ -26,7 +26,7 @@
     "simple-markdown": "^0.7.2",
     "stats.js": "^0.17.0",
     "three": "^0.137.0",
-    "vue": "^2.6.11",
+    "vue": "^2.7.10",
     "vue-dragscroll": "^2.1.0",
     "vue-feather-icons": "^5.0.0",
     "vue-gtag": "^1.10.0",
@@ -58,7 +58,7 @@
     "nodejieba": "^2.5.2",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.11",
+    "vue-template-compiler": "^2.7.10",
     "warnings-to-errors-webpack-plugin": "^2.2.0",
     "webpack-image-resize-loader": "^4.0.2",
     "webpack-image-srcset-loader": "^5.0.3"
@@ -83,5 +83,6 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "packageManager": "yarn@3.2.3"
 }
