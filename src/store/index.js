@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Vuex from 'vuex'
+import Vuex, { Store } from 'vuex'
 import baseEvents from '@/store/events.json'
 import baseLocations from '@/store/locations.json'
 import baseCharacters from '@/store/characters.json'
@@ -309,7 +309,7 @@ const getters = {
   }
 }
 
-export default new Vuex.Store({
+export default new Store({
   modules: {
     search
   },
