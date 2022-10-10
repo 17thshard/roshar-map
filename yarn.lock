@@ -1392,6 +1392,145 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@node-rs/jieba-android-arm-eabi@npm:1.6.1":
+  version: 1.6.1
+  resolution: "@node-rs/jieba-android-arm-eabi@npm:1.6.1"
+  conditions: os=android & cpu=arm
+  languageName: node
+  linkType: hard
+
+"@node-rs/jieba-android-arm64@npm:1.6.1":
+  version: 1.6.1
+  resolution: "@node-rs/jieba-android-arm64@npm:1.6.1"
+  conditions: os=android & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@node-rs/jieba-darwin-arm64@npm:1.6.1":
+  version: 1.6.1
+  resolution: "@node-rs/jieba-darwin-arm64@npm:1.6.1"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@node-rs/jieba-darwin-x64@npm:1.6.1":
+  version: 1.6.1
+  resolution: "@node-rs/jieba-darwin-x64@npm:1.6.1"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@node-rs/jieba-freebsd-x64@npm:1.6.1":
+  version: 1.6.1
+  resolution: "@node-rs/jieba-freebsd-x64@npm:1.6.1"
+  conditions: os=freebsd & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@node-rs/jieba-linux-arm-gnueabihf@npm:1.6.1":
+  version: 1.6.1
+  resolution: "@node-rs/jieba-linux-arm-gnueabihf@npm:1.6.1"
+  conditions: os=linux & cpu=arm
+  languageName: node
+  linkType: hard
+
+"@node-rs/jieba-linux-arm64-gnu@npm:1.6.1":
+  version: 1.6.1
+  resolution: "@node-rs/jieba-linux-arm64-gnu@npm:1.6.1"
+  conditions: os=linux & cpu=arm64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@node-rs/jieba-linux-arm64-musl@npm:1.6.1":
+  version: 1.6.1
+  resolution: "@node-rs/jieba-linux-arm64-musl@npm:1.6.1"
+  conditions: os=linux & cpu=arm64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@node-rs/jieba-linux-x64-gnu@npm:1.6.1":
+  version: 1.6.1
+  resolution: "@node-rs/jieba-linux-x64-gnu@npm:1.6.1"
+  conditions: os=linux & cpu=x64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@node-rs/jieba-linux-x64-musl@npm:1.6.1":
+  version: 1.6.1
+  resolution: "@node-rs/jieba-linux-x64-musl@npm:1.6.1"
+  conditions: os=linux & cpu=x64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@node-rs/jieba-win32-arm64-msvc@npm:1.6.1":
+  version: 1.6.1
+  resolution: "@node-rs/jieba-win32-arm64-msvc@npm:1.6.1"
+  conditions: os=win32 & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@node-rs/jieba-win32-ia32-msvc@npm:1.6.1":
+  version: 1.6.1
+  resolution: "@node-rs/jieba-win32-ia32-msvc@npm:1.6.1"
+  conditions: os=win32 & cpu=ia32
+  languageName: node
+  linkType: hard
+
+"@node-rs/jieba-win32-x64-msvc@npm:1.6.1":
+  version: 1.6.1
+  resolution: "@node-rs/jieba-win32-x64-msvc@npm:1.6.1"
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@node-rs/jieba@npm:^1.6.1":
+  version: 1.6.1
+  resolution: "@node-rs/jieba@npm:1.6.1"
+  dependencies:
+    "@node-rs/jieba-android-arm-eabi": 1.6.1
+    "@node-rs/jieba-android-arm64": 1.6.1
+    "@node-rs/jieba-darwin-arm64": 1.6.1
+    "@node-rs/jieba-darwin-x64": 1.6.1
+    "@node-rs/jieba-freebsd-x64": 1.6.1
+    "@node-rs/jieba-linux-arm-gnueabihf": 1.6.1
+    "@node-rs/jieba-linux-arm64-gnu": 1.6.1
+    "@node-rs/jieba-linux-arm64-musl": 1.6.1
+    "@node-rs/jieba-linux-x64-gnu": 1.6.1
+    "@node-rs/jieba-linux-x64-musl": 1.6.1
+    "@node-rs/jieba-win32-arm64-msvc": 1.6.1
+    "@node-rs/jieba-win32-ia32-msvc": 1.6.1
+    "@node-rs/jieba-win32-x64-msvc": 1.6.1
+  dependenciesMeta:
+    "@node-rs/jieba-android-arm-eabi":
+      optional: true
+    "@node-rs/jieba-android-arm64":
+      optional: true
+    "@node-rs/jieba-darwin-arm64":
+      optional: true
+    "@node-rs/jieba-darwin-x64":
+      optional: true
+    "@node-rs/jieba-freebsd-x64":
+      optional: true
+    "@node-rs/jieba-linux-arm-gnueabihf":
+      optional: true
+    "@node-rs/jieba-linux-arm64-gnu":
+      optional: true
+    "@node-rs/jieba-linux-arm64-musl":
+      optional: true
+    "@node-rs/jieba-linux-x64-gnu":
+      optional: true
+    "@node-rs/jieba-linux-x64-musl":
+      optional: true
+    "@node-rs/jieba-win32-arm64-msvc":
+      optional: true
+    "@node-rs/jieba-win32-ia32-msvc":
+      optional: true
+    "@node-rs/jieba-win32-x64-msvc":
+      optional: true
+  checksum: 13f1387d37405e2aed6bf47d0f0e7ee6613822271c5227af9455f24833561eefb080d59f7361a50cc95af8395496766db756f6516f1aecfc1ceb6ddda197f70e
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.4":
   version: 2.1.4
   resolution: "@nodelib/fs.scandir@npm:2.1.4"
@@ -12257,6 +12396,7 @@ __metadata:
     "@babel/plugin-proposal-nullish-coalescing-operator": ^7.10.4
     "@babel/plugin-proposal-optional-chaining": ^7.10.4
     "@johmun/vue-tags-input": ^2.1.0
+    "@node-rs/jieba": ^1.6.1
     "@nuxtjs/eslint-config": ^3.0.0
     "@popperjs/core": ^2.4.4
     "@vue/cli-plugin-babel": ~4.5.13
