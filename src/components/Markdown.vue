@@ -57,7 +57,19 @@ const rules = {
   text: markdown.defaultRules.text
 }
 
+const advancedRules = {
+  ...rules,
+  list: markdown.defaultRules.list,
+  heading: markdown.defaultRules.heading,
+  forceBr: {
+    order: markdown.defaultRules.br.order,
+    match: markdown.inlineRegex(/^<br>/),
+    parse: () => ({})
+  }
+}
+
 const parser = markdown.parserFor(rules)
+const advancedParser = markdown.parserFor(advancedRules)
 
 export default {
   name: 'Markdown',
@@ -71,6 +83,9 @@ export default {
       required: true
     },
     inline: {
+      type: Boolean
+    },
+    advanced: {
       type: Boolean
     }
   },
@@ -140,8 +155,13 @@ export default {
             },
             node.content.map(child => this.renderNode(child, h, route))
           )
+        case 'list':
+          return h(node.ordered ? 'ol' : 'ul', node.items.map(item => h('li', item.map(child => this.renderNode(child, h, route)))))
+        case 'heading':
+          return h(`h${node.level}`, node.content.map(child => this.renderNode(child, h, route)))
         case 'text':
           return node.content
+        case 'forceBr':
         case 'br':
           return h('br')
         case 'newline':
@@ -155,7 +175,7 @@ export default {
     }
   },
   render (h) {
-    const parsed = parser(this.content, { inline: this.inline })
+    const parsed = (this.advanced ? advancedParser : parser)(this.content, { inline: this.inline })
     const children = parsed.map(node => this.renderNode(node, h, this.$route))
 
     if (this.$slots.prefix) {
@@ -279,6 +299,16 @@ export default {
 
       [dir=rtl] & {
         left: -1.7rem;
+      }
+    }
+  }
+
+  ul {
+    & > li {
+      margin-top: 0.5rem;
+
+      &:first-child {
+        margin-top: 0;
       }
     }
   }

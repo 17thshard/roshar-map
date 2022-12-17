@@ -79,7 +79,7 @@
         >
           <Timeline
             v-for="(timelineEvents, tag) in timelines"
-            :key="tag"
+            :key="`t-${tag}`"
             :tag="tag"
             :offset="timelineOffset"
             :events="timelineEvents"
@@ -145,11 +145,20 @@
       </div>
     </div>
     <button
+      data-tutorial-id="go-to-date-button"
       class="scrubber__jump scrubber__jump--date"
       :title="$t('ui.go-to-date.heading')"
-      @click="$store.commit('openGoToDate')"
+      @click="openGoToDate"
     >
       <CalendarIcon size="1x" />
+    </button>
+    <button
+      data-tutorial-id="measure-button"
+      :class="['scrubber__button', 'scrubber__button--measure', { 'scrubber__button--measure-active': $store.state.measurementActive }]"
+      :title="$t('ui.measurement.button')"
+      @click="toggleMeasurement"
+    >
+      <CompassIcon size="1x" />
     </button>
     <transition name="go-to-date">
       <GoToDate v-if="$store.state.goToDateOpen" @submit="scrollToDate" />
@@ -159,7 +168,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import { CalendarIcon, ChevronLeftIcon, ChevronRightIcon, ChevronsLeftIcon, ChevronsRightIcon } from 'vue-feather-icons'
+import { CalendarIcon, ChevronLeftIcon, ChevronRightIcon, ChevronsLeftIcon, ChevronsRightIcon, CompassIcon } from 'vue-feather-icons'
 import Timeline from '@/components/Timeline.vue'
 import EventCard from '@/components/EventCard.vue'
 import { formatDate, lerp } from '@/utils'
@@ -178,7 +187,8 @@ export default {
     ChevronsRightIcon,
     CalendarIcon,
     ChevronLeftIcon,
-    ChevronRightIcon
+    ChevronRightIcon,
+    CompassIcon
   },
   data () {
     return {
@@ -204,13 +214,13 @@ export default {
       result.all = []
 
       this.events.forEach((event) => {
-        const separatedAssignments = this.filter.separateTags.filter(t => event.tags.includes(t))
+        const separatedAssignments = this.filter.separateTags.filter(t => event.tags !== undefined && event.tags.includes(t))
 
         separatedAssignments.forEach((t) => {
           result[t].push(event)
         })
 
-        if (separatedAssignments.length < event.tags.length || event.tags.length === 0) {
+        if (event.tags === undefined || separatedAssignments.length < event.tags.length || event.tags.length === 0) {
           result.all.push(event)
         }
       })
@@ -240,6 +250,13 @@ export default {
         return
       }
 
+      if (this.$gtag) {
+        this.$gtag.pageview({
+          page_title: `Preview: events/${event.id}`,
+          page_path: `/preview/events/${event.id}`
+        })
+      }
+
       this.scrollToEvent(event)
     },
     'filter.latestSeparatedTag' (tag, oldTag) {
@@ -247,7 +264,7 @@ export default {
         return
       }
 
-      const event = this.events.find(event => event.tags.includes(tag))
+      const event = this.events.find(event => event.tags !== undefined && event.tags.includes(tag))
       if (event === undefined) {
         return
       }
@@ -401,6 +418,11 @@ export default {
     },
     scrollToDate (date) {
       const formattedDate = formatDate(date)
+
+      if (this.$gtag) {
+        this.$gtag.event('go_to_date_use', { event_category: 'engagement', event_label: formattedDate })
+      }
+
       const matchingEvents = this.events.filter(event => formatDate(event.date) === formattedDate)
       if (matchingEvents.length === 1) {
         this.selectEvent(matchingEvents[0])
@@ -482,6 +504,20 @@ export default {
     },
     scrollTo (offset) {
       this.$refs.container.scrollTo({ left: this.$store.state.flipTimeline ? -offset : offset, behavior: 'smooth' })
+    },
+    openGoToDate () {
+      if (this.$gtag) {
+        this.$gtag.pageview({ page_title: 'Go To Date', page_path: '/go-to-date', page_location: '' })
+      }
+
+      this.$store.commit('openGoToDate')
+    },
+    toggleMeasurement () {
+      if (!this.$store.state.measurementActive && this.$gtag) {
+        this.$gtag.pageview({ page_title: 'Measuring', page_path: '/measurement', page_location: '' })
+      }
+
+      this.$store.commit('toggleMeasurement')
     }
   }
 }
@@ -572,7 +608,7 @@ export default {
     box-sizing: border-box;
     white-space: nowrap;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
-    transition: 0.2s ease-in-out background;
+    transition: 0.2s ease-in-out background, 0.2s ease-in-out color, 0.2s ease-in-out border;
 
     &:hover, &:active, &:focus {
       background: lighten(#0f3562, 10%);
@@ -592,7 +628,7 @@ export default {
       transform: translateX(var(--leave-position));
     }
 
-    &-enter-to, &-leave-from {
+    &-enter-to, &-leave {
       opacity: 1;
       transform: translateX(0);
     }
@@ -621,17 +657,22 @@ export default {
       }
     }
 
-    &--date {
-      width: auto;
-      height: auto;
+    &--date, &--measure {
+      width: 2.5rem;
+      height: 2.5rem;
       bottom: 100%;
       margin-bottom: 2rem;
       border-radius: 2rem;
-      padding: 0.75rem 0.75rem;
       background: #F5ECDA;
       color: #242629;
       z-index: 4;
 
+      &:hover, &:focus, &:active {
+        background: saturate(darken(#F5ECDA, 10%), 5%);
+      }
+    }
+
+    &--date {
       [dir=ltr] & {
         right: 2rem;
       }
@@ -639,9 +680,25 @@ export default {
       [dir=rtl] & {
         left: 2rem;
       }
+    }
 
-      &:hover, &:focus, &:active {
-        background: saturate(darken(#F5ECDA, 10%), 5%);
+    &--measure {
+      [dir=ltr] & {
+        right: 5rem;
+      }
+
+      [dir=rtl] & {
+        left: 5rem;
+      }
+
+      &-active {
+        background: #0f3562;
+        border: 0.25rem solid #F5ECDA;
+        color: #cad5e6;
+
+        &:hover, &:focus, &:active {
+          background: lighten(#0f3562, 10%);
+        }
       }
     }
   }

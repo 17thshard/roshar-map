@@ -1,5 +1,4 @@
 import isMobile from 'is-mobile'
-// eslint-disable-next-line camelcase
 import { LinearFilter, RGBAFormat, TextureLoader, WebGLUtils } from 'three'
 import { DDSLoader } from 'three/examples/jsm/loaders/DDSLoader'
 

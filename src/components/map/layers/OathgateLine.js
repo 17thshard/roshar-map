@@ -44,6 +44,8 @@ export default class OathgateLine extends Group {
         #ifdef GL_ES
         precision highp float;
         #endif
+  
+        #define PI 3.141592653
 
         uniform float Length;
         uniform float Frequency;
@@ -88,6 +90,11 @@ export default class OathgateLine extends Group {
         {
           float l = abs(p.y);
           float a = (1. - l) * 3.;
+
+          float glowRange = 50. / Length;
+          float glowParam = fract(vUv.x - Time * 0.01 * sqrt(Length));
+          a += 0.8 * sin((1. - smoothstep(.0, glowRange, glowParam)) * PI);
+          
           //make sure to not clip the quad
           a -= Bias;
 

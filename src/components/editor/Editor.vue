@@ -441,7 +441,7 @@ export default {
     availableTags () {
       const set = new Set()
       this.events.forEach((event) => {
-        event.tags.forEach(t => set.add(t))
+        (event.tags ?? []).forEach(t => set.add(t))
       })
 
       return [...set]
@@ -629,7 +629,9 @@ export default {
             gl_Position = projectionMatrix * modelViewMatrix * vec4(position * vec3(512, 256, 0), 1.0);
           }
         `,
-        fragmentShader: mapFragmentShader,
+        fragmentShader: mapFragmentShader
+          .replace('#define CITY_DOTS_COUNT 0', '#define CITY_DOTS_COUNT 1')
+          .replace('#define SHADESMAR_CITY_DOTS_COUNT 0', '#define SHADESMAR_CITY_DOTS_COUNT 1'),
         uniforms: {
           BgTexture: { value: textures.map_bg },
           OutlineTexture: { value: textures.map },
@@ -639,7 +641,9 @@ export default {
           PerpTransition: { value: 0 },
           PerpLocation: { value: new Vector2() },
           PerpPeriod: { value: 3.05355 },
-          Time: { value: 0 }
+          Time: { value: 0 },
+          CityDots: { value: [new Vector2(-1000, -1000)] },
+          ShadesmarCityDots: { value: [new Vector2(-1000, -1000)] }
         },
         extensions: {
           derivatives: true
@@ -864,7 +868,7 @@ export default {
       this.events.splice(index, 1)
     },
     addLocation () {
-      this.selectedLocation = { id: 'new-location', coordinates: { x: 0, y: 0 } }
+      this.selectedLocation = { id: 'new-location', coordinates: { x: 0, y: 0 }, points: {} }
       this.locations.push(this.selectedLocation)
     },
     deleteLocation (index) {
@@ -1114,7 +1118,7 @@ export default {
       const svgString = `
       <svg xmlns='http://www.w3.org/2000/svg' shape-rendering="crispEdges" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
         ${
-        locations.filter(l => l.points[this.textureLocale] !== undefined).map((location) => {
+        locations.filter(l => l.points !== undefined && l.points[this.textureLocale] !== undefined).map((location) => {
           let hexId = Number.parseInt(location.mapId, 10).toString(16)
 
           if (location.shadesmar && base === undefined) {

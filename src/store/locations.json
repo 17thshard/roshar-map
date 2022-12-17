@@ -751,13 +751,15 @@
         },
         "related": [
             "characters/taravangian",
+            "events/creation-of-the-diagram",
             "events/shallan-becomes-jasnahs-ward",
             "events/shallan-confronts-jasnah",
             "events/shallan-visits-shadesmar",
             "events/the-lesson",
             "misc/diagram"
         ],
-        "coppermind": "Kharbranth"
+        "coppermind": "Kharbranth",
+        "cityDot": true
     },
     {
         "id": "thaylenah",
@@ -1525,7 +1527,8 @@
         },
         "coppermind": "Aimia",
         "related": [
-            "events/scouring-of-aimia"
+            "events/scouring-of-aimia",
+            "events/wandersail-arrival"
         ]
     },
     {
@@ -2414,12 +2417,28 @@
         "coppermind": "Urithiru",
         "related": [
             "characters/dalinar",
+            "events/coalition-convenes",
+            "events/diagram-disbands",
+            "events/dog-and-dragon",
             "events/first-meeting-of-monarchs",
             "events/founding-of-the-knights-radiant-and-urithiru",
+            "events/fourth-bridge-arrival",
+            "events/kaladin-helps-noril",
+            "events/kaladin-promoted",
+            "events/navani-creates-antilight",
+            "events/navanis-tone-discovery",
             "events/re-shephir-driven-from-urithiru",
+            "events/second-node-destroyed",
+            "events/shadesmar-envoy-departs",
             "events/taravangian-arrives-in-urithiru",
-            "events/urithiru-rediscovered"
-        ]
+            "events/third-node-destroyed",
+            "events/urithiru-captured",
+            "events/urithiru-liberated",
+            "events/urithiru-rediscovered",
+            "events/venli-frees-rlain",
+            "events/warlight-discovered"
+        ],
+        "cityDot": true
     },
     {
         "id": "shattered-plains",
@@ -2583,11 +2602,19 @@
         "related": [
             "events/battle-of-the-tower",
             "events/disadvantaged-duel",
+            "events/eshonai-is-born",
+            "events/ialai-assassinated",
             "events/kaladin-joins-bridge-four",
+            "events/listeners-reunited",
             "events/shallan-and-kaladin-in-the-chasms",
             "events/shallan-meets-ghostbloods",
+            "events/shallan-undercover",
             "events/szeth-attacks-dalinar",
             "events/the-last-legion",
+            "events/the-parshendi-discovered",
+            "events/venli-is-born",
+            "events/venli-meets-ulim",
+            "events/wit-meets-odium",
             "locations/narak"
         ]
     },
@@ -2856,7 +2883,15 @@
         },
         "coppermind": "Emul",
         "related": [
+            "events/dalinar-meets-odium",
+            "events/dalinar-visits-taravangian",
+            "events/end-of-emul-campaign",
+            "events/lurnip-famine",
+            "events/ruthar-replaced",
+            "events/taravangian-ascends",
+            "events/taravangians-treachery",
             "events/the-eightys-war",
+            "events/war-in-emul",
             "locations/sesemalex-dar"
         ]
     },
@@ -3043,6 +3078,7 @@
         },
         "coppermind": "Tukar",
         "related": [
+            "events/dalinar-meets-ishar",
             "events/the-eightys-war",
             "locations/sesemalex-dar"
         ]
@@ -4091,7 +4127,9 @@
             "events/shallan-attends-the-revel",
             "events/taln-arrives-in-kholinar",
             "events/trapped-in-shadesmar",
-            "locations/alethkar"
+            "events/raboniel-arrives",
+            "locations/alethkar",
+            "locations/kholinar-oathgate"
         ],
         "image": {
             "file": "locations/Kholinar_Illustratio_by_Daitengu_koh.jpg",
@@ -4102,7 +4140,8 @@
                 "y": 0
             }
         },
-        "coppermind": "Kholinar"
+        "coppermind": "Kholinar",
+        "cityDot": true
     },
     {
         "id": "rathalas",
@@ -4214,11 +4253,16 @@
             ]
         },
         "coppermind": "Rathalas",
+        "image": {
+            "file": "locations/Rathalas_by_Connor_Chamberlain.jpg",
+            "credits": "[Marie Seeberger](https://coppermind.net/wiki/Coppermind:Artists/Marie_Seeberger)"
+        },
         "related": [
             "events/dalinar-wins-oathbringer",
             "events/return-to-the-rift",
             "locations/alethkar"
-        ]
+        ],
+        "cityDot": true
     },
     {
         "id": "new-natanan",
@@ -4301,7 +4345,8 @@
                 }
             ]
         },
-        "coppermind": "New_Natanan"
+        "coppermind": "New_Natanan",
+        "cityDot": true
     },
     {
         "id": "thaylen-city",
@@ -4491,10 +4536,14 @@
         },
         "coppermind": "Thaylen_City",
         "related": [
+            "events/kings-drop-in-reserve",
             "events/oathgate-to-thaylen-city-opened",
             "events/the-battle-of-thaylen-field",
-            "locations/thaylenah"
-        ]
+            "events/wandersail-departure",
+            "locations/thaylenah",
+            "locations/thaylen-city-oathgate"
+        ],
+        "cityDot": true
     },
     {
         "id": "valley",
@@ -4672,8 +4721,7 @@
         },
         "related": [
             "characters/cultivation",
-            "events/dalinar-visits-the-nightwatcher",
-            "events/taravangian-visits-the-nightwatcher"
+            "events/dalinar-visits-the-nightwatcher"
         ]
     },
     {
@@ -4792,14 +4840,16 @@
         },
         "coppermind": "Narak",
         "related": [
-            "characters/eshonai",
-            "characters/venli",
             "events/battle-of-narak-and-the-everstorm",
             "events/bridge-four-begins-training-squires",
             "events/eshonai-adopts-stormform",
             "events/eshonai-seizes-control",
-            "locations/shattered-plains"
-        ]
+            "events/fourth-bridge-arrival",
+            "events/fourth-bridge-departure",
+            "locations/shattered-plains",
+            "locations/narak-oathgate"
+        ],
+        "cityDot": true
     },
     {
         "id": "hearthstone",
@@ -4895,6 +4945,15 @@
             ]
         },
         "coppermind": "Hearthstone",
+        "image": {
+            "file": "events/Thepathtohearthstone.png",
+            "credits": "[Ashley Coad](https://coppermind.net/wiki/Coppermind:Artists/Ashley_Coad)",
+            "size": 250,
+            "offset": {
+                "x": 10,
+                "y": 50
+            }
+        },
         "related": [
             "characters/kaladin",
             "events/kaladin-begins-training",
@@ -4904,8 +4963,10 @@
             "events/oroden-is-born",
             "events/roshone-arrives-in-hearthstone",
             "events/wistiow-dies",
+            "events/hearthstone-evacuated",
             "locations/alethkar"
-        ]
+        ],
+        "cityDot": true
     },
     {
         "id": "horneater-peaks",
@@ -5223,7 +5284,8 @@
         "related": [
             "events/kaladin-leaves-alethkar",
             "locations/alethkar"
-        ]
+        ],
+        "cityDot": true
     },
     {
         "id": "rall-elorim",
@@ -5345,8 +5407,10 @@
         "coppermind": "Rall_Elorim",
         "related": [
             "characters/lift",
-            "locations/iri"
-        ]
+            "locations/iri",
+            "locations/rall-elorim-oathgate"
+        ],
+        "cityDot": true
     },
     {
         "id": "kurth",
@@ -5439,8 +5503,10 @@
         },
         "coppermind": "Kurth",
         "related": [
-            "locations/rira"
-        ]
+            "locations/rira",
+            "locations/kurth-oathgate"
+        ],
+        "cityDot": true
     },
     {
         "id": "panatham",
@@ -5536,9 +5602,11 @@
             ]
         },
         "related": [
-            "locations/babatharnam"
+            "locations/babatharnam",
+            "locations/panatham-oathgate"
         ],
-        "coppermind": "Panatham"
+        "coppermind": "Panatham",
+        "cityDot": true
     },
     {
         "id": "azimir",
@@ -5652,9 +5720,11 @@
         "related": [
             "events/dalinar-travels-to-azimir",
             "events/lift-saves-gawx",
-            "locations/azir"
+            "locations/azir",
+            "locations/azimir-oathgate"
         ],
-        "coppermind": "Azimir"
+        "coppermind": "Azimir",
+        "cityDot": true
     },
     {
         "id": "vedenar",
@@ -5766,8 +5836,10 @@
             "events/dalinar-confronts-the-thrill-in-vedenar",
             "events/szeth-assassinates-hanavanar",
             "events/taravangian-crowned-king-of-jah-keved",
-            "locations/jah-keved"
-        ]
+            "locations/jah-keved",
+            "locations/vedenar-oathgate"
+        ],
+        "cityDot": true
     },
     {
         "id": "akak",
@@ -5987,7 +6059,8 @@
         "related": [
             "locations/alethkar"
         ],
-        "coppermind": "Varikev"
+        "coppermind": "Varikev",
+        "cityDot": true
     },
     {
         "id": "shulin",
@@ -6105,7 +6178,8 @@
         "coppermind": "Shulin",
         "related": [
             "locations/alethkar"
-        ]
+        ],
+        "cityDot": true
     },
     {
         "id": "karanak",
@@ -6211,7 +6285,8 @@
         "related": [
             "locations/alethkar"
         ],
-        "coppermind": "Karanak"
+        "coppermind": "Karanak",
+        "cityDot": true
     },
     {
         "id": "dumadari",
@@ -6321,7 +6396,8 @@
         "related": [
             "locations/alethkar"
         ],
-        "coppermind": "Dumadari"
+        "coppermind": "Dumadari",
+        "cityDot": true
     },
     {
         "id": "unclaimed-hills",
@@ -6501,6 +6577,10 @@
             ]
         },
         "coppermind": "Unclaimed_Hills",
+        "image": {
+            "file": "locations/The_Unclaimed_Hills_by_Marie_Seeberger.jpg",
+            "credits": "[Marie Seeberger](https://coppermind.net/wiki/Coppermind:Artists/Marie_Seeberger)"
+        },
         "related": [
             "events/jasnah-returns-from-shadesmar"
         ]
@@ -6626,7 +6706,8 @@
                 }
             ]
         },
-        "coppermind": "Dawn's_Shadow"
+        "coppermind": "Dawn's_Shadow",
+        "cityDot": true
     },
     {
         "id": "ocean-of-origins",
@@ -7048,6 +7129,15 @@
             ]
         },
         "coppermind": "Reshi_Sea",
+        "image": {
+            "file": "events/Tan-na_by_Marie_Seeberger.jpg",
+            "credits": "[Marie Seeberger](https://coppermind.net/wiki/Coppermind:Artists/Marie_Seeberger)",
+            "size": 200,
+            "offset": {
+                "x": 70,
+                "y": 0
+            }
+        },
         "related": [
             "events/rysn-in-the-reshi-isles"
         ]
@@ -7162,6 +7252,15 @@
             ]
         },
         "coppermind": "Reshi_Sea",
+        "image": {
+            "file": "events/Tan-na_by_Marie_Seeberger.jpg",
+            "credits": "[Marie Seeberger](https://coppermind.net/wiki/Coppermind:Artists/Marie_Seeberger)",
+            "size": 200,
+            "offset": {
+                "x": 70,
+                "y": 0
+            }
+        },
         "related": [
             "events/rysn-in-the-reshi-isles"
         ]
@@ -7788,7 +7887,10 @@
                 }
             ]
         },
-        "coppermind": "Southern_Depths"
+        "coppermind": "Southern_Depths",
+        "related": [
+            "events/first-dreams-discovered"
+        ]
     },
     {
         "id": "tarat-sea",
@@ -8489,7 +8591,8 @@
         "related": [
             "locations/thaylenah"
         ],
-        "coppermind": "Klna"
+        "coppermind": "Klna",
+        "cityDot": true
     },
     {
         "id": "frostlands",
@@ -8824,7 +8927,8 @@
         "coppermind": "Shallow_Crypts",
         "related": [
             "locations/frostlands"
-        ]
+        ],
+        "cityDot": true
     },
     {
         "id": "northgrip",
@@ -8966,7 +9070,8 @@
         "coppermind": "Northgrip",
         "related": [
             "locations/jah-keved"
-        ]
+        ],
+        "cityDot": true
     },
     {
         "id": "elanar",
@@ -9080,7 +9185,8 @@
         "coppermind": "Elanar",
         "related": [
             "locations/jah-keved"
-        ]
+        ],
+        "cityDot": true
     },
     {
         "id": "valath",
@@ -9190,7 +9296,8 @@
         "related": [
             "locations/jah-keved"
         ],
-        "coppermind": "Valath"
+        "coppermind": "Valath",
+        "cityDot": true
     },
     {
         "id": "silnasen",
@@ -9308,7 +9415,8 @@
         "related": [
             "locations/jah-keved"
         ],
-        "coppermind": "Silnasen"
+        "coppermind": "Silnasen",
+        "cityDot": true
     },
     {
         "id": "bavland",
@@ -10103,7 +10211,8 @@
             "locations/emul",
             "locations/tukar"
         ],
-        "coppermind": "Sesemalex_Dar"
+        "coppermind": "Sesemalex_Dar",
+        "cityDot": true
     },
     {
         "id": "yeddaw",
@@ -10222,7 +10331,8 @@
         "related": [
             "events/lift-saves-the-stump",
             "locations/tashikk"
-        ]
+        ],
+        "cityDot": true
     },
     {
         "id": "berizhet",
@@ -10340,7 +10450,8 @@
         "related": [
             "locations/liafor"
         ],
-        "coppermind": "Berizhet"
+        "coppermind": "Berizhet",
+        "cityDot": true
     },
     {
         "id": "yezier",
@@ -10891,7 +11002,8 @@
                     "y": 296.9777777777778
                 }
             ]
-        }
+        },
+        "cityDot": true
     },
     {
         "id": "steen",
@@ -11125,7 +11237,8 @@
                 }
             ]
         },
-        "coppermind": "Icewater"
+        "coppermind": "Icewater",
+        "cityDot": true
     },
     {
         "id": "misted-mountains",
@@ -11684,7 +11797,8 @@
         "coppermind": "Fu_Namir",
         "related": [
             "locations/yulay"
-        ]
+        ],
+        "cityDot": true
     },
     {
         "id": "tu-bayla",
@@ -11860,6 +11974,7 @@
             ]
         },
         "related": [
+            "events/bayala-dynastic-collapse",
             "locations/ru-parat"
         ],
         "coppermind": "Tu_Bayla"
@@ -11992,7 +12107,8 @@
         "coppermind": "Ru_Parat",
         "related": [
             "locations/tu-bayla"
-        ]
+        ],
+        "cityDot": true
     },
     {
         "id": "kasitor",
@@ -12106,7 +12222,8 @@
         "coppermind": "Kasitor",
         "related": [
             "locations/iri"
-        ]
+        ],
+        "cityDot": true
     },
     {
         "id": "eila",
@@ -12204,7 +12321,8 @@
                 }
             ]
         },
-        "coppermind": "Eila"
+        "coppermind": "Eila",
+        "cityDot": true
     },
     {
         "id": "quili",
@@ -12749,12 +12867,12 @@
             ],
             "es": [
                 {
-                    "x": 323.0988395358143,
-                    "y": 246.7913669064748
+                    "x": 325.3333333333333,
+                    "y": 249.42222222222222
                 },
                 {
-                    "x": 366.53381352541015,
-                    "y": 255.5907274180655
+                    "x": 368,
+                    "y": 259.02222222222224
                 },
                 {
                     "x": 405.46138455382146,
@@ -12769,8 +12887,8 @@
                     "y": 269.3013589128697
                 },
                 {
-                    "x": 320.4353741496599,
-                    "y": 260.7066346922462
+                    "x": 322.6666666666667,
+                    "y": 261.3333333333333
                 }
             ],
             "ru": [
@@ -12817,24 +12935,24 @@
             ],
             "zh": [
                 {
-                    "x": 342.2821403752606,
-                    "y": 247.11111111111111
+                    "x": 343.7714285714286,
+                    "y": 248.6857142857143
                 },
                 {
-                    "x": 369.67894371091035,
-                    "y": 249.60000000000002
+                    "x": 368.152380952381,
+                    "y": 252.95238095238096
                 },
                 {
                     "x": 386.7574704656011,
                     "y": 259.55555555555554
                 },
                 {
-                    "x": 382.4878387769284,
-                    "y": 276.97777777777776
+                    "x": 382.1714285714286,
+                    "y": 278.552380952381
                 },
                 {
-                    "x": 361.4954829742877,
-                    "y": 273.4222222222222
+                    "x": 358.40000000000003,
+                    "y": 270.62857142857143
                 },
                 {
                     "x": 339.4357192494788,
@@ -12843,138 +12961,170 @@
             ]
         },
         "image": {
-            "file": "locations/Honor's_Path_Kyle_Pearson.jpg",
-            "credits": "[Kyle Pearson](https://coppermind.net/wiki/Coppermind:Artists/Kyle_Pearson)"
+            "file": "locations/Over_the_sea_of_spheres_by_Zamoraalma.png",
+            "credits": "[Zamoraalma](https://www.artstation.com/Zamoraalma)",
+            "offset": {
+                "x": 50,
+                "y": 50
+            },
+            "size": 220
         },
-        "coppermind": "Sea_of_Regret"
+        "coppermind": "Sea_of_Regret",
+        "related": [
+            "locations/panatham-oathgate",
+            "locations/rall-elorim-oathgate"
+        ]
     },
     {
         "id": "sea-of-souls",
         "coordinates": {
-            "x": 517.7,
-            "y": 311
+            "x": 505.7,
+            "y": 328
         },
         "mapId": 85,
         "points": {
             "en": [
                 {
-                    "x": 476.1456582633053,
-                    "y": 313.0935251798561
+                    "x": 465.73007103393843,
+                    "y": 330.2036306235201
                 },
                 {
-                    "x": 518.5562224889956,
-                    "y": 303.27098321342925
+                    "x": 512.9092344119969,
+                    "y": 320
                 },
                 {
-                    "x": 555.6398559423769,
-                    "y": 303.8848920863309
+                    "x": 543.4191002367797,
+                    "y": 321.5153906866614
                 },
                 {
-                    "x": 555.6398559423769,
-                    "y": 316.36770583533166
+                    "x": 542.6108918705604,
+                    "y": 332.3251775848461
                 },
                 {
-                    "x": 518.9659863945578,
-                    "y": 318.0047961630695
+                    "x": 508.5333333333333,
+                    "y": 333.6
                 },
                 {
-                    "x": 480.0384153661464,
-                    "y": 327.2134292565947
+                    "x": 469.2659826361484,
+                    "y": 343.2359905288082
                 }
             ],
             "es": [
                 {
-                    "x": 461.28492501973165,
-                    "y": 316.11049723756906
+                    "x": 521.0666666666666,
+                    "y": 319.82222222222225
                 },
                 {
-                    "x": 518.5562224889956,
-                    "y": 303.27098321342925
+                    "x": 543.6444444444444,
+                    "y": 315.91111111111104
                 },
                 {
-                    "x": 570.9992107340173,
-                    "y": 303.785319652723
+                    "x": 564.6222222222223,
+                    "y": 307.73333333333335
                 },
                 {
-                    "x": 568.3725335438043,
-                    "y": 315.5043409629045
+                    "x": 568.5333333333333,
+                    "y": 317.3333333333333
                 },
                 {
-                    "x": 519.0718232044198,
-                    "y": 317.52486187845307
+                    "x": 535.2888888888889,
+                    "y": 327.6444444444444
                 },
                 {
-                    "x": 466.94238358326754,
-                    "y": 330.8602999210734
+                    "x": 498.1333333333333,
+                    "y": 333.15555555555557
+                },
+                {
+                    "x": 460.44444444444446,
+                    "y": 333.15555555555557
+                },
+                {
+                    "x": 461.5111111111111,
+                    "y": 320
+                },
+                {
+                    "x": 494.5777777777778,
+                    "y": 322.3111111111111
                 }
             ],
             "ru": [
                 {
-                    "x": 483.51065509076557,
-                    "y": 311.8674033149171
+                    "x": 483.68000000000006,
+                    "y": 325.92
                 },
                 {
-                    "x": 486.1373322809787,
-                    "y": 326.41515390686664
+                    "x": 487.6,
+                    "y": 339.44000000000005
                 },
                 {
-                    "x": 513.2123125493291,
-                    "y": 321.76795580110496
+                    "x": 513.6,
+                    "y": 331.84000000000003
                 },
                 {
-                    "x": 546.55090765588,
-                    "y": 320.95974743488557
+                    "x": 548.32,
+                    "y": 330
                 },
                 {
-                    "x": 548.9755327545382,
-                    "y": 311.46329913180745
+                    "x": 548.08,
+                    "y": 318.96000000000004
                 },
                 {
-                    "x": 550.1878453038674,
-                    "y": 303.1791633780584
+                    "x": 519.36,
+                    "y": 320.32
                 },
                 {
-                    "x": 507.5548539857932,
-                    "y": 305.19968429360694
-                },
-                {
-                    "x": 491.18863456985,
-                    "y": 307.2202052091555
+                    "x": 499.3066666666667,
+                    "y": 321.81333333333333
                 }
             ],
             "zh": [
                 {
-                    "x": 493.49826268241833,
-                    "y": 306.4888888888889
+                    "x": 477.86666666666673,
+                    "y": 326.70476190476194
                 },
                 {
-                    "x": 519.1160528144545,
-                    "y": 299.02222222222224
+                    "x": 500.41904761904766,
+                    "y": 318.1714285714286
                 },
                 {
-                    "x": 537.9735927727588,
-                    "y": 299.73333333333335
+                    "x": 526.0190476190477,
+                    "y": 318.1714285714286
                 },
                 {
-                    "x": 542.954829742877,
-                    "y": 321.4222222222222
+                    "x": 526.6285714285715,
+                    "y": 337.0666666666667
                 },
                 {
-                    "x": 519.4718554551772,
-                    "y": 321.77777777777777
+                    "x": 502.2476190476191,
+                    "y": 339.50476190476195
                 },
                 {
-                    "x": 495.27727588603193,
-                    "y": 325.6888888888889
+                    "x": 480.91428571428577,
+                    "y": 344.9904761904762
                 }
             ]
         },
         "shadesmar": true,
         "image": {
-            "file": "locations/Honor's_Path_Kyle_Pearson.jpg",
-            "credits": "[Kyle Pearson](https://coppermind.net/wiki/Coppermind:Artists/Kyle_Pearson)"
+            "file": "locations/Sea_of_Souls.jpg",
+            "credits": "[Isaac Stewart](https://coppermind.net/wiki/Coppermind:Artists/Isaac_Stewart)",
+            "size": 150,
+            "offset": {
+                "x": 50,
+                "y": 50
+            }
         },
-        "coppermind": "Sea_of_Souls"
+        "coppermind": "Sea_of_Souls",
+        "related": [
+            "locations/astral-banks",
+            "locations/azimir-oathgate",
+            "locations/basin-of-the-veiled-sun",
+            "locations/empyrean-gulf",
+            "locations/lasting-integrity",
+            "locations/nameless",
+            "locations/nohadons-stairways",
+            "locations/radiant-depths"
+        ]
     },
     {
         "id": "sea-of-lost-lights",
@@ -12986,122 +13136,126 @@
         "points": {
             "en": [
                 {
-                    "x": 620.484993997599,
-                    "y": 247.09832134292563
+                    "x": 624.0378847671666,
+                    "y": 244.4325177584846
                 },
                 {
-                    "x": 672.7298919567827,
-                    "y": 258.14868105515586
+                    "x": 674.6519337016574,
+                    "y": 254.939226519337
                 },
                 {
-                    "x": 729.2773109243697,
-                    "y": 264.28776978417267
+                    "x": 731.6306235201263,
+                    "y": 262.41515390686664
                 },
                 {
-                    "x": 730.5066026410564,
-                    "y": 278.1007194244604
+                    "x": 731.8326756116811,
+                    "y": 274.4372533543804
                 },
                 {
-                    "x": 671.1932773109244,
-                    "y": 272.26858513189444
+                    "x": 672.0252565114444,
+                    "y": 268.27466456195737
                 },
                 {
-                    "x": 615.5678271308523,
-                    "y": 259.9904076738609
+                    "x": 618.2794001578532,
+                    "y": 257.060773480663
                 }
             ],
             "es": [
                 {
-                    "x": 601.1049723756906,
-                    "y": 242.76558800315706
+                    "x": 654.5777777777779,
+                    "y": 256.35555555555555
                 },
                 {
-                    "x": 678.8950276243094,
-                    "y": 261.9605367008682
+                    "x": 704,
+                    "y": 263.1111111111111
                 },
                 {
-                    "x": 752.4419889502763,
-                    "y": 268.42620363062355
+                    "x": 755.3777777777777,
+                    "y": 266.1333333333333
                 },
                 {
-                    "x": 750.017363851618,
-                    "y": 280.95343330702445
+                    "x": 755.5555555555555,
+                    "y": 275.73333333333335
                 },
                 {
-                    "x": 673.0355169692186,
-                    "y": 274.4877663772691
+                    "x": 692.6222222222221,
+                    "y": 272
                 },
                 {
-                    "x": 594.2352012628256,
-                    "y": 258.5256511444357
+                    "x": 651.7333333333333,
+                    "y": 266.4888888888889
+                },
+                {
+                    "x": 604.0888888888888,
+                    "y": 256.8888888888889
+                },
+                {
+                    "x": 608.1777777777778,
+                    "y": 244.62222222222223
                 }
             ],
             "ru": [
                 {
-                    "x": 605.5501183898974,
-                    "y": 242.96764009471192
+                    "x": 592.6,
+                    "y": 236.20000000000002
                 },
                 {
-                    "x": 599.8926598263615,
-                    "y": 257.71744277821625
+                    "x": 588.6,
+                    "y": 251
                 },
                 {
-                    "x": 648.7892659826362,
-                    "y": 271.86108918705605
+                    "x": 623.6,
+                    "y": 258.26666666666665
                 },
                 {
-                    "x": 676.672454617206,
-                    "y": 276.10418310970795
+                    "x": 670.1333333333333,
+                    "y": 266.6666666666667
                 },
                 {
-                    "x": 706.5761641673244,
-                    "y": 278.93291239147595
+                    "x": 700,
+                    "y": 269.2
                 },
                 {
-                    "x": 739.3086029992107,
-                    "y": 282.16574585635357
+                    "x": 734.64,
+                    "y": 271.52
                 },
                 {
-                    "x": 747.18863456985,
-                    "y": 281.96369376479873
+                    "x": 731.52,
+                    "y": 259.36
                 },
                 {
-                    "x": 744.7640094711918,
-                    "y": 264.1831097079716
+                    "x": 674.6666666666666,
+                    "y": 254.26666666666665
                 },
                 {
-                    "x": 691.4222573007104,
-                    "y": 262.16258879242304
-                },
-                {
-                    "x": 626.5635359116022,
-                    "y": 249.43330702446724
+                    "x": 632,
+                    "y": 246
                 }
             ],
             "zh": [
                 {
-                    "x": 627.2800555941626,
-                    "y": 248.53333333333333
+                    "x": 629.0285714285715,
+                    "y": 237.71428571428572
                 },
                 {
-                    "x": 671.7553856845032,
-                    "y": 253.51111111111112
+                    "x": 672.9142857142858,
+                    "y": 250.51428571428573
                 },
                 {
-                    "x": 727.9722029186935,
-                    "y": 261.6888888888889
+                    "x": 725.3333333333334,
+                    "y": 255.39047619047622
                 },
                 {
-                    "x": 724.0583738707436,
-                    "y": 283.02222222222224
+                    "x": 724.1142857142858,
+                    "y": 274.28571428571433
                 },
                 {
-                    "x": 670.3321751216122,
-                    "y": 278.0444444444445
+                    "x": 671.0857142857144,
+                    "y": 271.84761904761905
                 },
                 {
-                    "x": 619.4523974982627,
-                    "y": 266.31111111111113
+                    "x": 619.2761904761905,
+                    "y": 257.8285714285715
                 }
             ]
         },
@@ -13115,7 +13269,18 @@
             }
         },
         "shadesmar": true,
-        "coppermind": "Sea_of_Lost_Lights"
+        "coppermind": "Sea_of_Lost_Lights",
+        "related": [
+            "locations/celebrant",
+            "locations/glasswater-deep",
+            "locations/kholinar-oathgate",
+            "locations/luminous-shallows",
+            "locations/narak-oathgate",
+            "locations/riinos-lighthouse",
+            "locations/salavashi-trench",
+            "locations/sea-of-oracles",
+            "locations/vedenar-oathgate"
+        ]
     },
     {
         "id": "nexus-of-imagination",
@@ -13196,28 +13361,28 @@
                     "y": 459.7695343330702
                 },
                 {
-                    "x": 531.8011049723757,
-                    "y": 462.80031570639306
+                    "x": 532.1333333333333,
+                    "y": 461.0666666666666
                 },
                 {
-                    "x": 561.3007103393844,
-                    "y": 461.18389897395423
+                    "x": 572.4,
+                    "y": 459.6
                 },
                 {
-                    "x": 603.1254932912392,
-                    "y": 458.96132596685084
+                    "x": 602.1333333333333,
+                    "y": 456.40000000000003
                 },
                 {
                     "x": 608.3788476716653,
                     "y": 452.4956590370955
                 },
                 {
-                    "x": 603.9337016574585,
-                    "y": 438.14996053670086
+                    "x": 605.6,
+                    "y": 442.9333333333334
                 },
                 {
-                    "x": 527.9621152328334,
-                    "y": 444.2115232833465
+                    "x": 528.4,
+                    "y": 445.8666666666666
                 },
                 {
                     "x": 452.3946329913181,
@@ -13327,40 +13492,40 @@
                     "y": 120.92817679558011
                 },
                 {
-                    "x": 282.26677190213104,
-                    "y": 113.65430149960537
+                    "x": 284.8,
+                    "y": 115.06666666666666
                 },
                 {
-                    "x": 292.9755327545383,
-                    "y": 109.00710339384372
+                    "x": 294.6666666666667,
+                    "y": 109.33333333333336
                 },
                 {
-                    "x": 319.8484609313339,
-                    "y": 92.64088397790056
+                    "x": 322.0666666666667,
+                    "y": 92
                 },
                 {
-                    "x": 327.930544593528,
-                    "y": 103.14759273875296
+                    "x": 329.0666666666667,
+                    "y": 100.93333333333335
                 },
                 {
                     "x": 289.5406471981058,
                     "y": 130.02052091554853
                 },
                 {
-                    "x": 259.8389897395422,
-                    "y": 160.9344909234412
+                    "x": 258.2666666666667,
+                    "y": 158.53333333333336
                 },
                 {
-                    "x": 241.25019731649567,
-                    "y": 179.11917916337805
+                    "x": 240,
+                    "y": 176.4
                 },
                 {
-                    "x": 225.2880820836622,
-                    "y": 193.66692975532754
+                    "x": 224.2666666666667,
+                    "y": 193
                 },
                 {
-                    "x": 214.98342541436463,
-                    "y": 187.80741910023679
+                    "x": 214.8666666666667,
+                    "y": 190
                 },
                 {
                     "x": 216.19573796369377,
@@ -13465,48 +13630,48 @@
             ],
             "ru": [
                 {
-                    "x": 411.37805840568274,
-                    "y": 115.03499079189686
+                    "x": 408.66666666666674,
+                    "y": 114.80000000000001
                 },
                 {
-                    "x": 413.6679821099711,
-                    "y": 122.7129702709813
+                    "x": 411.73333333333335,
+                    "y": 122.86666666666666
                 },
                 {
-                    "x": 420.5377532228361,
-                    "y": 125.13759536963956
+                    "x": 420.86666666666673,
+                    "y": 123.06666666666666
                 },
                 {
-                    "x": 431.0444619836885,
-                    "y": 122.7129702709813
+                    "x": 433.1333333333333,
+                    "y": 121.2
                 },
                 {
-                    "x": 449.90265719547483,
-                    "y": 123.38647724283085
+                    "x": 450.4666666666667,
+                    "y": 120.86666666666666
                 },
                 {
-                    "x": 474.95711654827676,
-                    "y": 120.55774796106289
+                    "x": 473.5333333333333,
+                    "y": 118.4
                 },
                 {
                     "x": 497.8563535911602,
                     "y": 119.07603262299394
                 },
                 {
-                    "x": 515.3675348592475,
-                    "y": 121.90476190476188
+                    "x": 515.6,
+                    "y": 119.73333333333335
                 },
                 {
-                    "x": 536.919757958432,
-                    "y": 124.32938700342014
+                    "x": 536.6666666666667,
+                    "y": 122.06666666666666
                 },
                 {
-                    "x": 556.7208629308077,
-                    "y": 127.69692186266772
+                    "x": 557.8000000000001,
+                    "y": 124.86666666666666
                 },
                 {
-                    "x": 559.4148908182057,
-                    "y": 121.6353591160221
+                    "x": 560.9333333333333,
+                    "y": 121.46666666666665
                 },
                 {
                     "x": 558.7413838463563,
@@ -13563,20 +13728,20 @@
                     "y": 121.60000000000001
                 },
                 {
-                    "x": 441.9068797776233,
-                    "y": 121.60000000000001
+                    "x": 441.2952380952381,
+                    "y": 124.34285714285716
                 }
             ]
         }
     },
     {
         "id": "expanse-of-the-broken-sky",
+        "mapId": 90,
         "coordinates": {
             "x": 836.1,
             "y": 96.2
         },
         "shadesmar": true,
-        "mapId": 90,
         "points": {
             "en": [
                 {
@@ -13664,36 +13829,36 @@
             ],
             "ru": [
                 {
-                    "x": 756.6850828729282,
-                    "y": 52.0284135753749
+                    "x": 753.7333333333333,
+                    "y": 46.53333333333335
                 },
                 {
-                    "x": 793.2565114443568,
-                    "y": 70.4151539068666
+                    "x": 794.8000000000001,
+                    "y": 67.86666666666666
                 },
                 {
-                    "x": 828.4135753749014,
-                    "y": 98.90449881610103
+                    "x": 827.8666666666668,
+                    "y": 92.93333333333335
                 },
                 {
-                    "x": 851.043409629045,
-                    "y": 125.17127071823204
+                    "x": 854.1333333333332,
+                    "y": 122.80000000000001
                 },
                 {
-                    "x": 871.8547750591949,
-                    "y": 156.28729281767957
+                    "x": 871.7333333333332,
+                    "y": 150.4
                 },
                 {
-                    "x": 882.5635359116022,
-                    "y": 177.90686661404894
+                    "x": 886.2666666666669,
+                    "y": 178.4
                 },
                 {
-                    "x": 891.8579321231255,
-                    "y": 175.8863456985004
+                    "x": 895.8666666666668,
+                    "y": 176.8
                 },
                 {
-                    "x": 895.6969218626678,
-                    "y": 170.02683504340962
+                    "x": 896.9333333333333,
+                    "y": 168.4
                 },
                 {
                     "x": 892.6661404893449,
@@ -13799,11 +13964,11 @@
     },
     {
         "id": "expanse-of-the-vapors",
+        "mapId": 91,
         "coordinates": {
             "x": 839.6,
             "y": 415.2
         },
-        "mapId": 91,
         "points": {
             "en": [
                 {
@@ -13883,20 +14048,20 @@
             ],
             "ru": [
                 {
-                    "x": 794.0647198105762,
-                    "y": 440.7429623783214
+                    "x": 795.12,
+                    "y": 442.56000000000006
                 },
                 {
-                    "x": 817.0986582478295,
-                    "y": 426.19521178637194
+                    "x": 818.4000000000001,
+                    "y": 426.96000000000004
                 },
                 {
-                    "x": 836.6303604314653,
-                    "y": 407.3370165745856
+                    "x": 840.1600000000001,
+                    "y": 406.32
                 },
                 {
-                    "x": 846.4635622204685,
-                    "y": 391.84635622204684
+                    "x": 845.7600000000001,
+                    "y": 394.8
                 },
                 {
                     "x": 850.2352012628256,
@@ -13907,16 +14072,16 @@
                     "y": 384.1683767429624
                 },
                 {
-                    "x": 862.4930281504866,
-                    "y": 369.62062615101286
+                    "x": 863.68,
+                    "y": 371.44000000000005
                 },
                 {
-                    "x": 865.052354643515,
-                    "y": 362.8855564325178
+                    "x": 867.6,
+                    "y": 363.6
                 },
                 {
-                    "x": 877.310181531176,
-                    "y": 364.9060773480663
+                    "x": 879.2,
+                    "y": 363.68000000000006
                 },
                 {
                     "x": 874.8855564325178,
@@ -13943,20 +14108,20 @@
                     "y": 452.86608787161265
                 },
                 {
-                    "x": 783.4233096553539,
-                    "y": 460.40936595632735
+                    "x": 784.48,
+                    "y": 461.12
                 },
                 {
-                    "x": 781.6721915285451,
-                    "y": 453.40489344909236
+                    "x": 780.32,
+                    "y": 453.92
                 },
                 {
-                    "x": 778.8434622467771,
-                    "y": 445.99631675874764
+                    "x": 778.72,
+                    "y": 448.08000000000004
                 },
                 {
-                    "x": 790.4277821625888,
-                    "y": 440.47355958958167
+                    "x": 790.8800000000001,
+                    "y": 442.8
                 }
             ],
             "zh": [
@@ -14003,13 +14168,11 @@
     },
     {
         "id": "expanse-of-vibrance",
+        "mapId": 92,
         "coordinates": {
             "x": 185.3,
             "y": 419.2
         },
-        "shadesmar": true,
-        "coppermind": "Expanse_of_Vibrance",
-        "mapId": 92,
         "points": {
             "en": [
                 {
@@ -14085,8 +14248,8 @@
             ],
             "ru": [
                 {
-                    "x": 133.35438042620362,
-                    "y": 359.5516969218627
+                    "x": 131.8,
+                    "y": 356.20000000000005
                 },
                 {
                     "x": 143.25493291239147,
@@ -14113,56 +14276,56 @@
                     "y": 460.5777426992897
                 },
                 {
-                    "x": 245.08918705603787,
-                    "y": 470.0741910023678
+                    "x": 246,
+                    "y": 471.3
                 },
                 {
-                    "x": 250.34254143646407,
-                    "y": 468.2557221783741
+                    "x": 251.60000000000002,
+                    "y": 469
                 },
                 {
-                    "x": 252.9692186266772,
-                    "y": 461.9921073401736
+                    "x": 253.8,
+                    "y": 460.6
                 },
                 {
-                    "x": 251.1507498026835,
-                    "y": 455.930544593528
+                    "x": 246.8,
+                    "y": 457.8
                 },
                 {
-                    "x": 214.7813733228098,
-                    "y": 437.947908445146
+                    "x": 211.60000000000002,
+                    "y": 438
                 },
                 {
-                    "x": 190.1310181531176,
-                    "y": 413.49960536700866
+                    "x": 193,
+                    "y": 418.40000000000003
                 },
                 {
-                    "x": 185.28176795580112,
-                    "y": 413.2975532754538
+                    "x": 182.70000000000002,
+                    "y": 412.20000000000005
                 },
                 {
-                    "x": 167.50118389897395,
-                    "y": 390.26361483820045
+                    "x": 165.10000000000002,
+                    "y": 390.90000000000003
                 },
                 {
-                    "x": 158.20678768745066,
-                    "y": 374.301499605367
+                    "x": 156.10000000000002,
+                    "y": 375.20000000000005
                 },
                 {
-                    "x": 153.55958958168904,
-                    "y": 365.2091554853986
+                    "x": 150.9,
+                    "y": 366.40000000000003
                 },
                 {
-                    "x": 151.74112075769534,
-                    "y": 356.92501973164957
+                    "x": 149.1,
+                    "y": 357.5
                 },
                 {
-                    "x": 147.9021310181531,
-                    "y": 351.0655090765588
+                    "x": 145.8,
+                    "y": 350.70000000000005
                 },
                 {
-                    "x": 137.59747434885557,
-                    "y": 353.49013417521707
+                    "x": 137.3,
+                    "y": 351.1
                 }
             ],
             "zh": [
@@ -14199,15 +14362,17 @@
                     "y": 385.06666666666666
                 }
             ]
-        }
+        },
+        "shadesmar": true,
+        "coppermind": "Expanse_of_Vibrance"
     },
     {
         "id": "expanse-of-the-densities",
+        "mapId": 93,
         "coordinates": {
             "x": 189,
             "y": 91.4
         },
-        "mapId": 93,
         "points": {
             "en": [
                 {
@@ -14279,24 +14444,24 @@
             ],
             "ru": [
                 {
-                    "x": 146.82451986319387,
-                    "y": 137.79952644041043
+                    "x": 148.4,
+                    "y": 138.6
                 },
                 {
-                    "x": 165.9521178637201,
-                    "y": 105.6058931860037
+                    "x": 167.3,
+                    "y": 105.30000000000001
                 },
                 {
-                    "x": 185.48382004735595,
-                    "y": 84.45777426992896
+                    "x": 178.8,
+                    "y": 94.30000000000001
                 },
                 {
                     "x": 193.43120231518026,
                     "y": 75.9715864246251
                 },
                 {
-                    "x": 199.08866087871615,
-                    "y": 72.60405156537752
+                    "x": 203.8,
+                    "y": 70.3
                 },
                 {
                     "x": 246.09944751381215,
@@ -14307,40 +14472,40 @@
                     "y": 44.04735595895817
                 },
                 {
-                    "x": 257.14496185214415,
-                    "y": 55.227571691660074
+                    "x": 257,
+                    "y": 52.7
                 },
                 {
-                    "x": 233.03341225993162,
-                    "y": 67.35069718495131
+                    "x": 232.70000000000002,
+                    "y": 65.7
                 },
                 {
-                    "x": 203.80320968166268,
-                    "y": 89.30702446724545
+                    "x": 203.9,
+                    "y": 86
                 },
                 {
-                    "x": 184.27150749802684,
-                    "y": 108.56932386214153
+                    "x": 183,
+                    "y": 106.7
                 },
                 {
-                    "x": 169.8584583004472,
-                    "y": 127.83162325703763
+                    "x": 168.9,
+                    "y": 126.4
                 },
                 {
                     "x": 162.58458300447248,
                     "y": 139.14654038410947
                 },
                 {
-                    "x": 152.75138121546962,
-                    "y": 158.54354117337544
+                    "x": 149.9,
+                    "y": 160.60000000000002
                 },
                 {
-                    "x": 138.47303341225995,
-                    "y": 152.6166798210997
+                    "x": 137.3,
+                    "y": 155
                 },
                 {
-                    "x": 143.1875822152065,
-                    "y": 140.22415153906866
+                    "x": 142.5,
+                    "y": 142.8
                 }
             ],
             "zh": [
@@ -14383,121 +14548,3380 @@
     },
     {
         "id": "celebrant",
-        "coordinates": {
-            "x": 705.7,
-            "y": 316.7
-        },
         "mapId": 94,
+        "coordinates": {
+            "x": 708.6,
+            "y": 319.5
+        },
         "points": {
             "en": [
                 {
-                    "x": 704.1,
-                    "y": 316.3
+                    "x": 709.1018153117601,
+                    "y": 315.2517758484609
                 },
                 {
-                    "x": 734.1,
-                    "y": 316.2
+                    "x": 740.4198895027624,
+                    "y": 315.2517758484609
                 },
                 {
-                    "x": 735.2,
-                    "y": 326.9
+                    "x": 740.6219415943173,
+                    "y": 324.6471981057616
                 },
                 {
-                    "x": 702.2,
-                    "y": 326.7
+                    "x": 709.6069455406472,
+                    "y": 325.15232833464876
                 }
             ],
             "es": [
                 {
-                    "x": 704.1,
-                    "y": 316.3
+                    "x": 709.1018153117601,
+                    "y": 315.2517758484609
                 },
                 {
-                    "x": 734.1,
-                    "y": 316.2
+                    "x": 740.4198895027624,
+                    "y": 315.2517758484609
                 },
                 {
-                    "x": 735.2,
-                    "y": 326.9
+                    "x": 740.6219415943173,
+                    "y": 324.6471981057616
                 },
                 {
-                    "x": 702.2,
-                    "y": 326.7
+                    "x": 709.6069455406472,
+                    "y": 325.15232833464876
                 }
             ],
             "ru": [
                 {
-                    "x": 700.0431465403841,
-                    "y": 320.18521441725863
+                    "x": 710.48,
+                    "y": 314.64000000000004
                 },
                 {
-                    "x": 700.7166535122336,
-                    "y": 326.51617995264405
+                    "x": 708.8800000000001,
+                    "y": 324.08000000000004
                 },
                 {
-                    "x": 707.047619047619,
-                    "y": 328.6714022625625
+                    "x": 727.8933333333333,
+                    "y": 324.26666666666665
                 },
                 {
-                    "x": 717.1502236253618,
-                    "y": 327.8631938963431
+                    "x": 731.04,
+                    "y": 326.56
                 },
                 {
-                    "x": 721.0565640620889,
-                    "y": 328.80610365693235
+                    "x": 734.5066666666667,
+                    "y": 324.15999999999997
                 },
                 {
-                    "x": 724.5588003157064,
-                    "y": 327.1896869244935
+                    "x": 747.2,
+                    "y": 324.48
                 },
                 {
-                    "x": 737.7595369639569,
-                    "y": 327.72849250197316
+                    "x": 747.6,
+                    "y": 316.72
                 },
                 {
-                    "x": 738.1636411470666,
-                    "y": 319.9158116285188
+                    "x": 729.4933333333333,
+                    "y": 315.62666666666667
                 },
                 {
-                    "x": 734.1225993159695,
-                    "y": 317.6258879242305
-                },
-                {
-                    "x": 721.9994738226783,
-                    "y": 316.81767955801104
-                },
-                {
-                    "x": 708.7987371744277,
-                    "y": 316.81767955801104
-                },
-                {
-                    "x": 702.4677716390423,
-                    "y": 316.4135753749013
+                    "x": 718.08,
+                    "y": 316.6933333333333
                 }
             ],
             "zh": [
                 {
-                    "x": 702.7102154273801,
-                    "y": 312.8888888888889
+                    "x": 714.3619047619048,
+                    "y": 312.6857142857143
                 },
                 {
-                    "x": 732.9534398888117,
-                    "y": 311.82222222222225
+                    "x": 738.1333333333334,
+                    "y": 312.0761904761905
                 },
                 {
-                    "x": 735.2,
-                    "y": 326.9
+                    "x": 741.7904761904763,
+                    "y": 327.31428571428575
                 },
                 {
-                    "x": 702.2,
-                    "y": 326.7
+                    "x": 713.1428571428572,
+                    "y": 328.53333333333336
                 }
             ]
         },
         "shadesmar": true,
         "coppermind": "Celebrant",
         "related": [
-            "events/stop-in-celebrant"
+            "events/stop-in-celebrant",
+            "locations/sea-of-lost-lights"
+        ],
+        "cityDot": true
+    },
+    {
+        "id": "nameless",
+        "mapId": 95,
+        "coordinates": {
+            "x": 453.2,
+            "y": 382.5
+        },
+        "points": {
+            "en": [
+                {
+                    "x": 484.26666666666665,
+                    "y": 384.1333333333333
+                },
+                {
+                    "x": 454.93333333333334,
+                    "y": 383.73333333333335
+                },
+                {
+                    "x": 454,
+                    "y": 374.93333333333334
+                },
+                {
+                    "x": 483.46666666666664,
+                    "y": 375.2
+                }
+            ],
+            "es": [
+                {
+                    "x": 490.6666666666667,
+                    "y": 383.8222222222222
+                },
+                {
+                    "x": 454.93333333333334,
+                    "y": 383.73333333333335
+                },
+                {
+                    "x": 454,
+                    "y": 374.93333333333334
+                },
+                {
+                    "x": 490.6666666666667,
+                    "y": 375.11111111111114
+                }
+            ],
+            "ru": [
+                {
+                    "x": 453.92,
+                    "y": 375.20000000000005
+                },
+                {
+                    "x": 461.3333333333333,
+                    "y": 375.31428571428575
+                },
+                {
+                    "x": 461.71428571428567,
+                    "y": 376.68571428571425
+                },
+                {
+                    "x": 492.87619047619046,
+                    "y": 376.9904761904762
+                },
+                {
+                    "x": 493.8666666666667,
+                    "y": 375.0095238095238
+                },
+                {
+                    "x": 499.68000000000006,
+                    "y": 375.44000000000005
+                },
+                {
+                    "x": 501.03999999999996,
+                    "y": 383.92
+                },
+                {
+                    "x": 452.96000000000004,
+                    "y": 384.08000000000004
+                }
+            ],
+            "zh": [
+                {
+                    "x": 488.22857142857146,
+                    "y": 388.8761904761905
+                },
+                {
+                    "x": 450.4380952380953,
+                    "y": 386.4380952380953
+                },
+                {
+                    "x": 451.0476190476191,
+                    "y": 372.41904761904766
+                },
+                {
+                    "x": 490.0571428571429,
+                    "y": 372.41904761904766
+                }
+            ]
+        },
+        "shadesmar": true,
+        "coppermind": "Nameless",
+        "related": [
+            "events/nameless-arrival",
+            "locations/radiant-depths",
+            "locations/sea-of-souls"
+        ],
+        "cityDot": true
+    },
+    {
+        "id": "nohadons-stairways",
+        "mapId": 96,
+        "coordinates": {
+            "x": 485.9,
+            "y": 317.5
+        },
+        "points": {
+            "en": [
+                {
+                    "x": 540.5333333333333,
+                    "y": 306.5333333333333
+                },
+                {
+                    "x": 540.8,
+                    "y": 316.5333333333333
+                },
+                {
+                    "x": 481.73333333333335,
+                    "y": 317.06666666666666
+                },
+                {
+                    "x": 481.59999999999997,
+                    "y": 306.6666666666667
+                }
+            ],
+            "es": [
+                {
+                    "x": 544.1777777777777,
+                    "y": 306.1333333333333
+                },
+                {
+                    "x": 544.3555555555556,
+                    "y": 315.5555555555556
+                },
+                {
+                    "x": 480.7111111111111,
+                    "y": 316.62222222222226
+                },
+                {
+                    "x": 481.59999999999997,
+                    "y": 306.6666666666667
+                }
+            ],
+            "ru": [
+                {
+                    "x": 479.76000000000005,
+                    "y": 306.48
+                },
+                {
+                    "x": 488.35555555555555,
+                    "y": 306.48888888888894
+                },
+                {
+                    "x": 488.88888888888886,
+                    "y": 308
+                },
+                {
+                    "x": 512.2666666666667,
+                    "y": 308.17777777777775
+                },
+                {
+                    "x": 514.2222222222222,
+                    "y": 306.3111111111111
+                },
+                {
+                    "x": 520.6222222222221,
+                    "y": 306.7555555555556
+                },
+                {
+                    "x": 522.3111111111111,
+                    "y": 308.26666666666665
+                },
+                {
+                    "x": 548.4,
+                    "y": 308.48
+                },
+                {
+                    "x": 549.36,
+                    "y": 314.88000000000005
+                },
+                {
+                    "x": 516.4,
+                    "y": 316.24
+                },
+                {
+                    "x": 508.5333333333333,
+                    "y": 316.26666666666665
+                },
+                {
+                    "x": 505.24444444444447,
+                    "y": 315.46666666666664
+                },
+                {
+                    "x": 478,
+                    "y": 315.92
+                }
+            ],
+            "zh": [
+                {
+                    "x": 543.0857142857143,
+                    "y": 301.7142857142857
+                },
+                {
+                    "x": 543.0857142857143,
+                    "y": 318.1714285714286
+                },
+                {
+                    "x": 478.47619047619054,
+                    "y": 316.95238095238096
+                },
+                {
+                    "x": 480.91428571428577,
+                    "y": 302.32380952380953
+                }
+            ]
+        },
+        "shadesmar": true,
+        "coppermind": "Nohadon's Staircases",
+        "related": [
+            "events/shadesmar-envoy-departs",
+            "locations/sea-of-souls",
+            "locations/urithiru"
+        ],
+        "cityDot": true
+    },
+    {
+        "id": "lasting-integrity",
+        "mapId": 97,
+        "coordinates": {
+            "x": 412.5,
+            "y": 391.9
+        },
+        "points": {
+            "en": [
+                {
+                    "x": 410.1333333333333,
+                    "y": 393.73333333333335
+                },
+                {
+                    "x": 409.46666666666664,
+                    "y": 403.8666666666667
+                },
+                {
+                    "x": 456.93333333333334,
+                    "y": 404.5333333333333
+                },
+                {
+                    "x": 459.59999999999997,
+                    "y": 393.73333333333335
+                }
+            ],
+            "es": [
+                {
+                    "x": 410.1333333333333,
+                    "y": 393.73333333333335
+                },
+                {
+                    "x": 409.46666666666664,
+                    "y": 403.8666666666667
+                },
+                {
+                    "x": 468.9777777777778,
+                    "y": 403.91111111111115
+                },
+                {
+                    "x": 468.9777777777778,
+                    "y": 393.9555555555555
+                }
+            ],
+            "ru": [
+                {
+                    "x": 408.96000000000004,
+                    "y": 393.92
+                },
+                {
+                    "x": 415.73333333333335,
+                    "y": 393.8
+                },
+                {
+                    "x": 416.93333333333334,
+                    "y": 395.1333333333333
+                },
+                {
+                    "x": 419.3333333333333,
+                    "y": 395.06666666666666
+                },
+                {
+                    "x": 421.1333333333333,
+                    "y": 393.8666666666667
+                },
+                {
+                    "x": 425.06666666666666,
+                    "y": 394
+                },
+                {
+                    "x": 426.93333333333334,
+                    "y": 395.46666666666664
+                },
+                {
+                    "x": 434.8,
+                    "y": 395.46666666666664
+                },
+                {
+                    "x": 435.3333333333333,
+                    "y": 394.3333333333333
+                },
+                {
+                    "x": 442.26666666666665,
+                    "y": 394.26666666666665
+                },
+                {
+                    "x": 444.06666666666666,
+                    "y": 395.2
+                },
+                {
+                    "x": 463.36000000000007,
+                    "y": 395.04
+                },
+                {
+                    "x": 465.03999999999996,
+                    "y": 402.24
+                },
+                {
+                    "x": 445.1333333333333,
+                    "y": 402.5333333333333
+                },
+                {
+                    "x": 445.1333333333333,
+                    "y": 403.6666666666667
+                },
+                {
+                    "x": 439.8,
+                    "y": 404
+                },
+                {
+                    "x": 438.73333333333335,
+                    "y": 402.8
+                },
+                {
+                    "x": 407.84,
+                    "y": 402.56
+                }
+            ],
+            "zh": [
+                {
+                    "x": 416.91428571428577,
+                    "y": 391.31428571428575
+                },
+                {
+                    "x": 415.69523809523815,
+                    "y": 406.552380952381
+                },
+                {
+                    "x": 455.92380952380955,
+                    "y": 407.1619047619048
+                },
+                {
+                    "x": 454.09523809523813,
+                    "y": 390.70476190476194
+                }
+            ]
+        },
+        "shadesmar": true,
+        "coppermind": "Lasting Integrity",
+        "related": [
+            "events/adolin-murders-sadeas",
+            "events/adolin-trial-day-1",
+            "events/adolin-trial-day-2",
+            "events/adolin-trial-day-3",
+            "events/azure-leaves-lasting-integrity",
+            "events/lasting-integrity-arrival",
+            "events/shallan-leaves-ghostbloods",
+            "events/veil-reintegrated",
+            "locations/astral-banks",
+            "locations/sea-of-souls"
+        ],
+        "image": {
+            "file": "locations/Lasting_Integrity_US_Cover_Crop.jpg",
+            "credits": "[Michael Whelan](https://coppermind.net/wiki/Coppermind:Artists/Michael_Whelan)",
+            "offset": {
+                "x": 0,
+                "y": 30
+            }
+        },
+        "cityDot": true
+    },
+    {
+        "id": "astral-banks",
+        "mapId": 98,
+        "coordinates": {
+            "x": 412.8,
+            "y": 377.4
+        },
+        "points": {
+            "en": [
+                {
+                    "x": 385.77777777777777,
+                    "y": 370.6666666666667
+                },
+                {
+                    "x": 412.8,
+                    "y": 373.5111111111111
+                },
+                {
+                    "x": 438.0444444444445,
+                    "y": 371.02222222222224
+                },
+                {
+                    "x": 440,
+                    "y": 379.3777777777778
+                },
+                {
+                    "x": 412.9777777777778,
+                    "y": 382.93333333333334
+                },
+                {
+                    "x": 385.6,
+                    "y": 379.73333333333335
+                }
+            ],
+            "es": [
+                {
+                    "x": 383.8222222222222,
+                    "y": 370.84444444444443
+                },
+                {
+                    "x": 412.8,
+                    "y": 373.5111111111111
+                },
+                {
+                    "x": 440.1777777777778,
+                    "y": 371.2
+                },
+                {
+                    "x": 441.77777777777777,
+                    "y": 379.73333333333335
+                },
+                {
+                    "x": 412.9777777777778,
+                    "y": 382.93333333333334
+                },
+                {
+                    "x": 382.2222222222222,
+                    "y": 379.3777777777778
+                }
+            ],
+            "ru": [
+                {
+                    "x": 380.26666666666665,
+                    "y": 369.90476190476187
+                },
+                {
+                    "x": 384.5333333333333,
+                    "y": 370.51428571428573
+                },
+                {
+                    "x": 385.37142857142857,
+                    "y": 372.03809523809525
+                },
+                {
+                    "x": 404.72380952380956,
+                    "y": 373.7904761904762
+                },
+                {
+                    "x": 419.8857142857143,
+                    "y": 373.7904761904762
+                },
+                {
+                    "x": 444.4952380952381,
+                    "y": 371.12380952380954
+                },
+                {
+                    "x": 446.32380952380953,
+                    "y": 377.1428571428571
+                },
+                {
+                    "x": 422.4,
+                    "y": 380.9523809523809
+                },
+                {
+                    "x": 393.9809523809524,
+                    "y": 380.11428571428576
+                },
+                {
+                    "x": 392.76190476190476,
+                    "y": 381.56190476190477
+                },
+                {
+                    "x": 388.87619047619046,
+                    "y": 381.1809523809524
+                },
+                {
+                    "x": 388.1142857142857,
+                    "y": 379.5047619047619
+                },
+                {
+                    "x": 376.9142857142857,
+                    "y": 377.5238095238095
+                }
+            ],
+            "zh": [
+                {
+                    "x": 385.77777777777777,
+                    "y": 370.6666666666667
+                },
+                {
+                    "x": 412.64761904761906,
+                    "y": 371.20000000000005
+                },
+                {
+                    "x": 439.4666666666667,
+                    "y": 371.20000000000005
+                },
+                {
+                    "x": 439.4666666666667,
+                    "y": 385.8285714285715
+                },
+                {
+                    "x": 412.03809523809525,
+                    "y": 385.8285714285715
+                },
+                {
+                    "x": 385.21904761904767,
+                    "y": 385.8285714285715
+                }
+            ]
+        },
+        "shadesmar": true,
+        "image": {
+            "file": "locations/Over_the_sea_of_spheres_by_Zamoraalma.png",
+            "credits": "[Zamoraalma](https://www.artstation.com/Zamoraalma)",
+            "offset": {
+                "x": 50,
+                "y": 50
+            },
+            "size": 220
+        },
+        "coppermind": "Astral Banks",
+        "related": [
+            "locations/lasting-integrity",
+            "locations/sea-of-souls"
+        ]
+    },
+    {
+        "id": "empyrean-gulf",
+        "mapId": 99,
+        "coordinates": {
+            "x": 432.4,
+            "y": 347.2
+        },
+        "points": {
+            "en": [
+                {
+                    "x": 429.3333333333333,
+                    "y": 341.3333333333333
+                },
+                {
+                    "x": 447.59999999999997,
+                    "y": 333.06666666666666
+                },
+                {
+                    "x": 452.93333333333334,
+                    "y": 338.5333333333333
+                },
+                {
+                    "x": 441.4222222222223,
+                    "y": 345.9555555555556
+                },
+                {
+                    "x": 441.46666666666664,
+                    "y": 353.8666666666667
+                },
+                {
+                    "x": 427.06666666666666,
+                    "y": 359.8666666666667
+                },
+                {
+                    "x": 422.5777777777778,
+                    "y": 352.8888888888889
+                },
+                {
+                    "x": 409.8666666666667,
+                    "y": 355.8666666666667
+                },
+                {
+                    "x": 406.5333333333333,
+                    "y": 348
+                }
+            ],
+            "es": [
+                {
+                    "x": 429.3333333333333,
+                    "y": 341.3333333333333
+                },
+                {
+                    "x": 452.8,
+                    "y": 331.73333333333335
+                },
+                {
+                    "x": 456.88888888888886,
+                    "y": 339.2
+                },
+                {
+                    "x": 442.1333333333333,
+                    "y": 347.2
+                },
+                {
+                    "x": 423.28888888888883,
+                    "y": 353.77777777777777
+                },
+                {
+                    "x": 404.8,
+                    "y": 358.0444444444445
+                },
+                {
+                    "x": 402.84444444444443,
+                    "y": 349.8666666666667
+                }
+            ],
+            "ru": [
+                {
+                    "x": 407.92380952380955,
+                    "y": 347.35238095238094
+                },
+                {
+                    "x": 422.93333333333334,
+                    "y": 343.0095238095238
+                },
+                {
+                    "x": 425.447619047619,
+                    "y": 343.46666666666664
+                },
+                {
+                    "x": 441.5238095238095,
+                    "y": 336
+                },
+                {
+                    "x": 445.25714285714287,
+                    "y": 333.0285714285714
+                },
+                {
+                    "x": 449.2190476190476,
+                    "y": 334.4
+                },
+                {
+                    "x": 451.42857142857144,
+                    "y": 339.0476190476191
+                },
+                {
+                    "x": 441.2952380952381,
+                    "y": 345.06666666666666
+                },
+                {
+                    "x": 444.95238095238096,
+                    "y": 351.6190476190476
+                },
+                {
+                    "x": 434.97142857142853,
+                    "y": 356.03809523809525
+                },
+                {
+                    "x": 423.16190476190474,
+                    "y": 360.3047619047619
+                },
+                {
+                    "x": 420.41904761904766,
+                    "y": 353.2952380952381
+                },
+                {
+                    "x": 409.67619047619047,
+                    "y": 355.0476190476191
+                }
+            ],
+            "zh": [
+                {
+                    "x": 428.4952380952381,
+                    "y": 338.89523809523814
+                },
+                {
+                    "x": 447.59999999999997,
+                    "y": 333.06666666666666
+                },
+                {
+                    "x": 452.8761904761905,
+                    "y": 343.1619047619048
+                },
+                {
+                    "x": 449.21904761904767,
+                    "y": 349.8666666666667
+                },
+                {
+                    "x": 441.2952380952381,
+                    "y": 352.91428571428577
+                },
+                {
+                    "x": 427.8857142857143,
+                    "y": 358.40000000000003
+                },
+                {
+                    "x": 413.86666666666673,
+                    "y": 360.83809523809526
+                },
+                {
+                    "x": 409.8666666666667,
+                    "y": 355.8666666666667
+                },
+                {
+                    "x": 406.5333333333333,
+                    "y": 348
+                }
+            ]
+        },
+        "shadesmar": true,
+        "image": {
+            "file": "locations/Over_the_sea_of_spheres_by_Zamoraalma.png",
+            "credits": "[Zamoraalma](https://www.artstation.com/Zamoraalma)",
+            "offset": {
+                "x": 50,
+                "y": 50
+            },
+            "size": 220
+        },
+        "coppermind": "Empyrean Gulf",
+        "related": [
+            "locations/sea-of-souls"
+        ]
+    },
+    {
+        "id": "radiant-depths",
+        "mapId": 100,
+        "coordinates": {
+            "x": 501.3,
+            "y": 358.8
+        },
+        "points": {
+            "en": [
+                {
+                    "x": 470.2222222222222,
+                    "y": 359.6444444444444
+                },
+                {
+                    "x": 504.3555555555556,
+                    "y": 352.8888888888889
+                },
+                {
+                    "x": 528.7111111111111,
+                    "y": 345.4222222222223
+                },
+                {
+                    "x": 532.088888888889,
+                    "y": 352.17777777777775
+                },
+                {
+                    "x": 521.0666666666666,
+                    "y": 359.82222222222225
+                },
+                {
+                    "x": 472.1333333333333,
+                    "y": 369.2
+                }
+            ],
+            "es": [
+                {
+                    "x": 472.1777777777778,
+                    "y": 359.2888888888889
+                },
+                {
+                    "x": 504.3555555555556,
+                    "y": 352.8888888888889
+                },
+                {
+                    "x": 526.4,
+                    "y": 345.77777777777777
+                },
+                {
+                    "x": 529.6,
+                    "y": 353.77777777777777
+                },
+                {
+                    "x": 518.4,
+                    "y": 359.46666666666664
+                },
+                {
+                    "x": 519.8222222222222,
+                    "y": 365.68888888888887
+                },
+                {
+                    "x": 488.35555555555555,
+                    "y": 374.0444444444445
+                },
+                {
+                    "x": 485.5111111111111,
+                    "y": 368
+                },
+                {
+                    "x": 473.9555555555555,
+                    "y": 368
+                }
+            ],
+            "ru": [
+                {
+                    "x": 468.64,
+                    "y": 360.08000000000004
+                },
+                {
+                    "x": 474.81904761904764,
+                    "y": 359.23809523809524
+                },
+                {
+                    "x": 475.8095238095238,
+                    "y": 360.6095238095238
+                },
+                {
+                    "x": 496.07619047619045,
+                    "y": 357.7142857142857
+                },
+                {
+                    "x": 511.23809523809524,
+                    "y": 352.9904761904762
+                },
+                {
+                    "x": 513.2952380952381,
+                    "y": 350.7047619047619
+                },
+                {
+                    "x": 517.1809523809524,
+                    "y": 349.6380952380952
+                },
+                {
+                    "x": 519.0857142857143,
+                    "y": 350.55238095238093
+                },
+                {
+                    "x": 531.36,
+                    "y": 346
+                },
+                {
+                    "x": 533.92,
+                    "y": 348.40000000000003
+                },
+                {
+                    "x": 533.84,
+                    "y": 352.88000000000005
+                },
+                {
+                    "x": 516.2666666666667,
+                    "y": 359.0095238095238
+                },
+                {
+                    "x": 515.2,
+                    "y": 360.76190476190476
+                },
+                {
+                    "x": 511.77142857142854,
+                    "y": 361.7523809523809
+                },
+                {
+                    "x": 504.15238095238095,
+                    "y": 362.74285714285713
+                },
+                {
+                    "x": 494.78095238095233,
+                    "y": 365.7904761904762
+                },
+                {
+                    "x": 469.84,
+                    "y": 369.20000000000005
+                },
+                {
+                    "x": 466.88000000000005,
+                    "y": 364.64000000000004
+                }
+            ],
+            "zh": [
+                {
+                    "x": 474.20952380952383,
+                    "y": 354.1333333333334
+                },
+                {
+                    "x": 502.8571428571429,
+                    "y": 348.64761904761906
+                },
+                {
+                    "x": 524.8000000000001,
+                    "y": 343.1619047619048
+                },
+                {
+                    "x": 530.8952380952381,
+                    "y": 355.352380952381
+                },
+                {
+                    "x": 509.5619047619048,
+                    "y": 366.32380952380953
+                },
+                {
+                    "x": 474.81904761904764,
+                    "y": 369.3714285714286
+                }
+            ]
+        },
+        "shadesmar": true,
+        "image": {
+            "file": "locations/Over_the_sea_of_spheres_by_Zamoraalma.png",
+            "credits": "[Zamoraalma](https://www.artstation.com/Zamoraalma)",
+            "offset": {
+                "x": 50,
+                "y": 50
+            },
+            "size": 220
+        },
+        "coppermind": "Radiant Depths",
+        "related": [
+            "locations/nameless",
+            "locations/sea-of-souls"
+        ]
+    },
+    {
+        "id": "basin-of-the-veiled-sun",
+        "mapId": 101,
+        "coordinates": {
+            "x": 443.2,
+            "y": 292.8
+        },
+        "points": {
+            "en": [
+                {
+                    "x": 408,
+                    "y": 291.37777777777774
+                },
+                {
+                    "x": 443.9111111111111,
+                    "y": 287.6444444444444
+                },
+                {
+                    "x": 479.6444444444444,
+                    "y": 290.6666666666667
+                },
+                {
+                    "x": 478.5777777777777,
+                    "y": 299.73333333333335
+                },
+                {
+                    "x": 444.8,
+                    "y": 297.06666666666666
+                },
+                {
+                    "x": 408.7111111111111,
+                    "y": 299.73333333333335
+                }
+            ],
+            "es": [
+                {
+                    "x": 410.1333333333333,
+                    "y": 291.5555555555556
+                },
+                {
+                    "x": 443.9111111111111,
+                    "y": 287.6444444444444
+                },
+                {
+                    "x": 479.6444444444444,
+                    "y": 290.6666666666667
+                },
+                {
+                    "x": 478.5777777777777,
+                    "y": 299.73333333333335
+                },
+                {
+                    "x": 444.8,
+                    "y": 297.06666666666666
+                },
+                {
+                    "x": 410.6666666666667,
+                    "y": 299.37777777777774
+                }
+            ],
+            "ru": [
+                {
+                    "x": 393.28000000000003,
+                    "y": 291.44
+                },
+                {
+                    "x": 401.8285714285714,
+                    "y": 290.2857142857142
+                },
+                {
+                    "x": 417.37142857142857,
+                    "y": 288.5333333333333
+                },
+                {
+                    "x": 425.67619047619047,
+                    "y": 289.5238095238095
+                },
+                {
+                    "x": 450.74285714285713,
+                    "y": 288.9904761904762
+                },
+                {
+                    "x": 472.6857142857143,
+                    "y": 290.2857142857142
+                },
+                {
+                    "x": 493.6,
+                    "y": 292.08000000000004
+                },
+                {
+                    "x": 494.8,
+                    "y": 296.40000000000003
+                },
+                {
+                    "x": 492.24,
+                    "y": 299.44
+                },
+                {
+                    "x": 471.23809523809524,
+                    "y": 299.0476190476191
+                },
+                {
+                    "x": 452.87619047619046,
+                    "y": 296.45714285714286
+                },
+                {
+                    "x": 428.4952380952381,
+                    "y": 296.68571428571425
+                },
+                {
+                    "x": 394.1600000000001,
+                    "y": 300.40000000000003
+                }
+            ],
+            "zh": [
+                {
+                    "x": 418.7428571428572,
+                    "y": 286.4761904761905
+                },
+                {
+                    "x": 444.952380952381,
+                    "y": 282.81904761904764
+                },
+                {
+                    "x": 471.1619047619048,
+                    "y": 287.6952380952381
+                },
+                {
+                    "x": 469.9428571428572,
+                    "y": 302.32380952380953
+                },
+                {
+                    "x": 443.73333333333335,
+                    "y": 298.6666666666667
+                },
+                {
+                    "x": 416.91428571428577,
+                    "y": 301.1047619047619
+                }
+            ]
+        },
+        "shadesmar": true,
+        "image": {
+            "file": "locations/Over_the_sea_of_spheres_by_Zamoraalma.png",
+            "credits": "[Zamoraalma](https://www.artstation.com/Zamoraalma)",
+            "offset": {
+                "x": 50,
+                "y": 50
+            },
+            "size": 220
+        },
+        "coppermind": "Basin of the Veiled Sun",
+        "related": [
+            "locations/sea-of-souls"
+        ]
+    },
+    {
+        "id": "glasswater-deep",
+        "mapId": 102,
+        "coordinates": {
+            "x": 659.9,
+            "y": 387.9
+        },
+        "points": {
+            "en": [
+                {
+                    "x": 627.7333333333333,
+                    "y": 380.08888888888885
+                },
+                {
+                    "x": 660.0888888888888,
+                    "y": 383.46666666666664
+                },
+                {
+                    "x": 691.3777777777779,
+                    "y": 381.8666666666667
+                },
+                {
+                    "x": 692.2666666666667,
+                    "y": 390.93333333333334
+                },
+                {
+                    "x": 684.9777777777779,
+                    "y": 391.64444444444445
+                },
+                {
+                    "x": 684.8,
+                    "y": 390.75555555555553
+                },
+                {
+                    "x": 654.7555555555555,
+                    "y": 392.35555555555555
+                },
+                {
+                    "x": 627.0222222222221,
+                    "y": 389.1555555555555
+                }
+            ],
+            "es": [
+                {
+                    "x": 614.4,
+                    "y": 379.2
+                },
+                {
+                    "x": 649.2444444444445,
+                    "y": 382.5777777777777
+                },
+                {
+                    "x": 676.8,
+                    "y": 382.93333333333334
+                },
+                {
+                    "x": 704.1777777777777,
+                    "y": 379.2
+                },
+                {
+                    "x": 706.6666666666666,
+                    "y": 387.37777777777774
+                },
+                {
+                    "x": 674.8444444444444,
+                    "y": 391.82222222222225
+                },
+                {
+                    "x": 647.6444444444445,
+                    "y": 391.6444444444444
+                },
+                {
+                    "x": 612.6222222222221,
+                    "y": 387.5555555555556
+                }
+            ],
+            "ru": [
+                {
+                    "x": 627.5555555555554,
+                    "y": 380.8
+                },
+                {
+                    "x": 631.8222222222221,
+                    "y": 382.6666666666667
+                },
+                {
+                    "x": 655.6444444444445,
+                    "y": 384.8888888888889
+                },
+                {
+                    "x": 674.5777777777779,
+                    "y": 384.62222222222226
+                },
+                {
+                    "x": 677.8666666666667,
+                    "y": 382.3111111111111
+                },
+                {
+                    "x": 680.7111111111112,
+                    "y": 382.3111111111111
+                },
+                {
+                    "x": 681.8666666666667,
+                    "y": 383.73333333333335
+                },
+                {
+                    "x": 694.7555555555555,
+                    "y": 382.2222222222223
+                },
+                {
+                    "x": 696.3555555555555,
+                    "y": 388.71111111111105
+                },
+                {
+                    "x": 678.1333333333333,
+                    "y": 391.46666666666664
+                },
+                {
+                    "x": 675.1111111111112,
+                    "y": 393.2444444444444
+                },
+                {
+                    "x": 670.8444444444445,
+                    "y": 392
+                },
+                {
+                    "x": 645.2444444444445,
+                    "y": 391.6444444444444
+                },
+                {
+                    "x": 624.5333333333333,
+                    "y": 389.51111111111106
+                },
+                {
+                    "x": 622.4888888888888,
+                    "y": 386.0444444444444
+                },
+                {
+                    "x": 624.4444444444446,
+                    "y": 382.0444444444444
+                }
+            ],
+            "zh": [
+                {
+                    "x": 630.8571428571429,
+                    "y": 378.51428571428573
+                },
+                {
+                    "x": 658.8952380952381,
+                    "y": 378.51428571428573
+                },
+                {
+                    "x": 685.104761904762,
+                    "y": 377.9047619047619
+                },
+                {
+                    "x": 689.3714285714286,
+                    "y": 391.31428571428575
+                },
+                {
+                    "x": 682.0571428571429,
+                    "y": 393.14285714285717
+                },
+                {
+                    "x": 674.1333333333334,
+                    "y": 395.5809523809524
+                },
+                {
+                    "x": 655.8476190476191,
+                    "y": 396.1904761904762
+                },
+                {
+                    "x": 631.4666666666667,
+                    "y": 393.14285714285717
+                }
+            ]
+        },
+        "shadesmar": true,
+        "image": {
+            "file": "locations/Over_the_sea_of_spheres_by_Zamoraalma.png",
+            "credits": "[Zamoraalma](https://www.artstation.com/Zamoraalma)",
+            "offset": {
+                "x": 50,
+                "y": 50
+            },
+            "size": 220
+        },
+        "coppermind": "Glasswater Deep",
+        "related": [
+            "locations/sea-of-lost-lights"
+        ]
+    },
+    {
+        "id": "salavashi-trench",
+        "mapId": 103,
+        "coordinates": {
+            "x": 702.9,
+            "y": 277.5
+        },
+        "points": {
+            "en": [
+                {
+                    "x": 684.5333333333333,
+                    "y": 271.2
+                },
+                {
+                    "x": 726.6666666666666,
+                    "y": 275.06666666666666
+                },
+                {
+                    "x": 726.8,
+                    "y": 282.6666666666667
+                },
+                {
+                    "x": 683.6,
+                    "y": 279.46666666666664
+                }
+            ],
+            "es": [
+                {
+                    "x": 687.9407407407407,
+                    "y": 271.8814814814815
+                },
+                {
+                    "x": 722.6074074074074,
+                    "y": 274.9037037037037
+                },
+                {
+                    "x": 722.5481481481481,
+                    "y": 282.0148148148148
+                },
+                {
+                    "x": 687.4074074074074,
+                    "y": 279.5259259259259
+                }
+            ],
+            "ru": [
+                {
+                    "x": 676.4444444444446,
+                    "y": 270.5777777777778
+                },
+                {
+                    "x": 681.2444444444445,
+                    "y": 270.93333333333334
+                },
+                {
+                    "x": 683.7333333333333,
+                    "y": 272.8888888888889
+                },
+                {
+                    "x": 701.7777777777778,
+                    "y": 274.48888888888894
+                },
+                {
+                    "x": 706.5777777777779,
+                    "y": 273.4222222222223
+                },
+                {
+                    "x": 709.8666666666667,
+                    "y": 275.2
+                },
+                {
+                    "x": 735.2888888888889,
+                    "y": 276.4444444444444
+                },
+                {
+                    "x": 735.2,
+                    "y": 283.1111111111111
+                },
+                {
+                    "x": 704.2666666666667,
+                    "y": 281.4222222222223
+                },
+                {
+                    "x": 689.3333333333334,
+                    "y": 281.2444444444444
+                },
+                {
+                    "x": 675.2888888888888,
+                    "y": 278.2222222222223
+                }
+            ],
+            "zh": [
+                {
+                    "x": 678.4000000000001,
+                    "y": 270.0190476190476
+                },
+                {
+                    "x": 735.0857142857144,
+                    "y": 275.50476190476195
+                },
+                {
+                    "x": 733.8666666666668,
+                    "y": 288.3047619047619
+                },
+                {
+                    "x": 678.4000000000001,
+                    "y": 283.42857142857144
+                }
+            ]
+        },
+        "shadesmar": true,
+        "image": {
+            "file": "locations/Over_the_sea_of_spheres_by_Zamoraalma.png",
+            "credits": "[Zamoraalma](https://www.artstation.com/Zamoraalma)",
+            "offset": {
+                "x": 50,
+                "y": 50
+            },
+            "size": 220
+        },
+        "coppermind": "Salavashi Trench",
+        "related": [
+            "locations/sea-of-lost-lights",
+            "locations/sea-of-oracles"
+        ]
+    },
+    {
+        "id": "luminous-shallows",
+        "mapId": 104,
+        "coordinates": {
+            "x": 707.6,
+            "y": 416
+        },
+        "points": {
+            "en": [
+                {
+                    "x": 685.0666666666666,
+                    "y": 406.5333333333333
+                },
+                {
+                    "x": 704.1777777777778,
+                    "y": 408.1777777777778
+                },
+                {
+                    "x": 728.1333333333333,
+                    "y": 407.6
+                },
+                {
+                    "x": 728.8,
+                    "y": 415.73333333333335
+                },
+                {
+                    "x": 720.9333333333333,
+                    "y": 416.93333333333334
+                },
+                {
+                    "x": 720.5333333333333,
+                    "y": 426.1333333333333
+                },
+                {
+                    "x": 692.2666666666667,
+                    "y": 425.24444444444447
+                },
+                {
+                    "x": 692.5333333333333,
+                    "y": 415.59999999999997
+                },
+                {
+                    "x": 684.9333333333333,
+                    "y": 414.5333333333333
+                }
+            ],
+            "es": [
+                {
+                    "x": 690.8444444444445,
+                    "y": 406.4
+                },
+                {
+                    "x": 705.6,
+                    "y": 407.64444444444445
+                },
+                {
+                    "x": 722.8444444444445,
+                    "y": 406.4
+                },
+                {
+                    "x": 724.4444444444446,
+                    "y": 426.4888888888889
+                },
+                {
+                    "x": 687.8222222222221,
+                    "y": 425.06666666666666
+                },
+                {
+                    "x": 690.8444444444445,
+                    "y": 415.46666666666664
+                }
+            ],
+            "ru": [
+                {
+                    "x": 687.36,
+                    "y": 405.8666666666667
+                },
+                {
+                    "x": 693.8666666666667,
+                    "y": 407.7866666666667
+                },
+                {
+                    "x": 728,
+                    "y": 408.64000000000004
+                },
+                {
+                    "x": 728.4266666666666,
+                    "y": 415.7866666666667
+                },
+                {
+                    "x": 719.7866666666666,
+                    "y": 416.64000000000004
+                },
+                {
+                    "x": 720.1066666666667,
+                    "y": 425.7066666666667
+                },
+                {
+                    "x": 693.5466666666667,
+                    "y": 425.59999999999997
+                },
+                {
+                    "x": 692.8,
+                    "y": 415.8933333333333
+                },
+                {
+                    "x": 685.9733333333334,
+                    "y": 413.3333333333333
+                }
+            ],
+            "zh": [
+                {
+                    "x": 685.0666666666666,
+                    "y": 406.5333333333333
+                },
+                {
+                    "x": 704.1777777777778,
+                    "y": 408.1777777777778
+                },
+                {
+                    "x": 728.1333333333333,
+                    "y": 407.6
+                },
+                {
+                    "x": 738.1333333333334,
+                    "y": 415.08571428571435
+                },
+                {
+                    "x": 733.8666666666668,
+                    "y": 424.22857142857146
+                },
+                {
+                    "x": 720.5333333333333,
+                    "y": 426.1333333333333
+                },
+                {
+                    "x": 692.2666666666667,
+                    "y": 425.24444444444447
+                },
+                {
+                    "x": 681.4476190476191,
+                    "y": 423.00952380952384
+                },
+                {
+                    "x": 677.7904761904763,
+                    "y": 415.08571428571435
+                }
+            ]
+        },
+        "shadesmar": true,
+        "image": {
+            "file": "locations/Over_the_sea_of_spheres_by_Zamoraalma.png",
+            "credits": "[Zamoraalma](https://www.artstation.com/Zamoraalma)",
+            "offset": {
+                "x": 50,
+                "y": 50
+            },
+            "size": 220
+        },
+        "coppermind": "Luminous Shallows",
+        "related": [
+            "locations/sea-of-lost-lights"
+        ]
+    },
+    {
+        "id": "thaylen-sea",
+        "mapId": 105,
+        "coordinates": {
+            "x": 615.8,
+            "y": 430.2
+        },
+        "points": {
+            "en": [
+                {
+                    "x": 596.6222222222221,
+                    "y": 424.5333333333333
+                },
+                {
+                    "x": 634.3111111111111,
+                    "y": 425.59999999999997
+                },
+                {
+                    "x": 635.9111111111112,
+                    "y": 432.88888888888886
+                },
+                {
+                    "x": 610.1333333333333,
+                    "y": 436.44444444444446
+                },
+                {
+                    "x": 595.9111111111112,
+                    "y": 432.5333333333333
+                }
+            ],
+            "es": [
+                {
+                    "x": 640.7111111111112,
+                    "y": 426.1333333333333
+                },
+                {
+                    "x": 641.6,
+                    "y": 432.88888888888886
+                },
+                {
+                    "x": 627.2,
+                    "y": 436.44444444444446
+                },
+                {
+                    "x": 589.8666666666667,
+                    "y": 433.4222222222222
+                },
+                {
+                    "x": 591.6444444444445,
+                    "y": 424.5333333333333
+                }
+            ],
+            "ru": [
+                {
+                    "x": 587.2,
+                    "y": 423.8933333333333
+                },
+                {
+                    "x": 600.3199999999999,
+                    "y": 425.38666666666666
+                },
+                {
+                    "x": 601.2800000000001,
+                    "y": 427.0933333333333
+                },
+                {
+                    "x": 614.7199999999999,
+                    "y": 427.94666666666666
+                },
+                {
+                    "x": 644.48,
+                    "y": 426.02666666666664
+                },
+                {
+                    "x": 645.3333333333334,
+                    "y": 431.7866666666667
+                },
+                {
+                    "x": 641.1733333333334,
+                    "y": 433.28
+                },
+                {
+                    "x": 638.1866666666666,
+                    "y": 435.6266666666666
+                },
+                {
+                    "x": 634.24,
+                    "y": 434.4533333333333
+                },
+                {
+                    "x": 607.4666666666667,
+                    "y": 434.6666666666667
+                },
+                {
+                    "x": 587.52,
+                    "y": 432.64000000000004
+                },
+                {
+                    "x": 586.6666666666666,
+                    "y": 428.58666666666664
+                }
+            ],
+            "zh": [
+                {
+                    "x": 588.8000000000001,
+                    "y": 424.83809523809526
+                },
+                {
+                    "x": 640.6095238095239,
+                    "y": 423.00952380952384
+                },
+                {
+                    "x": 643.657142857143,
+                    "y": 438.2476190476191
+                },
+                {
+                    "x": 609.5238095238096,
+                    "y": 440.6857142857143
+                },
+                {
+                    "x": 588.1904761904763,
+                    "y": 437.6380952380953
+                }
+            ]
+        },
+        "shadesmar": true,
+        "image": {
+            "file": "locations/Over_the_sea_of_spheres_by_Zamoraalma.png",
+            "credits": "[Zamoraalma](https://www.artstation.com/Zamoraalma)",
+            "offset": {
+                "x": 50,
+                "y": 50
+            },
+            "size": 220
+        },
+        "coppermind": "Thaylen Sea",
+        "related": [
+            "locations/thaylen-city-oathgate"
+        ]
+    },
+    {
+        "id": "sea-of-oracles",
+        "mapId": 106,
+        "coordinates": {
+            "x": 768.4,
+            "y": 291.1
+        },
+        "points": {
+            "en": [
+                {
+                    "x": 746.4,
+                    "y": 288
+                },
+                {
+                    "x": 769.2,
+                    "y": 286.26666666666665
+                },
+                {
+                    "x": 791.6,
+                    "y": 288.1333333333333
+                },
+                {
+                    "x": 789.0666666666666,
+                    "y": 296.93333333333334
+                },
+                {
+                    "x": 767.3333333333334,
+                    "y": 295.73333333333335
+                },
+                {
+                    "x": 747.2,
+                    "y": 296.93333333333334
+                }
+            ],
+            "es": [
+                {
+                    "x": 739.2,
+                    "y": 289.2444444444444
+                },
+                {
+                    "x": 769.2,
+                    "y": 286.26666666666665
+                },
+                {
+                    "x": 800.8888888888889,
+                    "y": 290.1333333333333
+                },
+                {
+                    "x": 799.1111111111111,
+                    "y": 298.3111111111111
+                },
+                {
+                    "x": 768.3555555555555,
+                    "y": 295.6444444444444
+                },
+                {
+                    "x": 741.1555555555555,
+                    "y": 297.7777777777777
+                }
+            ],
+            "ru": [
+                {
+                    "x": 739.52,
+                    "y": 288.64000000000004
+                },
+                {
+                    "x": 749.3333333333334,
+                    "y": 286.82666666666665
+                },
+                {
+                    "x": 750.1866666666666,
+                    "y": 288.4266666666666
+                },
+                {
+                    "x": 761.3866666666667,
+                    "y": 287.04
+                },
+                {
+                    "x": 767.6800000000001,
+                    "y": 286.82666666666665
+                },
+                {
+                    "x": 784.5333333333333,
+                    "y": 288.5333333333333
+                },
+                {
+                    "x": 796.24,
+                    "y": 289.44
+                },
+                {
+                    "x": 795.52,
+                    "y": 296.71999999999997
+                },
+                {
+                    "x": 780.0533333333333,
+                    "y": 296.85333333333335
+                },
+                {
+                    "x": 767.6800000000001,
+                    "y": 296.2133333333333
+                },
+                {
+                    "x": 753.8133333333334,
+                    "y": 296.74666666666667
+                },
+                {
+                    "x": 740.32,
+                    "y": 296.96
+                }
+            ],
+            "zh": [
+                {
+                    "x": 746.6666666666667,
+                    "y": 284.64761904761906
+                },
+                {
+                    "x": 769.2190476190477,
+                    "y": 282.20952380952383
+                },
+                {
+                    "x": 789.9428571428572,
+                    "y": 285.25714285714287
+                },
+                {
+                    "x": 788.1142857142858,
+                    "y": 299.8857142857143
+                },
+                {
+                    "x": 766.7809523809525,
+                    "y": 298.0571428571429
+                },
+                {
+                    "x": 748.4952380952382,
+                    "y": 299.8857142857143
+                }
+            ]
+        },
+        "shadesmar": true,
+        "image": {
+            "file": "locations/Over_the_sea_of_spheres_by_Zamoraalma.png",
+            "credits": "[Zamoraalma](https://www.artstation.com/Zamoraalma)",
+            "offset": {
+                "x": 50,
+                "y": 50
+            },
+            "size": 220
+        },
+        "coppermind": "Sea of Oracles",
+        "related": [
+            "locations/sea-of-lost-lights"
+        ]
+    },
+    {
+        "id": "sea-of-oracles",
+        "mapId": 106,
+        "coordinates": {
+            "x": 634.5,
+            "y": 273.4
+        },
+        "points": {
+            "en": [
+                {
+                    "x": 612.0888888888888,
+                    "y": 270.93333333333334
+                },
+                {
+                    "x": 634.4888888888888,
+                    "y": 268.44444444444446
+                },
+                {
+                    "x": 656.5333333333333,
+                    "y": 270.7555555555556
+                },
+                {
+                    "x": 655.4666666666667,
+                    "y": 279.46666666666664
+                },
+                {
+                    "x": 634.6666666666666,
+                    "y": 278.2222222222223
+                },
+                {
+                    "x": 611.7333333333333,
+                    "y": 279.28888888888895
+                }
+            ],
+            "es": [
+                {
+                    "x": 603.2,
+                    "y": 271.2888888888889
+                },
+                {
+                    "x": 634.4888888888888,
+                    "y": 268.44444444444446
+                },
+                {
+                    "x": 664,
+                    "y": 271.82222222222225
+                },
+                {
+                    "x": 662.9333333333333,
+                    "y": 280.5333333333333
+                },
+                {
+                    "x": 634.6666666666666,
+                    "y": 278.2222222222223
+                },
+                {
+                    "x": 604.6222222222221,
+                    "y": 280
+                }
+            ],
+            "ru": [
+                {
+                    "x": 606.3111111111111,
+                    "y": 270.5777777777778
+                },
+                {
+                    "x": 615.2888888888888,
+                    "y": 269.9555555555556
+                },
+                {
+                    "x": 616.0888888888888,
+                    "y": 271.2
+                },
+                {
+                    "x": 626.4,
+                    "y": 270.4888888888889
+                },
+                {
+                    "x": 630.2222222222222,
+                    "y": 268.6222222222222
+                },
+                {
+                    "x": 637.6,
+                    "y": 270.3111111111111
+                },
+                {
+                    "x": 660.6222222222221,
+                    "y": 272
+                },
+                {
+                    "x": 660.8,
+                    "y": 278.93333333333334
+                },
+                {
+                    "x": 648.8888888888888,
+                    "y": 278.1333333333333
+                },
+                {
+                    "x": 646.2222222222222,
+                    "y": 279.73333333333335
+                },
+                {
+                    "x": 634.0444444444445,
+                    "y": 278.8444444444444
+                },
+                {
+                    "x": 620.1777777777778,
+                    "y": 279.37777777777774
+                },
+                {
+                    "x": 607.4666666666667,
+                    "y": 278.4
+                }
+            ],
+            "zh": [
+                {
+                    "x": 611.9619047619049,
+                    "y": 267.5809523809524
+                },
+                {
+                    "x": 633.2952380952381,
+                    "y": 265.752380952381
+                },
+                {
+                    "x": 655.2380952380953,
+                    "y": 268.8
+                },
+                {
+                    "x": 655.2380952380953,
+                    "y": 282.20952380952383
+                },
+                {
+                    "x": 633.2952380952381,
+                    "y": 282.81904761904764
+                },
+                {
+                    "x": 614.4000000000001,
+                    "y": 284.03809523809525
+                }
+            ]
+        },
+        "shadesmar": true,
+        "image": {
+            "file": "locations/Over_the_sea_of_spheres_by_Zamoraalma.png",
+            "credits": "[Zamoraalma](https://www.artstation.com/Zamoraalma)",
+            "offset": {
+                "x": 50,
+                "y": 50
+            },
+            "size": 220
+        },
+        "coppermind": "Sea of Oracles",
+        "related": [
+            "locations/salavashi-trench",
+            "locations/sea-of-lost-lights"
+        ]
+    },
+    {
+        "id": "kholinar-oathgate",
+        "mapId": 107,
+        "coordinates": {
+            "x": 738.3,
+            "y": 249.6
+        },
+        "points": {
+            "en": [
+                {
+                    "x": 713.0666666666666,
+                    "y": 232.17777777777778
+                },
+                {
+                    "x": 741.1555555555555,
+                    "y": 232.88888888888889
+                },
+                {
+                    "x": 740.9777777777779,
+                    "y": 248.88888888888889
+                },
+                {
+                    "x": 713.0666666666666,
+                    "y": 248.35555555555555
+                }
+            ],
+            "es": [
+                {
+                    "x": 706.8444444444445,
+                    "y": 231.82222222222222
+                },
+                {
+                    "x": 749.8666666666667,
+                    "y": 232
+                },
+                {
+                    "x": 746.6666666666666,
+                    "y": 248.53333333333333
+                },
+                {
+                    "x": 711.1111111111112,
+                    "y": 248.53333333333333
+                }
+            ],
+            "ru": [
+                {
+                    "x": 691.6,
+                    "y": 232.4
+                },
+                {
+                    "x": 700.3733333333333,
+                    "y": 232.53333333333333
+                },
+                {
+                    "x": 701.0133333333333,
+                    "y": 234.02666666666667
+                },
+                {
+                    "x": 757.2,
+                    "y": 233.84000000000003
+                },
+                {
+                    "x": 758.4000000000001,
+                    "y": 241.12
+                },
+                {
+                    "x": 743.1466666666668,
+                    "y": 241.06666666666666
+                },
+                {
+                    "x": 742.4000000000001,
+                    "y": 247.44000000000003
+                },
+                {
+                    "x": 733.3333333333334,
+                    "y": 248.64
+                },
+                {
+                    "x": 728.2133333333334,
+                    "y": 246.93333333333334
+                },
+                {
+                    "x": 706.4000000000001,
+                    "y": 247.36
+                },
+                {
+                    "x": 706.9866666666666,
+                    "y": 241.17333333333332
+                },
+                {
+                    "x": 691.3600000000001,
+                    "y": 241.36
+                }
+            ],
+            "zh": [
+                {
+                    "x": 705.2190476190477,
+                    "y": 223.08571428571432
+                },
+                {
+                    "x": 746.6666666666667,
+                    "y": 223.08571428571432
+                },
+                {
+                    "x": 751.5428571428572,
+                    "y": 250.51428571428573
+                },
+                {
+                    "x": 699.1238095238095,
+                    "y": 251.12380952380954
+                }
+            ]
+        },
+        "shadesmar": true,
+        "coppermind": "Oathgate",
+        "image": {
+            "file": "events/Oathgate_by_Artem_Demura.png",
+            "credits": "[Artem Demura](https://coppermind.net/wiki/Coppermind:Artists/Artem_Demura)",
+            "offset": {
+                "x": 0,
+                "y": 25
+            }
+        },
+        "related": [
+            "events/trapped-in-shadesmar",
+            "locations/kholinar",
+            "locations/sea-of-lost-lights"
+        ]
+    },
+    {
+        "id": "narak-oathgate",
+        "mapId": 108,
+        "coordinates": {
+            "x": 767.8,
+            "y": 363.4
+        },
+        "points": {
+            "en": [
+                {
+                    "x": 747.9111111111112,
+                    "y": 364.0888888888889
+                },
+                {
+                    "x": 795.2,
+                    "y": 364.97777777777776
+                },
+                {
+                    "x": 795.4133333333334,
+                    "y": 375.25333333333333
+                },
+                {
+                    "x": 747.7333333333333,
+                    "y": 374.4
+                }
+            ],
+            "es": [
+                {
+                    "x": 747.0222222222221,
+                    "y": 364.8
+                },
+                {
+                    "x": 789.1555555555556,
+                    "y": 364.8
+                },
+                {
+                    "x": 788.4444444444443,
+                    "y": 374.4
+                },
+                {
+                    "x": 782.5777777777778,
+                    "y": 381.51111111111106
+                },
+                {
+                    "x": 754.6666666666666,
+                    "y": 381.51111111111106
+                },
+                {
+                    "x": 747.9111111111112,
+                    "y": 373.8666666666667
+                }
+            ],
+            "ru": [
+                {
+                    "x": 739.2,
+                    "y": 363.76
+                },
+                {
+                    "x": 747.9466666666667,
+                    "y": 363.94666666666666
+                },
+                {
+                    "x": 748.3733333333333,
+                    "y": 365.3333333333333
+                },
+                {
+                    "x": 805.04,
+                    "y": 365.36
+                },
+                {
+                    "x": 804.96,
+                    "y": 372.32
+                },
+                {
+                    "x": 792.2133333333334,
+                    "y": 372.8
+                },
+                {
+                    "x": 786.3466666666667,
+                    "y": 374.72
+                },
+                {
+                    "x": 786.5600000000001,
+                    "y": 378.08000000000004
+                },
+                {
+                    "x": 772.8,
+                    "y": 379.0933333333333
+                },
+                {
+                    "x": 769.2,
+                    "y": 380.88000000000005
+                },
+                {
+                    "x": 765.2266666666667,
+                    "y": 378.77333333333337
+                },
+                {
+                    "x": 757.6,
+                    "y": 378.32
+                },
+                {
+                    "x": 758.4,
+                    "y": 372.9066666666667
+                },
+                {
+                    "x": 738.64,
+                    "y": 372.88000000000005
+                }
+            ],
+            "zh": [
+                {
+                    "x": 726.552380952381,
+                    "y": 360.83809523809526
+                },
+                {
+                    "x": 819.2,
+                    "y": 361.44761904761907
+                },
+                {
+                    "x": 814.9333333333334,
+                    "y": 376.0761904761905
+                },
+                {
+                    "x": 728.3809523809524,
+                    "y": 377.2952380952381
+                }
+            ]
+        },
+        "shadesmar": true,
+        "coppermind": "Oathgate",
+        "image": {
+            "file": "events/Oathgate_by_Artem_Demura.png",
+            "credits": "[Artem Demura](https://coppermind.net/wiki/Coppermind:Artists/Artem_Demura)",
+            "offset": {
+                "x": 0,
+                "y": 25
+            }
+        },
+        "related": [
+            "locations/narak",
+            "locations/sea-of-lost-lights"
+        ]
+    },
+    {
+        "id": "thaylen-city-oathgate",
+        "mapId": 109,
+        "coordinates": {
+            "x": 596.7,
+            "y": 418.8
+        },
+        "points": {
+            "en": [
+                {
+                    "x": 599.36,
+                    "y": 406.72
+                },
+                {
+                    "x": 599.1466666666668,
+                    "y": 412.47999999999996
+                },
+                {
+                    "x": 595.7333333333333,
+                    "y": 416.96
+                },
+                {
+                    "x": 592.5333333333333,
+                    "y": 423.04
+                },
+                {
+                    "x": 569.4933333333333,
+                    "y": 423.5733333333333
+                },
+                {
+                    "x": 566.08,
+                    "y": 419.3066666666667
+                },
+                {
+                    "x": 565.9733333333334,
+                    "y": 415.5733333333333
+                },
+                {
+                    "x": 560.3199999999999,
+                    "y": 414.2933333333333
+                },
+                {
+                    "x": 559.8933333333333,
+                    "y": 405.97333333333336
+                }
+            ],
+            "es": [
+                {
+                    "x": 604.0888888888888,
+                    "y": 399.6444444444444
+                },
+                {
+                    "x": 602.4888888888888,
+                    "y": 409.2444444444444
+                },
+                {
+                    "x": 602.1333333333333,
+                    "y": 415.82222222222225
+                },
+                {
+                    "x": 589.5111111111112,
+                    "y": 416.8888888888889
+                },
+                {
+                    "x": 555.3777777777779,
+                    "y": 415.82222222222225
+                },
+                {
+                    "x": 553.7777777777778,
+                    "y": 409.06666666666666
+                },
+                {
+                    "x": 553.6,
+                    "y": 399.6444444444444
+                }
+            ],
+            "ru": [
+                {
+                    "x": 548.5866666666666,
+                    "y": 405.97333333333336
+                },
+                {
+                    "x": 555.52,
+                    "y": 405.97333333333336
+                },
+                {
+                    "x": 556.6933333333333,
+                    "y": 407.14666666666665
+                },
+                {
+                    "x": 609.92,
+                    "y": 407.25333333333333
+                },
+                {
+                    "x": 610.56,
+                    "y": 413.76
+                },
+                {
+                    "x": 599.5733333333334,
+                    "y": 415.04
+                },
+                {
+                    "x": 593.92,
+                    "y": 421.8666666666667
+                },
+                {
+                    "x": 565.44,
+                    "y": 421.8666666666667
+                },
+                {
+                    "x": 563.52,
+                    "y": 415.14666666666665
+                },
+                {
+                    "x": 548.3733333333333,
+                    "y": 413.97333333333336
+                }
+            ],
+            "zh": [
+                {
+                    "x": 604.6476190476191,
+                    "y": 399.2380952380953
+                },
+                {
+                    "x": 606.4761904761905,
+                    "y": 413.86666666666673
+                },
+                {
+                    "x": 605.2571428571429,
+                    "y": 425.44761904761907
+                },
+                {
+                    "x": 592.5333333333333,
+                    "y": 423.04
+                },
+                {
+                    "x": 569.4933333333333,
+                    "y": 423.5733333333333
+                },
+                {
+                    "x": 557.7142857142858,
+                    "y": 424.22857142857146
+                },
+                {
+                    "x": 552.2285714285715,
+                    "y": 421.1809523809524
+                },
+                {
+                    "x": 552.8380952380953,
+                    "y": 412.64761904761906
+                },
+                {
+                    "x": 555.8857142857144,
+                    "y": 396.8
+                }
+            ]
+        },
+        "shadesmar": true,
+        "coppermind": "Oathgate",
+        "image": {
+            "file": "events/Oathgate_by_Artem_Demura.png",
+            "credits": "[Artem Demura](https://coppermind.net/wiki/Coppermind:Artists/Artem_Demura)",
+            "offset": {
+                "x": 0,
+                "y": 25
+            }
+        },
+        "related": [
+            "locations/thaylen-city",
+            "locations/thaylen-sea"
+        ]
+    },
+    {
+        "id": "vedenar-oathgate",
+        "mapId": 110,
+        "coordinates": {
+            "x": 609.2,
+            "y": 334.4
+        },
+        "points": {
+            "en": [
+                {
+                    "x": 557.8666666666667,
+                    "y": 323.0933333333333
+                },
+                {
+                    "x": 611.6266666666667,
+                    "y": 323.84000000000003
+                },
+                {
+                    "x": 612.3733333333333,
+                    "y": 333.8666666666667
+                },
+                {
+                    "x": 560,
+                    "y": 332.5866666666667
+                }
+            ],
+            "es": [
+                {
+                    "x": 565.6888888888888,
+                    "y": 324.26666666666665
+                },
+                {
+                    "x": 608,
+                    "y": 323.73333333333335
+                },
+                {
+                    "x": 604.9777777777779,
+                    "y": 339.91111111111104
+                },
+                {
+                    "x": 569.2444444444445,
+                    "y": 339.91111111111104
+                }
+            ],
+            "ru": [
+                {
+                    "x": 558.8000000000001,
+                    "y": 322.40000000000003
+                },
+                {
+                    "x": 567.4666666666667,
+                    "y": 321.7066666666667
+                },
+                {
+                    "x": 567.8933333333333,
+                    "y": 323.4133333333333
+                },
+                {
+                    "x": 624.1600000000001,
+                    "y": 323.04
+                },
+                {
+                    "x": 624.8000000000001,
+                    "y": 330.88000000000005
+                },
+                {
+                    "x": 610.7733333333333,
+                    "y": 330.88
+                },
+                {
+                    "x": 607.4666666666667,
+                    "y": 337.17333333333335
+                },
+                {
+                    "x": 602.56,
+                    "y": 336.96
+                },
+                {
+                    "x": 600.1066666666667,
+                    "y": 338.6666666666667
+                },
+                {
+                    "x": 587.6266666666667,
+                    "y": 337.7066666666667
+                },
+                {
+                    "x": 575.4666666666667,
+                    "y": 336.85333333333335
+                },
+                {
+                    "x": 574.8266666666666,
+                    "y": 330.9866666666667
+                },
+                {
+                    "x": 558.4,
+                    "y": 330.64000000000004
+                }
+            ],
+            "zh": [
+                {
+                    "x": 546.7428571428572,
+                    "y": 318.1714285714286
+                },
+                {
+                    "x": 632.6857142857143,
+                    "y": 318.1714285714286
+                },
+                {
+                    "x": 632.0761904761905,
+                    "y": 336.4571428571429
+                },
+                {
+                    "x": 544.3047619047619,
+                    "y": 337.0666666666667
+                }
+            ]
+        },
+        "shadesmar": true,
+        "coppermind": "Oathgate",
+        "image": {
+            "file": "events/Oathgate_by_Artem_Demura.png",
+            "credits": "[Artem Demura](https://coppermind.net/wiki/Coppermind:Artists/Artem_Demura)",
+            "offset": {
+                "x": 0,
+                "y": 25
+            }
+        },
+        "related": [
+            "locations/sea-of-lost-lights",
+            "locations/vedenar"
+        ]
+    },
+    {
+        "id": "azimir-oathgate",
+        "mapId": 111,
+        "coordinates": {
+            "x": 414.2,
+            "y": 331.3
+        },
+        "points": {
+            "en": [
+                {
+                    "x": 370.4533333333333,
+                    "y": 319.14666666666665
+                },
+                {
+                    "x": 417.06666666666666,
+                    "y": 319.5733333333334
+                },
+                {
+                    "x": 416.32,
+                    "y": 330.02666666666664
+                },
+                {
+                    "x": 367.5733333333334,
+                    "y": 328.74666666666667
+                }
+            ],
+            "es": [
+                {
+                    "x": 393.77777777777777,
+                    "y": 313.7777777777777
+                },
+                {
+                    "x": 434.84444444444443,
+                    "y": 313.4222222222223
+                },
+                {
+                    "x": 434.1333333333333,
+                    "y": 322.31111111111113
+                },
+                {
+                    "x": 428.6222222222222,
+                    "y": 329.9555555555555
+                },
+                {
+                    "x": 399.64444444444445,
+                    "y": 329.77777777777777
+                },
+                {
+                    "x": 393.9555555555555,
+                    "y": 321.9555555555556
+                }
+            ],
+            "ru": [
+                {
+                    "x": 419.4133333333333,
+                    "y": 323.73333333333335
+                },
+                {
+                    "x": 417.7066666666667,
+                    "y": 328.5333333333333
+                },
+                {
+                    "x": 411.52,
+                    "y": 329.06666666666666
+                },
+                {
+                    "x": 409.81333333333333,
+                    "y": 330.77333333333337
+                },
+                {
+                    "x": 405.8666666666667,
+                    "y": 329.38666666666666
+                },
+                {
+                    "x": 384.64000000000004,
+                    "y": 327.8933333333333
+                },
+                {
+                    "x": 385.38666666666666,
+                    "y": 323.2
+                },
+                {
+                    "x": 370.1333333333333,
+                    "y": 322.34666666666664
+                },
+                {
+                    "x": 370.34666666666664,
+                    "y": 314.1333333333333
+                },
+                {
+                    "x": 377.7066666666667,
+                    "y": 314.24
+                },
+                {
+                    "x": 378.6666666666667,
+                    "y": 315.84000000000003
+                },
+                {
+                    "x": 432.5333333333333,
+                    "y": 315.62666666666667
+                },
+                {
+                    "x": 433.17333333333335,
+                    "y": 322.4533333333333
+                }
+            ],
+            "zh": [
+                {
+                    "x": 344.9904761904762,
+                    "y": 313.9047619047619
+                },
+                {
+                    "x": 442.51428571428573,
+                    "y": 315.12380952380954
+                },
+                {
+                    "x": 442.51428571428573,
+                    "y": 329.752380952381
+                },
+                {
+                    "x": 344.3809523809524,
+                    "y": 329.752380952381
+                }
+            ]
+        },
+        "shadesmar": true,
+        "coppermind": "Oathgate",
+        "image": {
+            "file": "events/Oathgate_by_Artem_Demura.png",
+            "credits": "[Artem Demura](https://coppermind.net/wiki/Coppermind:Artists/Artem_Demura)",
+            "offset": {
+                "x": 0,
+                "y": 25
+            }
+        },
+        "related": [
+            "locations/azimir",
+            "locations/sea-of-souls"
+        ]
+    },
+    {
+        "id": "panatham-oathgate",
+        "mapId": 112,
+        "coordinates": {
+            "x": 397.4,
+            "y": 245.4
+        },
+        "points": {
+            "en": [
+                {
+                    "x": 342.61333333333334,
+                    "y": 233.92000000000002
+                },
+                {
+                    "x": 399.25333333333333,
+                    "y": 233.6
+                },
+                {
+                    "x": 400.5333333333333,
+                    "y": 244.05333333333334
+                },
+                {
+                    "x": 342.08,
+                    "y": 242.66666666666666
+                }
+            ],
+            "es": [
+                {
+                    "x": 376,
+                    "y": 226.84444444444443
+                },
+                {
+                    "x": 417.06666666666666,
+                    "y": 226.84444444444443
+                },
+                {
+                    "x": 416.71111111111105,
+                    "y": 243.2
+                },
+                {
+                    "x": 377.6,
+                    "y": 242.13333333333333
+                }
+            ],
+            "ru": [
+                {
+                    "x": 345.38666666666666,
+                    "y": 233.17333333333332
+                },
+                {
+                    "x": 352.96,
+                    "y": 233.06666666666666
+                },
+                {
+                    "x": 353.81333333333333,
+                    "y": 235.09333333333333
+                },
+                {
+                    "x": 408,
+                    "y": 234.7733333333333
+                },
+                {
+                    "x": 408.2133333333333,
+                    "y": 242.23999999999998
+                },
+                {
+                    "x": 396.5866666666667,
+                    "y": 242.23999999999998
+                },
+                {
+                    "x": 394.6666666666667,
+                    "y": 243.73333333333332
+                },
+                {
+                    "x": 393.7066666666667,
+                    "y": 248.53333333333333
+                },
+                {
+                    "x": 359.46666666666664,
+                    "y": 248.32000000000002
+                },
+                {
+                    "x": 359.14666666666665,
+                    "y": 242.23999999999998
+                },
+                {
+                    "x": 345.17333333333335,
+                    "y": 241.27999999999997
+                }
+            ],
+            "zh": [
+                {
+                    "x": 327.31428571428575,
+                    "y": 229.1809523809524
+                },
+                {
+                    "x": 415.08571428571435,
+                    "y": 229.7904761904762
+                },
+                {
+                    "x": 415.08571428571435,
+                    "y": 244.41904761904763
+                },
+                {
+                    "x": 329.752380952381,
+                    "y": 244.41904761904763
+                }
+            ]
+        },
+        "shadesmar": true,
+        "coppermind": "Oathgate",
+        "image": {
+            "file": "events/Oathgate_by_Artem_Demura.png",
+            "credits": "[Artem Demura](https://coppermind.net/wiki/Coppermind:Artists/Artem_Demura)",
+            "offset": {
+                "x": 0,
+                "y": 25
+            }
+        },
+        "related": [
+            "locations/panatham",
+            "locations/sea-of-regret"
+        ]
+    },
+    {
+        "id": "kurth-oathgate",
+        "mapId": 113,
+        "coordinates": {
+            "x": 448.5,
+            "y": 155.6
+        },
+        "points": {
+            "en": [
+                {
+                    "x": 445.3333333333333,
+                    "y": 144.8
+                },
+                {
+                    "x": 492.26666666666665,
+                    "y": 145.6
+                },
+                {
+                    "x": 492.4,
+                    "y": 156
+                },
+                {
+                    "x": 445.8666666666667,
+                    "y": 154.66666666666666
+                }
+            ],
+            "es": [
+                {
+                    "x": 427.82608695652175,
+                    "y": 137.7391304347826
+                },
+                {
+                    "x": 468.4057971014493,
+                    "y": 138.66666666666666
+                },
+                {
+                    "x": 469.1014492753623,
+                    "y": 147.24637681159422
+                },
+                {
+                    "x": 463.536231884058,
+                    "y": 155.3623188405797
+                },
+                {
+                    "x": 435.0144927536232,
+                    "y": 154.43478260869566
+                },
+                {
+                    "x": 427.5942028985507,
+                    "y": 146.78260869565216
+                }
+            ],
+            "ru": [
+                {
+                    "x": 430.2666666666667,
+                    "y": 143.66666666666666
+                },
+                {
+                    "x": 439.25333333333333,
+                    "y": 143.7866666666667
+                },
+                {
+                    "x": 439.46666666666664,
+                    "y": 145.27999999999997
+                },
+                {
+                    "x": 495.86666666666673,
+                    "y": 145.26666666666665
+                },
+                {
+                    "x": 496.40000000000003,
+                    "y": 152.6
+                },
+                {
+                    "x": 482.34666666666664,
+                    "y": 152.96
+                },
+                {
+                    "x": 479.5733333333333,
+                    "y": 154.23999999999998
+                },
+                {
+                    "x": 476.15999999999997,
+                    "y": 152.96
+                },
+                {
+                    "x": 473.92,
+                    "y": 152.96
+                },
+                {
+                    "x": 474.93333333333334,
+                    "y": 158.53333333333336
+                },
+                {
+                    "x": 464.64000000000004,
+                    "y": 159.36
+                },
+                {
+                    "x": 457.92,
+                    "y": 159.57333333333332
+                },
+                {
+                    "x": 451.6,
+                    "y": 158.20000000000002
+                },
+                {
+                    "x": 452.26666666666665,
+                    "y": 152.32000000000002
+                },
+                {
+                    "x": 430.40000000000003,
+                    "y": 152.66666666666666
+                }
+            ],
+            "zh": [
+                {
+                    "x": 426.6666666666667,
+                    "y": 141.40952380952382
+                },
+                {
+                    "x": 513.2190476190476,
+                    "y": 142.62857142857143
+                },
+                {
+                    "x": 514.4380952380952,
+                    "y": 157.25714285714287
+                },
+                {
+                    "x": 426.0571428571429,
+                    "y": 157.25714285714287
+                }
+            ]
+        },
+        "shadesmar": true,
+        "coppermind": "Oathgate",
+        "image": {
+            "file": "events/Oathgate_by_Artem_Demura.png",
+            "credits": "[Artem Demura](https://coppermind.net/wiki/Coppermind:Artists/Artem_Demura)",
+            "offset": {
+                "x": 0,
+                "y": 25
+            }
+        },
+        "related": [
+            "locations/kurth"
+        ]
+    },
+    {
+        "id": "rall-elorim-oathgate",
+        "mapId": 114,
+        "coordinates": {
+            "x": 367.2,
+            "y": 115.1
+        },
+        "points": {
+            "en": [
+                {
+                    "x": 346.26666666666665,
+                    "y": 117.6
+                },
+                {
+                    "x": 379.8666666666667,
+                    "y": 118
+                },
+                {
+                    "x": 381.3333333333333,
+                    "y": 125.33333333333333
+                },
+                {
+                    "x": 374.93333333333334,
+                    "y": 134.53333333333333
+                },
+                {
+                    "x": 351.6,
+                    "y": 133.86666666666667
+                },
+                {
+                    "x": 346.93333333333334,
+                    "y": 125.6
+                }
+            ],
+            "es": [
+                {
+                    "x": 340.52173913043475,
+                    "y": 118.08695652173913
+                },
+                {
+                    "x": 379.8666666666667,
+                    "y": 118
+                },
+                {
+                    "x": 381.3333333333333,
+                    "y": 125.33333333333333
+                },
+                {
+                    "x": 383.30434782608694,
+                    "y": 133.7391304347826
+                },
+                {
+                    "x": 338.4347826086956,
+                    "y": 133.7391304347826
+                },
+                {
+                    "x": 339.82608695652175,
+                    "y": 126.26086956521739
+                }
+            ],
+            "ru": [
+                {
+                    "x": 331.0666666666667,
+                    "y": 118.33333333333336
+                },
+                {
+                    "x": 338.4533333333333,
+                    "y": 118.18666666666668
+                },
+                {
+                    "x": 340.47999999999996,
+                    "y": 119.14666666666665
+                },
+                {
+                    "x": 396.8,
+                    "y": 119.46666666666665
+                },
+                {
+                    "x": 397.20000000000005,
+                    "y": 126.93333333333335
+                },
+                {
+                    "x": 389.20000000000005,
+                    "y": 126.86666666666666
+                },
+                {
+                    "x": 388.9066666666667,
+                    "y": 132.8
+                },
+                {
+                    "x": 374.40000000000003,
+                    "y": 132.8
+                },
+                {
+                    "x": 371.5333333333333,
+                    "y": 135.26666666666665
+                },
+                {
+                    "x": 367.35999999999996,
+                    "y": 132.48
+                },
+                {
+                    "x": 337.93333333333334,
+                    "y": 132.73333333333335
+                },
+                {
+                    "x": 337.6,
+                    "y": 126.66666666666666
+                },
+                {
+                    "x": 330,
+                    "y": 126.4
+                }
+            ],
+            "zh": [
+                {
+                    "x": 331.5809523809524,
+                    "y": 113.37142857142858
+                },
+                {
+                    "x": 398.0190476190477,
+                    "y": 112.76190476190477
+                },
+                {
+                    "x": 390.70476190476194,
+                    "y": 139.5809523809524
+                },
+                {
+                    "x": 371.20000000000005,
+                    "y": 139.5809523809524
+                },
+                {
+                    "x": 342.552380952381,
+                    "y": 139.5809523809524
+                },
+                {
+                    "x": 333.4095238095238,
+                    "y": 129.21904761904764
+                }
+            ]
+        },
+        "shadesmar": true,
+        "coppermind": "Oathgate",
+        "image": {
+            "file": "events/Oathgate_by_Artem_Demura.png",
+            "credits": "[Artem Demura](https://coppermind.net/wiki/Coppermind:Artists/Artem_Demura)",
+            "offset": {
+                "x": 0,
+                "y": 25
+            }
+        },
+        "related": [
+            "locations/rall-elorim",
+            "locations/sea-of-regret"
+        ]
+    },
+    {
+        "id": "riinos-lighthouse",
+        "coordinates": {
+            "x": 730.7,
+            "y": 258.4
+        },
+        "points": {
+            "en": [
+                {
+                    "x": 776.58223495702,
+                    "y": 255.78006872852234
+                },
+                {
+                    "x": 776.1777777777778,
+                    "y": 265.2444444444444
+                },
+                {
+                    "x": 732.6222222222221,
+                    "y": 265.06666666666666
+                },
+                {
+                    "x": 731.9111111111112,
+                    "y": 256.17777777777775
+                }
+            ],
+            "es": [
+                {
+                    "x": 767.8222222222223,
+                    "y": 256.5333333333333
+                },
+                {
+                    "x": 768.5333333333333,
+                    "y": 264.8888888888889
+                },
+                {
+                    "x": 732.2666666666667,
+                    "y": 264.35555555555555
+                },
+                {
+                    "x": 732.2666666666667,
+                    "y": 256.35555555555555
+                }
+            ],
+            "ru": [
+                {
+                    "x": 732.4000000000001,
+                    "y": 256.88000000000005
+                },
+                {
+                    "x": 738.6666666666666,
+                    "y": 256.64
+                },
+                {
+                    "x": 740.9066666666666,
+                    "y": 257.49333333333334
+                },
+                {
+                    "x": 749.44,
+                    "y": 257.28
+                },
+                {
+                    "x": 752.7466666666667,
+                    "y": 255.36
+                },
+                {
+                    "x": 757.2266666666667,
+                    "y": 257.38666666666666
+                },
+                {
+                    "x": 770.9866666666666,
+                    "y": 257.6
+                },
+                {
+                    "x": 771.7333333333333,
+                    "y": 263.36
+                },
+                {
+                    "x": 768.4266666666666,
+                    "y": 264.74666666666667
+                },
+                {
+                    "x": 733.0133333333333,
+                    "y": 263.68
+                }
+            ],
+            "zh": [
+                {
+                    "x": 782.0190476190477,
+                    "y": 254.7809523809524
+                },
+                {
+                    "x": 783.8476190476191,
+                    "y": 268.1904761904762
+                },
+                {
+                    "x": 727.1619047619048,
+                    "y": 267.5809523809524
+                },
+                {
+                    "x": 728.3809523809524,
+                    "y": 254.7809523809524
+                }
+            ]
+        },
+        "shadesmar": true,
+        "mapId": 115,
+        "coppermind": "Riino's_lighthouse",
+        "image": {
+            "file": "events/Lighthouse_LittleGreyDragon.jpg",
+            "credits": "[LittleGreyDragon](https://coppermind.net/wiki/Coppermind:Artists/LittleGreyDragon)"
+        },
+        "related": [
+            "events/riinos-lighthouse",
+            "locations/sea-of-lost-lights"
         ]
     }
 ]

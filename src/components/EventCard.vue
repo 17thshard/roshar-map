@@ -20,7 +20,11 @@
         inline
         class="event-card__text"
       >
-        <router-link data-tutorial-id="event" :to="`/${$route.params.locale}/events/${event.id}`" class="event-card__read-more">
+        <router-link
+          data-tutorial-id="event"
+          :to="{ name: 'events', params: { locale: $route.params.locale, id: event.id } }"
+          class="event-card__read-more"
+        >
           {{ $t('ui.more') }}
         </router-link>
       </Markdown>
@@ -49,7 +53,7 @@ export default {
   methods: {
     buildImageStyles (image) {
       const styles = {
-        backgroundImage: getEntryImageSrcSet(image.file).css
+        backgroundImage: getEntryImageSrcSet(image.file, this.$gtag).css
       }
 
       if (image.offset !== undefined) {

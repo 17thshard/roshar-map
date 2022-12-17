@@ -1,5 +1,7 @@
 {
-    "textureLocale": "es",
+    "texture-locale": "es",
+    "text-direction": "ltr",
+    "search-language": "es",
     "name": "Mapa de Roshar",
     "title": "{page} | El archivo de las tormentas",
     "meta": {
@@ -36,6 +38,9 @@
         "help": "Ayuda",
         "about": "Acerca de",
         "aboutText": "¡Bienvenido a nuestro mapa interactivo y línea temporal de Roshar!\n\nEsta web te permitirá explorar el mapa de Roshar y la saga *El archivo de las tormentas* de Brandon Sanderson. Hacer click en las diferentes ubicaciones del mapa te revelará detalles sobre la misma, así como sucesos y personajes relacionados. Navegar por la línea temporal en la zona inferior de la página te permitirá saltar entre diferentes sucesos del mapa y desplegar más información sobre los mismos. Si quieres saber todavía más, también hay enlaces a la wiki de Coppermind, pero ten en cuenta que por ahora solo están disponibles en inglés.\n\nEste es un proyecto desarrollado por fans, que no está relacionado con Dragonsteel Entertainment. Todas las fechas y ubicaciones están basadas en una combinación de referencias *in-world* y nuestras propias estimaciones. Si quieres profundizar más en la línea temporal de la saga, o si tienes curiosidad sobre las referencias y las estimaciones empleadas, por favor, visita [el proyecto de línea temporal del Archivo de las Tormentas hecho por Jofwu]https://docs.google.com/spreadsheets/d/1zq5bJoKE83ggDCjH43i1hZi0CIpB2iAx7v37zQPVFK0).\n\n¡Asegúrate de revisar el tutorial en caso de no haberlo hecho todavía! Esperamos que esta te parezca una herramienta divertida, esclarecedora y útil mientras lees *El archivo de las tormentas*",
+        "brandon-sanderson": "Brandon Sanderson",
+        "credits": "Créditos",
+        "map-credits": "Arte del mapa por Spenser Farnes (Stoneward13)",
         "more": "Más...",
         "related": "Relacionado",
         "date": "Fecha",
@@ -44,7 +49,7 @@
         "dismiss": "Ocultar",
         "first-visit": {
             "heading": "Bienvenido",
-            "intro": "**¡Spoilers hasta el final de *Juramentada*!** Sigue adelante bajo tu propio riesgo.\n\nParece que es la primera vez que utilizas esta aplicación. ¿Necesitas ayuda?\n\nSiempre puedes volver a la sección de ayuda desde el menú ubicado en la parte superior derecha.",
+            "intro": "**¡Spoilers hasta el final de *Esquirla del amanecer* y *El ritmo de la guerra*!** Sigue adelante bajo tu propio riesgo.\n\nParece que es la primera vez que utilizas esta aplicación. ¿Necesitas ayuda?\n\nSiempre puedes volver a la sección de ayuda desde el menú ubicado en la parte superior derecha.",
             "calendar": "Explicar fechas",
             "tutorial": "Mostrar leyendas"
         },
@@ -60,6 +65,10 @@
                 "menu-button": {
                     "title": "Menú",
                     "text": "Aquí encontrarás enlaces de ayuda y ajustes de idioma"
+                },
+                "search": {
+                    "title": "Buscar",
+                    "text": "Busca eventos, personajes, ubicaciones y más"
                 },
                 "timeline": {
                     "title": "Línea temporal",
@@ -84,6 +93,14 @@
                 "settings-separate-timelines": {
                     "title": "Líneas temporales separadas",
                     "text": "Una vez has activado un filtro como línea temporal separada, puedes verla etiquetada aquí. Utiliza el control de arrastre para cambiar el orden en que se muestran"
+                },
+                "measure-button": {
+                    "title": "Medir",
+                    "text": "Mide distancias en el mapa y obtén coordenadas exactas para las ubicaciones"
+                },
+                "go-to-date-button": {
+                    "title": "Ir a fecha",
+                    "text": "Desplázate hasta una fecha concreta de la línea temporal"
                 }
             }
         },
@@ -151,7 +168,57 @@
         },
         "lock-timeline": "Fijar navegación a la línea temporal",
         "unlock-timeline": "Desbloquear navegación",
-        "translation-by": "Traducido por"
+        "translation-by": "Traducido por",
+        "image-credits": "por {credits}",
+        "share": "Compartir",
+        "measurement": {
+            "button": "Medir distancias",
+            "title": "Medidas",
+            "explanation": "Clica en dos puntos cualquiera para calcular sus posiciones y la distancia entre ellos. \n\nTen en cuenta que los grados rosharianos(°ᴿ) van desde 0 hasta 200.",
+            "labels": {
+                "start": "Inicio",
+                "end": "Fin",
+                "distance": "Distancia"
+            },
+            "coordinates": {
+                "full": "{latitude}, {longitude}",
+                "north": "{degrees}°ᴿ N",
+                "south": "{degrees}°ᴿ S",
+                "east": "{degrees}°ᴿ E",
+                "west": "{degrees}°ᴿ O"
+            },
+            "distance": "{distanceMi} mi / {distanceKm} km"
+        },
+        "search": {
+            "title": "Buscar",
+            "prompt": "Buscando...",
+            "loading": "Tu búsqueda estarta en breve...",
+            "empty-query": "Introduce arriba los términos que quieres buscar para que aparezcan aquí",
+            "no-results": "Lamentablemente, no hemos encontrado nada con esos términos"
+        }
+    },
+    "sharing": {
+        "title": "Compartir",
+        "global-message": "¡Echa un vistazo al mapa y línea temporal interactiva de Roshar!",
+        "twitter": {
+            "button-text": "Tweet",
+            "entry-template": "Echa un ojo a \"{entry}\" en el mapa y línea temporal interactiva de Roshar!"
+        },
+        "facebook": {
+            "button-text": "Facebook"
+        },
+        "reddit": {
+            "button-text": "Reddit",
+            "entry-template": "Echa un ojo a \"{entry}\" en el mapa y línea temporal interactiva de Roshar!"
+        },
+        "tumblr": {
+            "button-text": "Tumblr",
+            "entry-template": "Echa un ojo a \"{entry}\" en el mapa y línea temporal interactiva de Roshar!"
+        },
+        "more": {
+            "button-text": "More...",
+            "entry-template": "Echa un ojo a \"{entry}\" en el mapa y línea temporal interactiva de Roshar!"
+        }
     },
     "entry-types": {
         "events": "Eventos",
@@ -206,6 +273,7 @@
         "wor": "Palabras radiantes",
         "ed": "Danzante del filo",
         "ob": "Juramentada",
+        "ds": "Esquirla del amanecer",
         "row": "El ritmo de la guerra",
         "adolin": "Adolin",
         "renarin": "Renarin",
@@ -219,6 +287,9 @@
         "wit": "Sagaz",
         "moash": "Moash",
         "venli": "Venli",
-        "history": "Historia"
-    }
+        "history": "Historia",
+        "diagram": "El Diagrama",
+        "ghostbloods": "Los Sangre Espectral"
+    },
+    "changelog":  "¡Bienvenido a la versión actualizada del mapa y la línea temporal interactiva de Roshar! Hemos añadido todos los eventos, ubicaciones y personajes tanto de *Esquirla del amanecer* como de *El ritmo de la guerra*, así que si todavía no has leído esos libros, ¡ten cuidado!\n\n## ¿Cuáles son las novedades?\n\nAdemás de todo el contenido de los libros, hemos trabajado duro para añadir nuevas características y mejoras generales tanto en el mapa como en la línea temporal. Aquí reseñamos algunas de las más destacables:\n\n * 🔎 **Búsqueda:** Ahora puedes buscar eventos, ubicaciones, personajes, ¡y más! Esta funcionalidad se encuentra en la esquina superior derecha junto al botón del menú de opciones. \n * 📐 **Medidas:** ¡Hemos consultado al cartógrafo real Isasik Shulin y hemos hecho cálculos! Desde el botón similar a una brújula que hay sobre la línea temporal a la derecha, ahora puedes medir distancias en Roshar y obtener las coordenadas de cualquier ubicación del continente. Adicionalmente, ¡ahora la retícula que hemos dibujado en el mapa debería ser más exacta!<br>*Ten en cuenta que las medidas se basan en nuestra propia investigación y puede que no resulten del todo precisas.*\n * ⚠️ **Filtro de spoilers:** los filtros de libro, en el apartado de configuración, se han retocado para que sirvan de filtro para spoilers. Ahora puedes desactivar eventos de cualquier libro que no hayas leído, evitando que aparezcan en la línea temporal.<br>*Eso sí, ten en cuenta que esos eventos seguirán en apareciendo bajo los 'Eventos relacionados' en la vista detallada de ubicaciones o personajes.*\n * 🤝 **Compartir:** Aunque todavía no tenemos acceso a tecnología vinculacañas exactamente, al abrir los detalles, ¡ahora verás botones para compartir el contenido de cualquier cosa que veas en el mapa y en la línea temporal! Twitter, Facebook, Reddit y Tumblr aparecen como opciones por defecto, pero a través de dispositivos como un teléfono móvil puedes acceder a cualquier opción disponible para compartir.\n * 📍 **Mapa de Shadesmar actualizado:** Hemos encontrado una perpendicularidad, ¡y gracias a ella hemos tenido la ocasión de explorar el subastral Cognitivo de Roshar! El mapa de Shadesmar se ha actualizado con algunas de las ubicaciones conocidas hasta el momento.\n\nSi encuentras cualquier problema o error ocasionado por los cambios, ¡puedes hacérnoslo llegar a través de nuestro [hilo para *feedback*](https://www.17thshard.com/forum/topic/92801-interactive-map-and-timeline-of-roshar-feedback/) o mediante una [incidencia de GitHub](https://github.com/Palanaeum/roshar-map/issues)!\n\n¡Disfruta explorando esta experiencia actualizada!"
 }

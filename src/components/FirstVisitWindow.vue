@@ -37,11 +37,18 @@ export default {
     },
     explainDates () {
       this.$store.commit('openCalendarGuide')
+      if (this.$gtag) {
+        this.$gtag.event('first_visit_done', { event_category: 'engagement', event_label: 'calendar_guide' })
+        this.$gtag.pageview({ page_title: 'Calendar Guide', page_path: '/calendar-guide', page_location: '' })
+      }
       this.dismiss()
     },
     startTutorial () {
       window.localStorage.tutorialStarted = 'true'
       this.$emit('open-tutorial')
+      if (this.$gtag) {
+        this.$gtag.event('first_visit_done', { event_category: 'engagement', event_label: 'tutorial' })
+      }
       this.$emit('close')
     }
   }

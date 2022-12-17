@@ -1,0 +1,2 @@
+# The Glasswater Deep
+The **Glasswater Deep** is a location in the #[Sea of Lost Lights](locations/sea-of-lost-lights). It is adjacent to Ravizadth and Emberdark, and hits the Emberdark Channel and South Hallen Channel. It is near the #[Luminous Shallows](locations/luminous-shallows). In the Physical Realm, it is the northern part of the #[Frostlands](locations/frostlands), lying on the same peninsula that #[Kharbranth](locations/kharbranth) is on to its west.

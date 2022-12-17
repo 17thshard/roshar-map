@@ -1,0 +1,4 @@
+# Puerta Jurada de Kurth
+La **Puerta Jurada de Kurth** de Shadesmar marca el reflejo de la Puerta Jurada ubicada en #[Kurth](locations/kurth). Se encuentra adyacente a la costa de un lago que corresponde con la isla de Kurth ubicada en el #[Mar Reshi](locations/reshi-sea). Está justo al sur del #[Nexo de la Transición](locations/nexus-of-transition).
+
+La Puerta Jurada está representada por una plataforma plana de un material parecido al mármol blanco, del tamaño del edificio de control. La propia en esí misma está custodiada por dos gigantescos spren, ambos del tamaño de un edificio, equipados con armadura y lanza. Uno de los spren es blanco, mientras que el otro es de un color negro brillante.  

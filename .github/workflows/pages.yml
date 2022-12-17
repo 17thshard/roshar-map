@@ -5,6 +5,12 @@ on:
     branches:
       - master
   pull_request:
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: 'Deploy result to site'
+        required: false
+        type: boolean
 
 jobs:
   build:
@@ -45,7 +51,8 @@ jobs:
 
       - name: Deploy
         uses: maxheld83/ghpages@v0.2.1
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master' && contains(github.event.head_commit.message, '[deploy]')
+        if: (github.event_name == 'push' && github.ref == 'refs/heads/master' && contains(github.event.head_commit.message, '[deploy]'))
+          || (github.event_name == 'workflow_dispatch' && github.event.inputs.deploy)
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           BUILD_DIR: dist/release/

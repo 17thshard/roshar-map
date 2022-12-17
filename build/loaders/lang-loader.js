@@ -13,8 +13,6 @@ module.exports = function (source) {
   const standardParser = parseStandardFile.bind(this)
   const eventParser = parseEventFile.bind(this)
 
-  // Eval is safe here since we're getting things directly from the JSON "loader"
-  // eslint-disable-next-line no-eval
   const messages = typeof source === 'string' ? JSON.parse(source) : source
 
   messages.events = build(lang, 'events', eventParser)
