@@ -281,6 +281,9 @@ export default {
     }
   },
   mounted () {
+    if (window.localStorage.getItem('activeEvent')) {
+      this.$store.commit('selectEvent', this.$store.state.mappings.events[localStorage.getItem('activeEvent')])
+    }
     if (this.activeEvent !== null) {
       setTimeout(() => this.scrollToEvent(this.activeEvent), 1500)
     } else {
@@ -475,6 +478,7 @@ export default {
     selectEvent (event) {
       this.$store.commit('selectEvent', event)
       this.scrollToEvent(event)
+      window.localStorage.setItem('activeEvent', event.id)
     },
     scrollToEvent (event) {
       this.$nextTick(() => {
