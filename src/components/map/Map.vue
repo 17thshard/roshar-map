@@ -131,13 +131,6 @@ export default {
       return
     }
 
-    if (window.localStorage.getItem('layersActive')) {
-      const layersActive = JSON.parse(localStorage.getItem('layersActive'))
-      Object.entries(layersActive).forEach(([layer, value]) => {
-        this.$store.commit('toggleLayer', { layer, value })
-      })
-    }
-
     // #ifdef MAP_DEBUG
     this.stats = new Stats()
     this.stats.dom.style.width = '80px'
@@ -147,6 +140,14 @@ export default {
 
     this.loadTextures()
       .then(this.setupScene)
+      .then(() => {
+        if (window.localStorage.getItem('layersActive')) {
+          const layersActive = JSON.parse(localStorage.getItem('layersActive'))
+          Object.entries(layersActive).forEach(([layer, value]) => {
+            this.$store.commit('toggleLayer', { layer, value })
+          })
+        }
+      })
       .then(() => {
         this.$el.prepend(this.renderer.domElement)
 
