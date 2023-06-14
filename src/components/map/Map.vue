@@ -99,6 +99,7 @@ export default {
     layersActive: {
       handler (layersActive) {
         this.updateLayers(layersActive)
+        window.localStorage.setItem('layersActive', JSON.stringify(layersActive))
       },
       deep: true
     },
@@ -128,6 +129,13 @@ export default {
     } catch (error) {
       this.$emit('error', error)
       return
+    }
+
+    if (window.localStorage.getItem('layersActive')) {
+      const layersActive = JSON.parse(localStorage.getItem('layersActive'))
+      Object.entries(layersActive).forEach(([layer, value]) => {
+        this.$store.commit('toggleLayer', { layer, value })
+      })
     }
 
     // #ifdef MAP_DEBUG
