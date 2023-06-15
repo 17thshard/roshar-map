@@ -135,6 +135,20 @@ export default {
       }
     }
   },
+  mounted () {
+    if (window.localStorage.getItem('activeEvent')) {
+      this.$store.commit('selectEvent', this.$store.state.mappings.events[localStorage.getItem('activeEvent')])
+    }
+    if (window.localStorage.getItem('layersActive')) {
+      const layersActive = JSON.parse(localStorage.getItem('layersActive'))
+      Object.entries(layersActive).forEach(([layer, value]) => {
+        this.$store.commit('toggleLayer', { layer, value })
+      })
+    }
+    if (window.localStorage.getItem('filter')) {
+      this.$store.commit('updateFilter', JSON.parse(localStorage.getItem('filter')))
+    }
+  },
   methods: {
     onReady () {
       this.ready = true

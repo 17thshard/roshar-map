@@ -140,14 +140,6 @@ export default {
     this.loadTextures()
       .then(this.setupScene)
       .then(() => {
-        if (window.localStorage.getItem('layersActive')) {
-          const layersActive = JSON.parse(localStorage.getItem('layersActive'))
-          Object.entries(layersActive).forEach(([layer, value]) => {
-            this.$store.commit('toggleLayer', { layer, value })
-          })
-        }
-      })
-      .then(() => {
         this.$el.prepend(this.renderer.domElement)
 
         Object.keys(this.layers).forEach((layer) => {
