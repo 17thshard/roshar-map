@@ -478,7 +478,6 @@ export default {
     selectEvent (event) {
       this.$store.commit('selectEvent', event)
       this.scrollToEvent(event)
-      window.localStorage.setItem('activeEvent', event.id)
     },
     scrollToEvent (event) {
       this.$nextTick(() => {

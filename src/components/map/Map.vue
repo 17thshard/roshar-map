@@ -99,7 +99,6 @@ export default {
     layersActive: {
       handler (layersActive) {
         this.updateLayers(layersActive)
-        window.localStorage.setItem('layersActive', JSON.stringify(layersActive))
       },
       deep: true
     },

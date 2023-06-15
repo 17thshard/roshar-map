@@ -209,9 +209,11 @@ const locationsByMapId = Object.values(mappings.locations).filter(location => lo
 const mutations = {
   selectEvent (state, event) {
     state.activeEvent = event
+    window.localStorage.setItem('activeEvent', event.id)
   },
   unselectEvent (state) {
     state.activeEvent = null
+    window.localStorage.setItem('activeEvent', '')
   },
   enableTag (state, tag) {
     const index = state.filter.tags.indexOf(tag)
@@ -256,6 +258,7 @@ const mutations = {
   },
   toggleLayer (state, { layer, value }) {
     state.layersActive[layer] = value
+    window.localStorage.setItem('layersActive', JSON.stringify(state.layersActive))
   },
   openCalendarGuide (state) {
     state.calendarGuideOpen = true
