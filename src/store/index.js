@@ -209,9 +209,14 @@ const locationsByMapId = Object.values(mappings.locations).filter(location => lo
 const mutations = {
   selectEvent (state, event) {
     state.activeEvent = event
+    window.localStorage.setItem('activeEvent', state.activeEvent.id)
   },
   unselectEvent (state) {
     state.activeEvent = null
+    window.localStorage.setItem('activeEvent', '')
+  },
+  updateFilter (state, filter) {
+    state.filter = filter
   },
   enableTag (state, tag) {
     const index = state.filter.tags.indexOf(tag)
@@ -221,6 +226,7 @@ const mutations = {
     }
 
     mutations.disableTagSeparation(state, tag)
+    window.localStorage.setItem('filter', JSON.stringify(state.filter))
   },
   disableTag (state, tag) {
     if (!state.filter.tags.includes(tag)) {
@@ -228,6 +234,7 @@ const mutations = {
     }
 
     mutations.disableTagSeparation(state, tag)
+    window.localStorage.setItem('filter', JSON.stringify(state.filter))
   },
   enableTagSeparation (state, tag) {
     mutations.enableTag(state, tag)
@@ -237,6 +244,7 @@ const mutations = {
     }
 
     state.filter.latestSeparatedTag = tag
+    window.localStorage.setItem('filter', JSON.stringify(state.filter))
   },
   disableTagSeparation (state, tag) {
     const index = state.filter.separateTags.indexOf(tag)
@@ -256,6 +264,7 @@ const mutations = {
   },
   toggleLayer (state, { layer, value }) {
     state.layersActive[layer] = value
+    window.localStorage.setItem('layersActive', JSON.stringify(state.layersActive))
   },
   openCalendarGuide (state) {
     state.calendarGuideOpen = true
