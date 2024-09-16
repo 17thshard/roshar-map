@@ -9,6 +9,8 @@
       }
     ]"
     :style="{ '--max-height': `${contentHeight}px` }"
+    @keyup.arrow-left="gotoEvent(-1)"
+    @keyup.arrow-right="gotoEvent(1)"
   >
     <transition name="event-card">
       <EventCard v-if="activeEvent !== null" :key="`event-${activeEvent.id}`" :event="activeEvent" />
