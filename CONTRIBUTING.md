@@ -4,7 +4,7 @@ The timeline for this project is based on Jofwu's [Stormlight Archive Timeline](
 
 Before adding new events to the timeline please get persmission from our team. We may have reasons for not including the event, and if we *do* want to proceed we will need to coordinate the update with other translations.
 
-You can help us out by (1) noting a name for the event, (2) confirming the date fo the event on Jofwu's timeline, (3) writing a small blurb for what the event is, (4) writing a larger description about the event, (5) noting any relate characters, events, or locations, and (6) recording any chapters in the books where the event occurs.
+You can help us out by (1) noting a name for the event, (2) confirming the date of the event on Jofwu's timeline, (3) writing a small blurb for what the event is, (4) writing a larger description about the event, (5) noting any relate characters, events, or locations, and (6) recording any chapters in the books where the event occurs.
  
 # Artwork
 
