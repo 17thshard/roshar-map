@@ -10,6 +10,7 @@ Navani is captured and brought to Raboniel, making her way through the corpses o
 
 As Raboniel's forces search the city for Radiants, Teft is found and nearly taken before Kaladin decides to fight back. He carries Teft deep into the tower looking for a place to hide.
 
+## Metadata
 | Field | Value |
 | ----- | ----- |
-| chapter | *Rhythm of War* 37-43|
+| chapter | *Rhythm of War* Ch. 37-43|
