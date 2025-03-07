@@ -1,0 +1,7 @@
+# Payidar Fazilet
+
+**Payidar Fazilet**, Shadesmar’daki şerefsprenlerinin başkentidir. Kale, #[Ruhlar Denizi’nin](locations/sea-of-souls) güney bölümünde, #[Düş Bağı](locations/nexus-of-imagination), #[Canlılık Enginliği](locations/expanse-of-vibrance) ve Şaşaalı Ölümsüz yakınlarında yer almaktadır. Payidar Fazilet, #[Astral Sahil’in](locations/astral-banks) bir parçası olan kuzeydeki bir körfeze bakan bir uçurumun üzerinde bulunur; burası, #[Tukar](locations/tukar) ülkesinin yansımasıdır.
+
+Kale, birkaç yüz fit yüksekliğinde, dikdörtgen biçiminde ve mavi taştan yapılmıştır. Ortası boş olup çatısı yoktur ve küçük kenarı üzerinde durarak gökyüzüne doğru yükselir. Son derece stratejik bir konuma sahiptir ve kasıtlı olarak tahkim edilmiş izlenimi verir. Ziyaretçilerin girişe ulaşmak için bir köprüden geçmesi gerekir ve duvarların dışında nöbetçiler bekler. Dış duvarlar dümdüzdür; pencere veya süsleme içermez. Kalenin üst kısmında mazgallar ve insanların düşmesini önlemek için bir korkuluk bulunur. Kule içindeki boyutlar o kadar geniştir ki, bir kişi mazgallarda durduğunda duvarlardaki yapılar tamamen görüşünü engellemeden kalenin dibini görebilir.
+
+Payidar Fazilet içinde yerçekimi farklı işler; her iç duvarın kendine ait bir yerçekimi "alanı" vardır, bu da insanların her iç yüzeyi zemin gibi kullanmasına olanak tanır. Birisi bir düzlemden diğerine geçtiğinde, algıladığı yerçekimi, bulunduğu yeni yüzeye uyum sağlayarak değişir.
