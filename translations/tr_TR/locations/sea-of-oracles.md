@@ -1,0 +1,3 @@
+# Kahinler Denizi
+
+**Kahinler Denizi**, #[Kayıp Işıklar Denizi’nin](locations/sea-of-lost-lights) bir bölgesidir. #[Celebrant](locations/celebrant), Korkoyu ve Yanan Bahçeler’in kuzeyinde yer alır. Güneyde ise #[Camsuyu Ummanı](locations/glasswater-deep) ile sınır komşusudur. Fiziksel Alem’de, Kâhinler Denizi en azından Ecel Sapağı Nehri’nin kuzeyindeki #[Alethkar](locations/alethkar) topraklarına karşılık gelir. Ayrıca #[Tarat Denizi’nin](locations/tarat-sea) de kuzeyinde yer aldığından, Kâhinler Denizi’nin #[Jah Keved'e](locations/jah-keved) kadar uzandığı anlaşılmaktadır. Denizinin batı sınırı ise belirsizdir.
