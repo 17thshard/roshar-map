@@ -3,7 +3,7 @@ FROM node:16-alpine as build-stage
 
 ARG PUBLIC_URL=/
 
-RUN apk add --no-cache autoconf automake libtool make tiff jpeg zlib zlib-dev pkgconf nasm file gcc g++ musl-dev python3
+RUN apk add --no-cache autoconf automake libtool make tiff jpeg zlib zlib-dev pkgconf nasm file gcc g++ musl-dev python3 git
 
 WORKDIR /app
 COPY package.json yarn.lock /app/
