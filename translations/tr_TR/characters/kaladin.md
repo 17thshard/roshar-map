@@ -1,7 +1,6 @@
 # Kaladin Stormblessed
 
 > "Şeref öldü, ama ben ne yapabileceğime bir bakacağım."
-> "Sen onu gökyüzüne ölmesi için gönderdin, suikastçı. Ama gökyüzü ve rüzgarlar benim. Onlara el koyuyorum, şimdi senin hayatına el koyduğum gibi."
 
 **Kaladin**, yada kısaltmasıyla **Kal**, **Kaladin Stormblessed** olarak bilinir.  #[Alethkarlı](locations/alethkar), koyugözlü bir Parlayan Şövalye'lerin Rüzgarkoşucu Tarikatınındandır. Lirin ve Hesina'nın oğulları, Tien ve Oroden'in abisidir. Babasının küçük yaşından itibaren ona verdiği tıbbi eğitimlere nazaran profesyönel bir asker olmayı seçmiştir. #[Dalinar Kholin'nin](characters/dalinar) kişisel muhafızı olarak ünlenmiştir ve Köprü Dört'ün lideridir. 
 

@@ -1,4 +1,4 @@
-# Adonalsium'um Parelenmesi
+# Adonalsium'un Parelenmesi
 Adonalsium 16 pareye parlendi. Parelerden Şeref ve Terbiye Roshar'a konumlandı. Garaz ise daha sonra onları takip edecekti.
 
 ## Details
