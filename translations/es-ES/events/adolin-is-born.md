@@ -1,4 +1,7 @@
 # Nace Adolin
+
+
+## Details
 Nace #[Adolin](characters/adolin), hijo de #[Dalinar](characters/dalinar) y Evi Kholin.
 
 ## Metadata
