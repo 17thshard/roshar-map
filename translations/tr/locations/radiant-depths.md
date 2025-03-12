@@ -1,0 +1,3 @@
+# Parlayan Ummanı
+
+**Parlayan Ummanı**, #[Ruhlar Denizi’nde](locations/sea-of-souls) bulunan bir çukurdur ve Roshar’ın Bilişsel Alem’deki alt-astralinin bir parçasıdır. #[Nohadon’un Merdivenleri’nin](locations/nohadons-stairways) güneyinde yer alır ve büyük ihtimalle Parlayan Şövalyeler’in adını taşımaktadır. Baki Işık deniz fenerinin bulunduğu yarımadanın doğusunda ve #[İsimsiz’in](locations/nameless) kuzeyinde yer alır. #[Shallan](characters/shallan) ve #[Adolin](characters/adolin), [Payidar Fazilet’e](locations/lasting-integrity) yaptıkları yolculuk sırasında Parlayan Ummanı’ndan geçerek İsimsiz’e ulaşırlar. Parlayan Ummanı, Fiziksel Alem’de en azından #[Marat](locations/marat) ile örtüşmektedir ve muhtemelen doğudaki diğer ulusları da kapsamaktadır.
