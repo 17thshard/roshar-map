@@ -2,7 +2,7 @@
 Jasnah, Alethkar'ın kraliçesi olarak taç giydi.
 
 ## Details
-Thaylen Ovası Savaşı'dan ve Elhokar'ın ölümünün doğrulanmasından sonra Jasnha Alethkar'ın Kraliçesi Ünvanını aldı.
+Thaylen Ovası Savaşı'dan ve Elhokar'ın ölümünün doğrulanmasından sonra Jasnah, Alethkar'ın Kraliçesi Ünvanını aldı.
 
 ## Metadata
 | Field | Value |
