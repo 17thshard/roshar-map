@@ -65,6 +65,7 @@ import Tutorial from '@/components/Tutorial.vue'
 import FirstVisitWindow from '@/components/FirstVisitWindow.vue'
 import ErrorScreen from '@/components/ErrorScreen.vue'
 import Changelog, { VERSION as CHANGELOG_VERSION } from '@/components/Changelog.vue'
+import '@/assets/fonts/baskerville.scss'
 import '@/assets/fonts/hebrew.scss'
 import Search from '@/components/search/Search.vue'
 import { mapMutations, mapState } from 'vuex'
@@ -187,7 +188,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
 
 body {
