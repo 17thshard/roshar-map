@@ -65,6 +65,7 @@ import Tutorial from '@/components/Tutorial.vue'
 import FirstVisitWindow from '@/components/FirstVisitWindow.vue'
 import ErrorScreen from '@/components/ErrorScreen.vue'
 import Changelog, { VERSION as CHANGELOG_VERSION } from '@/components/Changelog.vue'
+import '@/assets/fonts/baskerville.scss'
 import '@/assets/fonts/hebrew.scss'
 import Search from '@/components/search/Search.vue'
 import { mapMutations, mapState } from 'vuex'
@@ -135,23 +136,22 @@ export default {
       }
     }
   },
-  mounted () {
-    if (window.localStorage.getItem('activeEvent')) {
-      this.$store.commit('selectEvent', this.$store.state.mappings.events[localStorage.getItem('activeEvent')])
-    }
-    if (window.localStorage.getItem('layersActive')) {
-      const layersActive = JSON.parse(localStorage.getItem('layersActive'))
-      Object.entries(layersActive).forEach(([layer, value]) => {
-        this.$store.commit('toggleLayer', { layer, value })
-      })
-    }
-    if (window.localStorage.getItem('filter')) {
-      this.$store.commit('updateFilter', JSON.parse(localStorage.getItem('filter')))
-    }
-  },
   methods: {
     onReady () {
       this.ready = true
+
+      if (window.localStorage.getItem('activeEvent')) {
+        this.$store.commit('selectEvent', this.$store.state.mappings.events[localStorage.getItem('activeEvent')])
+      }
+      if (window.localStorage.getItem('layersActive')) {
+        const layersActive = JSON.parse(localStorage.getItem('layersActive'))
+        Object.entries(layersActive).forEach(([layer, value]) => {
+          this.$store.commit('toggleLayer', { layer, value })
+        })
+      }
+      if (window.localStorage.getItem('filter')) {
+        this.$store.commit('updateFilter', JSON.parse(localStorage.getItem('filter')))
+      }
 
       if (this.$gtag) {
         this.$gtag.time({
@@ -188,7 +188,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
 
 body {

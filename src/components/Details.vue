@@ -177,11 +177,20 @@ export default {
       return result
     },
     text () {
-      if (!this.$te(`${this.baseTranslationKey}.details`, 'en') && this.$te(`${this.baseTranslationKey}.blurb`, 'en')) {
+      // Fall back from translated details to translated blurb to English details to English blurb
+      if (this.$te(`${this.baseTranslationKey}.details`)) {
+        return this.$t(`${this.baseTranslationKey}.details`)
+      }
+
+      if (this.$te(`${this.baseTranslationKey}.blurb`)) {
         return this.$t(`${this.baseTranslationKey}.blurb`)
       }
 
-      return this.$t(`${this.baseTranslationKey}.details`)
+      if (this.$te(`${this.baseTranslationKey}.details`, 'en')) {
+        return this.$t(`${this.baseTranslationKey}.details`)
+      }
+
+      return this.$t(`${this.baseTranslationKey}.blurb`)
     },
     anyRelated () {
       return Object.keys(this.related).length > 0

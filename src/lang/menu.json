@@ -12,6 +12,10 @@
     "name": "Русский"
   },
   {
+    "code": "tr",
+    "name": "Türkçe"
+  },
+  {
     "code": "zh",
     "name": "中文"
   }
