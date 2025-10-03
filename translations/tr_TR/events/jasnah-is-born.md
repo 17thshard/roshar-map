@@ -2,4 +2,4 @@
 
 
 ## Details
-Jasnah, Navani ve Gavilar Kholin'in ilk çocukları olarak dünyaya geldi.
+#[Jasnah](characters/jasnah), #[Navani](characters/navani) ve #[Gavilar Kholin'in](characters/gavilar) ilk çocukları olarak dünyaya geldi.
