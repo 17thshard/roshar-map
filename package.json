@@ -11,6 +11,9 @@
     "validateTranslations": "node ./bin/validate-translations.js",
     "convertTextures": "node ./bin/convert-textures.js"
   },
+  "engines" : {
+    "node" : ">=16.0.0 <17.0.0"
+  },
   "dependencies": {
     "@johmun/vue-tags-input": "^2.1.0",
     "@popperjs/core": "^2.4.4",

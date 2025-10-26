@@ -14664,7 +14664,7 @@ __metadata:
     sass: ^1.53.0
     sass-loader: ^10.1.1
     vue: ^2.6.14
-  checksum: e6226ff70719cec952daf0c2b6e1d05613072f871e8e22ce0004d3707b49969ac26d2fab2da63c59e68eeab87b351b4a18b023abe6eae76db1b7015ffa82b413
+  checksum: 695159f519e3ef09d0a3aa0e1815f74982e03b5a786fae36cf6ab36597447b5e9d675442a570f12719835ac14be0f086a58e5551a974d7fe02c5f9c06fcad816
   languageName: node
   linkType: hard
 

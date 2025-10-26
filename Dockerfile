@@ -1,13 +1,14 @@
 # build stage
-FROM node:16-alpine as build-stage
+FROM node:16-alpine AS build-stage
 
 ARG PUBLIC_URL=/
 
-RUN apk add --no-cache autoconf automake libtool make tiff jpeg zlib zlib-dev pkgconf nasm file gcc g++ musl-dev python3 git
+RUN corepack enable yarn && apk add --no-cache autoconf automake libtool make tiff jpeg zlib zlib-dev pkgconf nasm file gcc g++ musl-dev python3 git
 
 WORKDIR /app
-COPY package.json yarn.lock /app/
-RUN yarn install
+COPY ./.yarn /app/.yarn
+COPY package.json yarn.lock .yarnrc.yml /app/
+RUN yarn install --immutable
 
 COPY babel.config.js vue.config.js README.md /app/
 
