@@ -2,4 +2,4 @@
 
 
 ## Details
-Lift Reshi annesinden dünyaya geldi ve Rall Elorim'de büyüdü.
+#[Lift](characters/lift), Reshi annesinden dünyaya geldi ve #[Rall Elorim'de](locations/rall-elorim) büyüdü.

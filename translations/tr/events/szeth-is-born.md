@@ -2,4 +2,4 @@
 
 
 ## Details
-Szeth Shinovar'da doğdu.
+#[Szeth](characters/szeth) #[Shinovar'da](locations/shinovar) doğdu.

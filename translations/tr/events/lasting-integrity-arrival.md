@@ -2,7 +2,7 @@
 Shallan ve Adolin'in önderliğindeki Koalisyon heyeti Payidar Fazilet'e vardı.
 
 ## Details
-Yolculuklarının son gününde, İsimsiz kasabasında karşılaştıkları Tukari'lerin Notum'a saldırdığını fark eden #[Adolin](characters/adolin) hemen ona yardıma koşar. Maya'nın da yardımıyla yaralı haldeki Notum'u kurtarırlar.
+Yolculuklarının son gününde, #[İsimsiz](locations/nameless) kasabasında karşılaştıkları Tukari'lerin Notum'a saldırdığını fark eden #[Adolin](characters/adolin) hemen ona yardıma koşar. Maya'nın da yardımıyla yaralı haldeki Notum'u kurtarırlar.
 
 O sırada #[Shallan](characters/shallan), gemiye geri döndüğünde küpün yeniden kullanıldığını fark eder. Desen'e sorduğu birkaç sorudan ona yalan söylediğini anlar ve hainin Desen olduğunu fark eder ve kelimenin tam anlamıyla yıkılır.
 

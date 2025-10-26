@@ -2,4 +2,4 @@
 
 
 ## Details
-Navani, Alethkar'da doğdu.
+#[Navani](characters/navani), #[Alethkar'da](locations/alethkar) doğdu.

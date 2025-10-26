@@ -2,4 +2,4 @@
 
 
 ## Details
-Elhokar, ablası Jasnah'dan birkaç yıl sonra, Gavialar ve Navani'nin oğulları olarak doğdu.
+#[Elhokar](characters/elhokar), ablası #[Jasnah'dan](characters/jasnah) birkaç yıl sonra, #[Gavilar](characters/gavilar) ve #[Navani'nin](characters/navani) oğulları olarak doğdu.

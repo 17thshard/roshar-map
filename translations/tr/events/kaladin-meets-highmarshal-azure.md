@@ -2,7 +2,7 @@
 Kaladin Duvar Muhafızlarına katıldı ve Yücemareşal Çivit ile tanıştı.
 
 ## Details
-Kholinar'ı incelediği sırada Kaladin kendini bir şekilde Duvar Muhafızlarına katılırken buldu ve bu ona Yücemareşal Çivit ile tanışma şansı tanıdı.
+#[Kholinar'ı](locations/kholinar) incelediği sırada #[Kaladin](characters/kaladin) kendini bir şekilde Duvar Muhafızlarına katılırken buldu ve bu ona Yücemareşal Çivit ile tanışma şansı tanıdı.
 
 ## Metadata
 | Field | Value |

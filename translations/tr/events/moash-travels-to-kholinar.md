@@ -2,7 +2,7 @@
 Moash, Sah ve Khen'in grubuyla birlikte Kholinar'a kadar malzemeleri çekti.
 
 ## Details
-Buzdiyar'da grubuna saldıran Kaynaşıklar tarafından Revolar'a götürüldü. Yol boyunca, Revolar'dan Kholinar'a kadar, bir parlayan olan Kaladin'i fark etmeyip aralarına aldıkları için cezalandırlan Sah ve Khen’in grubu ile birlikte malzeme taşıdı.
+#[Moash](characters/moash), #[Buzdiyar'da](locations/frostlands) grubuna saldıran Kaynaşıklar tarafından #[Revolar'a](locations/revolar) götürüldü. Yol boyunca, Revolar'dan #[Kholinar'a](locations/kholinar) kadar, bir parlayan olan #[Kaladin'i](characters/kaladin) fark etmeyip aralarına aldıkları için cezalandırlan Sah ve Khen’in grubu ile birlikte malzeme taşıdı.
 
 ## Metadata
 | Field | Value |

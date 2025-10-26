@@ -2,4 +2,4 @@
 
 
 ## Details
-Rysn Thaylenah'ta doğdu.
+#[Rysn](characters/rysn) #[Thaylenah'ta](locations/thaylenah) doğdu.

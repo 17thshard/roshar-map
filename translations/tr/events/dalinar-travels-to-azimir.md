@@ -2,7 +2,7 @@
 Dalinar, Azimir'e gitti ve Azishleri koalisyona katılmaya ikna etti.
 
 ## Details
-Dalinar, Kraliçe Fen tarafından düzenlenen bir dizi ticaret anlaşmasını, Navani'nin bir incelemesini ve Jasnah Kholin'in bir makalesini taşıyarak yeminkapısı üzerinden Azimir'e gitti. Ziyaret sonunda Azir'in Bİrincisi Aqasix'i ve onunla birlikte Makabaki hükümdarlarının geri kalanını Urithiru'yu ziyaret etmeye ve Garaz'a karşı koalisyona katılmaya ikna etti.
+#[Dalinar](characters/dalinar), Kraliçe Fen tarafından düzenlenen bir dizi ticaret anlaşmasını, #[Navani'nin](characters/navani) bir incelemesini ve #[Jasnah Kholin'in](characters/jasnah) bir makalesini taşıyarak yeminkapısı üzerinden #[Azimir'e](locations/azimir) gitti. Ziyaret sonunda #[Azir'in](locations/azir) Birincisi Aqasix'i ve onunla birlikte Makabaki hükümdarlarının geri kalanını #[Urithiru'yu](locations/urithiru) ziyaret etmeye ve #[Garaz'a](characters/odium) karşı koalisyona katılmaya ikna etti.
 
 ## Metadata
 | Field | Value |

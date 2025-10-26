@@ -2,7 +2,7 @@
 Amaram Harap Ovalar'a vardı.
 
 ## Details
-Amaram, Şerefin Oğulları ile ilgili gizemli planlarıyla birlikte, Kule Savaşı'ndan hemen sonra Harap Ovalar'a vardı. Onun varışı Kaladin'in, Dalinar'ın şerefinden şüphe etmesine ve bir süreliğine aralarının açılmasına sebep oldu.
+Amaram, Şerefin Oğulları ile ilgili gizemli planlarıyla birlikte, Kule Savaşı'ndan hemen sonra #[Harap Ovalar'a](locations/shattered-plains) vardı. Onun varışı #[Kaladin'in](characters/kaladin) #[Dalinar'ın](characters/dalinar) şerefinden şüphe etmesine ve bir süreliğine aralarının açılmasına sebep oldu.
 
 ## Metadata
 | Field | Value |
