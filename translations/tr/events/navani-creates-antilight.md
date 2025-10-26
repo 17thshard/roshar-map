@@ -1,4 +1,4 @@
-# Navani anti-Işık Sentezler
+# Navani Anti-Işık Sentezler
 Navani, Garaz'ın ritminin tersini üretmeyi başarır ve Raboniel ile birlikte bunu kullanarak anti-Yokışık oluşturur. Ardından Raboniel, bu Işık’ı kızını öldürmek için kullanır ve anti-Fırtınaışığı üretilmesi emrini verir.
 
 ## Details

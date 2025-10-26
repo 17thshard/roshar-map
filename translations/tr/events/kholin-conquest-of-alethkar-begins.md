@@ -2,4 +2,4 @@
 Kholin Hanesi'nin başına geçtikten sonra Gavilar ve Dalinar, Alethkar'ı bir monarşi altında birleştirmek için fetihlere başladılar.
 
 ## Details
-Kholin Hanesi'nin başına geçtikten sonra Gavilar ve Dalinar, Alethkar'ı bir monarşi altında birleştirmek için fetihlere başladılar. Sadeas ile ittifak kurdular. Kendilerine karşı gelen diğer Yüceprensler ile de savaştılar.
+Kholin Hanesi'nin başına geçtikten sonra #[Gavilar](characters/gavilar) ve #[Dalinar](characters/dalinar), #[Alethkar'ı](locations/alethkar) bir monarşi altında birleştirmek için fetihlere başladılar. Sadeas ile ittifak kurdular. Kendilerine karşı gelen diğer Yüceprensler ile de savaştılar.

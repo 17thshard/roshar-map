@@ -2,4 +2,4 @@
 
 
 ## Details
-Adolin'in küçük kardeşi Renarin, Dalinar ve Evi'nin ikinci oğulları olarak dünyaya geldi.
+#[Adolin'in](characters/adolin) küçük kardeşi #[Renarin](characters/renarin), #[Dalinar](characters/dalinar) ve Evi'nin ikinci oğulları olarak dünyaya geldi.

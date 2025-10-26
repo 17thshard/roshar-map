@@ -2,4 +2,4 @@
 
 
 ## Details
-Kaladin, Lirin ve Hesina'nın ilk oğulları olarak Herthstone'da doğdu.
+#[Kaladin](characters/kaladin), Lirin ve Hesina'nın ilk oğulları olarak Herthstone'da doğdu.

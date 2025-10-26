@@ -2,4 +2,4 @@
 
 
 ## Details
-Venli, Jaxlim'in ikinci kızı olarak doğdu.
+#[Venli](characters/venli), Jaxlim'in ikinci kızı olarak doğdu.

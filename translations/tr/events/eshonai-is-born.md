@@ -2,4 +2,4 @@
 
 
 ## Details
-Eshonai, Jaxlim'in ilk kızı olarak hayata gözlerini açtı.
+#[Eshonai](characters/eshonai), Jaxlim'in ilk kızı olarak hayata gözlerini açtı.
