@@ -237,6 +237,7 @@ const MapControls = function (object, domElement) {
   const clickStart = new Vector2()
   let clickTouches = 0
   let wasMultiTouch = false
+  let clickCtrlKey = false
 
   const mousePosition = new Vector2()
 
@@ -349,7 +350,7 @@ const MapControls = function (object, domElement) {
 
     const result = rayCast(clickStart.x, clickStart.y, true)
     if (result !== null) {
-      scope.dispatchEvent({ type: 'click', position: result })
+      scope.dispatchEvent({ type: 'click', position: result, ctrlKey: clickCtrlKey })
     }
   }
 
@@ -411,7 +412,7 @@ const MapControls = function (object, domElement) {
     if (offsetX === clickStart.x || offsetY === clickStart.y) {
       const result = rayCast(clickStart.x, clickStart.y, true)
       if (result !== null) {
-        scope.dispatchEvent({ type: 'click', position: result })
+        scope.dispatchEvent({ type: 'click', position: result, ctrlKey: false })
       }
     }
   }
@@ -438,6 +439,7 @@ const MapControls = function (object, domElement) {
       case 0:
         mouseAction = scope.mouseButtons.LEFT
         clickStart.set(event.offsetX, event.offsetY)
+        clickCtrlKey = event.ctrlKey
         break
       case 1:
         mouseAction = scope.mouseButtons.MIDDLE
