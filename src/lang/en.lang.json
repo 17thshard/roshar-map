@@ -168,7 +168,7 @@
         "measurement": {
             "button": "Measure distances",
             "title": "Measurement",
-            "explanation": "Click any two points to calculate their positions and the distance between them.\n\nNote that the Rosharan degree (°ᴿ) ranges from 0 to 200.",
+            "explanation": "Click any two points to calculate their positions and the distance between them. Hold **[Ctrl]** while clicking to add multiple points.\n\nNote that the Rosharan degree (°ᴿ) ranges from 0 to 200.",
             "labels": {
                 "start": "Start",
                 "end": "End",

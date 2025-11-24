@@ -174,7 +174,7 @@
         "measurement": {
             "button": "Medir distancias",
             "title": "Medidas",
-            "explanation": "Clica en dos puntos cualquiera para calcular sus posiciones y la distancia entre ellos. \n\nTen en cuenta que los grados rosharianos(°ᴿ) van desde 0 hasta 200.",
+            "explanation": "Clica en dos puntos cualquiera para calcular sus posiciones y la distancia entre ellos. Haz clic manteniendo **[Ctrl]** para añadir múltiples puntos.\n\nTen en cuenta que los grados rosharianos(°ᴿ) van desde 0 hasta 200.",
             "labels": {
                 "start": "Inicio",
                 "end": "Fin",
