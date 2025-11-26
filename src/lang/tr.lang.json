@@ -155,7 +155,7 @@
         },
         "measurement": {
             "button": "Mesafeleri Ölçün",
-            "explanation": "Pozisyonlarını ve aralarındaki mesafeyi ölçmek için herhangi iki noktaya tıklayın.\n\nRosharan derecesinin (°ᴿ) 0 ile 200 arasında değiştiğini unutmayın.",
+            "explanation": "Pozisyonlarını ve aralarındaki mesafeyi ölçmek için herhangi iki noktaya tıklayın. Tıklarken **[Ctrl]** tuşunu basılı tutarak birden fazla nokta ekleyebilirsiniz.\n\nRosharan derecesinin (°ᴿ) 0 ile 200 arasında değiştiğini unutmayın.",
             "title": "Ölçüm",
             "labels": {
                 "start": "Başla",

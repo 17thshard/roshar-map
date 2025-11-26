@@ -199,9 +199,9 @@ export default {
       this.camera.position.set(30, -10, 40)
 
       this.controls = new MapControls(this.camera, this.renderer.domElement)
-      this.controls.addEventListener('click', ({ position }) => {
+      this.controls.addEventListener('click', ({ position, ctrlKey }) => {
         if (this.measurementActive) {
-          this.measurementResult = this.measurement.click(position)
+          this.measurementResult = this.measurement.click(position, ctrlKey)
 
           if (this.$gtag) {
             this.$gtag.event('measurement_use', { event_category: 'engagement' })

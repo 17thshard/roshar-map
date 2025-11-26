@@ -35,68 +35,83 @@ function constructGeodesic (geo1, geo2) {
 export default class Measurement extends Group {
   constructor () {
     super()
-    this.startHighlight = null
-    this.endHighlight = null
+    this.points = []
+    this.highlights = []
   }
 
   reset () {
-    this.start = null
-    this.end = null
+    this.points = []
 
     if (this.geodesic !== null) {
       this.remove(this.geodesic)
       this.geodesic = null
     }
-    if (this.startHighlight !== null) {
-      this.remove(this.startHighlight)
-      this.startHighlight = null
-    }
-    if (this.endHighlight !== null) {
-      this.remove(this.endHighlight)
-      this.endHighlight = null
-    }
+    this.highlights.forEach((highlight) => {
+      this.remove(highlight)
+    })
+    this.highlights = []
   }
 
-  click (position) {
+  click (position, ctrlKey) {
     const geo = unproject(position)
 
-    if (this.start === null) {
-      this.start = geo
-      this.startHighlight = new Highlight(position.x, position.y, 0.2, true, new Vector3(23 / 255, 98 / 255, 15 / 255))
-      this.startHighlight.opacity = 1
-      this.add(this.startHighlight)
-    } else if (this.end === null) {
-      this.end = geo
-      this.endHighlight = new Highlight(position.x, position.y, 0.2, true, new Vector3(23 / 255, 98 / 255, 15 / 255))
-      this.endHighlight.opacity = 1
-      this.add(this.endHighlight)
+    if (ctrlKey) {
+      this.points.push(geo)
+      const highlight = new Highlight(position.x, position.y, 0.2, true, new Vector3(23 / 255, 98 / 255, 15 / 255))
+      highlight.opacity = 1
+      this.highlights.push(highlight)
+      this.add(highlight)
+    } else if (this.points.length === 1) {
+      this.points.push(geo)
+      const highlight = new Highlight(position.x, position.y, 0.2, true, new Vector3(23 / 255, 98 / 255, 15 / 255))
+      highlight.opacity = 1
+      this.highlights.push(highlight)
+      this.add(highlight)
     } else {
-      this.start = geo
-      this.startHighlight.position.set(position.x, position.y, 1)
-      this.end = null
-      this.remove(this.endHighlight)
-      this.endHighlight = null
+      this.highlights.forEach((highlight) => {
+        this.remove(highlight)
+      })
+      this.highlights = []
+      this.points = [geo]
+      const highlight = new Highlight(position.x, position.y, 0.2, true, new Vector3(23 / 255, 98 / 255, 15 / 255))
+      highlight.opacity = 1
+      this.highlights.push(highlight)
+      this.add(highlight)
     }
 
     this.updateGeodesic()
 
     return {
-      start: this.start,
-      end: this.end,
+      start: this.points[0] || null,
+      end: this.points[this.points.length - 1] || null,
       distance: this.distance
     }
   }
 
   updateGeodesic () {
-    if (this.start !== null && this.end !== null) {
-      const points = constructGeodesic(this.start, this.end).map(project)
-      this.geodesic = new MultiLine(points)
-      this.distance = distance(this.start, this.end)
-      this.add(this.geodesic)
-    } else if (this.geodesic !== null) {
+    if (this.geodesic !== null) {
       this.remove(this.geodesic)
       this.geodesic = null
       this.distance = null
+    }
+
+    if (this.points.length >= 2) {
+      const allPoints = []
+      let totalDistance = 0
+
+      for (let i = 0; i < this.points.length - 1; i++) {
+        const segmentPoints = constructGeodesic(this.points[i], this.points[i + 1]).map(project)
+        if (i === 0) {
+          allPoints.push(...segmentPoints)
+        } else {
+          allPoints.push(...segmentPoints.slice(1))
+        }
+        totalDistance += distance(this.points[i], this.points[i + 1])
+      }
+
+      this.geodesic = new MultiLine(allPoints)
+      this.distance = totalDistance
+      this.add(this.geodesic)
     }
   }
 
