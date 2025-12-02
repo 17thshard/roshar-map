@@ -80,12 +80,6 @@ export default {
   grid-gap: 0 0.5rem;
   text-decoration: none;
   color: inherit;
-  border-radius: 4px;
-  transition: background-color 0.15s ease-in-out;
-  &:hover, &:focus {
-    background-color: rgba(0, 0, 0, 0.05);
-    outline: none;
-  }
 
   &__icon {
     grid-row: 1/span 2;
@@ -105,6 +99,18 @@ export default {
     );
     transition: all 0.2s ease-in;
 
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #ffad00;
+      opacity: 0;
+      transition: opacity 0.2s ease-out;
+    }
+
     &-image, &-placeholder {
       position: absolute;
       left: 0;
@@ -118,6 +124,34 @@ export default {
       background-repeat: no-repeat;
       background-size: 100%;
       transition: transform 0.2s linear;
+    }
+  }
+
+  &:hover, &:focus {
+    outline: none;
+
+    .search-result__icon {
+      transition: all 0.2s ease-out;
+      clip-path: polygon(
+          0.25rem 0,
+          calc(100% - 0.25rem) 0,
+          100% 0.25rem,
+          100% calc(100% - 0.25rem),
+          calc(100% - 0.25rem) 100%,
+          0.25rem 100%,
+          0 calc(100% - 0.25rem),
+          0 0.25rem
+      );
+
+      &:after {
+        opacity: 0.2;
+      }
+    }
+
+    .search-result__icon-image,
+    .search-result__icon-placeholder {
+      transition-duration: 5s;
+      transform: scale(2);
     }
   }
 
