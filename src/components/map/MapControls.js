@@ -238,6 +238,7 @@ const MapControls = function (object, domElement) {
   let clickTouches = 0
   let wasMultiTouch = false
   let clickCtrlKey = false
+  let longPressTriggered = false
 
   const mousePosition = new Vector2()
 
@@ -405,6 +406,11 @@ const MapControls = function (object, domElement) {
       return
     }
 
+    if (longPressTriggered) {
+      longPressTriggered = false
+      return
+    }
+
     const { x: clientX, y: clientY } = scope.domElement.getBoundingClientRect()
     const offsetX = event.changedTouches[0].clientX - clientX
     const offsetY = event.changedTouches[0].clientY - clientY
@@ -562,6 +568,7 @@ const MapControls = function (object, domElement) {
     }
 
     clickTouches += 1
+    longPressTriggered = false
 
     event.preventDefault() // prevent scrolling
 
@@ -682,13 +689,25 @@ const MapControls = function (object, domElement) {
   scope.domElement.ownerDocument.addEventListener('keydown', onKeyDown, false)
   scope.domElement.ownerDocument.addEventListener('keyup', onKeyUp, false)
 
-  const hammer = new Hammer.Manager(scope.domElement)
+  const hammer = new Hammer.Manager(scope.domElement, {
+    inputClass: Hammer.TouchInput
+  })
 
   hammer.add(new Hammer.Pinch())
+  hammer.add(new Hammer.Press({ time: 500, threshold: 15 }))
 
   hammer.on('pinch', function (event) {
     const factor = lerp(1, event.scale, 0.5)
     targetZoom = Math.max(0, Math.min(factor * targetZoom, 1))
+  })
+
+  hammer.on('press', function (event) {
+    longPressTriggered = true
+    panning = false
+    const result = rayCast(clickStart.x, clickStart.y, true)
+    if (result !== null) {
+      scope.dispatchEvent({ type: 'click', position: result, ctrlKey: true })
+    }
   })
 
   // make sure element can receive keys.
