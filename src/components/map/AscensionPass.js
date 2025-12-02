@@ -83,6 +83,9 @@ export default class AscensionPass extends Group {
     this.t = 0
     this.shadesmarLayer = shadesmarLayer
 
+    // Clean up any existing highlight before creating a new one
+    this.removeHighlight()
+
     if (this.shatteredPlainsCoords) {
       const [x, y] = this.mapCoordsTo3D(this.shatteredPlainsCoords.x, this.shatteredPlainsCoords.y)
       this.highlight = new Highlight(x, y)
@@ -106,7 +109,11 @@ export default class AscensionPass extends Group {
 
   removeHighlight () {
     if (this.highlight) {
+      if (this.highlight.parent) {
+        this.remove(this.highlight)
+      }
       this.highlight.leave()
+      this.highlight = null
     }
   }
 
@@ -126,9 +133,6 @@ export default class AscensionPass extends Group {
 
     if (this.highlight) {
       this.highlight.update(camera, timestamp, delta)
-      if (!this.highlight.parent) {
-        this.highlight = null
-      }
     }
 
     if (!this.shadesmarLayer) {
