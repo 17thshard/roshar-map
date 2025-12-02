@@ -643,6 +643,11 @@ const MapControls = function (object, domElement) {
       return
     }
 
+    if (event.key === 'Escape') {
+      scope.dispatchEvent({ type: 'escape' })
+      return
+    }
+
     if (event.target !== document.body) {
       return
     }
