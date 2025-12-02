@@ -198,6 +198,7 @@ body {
   width: 100%;
   font-size: 16px;
   background: #002D55;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #app {
