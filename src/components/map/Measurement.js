@@ -29,7 +29,7 @@ function constructGeodesic (geo1, geo2) {
     return points
   }
 
-  return recur(geo1, geo2, 8)
+  return recur(geo1, geo2, 5)
 }
 
 export default class Measurement extends Group {
