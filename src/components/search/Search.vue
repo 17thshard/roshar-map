@@ -212,6 +212,16 @@ export default {
     width: auto;
     min-width: 0;
     font-family: 'Libre Baskerville', serif;
+
+    // Hide browser's native search clear button
+    &::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    &::-ms-clear {
+      display: none;
+    }
   }
 
   &__results {
