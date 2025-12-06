@@ -92,6 +92,9 @@
         <option value="shattering">
           The Shattering
         </option>
+        <option value="ascension">
+          Taravangian Ascends
+        </option>
         <option value="factions">
           Factions after OB
         </option>

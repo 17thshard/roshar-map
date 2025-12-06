@@ -4798,6 +4798,7 @@
             "szeth"
         ],
         "hideMarker": true,
+        "specialEffect": "ascension",
         "coppermind": "Odium",
         "image": {
             "file": "events/Odium_by_Connor_Chamberlain.jpeg",
