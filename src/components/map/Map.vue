@@ -224,6 +224,14 @@ export default {
           }
         }
       })
+
+      this.controls.addEventListener('escape', () => {
+        if (this.measurementActive) {
+          this.measurement.reset()
+          this.measurementResult = {}
+        }
+      })
+
       const customSpeed = this.$route.query.speed
       if (customSpeed !== undefined) {
         this.controls.keyboardSpeed = Number.parseFloat(customSpeed)

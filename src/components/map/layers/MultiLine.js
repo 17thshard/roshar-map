@@ -12,11 +12,12 @@ export default class MultiLine extends Group {
       totalLength += new Vector2(points[i].x - points[i + 1].x, points[i].y - points[i + 1].y).length()
     }
 
+    this.sharedMaterial = null
     this.init(points, totalLength)
   }
 
   init (points, totalLength) {
-    const mat = new ShaderMaterial({
+    this.sharedMaterial = new ShaderMaterial({
       // language=GLSL
       vertexShader: `
         varying vec2 vUv;
@@ -152,7 +153,7 @@ export default class MultiLine extends Group {
         'uv',
         new BufferAttribute(new Float32Array([progress, 1.0, progress + contribution, 1.0, progress, 0.0, progress + contribution, 0.0]), 2)
       )
-      const plane = new Mesh(geo, mat)
+      const plane = new Mesh(geo, this.sharedMaterial)
       plane.position.set((start.x + end.x) / 2, (start.y + end.y) / 2, 1)
       plane.rotation.set(0, 0, ref.angle())
       plane.frustumCulled = false
@@ -163,8 +164,8 @@ export default class MultiLine extends Group {
   }
 
   update (camera, timestamp) {
-    this.children.forEach((plane) => {
-      plane.material.uniforms.Time.value = timestamp / 1000
-    })
+    if (this.sharedMaterial) {
+      this.sharedMaterial.uniforms.Time.value = timestamp / 1000
+    }
   }
 }
