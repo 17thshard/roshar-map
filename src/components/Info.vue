@@ -48,12 +48,6 @@
                     />
                   </svg>
                 </a>
-                <a class="info__social" href="https://twitter.com/17thShard" target="_blank" title="Twitter">
-                  <TwitterIcon />
-                </a>
-                <a class="info__social" href="https://facebook.com/17thShard" target="_blank" title="Facebook">
-                  <FacebookIcon />
-                </a>
                 <a class="info__social" href="https://youtube.com/user/17thShard" target="_blank" title="YouTube">
                   <YoutubeIcon />
                 </a>
@@ -64,6 +58,9 @@
                       <path d="m3.949 4.2795v15.441h2.8306v-15.441z" />
                     </g>
                   </svg>
+                </a>
+                <a class="info__social" href="https://facebook.com/17thShard" target="_blank" title="Facebook">
+                  <FacebookIcon />
                 </a>
                 <a class="info__social" href="https://github.com/Palanaeum/roshar-map" target="_blank" title="GitHub">
                   <GithubIcon />
@@ -128,7 +125,7 @@
 
 <script>
 import Scrollbar from 'vuescroll/dist/vuescroll-native'
-import { ChevronLeftIcon, ChevronRightIcon, FacebookIcon, GithubIcon, TwitterIcon, XIcon, YoutubeIcon } from 'vue-feather-icons'
+import { ChevronLeftIcon, ChevronRightIcon, FacebookIcon, GithubIcon, XIcon, YoutubeIcon } from 'vue-feather-icons'
 import Markdown from '@/components/Markdown.vue'
 import availableLanguages from '@/lang/menu.json'
 import { escapeCssPath } from '@/utils'
@@ -138,7 +135,6 @@ export default {
   name: 'Info',
   components: {
     Markdown,
-    TwitterIcon,
     FacebookIcon,
     YoutubeIcon,
     GithubIcon,
@@ -383,13 +379,13 @@ export default {
       left: 0;
       right: 0;
       bottom: 0;
-      height: 60px;
+      height: 48px;
       z-index: 62;
       pointer-events: none;
       transition: opacity 0.5s ease-in-out;
       opacity: 0;
       background: linear-gradient(0deg, rgba(#F5ECDA, 1.0) 0, rgba(#F5ECDA, 0) 100%);
-      border-bottom: 1rem solid #F5ECDA;
+      border-bottom: 0.8rem solid #F5ECDA;
     }
 
     &.hasVBar:after {
