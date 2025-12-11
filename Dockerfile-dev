@@ -1,5 +1,5 @@
 # build stage
-FROM node:16-alpine AS build-stage
+FROM node:24-alpine AS build-stage
 
 ARG PUBLIC_URL=/
 

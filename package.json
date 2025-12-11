@@ -11,8 +11,8 @@
     "validateTranslations": "node ./bin/validate-translations.js",
     "convertTextures": "node ./bin/convert-textures.js"
   },
-  "engines" : {
-    "node" : ">=16.0.0 <17.0.0"
+  "engines": {
+    "node": ">=24.0.0 <25.0.0"
   },
   "dependencies": {
     "@johmun/vue-tags-input": "^2.1.0",
@@ -35,7 +35,7 @@
     "vue-gtag": "^1.10.0",
     "vue-i18n": "^8.18.2",
     "vue-router": "^3.3.4",
-    "vue-share-buttons": "https://github.com/marvin-roesch/vue-share-buttons",
+    "vue-share-buttons": "git+https://github.com/marvin-roesch/vue-share-buttons.git",
     "vuedraggable": "^2.24.0",
     "vuescroll": "^4.16.0",
     "vuex": "^3.4.0"
@@ -87,5 +87,5 @@
     "last 2 versions",
     "not dead"
   ],
-  "packageManager": "yarn@3.2.3"
+  "packageManager": "yarn@4.12.0"
 }

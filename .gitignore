@@ -3,6 +3,9 @@ node_modules
 /dist
 /build/lang
 
+# npm lock file
+package-lock.json
+
 # local env files
 .env.local
 .env.*.local
