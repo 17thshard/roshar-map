@@ -10,16 +10,16 @@ import './registerServiceWorker'
 Vue.config.productionTip = false
 
 Vue.use(VueDragscroll)
-if (process.env.VUE_APP_GA_ID !== undefined) {
+if (import.meta.env.VUE_APP_GA_ID !== undefined) {
   Vue.use(VueGtag,
     {
       config: {
-        id: process.env.VUE_APP_GA_ID,
+        id: import.meta.env.VUE_APP_GA_ID,
         params: {
           send_page_view: true
         }
       },
-      disableScriptLoad: process.env.NODE_ENV !== 'production',
+      disableScriptLoad: !import.meta.env.PROD,
       pageTrackerTemplate (to) {
         if (to.name === 'root') {
           return {

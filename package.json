@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "cross-env MAP_DEBUG=true vue-cli-service serve --port 10010 src/dev.js",
-    "build": "vue-cli-service build --dest dist/release src/main.js",
-    "build:dev": "cross-env MAP_DEBUG=true vue-cli-service build --dest dist/dev --skip-plugins pwa,workbox src/dev.js",
-    "lint": "vue-cli-service lint",
+    "serve": "yarn dev",
+    "dev": "cross-env MAP_DEBUG=true vite --mode dev --port 10010",
+    "build": "vite build",
+    "build:dev": "cross-env MAP_DEBUG=true vite build --mode dev",
+    "preview": "vite preview --port 10010",
+    "lint": "eslint .",
     "dumpTranslations": "node ./bin/dump-translations.js",
     "validateTranslations": "node ./bin/validate-translations.js",
     "convertTextures": "node ./bin/convert-textures.js"
@@ -41,46 +43,23 @@
     "vuex": "^3.4.0"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.28.5",
-    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.10.4",
-    "@babel/plugin-proposal-optional-chaining": "^7.10.4",
     "@node-rs/jieba": "^1.6.1",
-    "@nuxtjs/eslint-config": "^3.0.0",
-    "@vue/cli-plugin-babel": "~4.5.13",
-    "@vue/cli-plugin-eslint": "~4.5.13",
-    "@vue/cli-plugin-pwa": "^4.5.13",
-    "@vue/cli-plugin-vuex": "~4.5.13",
-    "@vue/cli-service": "~4.5.13",
-    "@xohu/vue-cli-plugin-ifdef": "^1.1.1",
+    "@vitejs/plugin-vue2": "^2.3.4",
     "cross-env": "^7.0.2",
-    "eslint": "^6.7.2",
-    "eslint-plugin-nuxt": "^1.0.0",
+    "eslint": "^9.17.0",
+    "eslint-plugin-vue": "^10.6.2",
     "imagemin": "^7.0.1",
     "imagemin-webp": "^6.0.0",
     "imagemin-zopfli": "^7.0.0",
     "js-string-escape": "^1.0.1",
     "sass": "^1.26.5",
-    "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.7.10",
-    "warnings-to-errors-webpack-plugin": "^2.2.0",
-    "webpack-image-resize-loader": "^4.0.2",
-    "webpack-image-srcset-loader": "^5.0.3"
+    "vite": "^7.2.7",
+    "vite-plugin-pwa": "^1.2.0",
+    "vue-eslint-parser": "^10.0.0",
+    "vue-template-compiler": "^2.7.10"
   },
   "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "@nuxtjs",
-      "plugin:nuxt/recommended"
-    ],
-    "parserOptions": {
-      "parser": "@babel/eslint-parser"
-    },
-    "rules": {
-      "no-param-reassign": "off"
-    }
+    "root": true
   },
   "browserslist": [
     "> 1%",

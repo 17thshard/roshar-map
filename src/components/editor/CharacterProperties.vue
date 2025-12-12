@@ -135,7 +135,7 @@ export default {
   },
   computed: {
     imageBaseUrl () {
-      return `${process.env.BASE_URL}img`
+      return `${import.meta.env.BASE_URL}img`
     },
     linkAutocompletions () {
       return this.linkables.filter(l => l.startsWith(this.newLink) && l !== `characters/${this.character.id}`)

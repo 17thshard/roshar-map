@@ -2,6 +2,7 @@
 node_modules
 /dist
 /build/lang
+/build/generated
 
 # npm lock file
 package-lock.json

@@ -1,3 +1,5 @@
+const indexModules = import.meta.glob('/build/generated/search-index/*.json')
+
 export default {
   namespaced: true,
   state: () => ({ loadedIndices: {}, loadingIndices: {} }),
@@ -24,7 +26,14 @@ export default {
       const lunr = (await import('lunr')).default
       const stemmerSupport = (await import('lunr-languages/lunr.stemmer.support')).default
       stemmerSupport(lunr)
-      const data = (await import(/* webpackChunkName: "index-[request]" */ 'search-index-loader.js!@/lang/' + lang + '.lang.json')).default
+      const loader = indexModules[`/build/generated/search-index/${lang}.json`]
+      if (!loader) {
+        throw new Error(
+          `Missing generated search index for '${lang}'. ` +
+          `Run: yarn dev (or yarn build) to generate it.`
+        )
+      }
+      const data = (await loader()).default
       try {
         const langSupport = (await import('@/lang/search/' + lang)).default
         await langSupport(lunr)

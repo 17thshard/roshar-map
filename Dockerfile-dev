@@ -10,7 +10,7 @@ COPY ./.yarn /app/.yarn
 COPY package.json yarn.lock .yarnrc.yml /app/
 RUN yarn install --immutable
 
-COPY babel.config.js vue.config.js README.md /app/
+COPY vite.config.mjs index.html README.md /app/
 
 COPY ./bin /app/bin
 COPY ./build/loaders /app/build/loaders

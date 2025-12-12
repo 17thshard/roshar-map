@@ -374,6 +374,8 @@ import MiscProperties from '@/components/editor/MiscProperties.vue'
 import TagProperties from '@/components/editor/TagProperties.vue'
 import languageMenu from '@/lang/menu.json'
 
+const generatedLangModules = import.meta.glob('/build/generated/lang/*.lang.json')
+
 function saveAs (blob, name) {
   const a = document.createElement('a')
 
@@ -545,10 +547,18 @@ export default {
     }
   },
   created () {
-    Promise.all(this.availableLanguages.map(lang =>
-      import(/* webpackChunkName: "lang-[request]" */ '@/lang/' + lang + '.lang.json').then((messages) => {
+    Promise.all(this.availableLanguages.map((lang) => {
+      const loader = generatedLangModules[`/build/generated/lang/${lang}.lang.json`]
+      if (!loader) {
+        throw new Error(
+          `Missing generated language pack for '${lang}'. ` +
+          `Run: yarn dev (or yarn build) to generate it.`
+        )
+      }
+      return loader().then((messages) => {
         this.$set(this.loadedLanguages, lang, messages.default)
-      }))).then(() => {
+      })
+    })).then(() => {
       this.languagesLoaded = true
     })
   },
