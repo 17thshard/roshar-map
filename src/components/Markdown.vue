@@ -168,7 +168,7 @@ export default {
           return undefined
       }
 
-      // eslint-disable-next-line no-console
+       
       console.error('Could not map Markdown element', node)
 
       return h('span')

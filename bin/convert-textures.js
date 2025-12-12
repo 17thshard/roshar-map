@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+ 
 const childProcess = require('child_process')
 const { lstatSync, readdirSync } = require('fs')
 const path = require('path')

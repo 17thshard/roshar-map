@@ -163,7 +163,7 @@ export default {
     },
     onError (error) {
       this.errored = true
-      // eslint-disable-next-line no-console
+       
       console.error(error)
       if (this.$gtag) {
         this.$gtag.exception({

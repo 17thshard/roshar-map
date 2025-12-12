@@ -91,7 +91,7 @@ export function getEntryImageSrcSet (path, gtag) {
     // contract (a srcset string) without resizing.
     return parseSrcSet(`${url} 500w`)
   } catch (e) {
-    // eslint-disable-next-line no-console
+     
     console.error(`Could not retrieve entry image '${path}'`)
     if (gtag) {
       this.$gtag.exception({

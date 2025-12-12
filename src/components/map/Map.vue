@@ -31,7 +31,7 @@ import {
   Vector2,
   Vector3,
   WebGLRenderer,
-  // eslint-disable-next-line camelcase
+   
   RGB_S3TC_DXT1_Format, RedFormat
 } from 'three'
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
