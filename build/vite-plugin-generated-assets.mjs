@@ -309,9 +309,9 @@ export function generatedAssetsPlugin() {
     async configureServer(server) {
       // Watch sources and regenerate on change.
       const watchTargets = [
-        path.join(rootDir, 'src', 'lang', '*.lang.json'),
-        path.join(rootDir, 'translations', '**', '*'),
-        path.join(rootDir, 'src', 'store', '*.json'),
+        path.join(rootDir, 'src', 'lang'),
+        path.join(rootDir, 'translations'),
+        path.join(rootDir, 'src', 'store'),
         path.join(rootDir, 'README.md'),
         path.join(rootDir, 'build', 'loaders', 'parse-markdown-sections.js'),
       ]
@@ -326,11 +326,11 @@ export function generatedAssetsPlugin() {
           queue(new Set(['credits']), server)
           return
         }
-        if (normalized.includes('/src/store/')) {
+        if (normalized.includes('/src/store/') && normalized.endsWith('.json')) {
           queue(new Set(['search']), server)
           return
         }
-        if (normalized.includes('/src/lang/') || normalized.includes('/translations/') || normalized.endsWith('/parse-markdown-sections.js')) {
+        if ((normalized.includes('/src/lang/') && normalized.endsWith('.lang.json')) || normalized.includes('/translations/') || normalized.endsWith('/parse-markdown-sections.js')) {
           queue(new Set(['lang']), server)
           return
         }
