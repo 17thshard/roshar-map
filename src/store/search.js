@@ -1,4 +1,5 @@
 const indexModules = import.meta.glob('/build/generated/search-index/*.json')
+const langSupportModules = import.meta.glob('../lang/search/*.js')
 
 export default {
   namespaced: true,
@@ -35,8 +36,13 @@ export default {
       }
       const data = (await loader()).default
       try {
-        const langSupport = (await import('@/lang/search/' + lang)).default
-        await langSupport(lunr)
+        const langLoader = langSupportModules[`../lang/search/${lang}.js`]
+        if (langLoader) {
+          const langSupport = (await langLoader()).default
+          await langSupport(lunr)
+        } else {
+          throw Object.assign(new Error('MODULE_NOT_FOUND'), { code: 'MODULE_NOT_FOUND' })
+        }
       } catch (e) {
         if (e.code !== 'MODULE_NOT_FOUND') {
           throw e
