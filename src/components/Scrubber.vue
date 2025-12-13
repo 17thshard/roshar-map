@@ -613,7 +613,7 @@ export default {
     transition: 0.2s ease-in-out background, 0.2s ease-in-out color, 0.2s ease-in-out border;
 
     &:hover, &:active, &:focus {
-      background: lighten(#0f3562, 10%);
+      background: color.adjust(#0f3562, $lightness: 10%);
     }
 
     &-enter-active {
@@ -670,7 +670,7 @@ export default {
       z-index: 4;
 
       &:hover, &:focus, &:active {
-        background: saturate(darken(#F5ECDA, 10%), 5%);
+        background: color.adjust(color.adjust(#F5ECDA, $lightness: -10%), $saturation: 5%);
       }
     }
 
@@ -699,7 +699,7 @@ export default {
         color: #cad5e6;
 
         &:hover, &:focus, &:active {
-          background: lighten(#0f3562, 10%);
+          background: color.adjust(#0f3562, $lightness: 10%);
         }
       }
     }
@@ -979,7 +979,7 @@ export default {
       width: 1.5rem;
 
       &:hover, &:focus, &:active {
-        background: saturate(darken(#F5ECDA, 10%), 5%);
+        background: color.adjust(color.adjust(#F5ECDA, $lightness: -10%), $saturation: 5%);
       }
     }
 

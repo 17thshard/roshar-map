@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+ 
 const fs = require('fs')
 
 const events = JSON.parse(fs.readFileSync('./src/store/events.json', 'utf8'))

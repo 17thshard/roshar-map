@@ -194,9 +194,9 @@ export default {
     }
 
     @mixin diamond($base-color) {
-      border-top-color: lighten($base-color, 10%);
-      border-left-color: saturate(lighten($base-color, 20%), 10%);
-      border-bottom-color: lighten($base-color, 15%);
+      border-top-color: color.adjust($base-color, $lightness: 10%);
+      border-left-color: color.adjust(color.adjust($base-color, $lightness: 20%), $saturation: 10%);
+      border-bottom-color: color.adjust($base-color, $lightness: 15%);
       border-right-color: $base-color;
     }
 

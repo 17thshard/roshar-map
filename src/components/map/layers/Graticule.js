@@ -71,7 +71,7 @@ export default class Graticule extends Group {
     this.init()
   }
 
-  init (textures) {
+  init (_textures) {
     this.largeMaterial = new LineMaterial({
       color: 0x000000,
       linewidth: 0.002,

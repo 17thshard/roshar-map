@@ -706,7 +706,7 @@ const MapControls = function (object, domElement) {
     targetZoom = Math.max(0, Math.min(factor * targetZoom, 1))
   })
 
-  hammer.on('press', function (event) {
+  hammer.on('press', function (_event) {
     longPressTriggered = true
     panning = false
     const result = rayCast(clickStart.x, clickStart.y, true)

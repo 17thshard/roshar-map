@@ -51,7 +51,7 @@ export default {
       box-sizing: border-box;
       flex-shrink: 0;
       transform: rotate(45deg);
-      $border-color: desaturate(#0f3562, 10%);
+      $border-color: color.adjust(#0f3562, $saturation: -10%);
       box-shadow: inset 0 -1px $border-color, inset 0 1px $border-color, inset -1px 0 $border-color, inset 1px 0 $border-color;
 
       [dir=ltr] & {

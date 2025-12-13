@@ -247,7 +247,7 @@ export default {
 
     &:hover, &:active, &:focus {
       cursor: pointer;
-      color: lighten(#0f3562, 10%);
+      color: color.adjust(#0f3562, $lightness: 10%);
     }
 
     [dir=ltr] & {

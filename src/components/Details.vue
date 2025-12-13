@@ -88,22 +88,84 @@
         </section>
         <section class="details__share">
           <h3>{{ $t('ui.share') }}</h3>
-          <TwitterButton
-            :btn-text="$t('sharing.twitter.button-text')"
-            :description="$t('sharing.twitter.entry-template', { entry: $t(`${baseTranslationKey}.name`) })"
-          />
-          <FacebookButton :btn-text="$t('sharing.facebook.button-text')" />
-          <RedditButton
-            :btn-text="$t('sharing.reddit.button-text')"
-            :title="$t('sharing.reddit.entry-template', { entry: $t(`${baseTranslationKey}.name`) })"
-          />
-          <TumblrButton
-            :btn-text="$t('sharing.tumblr.button-text')"
-            :description="$t('sharing.tumblr.entry-template', { entry: $t(`${baseTranslationKey}.name`) })"
-          />
-          <button v-if="nativeShareSupported" class="details__share-more-button" @click="shareNatively">
-            {{ $t('sharing.more.button-text') }}
-          </button>
+          <a
+            class="share-button share-button--tumblr"
+            :href="tumblrShareUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            :aria-label="$t('sharing.tumblr.button-text')"
+          >
+            <span class="share-button__icon" aria-hidden="true">
+              <img class="share-button__icon-img" :src="tumblrLogo" alt="" aria-hidden="true" />
+            </span>
+            <span class="share-button__text">{{ $t('sharing.tumblr.button-text') }}</span>
+          </a>
+          <a
+            class="share-button share-button--reddit"
+            :href="redditShareUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            :aria-label="$t('sharing.reddit.button-text')"
+          >
+            <span class="share-button__icon" aria-hidden="true">
+              <img class="share-button__icon-img" :src="redditLogo" alt="" aria-hidden="true" />
+            </span>
+            <span class="share-button__text">{{ $t('sharing.reddit.button-text') }}</span>
+          </a>
+          <a
+            class="share-button share-button--twitter"
+            :href="twitterShareUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            :aria-label="$t('sharing.twitter.button-text')"
+          >
+            <span class="share-button__icon" aria-hidden="true">
+              <img class="share-button__icon-img" :src="xLogo" alt="" aria-hidden="true" />
+            </span>
+            <span class="share-button__text">{{ $t('sharing.twitter.button-text') }}</span>
+          </a>
+          <a
+            href="#"
+            role="button"
+            class="share-button share-button--instagram"
+            :aria-label="$t('sharing.instagram.button-text')"
+            @click.prevent="shareInstagram"
+            @keydown.enter.prevent="shareInstagram"
+            @keydown.space.prevent="shareInstagram"
+          >
+            <span class="share-button__icon" aria-hidden="true">
+              <img class="share-button__icon-img" :src="instagramLogo" alt="" aria-hidden="true" />
+            </span>
+            <span class="share-button__text">{{ $t('sharing.instagram.button-text') }}</span>
+          </a>
+          <a
+            class="share-button share-button--facebook"
+            :href="facebookShareUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            :aria-label="$t('sharing.facebook.button-text')"
+          >
+            <span class="share-button__icon" aria-hidden="true">
+              <img class="share-button__icon-img" :src="facebookLogo" alt="" aria-hidden="true" />
+            </span>
+            <span class="share-button__text">{{ $t('sharing.facebook.button-text') }}</span>
+          </a>
+          <a
+            href="#"
+            role="button"
+            class="share-button share-button--general"
+            :aria-label="$t('sharing.general.button-text')"
+            @click.prevent="shareGenerally"
+            @keydown.enter.prevent="shareGenerally"
+            @keydown.space.prevent="shareGenerally"
+          >
+            <span class="share-button__icon" aria-hidden="true">
+              <img class="share-button__icon-img" :src="shareLogo" alt="" aria-hidden="true" />
+            </span>
+            <span class="share-button__text">
+              {{ generalShareLabel }}
+            </span>
+          </a>
         </section>
       </div>
     </Scrollbar>
@@ -115,10 +177,12 @@ import Scrollbar from 'vuescroll/dist/vuescroll-native'
 import { BookIcon, CalendarIcon, HelpCircleIcon, XIcon } from 'vue-feather-icons'
 import Markdown from '@/components/Markdown.vue'
 import { formatDate, getEntryImageSrcSet, compareEvents } from '@/utils'
-import FacebookButton from 'vue-share-buttons/src/components/FacebookButton'
-import RedditButton from 'vue-share-buttons/src/components/RedditButton'
-import TumblrButton from 'vue-share-buttons/src/components/TumblrButton'
-import TwitterButton from 'vue-share-buttons/src/components/TwitterButton'
+import xLogo from '@/assets/logos/x.svg'
+import instagramLogo from '@/assets/logos/instagram.svg'
+import facebookLogo from '@/assets/logos/facebook.svg'
+import redditLogo from '@/assets/logos/reddit.svg'
+import tumblrLogo from '@/assets/logos/tumblr.svg'
+import shareLogo from '@/assets/share-svgrepo-com.svg'
 
 export default {
   name: 'Details',
@@ -128,11 +192,7 @@ export default {
     XIcon,
     CalendarIcon,
     BookIcon,
-    Scrollbar,
-    FacebookButton,
-    RedditButton,
-    TumblrButton,
-    TwitterButton
+    Scrollbar
   },
   props: {
     details: {
@@ -145,7 +205,15 @@ export default {
       reachedHeading: false,
       imageAspect: 1,
       width: 1,
-      nativeShareSupported: navigator.share !== undefined
+      nativeShareSupported: navigator.share !== undefined,
+      shareCopied: false,
+      shareCopiedTimeout: null,
+      xLogo,
+      instagramLogo,
+      facebookLogo,
+      redditLogo,
+      tumblrLogo,
+      shareLogo
     }
   },
   computed: {
@@ -163,6 +231,34 @@ export default {
     baseTranslationKey () {
       return `${this.details.type}.${this.details.id}`
     },
+    shareUrl () {
+      return window.location.href
+    },
+    shareTitle () {
+      return this.$t(`${this.baseTranslationKey}.name`)
+    },
+    generalShareLabel () {
+      return this.shareCopied ? this.$t('sharing.general.copied') : this.$t('sharing.general.button-text')
+    },
+    twitterShareUrl () {
+      const text = this.$t('sharing.twitter.entry-template', { entry: this.shareTitle })
+      const url = encodeURIComponent(this.shareUrl)
+      return `https://twitter.com/intent/tweet?url=${url}&text=${encodeURIComponent(text)}`
+    },
+    facebookShareUrl () {
+      const url = encodeURIComponent(this.shareUrl)
+      return `https://www.facebook.com/sharer/sharer.php?u=${url}`
+    },
+    redditShareUrl () {
+      const title = this.$t('sharing.reddit.entry-template', { entry: this.shareTitle })
+      const url = encodeURIComponent(this.shareUrl)
+      return `https://www.reddit.com/submit?url=${url}&title=${encodeURIComponent(title)}`
+    },
+    tumblrShareUrl () {
+      const caption = this.$t('sharing.tumblr.entry-template', { entry: this.shareTitle })
+      const url = encodeURIComponent(this.shareUrl)
+      return `https://www.tumblr.com/widgets/share/tool?canonicalUrl=${url}&caption=${encodeURIComponent(caption)}`
+    },
     metadata () {
       const result = {}
 
@@ -170,7 +266,7 @@ export default {
         result.date = formatDate(this.details.date)
       }
 
-      if (this.$te(`${this.baseTranslationKey}.chapter`, 'en')) {
+      if (this.$te(`${this.baseTranslationKey}.chapter`, this.$i18n.fallbackLocale)) {
         result.chapter = this.$t(`${this.baseTranslationKey}.chapter`)
       }
 
@@ -186,7 +282,7 @@ export default {
         return this.$t(`${this.baseTranslationKey}.blurb`)
       }
 
-      if (this.$te(`${this.baseTranslationKey}.details`, 'en')) {
+      if (this.$te(`${this.baseTranslationKey}.details`, this.$i18n.fallbackLocale)) {
         return this.$t(`${this.baseTranslationKey}.details`)
       }
 
@@ -290,17 +386,77 @@ export default {
   },
   destroyed () {
     window.removeEventListener('resize', this.onResize)
+    if (this.shareCopiedTimeout !== null) {
+      window.clearTimeout(this.shareCopiedTimeout)
+      this.shareCopiedTimeout = null
+    }
   },
   methods: {
     onResize () {
       this.width = this.$el.clientWidth
     },
-    shareNatively () {
-      navigator.share({
-        url: window.location.href,
-        title: document.title,
-        description: this.$t('sharing.more.entry-template', { entry: this.$t(`${this.baseTranslationKey}.name`) })
-      })
+    async copyToClipboard (text) {
+      try {
+        if (navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText(text)
+        } else {
+          const el = document.createElement('textarea')
+          el.value = text
+          el.setAttribute('readonly', '')
+          el.style.position = 'fixed'
+          el.style.left = '-9999px'
+          document.body.appendChild(el)
+          el.select()
+          document.execCommand('copy')
+          document.body.removeChild(el)
+        }
+
+        this.shareCopied = true
+        if (this.shareCopiedTimeout !== null) {
+          window.clearTimeout(this.shareCopiedTimeout)
+        }
+        this.shareCopiedTimeout = window.setTimeout(() => {
+          this.shareCopied = false
+          this.shareCopiedTimeout = null
+        }, 1500)
+      } catch (e) {
+        // ignore copy failures (e.g., permissions)
+      }
+    },
+    async shareGenerally () {
+      const url = this.shareUrl
+      const title = this.shareTitle
+      const text = this.$t('sharing.general.entry-template', { entry: title })
+
+      if (this.nativeShareSupported) {
+        try {
+          await navigator.share({ title, text, url })
+          return
+        } catch (e) {
+          // User cancellation or unsupported payload; fall through to copy
+        }
+      }
+
+      await this.copyToClipboard(url)
+    },
+    async shareInstagram () {
+      // Instagram doesn't provide a reliable web "share intent" URL.
+      // Best-effort: try native share (mobile), otherwise copy the link and open Instagram.
+      const url = this.shareUrl
+      const title = this.shareTitle
+      const text = this.$t('sharing.instagram.entry-template', { entry: title })
+
+      if (this.nativeShareSupported) {
+        try {
+          await navigator.share({ title, text, url })
+          return
+        } catch (e) {
+          // fall through to copy + open
+        }
+      }
+
+      await this.copyToClipboard(url)
+      window.open('https://www.instagram.com/', '_blank', 'noopener,noreferrer')
     }
   }
 }
@@ -503,7 +659,7 @@ export default {
       z-index: 2;
       text-align: end;
       font-size: 0.8rem;
-      color: lighten(#1c1d26, 30%);
+      color: color.adjust(#1c1d26, $lightness: 30%);
       margin-top: -0.75rem;
 
       [dir=ltr] & {
@@ -663,12 +819,28 @@ export default {
     }
 
     .share-button, &-more-button {
-      padding: 0.5rem 0.25rem;
-      min-height: 0;
-
       &__icon {
         width: 1rem;
         height: 1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        .share-button__icon-img {
+          display: block;
+          width: 1rem;
+          height: 1rem;
+          // Logos are black in the SVG source; invert to display as white.
+          filter: brightness(0) invert(1);
+        }
+
+        [dir=ltr] & {
+          margin-right: 0.4rem;
+        }
+
+        [dir=rtl] & {
+          margin-left: 0.4rem;
+        }
       }
 
       &__text {
@@ -677,14 +849,96 @@ export default {
       }
     }
 
+    .share-button {
+      $focus-color: hsla(215, 5%, 54%, 0.4);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      height: 28px;
+      padding: 0 0.5rem;
+      margin: 4px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-weight: 400;
+      line-height: 1;
+      user-select: none;
+      transition: filter 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      border: none;
+      box-shadow: none;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: none;
+      text-rendering: auto;
+      text-indent: 0;
+      text-align: center;
+      letter-spacing: normal;
+      word-spacing: normal;
+      text-shadow: none;
+
+      svg {
+        display: block;
+      }
+
+      &:not(:disabled):not(.disabled) {
+        cursor: pointer;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &:focus-visible {
+        box-shadow: 0 0 0 3px $focus-color;
+      }
+
+      &:hover {
+        filter: brightness(0.92);
+      }
+
+      &:active {
+        filter: brightness(0.86);
+      }
+
+      @media (max-width: 768px) {
+        margin: 2px;
+      }
+    }
+
+    .share-button--twitter {
+      background-color: #000000;
+    }
+
+    .share-button--facebook {
+      background-color: #0866FF;
+    }
+
+    .share-button--reddit {
+      background-color: #FF4500;
+    }
+
+    .share-button--tumblr {
+      background-color: #36465d;
+    }
+
+    .share-button--instagram {
+      background-color: #FF0069;
+    }
+
+    .share-button--general {
+      background-color: hsl(214, 5%, 29%);
+    }
+
     &-more-button {
       $main-color: hsl(214, 5%, 29%);
       $focus-color: hsla(215, 5%, 54%, 0.4);
       $hover-color: hsla(215, 5%, 29%, 0.9);
       $painted-color: hsla(214, 4%, 19%, 1);
       display: inline-block;
-      min-height: 32px;
-      padding: 0.5rem 0.5rem;
+      min-height: 28px;
+      padding: 0.35rem 0.5rem;
       margin: 4px;
       color: #fff;
       background-color: $main-color;

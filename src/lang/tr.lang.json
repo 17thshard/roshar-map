@@ -193,8 +193,17 @@
     "sharing": {
         "title": "Paylaş",
         "global-message": "Roshar'ın İnteraktif Haritasına ve Zaman Çizelgesine göz atın!",
+        "general": {
+            "button-text": "Paylaş…",
+            "copied": "Kopyalandı!",
+            "entry-template": "Roshar'ın İnteraktif Haritası ve Zaman Çizelgesi'ndeki \"{entry}\" öğesine göz atın!"
+        },
         "twitter": {
-            "button-text": "Tweet",
+            "button-text": "Twitter/X",
+            "entry-template": "Roshar'ın İnteraktif Haritası ve Zaman Çizelgesi'ndeki \"{entry}\" öğesine göz atın!"
+        },
+        "instagram": {
+            "button-text": "Instagram",
             "entry-template": "Roshar'ın İnteraktif Haritası ve Zaman Çizelgesi'ndeki \"{entry}\" öğesine göz atın!"
         },
         "facebook": {

@@ -194,8 +194,17 @@
     "sharing": {
         "title": "Share",
         "global-message": "Check out the Interactive Map & Timeline of Roshar!",
+        "general": {
+            "button-text": "More…",
+            "copied": "Copied!",
+            "entry-template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
+        },
         "twitter": {
-            "button-text": "Tweet",
+            "button-text": "Twitter/X",
+            "entry-template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
+        },
+        "instagram": {
+            "button-text": "Instagram",
             "entry-template": "Check out \"{entry}\" on the Interactive Map & Timeline of Roshar!"
         },
         "facebook": {

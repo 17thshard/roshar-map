@@ -168,7 +168,7 @@ export default {
           return undefined
       }
 
-      // eslint-disable-next-line no-console
+       
       console.error('Could not map Markdown element', node)
 
       return h('span')
@@ -274,7 +274,7 @@ export default {
       top: 0.5rem;
       line-height: 1;
       font-size: 3rem;
-      color: lighten(#1c1d26, 40%);
+      color: color.adjust(#1c1d26, $lightness: 40%);
 
       [dir=ltr] & {
         left: -1.7rem;
@@ -291,7 +291,7 @@ export default {
       bottom: -1.5rem;
       line-height: 1;
       font-size: 3rem;
-      color: lighten(#1c1d26, 40%);
+      color: color.adjust(#1c1d26, $lightness: 40%);
 
       [dir=ltr] & {
         right: -1rem;

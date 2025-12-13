@@ -1,9 +1,15 @@
-/* eslint-disable no-console */
+ 
 
 import { register } from 'register-service-worker'
 
-if (process.env.NODE_ENV === 'production') {
-  register(`${process.env.BASE_URL}service-worker.js`, {
+if (import.meta.env.DEV && 'serviceWorker' in navigator) {
+  navigator.serviceWorker.getRegistrations()
+    .then((registrations) => Promise.all(registrations.map(r => r.unregister())))
+    .catch(() => {})
+}
+
+if (import.meta.env.PROD) {
+  register(`${import.meta.env.BASE_URL}service-worker.js`, {
     ready () {
       console.log(
         'App is being served from cache by a service worker.\n' +

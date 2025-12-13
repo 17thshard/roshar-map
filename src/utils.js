@@ -74,11 +74,24 @@ export function escapeCssPath (path) {
   return path.replace('\'', '\\\'').replace('(', '\\(').replace(')', '\\)')
 }
 
+const entryImageUrls = import.meta.glob('/src/assets/entries/**/*.{png,jpg,jpeg,webp}', {
+  eager: true,
+  query: '?url',
+  import: 'default'
+})
+
 export function getEntryImageSrcSet (path, gtag) {
   try {
-    return parseSrcSet(require(`@/assets/entries/${path}?srcset`))
+    const url = entryImageUrls[`/src/assets/entries/${path}`]
+    if (!url) {
+      throw new Error(`Unknown entry image path: ${path}`)
+    }
+
+    // Vue CLI generated real resized srcsets. For Vite we currently keep the
+    // contract (a srcset string) without resizing.
+    return parseSrcSet(`${url} 500w`)
   } catch (e) {
-    // eslint-disable-next-line no-console
+     
     console.error(`Could not retrieve entry image '${path}'`)
     if (gtag) {
       this.$gtag.exception({

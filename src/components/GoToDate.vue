@@ -302,7 +302,7 @@ export default {
       border-radius: 100%;
       appearance: none;
       border: none;
-      background: lighten(#0f3562, 10%);
+      background: color.adjust(#0f3562, $lightness: 10%);
       color: #f6f8fa;
       padding: 0;
       margin: 0.5rem;
@@ -314,7 +314,7 @@ export default {
       transition: 0.2s ease-in-out background;
 
       &:hover, &:active, &:focus {
-        background: lighten(#0f3562, 20%);
+        background: color.adjust(#0f3562, $lightness: 20%);
       }
 
       @media (max-width: 500px) {
@@ -340,7 +340,7 @@ export default {
     }
 
     $focus-height: 0.3rem;
-    $focus-color: lighten(#0f3562, 20%);
+    $focus-color: color.adjust(#0f3562, $lightness: 20%);
     $focus-diagonal-size: $focus-height + 0.353rem;
 
     label {

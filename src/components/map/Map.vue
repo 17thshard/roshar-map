@@ -31,15 +31,12 @@ import {
   Vector2,
   Vector3,
   WebGLRenderer,
-  // eslint-disable-next-line camelcase
+   
   RGB_S3TC_DXT1_Format, RedFormat
 } from 'three'
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
 import { mapState } from 'vuex'
-// #ifdef MAP_DEBUG
-import Stats from 'stats.js'
-// #endif
 import MapControls from '@/components/map/MapControls'
 import Highlight from '@/components/map/layers/Highlight'
 import fragmentShader from '@/components/map/mapFragmentShader'
@@ -130,12 +127,14 @@ export default {
       return
     }
 
-    // #ifdef MAP_DEBUG
-    this.stats = new Stats()
-    this.stats.dom.style.width = '80px'
-    this.stats.dom.style.right = '0px'
-    document.body.appendChild(this.stats.dom)
-    // #endif
+    if (import.meta.env.MAP_DEBUG === 'true') {
+      import('stats.js').then(({ default: Stats }) => {
+        this.stats = new Stats()
+        this.stats.dom.style.width = '80px'
+        this.stats.dom.style.right = '0px'
+        document.body.appendChild(this.stats.dom)
+      })
+    }
 
     this.loadTextures()
       .then(this.setupScene)
@@ -167,9 +166,9 @@ export default {
     this.renderer.dispose()
     cancelAnimationFrame(this.latestAnimationFrame)
 
-    // #ifdef MAP_DEBUG
-    this.stats.dom.remove()
-    // #endif
+    if (this.stats && this.stats.dom) {
+      this.stats.dom.remove()
+    }
   },
   methods: {
     loadTextures () {
@@ -416,9 +415,9 @@ export default {
       this.controls.transitionTo(target, newPosition.zoom !== undefined ? newPosition.zoom : 0.7)
     },
     update (timestamp) {
-      // #ifdef MAP_DEBUG
-      this.stats.begin()
-      // #endif
+      if (this.stats) {
+        this.stats.begin()
+      }
       this.resizeCanvasToDisplaySize()
 
       let delta = 0
@@ -478,9 +477,9 @@ export default {
 
       this.lastTimestamp = timestamp
 
-      // #ifdef MAP_DEBUG
-      this.stats.end()
-      // #endif
+      if (this.stats) {
+        this.stats.end()
+      }
 
       this.latestAnimationFrame = requestAnimationFrame(this.update)
     },

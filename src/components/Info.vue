@@ -116,9 +116,7 @@
         >
           <div class="info__content">
             <h2>{{ $t('ui.credits') }}</h2>
-            <div class="markdown info__text">
-              <!-- CREDITS_TEXT -->
-            </div>
+            <div class="markdown info__text" v-html="creditsHtml" />
           </div>
         </Scrollbar>
       </div>
@@ -131,8 +129,15 @@ import Scrollbar from 'vuescroll/dist/vuescroll-native'
 import { ChevronLeftIcon, ChevronRightIcon, FacebookIcon, GithubIcon, TwitterIcon, XIcon, YoutubeIcon } from 'vue-feather-icons'
 import Markdown from '@/components/Markdown.vue'
 import availableLanguages from '@/lang/menu.json'
+import creditsHtml from '@generated/credits.js'
 import { escapeCssPath } from '@/utils'
 import { mapState } from 'vuex'
+
+const logoUrls = import.meta.glob('/src/assets/logos/*', {
+  eager: true,
+  query: '?url',
+  import: 'default'
+})
 
 export default {
   name: 'Info',
@@ -156,19 +161,27 @@ export default {
       leaveActive: false,
       subPage: null,
       scrolled: {},
-      nativeShareSupported: navigator.share !== undefined
+      nativeShareSupported: navigator.share !== undefined,
+      creditsHtml
     }
   },
   computed: {
     logo () {
-      return escapeCssPath(require(`@/assets/logos/${this.$t('logo')}`))
+      const fileName = this.$t('logo')
+      const url = logoUrls[`/src/assets/logos/${fileName}`]
+      if (!url) {
+        // fallback: return empty; UI will just not show the image
+        return ''
+      }
+      return escapeCssPath(url)
     },
     translatorLogo () {
       if (!this.$te('meta.translator.url')) {
         return undefined
       }
 
-      return require(`@/assets/logos/${this.$t('meta.translator.logo')}`)
+      const fileName = this.$t('meta.translator.logo')
+      return logoUrls[`/src/assets/logos/${fileName}`]
     },
     ...mapState(['openedMenu'])
   },
@@ -186,7 +199,7 @@ export default {
     },
     shareNatively () {
       navigator.share({
-        url: process.env.VUE_APP_PUBLIC_URL,
+        url: import.meta.env.VUE_APP_PUBLIC_URL,
         title: document.title,
         description: this.$t('sharing.global-message')
       })
@@ -500,7 +513,7 @@ export default {
     text-align: center;
     margin-bottom: 1rem;
     font-size: 0.8rem;
-    color: lighten(#1c1d26, 30%);
+    color: color.adjust(#1c1d26, $lightness: 30%);
   }
 
   &__socials {

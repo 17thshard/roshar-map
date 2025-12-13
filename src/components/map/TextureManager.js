@@ -2,6 +2,21 @@ import isMobile from 'is-mobile'
 import { LinearFilter, RGBAFormat, TextureLoader, WebGLUtils } from 'three'
 import { DDSLoader } from 'three/examples/jsm/loaders/DDSLoader'
 
+const textureUrls = import.meta.glob('/src/assets/textures/**/*', {
+  eager: true,
+  query: '?url',
+  import: 'default'
+})
+
+function resolveTextureUrl (relativePath) {
+  const key = `/src/assets/textures/${relativePath}`
+  const url = textureUrls[key]
+  if (!url) {
+    throw new Error(`Missing texture asset: ${relativePath}`)
+  }
+  return url
+}
+
 export default class TextureManager {
   constructor (renderer, locale) {
     const maxTextureSize = renderer.capabilities.maxTextureSize
@@ -60,7 +75,7 @@ export default class TextureManager {
         const compressed = this.supportsCompression(texture.compressedPixelFormat)
         const loader = compressed ? compressedTextureLoader : textureLoader
         loader.load(
-          require(`@/assets/textures/${path}`),
+          resolveTextureUrl(path),
           (data) => {
             texture.loaded = true
             const basePixelFormat = texture.pixelFormat ?? RGBAFormat
@@ -135,7 +150,7 @@ export default class TextureManager {
 
       const path = this.buildPath(hqAvailable && this.useHq ? 'hq_' : '', name, localized, false)
 
-      image.src = require(`@/assets/textures/${path}`)
+      image.src = resolveTextureUrl(path)
     }))
   }
 }
