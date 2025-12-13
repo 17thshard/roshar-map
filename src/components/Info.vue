@@ -379,13 +379,13 @@ export default {
       left: 0;
       right: 0;
       bottom: 0;
-      height: 48px;
+      height: 60px;
       z-index: 62;
       pointer-events: none;
       transition: opacity 0.5s ease-in-out;
       opacity: 0;
       background: linear-gradient(0deg, rgba(#F5ECDA, 1.0) 0, rgba(#F5ECDA, 0) 100%);
-      border-bottom: 0.8rem solid #F5ECDA;
+      border-bottom: 1rem solid #F5ECDA;
     }
 
     &.hasVBar:after {
