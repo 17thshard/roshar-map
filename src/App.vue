@@ -281,7 +281,7 @@ body {
       box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.5);
 
       &:hover, &:active, &:focus {
-        background: saturate(darken(#F5ECDA, 10%), 5%);
+        background: color.adjust(color.adjust(#F5ECDA, $lightness: -10%), $saturation: 5%);
       }
 
       &--wide {

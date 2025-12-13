@@ -513,7 +513,7 @@ export default {
     text-align: center;
     margin-bottom: 1rem;
     font-size: 0.8rem;
-    color: lighten(#1c1d26, 30%);
+    color: color.adjust(#1c1d26, $lightness: 30%);
   }
 
   &__socials {

@@ -26,6 +26,13 @@ export default ({ mode }) => {
   return {
     base,
     envPrefix,
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "sass:color";\n',
+        },
+      },
+    },
     plugins: [
       generatedAssetsPlugin(),
       vue2(),

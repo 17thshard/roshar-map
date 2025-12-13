@@ -237,7 +237,7 @@ export default {
     border-radius: 0.5rem;
     appearance: none;
     border: none;
-    background: lighten(#0f3562, 10%);
+    background: color.adjust(#0f3562, $lightness: 10%);
     color: #f6f8fa;
     padding: 0.75rem;
     margin: 0.5rem auto;
@@ -248,7 +248,7 @@ export default {
     transition: 0.2s ease-in-out background;
 
     &:hover, &:active, &:focus {
-      background: lighten(#0f3562, 20%);
+      background: color.adjust(#0f3562, $lightness: 20%);
     }
   }
 }

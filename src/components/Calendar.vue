@@ -108,7 +108,7 @@ export default {
     display: block;
     width: var(--base-unit);
     height: var(--base-unit);
-    background: darken(#F5ECDA, 30%);
+    background: color.adjust(#F5ECDA, $lightness: -30%);
     padding: calc(max(var(--base-unit) / 4, 2px));
     box-sizing: border-box;
     position: relative;
