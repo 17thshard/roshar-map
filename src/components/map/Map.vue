@@ -415,9 +415,9 @@ export default {
       this.controls.transitionTo(target, newPosition.zoom !== undefined ? newPosition.zoom : 0.7)
     },
     update (timestamp) {
-      // #ifdef MAP_DEBUG
-      this.stats.begin()
-      // #endif
+      if (this.stats) {
+        this.stats.begin()
+      }
       this.resizeCanvasToDisplaySize()
 
       let delta = 0
@@ -477,9 +477,9 @@ export default {
 
       this.lastTimestamp = timestamp
 
-      // #ifdef MAP_DEBUG
-      this.stats.end()
-      // #endif
+      if (this.stats) {
+        this.stats.end()
+      }
 
       this.latestAnimationFrame = requestAnimationFrame(this.update)
     },
