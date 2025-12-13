@@ -157,7 +157,7 @@ export default {
     z-index: 63;
 
     &:hover, &:active, &:focus, &:disabled {
-      background: saturate(darken(#F5ECDA, 10%), 5%);
+      background: color.adjust(color.adjust(#F5ECDA, $lightness: -10%), $saturation: 5%);
     }
 
     &:disabled {

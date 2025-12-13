@@ -29,7 +29,7 @@ export default {
   bottom: 0;
   top: 0;
   right: 0;
-  background: darken(#0f3562, 10%);
+  background: color.adjust(#0f3562, $lightness: -10%);
   box-shadow: inset 0 -3vw 20vw rgba(0, 0, 0, 0.5);
   color: #cfddf1;
   text-align: center;

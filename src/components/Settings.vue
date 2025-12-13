@@ -305,7 +305,7 @@ export default {
       display: block;
       width: 1rem;
       height: 1rem;
-      background: darken(#F5ECDA, 30%);
+      background: color.adjust(#F5ECDA, $lightness: -30%);
       padding: 0.25rem;
       box-sizing: border-box;
       position: relative;
@@ -382,7 +382,7 @@ export default {
       margin: 0;
       padding: 0.4rem 0.5rem;
       color: #f6f8fa;
-      background: desaturate(#0f3562, 10%);
+      background: color.adjust(#0f3562, $saturation: -10%);
       width: 30px;
 
       .feather {
@@ -391,7 +391,7 @@ export default {
       }
 
       &:hover, &:active, &:focus {
-        background: lighten(#0f3562, 5%);
+        background: color.adjust(#0f3562, $lightness: 5%);
       }
     }
 
@@ -401,7 +401,7 @@ export default {
       width: 30px;
       top: 0;
       bottom: 0;
-      background: lighten(#0f3562, 10%);
+      background: color.adjust(#0f3562, $lightness: 10%);
       z-index: 0;
       transition: left 0.3s ease-in-out, right 0.3s ease-in-out;
       pointer-events: none;
