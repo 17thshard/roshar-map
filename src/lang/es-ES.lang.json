@@ -200,8 +200,17 @@
     "sharing": {
         "title": "Compartir",
         "global-message": "¡Echa un vistazo al mapa y línea temporal interactiva de Roshar!",
+        "general": {
+            "button-text": "Compartir…",
+            "copied": "¡Copiado!",
+            "entry-template": "Echa un ojo a \"{entry}\" en el mapa y línea temporal interactiva de Roshar!"
+        },
         "twitter": {
-            "button-text": "Tweet",
+            "button-text": "Twitter/X",
+            "entry-template": "Echa un ojo a \"{entry}\" en el mapa y línea temporal interactiva de Roshar!"
+        },
+        "instagram": {
+            "button-text": "Instagram",
             "entry-template": "Echa un ojo a \"{entry}\" en el mapa y línea temporal interactiva de Roshar!"
         },
         "facebook": {

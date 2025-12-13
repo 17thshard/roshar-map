@@ -194,8 +194,17 @@
   "sharing": {
     "title": "Поделиться",
     "global-message": "Смотрите, интерактивная карта Рошара!",
+    "general": {
+      "button-text": "Поделиться…",
+      "copied": "Скопировано!",
+      "entry-template": "Смотрите \"{entry}\" на интерактивной карте Рошара!"
+    },
     "twitter": {
-      "button-text": "Twitter",
+      "button-text": "Twitter/X",
+      "entry-template": "Смотрите \"{entry}\" на интерактивной карте Рошара!"
+    },
+    "instagram": {
+      "button-text": "Instagram",
       "entry-template": "Смотрите \"{entry}\" на интерактивной карте Рошара!"
     },
     "facebook": {
