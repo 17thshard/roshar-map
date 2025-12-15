@@ -45,6 +45,7 @@ import Highlight from '@/components/map/layers/Highlight'
 import fragmentShader from '@/components/map/mapFragmentShader'
 import textFragmentShader from '@/components/map/mapTextFragmentShader'
 import ShatteringPass from '@/components/map/ShatteringPass'
+import AscensionPass from '@/components/map/AscensionPass'
 import TextureManager from '@/components/map/TextureManager'
 import { clamp01, lerp } from '@/utils'
 import Factions from '@/components/map/layers/Factions'
@@ -332,6 +333,13 @@ export default {
       }
       this.measurement = new Measurement()
 
+      const shatteredPlains = this.$store.state.mappings.locations['shattered-plains']
+      this.ascensionPass = new AscensionPass(
+        this.mapMaterial.uniforms.BgTexture.value,
+        this.mapMaterial.uniforms.TransitionTexture.value,
+        shatteredPlains.coordinates
+      )
+
       this.scene = new Scene()
       this.scene.add(
         this.plane,
@@ -341,7 +349,8 @@ export default {
         this.layers.factions,
         this.layers.silverKingdoms,
         this.layers.oathgates,
-        this.measurement
+        this.measurement,
+        this.ascensionPass
       )
 
       this.composer.addPass(new RenderPass(this.scene, this.camera))
@@ -368,6 +377,12 @@ export default {
         this.shatteringPass.enter()
       } else if (oldEvent !== null && oldEvent.specialEffect === 'shattering') {
         this.shatteringPass.leave()
+      }
+
+      if (event !== null && event.specialEffect === 'ascension') {
+        this.ascensionPass.enter(this.layers.shadesmar)
+      } else if (oldEvent !== null && oldEvent.specialEffect === 'ascension') {
+        this.ascensionPass.leave()
       }
 
       if (event !== null && event.specialEffect === 'factions') {
@@ -442,6 +457,7 @@ export default {
 
       this.highlights.children.forEach(h => h.update(this.camera, timestamp, delta))
       Object.values(this.layers).forEach(h => h.update(this.camera, timestamp, delta))
+      this.ascensionPass.update(this.camera, timestamp, delta)
 
       this.controls.update(delta)
 
