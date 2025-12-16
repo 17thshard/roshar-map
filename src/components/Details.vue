@@ -96,7 +96,7 @@
             :aria-label="$t('sharing.tumblr.button-text')"
           >
             <span class="share-button__icon" aria-hidden="true">
-              <img class="share-button__icon-img" :src="tumblrLogo" alt="" aria-hidden="true" />
+              <img class="share-button__icon-img" :src="tumblrLogo" alt="" aria-hidden="true">
             </span>
             <span class="share-button__text">{{ $t('sharing.tumblr.button-text') }}</span>
           </a>
@@ -108,7 +108,7 @@
             :aria-label="$t('sharing.reddit.button-text')"
           >
             <span class="share-button__icon" aria-hidden="true">
-              <img class="share-button__icon-img" :src="redditLogo" alt="" aria-hidden="true" />
+              <img class="share-button__icon-img" :src="redditLogo" alt="" aria-hidden="true">
             </span>
             <span class="share-button__text">{{ $t('sharing.reddit.button-text') }}</span>
           </a>
@@ -120,7 +120,7 @@
             :aria-label="$t('sharing.twitter.button-text')"
           >
             <span class="share-button__icon" aria-hidden="true">
-              <img class="share-button__icon-img" :src="xLogo" alt="" aria-hidden="true" />
+              <img class="share-button__icon-img" :src="xLogo" alt="" aria-hidden="true">
             </span>
             <span class="share-button__text">{{ $t('sharing.twitter.button-text') }}</span>
           </a>
@@ -134,7 +134,7 @@
             @keydown.space.prevent="shareInstagram"
           >
             <span class="share-button__icon" aria-hidden="true">
-              <img class="share-button__icon-img" :src="instagramLogo" alt="" aria-hidden="true" />
+              <img class="share-button__icon-img" :src="instagramLogo" alt="" aria-hidden="true">
             </span>
             <span class="share-button__text">{{ $t('sharing.instagram.button-text') }}</span>
           </a>
@@ -146,7 +146,7 @@
             :aria-label="$t('sharing.facebook.button-text')"
           >
             <span class="share-button__icon" aria-hidden="true">
-              <img class="share-button__icon-img" :src="facebookLogo" alt="" aria-hidden="true" />
+              <img class="share-button__icon-img" :src="facebookLogo" alt="" aria-hidden="true">
             </span>
             <span class="share-button__text">{{ $t('sharing.facebook.button-text') }}</span>
           </a>
@@ -160,7 +160,7 @@
             @keydown.space.prevent="shareGenerally"
           >
             <span class="share-button__icon" aria-hidden="true">
-              <img class="share-button__icon-img" :src="shareLogo" alt="" aria-hidden="true" />
+              <img class="share-button__icon-img" :src="shareLogo" alt="" aria-hidden="true">
             </span>
             <span class="share-button__text">
               {{ generalShareLabel }}

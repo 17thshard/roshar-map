@@ -47,6 +47,7 @@
     "cross-env": "^7.0.2",
     "eslint": "^9.17.0",
     "eslint-plugin-vue": "^10.6.2",
+    "globals": "^16.4.0",
     "imagemin": "^7.0.1",
     "imagemin-webp": "^6.0.0",
     "imagemin-zopfli": "^7.0.0",
