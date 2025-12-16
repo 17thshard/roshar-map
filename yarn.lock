@@ -6705,8 +6705,8 @@ __metadata:
     vue-router: "npm:^3.3.4"
     vue-template-compiler: "npm:^2.7.10"
     vuedraggable: "npm:^2.24.0"
-    vuescroll: "npm:^4.18.1"
-    vuex: "npm:^3.4.0"
+    vuescroll: "npm:^4.16.0"
+    vuex: "npm:^3.6.0"
   languageName: unknown
   linkType: soft
 
@@ -7987,7 +7987,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vuescroll@npm:^4.18.1":
+"vuescroll@npm:^4.16.0":
   version: 4.18.1
   resolution: "vuescroll@npm:4.18.1"
   peerDependencies:
@@ -7996,7 +7996,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vuex@npm:^3.4.0":
+"vuex@npm:^3.6.0":
   version: 3.6.2
   resolution: "vuex@npm:3.6.2"
   peerDependencies:
