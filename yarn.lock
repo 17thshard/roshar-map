@@ -6691,7 +6691,7 @@ __metadata:
     register-service-worker: "npm:^1.7.1"
     sass: "npm:^1.26.5"
     seedrandom: "npm:^3.0.5"
-    simple-markdown: "npm:^0.7.2"
+    simple-markdown: "npm:^0.7.3"
     stats.js: "npm:^0.17.0"
     three: "npm:^0.182.0"
     vite: "npm:^7.2.7"
@@ -7000,7 +7000,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"simple-markdown@npm:^0.7.2":
+"simple-markdown@npm:^0.7.3":
   version: 0.7.3
   resolution: "simple-markdown@npm:0.7.3"
   dependencies:
