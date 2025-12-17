@@ -6455,7 +6455,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"register-service-worker@npm:^1.7.1":
+"register-service-worker@npm:^1.7.2":
   version: 1.7.2
   resolution: "register-service-worker@npm:1.7.2"
   checksum: 10c0/3ce63aee5fcc601bbe8ecb83589a75787cf2796f2c01554391fa47074db6a665907a0564eca176558c8882e698825b1fca0c0189d53aca11b4d907591bb72143
@@ -6688,7 +6688,7 @@ __metadata:
     jszip: "npm:^3.7.0"
     lunr: "npm:^2.3.9"
     lunr-languages: "npm:^1.10.0"
-    register-service-worker: "npm:^1.7.1"
+    register-service-worker: "npm:^1.7.2"
     sass: "npm:^1.26.5"
     seedrandom: "npm:^3.0.5"
     simple-markdown: "npm:^0.7.3"
