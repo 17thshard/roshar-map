@@ -30,7 +30,7 @@
     "seedrandom": "^3.0.5",
     "simple-markdown": "^0.7.2",
     "stats.js": "^0.17.0",
-    "three": "^0.137.0",
+    "three": "^0.182.0",
     "vue": "^2.7.10",
     "vue-dragscroll": "^2.1.0",
     "vue-feather-icons": "^5.1.0",

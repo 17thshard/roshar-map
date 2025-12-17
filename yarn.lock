@@ -6693,7 +6693,7 @@ __metadata:
     seedrandom: "npm:^3.0.5"
     simple-markdown: "npm:^0.7.2"
     stats.js: "npm:^0.17.0"
-    three: "npm:^0.137.0"
+    three: "npm:^0.182.0"
     vite: "npm:^7.2.7"
     vite-plugin-pwa: "npm:^1.2.0"
     vue: "npm:^2.7.10"
@@ -7491,10 +7491,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"three@npm:^0.137.0":
-  version: 0.137.5
-  resolution: "three@npm:0.137.5"
-  checksum: 10c0/ce5392396c21bf4569c7f8f694fdc49c0237e61a41ec3cf7bc82cb3bfdeca7c977229fbc70da95972f51a61a87850854e17d0a1d179daa7c7295724ea8e7670c
+"three@npm:^0.182.0":
+  version: 0.182.0
+  resolution: "three@npm:0.182.0"
+  checksum: 10c0/8ddb3380dc881c75a91cb9fb29a3610b1d01de7feff4b7610fb305a24efc51c98d51b8bcef6ab74e82a1af1947bc81343a9eab1dc9ebe17b504eab19a321430b
   languageName: node
   linkType: hard
 
