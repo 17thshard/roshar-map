@@ -24,7 +24,7 @@ import {
   Mesh,
   NearestFilter,
   PerspectiveCamera,
-  PlaneBufferGeometry,
+  PlaneGeometry,
   RepeatWrapping,
   Scene,
   ShaderMaterial,
@@ -246,7 +246,7 @@ export default {
           },
           [[], []]
         )
-      const geo = new PlaneBufferGeometry(2, 2, 1, 1)
+      const geo = new PlaneGeometry(2, 2, 1, 1)
       this.mapMaterial = new ShaderMaterial({
         // language=GLSL
         vertexShader: `

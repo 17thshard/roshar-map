@@ -1,4 +1,4 @@
-import { Group, Mesh, PlaneBufferGeometry, ShaderMaterial } from 'three'
+import { Group, Mesh, PlaneGeometry, ShaderMaterial } from 'three'
 import silverKingdomsFragmentShader from '@/components/map/layers/silverKingdomsFragmentShader'
 import silverKingdomsTextFragmentShader from '@/components/map/layers/silverKingdomsTextFragmentShader'
 import { clamp01 } from '@/utils'
@@ -20,7 +20,7 @@ export default class SilverKingdoms extends Group {
   }
 
   init (textures) {
-    const geo = new PlaneBufferGeometry(2, 2, 1, 1)
+    const geo = new PlaneGeometry(2, 2, 1, 1)
     const bordersMaterial = new ShaderMaterial({
       // language=GLSL
       vertexShader: `

@@ -354,7 +354,7 @@
 </template>
 
 <script>
-import { Mesh, OrthographicCamera, PlaneBufferGeometry, Scene, ShaderMaterial, Vector2, WebGLRenderer } from 'three'
+import { Mesh, OrthographicCamera, PlaneGeometry, Scene, ShaderMaterial, Vector2, WebGLRenderer } from 'three'
 import Draggable from 'vuedraggable'
 import DeepDiff from 'deep-diff'
 import Zip from 'jszip'
@@ -626,7 +626,7 @@ export default {
         1
       )
 
-      const geo = new PlaneBufferGeometry(2, 2, 1, 1)
+      const geo = new PlaneGeometry(2, 2, 1, 1)
 
       const mapMaterial = new ShaderMaterial({
         // language=GLSL

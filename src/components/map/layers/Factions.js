@@ -1,4 +1,4 @@
-import { AdditiveBlending, Group, Mesh, PlaneBufferGeometry, ShaderMaterial } from 'three'
+import { AdditiveBlending, Group, Mesh, PlaneGeometry, ShaderMaterial } from 'three'
 import factionsFragmentShader from '@/components/map/layers/factionsFragmentShader'
 import { clamp01 } from '@/utils'
 
@@ -19,7 +19,7 @@ export default class Factions extends Group {
   }
 
   init (texture) {
-    const geo = new PlaneBufferGeometry(2, 2, 1, 1)
+    const geo = new PlaneGeometry(2, 2, 1, 1)
     const mat = new ShaderMaterial({
       // language=GLSL
       vertexShader: `
