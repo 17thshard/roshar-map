@@ -4910,10 +4910,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-mobile@npm:^2.2.2":
-  version: 2.2.2
-  resolution: "is-mobile@npm:2.2.2"
-  checksum: 10c0/e37784f0bb15a0707fd2b64d5e19740244f10c77748bac971bf7e5aced54d6183e3e62108b014d1ee9bf44c7a0b5d138eb2e41d1c13f140488a0859e466039e1
+"is-mobile@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "is-mobile@npm:5.0.0"
+  checksum: 10c0/70b31c3e4489109e02deb9b590e74858aeec7ef775a882d89ec030cb7dbaeb2be1173d7faee495049629e49822d0aba9b20e6653b1e25dd7c9121247cb8829d7
   languageName: node
   linkType: hard
 
@@ -6683,7 +6683,7 @@ __metadata:
     imagemin: "npm:^7.0.1"
     imagemin-webp: "npm:^6.0.0"
     imagemin-zopfli: "npm:^7.0.0"
-    is-mobile: "npm:^2.2.2"
+    is-mobile: "npm:^5.0.0"
     js-string-escape: "npm:^1.0.1"
     jszip: "npm:^3.7.0"
     lunr: "npm:^2.3.9"
