@@ -182,7 +182,7 @@ import instagramLogo from '@/assets/logos/instagram.svg'
 import facebookLogo from '@/assets/logos/facebook.svg'
 import redditLogo from '@/assets/logos/reddit.svg'
 import tumblrLogo from '@/assets/logos/tumblr.svg'
-import shareLogo from '@/assets/share-svgrepo-com.svg'
+import shareLogo from '@/assets/logos/share-svgrepo-com.svg'
 
 export default {
   name: 'Details',
