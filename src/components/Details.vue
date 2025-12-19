@@ -5,7 +5,7 @@
       :title="$t('ui.close')"
       :to="`/${$route.params.locale}`"
     >
-      <XIcon />
+      <VueFeather type="x" />
     </router-link>
     <div
       ref="scroller"
@@ -30,14 +30,14 @@
           </h2>
           <ul v-if="Object.keys(metadata).length > 0" class="details__metadata">
             <li v-if="metadata.date">
-              <CalendarIcon :aria-label="$t(`ui.date`)" class="details__metadata-icon" size="1.25x" />
+              <VueFeather type="calendar" :aria-label="$t(`ui.date`)" class="details__metadata-icon" :size="30" />
               {{ metadata.date }}
               <button class="details__date-help" :title="$t('ui.date-help')" @click="$store.commit('openCalendarGuide')">
-                <HelpCircleIcon size="1.25x" />
+                <VueFeather type="help-circle" :size="30" />
               </button>
             </li>
             <li v-if="metadata.chapter">
-              <BookIcon :aria-label="$t(`ui.chapter`)" class="details__metadata-icon" size="1.25x" />
+              <VueFeather type="book" :aria-label="$t(`ui.chapter`)" class="details__metadata-icon" :size="30" />
               <Markdown tag="span" :content="metadata.chapter" inline />
             </li>
           </ul>
@@ -172,7 +172,7 @@
 </template>
 
 <script>
-import { BookIcon, CalendarIcon, HelpCircleIcon, XIcon } from 'vue-feather-icons'
+import VueFeather from 'vue-feather'
 import Markdown from '@/components/Markdown.vue'
 import { formatDate, getEntryImageSrcSet, compareEvents } from '@/utils'
 import xLogo from '@/assets/logos/x.svg'
@@ -185,11 +185,8 @@ import shareLogo from '@/assets/logos/share-svgrepo-com.svg'
 export default {
   name: 'Details',
   components: {
-    Markdown,
-    HelpCircleIcon,
-    XIcon,
-    CalendarIcon,
-    BookIcon
+    VueFeather,
+    Markdown
   },
   props: {
     details: {

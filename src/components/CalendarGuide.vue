@@ -5,7 +5,7 @@
         <h2>{{ $t('ui.calendar-guide.title') }}</h2>
 
         <button class="calendar-guide__close" :title="$t('ui.close')" @click="close">
-          <XIcon />
+          <VueFeather type="x" />
         </button>
       </header>
       <Markdown class="calendar-guide__explanation" :content="explanation" />
@@ -18,8 +18,8 @@
       />
       <nav class="calendar-guide__navigation">
         <button class="calendar-guide__button calendar-guide__button--prev" :title="$t('ui.previous')" @click="prevStep">
-          <ChevronRightIcon v-if="$store.state.flipDirectionalIcons" size="1x" :stroke-width="3" />
-          <ChevronLeftIcon v-else size="1x" :stroke-width="3" />
+          <VueFeather v-if="$store.state.flipDirectionalIcons" type="chevron-right" :size="24" :stroke-width="3" />
+          <VueFeather v-else type="chevron-left" :size="24" :stroke-width="3" />
         </button>
         <ul class="calendar-guide__dots">
           <li
@@ -31,8 +31,8 @@
           />
         </ul>
         <button class="calendar-guide__button calendar-guide__button--next" :title="$t('ui.next')" @click="nextStep">
-          <ChevronLeftIcon v-if="$store.state.flipDirectionalIcons" size="1x" :stroke-width="3" />
-          <ChevronRightIcon v-else size="1x" :stroke-width="3" />
+          <VueFeather v-if="$store.state.flipDirectionalIcons" type="chevron-left" :size="24" :stroke-width="3" />
+          <VueFeather v-else type="chevron-right" :size="24" :stroke-width="3" />
         </button>
       </nav>
     </section>
@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import { ChevronLeftIcon, ChevronRightIcon, XIcon } from 'vue-feather-icons'
+import VueFeather from 'vue-feather'
 import Calendar from '@/components/Calendar.vue'
 import Markdown from '@/components/Markdown.vue'
 import { formatDate } from '@/utils'
@@ -49,7 +49,7 @@ const STEPS = ['start', 'day', 'week', 'month', 'year', 'date']
 
 export default {
   name: 'CalendarGuide',
-  components: { Markdown, Calendar, ChevronLeftIcon, ChevronRightIcon, XIcon },
+  components: { VueFeather, Markdown, Calendar },
   data () {
     return {
       step: 'start',

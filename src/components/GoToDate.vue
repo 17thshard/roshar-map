@@ -5,7 +5,7 @@
         {{ $t('ui.go-to-date.heading') }}
 
         <button type="button" class="go-to-date__close" :title="$t('ui.close')" @click="close">
-          <XIcon />
+          <VueFeather type="x" />
         </button>
       </h2>
       <section class="go-to-date__fields">
@@ -64,8 +64,8 @@
           <div class="go-to-date__field-focus" />
         </div>
         <button type="submit">
-          <ArrowLeftIcon v-if="$store.state.flipDirectionalIcons" />
-          <ArrowRightIcon v-else />
+          <VueFeather v-if="$store.state.flipDirectionalIcons" type="arrow-left" />
+          <VueFeather v-else type="arrow-right" />
         </button>
       </section>
       <section v-if="error !== null" class="go-to-date__error">
@@ -76,11 +76,11 @@
 </template>
 
 <script>
-import { ArrowRightIcon, ArrowLeftIcon, XIcon } from 'vue-feather-icons'
+import VueFeather from 'vue-feather'
 
 export default {
   name: 'GoToDate',
-  components: { ArrowRightIcon, ArrowLeftIcon, XIcon },
+  components: { VueFeather },
   data () {
     return {
       year: null,

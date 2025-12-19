@@ -7,7 +7,7 @@
     @animationend="onAnimationEnd"
   >
     <button :disabled="open" class="search__button" :title="$t('ui.search.title')" @click="$emit('open')">
-      <SearchIcon size="1x" />
+      <VueFeather type="search" :size="24" />
     </button>
     <transition name="search__content">
       <div v-if="open" class="search__content">
@@ -22,7 +22,7 @@
           @focusout="fieldFocused = false"
         >
         <button key="close-button" class="search__button" :title="$t('ui.close')" @click="$emit('close')">
-          <XIcon size="1x" />
+          <VueFeather type="x" :size="24" />
         </button>
       </div>
     </transition>
@@ -40,13 +40,13 @@
 </template>
 
 <script>
-import { SearchIcon, XIcon } from 'vue-feather-icons'
+import VueFeather from 'vue-feather'
 import SearchResults from '@/components/search/SearchResults.vue'
 import { debounce } from '@/utils'
 
 export default {
   name: 'Search',
-  components: { SearchResults, SearchIcon, XIcon },
+  components: { VueFeather, SearchResults },
   props: {
     open: Boolean
   },

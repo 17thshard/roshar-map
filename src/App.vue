@@ -1,7 +1,7 @@
 <template>
   <div id="app" :class="{ 'app--details': details !== null, 'app--sidebar-active': sidebarActive }">
     <router-view
-      :transitions="mapTransitions"
+      :transitions="mapTransitions ? true : undefined"
       @ready="onReady"
       @error="onError"
     />
@@ -12,13 +12,13 @@
       <Scrubber v-if="ready" />
     </transition>
     <div class="app__actions">
-      <Search :open="openedMenu === 'search'" @open="openMenu('search')" @close="closeMenu" />
+      <Search :open="openedMenu === 'search' ? true : undefined" @open="openMenu('search')" @close="closeMenu" />
       <button
         data-tutorial-id="settings-button"
         :class="['app__actions-button', 'app__actions-button--wide', {'app__actions-button--hidden': openedMenu === 'settings'}]"
         @click="openMenu('settings')"
       >
-        <SlidersIcon size="1x" />
+        <VueFeather type="sliders" :size="24" />
         {{ $t('ui.settings') }}
       </button>
       <button
@@ -27,11 +27,11 @@
         :title="$t('ui.menu')"
         @click="openMenu('info')"
       >
-        <MenuIcon size="1x" />
+        <VueFeather type="menu" :size="24" />
       </button>
     </div>
-    <Info :open="openedMenu === 'info'" @open-tutorial="openTutorial" @close="closeMenu" />
-    <Settings :open="openedMenu === 'settings'" @close="closeMenu" />
+    <Info :open="openedMenu === 'info' ? true : undefined" @open-tutorial="openTutorial" @close="closeMenu" />
+    <Settings :open="openedMenu === 'settings' ? true : undefined" @close="closeMenu" />
     <transition name="calendar-guide">
       <CalendarGuide v-if="$store.state.calendarGuideOpen" />
     </transition>
@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import { MenuIcon, SlidersIcon } from 'vue-feather-icons'
+import VueFeather from 'vue-feather'
 import Scrubber from '@/components/Scrubber.vue'
 import Settings from '@/components/Settings.vue'
 import LoadingIndicator from '@/components/LoadingIndicator.vue'
@@ -73,6 +73,7 @@ import { mapMutations, mapState } from 'vuex'
 export default {
   name: 'App',
   components: {
+    VueFeather,
     Search,
     ErrorScreen,
     FirstVisitWindow,
@@ -83,8 +84,6 @@ export default {
     LoadingIndicator,
     Settings,
     Scrubber,
-    MenuIcon,
-    SlidersIcon,
     Changelog
   },
   data () {

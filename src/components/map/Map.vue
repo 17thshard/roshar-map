@@ -36,6 +36,7 @@ import {
 } from 'three'
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
+import { markRaw } from 'vue'
 import { mapState } from 'vuex'
 import MapControls from '@/components/map/MapControls'
 import Highlight from '@/components/map/layers/Highlight'
@@ -189,15 +190,15 @@ export default {
       return this.textureManager.load(textures)
     },
     async setupScene (textures) {
-      this.camera = new PerspectiveCamera(
+      this.camera = markRaw(new PerspectiveCamera(
         60,
         window.innerWidth / window.innerHeight,
         0.01,
         1e3
-      )
+      ))
       this.camera.position.set(30, -10, 40)
 
-      this.controls = new MapControls(this.camera, this.renderer.domElement)
+      this.controls = markRaw(new MapControls(this.camera, this.renderer.domElement))
       this.controls.addEventListener('click', ({ position, ctrlKey }) => {
         if (this.measurementActive) {
           this.measurementResult = this.measurement.click(position, ctrlKey)
@@ -247,7 +248,7 @@ export default {
           [[], []]
         )
       const geo = new PlaneGeometry(2, 2, 1, 1)
-      this.mapMaterial = new ShaderMaterial({
+      this.mapMaterial = markRaw(new ShaderMaterial({
         // language=GLSL
         vertexShader: `
           varying vec2 vUv;
@@ -278,13 +279,13 @@ export default {
         extensions: {
           derivatives: true
         }
-      })
+      }))
 
       textures.text_pattern.wrapS = RepeatWrapping
       textures.text_pattern.wrapT = RepeatWrapping
       textures.text_pattern.magFilter = NearestFilter
 
-      const textMaterial = new ShaderMaterial({
+      const textMaterial = markRaw(new ShaderMaterial({
         // language=GLSL
         vertexShader: `
           varying vec2 vUv;
@@ -313,25 +314,25 @@ export default {
         },
         transparent: true,
         depthTest: false
-      })
+      }))
 
-      this.plane = new Mesh(geo, this.mapMaterial)
+      this.plane = markRaw(new Mesh(geo, this.mapMaterial))
       this.plane.frustumCulled = false
 
-      this.textPlane = new Mesh(geo, textMaterial)
+      this.textPlane = markRaw(new Mesh(geo, textMaterial))
       this.textPlane.position.z = 1
       this.textPlane.frustumCulled = false
 
       this.layers = {
-        shadesmar: new Shadesmar(),
-        graticule: new Graticule(),
-        silverKingdoms: new SilverKingdoms(textures),
-        oathgates: new Oathgates(textures),
-        factions: new Factions(textures.factions)
+        shadesmar: markRaw(new Shadesmar()),
+        graticule: markRaw(new Graticule()),
+        silverKingdoms: markRaw(new SilverKingdoms(textures)),
+        oathgates: markRaw(new Oathgates(textures)),
+        factions: markRaw(new Factions(textures.factions))
       }
-      this.measurement = new Measurement()
+      this.measurement = markRaw(new Measurement())
 
-      this.scene = new Scene()
+      this.scene = markRaw(new Scene())
       this.scene.add(
         this.plane,
         this.layers.graticule,
@@ -344,7 +345,7 @@ export default {
       )
 
       this.composer.addPass(new RenderPass(this.scene, this.camera))
-      this.shatteringPass = new ShatteringPass()
+      this.shatteringPass = markRaw(new ShatteringPass())
       this.composer.addPass(this.shatteringPass)
 
       this.hoverTexture = await this.textureManager.loadData('hover_text', false, true, false, 'gb')

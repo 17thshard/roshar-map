@@ -1,4 +1,5 @@
 <script>
+import { resolveComponent } from 'vue'
 import markdown from 'simple-markdown'
 
 const LINK_INSIDE = '(?:\\[[^\\]]*\\]|[^\\[\\]]|\\](?=[^\\[]*\\]))*'
@@ -90,19 +91,19 @@ export default {
     }
   },
   methods: {
-    renderNode (node, h, route) {
+    renderNode (node, h, route, RouterLink) {
       switch (node.type) {
         case 'strong':
         case 'em':
         case 'strike':
         case 'u':
-          return h(node.type, node.content.map(child => this.renderNode(child, h, route)))
+          return h(node.type, node.content.map(child => this.renderNode(child, h, route, RouterLink)))
         case 'blockQuote':
-          return h('blockquote', node.content.map(child => this.renderNode(child, h, route)))
+          return h('blockquote', node.content.map(child => this.renderNode(child, h, route, RouterLink)))
         case 'paragraph':
-          return h('p', node.content.map(child => this.renderNode(child, h, route)))
+          return h('p', node.content.map(child => this.renderNode(child, h, route, RouterLink)))
         case 'smallCaps':
-          return h('span', { class: 'markdown__small-caps' }, node.content.map(child => this.renderNode(child, h, route)))
+          return h('span', { class: 'markdown__small-caps' }, node.content.map(child => this.renderNode(child, h, route, RouterLink)))
         case 'translatorNote':
           return h(
             'div',
@@ -113,7 +114,7 @@ export default {
                 { class: 'markdown__translator-note-marker', attrs: { title: this.$t('ui.translatorNote.full') } },
                 this.$t('ui.translatorNote.full')
               ),
-              ...node.content.map(child => this.renderNode(child, h, route))
+              ...node.content.map(child => this.renderNode(child, h, route, RouterLink))
             ]
           )
         case 'inlineTranslatorNote':
@@ -128,19 +129,17 @@ export default {
                 this.$t('ui.translatorNote.abbreviation')
               ),
               ' ',
-              h('span', { class: 'markdown__inline-translator-note-content' }, node.content.map(child => this.renderNode(child, h, route))),
+              h('span', { class: 'markdown__inline-translator-note-content' }, node.content.map(child => this.renderNode(child, h, route, RouterLink))),
               ')'
             ]
           )
         case 'internalLink':
           return h(
-            'router-link',
+            RouterLink,
             {
-              props: {
-                to: `/${route.params.locale}/${node.target}`
-              }
+              to: `/${route.params.locale}/${node.target}`
             },
-            node.content.map(child => this.renderNode(child, h, route))
+            node.content.map(child => this.renderNode(child, h, route, RouterLink))
           )
         case 'link':
           return h(
@@ -153,12 +152,12 @@ export default {
                 rel: 'noopener'
               }
             },
-            node.content.map(child => this.renderNode(child, h, route))
+            node.content.map(child => this.renderNode(child, h, route, RouterLink))
           )
         case 'list':
-          return h(node.ordered ? 'ol' : 'ul', node.items.map(item => h('li', item.map(child => this.renderNode(child, h, route)))))
+          return h(node.ordered ? 'ol' : 'ul', node.items.map(item => h('li', item.map(child => this.renderNode(child, h, route, RouterLink)))))
         case 'heading':
-          return h(`h${node.level}`, node.content.map(child => this.renderNode(child, h, route)))
+          return h(`h${node.level}`, node.content.map(child => this.renderNode(child, h, route, RouterLink)))
         case 'text':
           return node.content
         case 'forceBr':
@@ -175,8 +174,9 @@ export default {
     }
   },
   render (h) {
+    const RouterLink = resolveComponent('router-link')
     const parsed = (this.advanced ? advancedParser : parser)(this.content, { inline: this.inline })
-    const children = parsed.map(node => this.renderNode(node, h, this.$route))
+    const children = parsed.map(node => this.renderNode(node, h, this.$route, RouterLink))
 
     if (this.$slots.prefix) {
       children.unshift(this.$slots.prefix, ' ')

@@ -4,11 +4,11 @@
       <div v-if="open" class="info__wrapper">
         <div :class="['info__bar', { 'info__bar--opaque': scrolled[subPage === null ? 'root' : subPage] === true }]">
           <button :class="['info__back', { 'info__back--active': subPage !== null }]" :title="$t('ui.back')" @click="subPage = null">
-            <ChevronRightIcon v-if="$store.state.flipDirectionalIcons" />
-            <ChevronLeftIcon v-else />
+            <VueFeather v-if="$store.state.flipDirectionalIcons" type="chevron-right" />
+            <VueFeather v-else type="chevron-left" />
           </button>
           <button :class="['info__close', { 'info__close--dark': subPage !== null }]" :title="$t('ui.close')" @click="$emit('close')">
-            <XIcon />
+            <VueFeather type="x" />
           </button>
         </div>
         <div
@@ -48,13 +48,13 @@
                   </svg>
                 </a>
                 <a class="info__social" href="https://twitter.com/17thShard" target="_blank" title="Twitter">
-                  <TwitterIcon />
+                  <VueFeather type="twitter" />
                 </a>
                 <a class="info__social" href="https://facebook.com/17thShard" target="_blank" title="Facebook">
-                  <FacebookIcon />
+                  <VueFeather type="facebook" />
                 </a>
                 <a class="info__social" href="https://youtube.com/user/17thShard" target="_blank" title="YouTube">
-                  <YoutubeIcon />
+                  <VueFeather type="youtube" />
                 </a>
                 <a class="info__social" href="https://patreon.com/17thshard" target="_blank" title="Patreon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="feather">
@@ -65,7 +65,7 @@
                   </svg>
                 </a>
                 <a class="info__social" href="https://github.com/Palanaeum/roshar-map" target="_blank" title="GitHub">
-                  <GithubIcon />
+                  <VueFeather type="github" />
                 </a>
               </div>
 
@@ -121,7 +121,7 @@
 </template>
 
 <script>
-import { ChevronLeftIcon, ChevronRightIcon, FacebookIcon, GithubIcon, TwitterIcon, XIcon, YoutubeIcon } from 'vue-feather-icons'
+import VueFeather from 'vue-feather'
 import Markdown from '@/components/Markdown.vue'
 import availableLanguages from '@/lang/menu.json'
 import creditsHtml from '@generated/credits.js'
@@ -137,14 +137,8 @@ const logoUrls = import.meta.glob('/src/assets/logos/*', {
 export default {
   name: 'Info',
   components: {
-    Markdown,
-    TwitterIcon,
-    FacebookIcon,
-    YoutubeIcon,
-    GithubIcon,
-    XIcon,
-    ChevronLeftIcon,
-    ChevronRightIcon
+    VueFeather,
+    Markdown
   },
   props: {
     open: Boolean

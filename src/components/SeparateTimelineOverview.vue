@@ -31,15 +31,15 @@
             :title="lockedTag === tag ? $t('ui.unlock-timeline') : $t('ui.lock-timeline')"
             @click="toggleLock(tag)"
           >
-            <LockIcon v-if="lockedTag === tag" size="1x" />
-            <UnlockIcon v-else size="1x" />
+            <VueFeather v-if="lockedTag === tag" type="lock" :size="24" />
+            <VueFeather v-else type="unlock" :size="24" />
           </button>
           <button
             class="separate-timeline-overview__timeline-action"
             :title="$t('ui.stop-display-separately')"
             @click="disableTagSeparation(tag)"
           >
-            <XIcon size="1x" />
+            <VueFeather type="x" :size="24" />
           </button>
         </div>
       </li>
@@ -49,11 +49,11 @@
 
 <script>
 import Draggable from '@marshallswain/vuedraggable'
-import { LockIcon, UnlockIcon, XIcon } from 'vue-feather-icons'
+import VueFeather from 'vue-feather'
 
 export default {
   name: 'SeparateTimelineOverview',
-  components: { Draggable, LockIcon, UnlockIcon, XIcon },
+  components: { VueFeather, Draggable },
   props: {
     height: {
       type: Number,

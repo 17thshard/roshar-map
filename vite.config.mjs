@@ -35,15 +35,7 @@ export default ({ mode }) => {
     },
     plugins: [
       generatedAssetsPlugin(),
-      vue({
-        template: {
-          compilerOptions: {
-            compatConfig: {
-              MODE: 2
-            }
-          }
-        }
-      }),
+      vue(),
       !isDevBuild &&
         VitePWA({
           filename: 'service-worker.js',
@@ -110,7 +102,7 @@ export default ({ mode }) => {
       preserveSymlinks: false,
     },
     optimizeDeps: {
-      include: ['vue', '@vue/compat'],
+      include: ['vue'],
     },
     server: {
       port: 10010,

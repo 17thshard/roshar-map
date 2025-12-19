@@ -22,7 +22,7 @@
         :title="$store.state.flipTimeline ? $t('ui.jump-to-end') : $t('ui.jump-to-start')"
         @click="$store.state.flipTimeline ? jumpToEnd() : jumpToStart()"
       >
-        <ChevronsLeftIcon />
+        <VueFeather type="chevrons-left" />
       </button>
     </transition>
     <div class="scrubber__bar">
@@ -118,7 +118,7 @@
         :title="$store.state.flipTimeline ? $t('ui.jump-to-start') : $t('ui.jump-to-end')"
         @click="$store.state.flipTimeline ? jumpToStart() : jumpToEnd()"
       >
-        <ChevronsRightIcon />
+        <VueFeather type="chevrons-right" />
       </button>
     </transition>
     <div
@@ -132,13 +132,13 @@
           :title="$t('ui.jump-to-end')"
           @click="jumpToEnd"
         >
-          <ChevronsLeftIcon v-if="$store.state.flipTimeline" />
-          <ChevronsRightIcon v-else />
+          <VueFeather v-if="$store.state.flipTimeline" type="chevrons-left" />
+          <VueFeather v-else type="chevrons-right" />
         </button>
       </transition>
       <button class="scrubber__separate-timelines-toggle" :title="$t('ui.separate-timelines')" @click="separateVisible = !separateVisible">
-        <ChevronRightIcon v-if="separateVisible ^ $store.state.flipDirectionalIcons" size="1x" />
-        <ChevronLeftIcon v-else size="1x" />
+        <VueFeather v-if="separateVisible ^ $store.state.flipDirectionalIcons" type="chevron-right" :size="24" />
+        <VueFeather v-else type="chevron-left" :size="24" />
       </button>
       <div class="scrubber__separate-timelines-content">
         <h3>{{ $t('ui.separate-timelines') }}</h3>
@@ -151,7 +151,7 @@
       :title="$t('ui.go-to-date.heading')"
       @click="openGoToDate"
     >
-      <CalendarIcon size="1x" />
+      <VueFeather type="calendar" :size="24" />
     </button>
     <button
       data-tutorial-id="measure-button"
@@ -159,7 +159,7 @@
       :title="$t('ui.measurement.button')"
       @click="toggleMeasurement"
     >
-      <CompassIcon size="1x" />
+      <VueFeather type="compass" :size="24" />
     </button>
     <transition name="go-to-date">
       <GoToDate v-if="$store.state.goToDateOpen" @submit="scrollToDate" />
@@ -169,7 +169,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import { CalendarIcon, ChevronLeftIcon, ChevronRightIcon, ChevronsLeftIcon, ChevronsRightIcon, CompassIcon } from 'vue-feather-icons'
+import VueFeather from 'vue-feather'
 import Timeline from '@/components/Timeline.vue'
 import EventCard from '@/components/EventCard.vue'
 import { formatDate, lerp } from '@/utils'
@@ -180,16 +180,11 @@ import SeparateTimelineOverview from '@/components/SeparateTimelineOverview.vue'
 export default {
   name: 'Scrubber',
   components: {
+    VueFeather,
     SeparateTimelineOverview,
     GoToDate,
     EventCard,
-    Timeline,
-    ChevronsLeftIcon,
-    ChevronsRightIcon,
-    CalendarIcon,
-    ChevronLeftIcon,
-    ChevronRightIcon,
-    CompassIcon
+    Timeline
   },
   data () {
     return {

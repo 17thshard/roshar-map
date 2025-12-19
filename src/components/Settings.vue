@@ -48,13 +48,13 @@
                 <li v-for="tag in category.tags" :key="tag.id">
                   <div :class="['settings__options', `settings__options--${buildTagState(tag.id)}`]">
                     <button class="settings__options-button" :title="$t('ui.enable')" @click="enableTag(tag.id)">
-                      <EyeIcon size="1x" />
+                      <VueFeather type="eye" :size="24" />
                     </button>
                     <button class="settings__options-button" :title="$t('ui.display-separately')" @click="enableTagSeparation(tag.id)">
-                      <GitBranchIcon size="1x" />
+                      <VueFeather type="git-branch" :size="24" />
                     </button>
                     <button class="settings__options-button" :title="$t('ui.disable')" @click="disableTag(tag.id)">
-                      <EyeOffIcon size="1x" />
+                      <VueFeather type="eye-off" :size="24" />
                     </button>
                   </div>
                   {{ $t(`tags.${tag.id}`) }}
@@ -76,14 +76,14 @@
 </template>
 
 <script>
-import { EyeIcon, EyeOffIcon, GitBranchIcon, XIcon } from 'vue-feather-icons'
+import VueFeather from 'vue-feather'
 import { mapState } from 'vuex'
 import tagCategories from '@/store/tags.json'
 import SeparateTimelineOverview from '@/components/SeparateTimelineOverview.vue'
 
 export default {
   name: 'Settings',
-  components: { SeparateTimelineOverview, XIcon, EyeIcon, EyeOffIcon, GitBranchIcon },
+  components: { VueFeather, SeparateTimelineOverview },
   props: {
     open: Boolean
   },

@@ -14,7 +14,7 @@
     <Markdown class="error-screen__text" :content="$t('ui.error-screen.message')" />
     <Markdown class="error-screen__report" :content="$t('ui.error-screen.report-intro')">
       <a class="error-screen__report-button" href="https://github.com/Palanaeum/roshar-map/issues/new">
-        <GithubIcon size="1x" />
+        <VueFeather type="github" :size="24" />
         {{ $t('ui.error-screen.report-button') }}
       </a>
     </Markdown>
@@ -22,12 +22,12 @@
 </template>
 
 <script>
-import { GithubIcon } from 'vue-feather-icons'
+import VueFeather from 'vue-feather'
 import Markdown from '@/components/Markdown.vue'
 
 export default {
   name: 'ErrorScreen',
-  components: { Markdown, GithubIcon }
+  components: { VueFeather, Markdown }
 }
 </script>
 

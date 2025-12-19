@@ -2528,13 +2528,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-helper-vue-jsx-merge-props@npm:^2.0.2":
-  version: 2.0.3
-  resolution: "babel-helper-vue-jsx-merge-props@npm:2.0.3"
-  checksum: 10c0/8eaf8bf707b2a4274677ebde4b2c5139e718b1b171f07be16e0429c63a69a021a6ad5716e1e3d42c2fd002ff1d692347554329b7b9cafa5cc4c3150cc6850305
-  languageName: node
-  linkType: hard
-
 "babel-plugin-polyfill-corejs2@npm:^0.4.14":
   version: 0.4.14
   resolution: "babel-plugin-polyfill-corejs2@npm:0.4.14"
@@ -3018,6 +3011,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"classnames@npm:^2.2.5":
+  version: 2.5.1
+  resolution: "classnames@npm:2.5.1"
+  checksum: 10c0/afff4f77e62cea2d79c39962980bf316bacb0d7c49e13a21adaadb9221e1c6b9d3cdb829d8bb1b23c406f4e740507f37e1dcf506f7e3b7113d17c5bab787aa69
+  languageName: node
+  linkType: hard
+
 "clone-response@npm:1.0.2":
   version: 1.0.2
   resolution: "clone-response@npm:1.0.2"
@@ -3159,6 +3159,13 @@ __metadata:
   dependencies:
     browserslist: "npm:^4.28.0"
   checksum: 10c0/71da415899633120db7638dd7b250eee56031f63c4560dcba8eeeafd1168fae171d59b223e3fd2e0aa543a490d64bac7d946764721e2c05897056fdfb22cce33
+  languageName: node
+  linkType: hard
+
+"core-js@npm:^3.1.3":
+  version: 3.47.0
+  resolution: "core-js@npm:3.47.0"
+  checksum: 10c0/9b1a7088b7c660c7b8f1d4c90bb1816a8d5352ebdcb7bc742e3a0e4eb803316b5aa17bacb8769522342196351a5430178f46914644f2bfdb94ce0ced3c7fd523
   languageName: node
   linkType: hard
 
@@ -4351,6 +4358,16 @@ __metadata:
     picomatch:
       optional: true
   checksum: 10c0/e345083c4306b3aed6cb8ec551e26c36bab5c511e99ea4576a16750ddc8d3240e63826cc624f5ae17ad4dc82e68a253213b60d556c11bfad064b7607847ed07f
+  languageName: node
+  linkType: hard
+
+"feather-icons@npm:^4.29.0":
+  version: 4.29.2
+  resolution: "feather-icons@npm:4.29.2"
+  dependencies:
+    classnames: "npm:^2.2.5"
+    core-js: "npm:^3.1.3"
+  checksum: 10c0/a23f8fbb6e96c901290308bb96267660ddd32c367074411e6a641c030448eff8041072c46e82cbf3bb3c4b2440df107e8defed09ff068e55117db6b867ca7b32
   languageName: node
   linkType: hard
 
@@ -7951,6 +7968,7 @@ __metadata:
     deep-diff: "npm:^1.0.2"
     eslint: "npm:^9.17.0"
     eslint-plugin-vue: "npm:^10.6.2"
+    feather-icons: "npm:^4.29.0"
     globals: "npm:^16.4.0"
     hammerjs: "npm:^2.0.8"
     imagemin: "npm:^7.0.1"
@@ -7970,7 +7988,7 @@ __metadata:
     vue: "npm:^3.5.26"
     vue-dragscroll: "npm:^2.1.0"
     vue-eslint-parser: "npm:^10.2.0"
-    vue-feather-icons: "npm:^5.1.0"
+    vue-feather: "npm:^2.0.0"
     vue-gtag: "npm:^3.6.3"
     vue-i18n: "npm:^11.2.2"
     vue-router: "npm:^4.6.4"
@@ -9484,12 +9502,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-feather-icons@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "vue-feather-icons@npm:5.1.0"
-  dependencies:
-    babel-helper-vue-jsx-merge-props: "npm:^2.0.2"
-  checksum: 10c0/2df914776c1a6da0b4bf0a0e263160bc709a46c392d00796da09307f03f0c8bb7ddc569aec7d3f5a94ad3f5103467f1bc8d4e7e7ae2fb8726237eecf0b112740
+"vue-feather@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "vue-feather@npm:2.0.0"
+  peerDependencies:
+    feather-icons: ^4.28.0
+    vue: ^3.0.0
+  checksum: 10c0/e6dffec45bc24f44c0c8e236942c9e1551043baf0e8b86098e453101b3c03f01d96fd81cbd9d4cd18d7916db02423250b05db553654cef83461dee0df9c3f65a
   languageName: node
   linkType: hard
 

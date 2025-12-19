@@ -1,4 +1,4 @@
-import { createApp, configureCompat } from '@vue/compat'
+import { createApp } from 'vue'
 import VueDragscroll from 'vue-dragscroll'
 import { createGtag } from 'vue-gtag'
 import { i18n } from '@/i18n'
@@ -9,24 +9,7 @@ import App from './App.vue'
 
 const editor = window.location.hash.includes('editor')
 
-// Configure compat mode
-configureCompat({
-  MODE: 2, // Vue 2 compat mode
-  GLOBAL_MOUNT: false,
-  GLOBAL_EXTEND: false,
-  GLOBAL_PROTOTYPE: false,
-  GLOBAL_SET: false,
-  GLOBAL_DELETE: false,
-  GLOBAL_OBSERVABLE: false,
-  CONFIG_SILENT: false,
-  CONFIG_DEVTOOLS: false,
-  CONFIG_KEY_CODES: false,
-  CONFIG_PRODUCTION_TIP: false
-})
-
 const app = createApp(editor ? Editor : App)
-
-app.config.productionTip = false
 
 app.use(VueDragscroll)
 if (import.meta.env.VUE_APP_GA_ID !== undefined) {
