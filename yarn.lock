@@ -1911,7 +1911,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@popperjs/core@npm:^2.4.4":
+"@popperjs/core@npm:^2.11.8":
   version: 2.11.8
   resolution: "@popperjs/core@npm:2.11.8"
   checksum: 10c0/4681e682abc006d25eb380d0cf3efc7557043f53b6aea7a5057d0d1e7df849a00e281cd8ea79c902a35a414d7919621fc2ba293ecec05f413598e0b23d5a1e63
@@ -6671,7 +6671,7 @@ __metadata:
   dependencies:
     "@johmun/vue-tags-input": "npm:^2.1.0"
     "@node-rs/jieba": "npm:^1.6.1"
-    "@popperjs/core": "npm:^2.4.4"
+    "@popperjs/core": "npm:^2.11.8"
     "@vitejs/plugin-vue2": "npm:^2.3.4"
     core-js: "npm:^3.47.0"
     cross-env: "npm:^7.0.2"
