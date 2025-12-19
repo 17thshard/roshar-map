@@ -10,10 +10,10 @@
           </button>
         </div>
 
-        <Scrollbar
+        <div
+          ref="scroller"
           class="settings__scroller"
-          :ops="$store.state.scrollbarOptions"
-          @handle-scroll="onScroll"
+          @scroll="onScroll"
         >
           <section class="settings__layers">
             <h3 data-tutorial-id="settings-layers">
@@ -62,7 +62,7 @@
               </ul>
             </template>
           </section>
-        </Scrollbar>
+        </div>
 
         <section class="settings__separate-timelines-container">
           <h3 data-tutorial-id="settings-separate-timelines">
@@ -76,7 +76,6 @@
 </template>
 
 <script>
-import Scrollbar from 'vuescroll/dist/vuescroll-native'
 import { EyeIcon, EyeOffIcon, GitBranchIcon, XIcon } from 'vue-feather-icons'
 import { mapState } from 'vuex'
 import tagCategories from '@/store/tags.json'
@@ -84,7 +83,7 @@ import SeparateTimelineOverview from '@/components/SeparateTimelineOverview.vue'
 
 export default {
   name: 'Settings',
-  components: { SeparateTimelineOverview, XIcon, EyeIcon, EyeOffIcon, GitBranchIcon, Scrollbar },
+  components: { SeparateTimelineOverview, XIcon, EyeIcon, EyeOffIcon, GitBranchIcon },
   props: {
     open: Boolean
   },
@@ -109,7 +108,7 @@ export default {
   },
   methods: {
     onScroll (event) {
-      this.scrolled = event.process > 0
+      this.scrolled = event.target.scrollTop > 0
     },
     buildTagState (tag) {
       if (this.filter.separateTags.includes(tag)) {
@@ -278,6 +277,33 @@ export default {
     justify-content: stretch;
     min-height: 0;
     max-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    // Custom scrollbar styling
+    scrollbar-width: thin;
+    scrollbar-color: rgba(#482d00, 0.5) transparent;
+
+    &::-webkit-scrollbar {
+      width: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(#482d00, 0.5);
+      border-radius: 0.25rem;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: rgba(#482d00, 0.7);
+    }
+
+    [dir=rtl] & {
+      direction: rtl;
+    }
   }
 
   &__filters, &__layers {

@@ -11,10 +11,9 @@
             <XIcon />
           </button>
         </div>
-        <Scrollbar
+        <div
           :class="['info__scroller', 'info__scroller--root', { 'info__scroller--inactive': subPage !== null }]"
-          :ops="$store.state.scrollbarOptions"
-          @handle-scroll="onScroll(null, $event)"
+          @scroll="onScroll(null, $event)"
         >
           <div class="info__content">
             <div class="info__logo" :style="{ backgroundImage: `url('${logo}')` }" />
@@ -84,11 +83,10 @@
               </template>
             </footer>
           </div>
-        </Scrollbar>
-        <Scrollbar
+        </div>
+        <div
           :class="['info__scroller', 'info__scroller--language', { 'info__scroller--active': subPage === 'language' }]"
-          :ops="$store.state.scrollbarOptions"
-          @handle-scroll="onScroll('language', $event)"
+          @scroll="onScroll('language', $event)"
         >
           <div class="info__content">
             <h2>{{ $t('ui.languageHeading') }}</h2>
@@ -98,34 +96,31 @@
               </router-link>
             </nav>
           </div>
-        </Scrollbar>
-        <Scrollbar
+        </div>
+        <div
           :class="['info__scroller', 'info__scroller--about', { 'info__scroller--active': subPage === 'about' }]"
-          :ops="$store.state.scrollbarOptions"
-          @handle-scroll="onScroll('about', $event)"
+          @scroll="onScroll('about', $event)"
         >
           <div class="info__content">
             <h2>{{ $t('ui.about') }}</h2>
             <Markdown :content="$t('ui.aboutText')" class="info__text" />
           </div>
-        </Scrollbar>
-        <Scrollbar
+        </div>
+        <div
           :class="['info__scroller', 'info__scroller--credits', { 'info__scroller--active': subPage === 'credits' }]"
-          :ops="$store.state.scrollbarOptions"
-          @handle-scroll="onScroll('credits', $event)"
+          @scroll="onScroll('credits', $event)"
         >
           <div class="info__content">
             <h2>{{ $t('ui.credits') }}</h2>
             <div class="markdown info__text" v-html="creditsHtml" />
           </div>
-        </Scrollbar>
+        </div>
       </div>
     </transition>
   </div>
 </template>
 
 <script>
-import Scrollbar from 'vuescroll/dist/vuescroll-native'
 import { ChevronLeftIcon, ChevronRightIcon, FacebookIcon, GithubIcon, TwitterIcon, XIcon, YoutubeIcon } from 'vue-feather-icons'
 import Markdown from '@/components/Markdown.vue'
 import availableLanguages from '@/lang/menu.json'
@@ -148,7 +143,6 @@ export default {
     YoutubeIcon,
     GithubIcon,
     XIcon,
-    Scrollbar,
     ChevronLeftIcon,
     ChevronRightIcon
   },
@@ -195,7 +189,8 @@ export default {
   },
   methods: {
     onScroll (page, event) {
-      this.$set(this.scrolled, page === null ? 'root' : page, event.process > 0)
+      const pageKey = page === null ? 'root' : page
+      this.$set(this.scrolled, pageKey, event.target.scrollTop > 0)
     },
     shareNatively () {
       navigator.share({
@@ -357,6 +352,29 @@ export default {
     min-height: 0;
     max-height: 100%;
     transition: transform 0.5s ease-in-out;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    // Custom scrollbar styling
+    scrollbar-width: thin;
+    scrollbar-color: rgba(#482d00, 0.5) transparent;
+
+    &::-webkit-scrollbar {
+      width: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(#482d00, 0.5);
+      border-radius: 0.25rem;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: rgba(#482d00, 0.7);
+    }
 
     [dir=ltr] & {
       transform: translateX(100%);
@@ -376,6 +394,7 @@ export default {
 
     [dir=rtl] & {
       transform: translateX(-100%);
+      direction: rtl;
 
       &--root {
         transform: translateX(0);
@@ -405,24 +424,9 @@ export default {
       border-bottom: 1rem solid #F5ECDA;
     }
 
-    &.hasVBar:after {
+    &:not(&--bottom):after {
       opacity: 1;
     }
-  }
-
-  .__rail-is-vertical {
-    z-index: 61 !important;
-  }
-
-  .__panel {
-    z-index: 60 !important;
-  }
-
-  .__view {
-    z-index: 60 !important;
-    display: flex;
-    align-items: stretch;
-    width: auto !important;
   }
 
   &__content {
@@ -441,10 +445,6 @@ export default {
   &__scroller--root &__content {
     display: grid;
     grid-template-rows: auto auto 1fr auto;
-  }
-
-  &__scroller.hasVBar &__content {
-    padding-bottom: 3.5rem;
   }
 
   &__logo {

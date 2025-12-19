@@ -2,13 +2,13 @@
   <div class="changelog" @click.self="dismiss">
     <div class="changelog__window">
       <div class="changelog__window-content">
-        <Scrollbar
+        <div
+          ref="scroller"
           :class="['changelog__scroller', { 'changelog__scroller--bottom': scrolledToBottom }]"
-          :ops="$store.state.scrollbarOptions"
-          @handle-scroll="onScroll"
+          @scroll="onScroll"
         >
           <Markdown :content="$t('changelog')" advanced />
-        </Scrollbar>
+        </div>
         <Markdown tag="button" :content="$t('ui.dismiss')" inline class="changelog__confirm" @click.native="dismiss" />
       </div>
     </div>
@@ -16,14 +16,13 @@
 </template>
 
 <script>
-import Scrollbar from 'vuescroll/dist/vuescroll-native'
 import Markdown from '@/components/Markdown.vue'
 
 export const VERSION = 'row-ds'
 
 export default {
   name: 'Changelog',
-  components: { Markdown, Scrollbar },
+  components: { Markdown },
   data () {
     return {
       scrolledToBottom: false
@@ -41,7 +40,10 @@ export default {
       this.$emit('close')
     },
     onScroll (event) {
-      this.scrolledToBottom = event.process >= 0.99
+      const element = event.target
+      const threshold = 0.01
+      const scrollPercentage = (element.scrollTop + element.clientHeight) / element.scrollHeight
+      this.scrolledToBottom = scrollPercentage >= (1 - threshold)
     }
   }
 }
@@ -164,24 +166,32 @@ export default {
     min-height: 0;
     flex: 1;
     width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
 
-    .__panel {
-      min-width: 100%;
-      height: auto !important;
-      z-index: 3;
+    // Custom scrollbar styling
+    scrollbar-width: thin;
+    scrollbar-color: rgba(#482d00, 0.5) transparent;
+
+    &::-webkit-scrollbar {
+      width: 0.5rem;
     }
 
-    .__view {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: auto !important;
-      z-index: 3;
-      padding-right: 1rem;
+    &::-webkit-scrollbar-track {
+      background: transparent;
     }
 
-    .__rail-is-vertical {
-      z-index: 10 !important;
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(#482d00, 0.5);
+      border-radius: 0.25rem;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: rgba(#482d00, 0.7);
+    }
+
+    [dir=rtl] & {
+      direction: rtl;
     }
 
     &:after {
@@ -199,12 +209,19 @@ export default {
       border-bottom: 0.25rem solid #F5ECDA;
     }
 
-    &.hasVBar:after {
+    &:not(&--bottom):after {
       opacity: 1;
     }
 
     &--bottom:after {
       opacity: 0 !important;
+    }
+
+    > * {
+      padding-right: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
 

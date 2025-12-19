@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import Draggable from 'vuedraggable'
+import Draggable from '@marshallswain/vuedraggable'
 import { LockIcon, UnlockIcon, XIcon } from 'vue-feather-icons'
 
 export default {

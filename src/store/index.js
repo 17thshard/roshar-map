@@ -1,5 +1,4 @@
-import Vue from 'vue'
-import Vuex, { Store } from 'vuex'
+import { createStore } from 'vuex'
 import baseEvents from '@/store/events.json'
 import baseLocations from '@/store/locations.json'
 import baseCharacters from '@/store/characters.json'
@@ -7,8 +6,6 @@ import baseMisc from '@/store/misc.json'
 import tagCategories from '@/store/tags.json'
 import { compareEvents, inverseLerp } from '@/utils'
 import search from '@/store/search'
-
-Vue.use(Vuex)
 
 const DETAIL_CUTOFF_YEAR = 1173
 const TIMELINE_YEAR_DISTANCE = 50
@@ -293,12 +290,6 @@ const mutations = {
   setTextDirection (state, direction) {
     state.flipTimeline = direction === 'rtl'
     state.flipDirectionalIcons = direction === 'rtl'
-    state.scrollbarOptions = {
-      vuescroll: { wheelScrollDuration: 400 },
-      scrollPanel: { verticalNativeBarPos: direction === 'ltr' ? 'right' : 'left' },
-      bar: { onlyShowBarOnScroll: false, keepShow: true, background: '#482d00', opacity: 0.5, size: '0.5rem' },
-      rail: { size: '0.5rem', gutterOfSide: '0' }
-    }
   },
   toggleMeasurement (state) {
     state.measurementActive = !state.measurementActive
@@ -318,7 +309,7 @@ const getters = {
   }
 }
 
-export default new Store({
+export default createStore({
   modules: {
     search
   },
@@ -345,13 +336,7 @@ export default new Store({
     openedMenu: null,
     flipTimeline: false,
     flipDirectionalIcons: false,
-    measurementActive: false,
-    scrollbarOptions: {
-      vuescroll: { wheelScrollDuration: 400 },
-      scrollPanel: { verticalNativeBarPos: 'right' },
-      bar: { onlyShowBarOnScroll: false, keepShow: true, background: '#482d00', opacity: 0.5, size: '0.5rem' },
-      rail: { size: '0.5rem', gutterOfSide: '0' }
-    }
+    measurementActive: false
   },
   mutations,
   getters

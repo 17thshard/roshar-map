@@ -355,7 +355,7 @@
 
 <script>
 import { Mesh, OrthographicCamera, PlaneGeometry, Scene, ShaderMaterial, Vector2, WebGLRenderer } from 'three'
-import Draggable from 'vuedraggable'
+import Draggable from '@marshallswain/vuedraggable'
 import DeepDiff from 'deep-diff'
 import Zip from 'jszip'
 import mapFragmentShader from '@/components/map/mapFragmentShader'

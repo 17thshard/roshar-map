@@ -7,10 +7,9 @@
     >
       <XIcon />
     </router-link>
-    <Scrollbar
+    <div
       ref="scroller"
       class="details__scroller"
-      :ops="$store.state.scrollbarOptions"
     >
       <div class="details__content">
         <figure v-if="details.image !== undefined" class="details__image">
@@ -168,12 +167,11 @@
           </a>
         </section>
       </div>
-    </Scrollbar>
+    </div>
   </div>
 </template>
 
 <script>
-import Scrollbar from 'vuescroll/dist/vuescroll-native'
 import { BookIcon, CalendarIcon, HelpCircleIcon, XIcon } from 'vue-feather-icons'
 import Markdown from '@/components/Markdown.vue'
 import { formatDate, getEntryImageSrcSet, compareEvents } from '@/utils'
@@ -191,8 +189,7 @@ export default {
     HelpCircleIcon,
     XIcon,
     CalendarIcon,
-    BookIcon,
-    Scrollbar
+    BookIcon
   },
   props: {
     details: {
@@ -358,7 +355,7 @@ export default {
             const actualHeight = this.imageAspect * this.$el.clientWidth
 
             if (actualHeight >= window.innerHeight) {
-              this.$refs.scroller.scrollTo({ y: actualHeight * 0.5 })
+              this.$refs.scroller.scrollTop = actualHeight * 0.5
             }
           }
         }
@@ -581,6 +578,33 @@ export default {
     justify-content: stretch;
     min-height: 0;
     max-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    // Custom scrollbar styling
+    scrollbar-width: thin;
+    scrollbar-color: rgba(#482d00, 0.5) transparent;
+
+    &::-webkit-scrollbar {
+      width: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(#482d00, 0.5);
+      border-radius: 0.25rem;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: rgba(#482d00, 0.7);
+    }
+
+    [dir=rtl] & {
+      direction: rtl;
+    }
   }
 
   &__scroller:after {

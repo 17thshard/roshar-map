@@ -1,5 +1,5 @@
 import path from 'node:path'
-import vue2 from '@vitejs/plugin-vue2'
+import vue from '@vitejs/plugin-vue'
 import { VitePWA } from 'vite-plugin-pwa'
 import { generatedAssetsPlugin } from './build/vite-plugin-generated-assets.mjs'
 
@@ -35,7 +35,15 @@ export default ({ mode }) => {
     },
     plugins: [
       generatedAssetsPlugin(),
-      vue2(),
+      vue({
+        template: {
+          compilerOptions: {
+            compatConfig: {
+              MODE: 2
+            }
+          }
+        }
+      }),
       !isDevBuild &&
         VitePWA({
           filename: 'service-worker.js',
@@ -97,6 +105,12 @@ export default ({ mode }) => {
         '@generated': path.resolve(process.cwd(), 'build', 'generated'),
       },
       extensions: ['.mjs', '.js', '.json', '.vue'],
+      dedupe: ['vue'],
+      // Ensure vue can be resolved for the plugin
+      preserveSymlinks: false,
+    },
+    optimizeDeps: {
+      include: ['vue', '@vue/compat'],
     },
     server: {
       port: 10010,

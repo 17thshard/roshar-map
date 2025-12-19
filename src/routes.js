@@ -1,10 +1,7 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import { i18n, loadLanguageAsync } from '@/i18n'
 import store from '@/store'
 import Map from '@/components/map/Map.vue'
-
-Vue.use(VueRouter)
 
 const detailRoutes = [
   {
@@ -25,7 +22,8 @@ const detailRoutes = [
   }
 ]
 
-const router = new VueRouter({
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       name: 'root',
@@ -76,19 +74,19 @@ router.afterEach((to, from) => {
   const oldLocale = from.params.locale
   const newLocale = to.params.locale
 
-  if (oldLocale !== undefined && i18n.t('texture-locale', newLocale) !== i18n.t('texture-locale', oldLocale)) {
+  if (oldLocale !== undefined && i18n.global.t('texture-locale', newLocale) !== i18n.global.t('texture-locale', oldLocale)) {
     location.reload()
   }
 })
 
 router.afterEach((to) => {
-  let pageName = i18n.t('name')
+  let pageName = i18n.global.t('name')
 
   if (to.name !== 'root') {
-    pageName = i18n.t(`${to.name}.${to.params.id}.name`)
+    pageName = i18n.global.t(`${to.name}.${to.params.id}.name`)
   }
 
-  document.querySelector('title').innerHTML = i18n.t('title', { page: pageName })
+  document.querySelector('title').innerHTML = i18n.global.t('title', { page: pageName })
 })
 
 export { router }
