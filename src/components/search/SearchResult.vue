@@ -2,7 +2,7 @@
   <router-link
     class="search-result"
     :to="{ name: details.type, params: { locale: $route.params.locale, id: details.id } }"
-    @click.native="$emit('use')"
+    @click="$emit('use')"
   >
     <div class="search-result__icon">
       <div

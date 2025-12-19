@@ -63,9 +63,9 @@
       <svg v-if="mode === 'locations'">
         <template
           v-for="(location, index) in locations.filter(l => l.points[textureLocale] !== undefined && (selectedLocation !== null && selectedLocation.shadesmar ? l.shadesmar : l.shadesmar !== true))"
+          :key="`polygon${index}`"
         >
           <polygon
-            :key="`polygon${index}`"
             :points="buildPolygonPoints(location)"
             :class="selectedLocation === location ? 'editor__surface-polygon--selected' : undefined"
             @click="clickLocationPolygon(location, $event)"

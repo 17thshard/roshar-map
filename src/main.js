@@ -1,6 +1,6 @@
 import { createApp, configureCompat } from '@vue/compat'
 import VueDragscroll from 'vue-dragscroll'
-import VueGtag from 'vue-gtag'
+import { createGtag } from 'vue-gtag'
 import { i18n } from '@/i18n'
 import { router } from '@/routes'
 import App from './App.vue'
@@ -28,31 +28,29 @@ app.config.productionTip = false
 
 app.use(VueDragscroll)
 if (import.meta.env.VUE_APP_GA_ID !== undefined) {
-  app.use(VueGtag,
-    {
-      config: {
-        id: import.meta.env.VUE_APP_GA_ID,
-        params: {
-          send_page_view: true
-        }
-      },
-      disableScriptLoad: !import.meta.env.PROD,
-      pageTrackerTemplate (to) {
-        if (to.name === 'root') {
-          return {
-            page_title: 'Home Page',
-            page_path: to.fullPath
-          }
-        }
-
+  app.use(createGtag({
+    config: {
+      id: import.meta.env.VUE_APP_GA_ID,
+      params: {
+        send_page_view: true
+      }
+    },
+    disableScriptLoad: !import.meta.env.PROD,
+    pageTrackerTemplate (to) {
+      if (to.name === 'root') {
         return {
-          page_title: `Details: ${to.name}/${to.params.id}`,
+          page_title: 'Home Page',
           page_path: to.fullPath
         }
       }
+
+      return {
+        page_title: `Details: ${to.name}/${to.params.id}`,
+        page_path: to.fullPath
+      }
     },
     router
-  )
+  }))
 }
 
 app.use(i18n)

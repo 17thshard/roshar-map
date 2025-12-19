@@ -107,7 +107,7 @@
 </template>
 
 <script>
-import VueTagsInput from '@vojtechlanka/vue-tags-input'
+import { VueTagsInput } from '@vojtechlanka/vue-tags-input'
 import { getEntryImageSrcSet } from '@/utils'
 
 export default {

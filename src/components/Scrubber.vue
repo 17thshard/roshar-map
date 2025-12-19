@@ -91,9 +91,8 @@
             @event-selected="selectEvent"
           />
           <div key="years" class="scrubber__years">
-            <template v-for="{ year, offset, months, singleEvent } in years.filter(year => year.display)">
+            <template v-for="{ year, offset, months, singleEvent } in years.filter(year => year.display)" :key="year">
               <span
-                :key="year"
                 :style="{ [offsetStyle]: `${offset + timelineOffset}px` }"
                 class="scrubber__year"
               >

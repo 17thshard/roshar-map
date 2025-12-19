@@ -40,11 +40,11 @@
             <h3 data-tutorial-id="settings-filters">
               {{ $t('ui.filters') }}
             </h3>
-            <template v-for="category in tagCategories">
-              <h4 :key="category.id">
+            <template v-for="category in tagCategories" :key="category.id">
+              <h4>
                 {{ $t(`tagCategories.${category.id}`) }}
               </h4>
-              <ul :key="`${category.id}-tags?`" class="settings__tag-list">
+              <ul class="settings__tag-list">
                 <li v-for="tag in category.tags" :key="tag.id">
                   <div :class="['settings__options', `settings__options--${buildTagState(tag.id)}`]">
                     <button class="settings__options-button" :title="$t('ui.enable')" @click="enableTag(tag.id)">

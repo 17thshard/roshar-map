@@ -9,7 +9,7 @@
         >
           <Markdown :content="$t('changelog')" advanced />
         </div>
-        <Markdown tag="button" :content="$t('ui.dismiss')" inline class="changelog__confirm" @click.native="dismiss" />
+        <Markdown tag="button" :content="$t('ui.dismiss')" inline class="changelog__confirm" @click="dismiss" />
       </div>
     </div>
   </div>
