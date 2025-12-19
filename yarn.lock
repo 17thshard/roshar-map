@@ -1491,17 +1491,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@johmun/vue-tags-input@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "@johmun/vue-tags-input@npm:2.1.0"
-  dependencies:
-    vue: "npm:^2.6.10"
-  peerDependencies:
-    vue: 2.x
-  checksum: 10c0/c18f9eb43c8c7eeb281f01ad7415ae4facefc970498d3f5b01dc925bcfc6b45ff33698e3bc5d2feaaef29018c6cec911f2d46c9cf9908762ca59a19e325bfdbc
-  languageName: node
-  linkType: hard
-
 "@jridgewell/gen-mapping@npm:^0.3.12, @jridgewell/gen-mapping@npm:^0.3.5":
   version: 0.3.13
   resolution: "@jridgewell/gen-mapping@npm:0.3.13"
@@ -2287,6 +2276,17 @@ __metadata:
     vite: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
     vue: ^2.7.0-0
   checksum: 10c0/9e0c4c410d93046f239fd85d1396da164474c19e82218cbf5341dc9e58caa8357a0a0ea8cbb976cd11ecb67b1e3923a4dcb7ee0cccd08156339d09b8ded51450
+  languageName: node
+  linkType: hard
+
+"@vojtechlanka/vue-tags-input@npm:^2.1.3":
+  version: 2.1.3
+  resolution: "@vojtechlanka/vue-tags-input@npm:2.1.3"
+  dependencies:
+    vue: "npm:^2.6.11"
+  peerDependencies:
+    vue: 2.x
+  checksum: 10c0/da6144d51b2060d65b727c8801f5bf8d2d365ab8f288f1f39165df8a4855915e71600f0507cbffac3de0a6e9ea8369d14a6dbac3d8cf8001a2a902f113f5c17a
   languageName: node
   linkType: hard
 
@@ -6669,10 +6669,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "roshar-map@workspace:."
   dependencies:
-    "@johmun/vue-tags-input": "npm:^2.1.0"
     "@node-rs/jieba": "npm:^1.6.1"
     "@popperjs/core": "npm:^2.11.8"
     "@vitejs/plugin-vue2": "npm:^2.3.4"
+    "@vojtechlanka/vue-tags-input": "npm:^2.1.3"
     core-js: "npm:^3.47.0"
     cross-env: "npm:^7.0.2"
     deep-diff: "npm:^1.0.2"
@@ -7968,7 +7968,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue@npm:^2.6.10, vue@npm:^2.7.10":
+"vue@npm:^2.6.11, vue@npm:^2.7.10":
   version: 2.7.16
   resolution: "vue@npm:2.7.16"
   dependencies:

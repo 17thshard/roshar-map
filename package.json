@@ -17,8 +17,8 @@
     "node": ">=24.0.0 <25.0.0"
   },
   "dependencies": {
-    "@johmun/vue-tags-input": "^2.1.0",
     "@popperjs/core": "^2.11.8",
+    "@vojtechlanka/vue-tags-input": "^2.1.3",
     "core-js": "^3.47.0",
     "deep-diff": "^1.0.2",
     "hammerjs": "^2.0.8",

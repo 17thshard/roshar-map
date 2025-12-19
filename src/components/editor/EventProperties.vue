@@ -99,10 +99,12 @@
 
       <label>Tags</label>
       <VueTagsInput
+        ref="tagsInput"
         v-model="newTag"
         :tags="event.tags.map(t => ({ text: t }))"
-        :autocomplete-items="availableTags.map(t => ({ text: t }))"
+        :autocomplete-items="tagAutocompletions"
         @tags-changed="newTags => event.tags = newTags.map(t => t.text)"
+        @input="onTagsInput"
       />
 
       <label>Related</label>
@@ -207,7 +209,7 @@
 </template>
 
 <script>
-import VueTagsInput from '@johmun/vue-tags-input'
+import VueTagsInput from '@vojtechlanka/vue-tags-input'
 import { getEntryImageSrcSet } from '@/utils'
 
 export default {
@@ -236,12 +238,25 @@ export default {
     return {
       dateText: this.event.date.join('.'),
       newTag: '',
-      newLink: ''
+      newLink: '',
+      showAllTags: false
     }
   },
   computed: {
     imageBaseUrl () {
       return `${import.meta.env.BASE_URL}img`
+    },
+    tagAutocompletions () {
+      const searchText = this.newTag ? this.newTag.trim() : ''
+      if (!searchText) {
+        return this.availableTags
+          .sort((a, b) => a.localeCompare(b))
+          .map(t => ({ text: t }))
+      }
+      return this.availableTags
+        .filter(t => t.toLowerCase().includes(searchText.toLowerCase()))
+        .sort((a, b) => a.localeCompare(b))
+        .map(t => ({ text: t }))
     },
     linkAutocompletions () {
       return this.linkables.filter(l => l.startsWith(this.newLink) && l !== `events/${this.event.id}`)
@@ -267,6 +282,27 @@ export default {
 
       return styles
     }
+  },
+  mounted () {
+    this.$nextTick(() => {
+      if (this.$refs.tagsInput && this.$refs.tagsInput.$el) {
+        const input = this.$refs.tagsInput.$el.querySelector('input')
+        if (input) {
+          input.addEventListener('focus', () => {
+            this.showAllTags = true
+            if (!this.newTag || this.newTag.trim() === '') {
+              this.newTag = ' '
+            }
+          })
+          input.addEventListener('blur', () => {
+            if (this.newTag === ' ') {
+              this.newTag = ''
+            }
+            this.showAllTags = false
+          })
+        }
+      }
+    })
   },
   methods: {
     updateDate ({ target: { value } }) {
@@ -349,6 +385,14 @@ export default {
       }
 
       this.$set(this.event, property, trimmed)
+    },
+    onTagsInput (value) {
+      if (value && value.trim().length > 0) {
+        this.showAllTags = false
+      }
+      if (!value || value.trim() === '') {
+        this.showAllTags = true
+      }
     }
   }
 }
