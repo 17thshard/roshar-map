@@ -105,7 +105,7 @@ export default ({ mode }) => {
       outDir,
       emptyOutDir: true,
       sourcemap: false,
-      target: 'es2015',
+      target: 'es2018',
     },
   }
 }
