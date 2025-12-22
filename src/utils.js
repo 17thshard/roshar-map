@@ -94,7 +94,7 @@ export function getEntryImageSrcSet (path, gtag) {
      
     console.error(`Could not retrieve entry image '${path}'`)
     if (gtag) {
-      this.$gtag.exception({
+      gtag.exception({
         description: `Could not retrieve entry image '${path}: ${e.message ?? e}'`,
         fatal: false
       })

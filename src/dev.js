@@ -36,6 +36,8 @@ if (import.meta.env.VUE_APP_GA_ID !== undefined) {
     },
     router: editor ? undefined : router
   }))
+} else {
+  app.config.globalProperties.$gtag = null
 }
 
 app.use(i18n)
