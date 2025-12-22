@@ -3,6 +3,10 @@ import { i18n, loadLanguageAsync } from '@/i18n'
 import store from '@/store'
 import Map from '@/components/map/Map.vue'
 
+const EmptyComponent = {
+  render: () => null
+}
+
 const detailRoutes = [
   {
     name: 'events',
@@ -32,6 +36,7 @@ const router = createRouter({
       children: detailRoutes.map(({ name, specialAction }) => ({
         name,
         path: `${name}/:id`,
+        component: EmptyComponent,
         meta: {
           details: true
         },
