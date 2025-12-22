@@ -8,7 +8,8 @@ export const i18n = createI18n({
   locale: 'en-US',
   fallbackLocale: 'en-US',
   messages: { en: { ...messages, sourceFile: 'en' } },
-  silentFallbackWarn: true
+  silentFallbackWarn: true,
+  warnHtmlMessage: false
 })
 
 const loadedLanguages = ['en', 'en-US'] // our default language that is preloaded
