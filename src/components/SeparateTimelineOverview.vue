@@ -6,6 +6,7 @@
     handle=".separate-timeline-overview__timeline-drag-handle"
     class="separate-timeline-overview"
     :style="{ height: `${height}px` }"
+    :item-key="(item) => item"
     @start="dragging = true"
     @end="dragging = false"
   >
