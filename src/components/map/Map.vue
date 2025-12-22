@@ -115,7 +115,7 @@ export default {
   },
   mounted () {
     try {
-      this.renderer = new WebGLRenderer({ antialias: false, alpha: true })
+      this.renderer = new WebGLRenderer({ antialias: true, alpha: true })
       this.renderer.setPixelRatio(window.devicePixelRatio)
       this.renderer.setSize(window.innerWidth, window.innerHeight)
       this.renderer.sortObjects = false
@@ -526,11 +526,13 @@ export default {
     },
     resizeCanvasToDisplaySize () {
       const canvas = this.renderer.domElement
+      const pixelRatio = window.devicePixelRatio
       // look up the size the canvas is being displayed
       const width = canvas.clientWidth
       const height = canvas.clientHeight
       // adjust displayBuffer size to match
-      if (canvas.width !== width || canvas.height !== height) {
+      if (canvas.width !== Math.floor(width * pixelRatio) || canvas.height !== Math.floor(height * pixelRatio)) {
+        this.renderer.setPixelRatio(pixelRatio)
         // you must pass false here or three.js sadly fights the browser
         this.renderer.setSize(width, height, false)
         this.camera.aspect = width / height
