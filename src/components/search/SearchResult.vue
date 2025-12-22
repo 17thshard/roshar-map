@@ -14,7 +14,7 @@
       <img
         v-else
         class="search-result__icon-placeholder"
-        src="@/assets/logos/search-placeholder.svg"
+        src="@/assets/logos/knight-radiant-ancient.svg"
         alt=""
       >
     </div>
