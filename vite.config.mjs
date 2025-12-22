@@ -1,6 +1,7 @@
 import path from 'node:path'
 import vue from '@vitejs/plugin-vue'
 import { VitePWA } from 'vite-plugin-pwa'
+import { imagetools } from 'vite-imagetools'
 import { generatedAssetsPlugin } from './build/vite-plugin-generated-assets.mjs'
 
 function normalizeBase(publicUrl) {
@@ -35,6 +36,18 @@ export default ({ mode }) => {
     },
     plugins: [
       generatedAssetsPlugin(),
+      imagetools({
+        include: '**/entries/**/*',
+        cache: {
+          enabled: true,
+          dir: './node_modules/.cache/imagetools',
+        },
+        defaultDirectives: () => {
+          return new URLSearchParams({
+            format: 'webp',
+          })
+        }
+      }),
       vue(),
       !isDevBuild &&
         VitePWA({

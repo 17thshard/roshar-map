@@ -52,6 +52,7 @@
     "sass": "^1.26.5",
     "stats.js": "^0.17.0",
     "vite": "^7.3.0",
+    "vite-imagetools": "^9.0.2",
     "vite-plugin-pwa": "^1.2.0",
     "vue-eslint-parser": "^10.2.0"
   },
