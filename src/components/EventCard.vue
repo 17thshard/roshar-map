@@ -53,7 +53,7 @@ export default {
   methods: {
     buildImageStyles (image) {
       const styles = {
-        backgroundImage: getEntryImageSrcSet(image.file, this.$gtag).css
+        backgroundImage: getEntryImageSrcSet(image.file, this.$gtag || undefined).css
       }
 
       if (image.offset !== undefined) {

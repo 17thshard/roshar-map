@@ -34,6 +34,9 @@ if (import.meta.env.VUE_APP_GA_ID !== undefined) {
     },
     router
   }))
+} else {
+  // Ensure $gtag is always defined to avoid Vue warnings
+  app.config.globalProperties.$gtag = undefined
 }
 
 app.use(i18n)

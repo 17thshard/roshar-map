@@ -212,7 +212,7 @@ export default {
   },
   computed: {
     imageSrcSet () {
-      return this.details.image !== undefined ? getEntryImageSrcSet(this.details.image.file, this.$gtag) : undefined
+      return this.details.image !== undefined ? getEntryImageSrcSet(this.details.image.file, this.$gtag || undefined) : undefined
     },
     imageUrl () {
       return this.imageSrcSet !== undefined ? this.imageSrcSet.sources[0].url : undefined
@@ -304,7 +304,7 @@ export default {
         let image
         if (linkDetails.image !== undefined) {
           image = {
-            backgroundImage: getEntryImageSrcSet(linkDetails.image.file, this.$gtag).css
+            backgroundImage: getEntryImageSrcSet(linkDetails.image.file, this.$gtag || undefined).css
           }
 
           if (linkDetails.image.offset !== undefined) {

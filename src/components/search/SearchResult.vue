@@ -52,7 +52,7 @@ export default {
       let image
       if (this.details.image !== undefined) {
         image = {
-          backgroundImage: getEntryImageSrcSet(this.details.image.file, this.$gtag).css
+          backgroundImage: getEntryImageSrcSet(this.details.image.file, this.$gtag || undefined).css
         }
 
         if (this.details.image.offset !== undefined) {
