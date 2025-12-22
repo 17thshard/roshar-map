@@ -255,49 +255,51 @@
       </div>
       <template v-if="uncategorizedTags.length > 0">
         <h3>Uncategorized</h3>
-        <Draggable tag="ul" :value="uncategorizedTags" group="tags" class="editor__tags-list">
-          <li
-            v-for="tag in uncategorizedTags"
-            :key="tag.id"
-            class="editor__tags-list-item--invalid"
-          >
-            {{ tag.id }}
-          </li>
-        </Draggable>
-      </template>
-      <Draggable tag="ul" :list="tagCategories" group="tag-categories" class="editor__tags-categories">
-        <li>
-          <button @click="addTagCategory">
-            New Category
-          </button>
-          <button @click="selectedTag = null">
-            Clear selection
-          </button>
-        </li>
-        <li
-          v-for="tagCategory in tagCategories"
-          :key="tagCategory.id"
-          :class="selectedTag === tagCategory && categorySelected ? 'editor__tags-item--selected' : undefined"
-          @click.self="selectTag(tagCategory, true)"
-        >
-          <span>{{ tagCategory.id }}</span>
-          <button @click.stop="deleteTagCategory(tagCategory)">
-            Delete
-          </button>
-          <Draggable tag="ul" :list="tagCategory.tags" group="tags" class="editor__tags-list">
-            <li
-              v-for="tag in tagCategory.tags"
-              :key="tag.id"
-              :class="{
-                'editor__tags-item--selected': selectedTag === tag && !categorySelected
-              }"
-              @click.stop="selectTag(tag, false)"
-            >
+        <Draggable tag="ul" :list="uncategorizedTags" group="tags" class="editor__tags-list" item-key="id">
+          <template #item="{ element: tag }">
+            <li class="editor__tags-list-item--invalid">
               {{ tag.id }}
             </li>
-          </Draggable>
-        </li>
-      </Draggable>
+          </template>
+        </Draggable>
+      </template>
+      <div>
+        <ul class="editor__tags-categories">
+          <li>
+            <button @click="addTagCategory">
+              New Category
+            </button>
+            <button @click="selectedTag = null">
+              Clear selection
+            </button>
+          </li>
+        </ul>
+        <Draggable tag="ul" :list="tagCategories" group="tag-categories" class="editor__tags-categories" item-key="id">
+          <template #item="{ element: tagCategory }">
+            <li
+              :class="selectedTag === tagCategory && categorySelected ? 'editor__tags-item--selected' : undefined"
+              @click.self="selectTag(tagCategory, true)"
+            >
+              <span>{{ tagCategory.id }}</span>
+              <button @click.stop="deleteTagCategory(tagCategory)">
+                Delete
+              </button>
+              <Draggable tag="ul" :list="tagCategory.tags" group="tags" class="editor__tags-list" item-key="id">
+                <template #item="{ element: tag }">
+                  <li
+                    :class="{
+                      'editor__tags-item--selected': selectedTag === tag && !categorySelected
+                    }"
+                    @click.stop="selectTag(tag, false)"
+                  >
+                    {{ tag.id }}
+                  </li>
+                </template>
+              </Draggable>
+            </li>
+          </template>
+        </Draggable>
+      </div>
     </div>
     <template
       v-if="mode === 'events' && selectedEvent !== null"

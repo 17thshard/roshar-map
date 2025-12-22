@@ -2,21 +2,15 @@
   <Draggable
     v-model="separateTags"
     :animation="200"
-    tag="div"
+    tag="ul"
     handle=".separate-timeline-overview__timeline-drag-handle"
+    class="separate-timeline-overview"
+    :style="{ height: `${height}px` }"
     @start="dragging = true"
     @end="dragging = false"
   >
-    <transition-group
-      :name="dragging ? 'separate-timeline-overview__timeline--dragging' : 'separate-timeline-overview__timeline'"
-      tag="ul"
-      type="transition"
-      class="separate-timeline-overview"
-      :style="{ height: `${height}px` }"
-    >
+    <template #item="{ element: tag }">
       <li
-        v-for="tag in separateTags"
-        :key="tag"
         :class="[
           'separate-timeline-overview__timeline',
           { 'separate-timeline-overview__timeline--excluded': lockedTag !== null && lockedTag !== tag }
@@ -43,7 +37,7 @@
           </button>
         </div>
       </li>
-    </transition-group>
+    </template>
   </Draggable>
 </template>
 
