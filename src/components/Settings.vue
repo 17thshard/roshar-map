@@ -69,6 +69,11 @@
             {{ $t('ui.separate-timelines') }}
           </h3>
           <SeparateTimelineOverview :height="separateHeight" />
+          <div v-if="filter.separateTags.length === 0" class="settings__separate-timelines-empty">
+            Add a timeline by clicking
+            <VueFeather type="git-branch" :size="14" />
+            to compare.
+          </div>
         </section>
       </div>
     </transition>
@@ -473,6 +478,26 @@ export default {
     background: #F5ECDA url(../assets/paper.png);
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
     z-index: 2;
+  }
+
+  &__separate-timelines-empty {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    text-align: center;
+    color: rgba(72, 45, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    pointer-events: none;
+    // font-style: italic;
+
+    .feather {
+      margin: 0 0.1rem;
+    }
   }
 }
 </style>
