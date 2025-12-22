@@ -126,7 +126,7 @@ export default {
     transition: transform 0.5s ease-in;
   }
 
-  &-enter, &-leave-to {
+  &-enter-from, &-leave-to {
     transform: translateY(calc(100% + 2rem));
   }
 

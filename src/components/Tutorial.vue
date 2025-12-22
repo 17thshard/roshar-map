@@ -267,11 +267,11 @@ export default {
     transition: opacity 0.2s ease-in;
   }
 
-  &-enter, &-leave-to {
+  &-enter-from, &-leave-to {
     opacity: 0;
   }
 
-  &-enter-to, &-leave {
+  &-enter-to, &-leave-from {
     opacity: 1;
   }
 
@@ -306,11 +306,11 @@ export default {
       transition: opacity 0.2s ease-in;
     }
 
-    &-enter, &-leave-to {
+    &-enter-from, &-leave-to {
       opacity: 0;
     }
 
-    &-enter-to, &-leave {
+    &-enter-to, &-leave-from {
       opacity: 1;
     }
 
@@ -360,7 +360,7 @@ export default {
       }
     }
 
-    &-enter, &-leave-to {
+    &-enter-from, &-leave-to {
       opacity: 0;
 
       .tutorial__details-text {
@@ -368,7 +368,7 @@ export default {
       }
     }
 
-    &-enter-to, &-leave {
+    &-enter-to, &-leave-from {
       opacity: 1;
 
       .tutorial__details-text {

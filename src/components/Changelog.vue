@@ -104,7 +104,7 @@ export default {
     }
   }
 
-  &-enter, &-leave-to {
+  &-enter-from, &-leave-to {
     opacity: 0;
     backdrop-filter: blur(0px);
 

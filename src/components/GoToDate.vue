@@ -193,7 +193,7 @@ export default {
     }
   }
 
-  &-enter, &-leave-to {
+  &-enter-from, &-leave-to {
     opacity: 0;
 
     .go-to-date {
@@ -201,7 +201,7 @@ export default {
     }
   }
 
-  &-enter-to, &-leave {
+  &-enter-to, &-leave-from {
     opacity: 1;
 
     .go-to-date {

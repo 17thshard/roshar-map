@@ -125,7 +125,7 @@ export default {
       right: 0;
     }
 
-    &-enter, &-leave-to {
+    &-enter-from, &-leave-to {
       opacity: 0;
       transform: translateY(30px);
     }

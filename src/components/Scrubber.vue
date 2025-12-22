@@ -536,7 +536,7 @@ export default {
     }
   }
 
-  &-enter {
+  &-enter-from {
     max-height: 0;
 
     .scrubber__indicator {
@@ -619,7 +619,7 @@ export default {
       transition: opacity 0.2s ease-in, transform 0.3s ease-in;
     }
 
-    &-enter, &-leave-to {
+    &-enter-from, &-leave-to {
       opacity: 0;
       transform: translateX(var(--leave-position));
     }
@@ -871,7 +871,7 @@ export default {
       position: absolute;
     }
 
-    &-enter, &-leave-to {
+    &-enter-from, &-leave-to {
       opacity: 0;
       transform: translateY(30px);
     }

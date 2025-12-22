@@ -655,11 +655,11 @@ export default {
       transition: opacity 0.3s ease-in-out;
     }
 
-    &-enter, &-leave-to {
+    &-enter-from, &-leave-to {
       opacity: 0;
     }
 
-    &-enter-to, &-leave {
+    &-enter-to, &-leave-from {
       opacity: 1;
     }
   }

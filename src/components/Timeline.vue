@@ -233,7 +233,7 @@ export default {
       transition: opacity 1s;
     }
 
-    &-enter, &-leave-to {
+    &-enter-from, &-leave-to {
       opacity: 0;
     }
   }

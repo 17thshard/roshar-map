@@ -130,11 +130,11 @@ export default {
     transition: opacity 0.5s ease-in;
   }
 
-  &-enter, &-leave-to {
+  &-enter-from, &-leave-to {
     opacity: 0;
   }
 
-  &-enter-to, &-leave {
+  &-enter-to, &-leave-from {
     opacity: 1;
   }
 
