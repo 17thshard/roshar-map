@@ -184,7 +184,7 @@ export default {
   methods: {
     onScroll (page, event) {
       const pageKey = page === null ? 'root' : page
-      this.$set(this.scrolled, pageKey, event.target.scrollTop > 0)
+      this.scrolled[pageKey] = event.target.scrollTop > 0
     },
     shareNatively () {
       navigator.share({
@@ -238,21 +238,21 @@ export default {
     }
 
     [dir=ltr] & {
-      &-enter, &-leave-to {
+      &-enter-from, &-leave-to {
         clip-path: circle(1px at calc(100% - 3.25rem) 3.25rem);
       }
 
-      &-enter-to, &-leave {
+      &-enter-to, &-leave-from {
         clip-path: circle(100vh at calc(100% - 3.25rem) 3.25rem);
       }
     }
 
     [dir=rtl] & {
-      &-enter, &-leave-to {
+      &-enter-from, &-leave-to {
         clip-path: circle(1px at 3.25rem 3.25rem);
       }
 
-      &-enter-to, &-leave {
+      &-enter-to, &-leave-from {
         clip-path: circle(100vh at 3.25rem 3.25rem);
       }
     }

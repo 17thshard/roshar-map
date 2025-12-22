@@ -48,13 +48,13 @@
                 <li v-for="tag in category.tags" :key="tag.id">
                   <div :class="['settings__options', `settings__options--${buildTagState(tag.id)}`]">
                     <button class="settings__options-button" :title="$t('ui.enable')" @click="enableTag(tag.id)">
-                      <VueFeather type="eye" :size="24" />
+                      <VueFeather type="eye" :size="14" />
                     </button>
                     <button class="settings__options-button" :title="$t('ui.display-separately')" @click="enableTagSeparation(tag.id)">
-                      <VueFeather type="git-branch" :size="24" />
+                      <VueFeather type="git-branch" :size="14" />
                     </button>
                     <button class="settings__options-button" :title="$t('ui.disable')" @click="disableTag(tag.id)">
-                      <VueFeather type="eye-off" :size="24" />
+                      <VueFeather type="eye-off" :size="14" />
                     </button>
                   </div>
                   {{ $t(`tags.${tag.id}`) }}
@@ -191,21 +191,21 @@ export default {
     }
 
     [dir=ltr] & {
-      &-enter, &-leave-to {
+      &-enter-from, &-leave-to {
         clip-path: circle(1px at calc(100% - 6.5rem) 3.25rem);
       }
 
-      &-enter-to, &-leave {
+      &-enter-to, &-leave-from {
         clip-path: circle(100vh at 5.5rem 3.25rem);
       }
     }
 
     [dir=rtl] & {
-      &-enter, &-leave-to {
+      &-enter-from, &-leave-to {
         clip-path: circle(1px at 6.5rem 3.25rem);
       }
 
-      &-enter-to, &-leave {
+      &-enter-to, &-leave-from {
         clip-path: circle(100vh at 5.5rem 3.25rem);
       }
     }
@@ -273,8 +273,10 @@ export default {
   &__scroller {
     position: relative;
     display: flex;
+    flex-direction: column;
     align-items: stretch;
-    justify-content: stretch;
+    justify-content: flex-start;
+    flex: 1;
     min-height: 0;
     max-height: 100%;
     overflow-y: auto;

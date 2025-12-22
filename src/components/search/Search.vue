@@ -187,7 +187,7 @@ export default {
       transition-delay: 0.3s;
     }
 
-    &-enter, &-leave-to {
+    &-enter-from, &-leave-to {
       max-width: 0;
 
       .search__button {
@@ -195,7 +195,7 @@ export default {
       }
     }
 
-    &-enter-to, &-leave {
+    &-enter-to, &-leave-from {
       max-width: 300px;
     }
   }
@@ -241,12 +241,12 @@ export default {
       transition-delay: 0.4s;
     }
 
-    &-enter, &-leave-to {
+    &-enter-from, &-leave-to {
       transform: translateY(-3.25rem);
       max-height: 0 !important;
     }
 
-    &-enter-to, &-leave {
+    &-enter-to, &-leave-from {
       transform: translateY(0);
     }
 
