@@ -1,5 +1,8 @@
 <template>
   <div class="first-visit-window">
+    <button class="first-visit-window__close" :title="$t('ui.dismiss')" @click="dismiss">
+      <VueFeather type="x" />
+    </button>
     <svg class="first-visit-window__icon" width="64" height="64" viewBox="0 0 1 1">
       <path
         fill="#0f3562"
@@ -28,10 +31,11 @@
 </template>
 
 <script>
+import VueFeather from 'vue-feather'
 import Markdown from '@/components/Markdown.vue'
 export default {
   name: 'FirstVisitWindow',
-  components: { Markdown },
+  components: { Markdown, VueFeather },
   methods: {
     dismiss () {
       window.localStorage.tutorialDone = 'true'
@@ -47,6 +51,7 @@ export default {
     startTutorial () {
       window.localStorage.tutorialStarted = 'true'
       this.$emit('open-tutorial')
+      this.$emit('close')
       if (this.$gtag) {
         this.$gtag.event('first_visit_done', { event_category: 'engagement', event_label: 'tutorial' })
       }
@@ -158,6 +163,23 @@ export default {
         color: #f6f8fa;
         background-size: 100% 100%;
       }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #242629;
+    padding: 0.25rem;
+    z-index: 2;
+    transition: color 0.2s ease-in-out;
+
+    &:hover, &:active, &:focus {
+      color: #0f3562;
     }
   }
 }

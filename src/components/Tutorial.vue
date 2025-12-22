@@ -2,6 +2,9 @@
   <div class="tutorial">
     <transition name="tutorial">
       <div v-if="!hideWindow" class="tutorial__window">
+        <button class="tutorial__window-close" :title="$t('ui.dismiss')" @click="dismiss">
+          <VueFeather type="x" />
+        </button>
         <div class="tutorial__window-text">
           <h2>{{ $t('ui.tutorial.title') }}</h2>
           <p>{{ $t('ui.tutorial.explanation') }}</p>
@@ -42,10 +45,11 @@ import preventOverflow from '@popperjs/core/lib/modifiers/preventOverflow'
 import flip from '@popperjs/core/lib/modifiers/flip'
 import offset from '@popperjs/core/lib/modifiers/offset'
 import Markdown from '@/components/Markdown.vue'
+import VueFeather from 'vue-feather'
 
 export default {
   name: 'Tutorial',
-  components: { Markdown },
+  components: { Markdown, VueFeather },
   data () {
     return {
       markers: {
@@ -474,6 +478,23 @@ export default {
           color: #f6f8fa;
           background-size: 100% 100%;
         }
+      }
+    }
+
+    &-close {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #242629;
+      padding: 0.25rem;
+      z-index: 2;
+      transition: color 0.2s ease-in-out;
+
+      &:hover, &:active, &:focus {
+        color: #0f3562;
       }
     }
   }
