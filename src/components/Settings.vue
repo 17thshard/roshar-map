@@ -6,7 +6,7 @@
           <h2>{{ $t('ui.settings') }}</h2>
 
           <button class="settings__close" :title="$t('ui.close')" @click="$emit('close')">
-            <XIcon />
+            <VueFeather type="x" :size="24" />
           </button>
         </div>
 
