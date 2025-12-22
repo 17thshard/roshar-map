@@ -1,5 +1,5 @@
 <script>
-import { resolveComponent } from 'vue'
+import { h, resolveComponent } from 'vue'
 import markdown from 'simple-markdown'
 
 const LINK_INSIDE = '(?:\\[[^\\]]*\\]|[^\\[\\]]|\\](?=[^\\[]*\\]))*'
@@ -173,16 +173,22 @@ export default {
       return h('span')
     }
   },
-  render (h) {
+  render () {
     const RouterLink = resolveComponent('router-link')
     const parsed = (this.advanced ? advancedParser : parser)(this.content, { inline: this.inline })
     const children = parsed.map(node => this.renderNode(node, h, this.$route, RouterLink))
 
     if (this.$slots.prefix) {
-      children.unshift(this.$slots.prefix, ' ')
+      const prefixSlot = this.$slots.prefix()
+      children.unshift(...(Array.isArray(prefixSlot) ? prefixSlot : [prefixSlot]), ' ')
     }
 
-    children.push(' ', ...(this.$slots.default || this.$slots.suffix || []))
+    const defaultSlot = this.$slots.default || this.$slots.suffix
+    if (defaultSlot) {
+      const slotContent = defaultSlot()
+      const slotArray = Array.isArray(slotContent) ? slotContent : [slotContent]
+      children.push(' ', ...slotArray)
+    }
 
     return h(this.tag, { class: 'markdown' }, children)
   }
