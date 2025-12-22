@@ -3,7 +3,8 @@ import messages from '@generated/lang/en.lang.json'
 import store from '@/store'
 
 export const i18n = createI18n({
-  legacy: true, // Use legacy mode for Vue 2 compat
+  legacy: false, // Use Composition API mode (Vue I18n v11+)
+  globalInjection: true, // Enable $t, $tc, etc. in templates
   locale: 'en-US',
   fallbackLocale: 'en-US',
   messages: { en: { ...messages, sourceFile: 'en' } },
@@ -14,7 +15,7 @@ const loadedLanguages = ['en', 'en-US'] // our default language that is preloade
 const generatedLangModules = import.meta.glob('/build/generated/lang/*.lang.json')
 
 function setI18nLanguage (lang) {
-  i18n.global.locale = lang
+  i18n.global.locale.value = lang
   document.querySelector('html').setAttribute('lang', lang)
   const textDirection = i18n.global.t('text-direction')
   document.querySelector('html').setAttribute('dir', textDirection)
@@ -24,7 +25,7 @@ function setI18nLanguage (lang) {
 
 export function loadLanguageAsync (lang, locale) {
   // If the same language
-  if (i18n.global.locale === locale) {
+  if (i18n.global.locale.value === locale) {
     return Promise.resolve(setI18nLanguage(locale))
   }
 
