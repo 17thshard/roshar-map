@@ -470,7 +470,7 @@ export default {
   [dir=ltr] & {
     left: 0;
 
-    &-enter {
+    &-enter-from {
       transform: translateX(-100%);
     }
 
@@ -482,7 +482,7 @@ export default {
   [dir=rtl] & {
     right: 0;
 
-    &-enter {
+    &-enter-from {
       transform: translateX(100%);
     }
 
@@ -500,7 +500,7 @@ export default {
     }
   }
 
-  &-enter {
+  &-enter-from {
     .details__image {
       opacity: 0;
     }
@@ -523,7 +523,7 @@ export default {
     transition: transform 0.75s ease-in, opacity 0.75s ease-in;
   }
 
-  &-leave {
+  &-leave-from {
     transform: translateX(0);
   }
 
