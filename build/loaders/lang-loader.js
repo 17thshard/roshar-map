@@ -80,5 +80,7 @@ function parseStandardFile (lang, type, id, content) {
     return undefined
   }
 
-  return { name: root.name, details: root.content.trim(), ...metadata }
+  const details = root.content.trim()
+  // For standard entries (locations, characters, misc), blurb is the same as details
+  return { name: root.name, blurb: details, details, ...metadata }
 }
