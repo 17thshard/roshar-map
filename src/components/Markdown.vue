@@ -139,7 +139,9 @@ export default {
             {
               to: `/${route.params.locale}/${node.target}`
             },
-            node.content.map(child => this.renderNode(child, h, route, RouterLink))
+            {
+              default: () => node.content.map(child => this.renderNode(child, h, route, RouterLink))
+            }
           )
         case 'link':
           return h(

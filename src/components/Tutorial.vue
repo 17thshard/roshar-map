@@ -438,6 +438,7 @@ export default {
 
       h2 {
         margin: 0;
+        font-variant: small-caps;
       }
     }
 

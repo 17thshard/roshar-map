@@ -7,9 +7,11 @@
       />
     </svg>
     <Markdown class="first-visit-window__text" :content="$t('ui.first-visit.intro')">
-      <p slot="prefix" class="first-visit-window__heading">
-        {{ $t('ui.first-visit.heading') }}
-      </p>
+      <template #prefix>
+        <p class="first-visit-window__heading">
+          {{ $t('ui.first-visit.heading') }}
+        </p>
+      </template>
     </Markdown>
     <div class="first-visit-window__buttons">
       <button @click="dismiss">
@@ -120,7 +122,9 @@ export default {
 
   &__heading {
     margin: 0;
-    font-size: 1.25em;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-variant: small-caps;
   }
 
   &__buttons {
