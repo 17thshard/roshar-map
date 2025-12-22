@@ -76,7 +76,7 @@ export function escapeCssPath (path) {
 
 const entryImageUrls = import.meta.glob('/src/assets/entries/**/*.{png,jpg,jpeg,webp}', {
   eager: true,
-  query: { width: '500;1000;original', as: 'srcset' },
+  query: { w: '500;1000;original', as: 'srcset' },
   import: 'default'
 })
 
