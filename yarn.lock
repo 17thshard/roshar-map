@@ -8237,7 +8237,7 @@ __metadata:
     vite-imagetools: "npm:^9.0.2"
     vite-plugin-pwa: "npm:^1.2.0"
     vue: "npm:^3.5.26"
-    vue-dragscroll: "npm:^2.1.0"
+    vue-dragscroll: "npm:^4.0.6"
     vue-eslint-parser: "npm:^10.2.0"
     vue-feather: "npm:^2.0.0"
     vue-gtag: "npm:^3.6.3"
@@ -9832,10 +9832,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-dragscroll@npm:^2.1.0":
-  version: 2.1.3
-  resolution: "vue-dragscroll@npm:2.1.3"
-  checksum: 10c0/f8c009746d1356f67b2c4240073de559bbdd644478afebe5e70aa418c1924f12939307269f52de312a988cbc2d86a1af39be57abd91c5e5a0b553d94752a25de
+"vue-dragscroll@npm:^4.0.6":
+  version: 4.0.6
+  resolution: "vue-dragscroll@npm:4.0.6"
+  dependencies:
+    vue: "npm:^3.2.37"
+  checksum: 10c0/afaa037dd2c3b5cf687ac87c151c32f6391ce6b0e950a1d8c605ee058abe686986c292ca2131f9f05b4a5243cef5d57813d01175d66a5c4ffffdf888320386ea
   languageName: node
   linkType: hard
 
