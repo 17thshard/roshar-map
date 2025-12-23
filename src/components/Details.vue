@@ -30,14 +30,14 @@
           </h2>
           <ul v-if="Object.keys(metadata).length > 0" class="details__metadata">
             <li v-if="metadata.date">
-              <VueFeather type="calendar" :aria-label="$t(`ui.date`)" class="details__metadata-icon" :size="30" />
+              <VueFeather type="calendar" :aria-label="$t(`ui.date`)" class="details__metadata-icon" :size="16" />
               {{ metadata.date }}
               <button class="details__date-help" :title="$t('ui.date-help')" @click="$store.commit('openCalendarGuide')">
-                <VueFeather type="help-circle" :size="30" />
+                <VueFeather type="help-circle" :size="16" />
               </button>
             </li>
             <li v-if="metadata.chapter">
-              <VueFeather type="book" :aria-label="$t(`ui.chapter`)" class="details__metadata-icon" :size="30" />
+              <VueFeather type="book" :aria-label="$t(`ui.chapter`)" class="details__metadata-icon" :size="16" />
               <Markdown tag="span" :content="metadata.chapter" inline />
             </li>
           </ul>
