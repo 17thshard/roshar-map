@@ -71,9 +71,9 @@
               </a>
 
               <template v-if="translatorLogo !== undefined">
-                <h3 class="info__translator">
+                <div class="info__translator">
                   {{ $t('ui.translation-by') }}
-                </h3>
+                </div>
                 <a :href="$t(`meta.translator.url`)" target="_blank" :title="$t(`meta.translator.name`)">
                   <img class="info__translator-logo" :src="translatorLogo" :alt="$t(`meta.translator.name`)">
                 </a>
@@ -256,11 +256,8 @@ export default {
       }
     }
 
-    h3 {
-      font-family: sans-serif;
-      text-transform: uppercase;
+    &__translator {
       font-size: 0.8em;
-      margin: 0;
     }
   }
 

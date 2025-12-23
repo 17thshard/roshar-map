@@ -191,6 +191,7 @@
     "text-direction": "ltr",
     "search-language": "tr",
     "name": "Roshar Haritası",
+    "logo": "roshar.png",
     "sharing": {
         "title": "Paylaş",
         "global-message": "Roshar'ın İnteraktif Haritasına ve Zaman Çizelgesine göz atın!",
