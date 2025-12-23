@@ -68,8 +68,7 @@
         ref="container"
         v-dragscroll
         class="scrubber__container"
-        @mousewheel="scrollHorizontally"
-        @DOMMouseScroll="scrollHorizontally"
+        @wheel="scrollHorizontally"
         @scroll="onScroll"
       >
         <transition-group

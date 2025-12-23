@@ -57,8 +57,7 @@
       @mousemove="drag"
       @mouseup="endDrag"
       @mouseleave="endDrag"
-      @mousewheel.passive="onZoom"
-      @DOMMouseScroll.passive="onZoom"
+      @wheel.passive="onZoom"
     >
       <svg v-if="mode === 'locations'">
         <g
