@@ -44,9 +44,8 @@
         <label for="location-properties__shadesmar">
           <input
             id="location-properties__shadesmar"
-            :checked="location.shadesmar"
+            v-model="location.shadesmar"
             type="checkbox"
-            @input="$event.target.checked ? $set(location, 'shadesmar', true) : $delete(location, 'shadesmar')"
           >
 
           Shadesmar
@@ -54,9 +53,8 @@
         <label for="location-properties__city-dot">
           <input
             id="location-properties__city-dot"
-            :checked="location.cityDot"
+            v-model="location.cityDot"
             type="checkbox"
-            @input="$event.target.checked ? $set(location, 'cityDot', true) : $delete(location, 'cityDot')"
           >
 
           City Dot
@@ -80,7 +78,7 @@
         :autocomplete-items="linkAutocompletions"
         add-only-from-autocomplete
         placeholder="Add Link"
-        @tags-changed="newLinks => $set(location, 'related', newLinks.map(t => t.text).sort((a, b) => a.localeCompare(b)))"
+        @tags-changed="newLinks => location.related = newLinks.map(t => t.text).sort((a, b) => a.localeCompare(b))"
       />
 
       <span>Linked to by</span>
@@ -235,37 +233,37 @@ export default {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.location, 'mapId')
-        this.$delete(this.location, 'points')
+        delete this.location.mapId
+        delete this.location.points
         return
       }
 
-      this.$set(this.location, 'mapId', Number.parseInt(trimmed))
+      this.location.mapId = Number.parseInt(trimmed)
 
       if (this.location.points === undefined) {
-        this.$set(this.location, 'points', {})
+        this.location.points = {}
       }
     },
     updateZoom ({ target: { value } }) {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.location.coordinates, 'zoom')
+        delete this.location.coordinates.zoom
         return
       }
 
-      this.$set(this.location.coordinates, 'zoom', Number.parseFloat(trimmed))
+      this.location.coordinates.zoom = Number.parseFloat(trimmed)
     },
     updateImageFile ({ target: { value } }) {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.location, 'image')
+        delete this.location.image
         return
       }
 
       if (this.location.image === undefined) {
-        this.$set(this.location, 'image', {})
+        this.location.image = {}
       }
 
       this.location.image.file = trimmed
@@ -274,43 +272,43 @@ export default {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.location.image, 'offset')
+        delete this.location.image.offset
         return
       }
 
       if (this.location.image.offset === undefined) {
-        this.$set(this.location.image, 'offset', { x: 0, y: 0 })
+        this.location.image.offset = { x: 0, y: 0 }
       }
 
-      this.$set(this.location.image.offset, prop, Number.parseInt(trimmed, 10))
+      this.location.image.offset[prop] = Number.parseInt(trimmed, 10)
 
       if (this.location.image.offset.x === 0 && this.location.image.offset.y === 0) {
-        this.$delete(this.location.image, 'offset')
+        delete this.location.image.offset
       }
     },
     updateImageSize ({ target: { value } }) {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.location.image, 'size')
+        delete this.location.image.size
         return
       }
 
-      this.$set(this.location.image, 'size', Number.parseInt(trimmed, 10))
+      this.location.image.size = Number.parseInt(trimmed, 10)
 
       if (this.location.image.size === 100) {
-        this.$delete(this.location.image, 'size')
+        delete this.location.image.size
       }
     },
     update (property, { target: { value } }) {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.location, property)
+        delete this.location[property]
         return
       }
 
-      this.$set(this.location, property, trimmed)
+      this.location[property] = trimmed
     }
   }
 }

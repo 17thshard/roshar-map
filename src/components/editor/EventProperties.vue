@@ -114,7 +114,7 @@
         :autocomplete-items="linkAutocompletions"
         add-only-from-autocomplete
         placeholder="Add Link"
-        @tags-changed="newLinks => $set(event, 'related', newLinks.map(t => t.text).sort((a, b) => a.localeCompare(b)))"
+        @tags-changed="newLinks => event.related = newLinks.map(t => t.text).sort((a, b) => a.localeCompare(b))"
       />
 
       <span>Linked to by</span>
@@ -249,7 +249,7 @@ export default {
     tagAutocompletions () {
       const searchText = this.newTag ? this.newTag.trim() : ''
       if (!searchText) {
-        return this.availableTags
+        return [...this.availableTags]
           .sort((a, b) => a.localeCompare(b))
           .map(t => ({ text: t }))
       }
@@ -314,32 +314,32 @@ export default {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.event, 'tieBreaker')
+        delete this.event.tieBreaker
         return
       }
 
-      this.$set(this.event, 'tieBreaker', Number.parseInt(trimmed, 10))
+      this.event.tieBreaker = Number.parseInt(trimmed, 10)
     },
     updateZoom ({ target: { value } }) {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.event.coordinates, 'zoom')
+        delete this.event.coordinates.zoom
         return
       }
 
-      this.$set(this.event.coordinates, 'zoom', Number.parseFloat(trimmed))
+      this.event.coordinates.zoom = Number.parseFloat(trimmed)
     },
     updateImageFile ({ target: { value } }) {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.event, 'image')
+        delete this.event.image
         return
       }
 
       if (this.event.image === undefined) {
-        this.$set(this.event, 'image', {})
+        this.event.image = {}
       }
 
       this.event.image.file = trimmed
@@ -348,43 +348,43 @@ export default {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.event.image, 'offset')
+        delete this.event.image.offset
         return
       }
 
       if (this.event.image.offset === undefined) {
-        this.$set(this.event.image, 'offset', { x: 0, y: 0 })
+        this.event.image.offset = { x: 0, y: 0 }
       }
 
-      this.$set(this.event.image.offset, prop, Number.parseInt(trimmed, 10))
+      this.event.image.offset[prop] = Number.parseInt(trimmed, 10)
 
       if (this.event.image.offset.x === 0 && this.event.image.offset.y === 0) {
-        this.$delete(this.event.image, 'offset')
+        delete this.event.image.offset
       }
     },
     updateImageSize ({ target: { value } }) {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.event.image, 'size')
+        delete this.event.image.size
         return
       }
 
-      this.$set(this.event.image, 'size', Number.parseInt(trimmed, 10))
+      this.event.image.size = Number.parseInt(trimmed, 10)
 
       if (this.event.image.size === 100) {
-        this.$delete(this.event.image, 'size')
+        delete this.event.image.size
       }
     },
     update (property, { target: { value } }) {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.location, property)
+        delete this.event[property]
         return
       }
 
-      this.$set(this.event, property, trimmed)
+      this.event[property] = trimmed
     },
     onTagsInput (value) {
       if (value && value.trim().length > 0) {

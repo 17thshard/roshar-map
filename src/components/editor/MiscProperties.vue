@@ -12,7 +12,7 @@
         :autocomplete-items="linkAutocompletions"
         add-only-from-autocomplete
         placeholder="Add Link"
-        @tags-changed="newLinks => $set(misc, 'related', newLinks.map(t => t.text).sort((a, b) => a.localeCompare(b)))"
+        @tags-changed="newLinks => misc.related = newLinks.map(t => t.text).sort((a, b) => a.localeCompare(b))"
       />
 
       <span>Linked to by</span>
@@ -167,12 +167,12 @@ export default {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.misc, 'image')
+        delete this.misc.image
         return
       }
 
       if (this.misc.image === undefined) {
-        this.$set(this.misc, 'image', {})
+        this.misc.image = {}
       }
 
       this.misc.image.file = trimmed
@@ -181,43 +181,43 @@ export default {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.misc.image, 'offset')
+        delete this.misc.image.offset
         return
       }
 
       if (this.misc.image.offset === undefined) {
-        this.$set(this.misc.image, 'offset', { x: 0, y: 0 })
+        this.misc.image.offset = { x: 0, y: 0 }
       }
 
-      this.$set(this.misc.image.offset, prop, Number.parseInt(trimmed, 10))
+      this.misc.image.offset[prop] = Number.parseInt(trimmed, 10)
 
       if (this.misc.image.offset.x === 0 && this.misc.image.offset.y === 0) {
-        this.$delete(this.misc.image, 'offset')
+        delete this.misc.image.offset
       }
     },
     updateImageSize ({ target: { value } }) {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.misc.image, 'size')
+        delete this.misc.image.size
         return
       }
 
-      this.$set(this.misc.image, 'size', Number.parseInt(trimmed, 10))
+      this.misc.image.size = Number.parseInt(trimmed, 10)
 
       if (this.misc.image.size === 100) {
-        this.$delete(this.misc.image, 'size')
+        delete this.misc.image.size
       }
     },
     update (property, { target: { value } }) {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.misc, property)
+        delete this.misc[property]
         return
       }
 
-      this.$set(this.misc, property, trimmed)
+      this.misc[property] = trimmed
     }
   }
 }

@@ -71,9 +71,9 @@ export default {
         const key = this.category ? 'tagCategories' : 'tags'
 
         if (value === undefined) {
-          this.$delete(this.selectedMessages, key)
+          delete this.selectedMessages[key]
         } else {
-          this.$set(this.selectedMessages, key, value)
+          this.selectedMessages[key] = value
         }
       }
     },
@@ -103,9 +103,9 @@ export default {
       }
 
       if (trimmed.length === 0) {
-        this.$delete(this.languageNamespace, this.tag)
+        delete this.languageNamespace[this.tag]
       } else {
-        this.$set(this.languageNamespace, this.tag, trimmed)
+        this.languageNamespace[this.tag] = trimmed
       }
     }
   }

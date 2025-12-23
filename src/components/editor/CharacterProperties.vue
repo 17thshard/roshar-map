@@ -12,7 +12,7 @@
         :autocomplete-items="linkAutocompletions"
         add-only-from-autocomplete
         placeholder="Add Link"
-        @tags-changed="newLinks => $set(character, 'related', newLinks.map(t => t.text).sort((a, b) => a.localeCompare(b)))"
+        @tags-changed="newLinks => character.related = newLinks.map(t => t.text).sort((a, b) => a.localeCompare(b))"
       />
 
       <span>Linked to by</span>
@@ -167,12 +167,12 @@ export default {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.character, 'image')
+        delete this.character.image
         return
       }
 
       if (this.character.image === undefined) {
-        this.$set(this.character, 'image', {})
+        this.character.image = {}
       }
 
       this.character.image.file = trimmed
@@ -181,43 +181,43 @@ export default {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.character.image, 'offset')
+        delete this.character.image.offset
         return
       }
 
       if (this.character.image.offset === undefined) {
-        this.$set(this.character.image, 'offset', { x: 0, y: 0 })
+        this.character.image.offset = { x: 0, y: 0 }
       }
 
-      this.$set(this.character.image.offset, prop, Number.parseInt(trimmed, 10))
+      this.character.image.offset[prop] = Number.parseInt(trimmed, 10)
 
       if (this.character.image.offset.x === 0 && this.character.image.offset.y === 0) {
-        this.$delete(this.character.image, 'offset')
+        delete this.character.image.offset
       }
     },
     updateImageSize ({ target: { value } }) {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.character.image, 'size')
+        delete this.character.image.size
         return
       }
 
-      this.$set(this.character.image, 'size', Number.parseInt(trimmed, 10))
+      this.character.image.size = Number.parseInt(trimmed, 10)
 
       if (this.character.image.size === 100) {
-        this.$delete(this.character.image, 'size')
+        delete this.character.image.size
       }
     },
     update (property, { target: { value } }) {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.character, property)
+        delete this.character[property]
         return
       }
 
-      this.$set(this.character, property, trimmed)
+      this.character[property] = trimmed
     }
   }
 }

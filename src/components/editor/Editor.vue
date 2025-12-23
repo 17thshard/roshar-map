@@ -558,7 +558,7 @@ export default {
         )
       }
       return loader().then((messages) => {
-        this.$set(this.loadedLanguages, lang, messages.default)
+        this.loadedLanguages[lang] = messages.default
       })
     })).then(() => {
       this.languagesLoaded = true
@@ -918,8 +918,8 @@ export default {
     addTagCategory () {
       const name = window.prompt('New category name')
 
-      if (name !== null && this.tagCategories[name] === undefined) {
-        this.$set(this.tagCategories, name, [])
+      if (name !== null && !this.tagCategories.some(c => c.id === name)) {
+        this.tagCategories.push({ id: name, tags: [] })
       }
     },
     selectTag (tag, category) {
@@ -928,7 +928,10 @@ export default {
       this.categorySelected = category
     },
     deleteTagCategory (category) {
-      this.$delete(this.tagCategories, category)
+      const index = this.tagCategories.indexOf(category)
+      if (index !== -1) {
+        this.tagCategories.splice(index, 1)
+      }
     },
     click (event) {
       if (this.draggedPoint !== null || event.altKey || this.panning || event.button === 1) {
@@ -1023,7 +1026,7 @@ export default {
     },
     ensureLocalePoints (location) {
       if (location.points[this.textureLocale] === undefined) {
-        this.$set(location.points, this.textureLocale, [])
+        location.points[this.textureLocale] = []
       }
     },
     buildPolygonPoints (polygon) {
