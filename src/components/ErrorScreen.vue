@@ -8,7 +8,7 @@
     <Markdown class="error-screen__text" :content="$t('ui.error-screen.message')" />
     <Markdown class="error-screen__report" :content="$t('ui.error-screen.report-intro')">
       <a class="error-screen__report-button" href="https://github.com/Palanaeum/roshar-map/issues/new">
-        <VueFeather type="github" :size="24" />
+        <VueFeather type="github" :size="20" />
         {{ $t('ui.error-screen.report-button') }}
       </a>
     </Markdown>

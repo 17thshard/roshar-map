@@ -1,6 +1,9 @@
 <template>
   <div class="measurement-result">
     <div class="measurement-result__content">
+      <button class="measurement-result__close" :title="$t('ui.close')" @click="$emit('close')">
+        <VueFeather type="x" />
+      </button>
       <h2>{{ $t('ui.measurement.title') }}</h2>
       <Markdown :content="$t('ui.measurement.explanation')" />
       <table>
@@ -12,7 +15,7 @@
           <th>{{ $t('ui.measurement.labels.end') }}</th>
           <td>{{ formatLocation(measurement.end) }}</td>
         </tr>
-        <tr v-if="measurement.distance">
+        <tr v-if="measurement.distance !== undefined && measurement.distance !== null">
           <th>{{ $t('ui.measurement.labels.distance') }}</th>
           <td>{{ $t('ui.measurement.distance', { distanceKm: measurement.distance.toFixed(0), distanceMi: mileDistance.toFixed(0) }) }}</td>
         </tr>
@@ -22,11 +25,12 @@
 </template>
 
 <script>
+import VueFeather from 'vue-feather'
 import Markdown from '@/components/Markdown.vue'
 
 export default {
   name: 'MeasurementResult',
-  components: { Markdown },
+  components: { Markdown, VueFeather },
   props: {
     measurement: {
       type: Object,
@@ -100,6 +104,22 @@ export default {
         text-align: left;
         padding-right: 0.25rem;
       }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 1;
     }
   }
 }

@@ -13,6 +13,7 @@
         v-if="measurementActive && measurementResult !== null"
         :measurement="measurementResult"
         class="map__measurement-result"
+        @close="$store.commit('toggleMeasurement')"
       />
     </transition>
   </div>

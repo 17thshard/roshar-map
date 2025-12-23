@@ -50,6 +50,7 @@ export default class Measurement extends Group {
       this.remove(highlight)
     })
     this.highlights = []
+    this.distance = null
   }
 
   click (position, ctrlKey) {
