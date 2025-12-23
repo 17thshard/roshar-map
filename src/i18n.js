@@ -13,7 +13,7 @@ export const i18n = createI18n({
 })
 
 const loadedLanguages = ['en', 'en-US'] // our default language that is preloaded
-const generatedLangModules = import.meta.glob('/build/generated/lang/*.lang.json')
+const generatedLangModules = import.meta.glob(['/build/generated/lang/*.lang.json', '!/build/generated/lang/en.lang.json'])
 
 function setI18nLanguage (lang) {
   i18n.global.locale.value = lang
