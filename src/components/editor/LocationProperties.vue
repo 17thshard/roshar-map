@@ -73,6 +73,7 @@
 
       <label>Related</label>
       <VueTagsInput
+        ref="tagsInput"
         v-model="newLink"
         :tags="(location.related || []).map(t => ({ text: t }))"
         :autocomplete-items="linkAutocompletions"
@@ -204,7 +205,8 @@ export default {
       return `${import.meta.env.BASE_URL}img`
     },
     linkAutocompletions () {
-      return this.linkables.filter(l => l.startsWith(this.newLink) && l !== `locations/${this.location.id}`)
+      const search = (this.newLink || '').trim().toLowerCase()
+      return this.linkables.filter(l => l.toLowerCase().includes(search) && l !== `locations/${this.location.id}`)
         .sort((a, b) => a.localeCompare(b))
         .map(l => ({ text: l }))
     },
@@ -227,6 +229,25 @@ export default {
 
       return styles
     }
+  },
+  mounted () {
+    this.$nextTick(() => {
+      if (this.$refs.tagsInput && this.$refs.tagsInput.$el) {
+        const input = this.$refs.tagsInput.$el.querySelector('input')
+        if (input) {
+          input.addEventListener('focus', () => {
+            if (!this.newLink || this.newLink.trim() === '') {
+              this.newLink = ' '
+            }
+          })
+          input.addEventListener('blur', () => {
+            if (this.newLink === ' ') {
+              this.newLink = ''
+            }
+          })
+        }
+      }
+    })
   },
   methods: {
     updateMapId ({ target: { value } }) {

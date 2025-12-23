@@ -109,6 +109,7 @@
 
       <label>Related</label>
       <VueTagsInput
+        ref="linkInput"
         v-model="newLink"
         :tags="(event.related || []).map(t => ({ text: t }))"
         :autocomplete-items="linkAutocompletions"
@@ -259,7 +260,8 @@ export default {
         .map(t => ({ text: t }))
     },
     linkAutocompletions () {
-      return this.linkables.filter(l => l.startsWith(this.newLink) && l !== `events/${this.event.id}`)
+      const search = (this.newLink || '').trim().toLowerCase()
+      return this.linkables.filter(l => l.toLowerCase().includes(search) && l !== `events/${this.event.id}`)
         .sort((a, b) => a.localeCompare(b))
         .map(l => ({ text: l }))
     },
@@ -299,6 +301,21 @@ export default {
               this.newTag = ''
             }
             this.showAllTags = false
+          })
+        }
+      }
+      if (this.$refs.linkInput && this.$refs.linkInput.$el) {
+        const input = this.$refs.linkInput.$el.querySelector('input')
+        if (input) {
+          input.addEventListener('focus', () => {
+            if (!this.newLink || this.newLink.trim() === '') {
+              this.newLink = ' '
+            }
+          })
+          input.addEventListener('blur', () => {
+            if (this.newLink === ' ') {
+              this.newLink = ''
+            }
           })
         }
       }
