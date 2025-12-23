@@ -47,12 +47,6 @@
                     />
                   </svg>
                 </a>
-                <a class="info__social" href="https://twitter.com/17thShard" target="_blank" title="Twitter">
-                  <VueFeather type="twitter" />
-                </a>
-                <a class="info__social" href="https://facebook.com/17thShard" target="_blank" title="Facebook">
-                  <VueFeather type="facebook" />
-                </a>
                 <a class="info__social" href="https://youtube.com/user/17thShard" target="_blank" title="YouTube">
                   <VueFeather type="youtube" />
                 </a>
@@ -63,6 +57,9 @@
                       <path d="m3.949 4.2795v15.441h2.8306v-15.441z" />
                     </g>
                   </svg>
+                </a>
+                <a class="info__social" href="https://facebook.com/17thShard" target="_blank" title="Facebook">
+                  <VueFeather type="facebook" />
                 </a>
                 <a class="info__social" href="https://github.com/Palanaeum/roshar-map" target="_blank" title="GitHub">
                   <VueFeather type="github" />
