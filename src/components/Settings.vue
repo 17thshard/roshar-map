@@ -73,6 +73,7 @@
             v-if="filter.separateTags.length === 0"
             keypath="ui.add-timeline"
             tag="div"
+            scope="global"
             class="settings__separate-timelines-empty"
           >
             <template #timeline-icon>
