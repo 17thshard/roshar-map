@@ -57,11 +57,11 @@
       @mousemove="drag"
       @mouseup="endDrag"
       @mouseleave="endDrag"
-      @mousewheel="onZoom"
-      @DOMMouseScroll="onZoom"
+      @mousewheel.passive="onZoom"
+      @DOMMouseScroll.passive="onZoom"
     >
       <svg v-if="mode === 'locations'">
-        <template
+        <g
           v-for="(location, index) in locations.filter(l => l.points[textureLocale] !== undefined && (selectedLocation !== null && selectedLocation.shadesmar ? l.shadesmar : l.shadesmar !== true))"
           :key="`polygon${index}`"
         >
@@ -79,7 +79,7 @@
             @click="clickPoint($event, location, index, pointIndex)"
             @mousedown="startDrag($event, point)"
           />
-        </template>
+        </g>
       </svg>
       <div
         v-if="mode === 'events' && selectedEvent !== null"
