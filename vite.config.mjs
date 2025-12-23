@@ -125,6 +125,18 @@ export default ({ mode }) => {
       emptyOutDir: true,
       sourcemap: false,
       target: 'es2018',
+      // Limit the size of chunks to 4MB to avoid warnings (language files, esp tr.lang.json is a chunky boy)
+      chunkSizeWarningLimit: 4000,
+      
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes('node_modules')) {
+              return 'vendor'
+            }
+          },
+        },
+      },
     },
   }
 }
