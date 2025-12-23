@@ -403,7 +403,7 @@ export default {
     flex-shrink: 0;
     width: 350px;
     max-width: 100%;
-    padding-bottom: 2rem;
+    padding-bottom: 6rem;
     background: #F5ECDA url(../assets/paper.png);
 
     h2 {
