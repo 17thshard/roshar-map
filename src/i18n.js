@@ -6,7 +6,7 @@ export const i18n = createI18n({
   legacy: false, // Use Composition API mode (Vue I18n v11+)
   globalInjection: true, // Enable $t, $tc, etc. in templates
   locale: 'en-US',
-  fallbackLocale: 'en-US',
+  fallbackLocale: 'en',
   messages: { en: { ...messages, sourceFile: 'en' } },
   silentFallbackWarn: true,
   warnHtmlMessage: false

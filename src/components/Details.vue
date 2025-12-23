@@ -257,7 +257,7 @@ export default {
         result.date = formatDate(this.details.date)
       }
 
-      if (this.$te(`${this.baseTranslationKey}.chapter`, this.$i18n.fallbackLocale)) {
+      if (this.$te(`${this.baseTranslationKey}.chapter`) || this.$te(`${this.baseTranslationKey}.chapter`, this.$i18n.fallbackLocale)) {
         result.chapter = this.$t(`${this.baseTranslationKey}.chapter`)
       }
 
