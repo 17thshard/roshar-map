@@ -13,11 +13,16 @@
 <script>
 import { OverlayScrollbarsComponent } from "overlayscrollbars-vue";
 import 'overlayscrollbars/styles/overlayscrollbars.css';
+import { useI18n } from 'vue-i18n'
 
 export default {
   name: 'CustomScrollbar',
   components: {
     OverlayScrollbarsComponent
+  },
+  setup () {
+    const { t } = useI18n()
+    return { t }
   },
   props: {
     options: {
