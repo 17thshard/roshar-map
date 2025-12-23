@@ -7,7 +7,7 @@
     >
       <VueFeather type="x" />
     </router-link>
-    <div
+    <CustomScrollbar
       ref="scroller"
       class="details__scroller"
     >
@@ -162,13 +162,14 @@
           </a>
         </section>
       </div>
-    </div>
+    </CustomScrollbar>
   </div>
 </template>
 
 <script>
 import VueFeather from 'vue-feather'
 import Markdown from '@/components/Markdown.vue'
+import CustomScrollbar from '@/components/CustomScrollbar.vue'
 import { formatDate, getEntryImageSrcSet, compareEvents } from '@/utils'
 import xLogo from '@/assets/logos/x.svg'
 import instagramLogo from '@/assets/logos/instagram.svg'
@@ -181,7 +182,8 @@ export default {
   name: 'Details',
   components: {
     VueFeather,
-    Markdown
+    Markdown,
+    CustomScrollbar
   },
   props: {
     details: {
@@ -347,7 +349,11 @@ export default {
             const actualHeight = this.imageAspect * this.$el.clientWidth
 
             if (actualHeight >= window.innerHeight) {
-              this.$refs.scroller.scrollTop = actualHeight * 0.5
+              const instance = this.$refs.scroller?.osInstance()
+              if (instance) {
+                const { viewport } = instance.elements()
+                viewport.scrollTop = actualHeight * 0.5
+              }
             }
           }
         }
@@ -570,29 +576,6 @@ export default {
     justify-content: stretch;
     min-height: 0;
     max-height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    // Custom scrollbar styling
-    scrollbar-width: thin;
-    scrollbar-color: rgba(#482d00, 0.5) transparent;
-
-    &::-webkit-scrollbar {
-      width: 0.5rem;
-    }
-
-    &::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: rgba(#482d00, 0.5);
-      border-radius: 0.25rem;
-    }
-
-    &::-webkit-scrollbar-thumb:hover {
-      background-color: rgba(#482d00, 0.7);
-    }
 
     [dir=rtl] & {
       direction: rtl;

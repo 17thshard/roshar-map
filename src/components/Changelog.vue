@@ -2,13 +2,13 @@
   <div class="changelog" @click.self="dismiss">
     <div class="changelog__window">
       <div class="changelog__window-content">
-        <div
+        <CustomScrollbar
           ref="scroller"
           :class="['changelog__scroller', { 'changelog__scroller--bottom': scrolledToBottom }]"
           @scroll="onScroll"
         >
           <Markdown :content="$t('changelog')" advanced />
-        </div>
+        </CustomScrollbar>
         <Markdown tag="button" :content="$t('ui.dismiss')" inline class="changelog__confirm" @click="dismiss" />
       </div>
     </div>
@@ -17,12 +17,13 @@
 
 <script>
 import Markdown from '@/components/Markdown.vue'
+import CustomScrollbar from '@/components/CustomScrollbar.vue'
 
 export const VERSION = 'row-ds'
 
 export default {
   name: 'Changelog',
-  components: { Markdown },
+  components: { Markdown, CustomScrollbar },
   data () {
     return {
       scrolledToBottom: false
@@ -169,26 +170,6 @@ export default {
     overflow-y: auto;
     overflow-x: hidden;
 
-    // Custom scrollbar styling
-    scrollbar-width: thin;
-    scrollbar-color: rgba(#482d00, 0.5) transparent;
-
-    &::-webkit-scrollbar {
-      width: 0.5rem;
-    }
-
-    &::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: rgba(#482d00, 0.5);
-      border-radius: 0.25rem;
-    }
-
-    &::-webkit-scrollbar-thumb:hover {
-      background-color: rgba(#482d00, 0.7);
-    }
 
     [dir=rtl] & {
       direction: rtl;

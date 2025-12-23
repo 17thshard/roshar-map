@@ -11,7 +11,7 @@
             <VueFeather type="x" />
           </button>
         </div>
-        <div
+        <CustomScrollbar
           :class="['info__scroller', 'info__scroller--root', { 'info__scroller--inactive': subPage !== null }]"
           @scroll="onScroll(null, $event)"
         >
@@ -83,8 +83,8 @@
               </template>
             </footer>
           </div>
-        </div>
-        <div
+        </CustomScrollbar>
+        <CustomScrollbar
           :class="['info__scroller', 'info__scroller--language', { 'info__scroller--active': subPage === 'language' }]"
           @scroll="onScroll('language', $event)"
         >
@@ -96,8 +96,8 @@
               </router-link>
             </nav>
           </div>
-        </div>
-        <div
+        </CustomScrollbar>
+        <CustomScrollbar
           :class="['info__scroller', 'info__scroller--about', { 'info__scroller--active': subPage === 'about' }]"
           @scroll="onScroll('about', $event)"
         >
@@ -105,8 +105,8 @@
             <h2>{{ $t('ui.about') }}</h2>
             <Markdown :content="$t('ui.aboutText')" class="info__text" />
           </div>
-        </div>
-        <div
+        </CustomScrollbar>
+        <CustomScrollbar
           :class="['info__scroller', 'info__scroller--credits', { 'info__scroller--active': subPage === 'credits' }]"
           @scroll="onScroll('credits', $event)"
         >
@@ -114,7 +114,7 @@
             <h2>{{ $t('ui.credits') }}</h2>
             <div class="markdown info__text" v-html="creditsHtml" />
           </div>
-        </div>
+        </CustomScrollbar>
       </div>
     </transition>
   </div>
@@ -123,6 +123,7 @@
 <script>
 import VueFeather from 'vue-feather'
 import Markdown from '@/components/Markdown.vue'
+import CustomScrollbar from '@/components/CustomScrollbar.vue'
 import availableLanguages from '@/lang/menu.json'
 import creditsHtml from '@generated/credits.js'
 import { escapeCssPath } from '@/utils'
@@ -138,7 +139,8 @@ export default {
   name: 'Info',
   components: {
     VueFeather,
-    Markdown
+    Markdown,
+    CustomScrollbar
   },
   props: {
     open: Boolean
@@ -346,29 +348,6 @@ export default {
     min-height: 0;
     max-height: 100%;
     transition: transform 0.5s ease-in-out;
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    // Custom scrollbar styling
-    scrollbar-width: thin;
-    scrollbar-color: rgba(#482d00, 0.5) transparent;
-
-    &::-webkit-scrollbar {
-      width: 0.5rem;
-    }
-
-    &::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: rgba(#482d00, 0.5);
-      border-radius: 0.25rem;
-    }
-
-    &::-webkit-scrollbar-thumb:hover {
-      background-color: rgba(#482d00, 0.7);
-    }
 
     [dir=ltr] & {
       transform: translateX(100%);

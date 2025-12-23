@@ -28,6 +28,8 @@
     "jszip": "^3.10.1",
     "lunr": "^2.3.9",
     "lunr-languages": "^1.14.0",
+    "overlayscrollbars": "^2.13.0",
+    "overlayscrollbars-vue": "^0.5.9",
     "register-service-worker": "^1.7.2",
     "simple-markdown": "^0.7.3",
     "three": "^0.182.0",

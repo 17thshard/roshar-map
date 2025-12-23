@@ -6235,6 +6235,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"overlayscrollbars-vue@npm:^0.5.9":
+  version: 0.5.9
+  resolution: "overlayscrollbars-vue@npm:0.5.9"
+  peerDependencies:
+    overlayscrollbars: ^2.0.0
+    vue: ^3.2.25
+  checksum: 10c0/bd40df4e29b90e26570d5a321fe6c8ea6d7983250ddfcc8b06767434c5c2f08b393db1434c83e0e4a369aeb17cfb65360e5ce1e0430cd72ce85cb59ed16424b4
+  languageName: node
+  linkType: hard
+
+"overlayscrollbars@npm:^2.13.0":
+  version: 2.13.0
+  resolution: "overlayscrollbars@npm:2.13.0"
+  checksum: 10c0/6a2731c417d926932bb20dd6cb93df78ee2ecac9068959b9d7bdf35180c513324530eea8d9252eef6c9640c99c5c054a5a514f0c1427310a73b764a6fa17740a
+  languageName: node
+  linkType: hard
+
 "ow@npm:^2.0.0":
   version: 2.0.0
   resolution: "ow@npm:2.0.0"
@@ -7056,6 +7073,8 @@ __metadata:
     jszip: "npm:^3.10.1"
     lunr: "npm:^2.3.9"
     lunr-languages: "npm:^1.14.0"
+    overlayscrollbars: "npm:^2.13.0"
+    overlayscrollbars-vue: "npm:^0.5.9"
     register-service-worker: "npm:^1.7.2"
     sass: "npm:^1.97.1"
     simple-markdown: "npm:^0.7.3"

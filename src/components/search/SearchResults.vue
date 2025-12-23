@@ -1,6 +1,6 @@
 <template>
   <div class="search-results">
-    <div class="search-results__scroller">
+    <CustomScrollbar class="search-results__scroller">
       <ul class="search-results__list">
         <li v-if="loading" class="search-results__placeholder">
           {{ $t('ui.search.loading') }}
@@ -15,16 +15,17 @@
           <SearchResult :entry="result" @use="$emit('result-use', result)" />
         </li>
       </ul>
-    </div>
+    </CustomScrollbar>
   </div>
 </template>
 
 <script>
 import SearchResult from '@/components/search/SearchResult.vue'
+import CustomScrollbar from '@/components/CustomScrollbar.vue'
 
 export default {
   name: 'SearchResults',
-  components: { SearchResult },
+  components: { SearchResult, CustomScrollbar },
   props: {
     results: {
       type: Array,
@@ -60,29 +61,6 @@ export default {
     min-height: 0;
     flex: 1;
     width: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    // Custom scrollbar styling
-    scrollbar-width: thin;
-    scrollbar-color: rgba(#482d00, 0.5) transparent;
-
-    &::-webkit-scrollbar {
-      width: 0.5rem;
-    }
-
-    &::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: rgba(#482d00, 0.5);
-      border-radius: 0.25rem;
-    }
-
-    &::-webkit-scrollbar-thumb:hover {
-      background-color: rgba(#482d00, 0.7);
-    }
 
     [dir=rtl] & {
       direction: rtl;

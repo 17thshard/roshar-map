@@ -10,7 +10,7 @@
           </button>
         </div>
 
-        <div
+        <CustomScrollbar
           ref="scroller"
           class="settings__scroller"
           @scroll="onScroll"
@@ -62,7 +62,7 @@
               </ul>
             </template>
           </section>
-        </div>
+        </CustomScrollbar>
 
         <section class="settings__separate-timelines-container">
           <h3 data-tutorial-id="settings-separate-timelines">
@@ -90,10 +90,11 @@ import VueFeather from 'vue-feather'
 import { mapState } from 'vuex'
 import tagCategories from '@/store/tags.json'
 import SeparateTimelineOverview from '@/components/SeparateTimelineOverview.vue'
+import CustomScrollbar from '@/components/CustomScrollbar.vue'
 
 export default {
   name: 'Settings',
-  components: { VueFeather, SeparateTimelineOverview },
+  components: { VueFeather, SeparateTimelineOverview, CustomScrollbar },
   props: {
     open: Boolean
   },
@@ -289,29 +290,6 @@ export default {
     flex: 1;
     min-height: 0;
     max-height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    // Custom scrollbar styling
-    scrollbar-width: thin;
-    scrollbar-color: rgba(#482d00, 0.5) transparent;
-
-    &::-webkit-scrollbar {
-      width: 0.5rem;
-    }
-
-    &::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: rgba(#482d00, 0.5);
-      border-radius: 0.25rem;
-    }
-
-    &::-webkit-scrollbar-thumb:hover {
-      background-color: rgba(#482d00, 0.7);
-    }
 
     [dir=rtl] & {
       direction: rtl;
