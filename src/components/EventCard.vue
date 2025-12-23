@@ -16,7 +16,7 @@
         {{ $t(`events.${event.id}.name`) }}
       </h2>
       <Markdown
-        :content="$te(`events.${event.id}.blurb`, 'en') ? $t(`events.${event.id}.blurb`) : ''"
+        :content="$te(`events.${event.id}.blurb`) ? $t(`events.${event.id}.blurb`) : ''"
         inline
         class="event-card__text"
       >

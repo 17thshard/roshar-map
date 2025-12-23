@@ -204,7 +204,7 @@ function generateSearchIndex(rootDir) {
       const lunrLanguage = messages['search-language']
       this.tokenizer = nGramTokenizer
 
-      if (lunrLanguage && lunrLanguage !== 'en' && lunrLanguage !== 'en-US') {
+      if (lunrLanguage && lunrLanguage !== 'en-US') {
         // best-effort; if missing we still build an index
         try {
           require(`lunr-languages/lunr.${lunrLanguage}`)(lunr)

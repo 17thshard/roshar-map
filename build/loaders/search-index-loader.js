@@ -105,7 +105,7 @@ module.exports = function (source) {
     return lunr(function () {
       const lunrLanguage = messages['search-language']
       this.tokenizer = nGramTokenizer
-      if (lunrLanguage && lunrLanguage !== 'en' && lunrLanguage !== 'en-US') {
+      if (lunrLanguage && lunrLanguage !== 'en-US') {
         require(`lunr-languages/lunr.${lunrLanguage}`)(lunr)
         this.use(lunr[lunrLanguage])
       }
