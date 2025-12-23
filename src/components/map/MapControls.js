@@ -189,6 +189,7 @@ const MapControls = function (object, domElement) {
   //
 
   const scope = this
+  scope.domElement.style.touchAction = 'none'
 
   const changeEvent = { type: 'change' }
   const startEvent = { type: 'start' }
@@ -682,20 +683,21 @@ const MapControls = function (object, domElement) {
   }
 
   scope.domElement.addEventListener('mousedown', onMouseDown, false)
-  scope.domElement.addEventListener('wheel', onMouseWheel, false)
+  scope.domElement.addEventListener('wheel', onMouseWheel, { passive: false })
   scope.domElement.addEventListener('mouseover', updateMousePos, false)
   scope.domElement.addEventListener('mousemove', updateMousePos, false)
   scope.domElement.addEventListener('mouseleave', resetMousePos, false)
 
-  scope.domElement.addEventListener('touchstart', onTouchStart, false)
-  scope.domElement.addEventListener('touchend', onTouchEnd, false)
-  scope.domElement.addEventListener('touchmove', onTouchMove, false)
+  scope.domElement.addEventListener('touchstart', onTouchStart, { passive: false })
+  scope.domElement.addEventListener('touchend', onTouchEnd, { passive: false })
+  scope.domElement.addEventListener('touchmove', onTouchMove, { passive: false })
 
   scope.domElement.ownerDocument.addEventListener('keydown', onKeyDown, false)
   scope.domElement.ownerDocument.addEventListener('keyup', onKeyUp, false)
 
   const hammer = new Hammer.Manager(scope.domElement, {
-    inputClass: Hammer.TouchInput
+    inputClass: Hammer.TouchInput,
+    touchAction: 'none'
   })
 
   hammer.add(new Hammer.Pinch())
