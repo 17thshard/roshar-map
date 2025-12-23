@@ -43,12 +43,17 @@
 import VueFeather from 'vue-feather'
 import SearchResults from '@/components/search/SearchResults.vue'
 import { debounce } from '@/utils'
+import { useI18n } from 'vue-i18n'
 
 export default {
   name: 'Search',
   components: { VueFeather, SearchResults },
   props: {
     open: Boolean
+  },
+  setup () {
+    const { t } = useI18n()
+    return { t }
   },
   data () {
     return {
@@ -72,7 +77,7 @@ export default {
         this.$nextTick(() => {
           this.$refs.field.focus()
         })
-        await this.$store.dispatch('search/loadIndex', this.$t('sourceFile'))
+        await this.$store.dispatch('search/loadIndex', this.t('sourceFile'))
         this.loadingIndex = false
         this.search(this.query)
       } else {
@@ -95,7 +100,7 @@ export default {
         return
       }
 
-      const index = this.$store.state.search.loadedIndices[this.$t('sourceFile')]
+      const index = this.$store.state.search.loadedIndices[this.t('sourceFile')]
       this.searchResults = index.search(query).map(result => result.ref)
 
       if (this.$gtag) {

@@ -69,6 +69,7 @@ import '@/assets/fonts/baskerville.scss'
 import '@/assets/fonts/hebrew.scss'
 import Search from '@/components/search/Search.vue'
 import { mapMutations, mapState } from 'vuex'
+import { useI18n } from 'vue-i18n'
 
 export default {
   name: 'App',
@@ -85,6 +86,10 @@ export default {
     Settings,
     Scrubber,
     Changelog
+  },
+  setup () {
+    const { t } = useI18n()
+    return { t }
   },
   data () {
     return {

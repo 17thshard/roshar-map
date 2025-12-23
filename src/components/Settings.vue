@@ -88,6 +88,7 @@
 <script>
 import VueFeather from 'vue-feather'
 import { mapState } from 'vuex'
+import { useI18n } from 'vue-i18n'
 import tagCategories from '@/store/tags.json'
 import SeparateTimelineOverview from '@/components/SeparateTimelineOverview.vue'
 import CustomScrollbar from '@/components/CustomScrollbar.vue'
@@ -97,6 +98,10 @@ export default {
   components: { VueFeather, SeparateTimelineOverview, CustomScrollbar },
   props: {
     open: Boolean
+  },
+  setup () {
+    const { t } = useI18n()
+    return { t }
   },
   data () {
     return {

@@ -1,5 +1,6 @@
 <script>
 import { h, resolveComponent } from 'vue'
+import { useI18n } from 'vue-i18n'
 import markdown from 'simple-markdown'
 
 const LINK_INSIDE = '(?:\\[[^\\]]*\\]|[^\\[\\]]|\\](?=[^\\[]*\\]))*'
@@ -90,6 +91,10 @@ export default {
       type: Boolean
     }
   },
+  setup () {
+    const { t } = useI18n()
+    return { t }
+  },
   methods: {
     renderNode (node, h, route, RouterLink) {
       switch (node.type) {
@@ -111,8 +116,8 @@ export default {
             [
               h(
                 'span',
-                { class: 'markdown__translator-note-marker', attrs: { title: this.$t('ui.translatorNote.full') } },
-                this.$t('ui.translatorNote.full')
+                { class: 'markdown__translator-note-marker', attrs: { title: this.t('ui.translatorNote.full') } },
+                this.t('ui.translatorNote.full')
               ),
               ...node.content.map(child => this.renderNode(child, h, route, RouterLink))
             ]
@@ -125,8 +130,8 @@ export default {
               '(',
               h(
                 'abbr',
-                { class: 'markdown__inline-translator-note-marker', attrs: { title: this.$t('ui.translatorNote.full') } },
-                this.$t('ui.translatorNote.abbreviation')
+                { class: 'markdown__inline-translator-note-marker', attrs: { title: this.t('ui.translatorNote.full') } },
+                this.t('ui.translatorNote.abbreviation')
               ),
               ' ',
               h('span', { class: 'markdown__inline-translator-note-content' }, node.content.map(child => this.renderNode(child, h, route, RouterLink))),

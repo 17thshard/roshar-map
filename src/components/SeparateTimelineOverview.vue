@@ -45,6 +45,7 @@
 <script>
 import Draggable from '@marshallswain/vuedraggable'
 import VueFeather from 'vue-feather'
+import { useI18n } from 'vue-i18n'
 
 export default {
   name: 'SeparateTimelineOverview',
@@ -54,6 +55,10 @@ export default {
       type: Number,
       required: true
     }
+  },
+  setup () {
+    const { t } = useI18n()
+    return { t }
   },
   data () {
     return {

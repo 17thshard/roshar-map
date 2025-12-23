@@ -118,7 +118,7 @@ The following is a list of all the artists that are either official artists or h
  * [Yen Shu Liao](https://coppermind.net/wiki/Coppermind:Artists/Yen_Shu_Liao)
  * [Zamoraalma](https://www.artstation.com/Zamoraalma)
 
-A very special thanks goes out to Reddit user [Stoneward13](https://www.reddit.com/user/Stoneward13) for letting use and modify his awesome high resolution versions of the Roshar and Shadesmar maps.
+A very special thanks goes out to Reddit user [Stoneward13](https://www.reddit.com/user/Stoneward13) for letting us use and modify his awesome high resolution versions of the Roshar and Shadesmar maps.
 
 We also thank the amazing people at [Cosmere.es](https://cosmere.es/), [The Cosmerenauts](https://coppermind.huijiwiki.com/wiki/%E4%B8%89%E7%95%8C%E5%AE%99%E6%97%85%E8%80%85), and everyone else in our translation Discord server for going through the monumental effort of translating everything to several other languages, and fixing errors in the English text along the way!
 

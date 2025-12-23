@@ -119,6 +119,7 @@
 
 <script>
 import VueFeather from 'vue-feather'
+import { useI18n } from 'vue-i18n'
 import Markdown from '@/components/Markdown.vue'
 import CustomScrollbar from '@/components/CustomScrollbar.vue'
 import availableLanguages from '@/lang/menu.json'
@@ -142,6 +143,10 @@ export default {
   props: {
     open: Boolean
   },
+  setup () {
+    const { t, te } = useI18n()
+    return { t, te }
+  },
   data () {
     return {
       availableLanguages,
@@ -154,7 +159,7 @@ export default {
   },
   computed: {
     logo () {
-      const fileName = this.$t('logo')
+      const fileName = this.t('logo')
       const url = logoUrls[`/src/assets/logos/${fileName}`]
       if (!url) {
         // fallback: return empty; UI will just not show the image
@@ -163,11 +168,11 @@ export default {
       return escapeCssPath(url)
     },
     translatorLogo () {
-      if (!this.$te('meta.translator.url')) {
+      if (!this.te('meta.translator.url')) {
         return undefined
       }
 
-      const fileName = this.$t('meta.translator.logo')
+      const fileName = this.t('meta.translator.logo')
       return logoUrls[`/src/assets/logos/${fileName}`]
     },
     ...mapState(['openedMenu'])
@@ -189,7 +194,7 @@ export default {
       navigator.share({
         url: import.meta.env.VUE_APP_PUBLIC_URL,
         title: document.title,
-        description: this.$t('sharing.global-message')
+        description: this.t('sharing.global-message')
       })
     }
   }
