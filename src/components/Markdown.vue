@@ -95,6 +95,12 @@ export default {
     const { t } = useI18n({ useScope: 'global' })
     return { t }
   },
+  // Beware: this.$route is not available in the editor, so we need to use a fallback
+  computed: {
+    $route () {
+      return this.$root.$route || { params: { locale: 'en-US' } }
+    }
+  },
   methods: {
     renderNode (node, h, route, RouterLink) {
       switch (node.type) {
@@ -192,9 +198,12 @@ export default {
     }
   },
   render () {
-    const RouterLink = resolveComponent('router-link')
-    // Beware: this.$route is not available in the editor, so we need to use a fallback
-    const route = this.$route || { params: { locale: 'en-US' } }
+    // Only try to resolve router-link if the router is actually installed/available
+    // In editor dev mode, app.use(router) is not called, so resolveComponent would warn
+    const hasRouter = !!this.$root.$router || !!this.$root.$options?.router
+    const RouterLink = hasRouter ? resolveComponent('router-link') : 'router-link'
+    const route = this.$route
+
     const parsed = (this.advanced ? advancedParser : parser)(this.content, { inline: this.inline })
     const children = parsed.map(node => this.renderNode(node, h, route, RouterLink))
 
