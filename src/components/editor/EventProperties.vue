@@ -387,10 +387,10 @@ export default {
       this.event[property] = trimmed
     },
     onTagsInput (value) {
-      if (value && value.trim().length > 0) {
+      const text = typeof value === 'string' ? value : ''
+      if (text.trim().length > 0) {
         this.showAllTags = false
-      }
-      if (!value || value.trim() === '') {
+      } else {
         this.showAllTags = true
       }
     }
