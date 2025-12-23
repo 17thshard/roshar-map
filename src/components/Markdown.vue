@@ -139,6 +139,17 @@ export default {
             ]
           )
         case 'internalLink':
+          // This is needed if Markdown.vue is called from editor, which is router-linked but not actually routed, so we need to prevent the default behavior
+          if (typeof RouterLink === 'string') {
+            return h(
+              'a',
+              {
+                href: '#',
+                onClick: (e) => e.preventDefault()
+              },
+              node.content.map(child => this.renderNode(child, h, route, RouterLink))
+            )
+          }
           return h(
             RouterLink,
             {
@@ -182,8 +193,10 @@ export default {
   },
   render () {
     const RouterLink = resolveComponent('router-link')
+    // Beware: this.$route is not available in the editor, so we need to use a fallback
+    const route = this.$route || { params: { locale: 'en-US' } }
     const parsed = (this.advanced ? advancedParser : parser)(this.content, { inline: this.inline })
-    const children = parsed.map(node => this.renderNode(node, h, this.$route, RouterLink))
+    const children = parsed.map(node => this.renderNode(node, h, route, RouterLink))
 
     if (this.$slots.prefix) {
       const prefixSlot = this.$slots.prefix()
