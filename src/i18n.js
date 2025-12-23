@@ -1,19 +1,19 @@
 import { createI18n } from 'vue-i18n'
-import messages from '@generated/lang/en.lang.json'
+import messages from '@generated/lang/en-US.lang.json'
 import store from '@/store'
 
 export const i18n = createI18n({
   legacy: false, // Use Composition API mode (Vue I18n v11+)
   globalInjection: true, // Enable $t, $tc, etc. in templates
   locale: 'en-US',
-  fallbackLocale: 'en',
-  messages: { en: { ...messages, sourceFile: 'en' } },
+  fallbackLocale: 'en-US',
+  messages: { 'en-US': { ...messages, sourceFile: 'en-US' } },
   silentFallbackWarn: true,
   warnHtmlMessage: false
 })
 
-const loadedLanguages = ['en', 'en-US'] // our default language that is preloaded
-const generatedLangModules = import.meta.glob(['/build/generated/lang/*.lang.json', '!/build/generated/lang/en.lang.json'])
+const loadedLanguages = ['en-US'] // our default language that is preloaded
+const generatedLangModules = import.meta.glob(['/build/generated/lang/*.lang.json', '!/build/generated/lang/en-US.lang.json'])
 
 function setI18nLanguage (lang) {
   i18n.global.locale.value = lang

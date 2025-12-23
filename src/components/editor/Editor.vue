@@ -43,7 +43,7 @@
       </div>
       <label for="editor__texture-locale">Texture Locale</label>
       <select id="editor__texture-locale" v-model="textureLocale" @change="resetRenderer">
-        <option v-for="language in ['en', 'es', 'ru', 'tr', 'zh']" :key="language" :value="language">
+        <option v-for="language in ['en-US', 'es-ES', 'ru', 'tr', 'zh']" :key="language" :value="language">
           {{ language }}
         </option>
       </select>
@@ -399,7 +399,7 @@ export default {
   components: { TagProperties, LocationProperties, EventPreview, EventProperties, CharacterProperties, MiscProperties, Draggable },
   data () {
     return {
-      textureLocale: 'en',
+      textureLocale: 'en-US',
       loading: true,
       mode: 'events',
       locations: JSON.parse(JSON.stringify(originalLocations)),

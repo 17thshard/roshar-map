@@ -1,0 +1,2 @@
+# Nohadon's Stairways
+**Nohadon's Stairways** is the equivalent of #[Urithiru](locations/urithiru) in the Cognitive Realm. It is located in the southern portion of the #[Sea of Souls](locations/sea-of-souls). There are ten elevated pillars, corresponding to the ten Oathgates. Each pillar has a long spiraling ramp, leading to the sea of beads below, and the Oathgate's gatekeepers are on the top of the pillars. The tower itself is reflected as mountains of light and colors, very bright, but not casting shadows.
