@@ -257,7 +257,7 @@ export default {
         result.date = formatDate(this.details.date)
       }
 
-      if (this.$te(`${this.baseTranslationKey}.chapter`) || this.$te(`${this.baseTranslationKey}.chapter`, this.$i18n.fallbackLocale)) {
+      if (this.$te(`${this.baseTranslationKey}.chapter`, this.$i18n.fallbackLocale)) {
         result.chapter = this.$t(`${this.baseTranslationKey}.chapter`)
       }
 
@@ -575,7 +575,7 @@ export default {
     align-items: stretch;
     justify-content: stretch;
     min-height: 0;
-    max-height: 100%;
+    height: 100%;
 
     [dir=rtl] & {
       direction: rtl;
@@ -602,6 +602,8 @@ export default {
     width: 500px;
     max-width: 100%;
     padding-bottom: 4rem;
+    min-height: 100%;
+    box-sizing: border-box;
 
     @media (max-width: 1920px) {
       font-size: 14px;
