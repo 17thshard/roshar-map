@@ -405,12 +405,14 @@ export default {
     flex-shrink: 0;
     width: 350px;
     max-width: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
     padding-bottom: 6rem;
     background: #F5ECDA url(../assets/paper.png);
 
     h2 {
-      padding: 0 2rem;
-      margin: 4rem 0 0;
+      padding: 4rem 2rem 0;
+      margin: 0;
     }
   }
 
