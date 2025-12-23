@@ -144,7 +144,7 @@ export default {
     open: Boolean
   },
   setup () {
-    const { t, te } = useI18n()
+    const { t, te } = useI18n({ useScope: 'global' })
     return { t, te }
   },
   data () {

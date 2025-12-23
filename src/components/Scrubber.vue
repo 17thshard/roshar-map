@@ -138,7 +138,7 @@
       </transition>
       <button class="scrubber__separate-timelines-toggle" :title="$t('ui.separate-timelines')" @click="separateVisible = !separateVisible">
         <VueFeather v-if="separateVisible ^ $store.state.flipDirectionalIcons" type="chevron-right" :size="24" />
-        <VueFeather v-else type="chevron-left" :size="24" />
+        <VueFeather v-else type="chevron-left" :size="20" />
       </button>
       <div class="scrubber__separate-timelines-content">
         <h3>{{ $t('ui.separate-timelines') }}</h3>
@@ -151,7 +151,7 @@
       :title="$t('ui.go-to-date.heading')"
       @click="openGoToDate"
     >
-      <VueFeather type="calendar" :size="24" />
+      <VueFeather type="calendar" :size="20" />
     </button>
     <button
       data-tutorial-id="measure-button"
@@ -159,7 +159,7 @@
       :title="$t('ui.measurement.button')"
       @click="toggleMeasurement"
     >
-      <VueFeather type="compass" :size="24" />
+      <VueFeather type="compass" :size="20" />
     </button>
     <transition name="go-to-date">
       <GoToDate v-if="$store.state.goToDateOpen" @submit="scrollToDate" />

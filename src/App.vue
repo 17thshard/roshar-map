@@ -18,7 +18,7 @@
         :class="['app__actions-button', 'app__actions-button--wide', {'app__actions-button--hidden': openedMenu === 'settings'}]"
         @click="openMenu('settings')"
       >
-        <VueFeather type="sliders" :size="24" />
+        <VueFeather type="sliders" :size="20" />
         {{ $t('ui.settings') }}
       </button>
       <button
@@ -27,7 +27,7 @@
         :title="$t('ui.menu')"
         @click="openMenu('info')"
       >
-        <VueFeather type="menu" :size="24" />
+        <VueFeather type="menu" :size="20" />
       </button>
     </div>
     <Info :open="openedMenu === 'info' ? true : undefined" @open-tutorial="openTutorial" @close="closeMenu" />
@@ -88,7 +88,7 @@ export default {
     Changelog
   },
   setup () {
-    const { t } = useI18n()
+    const { t } = useI18n({ useScope: 'global' })
     return { t }
   },
   data () {

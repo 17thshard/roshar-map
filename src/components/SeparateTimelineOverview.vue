@@ -26,15 +26,15 @@
             :title="lockedTag === tag ? $t('ui.unlock-timeline') : $t('ui.lock-timeline')"
             @click="toggleLock(tag)"
           >
-            <VueFeather v-if="lockedTag === tag" type="lock" :size="24" />
-            <VueFeather v-else type="unlock" :size="24" />
+            <VueFeather v-if="lockedTag === tag" type="lock" :size="20" />
+            <VueFeather v-else type="unlock" :size="20" />
           </button>
           <button
             class="separate-timeline-overview__timeline-action"
             :title="$t('ui.stop-display-separately')"
             @click="disableTagSeparation(tag)"
           >
-            <VueFeather type="x" :size="24" />
+            <VueFeather type="x" :size="20" />
           </button>
         </div>
       </li>
@@ -57,7 +57,7 @@ export default {
     }
   },
   setup () {
-    const { t } = useI18n()
+    const { t } = useI18n({ useScope: 'global' })
     return { t }
   },
   data () {

@@ -7,7 +7,7 @@
     @animationend="onAnimationEnd"
   >
     <button :disabled="open" class="search__button" :title="$t('ui.search.title')" @click="$emit('open')">
-      <VueFeather type="search" :size="24" />
+      <VueFeather type="search" :size="20" />
     </button>
     <transition name="search__content">
       <div v-if="open" class="search__content">
@@ -22,7 +22,7 @@
           @focusout="fieldFocused = false"
         >
         <button key="close-button" class="search__button" :title="$t('ui.close')" @click="$emit('close')">
-          <VueFeather type="x" :size="24" />
+          <VueFeather type="x" :size="20" />
         </button>
       </div>
     </transition>
@@ -52,7 +52,7 @@ export default {
     open: Boolean
   },
   setup () {
-    const { t } = useI18n()
+    const { t } = useI18n({ useScope: 'global' })
     return { t }
   },
   data () {

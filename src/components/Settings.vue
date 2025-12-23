@@ -6,7 +6,7 @@
           <h2>{{ $t('ui.settings') }}</h2>
 
           <button class="settings__close" :title="$t('ui.close')" @click="$emit('close')">
-            <VueFeather type="x" :size="24" />
+            <VueFeather type="x" :size="20" />
           </button>
         </div>
 
@@ -101,7 +101,7 @@ export default {
     open: Boolean
   },
   setup () {
-    const { t } = useI18n()
+    const { t } = useI18n({ useScope: 'global' })
     return { t }
   },
   data () {
