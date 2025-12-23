@@ -15,6 +15,7 @@
     "close": "Закрыть",
     "back": "Назад",
     "separate-timelines": "Отдельные временные линии",
+    "add-timeline": "Добавьте временную шкалу, нажав {timeline-icon}, чтобы сравнить.",
     "enable": "Включить",
     "disable": "Выключить",
     "display-separately": "Отображать отдельно",

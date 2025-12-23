@@ -21,6 +21,7 @@
         "close": "Cerrar",
         "back": "Atrás",
         "separate-timelines": "Líneas temporales separadas",
+        "add-timeline": "Añade una línea de tiempo haciendo clic en {timeline-icon} para comparar.",
         "enable": "Activar",
         "disable": "Desactivar",
         "display-separately": "Mostrar por separado",

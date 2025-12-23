@@ -22,6 +22,7 @@
         "close": "关闭",
         "back": "返回",
         "separate-timelines": "单独时间轴",
+        "add-timeline": "点击 {timeline-icon} 添加时间线以进行比较。",
         "enable": "允许",
         "disable": "不允许",
         "display-separately": "单独显示",

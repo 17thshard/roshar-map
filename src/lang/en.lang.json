@@ -15,6 +15,7 @@
         "close": "Close",
         "back": "Back",
         "separate-timelines": "Separate timelines",
+        "add-timeline": "Add a timeline by clicking {timeline-icon} to compare.",
         "enable": "Enable",
         "disable": "Disable",
         "display-separately": "Display separately",

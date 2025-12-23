@@ -69,11 +69,16 @@
             {{ $t('ui.separate-timelines') }}
           </h3>
           <SeparateTimelineOverview :height="separateHeight" />
-          <div v-if="filter.separateTags.length === 0" class="settings__separate-timelines-empty">
-            Add a timeline by clicking
-            <VueFeather type="git-branch" :size="14" />
-            to compare.
-          </div>
+          <i18n-t
+            v-if="filter.separateTags.length === 0"
+            keypath="ui.add-timeline"
+            tag="div"
+            class="settings__separate-timelines-empty"
+          >
+            <template #timeline-icon>
+              <VueFeather type="git-branch" :size="14" />
+            </template>
+          </i18n-t>
         </section>
       </div>
     </transition>
@@ -487,16 +492,14 @@ export default {
     right: 0;
     transform: translateY(-50%);
     text-align: center;
-    color: rgba(72, 45, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.25rem;
+    color: #9e8d6d;
     pointer-events: none;
-    // font-style: italic;
 
     .feather {
-      margin: 0 0.1rem;
+      vertical-align: middle;
+      display: inline-block;
+      position: relative;
+      top: 0.09rem;
     }
   }
 }

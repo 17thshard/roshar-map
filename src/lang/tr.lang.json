@@ -15,6 +15,7 @@
         "about": "Hakkında",
         "layers": "Katmanlar",
         "separate-timelines": "Farklı zaman çizelgeleri",
+        "add-timeline": "Karşılaştırmak için {timeline-icon} simgesine tıklayarak bir zaman çizelgesi ekleyin.",
         "enable": "Onayla",
         "disable": "Reddet",
         "display-separately": "Ayrı olarak görüntüle",
