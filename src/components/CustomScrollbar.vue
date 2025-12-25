@@ -30,6 +30,9 @@ export default {
       return {
         scroll: (instance, event) => {
           this.$emit('scroll', event);
+        },
+        updated: (instance, onUpdatedArgs) => {
+          this.$emit('updated', instance, onUpdatedArgs);
         }
       };
     },
