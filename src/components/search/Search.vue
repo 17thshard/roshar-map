@@ -5,6 +5,7 @@
     :class="['search', { 'search--open': open, 'search--closing': closing }]"
     :style="{ '--left': `${left}px`, '--right': `${right}px` }"
     @animationend="onAnimationEnd"
+    @click="onBackgroundClick"
   >
     <button :disabled="open" class="search__button" :title="$t('ui.search.title')" @click="$emit('open')">
       <VueFeather type="search" :size="20" />
@@ -116,6 +117,11 @@ export default {
     onAnimationEnd (event) {
       if (event.animationName === 'search--closing') {
         this.closing = false
+      }
+    },
+    onBackgroundClick (event) {
+      if (this.open && event.target === event.currentTarget) {
+        this.$emit('close')
       }
     },
     track: debounce((gtag, query) => gtag.event('search', { event_category: 'engagement', search_term: query }))
