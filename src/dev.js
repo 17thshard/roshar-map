@@ -1,10 +1,10 @@
 import { createApp } from 'vue'
 import VueDragscroll from 'vue-dragscroll'
 import { createGtag } from 'vue-gtag'
+import { createPinia } from 'pinia'
 import { i18n } from '@/i18n'
 import Editor from '@/components/editor/Editor.vue'
 import { router } from '@/routes'
-import store from './store'
 import App from './App.vue'
 
 const editor = window.location.hash.includes('editor')
@@ -42,7 +42,7 @@ if (import.meta.env.VUE_APP_GA_ID !== undefined) {
 }
 
 app.use(i18n)
-app.use(store)
+app.use(createPinia())
 if (!editor) {
   app.use(router)
 }

@@ -1,28 +1,30 @@
+import { defineStore } from 'pinia'
+
 const indexModules = import.meta.glob('/build/generated/search-index/*.json')
 const langSupportModules = import.meta.glob('../lang/search/*.js')
 
-export default {
-  namespaced: true,
-  state: () => ({ loadedIndices: {}, loadingIndices: {} }),
-  mutations: {
-    addIndex (state, { lang, index }) {
-      if (state.loadedIndices[lang] !== undefined) {
-        return
-      }
-
-      state.loadedIndices[lang] = index
-    },
-    markInProgress (state, lang) {
-      state.loadingIndices[lang] = true
-    }
-  },
+export const useSearchStore = defineStore('search', {
+  state: () => ({
+    loadedIndices: {},
+    loadingIndices: {}
+  }),
   actions: {
-    async loadIndex ({ state, commit }, lang) {
-      if (state.loadedIndices[lang] !== undefined || state.loadingIndices[lang] === true) {
+    addIndex ({ lang, index }) {
+      if (this.loadedIndices[lang] !== undefined) {
         return
       }
 
-      commit('markInProgress', lang)
+      this.loadedIndices[lang] = index
+    },
+    markInProgress (lang) {
+      this.loadingIndices[lang] = true
+    },
+    async loadIndex (lang) {
+      if (this.loadedIndices[lang] !== undefined || this.loadingIndices[lang] === true) {
+        return
+      }
+
+      this.markInProgress(lang)
 
       const lunr = (await import('lunr')).default
       const stemmerSupport = (await import('lunr-languages/lunr.stemmer.support')).default
@@ -49,7 +51,8 @@ export default {
         }
       }
 
-      commit('addIndex', { lang, index: lunr.Index.load(data) })
+      this.addIndex({ lang, index: lunr.Index.load(data) })
     }
   }
-}
+})
+

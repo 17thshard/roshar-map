@@ -1,11 +1,10 @@
-import { createStore } from 'vuex'
-import baseEvents from '@/store/events.json'
-import baseLocations from '@/store/locations.json'
-import baseCharacters from '@/store/characters.json'
-import baseMisc from '@/store/misc.json'
-import tagCategories from '@/store/tags.json'
+import { defineStore } from 'pinia'
+import baseEvents from '@/stores/events.json'
+import baseLocations from '@/stores/locations.json'
+import baseCharacters from '@/stores/characters.json'
+import baseMisc from '@/stores/misc.json'
+import tagCategories from '@/stores/tags.json'
 import { compareEvents, inverseLerp } from '@/utils'
-import search from '@/store/search'
 
 const DETAIL_CUTOFF_YEAR = 1173
 const TIMELINE_YEAR_DISTANCE = 50
@@ -203,117 +202,8 @@ const locationsByMapId = Object.values(mappings.locations).filter(location => lo
   return acc
 }, {})
 
-const mutations = {
-  selectEvent (state, event) {
-    state.activeEvent = event
-    window.localStorage.setItem('activeEvent', state.activeEvent.id)
-  },
-  unselectEvent (state) {
-    state.activeEvent = null
-    window.localStorage.setItem('activeEvent', '')
-  },
-  updateFilter (state, filter) {
-    state.filter = filter
-  },
-  enableTag (state, tag) {
-    const index = state.filter.tags.indexOf(tag)
-
-    if (index !== -1) {
-      state.filter.tags.splice(index, 1)
-    }
-
-    mutations.disableTagSeparation(state, tag)
-    window.localStorage.setItem('filter', JSON.stringify(state.filter))
-  },
-  disableTag (state, tag) {
-    if (!state.filter.tags.includes(tag)) {
-      state.filter.tags.push(tag)
-    }
-
-    mutations.disableTagSeparation(state, tag)
-    window.localStorage.setItem('filter', JSON.stringify(state.filter))
-  },
-  enableTagSeparation (state, tag) {
-    mutations.enableTag(state, tag)
-
-    if (!state.filter.separateTags.includes(tag)) {
-      state.filter.separateTags.push(tag)
-    }
-
-    state.filter.latestSeparatedTag = tag
-    window.localStorage.setItem('filter', JSON.stringify(state.filter))
-  },
-  disableTagSeparation (state, tag) {
-    const index = state.filter.separateTags.indexOf(tag)
-
-    if (index !== -1) {
-      state.filter.separateTags.splice(index, 1)
-    }
-
-    state.filter.latestSeparatedTag = null
-
-    if (state.filter.lockedTag === tag) {
-      mutations.unlockTag(state)
-    }
-  },
-  updateSeparateTags (state, tags) {
-    state.filter.separateTags = tags
-  },
-  toggleLayer (state, { layer, value }) {
-    state.layersActive[layer] = value
-    window.localStorage.setItem('layersActive', JSON.stringify(state.layersActive))
-  },
-  openCalendarGuide (state) {
-    state.calendarGuideOpen = true
-  },
-  closeCalendarGuide (state) {
-    state.calendarGuideOpen = false
-  },
-  openGoToDate (state) {
-    state.goToDateOpen = true
-  },
-  closeGoToDate (state) {
-    state.goToDateOpen = false
-  },
-  openMenu (state, name) {
-    state.openedMenu = name
-  },
-  closeMenu (state) {
-    state.openedMenu = null
-  },
-  lockTag (state, tag) {
-    state.filter.lockedTag = tag
-  },
-  unlockTag (state) {
-    state.filter.lockedTag = null
-  },
-  setTextDirection (state, direction) {
-    state.flipTimeline = direction === 'rtl'
-    state.flipDirectionalIcons = direction === 'rtl'
-  },
-  toggleMeasurement (state) {
-    state.measurementActive = !state.measurementActive
-  }
-}
-
-const getters = {
-  isIncludedInNavigation (state) {
-    return (event) => {
-      return !getters.isDisabled(state)(event) && (state.filter.lockedTag === null || (event.tags !== undefined && event.tags.includes(state.filter.lockedTag)))
-    }
-  },
-  isDisabled (state) {
-    return (event) => {
-      return state.filter.tags.some(t => event.tags !== undefined && event.tags.includes(t))
-    }
-  }
-}
-
-export default createStore({
-  modules: {
-    search
-  },
-  state: {
+export const useMainStore = defineStore('main', {
+  state: () => ({
     events,
     years,
     locationsByMapId,
@@ -337,7 +227,110 @@ export default createStore({
     flipTimeline: false,
     flipDirectionalIcons: false,
     measurementActive: false
+  }),
+  getters: {
+    isIncludedInNavigation (state) {
+      return (event) => {
+        return !this.isDisabled(event) && (state.filter.lockedTag === null || (event.tags !== undefined && event.tags.includes(state.filter.lockedTag)))
+      }
+    },
+    isDisabled (state) {
+      return (event) => {
+        return state.filter.tags.some(t => event.tags !== undefined && event.tags.includes(t))
+      }
+    }
   },
-  mutations,
-  getters
+  actions: {
+    selectEvent (event) {
+      this.activeEvent = event
+      window.localStorage.setItem('activeEvent', this.activeEvent.id)
+    },
+    unselectEvent () {
+      this.activeEvent = null
+      window.localStorage.setItem('activeEvent', '')
+    },
+    updateFilter (filter) {
+      this.filter = filter
+    },
+    enableTag (tag) {
+      const index = this.filter.tags.indexOf(tag)
+
+      if (index !== -1) {
+        this.filter.tags.splice(index, 1)
+      }
+
+      this.disableTagSeparation(tag)
+      window.localStorage.setItem('filter', JSON.stringify(this.filter))
+    },
+    disableTag (tag) {
+      if (!this.filter.tags.includes(tag)) {
+        this.filter.tags.push(tag)
+      }
+
+      this.disableTagSeparation(tag)
+      window.localStorage.setItem('filter', JSON.stringify(this.filter))
+    },
+    enableTagSeparation (tag) {
+      this.enableTag(tag)
+
+      if (!this.filter.separateTags.includes(tag)) {
+        this.filter.separateTags.push(tag)
+      }
+
+      this.filter.latestSeparatedTag = tag
+      window.localStorage.setItem('filter', JSON.stringify(this.filter))
+    },
+    disableTagSeparation (tag) {
+      const index = this.filter.separateTags.indexOf(tag)
+
+      if (index !== -1) {
+        this.filter.separateTags.splice(index, 1)
+      }
+
+      this.filter.latestSeparatedTag = null
+
+      if (this.filter.lockedTag === tag) {
+        this.unlockTag()
+      }
+    },
+    updateSeparateTags (tags) {
+      this.filter.separateTags = tags
+    },
+    toggleLayer ({ layer, value }) {
+      this.layersActive[layer] = value
+      window.localStorage.setItem('layersActive', JSON.stringify(this.layersActive))
+    },
+    openCalendarGuide () {
+      this.calendarGuideOpen = true
+    },
+    closeCalendarGuide () {
+      this.calendarGuideOpen = false
+    },
+    openGoToDate () {
+      this.goToDateOpen = true
+    },
+    closeGoToDate () {
+      this.goToDateOpen = false
+    },
+    openMenu (name) {
+      this.openedMenu = name
+    },
+    closeMenu () {
+      this.openedMenu = null
+    },
+    lockTag (tag) {
+      this.filter.lockedTag = tag
+    },
+    unlockTag () {
+      this.filter.lockedTag = null
+    },
+    setTextDirection (direction) {
+      this.flipTimeline = direction === 'rtl'
+      this.flipDirectionalIcons = direction === 'rtl'
+    },
+    toggleMeasurement () {
+      this.measurementActive = !this.measurementActive
+    }
+  }
 })
+

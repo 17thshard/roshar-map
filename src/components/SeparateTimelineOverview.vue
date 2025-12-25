@@ -18,7 +18,7 @@
         ]"
       >
         <span class="separate-timeline-overview__timeline-drag-handle" />
-        <span class="separate-timeline-overview__timeline-icon" :style="{ background: $store.state.mappings.tags[tag].color }" />
+        <span class="separate-timeline-overview__timeline-icon" :style="{ background: store.mappings.tags[tag].color }" />
         {{ $t(`tags.${tag}`) }}
         <div class="separate-timeline-overview__timeline-actions">
           <button
@@ -46,6 +46,7 @@
 import Draggable from '@marshallswain/vuedraggable'
 import VueFeather from 'vue-feather'
 import { useI18n } from 'vue-i18n'
+import { useMainStore } from '@/stores/main'
 
 export default {
   name: 'SeparateTimelineOverview',
@@ -58,7 +59,8 @@ export default {
   },
   setup () {
     const { t } = useI18n({ useScope: 'global' })
-    return { t }
+    const store = useMainStore()
+    return { t, store }
   },
   data () {
     return {
@@ -68,26 +70,26 @@ export default {
   computed: {
     separateTags: {
       get () {
-        return this.$store.state.filter.separateTags
+        return this.store.filter.separateTags
       },
       set (value) {
-        this.$store.commit('updateSeparateTags', value)
+        this.store.updateSeparateTags(value)
       }
     },
     lockedTag () {
-      return this.$store.state.filter.lockedTag
+      return this.store.filter.lockedTag
     }
   },
   methods: {
     toggleLock (tag) {
       if (this.lockedTag === tag) {
-        this.$store.commit('unlockTag')
+        this.store.unlockTag()
       } else {
-        this.$store.commit('lockTag', tag)
+        this.store.lockTag(tag)
       }
     },
     disableTagSeparation (tag) {
-      this.$store.commit('disableTagSeparation', tag)
+      this.store.disableTagSeparation(tag)
     }
   }
 }

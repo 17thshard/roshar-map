@@ -31,6 +31,7 @@
 
 <script>
 import { getEntryImageSrcSet } from '@/utils.js'
+import { useMainStore } from '@/stores/main'
 
 export default {
   name: 'SearchResult',
@@ -40,10 +41,14 @@ export default {
       required: true
     }
   },
+  setup () {
+    const store = useMainStore()
+    return { store }
+  },
   computed: {
     details () {
       const [type, id] = this.entry.split('/', 2)
-      return this.$store.state.mappings[type][id]
+      return this.store.mappings[type][id]
     },
     baseTranslationKey () {
       return `${this.details.type}.${this.details.id}`

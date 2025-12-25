@@ -32,7 +32,7 @@
             <li v-if="metadata.date">
               <VueFeather type="calendar" :aria-label="$t(`ui.date`)" class="details__metadata-icon" :size="16" />
               {{ metadata.date }}
-              <button class="details__date-help" :title="$t('ui.date-help')" @click="$store.commit('openCalendarGuide')">
+              <button class="details__date-help" :title="$t('ui.date-help')" @click="store.openCalendarGuide()">
                 <VueFeather type="help-circle" :size="16" />
               </button>
             </li>
@@ -177,6 +177,7 @@ import facebookLogo from '@/assets/logos/facebook.svg'
 import redditLogo from '@/assets/logos/reddit.svg'
 import tumblrLogo from '@/assets/logos/tumblr.svg'
 import shareLogo from '@/assets/logos/share-svgrepo-com.svg'
+import { useMainStore } from '@/stores/main'
 
 export default {
   name: 'Details',
@@ -184,6 +185,10 @@ export default {
     VueFeather,
     Markdown,
     CustomScrollbar
+  },
+  setup () {
+    const store = useMainStore()
+    return { store }
   },
   props: {
     details: {
@@ -289,7 +294,7 @@ export default {
 
       const result = this.details.related.map((link) => {
         const [type, id] = link.split('/', 2)
-        const linkDetails = this.$store.state.mappings[type][id]
+        const linkDetails = this.store.mappings[type][id]
 
         if (linkDetails === undefined) {
           return {

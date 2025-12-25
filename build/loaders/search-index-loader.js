@@ -78,7 +78,7 @@ module.exports = function (source) {
   const load = async (key) => {
     const path = await new Promise((resolve, reject) => this.resolve(
       this.rootContext,
-      `@/store/${key}.json`,
+      `@/stores/${key}.json`,
       (error, result) => error !== null ? reject(error) : resolve(result)
     ))
     this.addDependency(path)

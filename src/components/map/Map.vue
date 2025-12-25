@@ -13,7 +13,7 @@
         v-if="measurementActive && measurementResult !== null"
         :measurement="measurementResult"
         class="map__measurement-result"
-        @close="$store.commit('toggleMeasurement')"
+        @close="store.toggleMeasurement()"
       />
     </transition>
   </div>
@@ -38,7 +38,7 @@ import {
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
 import { markRaw } from 'vue'
-import { mapState } from 'vuex'
+import { useMainStore } from '@/stores/main'
 import MapControls from '@/components/map/MapControls'
 import Highlight from '@/components/map/layers/Highlight'
 import fragmentShader from '@/components/map/mapFragmentShader'
@@ -63,6 +63,10 @@ export default {
       type: Boolean
     }
   },
+  setup () {
+    const store = useMainStore()
+    return { store }
+  },
   data () {
     return {
       textHoverProgress: 0,
@@ -80,12 +84,17 @@ export default {
     }
   },
   computed: {
-    ...mapState(['layersActive', 'measurementActive']),
+    layersActive () {
+      return this.store.layersActive
+    },
+    measurementActive () {
+      return this.store.measurementActive
+    },
     activeLocation () {
-      return this.transitions && this.$route.name === 'locations' ? this.$store.state.mappings.locations[this.$route.params.id] : null
+      return this.transitions && this.$route.name === 'locations' ? this.store.mappings.locations[this.$route.params.id] : null
     },
     activeEvent () {
-      return this.transitions ? this.$store.state.activeEvent : null
+      return this.transitions ? this.store.activeEvent : null
     }
   },
   watch: {
@@ -215,12 +224,12 @@ export default {
         const location = this.queryHover(position.x, position.y)
 
         if (location !== null && (this.activeLocation === null || location !== this.activeLocation.mapId)) {
-          this.$router.push(`/${this.$route.params.locale}/locations/${this.$store.state.locationsByMapId[location].id}`)
+          this.$router.push(`/${this.$route.params.locale}/locations/${this.store.locationsByMapId[location].id}`)
         } else if (location === null) {
           if (this.$route.name !== 'root') {
             this.$router.push(`/${this.$route.params.locale}`)
           } else {
-            this.$store.commit('unselectEvent')
+            this.store.unselectEvent()
           }
         }
       })
@@ -239,7 +248,7 @@ export default {
 
       this.highlights = new Group()
 
-      const [cityDots, shadesmarCityDots] = Object.values(this.$store.state.mappings.locations)
+      const [cityDots, shadesmarCityDots] = Object.values(this.store.mappings.locations)
         .filter(l => l.cityDot)
         .reduce(
           (result, l) => {

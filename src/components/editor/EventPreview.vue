@@ -2,7 +2,7 @@
   <div
     :class="[
       'event-preview',
-      { 'event-preview--image': event.image !== undefined, 'event-preview--details-visible': $store.state.details !== null }
+      { 'event-preview--image': event.image !== undefined, 'event-preview--details-visible': store.details !== null }
     ]"
   >
     <div class="event-preview__content">
@@ -24,10 +24,15 @@
 <script>
 import Markdown from '@/components/Markdown.vue'
 import { getEntryImageSrcSet } from '@/utils'
+import { useMainStore } from '@/stores/main'
 
 export default {
   name: 'EventPreview',
   components: { Markdown },
+  setup () {
+    const store = useMainStore()
+    return { store }
+  },
   props: {
     event: {
       type: Object,

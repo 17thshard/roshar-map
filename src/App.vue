@@ -33,7 +33,7 @@
     <Info :open="openedMenu === 'info' ? true : undefined" @open-tutorial="openTutorial" @close="closeMenu" />
     <Settings :open="openedMenu === 'settings' ? true : undefined" @close="closeMenu" />
     <transition name="calendar-guide">
-      <CalendarGuide v-if="$store.state.calendarGuideOpen" />
+      <CalendarGuide v-if="store.calendarGuideOpen" />
     </transition>
     <transition name="first-visit-window" appear>
       <FirstVisitWindow v-if="ready && firstVisit" @open-tutorial="openTutorial" @close="firstVisit = false" />
@@ -68,7 +68,8 @@ import Changelog, { VERSION as CHANGELOG_VERSION } from '@/components/Changelog.
 import '@/assets/fonts/baskerville.scss'
 import '@/assets/fonts/hebrew.scss'
 import Search from '@/components/search/Search.vue'
-import { mapMutations, mapState } from 'vuex'
+import { mapActions, mapState } from 'pinia'
+import { useMainStore } from '@/stores/main'
 import { useI18n } from 'vue-i18n'
 
 export default {
@@ -89,7 +90,8 @@ export default {
   },
   setup () {
     const { t } = useI18n({ useScope: 'global' })
-    return { t }
+    const store = useMainStore()
+    return { t, store }
   },
   data () {
     return {
@@ -104,20 +106,20 @@ export default {
   computed: {
     details () {
       if (this.mapTransitions && this.$route.meta.details) {
-        const entry = this.$store.state.mappings[this.$route.name][this.$route.params.id]
+        const entry = this.store.mappings[this.$route.name][this.$route.params.id]
 
         return entry !== undefined ? entry : null
       }
 
       return null
     },
-    ...mapState(['openedMenu']),
+    ...mapState(useMainStore, ['openedMenu']),
     sidebarActive () {
       return this.openedMenu === 'settings' || this.openedMenu === 'info'
     }
   },
   watch: {
-    '$store.state.activeEvent' (newEvent) {
+    'store.activeEvent' (newEvent) {
       if (newEvent === null || this.$route.name === 'root') {
         return
       }
@@ -134,9 +136,9 @@ export default {
       }
 
       if (newDetails.type === 'events') {
-        this.$store.commit('selectEvent', newDetails)
+        this.store.selectEvent(newDetails)
       } else {
-        this.$store.commit('unselectEvent')
+        this.store.unselectEvent()
       }
     }
   },
@@ -145,16 +147,16 @@ export default {
       this.ready = true
 
       if (window.localStorage.getItem('activeEvent')) {
-        this.$store.commit('selectEvent', this.$store.state.mappings.events[localStorage.getItem('activeEvent')])
+        this.store.selectEvent(this.store.mappings.events[localStorage.getItem('activeEvent')])
       }
       if (window.localStorage.getItem('layersActive')) {
         const layersActive = JSON.parse(localStorage.getItem('layersActive'))
         Object.entries(layersActive).forEach(([layer, value]) => {
-          this.$store.commit('toggleLayer', { layer, value })
+          this.store.toggleLayer({ layer, value })
         })
       }
       if (window.localStorage.getItem('filter')) {
-        this.$store.commit('updateFilter', JSON.parse(localStorage.getItem('filter')))
+        this.store.updateFilter(JSON.parse(localStorage.getItem('filter')))
       }
 
       if (this.$gtag) {
@@ -186,7 +188,7 @@ export default {
 
       this.tutorialActive = true
     },
-    ...mapMutations(['openMenu', 'closeMenu'])
+    ...mapActions(useMainStore, ['openMenu', 'closeMenu'])
   }
 }
 </script>

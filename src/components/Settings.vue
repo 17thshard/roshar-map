@@ -20,7 +20,7 @@
               {{ $t('ui.layers') }}
             </h3>
             <label
-              v-for="(layerActive, layer) in $store.state.layersActive"
+              v-for="(layerActive, layer) in store.layersActive"
               :key="layer"
               :for="`settings__layer--${layer}`"
               class="settings__layer"
@@ -29,7 +29,7 @@
                 :id="`settings__layer--${layer}`"
                 type="checkbox"
                 :checked="layerActive"
-                @input="$store.commit('toggleLayer', { layer, value: $event.target.checked })"
+                @input="store.toggleLayer({ layer, value: $event.target.checked })"
               >
               <span :class="['settings__layer-check', { 'settings__layer-check--temporary': isLayerEnabledTemporarily(layer) }]" />
               {{ $t(`layers.${layer}`) }}
@@ -88,9 +88,10 @@
 
 <script>
 import VueFeather from 'vue-feather'
-import { mapState } from 'vuex'
+import { mapState } from 'pinia'
+import { useMainStore } from '@/stores/main'
 import { useI18n } from 'vue-i18n'
-import tagCategories from '@/store/tags.json'
+import tagCategories from '@/stores/tags.json'
 import SeparateTimelineOverview from '@/components/SeparateTimelineOverview.vue'
 import CustomScrollbar from '@/components/CustomScrollbar.vue'
 
@@ -102,7 +103,8 @@ export default {
   },
   setup () {
     const { t } = useI18n({ useScope: 'global' })
-    return { t }
+    const store = useMainStore()
+    return { t, store }
   },
   data () {
     return {
@@ -111,7 +113,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['events', 'filter', 'openedMenu']),
+    ...mapState(useMainStore, ['events', 'filter', 'openedMenu']),
     separateHeight () {
       return Math.max(92, (this.filter.separateTags.length + 1) * 24 + 64)
     }
@@ -135,19 +137,19 @@ export default {
       return this.filter.tags.includes(tag) ? 'disabled' : 'enabled'
     },
     enableTag (tag) {
-      this.$store.commit('enableTag', tag)
+      this.store.enableTag(tag)
     },
     disableTag (tag) {
-      this.$store.commit('disableTag', tag)
+      this.store.disableTag(tag)
     },
     enableTagSeparation (tag) {
-      this.$store.commit('enableTagSeparation', tag)
+      this.store.enableTagSeparation(tag)
       if (this.$gtag) {
         this.$gtag.event('settings_separate', { event_category: 'engagement', event_label: tag })
       }
     },
     isLayerEnabledTemporarily (layer) {
-      const activeEvent = this.$store.state.activeEvent
+      const activeEvent = this.store.activeEvent
       if (activeEvent !== null) {
         if (layer === 'shadesmar') {
           return activeEvent.shadesmar === true
@@ -157,7 +159,7 @@ export default {
       }
 
       if (this.$route.name === 'locations') {
-        const activeLocation = this.$store.state.mappings.locations[this.$route.params.id]
+        const activeLocation = this.store.mappings.locations[this.$route.params.id]
 
         return layer === 'shadesmar' && activeLocation.shadesmar === true
       }
