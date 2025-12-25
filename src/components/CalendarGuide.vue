@@ -18,7 +18,7 @@
       />
       <nav class="calendar-guide__navigation">
         <button class="calendar-guide__button calendar-guide__button--prev" :title="$t('ui.previous')" @click="prevStep">
-          <VueFeather v-if="$store.state.flipDirectionalIcons" type="chevron-right" :size="24" :stroke-width="3" />
+          <VueFeather v-if="store.flipDirectionalIcons" type="chevron-right" :size="24" :stroke-width="3" />
           <VueFeather v-else type="chevron-left" :size="24" :stroke-width="3" />
         </button>
         <ul class="calendar-guide__dots">
@@ -31,7 +31,7 @@
           />
         </ul>
         <button class="calendar-guide__button calendar-guide__button--next" :title="$t('ui.next')" @click="nextStep">
-          <VueFeather v-if="$store.state.flipDirectionalIcons" type="chevron-left" :size="24" :stroke-width="3" />
+          <VueFeather v-if="store.flipDirectionalIcons" type="chevron-left" :size="24" :stroke-width="3" />
           <VueFeather v-else type="chevron-right" :size="24" :stroke-width="3" />
         </button>
       </nav>
@@ -44,12 +44,17 @@ import VueFeather from 'vue-feather'
 import Calendar from '@/components/Calendar.vue'
 import Markdown from '@/components/Markdown.vue'
 import { formatDate } from '@/utils'
+import { useMainStore } from '@/stores/main'
 
 const STEPS = ['start', 'day', 'week', 'month', 'year', 'date']
 
 export default {
   name: 'CalendarGuide',
   components: { VueFeather, Markdown, Calendar },
+  setup () {
+    const store = useMainStore()
+    return { store }
+  },
   data () {
     return {
       step: 'start',
@@ -96,7 +101,7 @@ export default {
       }
     },
     close () {
-      this.$store.commit('closeCalendarGuide')
+      this.store.closeCalendarGuide()
     },
     prevStep () {
       this.step = STEPS[Math.max(this.stepIndex - 1, 0)]

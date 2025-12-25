@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { i18n, loadLanguageAsync } from '@/i18n'
-import store from '@/store'
+import { useMainStore } from '@/stores/main'
 import Map from '@/components/map/Map.vue'
 
 const EmptyComponent = {
@@ -10,19 +10,19 @@ const EmptyComponent = {
 const detailRoutes = [
   {
     name: 'events',
-    specialAction: event => store.commit('selectEvent', event)
+    specialAction: event => useMainStore().selectEvent(event)
   },
   {
     name: 'locations',
-    specialAction: () => store.commit('unselectEvent')
+    specialAction: () => useMainStore().unselectEvent()
   },
   {
     name: 'characters',
-    specialAction: () => store.commit('unselectEvent')
+    specialAction: () => useMainStore().unselectEvent()
   },
   {
     name: 'misc',
-    specialAction: () => store.commit('unselectEvent')
+    specialAction: () => useMainStore().unselectEvent()
   }
 ]
 
@@ -41,7 +41,8 @@ const router = createRouter({
           details: true
         },
         beforeEnter (to, from, next) {
-          const entry = store.state.mappings[name][to.params.id]
+          const store = useMainStore()
+          const entry = store.mappings[name][to.params.id]
 
           if (to.params.id === undefined || entry === undefined) {
             next(false)

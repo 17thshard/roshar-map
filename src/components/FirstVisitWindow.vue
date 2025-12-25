@@ -28,16 +28,22 @@
 <script>
 import VueFeather from 'vue-feather'
 import Markdown from '@/components/Markdown.vue'
+import { useMainStore } from '@/stores/main'
+
 export default {
   name: 'FirstVisitWindow',
   components: { Markdown, VueFeather },
+  setup () {
+    const store = useMainStore()
+    return { store }
+  },
   methods: {
     dismiss () {
       window.localStorage.tutorialDone = 'true'
       this.$emit('close')
     },
     explainDates () {
-      this.$store.commit('openCalendarGuide')
+      this.store.openCalendarGuide()
       if (this.$gtag) {
         this.$gtag.event('first_visit_done', { event_category: 'engagement', event_label: 'calendar_guide' })
         this.$gtag.pageview({ page_title: 'Calendar Guide', page_path: '/calendar-guide', page_location: '' })

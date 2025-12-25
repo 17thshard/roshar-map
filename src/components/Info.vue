@@ -4,7 +4,7 @@
       <div v-if="open" class="info__wrapper">
         <div :class="['info__bar', { 'info__bar--opaque': scrolled[subPage === null ? 'root' : subPage] === true }]">
           <button :class="['info__back', { 'info__back--active': subPage !== null }]" :title="$t('ui.back')" @click="subPage = null">
-            <VueFeather v-if="$store.state.flipDirectionalIcons" type="chevron-right" />
+            <VueFeather v-if="store.flipDirectionalIcons" type="chevron-right" />
             <VueFeather v-else type="chevron-left" />
           </button>
           <button :class="['info__close', { 'info__close--dark': subPage !== null }]" :title="$t('ui.close')" @click="$emit('close')">
@@ -125,7 +125,8 @@ import CustomScrollbar from '@/components/CustomScrollbar.vue'
 import availableLanguages from '@/lang/menu.json'
 import creditsHtml from '@generated/credits.js'
 import { escapeCssPath } from '@/utils'
-import { mapState } from 'vuex'
+import { mapState } from 'pinia'
+import { useMainStore } from '@/stores/main'
 
 const logoUrls = import.meta.glob('/src/assets/logos/*', {
   eager: true,
@@ -145,7 +146,8 @@ export default {
   },
   setup () {
     const { t, te } = useI18n({ useScope: 'global' })
-    return { t, te }
+    const store = useMainStore()
+    return { t, te, store }
   },
   data () {
     return {
@@ -175,7 +177,7 @@ export default {
       const fileName = this.t('meta.translator.logo')
       return logoUrls[`/src/assets/logos/${fileName}`]
     },
-    ...mapState(['openedMenu'])
+    ...mapState(useMainStore, ['openedMenu'])
   },
   watch: {
     active (value) {

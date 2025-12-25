@@ -64,7 +64,7 @@
           <div class="go-to-date__field-focus" />
         </div>
         <button type="submit">
-          <VueFeather v-if="$store.state.flipDirectionalIcons" type="arrow-left" />
+          <VueFeather v-if="store.flipDirectionalIcons" type="arrow-left" />
           <VueFeather v-else type="arrow-right" />
         </button>
       </section>
@@ -77,10 +77,15 @@
 
 <script>
 import VueFeather from 'vue-feather'
+import { useMainStore } from '@/stores/main'
 
 export default {
   name: 'GoToDate',
   components: { VueFeather },
+  setup () {
+    const store = useMainStore()
+    return { store }
+  },
   data () {
     return {
       year: null,
@@ -104,7 +109,7 @@ export default {
       }
     },
     close () {
-      this.$store.commit('closeGoToDate')
+      this.store.closeGoToDate()
     },
     submit () {
       const year = this.parseValue(this.year)

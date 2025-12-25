@@ -39,7 +39,8 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState } from 'pinia'
+import { useMainStore } from '@/stores/main'
 import { createPopper } from '@popperjs/core/lib/popper-lite'
 import preventOverflow from '@popperjs/core/lib/modifiers/preventOverflow'
 import flip from '@popperjs/core/lib/modifiers/flip'
@@ -50,6 +51,10 @@ import VueFeather from 'vue-feather'
 export default {
   name: 'Tutorial',
   components: { Markdown, VueFeather },
+  setup () {
+    const store = useMainStore()
+    return { store }
+  },
   data () {
     return {
       markers: {
@@ -133,8 +138,8 @@ export default {
     }
   },
   computed: {
-    ...mapState(['openedMenu']),
-    ...mapState({ eventActive: state => state.activeEvent !== null })
+    ...mapState(useMainStore, ['openedMenu']),
+    ...mapState(useMainStore, { eventActive: state => state.activeEvent !== null })
   },
   watch: {
     activeMarker (value) {
@@ -242,7 +247,7 @@ export default {
       }
     },
     explainDates () {
-      this.$store.commit('openCalendarGuide')
+      this.store.openCalendarGuide()
       if (this.$gtag) {
         this.$gtag.pageview({ page_title: 'Calendar Guide', page_path: '/calendar-guide', page_location: '' })
       }

@@ -173,7 +173,7 @@ function generateCredits(rootDir) {
 }
 
 function loadStoreMap(rootDir, key) {
-  const filePath = path.join(rootDir, 'src', 'store', `${key}.json`)
+  const filePath = path.join(rootDir, 'src', 'stores', `${key}.json`)
   const list = JSON.parse(fs.readFileSync(filePath, 'utf8'))
   return list.reduce((acc, entry) => {
     acc[entry.id] = entry
@@ -313,7 +313,7 @@ export function generatedAssetsPlugin() {
       const watchTargets = [
         path.join(rootDir, 'src', 'lang'),
         path.join(rootDir, 'translations'),
-        path.join(rootDir, 'src', 'store'),
+        path.join(rootDir, 'src', 'stores'),
         path.join(rootDir, 'README.md'),
         path.join(rootDir, 'build', 'loaders', 'parse-markdown-sections.js'),
       ]
@@ -328,7 +328,7 @@ export function generatedAssetsPlugin() {
           queue(new Set(['credits']), server)
           return
         }
-        if (normalized.includes('/src/store/') && normalized.endsWith('.json')) {
+        if (normalized.includes('/src/stores/') && normalized.endsWith('.json')) {
           queue(new Set(['search']), server)
           return
         }

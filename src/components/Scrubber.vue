@@ -17,10 +17,10 @@
     </transition>
     <transition name="scrubber__jump">
       <button
-        v-if="leftOverflowVisible && (!$store.state.flipTimeline || filter.separateTags.length === 0)"
+        v-if="leftOverflowVisible && (!store.flipTimeline || filter.separateTags.length === 0)"
         class="scrubber__jump scrubber__jump--left"
-        :title="$store.state.flipTimeline ? $t('ui.jump-to-end') : $t('ui.jump-to-start')"
-        @click="$store.state.flipTimeline ? jumpToEnd() : jumpToStart()"
+        :title="store.flipTimeline ? $t('ui.jump-to-end') : $t('ui.jump-to-start')"
+        @click="store.flipTimeline ? jumpToEnd() : jumpToStart()"
       >
         <VueFeather type="chevrons-left" />
       </button>
@@ -28,7 +28,7 @@
     <div class="scrubber__bar">
       <div class="scrubber__indicator">
         <div class="scrubber__indicator-actions">
-          <template v-if="this.$store.state.flipTimeline">
+          <template v-if="this.store.flipTimeline">
             <button
               class="scrubber__indicator-button scrubber__indicator-button--left"
               :title="$t('ui.next-event')"
@@ -112,10 +112,10 @@
     </div>
     <transition name="scrubber__jump">
       <button
-        v-if="rightOverflowVisible && (filter.separateTags.length === 0 || $store.state.flipTimeline)"
+        v-if="rightOverflowVisible && (filter.separateTags.length === 0 || store.flipTimeline)"
         class="scrubber__jump scrubber__jump--right"
-        :title="$store.state.flipTimeline ? $t('ui.jump-to-start') : $t('ui.jump-to-end')"
-        @click="$store.state.flipTimeline ? jumpToStart() : jumpToEnd()"
+        :title="store.flipTimeline ? $t('ui.jump-to-start') : $t('ui.jump-to-end')"
+        @click="store.flipTimeline ? jumpToStart() : jumpToEnd()"
       >
         <VueFeather type="chevrons-right" />
       </button>
@@ -126,17 +126,17 @@
     >
       <transition name="scrubber__jump">
         <button
-          v-if="(!$store.state.flipTimeline && rightOverflowVisible) || ($store.state.flipTimeline && leftOverflowVisible)"
+          v-if="(!store.flipTimeline && rightOverflowVisible) || (store.flipTimeline && leftOverflowVisible)"
           class="scrubber__jump scrubber__jump--separated"
           :title="$t('ui.jump-to-end')"
           @click="jumpToEnd"
         >
-          <VueFeather v-if="$store.state.flipTimeline" type="chevrons-left" />
+          <VueFeather v-if="store.flipTimeline" type="chevrons-left" />
           <VueFeather v-else type="chevrons-right" />
         </button>
       </transition>
       <button class="scrubber__separate-timelines-toggle" :title="$t('ui.separate-timelines')" @click="separateVisible = !separateVisible">
-        <VueFeather v-if="separateVisible ^ $store.state.flipDirectionalIcons" type="chevron-right" :size="24" />
+        <VueFeather v-if="separateVisible ^ store.flipDirectionalIcons" type="chevron-right" :size="24" />
         <VueFeather v-else type="chevron-left" :size="20" />
       </button>
       <div class="scrubber__separate-timelines-content">
@@ -154,20 +154,21 @@
     </button>
     <button
       data-tutorial-id="measure-button"
-      :class="['scrubber__button', 'scrubber__button--measure', { 'scrubber__button--measure-active': $store.state.measurementActive }]"
+      :class="['scrubber__button', 'scrubber__button--measure', { 'scrubber__button--measure-active': store.measurementActive }]"
       :title="$t('ui.measurement.button')"
       @click="toggleMeasurement"
     >
       <VueFeather type="compass" :size="20" />
     </button>
     <transition name="go-to-date">
-      <GoToDate v-if="$store.state.goToDateOpen" @submit="scrollToDate" />
+      <GoToDate v-if="store.goToDateOpen" @submit="scrollToDate" />
     </transition>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState } from 'pinia'
+import { useMainStore } from '@/stores/main'
 import VueFeather from 'vue-feather'
 import Timeline from '@/components/Timeline.vue'
 import EventCard from '@/components/EventCard.vue'
@@ -185,6 +186,10 @@ export default {
     EventCard,
     Timeline
   },
+  setup () {
+    const store = useMainStore()
+    return { store }
+  },
   data () {
     return {
       timelineWidth: 0,
@@ -196,7 +201,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['events', 'filter', 'activeEvent', 'years']),
+    ...mapState(useMainStore, ['events', 'filter', 'activeEvent', 'years']),
     contentHeight () {
       return Math.max(92, Object.keys(this.timelines).length * 24 + 64)
     },
@@ -229,10 +234,10 @@ export default {
       return Math.max(92, (this.filter.separateTags.length + 1) * 24 + 64)
     },
     filteredEvents () {
-      return this.events.filter(event => this.$store.getters.isIncludedInNavigation(event))
+      return this.events.filter(event => this.store.isIncludedInNavigation(event))
     },
     offsetStyle () {
-      return this.$store.state.flipTimeline ? 'right' : 'left'
+      return this.store.flipTimeline ? 'right' : 'left'
     }
   },
   watch: {
@@ -279,7 +284,7 @@ export default {
     if (this.activeEvent !== null) {
       setTimeout(() => this.scrollToEvent(this.activeEvent), 1500)
     } else {
-      setTimeout(() => this.scrollToEvent(this.$store.state.mappings.events['gavilars-assassination']), 1500)
+      setTimeout(() => this.scrollToEvent(this.store.mappings.events['gavilars-assassination']), 1500)
     }
 
     this.update()
@@ -306,13 +311,13 @@ export default {
     scrollHorizontally (event) {
       const e = window.event || event
       const delta = Math.max(-1, Math.min(1, e.wheelDelta || -e.detail))
-      this.$refs.container.scrollLeft -= delta * 40 * (this.$store.state.flipTimeline ? -1 : 1)
+      this.$refs.container.scrollLeft -= delta * 40 * (this.store.flipTimeline ? -1 : 1)
       e.preventDefault()
     },
     onScroll () {
       this.updateOverflow()
 
-      const scroll = this.$store.state.flipTimeline ? -this.$refs.container.scrollLeft : this.$refs.container.scrollLeft
+      const scroll = this.store.flipTimeline ? -this.$refs.container.scrollLeft : this.$refs.container.scrollLeft
       const event = this.events.find(event => Math.abs(event.offset - scroll) <= 1)
       if (event !== undefined) {
         this.currentDate = formatDate(event.date)
@@ -359,26 +364,26 @@ export default {
     },
     updateOverflow () {
       const { container } = this.$refs
-      const scroll = this.$store.state.flipTimeline ? -container.scrollLeft : container.scrollLeft
+      const scroll = this.store.flipTimeline ? -container.scrollLeft : container.scrollLeft
       this.leftOverflowVisible = scroll > this.timelineOffset
       this.rightOverflowVisible = scroll + container.clientWidth < container.scrollWidth - this.timelineOffset
 
-      if (this.$store.state.flipTimeline) {
+      if (this.store.flipTimeline) {
         const tmp = this.leftOverflowVisible
         this.leftOverflowVisible = this.rightOverflowVisible
         this.rightOverflowVisible = tmp
       }
     },
     gotoEvent (dir) {
-      const scroll = this.$store.state.flipTimeline ? -this.$refs.container.scrollLeft : this.$refs.container.scrollLeft
+      const scroll = this.store.flipTimeline ? -this.$refs.container.scrollLeft : this.$refs.container.scrollLeft
 
       const gotoAndScroll = (id) => {
         let index = Math.max(0, Math.min(id, this.events.length - 1))
-        while (index > 0 && index < this.events.length - 1 && !this.$store.getters.isIncludedInNavigation(this.events[index])) {
+        while (index > 0 && index < this.events.length - 1 && !this.store.isIncludedInNavigation(this.events[index])) {
           index += dir
         }
 
-        if (!this.$store.getters.isIncludedInNavigation(this.events[index])) {
+        if (!this.store.isIncludedInNavigation(this.events[index])) {
           return
         }
 
@@ -468,7 +473,7 @@ export default {
       this.scrollTo(offset)
     },
     selectEvent (event) {
-      this.$store.commit('selectEvent', event)
+      this.store.selectEvent(event)
       this.scrollToEvent(event)
     },
     scrollToEvent (event) {
@@ -498,21 +503,21 @@ export default {
       this.scrollToEvent(lastEvent)
     },
     scrollTo (offset) {
-      this.$refs.container.scrollTo({ left: this.$store.state.flipTimeline ? -offset : offset, behavior: 'smooth' })
+      this.$refs.container.scrollTo({ left: this.store.flipTimeline ? -offset : offset, behavior: 'smooth' })
     },
     openGoToDate () {
       if (this.$gtag) {
         this.$gtag.pageview({ page_title: 'Go To Date', page_path: '/go-to-date', page_location: '' })
       }
 
-      this.$store.commit('openGoToDate')
+      this.store.openGoToDate()
     },
     toggleMeasurement () {
-      if (!this.$store.state.measurementActive && this.$gtag) {
+      if (!this.store.measurementActive && this.$gtag) {
         this.$gtag.pageview({ page_title: 'Measuring', page_path: '/measurement', page_location: '' })
       }
 
-      this.$store.commit('toggleMeasurement')
+      this.store.toggleMeasurement()
     }
   }
 }

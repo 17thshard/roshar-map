@@ -18,7 +18,8 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from 'vuex'
+import { mapState } from 'pinia'
+import { useMainStore } from '@/stores/main'
 import { parseColorToCssVar } from '@/utils'
 
 export default {
@@ -45,9 +46,13 @@ export default {
       type: Boolean
     }
   },
+  setup () {
+    const store = useMainStore()
+    return { store }
+  },
   computed: {
-    ...mapGetters(['isDisabled']),
-    ...mapState({ tagProperties: state => state.mappings.tags }),
+    ...mapState(useMainStore, ['isDisabled']),
+    ...mapState(useMainStore, { tagProperties: state => state.mappings.tags }),
     barStyles () {
       const props = this.tagProperties[this.tag]
 
@@ -67,10 +72,10 @@ export default {
       return Math.max(...this.events.map(e => e.offset)) - Math.min(...this.events.map(e => e.offset))
     },
     offsetStyle () {
-      return this.$store.state.flipTimeline ? 'right' : 'left'
+      return this.store.flipTimeline ? 'right' : 'left'
     },
     endStyle () {
-      return this.$store.state.flipTimeline ? 'left' : 'right'
+      return this.store.flipTimeline ? 'left' : 'right'
     }
   }
 }
