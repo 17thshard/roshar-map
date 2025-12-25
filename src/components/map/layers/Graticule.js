@@ -1,8 +1,8 @@
 import { Group } from 'three'
 import { clamp01 } from '@/utils'
 import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial'
-import { LineGeometry } from 'three/examples/jsm/lines/LineGeometry'
-import { Line2 } from 'three/examples/jsm/lines/Line2'
+import { LineSegmentsGeometry } from 'three/examples/jsm/lines/LineSegmentsGeometry'
+import { LineSegments2 } from 'three/examples/jsm/lines/LineSegments2'
 import { project } from '@/projection'
 
 const MIN_LAT = -40
@@ -11,8 +11,22 @@ const MIN_LNG = -55
 const MAX_LNG = 55
 
 function buildLines (largeMaterial, smallMaterial) {
-  const lines = []
+  const largePositions = []
+  const smallPositions = []
 
+  // Helper: Converts strip [x1,y1,z1, x2,y2,z2...] to segments [x1,y1,z1, x2,y2,z2, x2,y2,z2, x3...]
+  const toSegments = (strip) => {
+    const segments = []
+    for (let i = 0; i < strip.length - 3; i += 3) {
+      segments.push(
+        strip[i], strip[i + 1], strip[i + 2],
+        strip[i + 3], strip[i + 4], strip[i + 5]
+      )
+    }
+    return segments
+  }
+
+  // latitude lines
   for (let latD = MIN_LAT; latD < MAX_LAT; latD++) {
     const points = []
 
@@ -23,16 +37,11 @@ function buildLines (largeMaterial, smallMaterial) {
       points.push(projected.x, projected.y, 0.001)
     }
 
-    const geometry = new LineGeometry()
-    geometry.setPositions(points)
-
-    const line = new Line2(geometry, latD % 10 === 0 ? largeMaterial : smallMaterial)
-    line.computeLineDistances()
-    line.scale.set(1, 1, 1)
-
-    lines.push(line)
+    const target = (latD % 10 === 0) ? largePositions : smallPositions
+    target.push(...toSegments(points))
   }
 
+  //  longitude lines
   for (let lngD = MIN_LNG; lngD < MAX_LNG; lngD++) {
     const points = []
 
@@ -43,17 +52,33 @@ function buildLines (largeMaterial, smallMaterial) {
       points.push(projected.x, projected.y, 0)
     }
 
-    const geometry = new LineGeometry()
-    geometry.setPositions(points)
-
-    const line = new Line2(geometry, lngD % 10 === 0 ? largeMaterial : smallMaterial)
-    line.computeLineDistances()
-    line.scale.set(1, 1, 1)
-
-    lines.push(line)
+    const target = (lngD % 10 === 0) ? largePositions : smallPositions
+    target.push(...toSegments(points))
   }
 
-  return lines
+  const meshes = []
+
+  // large mesh
+  if (largePositions.length > 0) {
+    const geo = new LineSegmentsGeometry()
+    geo.setPositions(largePositions)
+
+    const mesh = new LineSegments2(geo, largeMaterial)
+    mesh.scale.set(1, 1, 1)
+    meshes.push(mesh)
+  }
+
+  // small mesh
+  if (smallPositions.length > 0) {
+    const geo = new LineSegmentsGeometry()
+    geo.setPositions(smallPositions)
+
+    const mesh = new LineSegments2(geo, smallMaterial)
+    mesh.scale.set(1, 1, 1)
+    meshes.push(mesh)
+  }
+
+  return meshes
 }
 
 export default class Graticule extends Group {
