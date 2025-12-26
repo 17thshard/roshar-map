@@ -74,7 +74,7 @@
                   :title="$t(link.translationKey)"
                   class="details__related-link-image"
                 />
-                <img v-else class="details__related-link-placeholder" src="@/assets/logos/knight-radiant-ancient.svg" alt="A logo of the knights radiant" aria-hidden="true" />
+                <img v-else class="details__related-link-placeholder" src="@/assets/logos/knight-radiant-ancient.svg" alt="A logo of the knights radiant" aria-hidden="true">
               </div>
               {{ $t(link.translationKey) }}
             </router-link>
@@ -186,15 +186,15 @@ export default {
     Markdown,
     CustomScrollbar
   },
-  setup () {
-    const store = useMainStore()
-    return { store }
-  },
   props: {
     details: {
       type: Object,
       required: true
     }
+  },
+  setup () {
+    const store = useMainStore()
+    return { store }
   },
   data () {
     return {
@@ -419,7 +419,7 @@ export default {
           this.shareCopied = false
           this.shareCopiedTimeout = null
         }, 1500)
-      } catch (e) {
+      } catch {
         // ignore copy failures (e.g., permissions)
       }
     },
@@ -432,7 +432,7 @@ export default {
         try {
           await navigator.share({ title, text, url })
           return
-        } catch (e) {
+        } catch {
           // User cancellation or unsupported payload; fall through to copy
         }
       }
@@ -450,7 +450,7 @@ export default {
         try {
           await navigator.share({ title, text, url })
           return
-        } catch (e) {
+        } catch {
           // fall through to copy + open
         }
       }
