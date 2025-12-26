@@ -110,7 +110,7 @@ export default class Graticule extends Group {
     })
     this.smallMaterial = new LineMaterial({
       color: 0x000000,
-      linewidth: 0.4,
+      linewidth: 0.3,
       worldUnits: true,
       vertexColors: false,
       dashed: false,
