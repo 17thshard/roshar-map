@@ -10,6 +10,12 @@ const MAX_LAT = 22
 const MIN_LNG = -55
 const MAX_LNG = 55
 
+/**
+ * Builds the graticule lines.
+ * @param {LineMaterial} largeMaterial - Material for major lines.
+ * @param {LineMaterial} smallMaterial - Material for minor lines.
+ * @returns {Array<LineSegments2>} - Array of line meshes.
+ */
 function buildLines (largeMaterial, smallMaterial) {
   const largePositions = []
   const smallPositions = []
@@ -81,7 +87,13 @@ function buildLines (largeMaterial, smallMaterial) {
   return meshes
 }
 
+/**
+ * Renders the latitude and longitude lines (graticule) on the map.
+ */
 export default class Graticule extends Group {
+  /**
+   * Creates a new Graticule layer.
+   */
   constructor () {
     super()
 
@@ -96,6 +108,10 @@ export default class Graticule extends Group {
     this.init()
   }
 
+  /**
+   * Initializes the graticule lines.
+   * @param {object} _textures - Not used.
+   */
   init (_textures) {    
     this.largeMaterial = new LineMaterial({
       color: 0x000000,
@@ -123,17 +139,29 @@ export default class Graticule extends Group {
     this.add(...buildLines(this.largeMaterial, this.smallMaterial))
   }
 
+  /**
+   * Enters the scene (starts fading in).
+   */
   enter () {
     this.entering = true
     this.enabled = true
     this.visible = true
   }
 
+  /**
+   * Leaves the scene (starts fading out).
+   */
   leave () {
     this.entering = false
     this.enabled = true
   }
 
+  /**
+   * Updates the graticule animation.
+   * @param {object} camera - The Three.js camera.
+   * @param {number} timestamp - Current timestamp.
+   * @param {number} delta - Time delta since last frame.
+   */
   update (camera, timestamp, delta) {
     if (!this.enabled) {
       return

@@ -2,6 +2,11 @@ import { Euler, EventDispatcher, MOUSE, Plane, Ray, Raycaster, TOUCH, Vector2, V
 import Hammer from 'hammerjs'
 import { lerp, smootherstep } from '@/utils.js'
 
+/**
+ * Controls for the map camera interaction (pan, zoom, rotate).
+ * @param {THREE.Camera} object - The camera object.
+ * @param {HTMLElement} domElement - The DOM element to attach listeners to.
+ */
 const MapControls = function (object, domElement) {
   this.object = object
   this.domElement = domElement
@@ -35,11 +40,17 @@ const MapControls = function (object, domElement) {
   this.position0 = this.object.position.clone()
   this.zoom0 = this.object.zoom
 
+  /**
+   * Saves the current state (position, zoom) as the reset point.
+   */
   this.saveState = function () {
     scope.position0.copy(scope.object.position)
     scope.zoom0 = scope.object.zoom
   }
 
+  /**
+   * Resets the controls to the saved state.
+   */
   this.reset = function () {
     scope.object.position.copy(scope.position0)
     scope.object.zoom = scope.zoom0
@@ -56,6 +67,11 @@ const MapControls = function (object, domElement) {
   const textPlane = new Plane(new Vector3(0, 0, 1), 1)
 
   // this method is exposed, but perhaps it would be better if we can make it private...
+  /**
+   * Updates the controls.
+   * @param {number} delta - The time delta.
+   * @returns {boolean} - Always returns false.
+   */
   this.update = (function () {
     const position = new Vector3()
 
@@ -140,6 +156,9 @@ const MapControls = function (object, domElement) {
     }
   }())
 
+  /**
+   * Disposes of the controls and removes event listeners.
+   */
   this.dispose = function () {
     scope.domElement.removeEventListener('mousedown', onMouseDown, false)
     scope.domElement.removeEventListener('wheel', onMouseWheel, false)
@@ -166,6 +185,12 @@ const MapControls = function (object, domElement) {
     clampPosition(targetPosition, targetAngle)
   }
 
+  /**
+   * Transitions the camera to a target position and zoom.
+   * @param {THREE.Vector3} target - The target position.
+   * @param {number} newZoom - The target zoom level.
+   * @param {number} [yOffset] - Optional Y offset in pixels.
+   */
   this.transitionTo = function (target, newZoom, yOffset) {
     transitionStartZoom = zoom
     targetZoom = newZoom

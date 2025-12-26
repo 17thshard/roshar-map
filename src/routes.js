@@ -100,4 +100,7 @@ router.afterEach((to) => {
   document.querySelector('title').innerHTML = i18n.global.t('title', { page: pageName })
 })
 
+/**
+ * The Vue Router instance.
+ */
 export { router }

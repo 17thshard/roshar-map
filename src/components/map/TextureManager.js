@@ -17,7 +17,14 @@ function resolveTextureUrl (relativePath) {
   return url
 }
 
+/**
+ * Manages texture loading and texture paths.
+ */
 export default class TextureManager {
+  /**
+   * @param {object} renderer - The Three.js renderer.
+   * @param {string} locale - The current locale.
+   */
   constructor (renderer, locale) {
     const maxTextureSize = renderer.capabilities.maxTextureSize
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
@@ -42,6 +49,15 @@ export default class TextureManager {
     this.locale = locale
   }
 
+  /**
+   * Builds the path for a texture.
+   * @param {string} prefix - Prefix for the texture name.
+   * @param {string} name - Base name of the texture.
+   * @param {boolean} localized - Whether the texture is localized.
+   * @param {boolean} lossy - Whether to use lossy compression.
+   * @param {string} compressedFormat - The compressed format (e.g., 'dxt').
+   * @returns {string} - The constructed path.
+   */
   buildPath (prefix, name, localized, lossy, compressedFormat) {
     const fallbackExt = lossy === true && (localized === undefined || localized === false) ? 'jpg' : 'png'
     const uncompressedExt = this.webpSupported ? 'webp' : fallbackExt
@@ -55,10 +71,20 @@ export default class TextureManager {
     return `localized/${this.locale}/${base}`
   }
 
+  /**
+   * Checks if a compression format is supported.
+   * @param {string} format - The compression format.
+   * @returns {boolean} - True if supported, false otherwise.
+   */
   supportsCompression (format) {
     return format !== undefined && this.supportedCompressionFormats.includes(this.utils.convert(format))
   }
 
+  /**
+   * Loads a set of textures.
+   * @param {object} textures - Object where keys are texture names and values are texture configurations.
+   * @returns {Promise<object>} - Promise resolving to the loaded textures map.
+   */
   load (textures) {
     const result = {}
 
@@ -101,6 +127,15 @@ export default class TextureManager {
     }))
   }
 
+  /**
+   * Loads raw texture data.
+   * @param {string} name - Texture name.
+   * @param {boolean} hqAvailable - Whether high quality is available.
+   * @param {boolean} localized - Whether it is localized.
+   * @param {boolean} lossy - Whether it is lossy.
+   * @param {string} channelsToKeep - String of channels to keep (e.g. "rgba").
+   * @returns {Promise<{width: number, height: number, data: Uint8ClampedArray|Array}>} - The loaded data.
+   */
   loadData (name, hqAvailable, localized, lossy, channelsToKeep) {
     const channels = {}
     channelsToKeep.split('').forEach((c) => {

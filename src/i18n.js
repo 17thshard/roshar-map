@@ -15,6 +15,11 @@ export const i18n = createI18n({
 const loadedLanguages = ['en-US'] // our default language that is preloaded
 const generatedLangModules = import.meta.glob(['/build/generated/lang/*.lang.json', '!/build/generated/lang/en-US.lang.json'])
 
+/**
+ * Sets the i18n language and updates the document attributes.
+ * @param {string} lang - The language code.
+ * @returns {string} - The language code.
+ */
 function setI18nLanguage (lang) {
   i18n.global.locale.value = lang
   document.querySelector('html').setAttribute('lang', lang)
@@ -24,6 +29,12 @@ function setI18nLanguage (lang) {
   return lang
 }
 
+/**
+ * Asynchronously loads a language pack.
+ * @param {string} lang - The language file name.
+ * @param {string} locale - The locale code.
+ * @returns {Promise<string>} - The loaded language code.
+ */
 export function loadLanguageAsync (lang, locale) {
   // If the same language
   if (i18n.global.locale.value === locale) {

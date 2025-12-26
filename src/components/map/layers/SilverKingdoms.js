@@ -3,7 +3,14 @@ import silverKingdomsFragmentShader from '@/components/map/layers/silverKingdoms
 import silverKingdomsTextFragmentShader from '@/components/map/layers/silverKingdomsTextFragmentShader'
 import { clamp01 } from '@/utils'
 
+/**
+ * Renders the Silver Kingdoms layer using shaders.
+ */
 export default class SilverKingdoms extends Group {
+  /**
+   * Creates the Silver Kingdoms layer.
+   * @param {object} textures - The loaded textures.
+   */
   constructor (textures) {
     super()
 
@@ -19,6 +26,10 @@ export default class SilverKingdoms extends Group {
     this.init(textures)
   }
 
+  /**
+   * Initializes the meshes and materials.
+   * @param {object} textures - The loaded textures.
+   */
   init (textures) {
     const geo = new PlaneGeometry(2, 2, 1, 1)
     const bordersMaterial = new ShaderMaterial({
@@ -76,17 +87,29 @@ export default class SilverKingdoms extends Group {
     this.add(this.bordersPlane, this.textPlane)
   }
 
+  /**
+   * Enters the scene.
+   */
   enter () {
     this.entering = true
     this.enabled = true
     this.visible = true
   }
 
+  /**
+   * Leaves the scene.
+   */
   leave () {
     this.entering = false
     this.enabled = true
   }
 
+  /**
+   * Updates the animation.
+   * @param {object} camera - The camera.
+   * @param {number} timestamp - The timestamp.
+   * @param {number} delta - The time delta.
+   */
   update (camera, timestamp, delta) {
     if (!this.enabled) {
       return

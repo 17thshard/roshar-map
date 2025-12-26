@@ -71,6 +71,13 @@ eventYears.filter(y => y > lastYear.year).forEach((year) => {
   runningOffset += lastYear.size
 })
 
+/**
+ * Populates a year object with events.
+ * @param {number} year - The year number.
+ * @param {number} baseOffset - The base offset for the year.
+ * @param {object[]} events - The events for the year.
+ * @returns {object} - The populated year object.
+ */
 function populateYear (year, baseOffset, events) {
   let localOffset = 0
 
@@ -147,6 +154,12 @@ function populateYear (year, baseOffset, events) {
   }
 }
 
+/**
+ * Calculates the distance between two years in the timeline.
+ * @param {number} year - The current year.
+ * @param {number} lastYear - The previous year.
+ * @returns {number} - The calculated distance.
+ */
 function calculateYearDistance (year, lastYear) {
   if (year - lastYear >= 100) {
     return 8 * TIMELINE_YEAR_DISTANCE
@@ -203,7 +216,14 @@ const locationsByMapId = Object.values(mappings.locations).filter(location => lo
   return acc
 }, {})
 
+/**
+ * Main Pinia store for the application.
+ */
 export const useMainStore = defineStore('main', {
+  /**
+   * State of the store.
+   * @returns {object} - The initial state.
+   */
   state: () => ({
     events: markRaw(events),
     years: markRaw(years),
@@ -230,11 +250,21 @@ export const useMainStore = defineStore('main', {
     measurementActive: false
   }),
   getters: {
+    /**
+     * Checks if an event is included in navigation based on filters.
+     * @param {object} state - The store state.
+     * @returns {(event: object) => boolean} - Function to check if event is included.
+     */
     isIncludedInNavigation (state) {
       return (event) => {
         return !this.isDisabled(event) && (state.filter.lockedTag === null || (event.tags !== undefined && event.tags.includes(state.filter.lockedTag)))
       }
     },
+    /**
+     * Checks if an event is disabled by filters.
+     * @param {object} state - The store state.
+     * @returns {(event: object) => boolean} - Function to check if event is disabled.
+     */
     isDisabled (state) {
       return (event) => {
         return state.filter.tags.some(t => event.tags !== undefined && event.tags.includes(t))
@@ -242,17 +272,32 @@ export const useMainStore = defineStore('main', {
     }
   },
   actions: {
+    /**
+     * Selects an event.
+     * @param {object} event - The event to select.
+     */
     selectEvent (event) {
       this.activeEvent = event
       window.localStorage.setItem('activeEvent', this.activeEvent.id)
     },
+    /**
+     * Unselects the current event.
+     */
     unselectEvent () {
       this.activeEvent = null
       window.localStorage.setItem('activeEvent', '')
     },
+    /**
+     * Updates the filter state.
+     * @param {object} filter - The new filter state.
+     */
     updateFilter (filter) {
       this.filter = filter
     },
+    /**
+     * Enables a tag filter (removes it from disabled tags).
+     * @param {string} tag - The tag to enable.
+     */
     enableTag (tag) {
       const index = this.filter.tags.indexOf(tag)
 
@@ -263,6 +308,10 @@ export const useMainStore = defineStore('main', {
       this.disableTagSeparation(tag)
       window.localStorage.setItem('filter', JSON.stringify(this.filter))
     },
+    /**
+     * Disables a tag filter (adds it to disabled tags).
+     * @param {string} tag - The tag to disable.
+     */
     disableTag (tag) {
       if (!this.filter.tags.includes(tag)) {
         this.filter.tags.push(tag)
@@ -271,6 +320,10 @@ export const useMainStore = defineStore('main', {
       this.disableTagSeparation(tag)
       window.localStorage.setItem('filter', JSON.stringify(this.filter))
     },
+    /**
+     * Enables tag separation.
+     * @param {string} tag - The tag to separate.
+     */
     enableTagSeparation (tag) {
       this.enableTag(tag)
 
@@ -281,6 +334,10 @@ export const useMainStore = defineStore('main', {
       this.filter.latestSeparatedTag = tag
       window.localStorage.setItem('filter', JSON.stringify(this.filter))
     },
+    /**
+     * Disables tag separation.
+     * @param {string} tag - The tag to stop separating.
+     */
     disableTagSeparation (tag) {
       const index = this.filter.separateTags.indexOf(tag)
 
@@ -296,41 +353,84 @@ export const useMainStore = defineStore('main', {
 
       window.localStorage.setItem('filter', JSON.stringify(this.filter))
     },
+    /**
+     * Updates the separated tags list.
+     * @param {string[]} tags - The list of tags.
+     */
     updateSeparateTags (tags) {
       this.filter.separateTags = tags
     },
+    /**
+     * Toggles a map layer.
+     * @param {object} payload - The payload.
+     * @param {string} payload.layer - The layer name.
+     * @param {boolean} payload.value - The new value.
+     */
     toggleLayer ({ layer, value }) {
       this.layersActive[layer] = value
       window.localStorage.setItem('layersActive', JSON.stringify(this.layersActive))
     },
+    /**
+     * Opens the calendar guide.
+     */
     openCalendarGuide () {
       this.calendarGuideOpen = true
     },
+    /**
+     * Closes the calendar guide.
+     */
     closeCalendarGuide () {
       this.calendarGuideOpen = false
     },
+    /**
+     * Opens the go to date dialog.
+     */
     openGoToDate () {
       this.goToDateOpen = true
     },
+    /**
+     * Closes the go to date dialog.
+     */
     closeGoToDate () {
       this.goToDateOpen = false
     },
+    /**
+     * Opens a specific menu.
+     * @param {string} name - The name of the menu.
+     */
     openMenu (name) {
       this.openedMenu = name
     },
+    /**
+     * Closes the currently open menu.
+     */
     closeMenu () {
       this.openedMenu = null
     },
+    /**
+     * Locks a tag.
+     * @param {string} tag - The tag to lock.
+     */
     lockTag (tag) {
       this.filter.lockedTag = tag
     },
+    /**
+     * Unlocks the currently locked tag.
+     */
     unlockTag () {
       this.filter.lockedTag = null
     },
+    /**
+     * Sets the text direction and flips the timeline if needed.
+     * @param {string} direction - The text direction ('ltr' or 'rtl').
+     */
     setTextDirection (direction) {
       this.flipTimeline = direction === 'rtl'
       this.flipDirectionalIcons = direction === 'rtl'
     },
+    /**
+     * Toggles the measurement tool.
+     */
     toggleMeasurement () {
       this.measurementActive = !this.measurementActive
     }
