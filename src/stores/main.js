@@ -293,6 +293,8 @@ export const useMainStore = defineStore('main', {
       if (this.filter.lockedTag === tag) {
         this.unlockTag()
       }
+
+      window.localStorage.setItem('filter', JSON.stringify(this.filter))
     },
     updateSeparateTags (tags) {
       this.filter.separateTags = tags
