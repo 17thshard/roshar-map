@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { markRaw } from 'vue'
 import baseEvents from '@/stores/events.json'
 import baseLocations from '@/stores/locations.json'
 import baseCharacters from '@/stores/characters.json'
@@ -204,10 +205,10 @@ const locationsByMapId = Object.values(mappings.locations).filter(location => lo
 
 export const useMainStore = defineStore('main', {
   state: () => ({
-    events,
-    years,
-    locationsByMapId,
-    mappings,
+    events: markRaw(events),
+    years: markRaw(years),
+    locationsByMapId: markRaw(locationsByMapId),
+    mappings: markRaw(mappings),
     activeEvent: null,
     filter: {
       tags: [],
