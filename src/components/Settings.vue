@@ -40,7 +40,7 @@
             <h3 data-tutorial-id="settings-filters">
               {{ $t('ui.filters') }}
             </h3>
-            <template v-for="category in tagCategories" :key="category.id">
+            <div v-for="category in tagCategories" :key="category.id">
               <h4>
                 {{ $t(`tagCategories.${category.id}`) }}
               </h4>
@@ -60,7 +60,7 @@
                   {{ $t(`tags.${tag.id}`) }}
                 </li>
               </ul>
-            </template>
+            </div>
           </section>
         </CustomScrollbar>
 
