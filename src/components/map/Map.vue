@@ -25,7 +25,9 @@ import {
   Mesh,
   NearestFilter,
   PerspectiveCamera,
+  Plane,
   PlaneGeometry,
+  Raycaster,
   RepeatWrapping,
   Scene,
   ShaderMaterial,
@@ -48,6 +50,7 @@ import textFragmentShader from '@/components/map/mapTextFragmentShader'
 import ShatteringPass from '@/components/map/ShatteringPass'
 import TextureManager from '@/components/map/TextureManager'
 import { clamp01, lerp } from '@/utils'
+import { project, unproject } from '@/projection'
 import Factions from '@/components/map/layers/Factions'
 import Graticule from '@/components/map/layers/Graticule'
 import SilverKingdoms from '@/components/map/layers/SilverKingdoms'
@@ -498,6 +501,8 @@ export default {
       this.textPlane.material.uniforms.ActiveItem.value = this.lastActiveLocation !== null ? this.lastActiveLocation : 0
       this.textPlane.material.uniforms.ActiveProgress.value = this.textActiveProgress
 
+      this.updateCompassRotation()
+
       this.composer.render(delta)
 
       this.lastTimestamp = timestamp
@@ -607,6 +612,62 @@ export default {
       }
 
       return false
+    },
+    
+    updateCompassRotation () {
+      // Get button
+      if (this.compassBtn === undefined || !document.body.contains(this.compassBtn)) {
+        this.compassBtn = document.querySelector('[data-tutorial-id="measure-button"]')
+      }
+
+      const btn = this.compassBtn
+
+      if (btn === null) {
+        return
+      }
+      //Get Midpoint
+      const rect = btn.getBoundingClientRect()
+      const x = rect.left + rect.width / 2
+      const y = rect.top + rect.height / 2
+
+      const ndc = new Vector2(
+        (x / window.innerWidth) * 2 - 1,
+        -(y / window.innerHeight) * 2 + 1
+      )
+
+      //Cast ray from camera to midpoint
+      const raycaster = new Raycaster()
+      raycaster.setFromCamera(ndc, this.camera)
+
+      //Intersect ray with plane
+      const planeZ = new Plane(new Vector3(0, 0, 1), 0)
+      const target = new Vector3()
+      raycaster.ray.intersectPlane(planeZ, target)
+
+      if (target === null) {
+        return
+      }
+
+      //Find North Pole 
+      const geo = unproject(target)
+      const northGeo = { lat: geo.lat + 0.01, lng: geo.lng }
+      const northPos = project(northGeo)
+      const northVec = new Vector3(northPos.x, northPos.y, 0)
+
+      //Project points onto screen
+      const p1 = target.clone().project(this.camera)
+      const p2 = northVec.clone().project(this.camera)
+
+      const dx = p2.x - p1.x
+      const dy = p2.y - p1.y
+
+
+      //Calculate angle and apply
+      const angle = 90 - (Math.atan2(dy, dx) * 180 / Math.PI) - 45
+      const svg = btn.querySelector('.feather-compass')
+      if (svg) {
+        svg.style.transform = `rotate(${angle}deg)`
+      }
     }
   }
 }
