@@ -120,12 +120,18 @@ export default {
     measurementActive (active) {
       if (active) {
         this.measurementResult = {}
+      } else {
+        this.measurementResult = null
       }
 
       this.measurement.reset()
     }
   },
   mounted () {
+    if (this.measurementActive) {
+      this.measurementResult = {}
+    }
+
     try {
       this.renderer = new WebGLRenderer({ antialias: true, alpha: true })
       this.renderer.setPixelRatio(window.devicePixelRatio)
