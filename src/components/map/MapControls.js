@@ -713,9 +713,9 @@ const MapControls = function (object, domElement) {
   scope.domElement.addEventListener('mousemove', updateMousePos, false)
   scope.domElement.addEventListener('mouseleave', resetMousePos, false)
 
-  scope.domElement.addEventListener('touchstart', onTouchStart, { passive: true })
-  scope.domElement.addEventListener('touchend', onTouchEnd, { passive: true })
-  scope.domElement.addEventListener('touchmove', onTouchMove, { passive: true })
+  scope.domElement.addEventListener('touchstart', onTouchStart, { passive: false })
+  scope.domElement.addEventListener('touchend', onTouchEnd, { passive: false })
+  scope.domElement.addEventListener('touchmove', onTouchMove, { passive: false })
 
   scope.domElement.ownerDocument.addEventListener('keydown', onKeyDown, false)
   scope.domElement.ownerDocument.addEventListener('keyup', onKeyUp, false)
