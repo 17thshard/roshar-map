@@ -6,8 +6,7 @@ export const useSettingsStore = defineStore('settings', {
     goToDateOpen: false,
     openedMenu: null,
     flipTimeline: false,
-    flipDirectionalIcons: false,
-    measurementActive: false
+    flipDirectionalIcons: false
   }),
   actions: {
     openCalendarGuide () {
@@ -31,13 +30,10 @@ export const useSettingsStore = defineStore('settings', {
     setTextDirection (direction) {
       this.flipTimeline = direction === 'rtl'
       this.flipDirectionalIcons = direction === 'rtl'
-    },
-    toggleMeasurement () {
-      this.measurementActive = !this.measurementActive
     }
   },
   persist: {
-    pick: ['flipTimeline', 'flipDirectionalIcons', 'measurementActive']
+    pick: ['flipTimeline', 'flipDirectionalIcons']
   }
 })
 

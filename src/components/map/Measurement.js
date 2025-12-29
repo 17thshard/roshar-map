@@ -2,6 +2,7 @@ import { Group, Vector3 } from 'three'
 import MultiLine from '@/components/map/layers/MultiLine'
 import Highlight from '@/components/map/layers/Highlight'
 import { project, unproject, distance } from '@/projection'
+import { useMeasurementStore } from '@/stores/measurement'
 
 function midpoint (geo1, geo2) {
   const dLng = geo2.lng - geo1.lng
@@ -35,12 +36,35 @@ function constructGeodesic (geo1, geo2) {
 export default class Measurement extends Group {
   constructor () {
     super()
-    this.points = []
     this.highlights = []
+    this.geodesic = null
+    this.distance = null
+    this.store = useMeasurementStore()
+    
+    this.syncFromStore()
   }
 
-  reset () {
-    this.points = []
+  syncFromStore() {
+    this.reset(false) 
+    const points = this.store.points
+    
+    if (points.length === 0) return
+
+    points.forEach(geo => {
+      const position = project(geo)
+      const highlight = new Highlight(position.x, position.y, 0.2, true, new Vector3(23 / 255, 98 / 255, 15 / 255))
+      highlight.opacity = 1
+      this.highlights.push(highlight)
+      this.add(highlight)
+    })
+
+    this.updateGeodesic()
+  }
+
+  reset (clearStore = true) {
+    if (clearStore) {
+      this.store.clear()
+    }
 
     if (this.geodesic !== null) {
       this.remove(this.geodesic)
@@ -57,13 +81,13 @@ export default class Measurement extends Group {
     const geo = unproject(position)
 
     if (ctrlKey) {
-      this.points.push(geo)
+      this.store.addPoint(geo)
       const highlight = new Highlight(position.x, position.y, 0.2, true, new Vector3(23 / 255, 98 / 255, 15 / 255))
       highlight.opacity = 1
       this.highlights.push(highlight)
       this.add(highlight)
-    } else if (this.points.length === 1) {
-      this.points.push(geo)
+    } else if (this.store.points.length === 1) {
+      this.store.addPoint(geo)
       const highlight = new Highlight(position.x, position.y, 0.2, true, new Vector3(23 / 255, 98 / 255, 15 / 255))
       highlight.opacity = 1
       this.highlights.push(highlight)
@@ -73,7 +97,7 @@ export default class Measurement extends Group {
         this.remove(highlight)
       })
       this.highlights = []
-      this.points = [geo]
+      this.store.setPoints([geo])
       const highlight = new Highlight(position.x, position.y, 0.2, true, new Vector3(23 / 255, 98 / 255, 15 / 255))
       highlight.opacity = 1
       this.highlights.push(highlight)
@@ -83,8 +107,8 @@ export default class Measurement extends Group {
     this.updateGeodesic()
 
     return {
-      start: this.points[0] || null,
-      end: this.points[this.points.length - 1] || null,
+      start: this.store.points[0] || null,
+      end: this.store.points[this.store.points.length - 1] || null,
       distance: this.distance
     }
   }
@@ -96,18 +120,18 @@ export default class Measurement extends Group {
       this.distance = null
     }
 
-    if (this.points.length >= 2) {
+    if (this.store.points.length >= 2) {
       const allPoints = []
       let totalDistance = 0
 
-      for (let i = 0; i < this.points.length - 1; i++) {
-        const segmentPoints = constructGeodesic(this.points[i], this.points[i + 1]).map(project)
+      for (let i = 0; i < this.store.points.length - 1; i++) {
+        const segmentPoints = constructGeodesic(this.store.points[i], this.store.points[i + 1]).map(project)
         if (i === 0) {
           allPoints.push(...segmentPoints)
         } else {
           allPoints.push(...segmentPoints.slice(1))
         }
-        totalDistance += distance(this.points[i], this.points[i + 1])
+        totalDistance += distance(this.store.points[i], this.store.points[i + 1])
       }
 
       this.geodesic = new MultiLine(allPoints)

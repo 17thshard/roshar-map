@@ -13,7 +13,7 @@
         v-if="measurementActive && measurementResult !== null"
         :measurement="measurementResult"
         class="map__measurement-result"
-        @close="settings.toggleMeasurement()"
+        @close="measurementStore.toggle()"
       />
     </transition>
   </div>
@@ -40,6 +40,7 @@ import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
 import { markRaw } from 'vue'
 import { useMainStore } from '@/stores/main'
 import { useSettingsStore } from '@/stores/settings'
+import { useMeasurementStore } from '@/stores/measurement'
 import MapControls from '@/components/map/MapControls'
 import Highlight from '@/components/map/layers/Highlight'
 import fragmentShader from '@/components/map/mapFragmentShader'
@@ -67,7 +68,8 @@ export default {
   setup () {
     const store = useMainStore()
     const settings = useSettingsStore()
-    return { store, settings }
+    const measurementStore = useMeasurementStore()
+    return { store, settings, measurementStore }
   },
   data () {
     return {
@@ -90,7 +92,7 @@ export default {
       return this.store.layersActive
     },
     measurementActive () {
-      return this.settings.measurementActive
+      return this.measurementStore.active
     },
     activeLocation () {
       return this.transitions && this.$route.name === 'locations' ? this.store.mappings.locations[this.$route.params.id] : null
@@ -120,11 +122,15 @@ export default {
     measurementActive (active) {
       if (active) {
         this.measurementResult = {}
+        // Sync visuals if activating
+        this.measurement.syncFromStore()
       } else {
         this.measurementResult = null
       }
-
-      this.measurement.reset()
+      
+      if (!active) {
+        this.measurement.reset()
+      }
     }
   },
   mounted () {
