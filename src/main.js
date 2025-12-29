@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import VueDragscroll from 'vue-dragscroll'
 import { createGtag } from 'vue-gtag'
 import { createPinia } from 'pinia'
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import { i18n } from '@/i18n'
 import { router } from '@/routes'
 import App from './App.vue'
@@ -40,7 +41,11 @@ if (import.meta.env.VUE_APP_GA_ID !== undefined) {
 }
 
 app.use(i18n)
-app.use(createPinia())
+
+const pinia = createPinia()
+pinia.use(piniaPluginPersistedstate)
+app.use(pinia)
+
 app.use(router)
 
 app.mount('#app')

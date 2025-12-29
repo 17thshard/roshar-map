@@ -13,7 +13,7 @@
         v-if="measurementActive && measurementResult !== null"
         :measurement="measurementResult"
         class="map__measurement-result"
-        @close="store.toggleMeasurement()"
+        @close="settings.toggleMeasurement()"
       />
     </transition>
   </div>
@@ -39,6 +39,7 @@ import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
 import { markRaw } from 'vue'
 import { useMainStore } from '@/stores/main'
+import { useSettingsStore } from '@/stores/settings'
 import MapControls from '@/components/map/MapControls'
 import Highlight from '@/components/map/layers/Highlight'
 import fragmentShader from '@/components/map/mapFragmentShader'
@@ -65,7 +66,8 @@ export default {
   },
   setup () {
     const store = useMainStore()
-    return { store }
+    const settings = useSettingsStore()
+    return { store, settings }
   },
   data () {
     return {
@@ -88,7 +90,7 @@ export default {
       return this.store.layersActive
     },
     measurementActive () {
-      return this.store.measurementActive
+      return this.settings.measurementActive
     },
     activeLocation () {
       return this.transitions && this.$route.name === 'locations' ? this.store.mappings.locations[this.$route.params.id] : null

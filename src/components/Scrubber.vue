@@ -154,7 +154,7 @@
     </button>
     <button
       data-tutorial-id="measure-button"
-      :class="['scrubber__button', 'scrubber__button--measure', { 'scrubber__button--measure-active': store.measurementActive }]"
+      :class="['scrubber__button', 'scrubber__button--measure', { 'scrubber__button--measure-active': settings.measurementActive }]"
       :title="$t('ui.measurement.button')"
       @click="toggleMeasurement"
     >
@@ -169,6 +169,7 @@
 <script>
 import { mapState } from 'pinia'
 import { useMainStore } from '@/stores/main'
+import { useSettingsStore } from '@/stores/settings'
 import VueFeather from 'vue-feather'
 import Timeline from '@/components/Timeline.vue'
 import EventCard from '@/components/EventCard.vue'
@@ -188,7 +189,8 @@ export default {
   },
   setup () {
     const store = useMainStore()
-    return { store }
+    const settings = useSettingsStore()
+    return { store, settings }
   },
   data () {
     return {
@@ -513,11 +515,11 @@ export default {
       this.store.openGoToDate()
     },
     toggleMeasurement () {
-      if (!this.store.measurementActive && this.$gtag) {
+      if (!this.settings.measurementActive && this.$gtag) {
         this.$gtag.pageview({ page_title: 'Measuring', page_path: '/measurement', page_location: '' })
       }
 
-      this.store.toggleMeasurement()
+      this.settings.toggleMeasurement()
     }
   }
 }
