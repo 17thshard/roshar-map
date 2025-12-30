@@ -17,8 +17,8 @@ export default [
   // Equivalent to `extends: ['eslint:recommended']` from .eslintrc
   js.configs.recommended,
 
-  // Equivalent to `extends: ['plugin:vue/vue2-recommended']` from .eslintrc (Vue 2 project)
-  ...vue.configs['flat/vue2-recommended'],
+  // Vue 3 recommended rules
+  ...vue.configs['flat/recommended'],
 
   // Browser app code (Vue SFCs + JS modules)
   {
