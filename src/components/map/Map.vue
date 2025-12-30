@@ -652,22 +652,15 @@ export default {
         return
       }
 
-      //Find North Pole 
+      //Find North Pole
       const geo = unproject(target)
       const northGeo = { lat: geo.lat + 0.01, lng: geo.lng }
       const northPos = project(northGeo)
-      const northVec = new Vector3(northPos.x, northPos.y, 0)
-
-      //Project points onto screen
-      const p1 = target.clone().project(this.camera)
-      const p2 = northVec.clone().project(this.camera)
-
-      const dx = p2.x - p1.x
-      const dy = p2.y - p1.y
-
+      const dx = northPos.x - target.x
+      const dy = northPos.y - target.y
 
       //Calculate angle and apply
-      const angle = 90 - (Math.atan2(dy, dx) * 180 / Math.PI) - 45
+      const angle = 90 - (Math.atan2(dy, dx) * 180 / Math.PI) - 45 //the icon is 45° by default
       const svg = btn.querySelector('.feather-compass')
       if (svg) {
         svg.style.transform = `rotate(${angle}deg)`
