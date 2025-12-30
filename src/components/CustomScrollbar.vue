@@ -25,6 +25,7 @@ export default {
       default: () => ({})
     }
   },
+  emits: ['scroll', 'updated'],
   computed: {
     events() {
       return {

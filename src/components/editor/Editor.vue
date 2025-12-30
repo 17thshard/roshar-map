@@ -568,7 +568,7 @@ export default {
 
     this.setupRenderer()
   },
-  destroyed () {
+  unmounted () {
     window.removeEventListener('beforeunload', this.onLeave)
     this.renderer.dispose()
     cancelAnimationFrame(this.latestAnimationFrame)

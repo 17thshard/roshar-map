@@ -53,6 +53,7 @@ export default {
   props: {
     open: Boolean
   },
+  emits: ['open', 'close'],
   setup () {
     const { t } = useI18n({ useScope: 'global' })
     const searchStore = useSearchStore()

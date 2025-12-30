@@ -68,6 +68,7 @@ export default {
       type: Boolean
     }
   },
+  emits: ['ready', 'error'],
   setup () {
     const store = useMainStore()
     const settings = useSettingsStore()
@@ -190,7 +191,7 @@ export default {
         this.$emit('error', error)
       })
   },
-  destroyed () {
+  unmounted () {
     this.renderer.dispose()
     cancelAnimationFrame(this.latestAnimationFrame)
 

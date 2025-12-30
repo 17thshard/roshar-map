@@ -144,6 +144,7 @@ export default {
   props: {
     open: Boolean
   },
+  emits: ['close', 'open-tutorial'],
   setup () {
     const { t, te } = useI18n({ useScope: 'global' })
     const store = useMainStore()

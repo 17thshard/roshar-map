@@ -384,7 +384,7 @@ export default {
     window.addEventListener('resize', this.onResize)
     this.onResize()
   },
-  destroyed () {
+  unmounted () {
     window.removeEventListener('resize', this.onResize)
     if (this.shareCopiedTimeout !== null) {
       window.clearTimeout(this.shareCopiedTimeout)

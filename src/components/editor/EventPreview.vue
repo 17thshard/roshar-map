@@ -29,10 +29,6 @@ import { useMainStore } from '@/stores/main'
 export default {
   name: 'EventPreview',
   components: { Markdown },
-  setup () {
-    const store = useMainStore()
-    return { store }
-  },
   props: {
     event: {
       type: Object,
@@ -47,6 +43,10 @@ export default {
       type: Object,
       required: true
     }
+  },
+  setup () {
+    const store = useMainStore()
+    return { store }
   },
   computed: {
     imageBaseUrl () {

@@ -82,6 +82,7 @@ import { useMainStore } from '@/stores/main'
 export default {
   name: 'GoToDate',
   components: { VueFeather },
+  emits: ['submit'],
   setup () {
     const store = useMainStore()
     return { store }
@@ -99,7 +100,7 @@ export default {
     this.$refs.year.focus()
     document.addEventListener('keyup', this.closeOnEscape)
   },
-  destroyed () {
+  unmounted () {
     document.removeEventListener('keyup', this.closeOnEscape)
   },
   methods: {

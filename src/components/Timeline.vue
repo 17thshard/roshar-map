@@ -46,6 +46,7 @@ export default {
       type: Boolean
     }
   },
+  emits: ['event-selected'],
   setup () {
     const store = useMainStore()
     return { store }

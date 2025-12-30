@@ -51,6 +51,7 @@ import VueFeather from 'vue-feather'
 export default {
   name: 'Tutorial',
   components: { Markdown, VueFeather },
+  emits: ['close'],
   setup () {
     const store = useMainStore()
     return { store }
@@ -183,7 +184,7 @@ export default {
     document.addEventListener('touchstart', this.handleOutsideClick)
     this.update()
   },
-  destroyed () {
+  unmounted () {
     document.removeEventListener('click', this.handleOutsideClick)
     document.removeEventListener('touchstart', this.handleOutsideClick)
     cancelAnimationFrame(this.lastAnimationRequest)

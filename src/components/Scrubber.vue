@@ -294,7 +294,7 @@ export default {
     this.update()
     this.onScroll()
   },
-  destroyed () {
+  unmounted () {
     cancelAnimationFrame(this.lastAnimationRequest)
   },
   methods: {

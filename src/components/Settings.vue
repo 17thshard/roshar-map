@@ -101,6 +101,7 @@ export default {
   props: {
     open: Boolean
   },
+  emits: ['close'],
   setup () {
     const { t } = useI18n({ useScope: 'global' })
     const store = useMainStore()

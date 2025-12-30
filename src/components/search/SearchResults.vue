@@ -42,6 +42,7 @@ export default {
     loading: Boolean,
     emptyQuery: Boolean
   },
+  emits: ['result-use'],
   data() {
     return {
       hasScrollbar: false,

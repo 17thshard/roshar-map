@@ -37,6 +37,7 @@ export default {
       required: true
     }
   },
+  emits: ['close'],
   computed: {
     mileDistance () {
       return this.measurement.distance * 0.621

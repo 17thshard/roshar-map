@@ -24,6 +24,7 @@ export const VERSION = 'row-ds'
 export default {
   name: 'Changelog',
   components: { Markdown, CustomScrollbar },
+  emits: ['close'],
   data () {
     return {
       scrolledToBottom: false
@@ -32,7 +33,7 @@ export default {
   mounted () {
     document.querySelector('#app').classList.add('changelog__blur')
   },
-  destroyed () {
+  unmounted () {
     document.querySelector('#app').classList.remove('changelog__blur')
   },
   methods: {

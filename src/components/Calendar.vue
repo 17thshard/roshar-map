@@ -34,6 +34,7 @@ export default {
       type: Boolean
     }
   },
+  emits: ['date-click'],
   computed: {
     highlightTimestampRange () {
       if (this.highlightRange === null) {

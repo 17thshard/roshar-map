@@ -33,6 +33,7 @@ import { useMainStore } from '@/stores/main'
 export default {
   name: 'FirstVisitWindow',
   components: { Markdown, VueFeather },
+  emits: ['close', 'open-tutorial'],
   setup () {
     const store = useMainStore()
     return { store }

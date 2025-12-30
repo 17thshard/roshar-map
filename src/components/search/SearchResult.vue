@@ -41,6 +41,7 @@ export default {
       required: true
     }
   },
+  emits: ['use'],
   setup () {
     const store = useMainStore()
     return { store }

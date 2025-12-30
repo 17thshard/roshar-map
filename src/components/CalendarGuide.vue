@@ -91,7 +91,7 @@ export default {
   mounted () {
     document.addEventListener('keyup', this.closeOnEscape)
   },
-  destroyed () {
+  unmounted () {
     document.removeEventListener('keyup', this.closeOnEscape)
   },
   methods: {
