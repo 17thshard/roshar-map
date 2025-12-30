@@ -10,17 +10,32 @@
       @scroll="onScroll"
     >
       <ul class="search-results__list">
-        <li v-if="loading" class="search-results__placeholder">
+        <li
+          v-if="loading"
+          class="search-results__placeholder"
+        >
           {{ $t('ui.search.loading') }}
         </li>
-        <li v-else-if="emptyQuery" class="search-results__placeholder">
+        <li
+          v-else-if="emptyQuery"
+          class="search-results__placeholder"
+        >
           {{ $t('ui.search.empty-query') }}
         </li>
-        <li v-else-if="results.length === 0" class="search-results__placeholder">
+        <li
+          v-else-if="results.length === 0"
+          class="search-results__placeholder"
+        >
           {{ $t('ui.search.no-results') }}
         </li>
-        <li v-for="result in results" :key="result">
-          <SearchResult :entry="result" @use="$emit('result-use', result)" />
+        <li
+          v-for="result in results"
+          :key="result"
+        >
+          <SearchResult
+            :entry="result"
+            @use="$emit('result-use', result)"
+          />
         </li>
       </ul>
     </CustomScrollbar>

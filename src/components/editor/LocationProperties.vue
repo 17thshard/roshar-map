@@ -3,7 +3,11 @@
     <h2>Location properties</h2>
     <div class="location-properties__form">
       <label for="location-properties__slug">ID</label>
-      <input id="location-properties__slug" v-model="location.id" type="text">
+      <input
+        id="location-properties__slug"
+        v-model="location.id"
+        type="text"
+      >
 
       <div class="location-properties__coordinates">
         <h3>Coordinates</h3>
@@ -87,7 +91,10 @@
         <li v-if="linked.length === 0">
           Nothing
         </li>
-        <li v-for="item in linked" :key="item">
+        <li
+          v-for="item in linked"
+          :key="item"
+        >
           {{ item }}
         </li>
       </ul>

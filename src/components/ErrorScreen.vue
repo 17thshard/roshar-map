@@ -2,13 +2,30 @@
   <div class="error-screen">
     <div class="error-screen__icon">
       <div class="error-screen__icon-container">
-        <img class="error-screen__icon-image" src="@/assets/logos/knight-radiant-ancient-broken.svg" alt="A broken logo of the knights radiant" aria-hidden="true">
+        <img
+          class="error-screen__icon-image"
+          src="@/assets/logos/knight-radiant-ancient-broken.svg"
+          alt="A broken logo of the knights radiant"
+          aria-hidden="true"
+        >
       </div>
     </div>
-    <Markdown class="error-screen__text" :content="$t('ui.error-screen.message')" />
-    <Markdown class="error-screen__report" :content="$t('ui.error-screen.report-intro')">
-      <a class="error-screen__report-button" href="https://github.com/Palanaeum/roshar-map/issues/new">
-        <VueFeather type="github" :size="20" />
+    <Markdown
+      class="error-screen__text"
+      :content="$t('ui.error-screen.message')"
+    />
+    <Markdown
+      class="error-screen__report"
+      :content="$t('ui.error-screen.report-intro')"
+    >
+      <a
+        class="error-screen__report-button"
+        href="https://github.com/Palanaeum/roshar-map/issues/new"
+      >
+        <VueFeather
+          type="github"
+          :size="20"
+        />
         {{ $t('ui.error-screen.report-button') }}
       </a>
     </Markdown>

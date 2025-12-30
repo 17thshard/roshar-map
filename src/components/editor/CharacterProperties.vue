@@ -3,7 +3,11 @@
     <h2>Character properties</h2>
     <div class="character-properties__form">
       <label for="character-properties__slug">ID</label>
-      <input id="character-properties__slug" v-model="character.id" type="text">
+      <input
+        id="character-properties__slug"
+        v-model="character.id"
+        type="text"
+      >
 
       <label>Related</label>
       <VueTagsInput
@@ -21,7 +25,10 @@
         <li v-if="linked.length === 0">
           Nothing
         </li>
-        <li v-for="item in linked" :key="item">
+        <li
+          v-for="item in linked"
+          :key="item"
+        >
           {{ item }}
         </li>
       </ul>

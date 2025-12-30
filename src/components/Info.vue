@@ -1,13 +1,34 @@
 <template>
   <div :class="['info', { 'info--open': open, 'info--leave-active': leaveActive }]">
-    <transition name="info__wrapper" @before-leave="leaveActive = true" @after-leave="leaveActive = false">
-      <div v-if="open" class="info__wrapper">
+    <transition
+      name="info__wrapper"
+      @before-leave="leaveActive = true"
+      @after-leave="leaveActive = false"
+    >
+      <div
+        v-if="open"
+        class="info__wrapper"
+      >
         <div :class="['info__bar', { 'info__bar--opaque': scrolled[subPage === null ? 'root' : subPage] === true }]">
-          <button :class="['info__back', { 'info__back--active': subPage !== null }]" :title="$t('ui.back')" @click="subPage = null">
-            <VueFeather v-if="store.flipDirectionalIcons" type="chevron-right" />
-            <VueFeather v-else type="chevron-left" />
+          <button
+            :class="['info__back', { 'info__back--active': subPage !== null }]"
+            :title="$t('ui.back')"
+            @click="subPage = null"
+          >
+            <VueFeather
+              v-if="store.flipDirectionalIcons"
+              type="chevron-right"
+            />
+            <VueFeather
+              v-else
+              type="chevron-left"
+            />
           </button>
-          <button :class="['info__close', { 'info__close--dark': subPage !== null }]" :title="$t('ui.close')" @click="$emit('close')">
+          <button
+            :class="['info__close', { 'info__close--dark': subPage !== null }]"
+            :title="$t('ui.close')"
+            @click="$emit('close')"
+          >
             <VueFeather type="x" />
           </button>
         </div>
@@ -16,16 +37,49 @@
           @scroll="onScroll(null, $event)"
         >
           <div class="info__content">
-            <div class="info__logo" :style="{ backgroundImage: `url('${logo}')` }" />
-            <Markdown :content="$t('ui.welcome')" class="info__text" />
+            <div
+              class="info__logo"
+              :style="{ backgroundImage: `url('${logo}')` }"
+            />
+            <Markdown
+              :content="$t('ui.welcome')"
+              class="info__text"
+            />
             <nav class="info__menu">
-              <a href="#" target="_blank" @click.prevent="subPage = 'about'">{{ $t('ui.about') }}</a>
-              <a href="#" target="_blank" @click.prevent="subPage = 'language'">{{ $t('ui.language') }}</a>
-              <a href="#" target="_blank" @click.prevent="$emit('open-tutorial')">{{ $t('ui.help') }}</a>
-              <a v-if="nativeShareSupported" href="#" target="_blank" @click.prevent="shareNatively">{{ $t('sharing.title') }}</a>
-              <a href="https://brandonsanderson.com" target="_blank">{{ $t('ui.brandon-sanderson') }}</a>
-              <a href="https://coppermind.net" target="_blank">The Coppermind</a>
-              <a href="#" target="_blank" @click.prevent="subPage = 'credits'">{{ $t('ui.credits') }}</a>
+              <a
+                href="#"
+                target="_blank"
+                @click.prevent="subPage = 'about'"
+              >{{ $t('ui.about') }}</a>
+              <a
+                href="#"
+                target="_blank"
+                @click.prevent="subPage = 'language'"
+              >{{ $t('ui.language') }}</a>
+              <a
+                href="#"
+                target="_blank"
+                @click.prevent="$emit('open-tutorial')"
+              >{{ $t('ui.help') }}</a>
+              <a
+                v-if="nativeShareSupported"
+                href="#"
+                target="_blank"
+                @click.prevent="shareNatively"
+              >{{ $t('sharing.title') }}</a>
+              <a
+                href="https://brandonsanderson.com"
+                target="_blank"
+              >{{ $t('ui.brandon-sanderson') }}</a>
+              <a
+                href="https://coppermind.net"
+                target="_blank"
+              >The Coppermind</a>
+              <a
+                href="#"
+                target="_blank"
+                @click.prevent="subPage = 'credits'"
+              >{{ $t('ui.credits') }}</a>
             </nav>
             <footer class="info__footer">
               <div class="info__credits">
@@ -38,7 +92,13 @@
                   target="_blank"
                   title="Discord"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="feather">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    class="feather"
+                  >
                     <path
                       fill="none"
                       stroke="currentColor"
@@ -47,35 +107,81 @@
                     />
                   </svg>
                 </a>
-                <a class="info__social" href="https://youtube.com/user/17thShard" target="_blank" title="YouTube">
+                <a
+                  class="info__social"
+                  href="https://youtube.com/user/17thShard"
+                  target="_blank"
+                  title="YouTube"
+                >
                   <VueFeather type="youtube" />
                 </a>
-                <a class="info__social" href="https://patreon.com/17thshard" target="_blank" title="Patreon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="feather">
-                    <g fill="none" stroke="currentColor" stroke-width="2">
+                <a
+                  class="info__social"
+                  href="https://patreon.com/17thshard"
+                  target="_blank"
+                  title="Patreon"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    class="feather"
+                  >
+                    <g
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
                       <path d="m14.271 4.2796c-3.1967 0-5.7974 2.6004-5.7974 5.7968 0 3.1868 2.6007 5.7795 5.7974 5.7795 3.1868 0 5.7794-2.5927 5.7794-5.7795 0-3.1965-2.5926-5.7968-5.7794-5.7968" />
                       <path d="m3.949 4.2795v15.441h2.8306v-15.441z" />
                     </g>
                   </svg>
                 </a>
-                <a class="info__social" href="https://facebook.com/17thShard" target="_blank" title="Facebook">
+                <a
+                  class="info__social"
+                  href="https://facebook.com/17thShard"
+                  target="_blank"
+                  title="Facebook"
+                >
                   <VueFeather type="facebook" />
                 </a>
-                <a class="info__social" href="https://github.com/Palanaeum/roshar-map" target="_blank" title="GitHub">
+                <a
+                  class="info__social"
+                  href="https://github.com/Palanaeum/roshar-map"
+                  target="_blank"
+                  title="GitHub"
+                >
                   <VueFeather type="github" />
                 </a>
               </div>
 
-              <a href="https://17thshard.com" target="_blank" title="17th Shard Forums">
-                <img class="info__forum-logo" src="@/assets/logos/17s.svg" alt="17th Shard">
+              <a
+                href="https://17thshard.com"
+                target="_blank"
+                title="17th Shard Forums"
+              >
+                <img
+                  class="info__forum-logo"
+                  src="@/assets/logos/17s.svg"
+                  alt="17th Shard"
+                >
               </a>
 
               <template v-if="translatorLogo !== undefined">
                 <div class="info__translator">
                   {{ $t('ui.translation-by') }}
                 </div>
-                <a :href="$t(`meta.translator.url`)" target="_blank" :title="$t(`meta.translator.name`)">
-                  <img class="info__translator-logo" :src="translatorLogo" :alt="$t(`meta.translator.name`)">
+                <a
+                  :href="$t(`meta.translator.url`)"
+                  target="_blank"
+                  :title="$t(`meta.translator.name`)"
+                >
+                  <img
+                    class="info__translator-logo"
+                    :src="translatorLogo"
+                    :alt="$t(`meta.translator.name`)"
+                  >
                 </a>
               </template>
             </footer>
@@ -88,7 +194,11 @@
           <div class="info__content">
             <h2>{{ $t('ui.languageHeading') }}</h2>
             <nav class="info__menu">
-              <router-link v-for="{ code, name } in availableLanguages" :key="code" :to="`/${code}`">
+              <router-link
+                v-for="{ code, name } in availableLanguages"
+                :key="code"
+                :to="`/${code}`"
+              >
                 {{ name }}
               </router-link>
             </nav>
@@ -100,7 +210,10 @@
         >
           <div class="info__content">
             <h2>{{ $t('ui.about') }}</h2>
-            <Markdown :content="$t('ui.aboutText')" class="info__text" />
+            <Markdown
+              :content="$t('ui.aboutText')"
+              class="info__text"
+            />
           </div>
         </CustomScrollbar>
         <CustomScrollbar
@@ -109,7 +222,12 @@
         >
           <div class="info__content">
             <h2>{{ $t('ui.credits') }}</h2>
-            <div class="markdown info__text" v-html="creditsHtml" />
+            <!-- eslint-disable vue/no-v-html -- trusted build-time generated content -->
+            <div
+              class="markdown info__text"
+              v-html="creditsHtml"
+            />
+            <!-- eslint-enable vue/no-v-html -->
           </div>
         </CustomScrollbar>
       </div>

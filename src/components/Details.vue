@@ -12,7 +12,10 @@
       class="details__scroller"
     >
       <div class="details__content">
-        <figure v-if="details.image !== undefined" class="details__image">
+        <figure
+          v-if="details.image !== undefined"
+          class="details__image"
+        >
           <div
             class="details__image-art"
             :style="{
@@ -21,27 +24,64 @@
               backgroundSize: `${width}px auto`
             }"
           />
-          <Markdown :content="imageCredits" tag="figcaption" inline />
+          <Markdown
+            :content="imageCredits"
+            tag="figcaption"
+            inline
+          />
         </figure>
         <section class="details__text">
-          <div ref="intersectionGuard" class="details__intersection-guard" />
-          <h2 ref="title" class="details__title">
+          <div
+            ref="intersectionGuard"
+            class="details__intersection-guard"
+          />
+          <h2
+            ref="title"
+            class="details__title"
+          >
             {{ $t(`${baseTranslationKey}.name`) }}
           </h2>
-          <ul v-if="Object.keys(metadata).length > 0" class="details__metadata">
+          <ul
+            v-if="Object.keys(metadata).length > 0"
+            class="details__metadata"
+          >
             <li v-if="metadata.date">
-              <VueFeather type="calendar" :aria-label="$t(`ui.date`)" class="details__metadata-icon" :size="16" />
+              <VueFeather
+                type="calendar"
+                :aria-label="$t(`ui.date`)"
+                class="details__metadata-icon"
+                :size="16"
+              />
               {{ metadata.date }}
-              <button class="details__date-help" :title="$t('ui.date-help')" @click="store.openCalendarGuide()">
-                <VueFeather type="help-circle" :size="16" />
+              <button
+                class="details__date-help"
+                :title="$t('ui.date-help')"
+                @click="store.openCalendarGuide()"
+              >
+                <VueFeather
+                  type="help-circle"
+                  :size="16"
+                />
               </button>
             </li>
             <li v-if="metadata.chapter">
-              <VueFeather type="book" :aria-label="$t(`ui.chapter`)" class="details__metadata-icon" :size="16" />
-              <Markdown tag="span" :content="metadata.chapter" inline />
+              <VueFeather
+                type="book"
+                :aria-label="$t(`ui.chapter`)"
+                class="details__metadata-icon"
+                :size="16"
+              />
+              <Markdown
+                tag="span"
+                :content="metadata.chapter"
+                inline
+              />
             </li>
           </ul>
-          <Markdown :content="text" tag="article" />
+          <Markdown
+            :content="text"
+            tag="article"
+          />
           <a
             v-if="details.coppermind !== undefined"
             :href="`https://coppermind.net/wiki/${details.coppermind}`"
@@ -51,7 +91,10 @@
             {{ $t('ui.coppermind') }}
           </a>
         </section>
-        <section v-if="anyRelated" class="details__related">
+        <section
+          v-if="anyRelated"
+          class="details__related"
+        >
           <h3>{{ $t('ui.related') }}</h3>
           <div
             v-for="type in ['events', 'locations', 'characters', 'misc'].filter(t => related[t] !== undefined && related[t].length > 0)"
@@ -74,7 +117,13 @@
                   :title="$t(link.translationKey)"
                   class="details__related-link-image"
                 />
-                <img v-else class="details__related-link-placeholder" src="@/assets/logos/knight-radiant-ancient.svg" alt="A logo of the knights radiant" aria-hidden="true">
+                <img
+                  v-else
+                  class="details__related-link-placeholder"
+                  src="@/assets/logos/knight-radiant-ancient.svg"
+                  alt="A logo of the knights radiant"
+                  aria-hidden="true"
+                >
               </div>
               {{ $t(link.translationKey) }}
             </router-link>
@@ -89,8 +138,16 @@
             rel="noopener noreferrer"
             :aria-label="$t('sharing.tumblr.button-text')"
           >
-            <span class="share-button__icon" aria-hidden="true">
-              <img class="share-button__icon-img" :src="tumblrLogo" alt="" aria-hidden="true">
+            <span
+              class="share-button__icon"
+              aria-hidden="true"
+            >
+              <img
+                class="share-button__icon-img"
+                :src="tumblrLogo"
+                alt=""
+                aria-hidden="true"
+              >
             </span>
             <span class="share-button__text">{{ $t('sharing.tumblr.button-text') }}</span>
           </a>
@@ -101,8 +158,16 @@
             rel="noopener noreferrer"
             :aria-label="$t('sharing.reddit.button-text')"
           >
-            <span class="share-button__icon" aria-hidden="true">
-              <img class="share-button__icon-img" :src="redditLogo" alt="" aria-hidden="true">
+            <span
+              class="share-button__icon"
+              aria-hidden="true"
+            >
+              <img
+                class="share-button__icon-img"
+                :src="redditLogo"
+                alt=""
+                aria-hidden="true"
+              >
             </span>
             <span class="share-button__text">{{ $t('sharing.reddit.button-text') }}</span>
           </a>
@@ -113,8 +178,16 @@
             rel="noopener noreferrer"
             :aria-label="$t('sharing.twitter.button-text')"
           >
-            <span class="share-button__icon" aria-hidden="true">
-              <img class="share-button__icon-img" :src="xLogo" alt="" aria-hidden="true">
+            <span
+              class="share-button__icon"
+              aria-hidden="true"
+            >
+              <img
+                class="share-button__icon-img"
+                :src="xLogo"
+                alt=""
+                aria-hidden="true"
+              >
             </span>
             <span class="share-button__text">{{ $t('sharing.twitter.button-text') }}</span>
           </a>
@@ -127,8 +200,16 @@
             @keydown.enter.prevent="shareInstagram"
             @keydown.space.prevent="shareInstagram"
           >
-            <span class="share-button__icon" aria-hidden="true">
-              <img class="share-button__icon-img" :src="instagramLogo" alt="" aria-hidden="true">
+            <span
+              class="share-button__icon"
+              aria-hidden="true"
+            >
+              <img
+                class="share-button__icon-img"
+                :src="instagramLogo"
+                alt=""
+                aria-hidden="true"
+              >
             </span>
             <span class="share-button__text">{{ $t('sharing.instagram.button-text') }}</span>
           </a>
@@ -139,8 +220,16 @@
             rel="noopener noreferrer"
             :aria-label="$t('sharing.facebook.button-text')"
           >
-            <span class="share-button__icon" aria-hidden="true">
-              <img class="share-button__icon-img" :src="facebookLogo" alt="" aria-hidden="true">
+            <span
+              class="share-button__icon"
+              aria-hidden="true"
+            >
+              <img
+                class="share-button__icon-img"
+                :src="facebookLogo"
+                alt=""
+                aria-hidden="true"
+              >
             </span>
             <span class="share-button__text">{{ $t('sharing.facebook.button-text') }}</span>
           </a>
@@ -153,8 +242,16 @@
             @keydown.enter.prevent="shareGenerally"
             @keydown.space.prevent="shareGenerally"
           >
-            <span class="share-button__icon" aria-hidden="true">
-              <img class="share-button__icon-img" :src="shareLogo" alt="" aria-hidden="true">
+            <span
+              class="share-button__icon"
+              aria-hidden="true"
+            >
+              <img
+                class="share-button__icon-img"
+                :src="shareLogo"
+                alt=""
+                aria-hidden="true"
+              >
             </span>
             <span class="share-button__text">
               {{ generalShareLabel }}

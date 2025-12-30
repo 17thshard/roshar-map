@@ -18,7 +18,10 @@
         ]"
       >
         <span class="separate-timeline-overview__timeline-drag-handle" />
-        <span class="separate-timeline-overview__timeline-icon" :style="{ background: store.mappings.tags[tag].color }" />
+        <span
+          class="separate-timeline-overview__timeline-icon"
+          :style="{ background: store.mappings.tags[tag].color }"
+        />
         {{ $t(`tags.${tag}`) }}
         <div class="separate-timeline-overview__timeline-actions">
           <button
@@ -26,15 +29,26 @@
             :title="lockedTag === tag ? $t('ui.unlock-timeline') : $t('ui.lock-timeline')"
             @click="toggleLock(tag)"
           >
-            <VueFeather v-if="lockedTag === tag" type="lock" :size="20" />
-            <VueFeather v-else type="unlock" :size="20" />
+            <VueFeather
+              v-if="lockedTag === tag"
+              type="lock"
+              :size="20"
+            />
+            <VueFeather
+              v-else
+              type="unlock"
+              :size="20"
+            />
           </button>
           <button
             class="separate-timeline-overview__timeline-action"
             :title="$t('ui.stop-display-separately')"
             @click="disableTagSeparation(tag)"
           >
-            <VueFeather type="x" :size="20" />
+            <VueFeather
+              type="x"
+              :size="20"
+            />
           </button>
         </div>
       </li>

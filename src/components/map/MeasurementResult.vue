@@ -1,7 +1,11 @@
 <template>
   <div class="measurement-result">
     <div class="measurement-result__content">
-      <button class="measurement-result__close" :title="$t('ui.close')" @click="$emit('close')">
+      <button
+        class="measurement-result__close"
+        :title="$t('ui.close')"
+        @click="$emit('close')"
+      >
         <VueFeather type="x" />
       </button>
       <h2>{{ $t('ui.measurement.title') }}</h2>

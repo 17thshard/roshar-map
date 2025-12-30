@@ -1,24 +1,42 @@
 <template>
-  <div id="app" :class="{ 'app--details': details !== null, 'app--sidebar-active': sidebarActive }">
+  <div
+    id="app"
+    :class="{ 'app--details': details !== null, 'app--sidebar-active': sidebarActive }"
+  >
     <router-view
       :transitions="mapTransitions ? true : undefined"
       @ready="onReady"
       @error="onError"
     />
     <transition name="details">
-      <Details v-if="details !== null" :key="details.id" :details="details" />
+      <Details
+        v-if="details !== null"
+        :key="details.id"
+        :details="details"
+      />
     </transition>
-    <transition name="scrubber" duration="1500" @after-enter="onScrubberLoaded">
+    <transition
+      name="scrubber"
+      duration="1500"
+      @after-enter="onScrubberLoaded"
+    >
       <Scrubber v-if="ready" />
     </transition>
     <div class="app__actions">
-      <Search :open="openedMenu === 'search' ? true : undefined" @open="openMenu('search')" @close="closeMenu" />
+      <Search
+        :open="openedMenu === 'search' ? true : undefined"
+        @open="openMenu('search')"
+        @close="closeMenu"
+      />
       <button
         data-tutorial-id="settings-button"
         :class="['app__actions-button', 'app__actions-button--wide', {'app__actions-button--hidden': openedMenu === 'settings'}]"
         @click="openMenu('settings')"
       >
-        <VueFeather type="sliders" :size="20" />
+        <VueFeather
+          type="sliders"
+          :size="20"
+        />
         {{ $t('ui.settings') }}
       </button>
       <button
@@ -27,19 +45,39 @@
         :title="$t('ui.menu')"
         @click="openMenu('info')"
       >
-        <VueFeather type="menu" :size="20" />
+        <VueFeather
+          type="menu"
+          :size="20"
+        />
       </button>
     </div>
-    <Info :open="openedMenu === 'info' ? true : undefined" @open-tutorial="openTutorial" @close="closeMenu" />
-    <Settings :open="openedMenu === 'settings' ? true : undefined" @close="closeMenu" />
+    <Info
+      :open="openedMenu === 'info' ? true : undefined"
+      @open-tutorial="openTutorial"
+      @close="closeMenu"
+    />
+    <Settings
+      :open="openedMenu === 'settings' ? true : undefined"
+      @close="closeMenu"
+    />
     <transition name="calendar-guide">
       <CalendarGuide v-if="store.calendarGuideOpen" />
     </transition>
-    <transition name="first-visit-window" appear>
-      <FirstVisitWindow v-if="ready && firstVisit" @open-tutorial="openTutorial" @close="firstVisit = false" />
+    <transition
+      name="first-visit-window"
+      appear
+    >
+      <FirstVisitWindow
+        v-if="ready && firstVisit"
+        @open-tutorial="openTutorial"
+        @close="firstVisit = false"
+      />
     </transition>
     <transition name="tutorial">
-      <Tutorial v-if="ready && tutorialActive" @close="tutorialActive = false" />
+      <Tutorial
+        v-if="ready && tutorialActive"
+        @close="tutorialActive = false"
+      />
     </transition>
     <transition name="loading__fade">
       <LoadingIndicator v-if="!ready && !errored" />
@@ -47,8 +85,14 @@
     <transition name="loading__fade">
       <ErrorScreen v-if="errored" />
     </transition>
-    <transition name="changelog" :duration="{ enter: 1000, leave: 300 }">
-      <Changelog v-if="ready && showChangelog" @close="showChangelog = false" />
+    <transition
+      name="changelog"
+      :duration="{ enter: 1000, leave: 300 }"
+    >
+      <Changelog
+        v-if="ready && showChangelog"
+        @close="showChangelog = false"
+      />
     </transition>
   </div>
 </template>

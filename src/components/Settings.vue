@@ -1,12 +1,22 @@
 <template>
   <div :class="['settings', { 'settings--open': open }]">
     <transition name="settings__content">
-      <div v-if="open" class="settings__content">
+      <div
+        v-if="open"
+        class="settings__content"
+      >
         <div :class="['settings__bar', { 'settings__bar--active': scrolled }]">
           <h2>{{ $t('ui.settings') }}</h2>
 
-          <button class="settings__close" :title="$t('ui.close')" @click="$emit('close')">
-            <VueFeather type="x" :size="20" />
+          <button
+            class="settings__close"
+            :title="$t('ui.close')"
+            @click="$emit('close')"
+          >
+            <VueFeather
+              type="x"
+              :size="20"
+            />
           </button>
         </div>
 
@@ -36,25 +46,55 @@
             </label>
           </section>
 
-          <section class="settings__filters" :style="{ paddingBottom: `${separateHeight + 56}px` }">
+          <section
+            class="settings__filters"
+            :style="{ paddingBottom: `${separateHeight + 56}px` }"
+          >
             <h3 data-tutorial-id="settings-filters">
               {{ $t('ui.filters') }}
             </h3>
-            <div v-for="category in tagCategories" :key="category.id">
+            <div
+              v-for="category in tagCategories"
+              :key="category.id"
+            >
               <h4>
                 {{ $t(`tagCategories.${category.id}`) }}
               </h4>
               <ul class="settings__tag-list">
-                <li v-for="tag in category.tags" :key="tag.id">
+                <li
+                  v-for="tag in category.tags"
+                  :key="tag.id"
+                >
                   <div :class="['settings__options', `settings__options--${buildTagState(tag.id)}`]">
-                    <button class="settings__options-button" :title="$t('ui.enable')" @click="enableTag(tag.id)">
-                      <VueFeather type="eye" :size="14" />
+                    <button
+                      class="settings__options-button"
+                      :title="$t('ui.enable')"
+                      @click="enableTag(tag.id)"
+                    >
+                      <VueFeather
+                        type="eye"
+                        :size="14"
+                      />
                     </button>
-                    <button class="settings__options-button" :title="$t('ui.display-separately')" @click="enableTagSeparation(tag.id)">
-                      <VueFeather type="git-branch" :size="14" />
+                    <button
+                      class="settings__options-button"
+                      :title="$t('ui.display-separately')"
+                      @click="enableTagSeparation(tag.id)"
+                    >
+                      <VueFeather
+                        type="git-branch"
+                        :size="14"
+                      />
                     </button>
-                    <button class="settings__options-button" :title="$t('ui.disable')" @click="disableTag(tag.id)">
-                      <VueFeather type="eye-off" :size="14" />
+                    <button
+                      class="settings__options-button"
+                      :title="$t('ui.disable')"
+                      @click="disableTag(tag.id)"
+                    >
+                      <VueFeather
+                        type="eye-off"
+                        :size="14"
+                      />
                     </button>
                   </div>
                   {{ $t(`tags.${tag.id}`) }}
@@ -77,7 +117,10 @@
             class="settings__separate-timelines-empty"
           >
             <template #timeline-icon>
-              <VueFeather type="git-branch" :size="14" />
+              <VueFeather
+                type="git-branch"
+                :size="14"
+              />
             </template>
           </i18n-t>
         </section>

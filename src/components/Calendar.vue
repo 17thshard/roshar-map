@@ -1,10 +1,18 @@
 <template>
   <div :class="['calendar', { 'calendar--clickable': clickable }]">
-    <div v-for="month in 10" :key="month" class="calendar__month">
+    <div
+      v-for="month in 10"
+      :key="month"
+      class="calendar__month"
+    >
       <span class="calendar__month-name">
         {{ $t(`numbers[${month - 1}]`) }}
       </span>
-      <div v-for="week in 10" :key="week" class="calendar__week">
+      <div
+        v-for="week in 10"
+        :key="week"
+        class="calendar__week"
+      >
         <span
           v-for="day in 5"
           :key="day"

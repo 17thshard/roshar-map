@@ -3,7 +3,12 @@
     <h2>Tag properties</h2>
     <div class="tag-properties__form">
       <label for="tag-properties__id">ID</label>
-      <input id="tag-properties__id" :value="tag.id" readonly type="text">
+      <input
+        id="tag-properties__id"
+        :value="tag.id"
+        readonly
+        type="text"
+      >
 
       <template v-if="selectedLanguage !== null">
         <label for="tag-properties__name">Name</label>
@@ -17,7 +22,11 @@
 
       <template v-if="!category">
         <label for="tag-properties__color">Color</label>
-        <input id="tag-properties__color" v-model="tag.color" type="color">
+        <input
+          id="tag-properties__color"
+          v-model="tag.color"
+          type="color"
+        >
         <label for="tag-properties__alpha">Alpha</label>
         <div>
           <input
@@ -30,7 +39,10 @@
           %
         </div>
         <span>Preview</span>
-        <div class="tag-properties__preview" :style="previewStyles" />
+        <div
+          class="tag-properties__preview"
+          :style="previewStyles"
+        />
       </template>
     </div>
   </section>

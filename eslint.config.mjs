@@ -42,13 +42,16 @@ export default [
       // keep historical lenience for existing code (warn instead of error)
       'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
 
-      // Legacy Vue codebase compatibility (avoid huge rule churn)
+      // Legacy Vue codebase compatibility
       'vue/multi-word-component-names': 'off',
-      'vue/no-reserved-component-names': 'off',
-      'vue/no-mutating-props': 'off',
-      'vue/no-v-html': 'off',
-      'vue/max-attributes-per-line': 'off',
-      'vue/this-in-template': 'off'
+      'vue/no-reserved-component-names': 'off'
+    }
+  },
+  // Editor components (dev tools) - allow prop mutation pattern
+  {
+    files: ['src/components/editor/**/*.vue'],
+    rules: {
+      'vue/no-mutating-props': 'off'
     }
   },
   // Node scripts / tooling

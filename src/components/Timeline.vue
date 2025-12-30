@@ -1,12 +1,19 @@
 <template>
-  <transition-group tag="div" name="timeline__event" :class="['timeline', { 'timeline--excluded-by-lock': excludedByLock }]">
+  <transition-group
+    tag="div"
+    name="timeline__event"
+    :class="['timeline', { 'timeline--excluded-by-lock': excludedByLock }]"
+  >
     <div
       key="bar"
       :style="{ [offsetStyle]: `${barOffset + offset}px`, ...(tag === 'all' ? { [endStyle]: 0 } : { width: `${width}px` }), ...barStyles }"
       :class="['timeline__bar', { 'timeline__bar--separate': tag !== 'all' }]"
     />
-      <template v-for="event in events" :key="event.id">
-        <button
+    <template
+      v-for="event in events"
+      :key="event.id"
+    >
+      <button
         :title="$t(`events.${event.id}.name`)"
         :class="['timeline__event', { 'timeline__event--active': activeEvent !== null && activeEvent.id === event.id }]"
         :style="{ [offsetStyle]: `${event.offset + offset}px` }"

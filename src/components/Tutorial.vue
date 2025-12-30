@@ -1,8 +1,15 @@
 <template>
   <div class="tutorial">
     <transition name="tutorial">
-      <div v-if="!hideWindow" class="tutorial__window">
-        <button class="tutorial__window-close" :title="$t('ui.dismiss')" @click="dismiss">
+      <div
+        v-if="!hideWindow"
+        class="tutorial__window"
+      >
+        <button
+          class="tutorial__window-close"
+          :title="$t('ui.dismiss')"
+          @click="dismiss"
+        >
           <VueFeather type="x" />
         </button>
         <div class="tutorial__window-text">
@@ -19,7 +26,11 @@
         </div>
       </div>
     </transition>
-    <transition-group tag="div" name="tutorial__marker" class="tutorial__markers">
+    <transition-group
+      tag="div"
+      name="tutorial__marker"
+      class="tutorial__markers"
+    >
       <div
         v-for="{ id, marker } in Object.keys(markers).filter(k => markers[k].visible).map(k => ({ id: k, marker: markers[k] }))"
         :id="`tutorial__marker--${id}`"
@@ -31,8 +42,18 @@
       />
     </transition-group>
     <transition name="tutorial__details">
-      <div v-if="activeMarker !== null && markers[activeMarker].visible" :key="activeMarker" ref="details" class="tutorial__details">
-        <Markdown tag="div" class="tutorial__details-text" :content="$t(`ui.tutorial.hints.${activeMarker}.text`)" inline />
+      <div
+        v-if="activeMarker !== null && markers[activeMarker].visible"
+        :key="activeMarker"
+        ref="details"
+        class="tutorial__details"
+      >
+        <Markdown
+          tag="div"
+          class="tutorial__details-text"
+          :content="$t(`ui.tutorial.hints.${activeMarker}.text`)"
+          inline
+        />
       </div>
     </transition>
   </div>

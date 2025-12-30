@@ -1,10 +1,17 @@
 <template>
   <div class="first-visit-window">
-    <button class="first-visit-window__close" :title="$t('ui.dismiss')" @click="dismiss">
+    <button
+      class="first-visit-window__close"
+      :title="$t('ui.dismiss')"
+      @click="dismiss"
+    >
       <VueFeather type="x" />
     </button>
     <div class="first-visit-window__icon" />
-    <Markdown class="first-visit-window__text" :content="$t('ui.first-visit.intro')">
+    <Markdown
+      class="first-visit-window__text"
+      :content="$t('ui.first-visit.intro')"
+    >
       <template #prefix>
         <p class="first-visit-window__heading">
           {{ $t('ui.first-visit.heading') }}

@@ -13,7 +13,11 @@
     @keyup.arrow-right="gotoEvent(1)"
   >
     <transition name="event-card">
-      <EventCard v-if="activeEvent !== null" :key="`event-${activeEvent.id}`" :event="activeEvent" />
+      <EventCard
+        v-if="activeEvent !== null"
+        :key="`event-${activeEvent.id}`"
+        :event="activeEvent"
+      />
     </transition>
     <transition name="scrubber__jump">
       <button
@@ -28,7 +32,7 @@
     <div class="scrubber__bar">
       <div class="scrubber__indicator">
         <div class="scrubber__indicator-actions">
-          <template v-if="this.store.flipTimeline">
+          <template v-if="store.flipTimeline">
             <button
               class="scrubber__indicator-button scrubber__indicator-button--left"
               :title="$t('ui.next-event')"
@@ -58,7 +62,11 @@
             <span class="scrubber__indicator-year">
               {{ currentDate }}
             </span>
-            <button class="scrubber__indicator-button scrubber__indicator-button--right" :title="$t('ui.next-event')" @click="gotoEvent(1)">
+            <button
+              class="scrubber__indicator-button scrubber__indicator-button--right"
+              :title="$t('ui.next-event')"
+              @click="gotoEvent(1)"
+            >
               {{ $t('ui.next') }}
             </button>
           </template>
@@ -89,8 +97,14 @@
             class="scrubber__timeline"
             @event-selected="selectEvent"
           />
-          <div key="years" class="scrubber__years">
-            <template v-for="{ year, offset, months, singleEvent } in years.filter(year => year.display)" :key="year">
+          <div
+            key="years"
+            class="scrubber__years"
+          >
+            <template
+              v-for="{ year, offset, months, singleEvent } in years.filter(year => year.display)"
+              :key="year"
+            >
               <span
                 :style="{ [offsetStyle]: `${offset + timelineOffset}px` }"
                 class="scrubber__year"
@@ -131,13 +145,31 @@
           :title="$t('ui.jump-to-end')"
           @click="jumpToEnd"
         >
-          <VueFeather v-if="store.flipTimeline" type="chevrons-left" />
-          <VueFeather v-else type="chevrons-right" />
+          <VueFeather
+            v-if="store.flipTimeline"
+            type="chevrons-left"
+          />
+          <VueFeather
+            v-else
+            type="chevrons-right"
+          />
         </button>
       </transition>
-      <button class="scrubber__separate-timelines-toggle" :title="$t('ui.separate-timelines')" @click="separateVisible = !separateVisible">
-        <VueFeather v-if="separateVisible ^ store.flipDirectionalIcons" type="chevron-right" :size="24" />
-        <VueFeather v-else type="chevron-left" :size="20" />
+      <button
+        class="scrubber__separate-timelines-toggle"
+        :title="$t('ui.separate-timelines')"
+        @click="separateVisible = !separateVisible"
+      >
+        <VueFeather
+          v-if="separateVisible ^ store.flipDirectionalIcons"
+          type="chevron-right"
+          :size="24"
+        />
+        <VueFeather
+          v-else
+          type="chevron-left"
+          :size="20"
+        />
       </button>
       <div class="scrubber__separate-timelines-content">
         <h3>{{ $t('ui.separate-timelines') }}</h3>
@@ -150,7 +182,10 @@
       :title="$t('ui.go-to-date.heading')"
       @click="openGoToDate"
     >
-      <VueFeather type="calendar" :size="20" />
+      <VueFeather
+        type="calendar"
+        :size="20"
+      />
     </button>
     <button
       data-tutorial-id="measure-button"
@@ -158,10 +193,16 @@
       :title="$t('ui.measurement.button')"
       @click="toggleMeasurement"
     >
-      <VueFeather type="compass" :size="20" />
+      <VueFeather
+        type="compass"
+        :size="20"
+      />
     </button>
     <transition name="go-to-date">
-      <GoToDate v-if="store.goToDateOpen" @submit="scrollToDate" />
+      <GoToDate
+        v-if="store.goToDateOpen"
+        @submit="scrollToDate"
+      />
     </transition>
   </div>
 </template>

@@ -1,5 +1,8 @@
 <template>
-  <div class="changelog" @click.self="dismiss">
+  <div
+    class="changelog"
+    @click.self="dismiss"
+  >
     <div class="changelog__window">
       <div class="changelog__window-content">
         <CustomScrollbar
@@ -7,9 +10,18 @@
           :class="['changelog__scroller', { 'changelog__scroller--bottom': scrolledToBottom }]"
           @scroll="onScroll"
         >
-          <Markdown :content="$t('changelog')" advanced />
+          <Markdown
+            :content="$t('changelog')"
+            advanced
+          />
         </CustomScrollbar>
-        <Markdown tag="button" :content="$t('ui.dismiss')" inline class="changelog__confirm" @click="dismiss" />
+        <Markdown
+          tag="button"
+          :content="$t('ui.dismiss')"
+          inline
+          class="changelog__confirm"
+          @click="dismiss"
+        />
       </div>
     </div>
   </div>

@@ -1,14 +1,24 @@
 <template>
-  <div class="calendar-guide__wrapper" @click.self="close">
+  <div
+    class="calendar-guide__wrapper"
+    @click.self="close"
+  >
     <section class="calendar-guide">
       <header class="calendar-guide__header">
         <h2>{{ $t('ui.calendar-guide.title') }}</h2>
 
-        <button class="calendar-guide__close" :title="$t('ui.close')" @click="close">
+        <button
+          class="calendar-guide__close"
+          :title="$t('ui.close')"
+          @click="close"
+        >
           <VueFeather type="x" />
         </button>
       </header>
-      <Markdown class="calendar-guide__explanation" :content="explanation" />
+      <Markdown
+        class="calendar-guide__explanation"
+        :content="explanation"
+      />
       <Calendar
         class="calendar-guide__calendar"
         :highlight-range="highlightRange"
@@ -17,9 +27,23 @@
         @date-click="highlightedDate = $event"
       />
       <nav class="calendar-guide__navigation">
-        <button class="calendar-guide__button calendar-guide__button--prev" :title="$t('ui.previous')" @click="prevStep">
-          <VueFeather v-if="store.flipDirectionalIcons" type="chevron-right" :size="24" :stroke-width="3" />
-          <VueFeather v-else type="chevron-left" :size="24" :stroke-width="3" />
+        <button
+          class="calendar-guide__button calendar-guide__button--prev"
+          :title="$t('ui.previous')"
+          @click="prevStep"
+        >
+          <VueFeather
+            v-if="store.flipDirectionalIcons"
+            type="chevron-right"
+            :size="24"
+            :stroke-width="3"
+          />
+          <VueFeather
+            v-else
+            type="chevron-left"
+            :size="24"
+            :stroke-width="3"
+          />
         </button>
         <ul class="calendar-guide__dots">
           <li
@@ -30,9 +54,23 @@
             @click="step = s"
           />
         </ul>
-        <button class="calendar-guide__button calendar-guide__button--next" :title="$t('ui.next')" @click="nextStep">
-          <VueFeather v-if="store.flipDirectionalIcons" type="chevron-left" :size="24" :stroke-width="3" />
-          <VueFeather v-else type="chevron-right" :size="24" :stroke-width="3" />
+        <button
+          class="calendar-guide__button calendar-guide__button--next"
+          :title="$t('ui.next')"
+          @click="nextStep"
+        >
+          <VueFeather
+            v-if="store.flipDirectionalIcons"
+            type="chevron-left"
+            :size="24"
+            :stroke-width="3"
+          />
+          <VueFeather
+            v-else
+            type="chevron-right"
+            :size="24"
+            :stroke-width="3"
+          />
         </button>
       </nav>
     </section>

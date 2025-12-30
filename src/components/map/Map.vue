@@ -6,7 +6,10 @@
       :style="{ left: `${tutorialReferencePosition.x}%`, top: `${tutorialReferencePosition.y}%` }"
     />
     <transition name="map__factions-legend">
-      <FactionsLegend v-if="layers.factions !== undefined && layers.factions.t > 0.5" class="map__factions-legend" />
+      <FactionsLegend
+        v-if="layers.factions !== undefined && layers.factions.t > 0.5"
+        class="map__factions-legend"
+      />
     </transition>
     <transition name="map__measurement-result">
       <MeasurementResult

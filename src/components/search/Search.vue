@@ -7,11 +7,22 @@
     @animationend="onAnimationEnd"
     @click="onBackgroundClick"
   >
-    <button :disabled="open" class="search__button" :title="$t('ui.search.title')" @click="$emit('open')">
-      <VueFeather type="search" :size="20" />
+    <button
+      :disabled="open"
+      class="search__button"
+      :title="$t('ui.search.title')"
+      @click="$emit('open')"
+    >
+      <VueFeather
+        type="search"
+        :size="20"
+      />
     </button>
     <transition name="search__content">
-      <div v-if="open" class="search__content">
+      <div
+        v-if="open"
+        class="search__content"
+      >
         <input
           key="field"
           ref="field"
@@ -22,8 +33,16 @@
           @focusin="fieldFocused = true"
           @focusout="fieldFocused = false"
         >
-        <button key="close-button" class="search__button" :title="$t('ui.close')" @click="$emit('close')">
-          <VueFeather type="x" :size="20" />
+        <button
+          key="close-button"
+          class="search__button"
+          :title="$t('ui.close')"
+          @click="$emit('close')"
+        >
+          <VueFeather
+            type="x"
+            :size="20"
+          />
         </button>
       </div>
     </transition>

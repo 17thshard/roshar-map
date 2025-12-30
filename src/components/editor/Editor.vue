@@ -1,49 +1,97 @@
 <template>
   <div :class="['editor', { 'editor--loading': loading }]">
     <div class="editor__menu">
-      <img src="@/assets/logos/roshar.png" alt="Logo">
+      <img
+        src="@/assets/logos/roshar.png"
+        alt="Logo"
+      >
       <button @click="save">
         Save to disk
       </button>
       Mode:
       <label for="editor__mode--locations">
-        <input id="editor__mode--locations" v-model="mode" type="radio" value="locations">
+        <input
+          id="editor__mode--locations"
+          v-model="mode"
+          type="radio"
+          value="locations"
+        >
         Locations
       </label>
       <label for="editor__mode--events">
-        <input id="editor__mode--events" v-model="mode" type="radio" value="events">
+        <input
+          id="editor__mode--events"
+          v-model="mode"
+          type="radio"
+          value="events"
+        >
         Events
       </label>
       <label for="editor__mode--characters">
-        <input id="editor__mode--characters" v-model="mode" type="radio" value="characters">
+        <input
+          id="editor__mode--characters"
+          v-model="mode"
+          type="radio"
+          value="characters"
+        >
         Characters
       </label>
       <label for="editor__mode--misc">
-        <input id="editor__mode--misc" v-model="mode" type="radio" value="misc">
+        <input
+          id="editor__mode--misc"
+          v-model="mode"
+          type="radio"
+          value="misc"
+        >
         Misc
       </label>
       <label for="editor__mode--tags">
-        <input id="editor__mode--tags" v-model="mode" type="radio" value="tags">
+        <input
+          id="editor__mode--tags"
+          v-model="mode"
+          type="radio"
+          value="tags"
+        >
         Tags
       </label>
 
       <div class="editor__file">
         <label for="editor__selected-language">Edited Language</label>
-        <select id="editor__selected-language" v-model="selectedLanguage">
+        <select
+          id="editor__selected-language"
+          v-model="selectedLanguage"
+        >
           <option :value="null">
             None
           </option>
-          <option v-for="language in availableLanguages" :key="language" :value="language">
+          <option
+            v-for="language in availableLanguages"
+            :key="language"
+            :value="language"
+          >
             {{ language }}
           </option>
         </select>
 
         <label for="editor__selected-language">Override with</label>
-        <input id="editor__file--language" :disabled="selectedLanguage === null" type="file" @change="loadLanguage">
+        <input
+          id="editor__file--language"
+          :disabled="selectedLanguage === null"
+          type="file"
+          @change="loadLanguage"
+        >
       </div>
       <label for="editor__texture-locale">Texture Locale</label>
-      <select id="editor__texture-locale" v-model="textureLocale" @change="resetRenderer">
-        <option v-for="language in ['en-US', 'es-ES', 'ru', 'tr', 'zh']" :key="language" :value="language">
+      <select
+        id="editor__texture-locale"
+        v-model="textureLocale"
+        @change="resetRenderer"
+      >
+        <option
+          v-for="language in ['en-US', 'es-ES', 'ru', 'tr', 'zh']"
+          :key="language"
+          :value="language"
+        >
           {{ language }}
         </option>
       </select>
@@ -98,13 +146,26 @@
         {{ `(${markerPosition.x}, ${markerPosition.y})` }}
       </div>
     </div>
-    <canvas ref="referenceCanvas" class="editor__reference" width="1024" height="512" />
-    <ul v-if="mode === 'locations'" class="editor__location-list" @click.self="selectedLocation = null">
+    <canvas
+      ref="referenceCanvas"
+      class="editor__reference"
+      width="1024"
+      height="512"
+    />
+    <ul
+      v-if="mode === 'locations'"
+      class="editor__location-list"
+      @click.self="selectedLocation = null"
+    >
       <li>
         <label for="editor__file--locations">
           Override with
         </label>
-        <input id="editor__file--locations" type="file" @change="loadLocations">
+        <input
+          id="editor__file--locations"
+          type="file"
+          @change="loadLocations"
+        >
         <button @click="saveLocations">
           Save
         </button>
@@ -140,18 +201,29 @@
       >
         <span>{{ location.mapId }}</span>
         <span>{{ location.id }}</span>
-        <button :disabled="isLinked('locations', location.id)" @click.stop="deleteLocation(index)">
+        <button
+          :disabled="isLinked('locations', location.id)"
+          @click.stop="deleteLocation(index)"
+        >
           Delete
         </button>
       </li>
     </ul>
-    <ul v-else-if="mode === 'events'" class="editor__event-list" @click.self="selectedEvent = null">
+    <ul
+      v-else-if="mode === 'events'"
+      class="editor__event-list"
+      @click.self="selectedEvent = null"
+    >
       <li>
         <label for="editor__file--events">
           Override with
         </label>
 
-        <input id="editor__file--events" type="file" @change="loadEvents">
+        <input
+          id="editor__file--events"
+          type="file"
+          @change="loadEvents"
+        >
         <button @click="saveEvents">
           Save
         </button>
@@ -176,23 +248,37 @@
             {{ event.date[0] }}
           </span>
           {{ event.date.length > 1 ? '.' : '' }}
-          <span v-if="event.date.length > 1" class="editor__event-list-date-rest">
+          <span
+            v-if="event.date.length > 1"
+            class="editor__event-list-date-rest"
+          >
             {{ event.date.slice(1).join('.') }}
           </span>
         </span>
         <span>{{ event.id }}</span>
-        <button :disabled="isLinked('events', event.id)" @click.stop="deleteEvent(index)">
+        <button
+          :disabled="isLinked('events', event.id)"
+          @click.stop="deleteEvent(index)"
+        >
           Delete
         </button>
       </li>
     </ul>
-    <ul v-else-if="mode === 'characters'" class="editor__character-list" @click.self="selectedCharacter = null">
+    <ul
+      v-else-if="mode === 'characters'"
+      class="editor__character-list"
+      @click.self="selectedCharacter = null"
+    >
       <li>
         <label for="editor__file--characters">
           Override with
         </label>
 
-        <input id="editor__file--characters" type="file" @change="loadCharacters">
+        <input
+          id="editor__file--characters"
+          type="file"
+          @change="loadCharacters"
+        >
         <button @click="saveCharacters">
           Save
         </button>
@@ -210,18 +296,29 @@
         @click="selectCharacter(character)"
       >
         <span>{{ character.id }}</span>
-        <button :disabled="isLinked('characters', character.id)" @click.stop="deleteCharacter(index)">
+        <button
+          :disabled="isLinked('characters', character.id)"
+          @click.stop="deleteCharacter(index)"
+        >
           Delete
         </button>
       </li>
     </ul>
-    <ul v-else-if="mode === 'misc'" class="editor__misc-list" @click.self="selectedMisc = null">
+    <ul
+      v-else-if="mode === 'misc'"
+      class="editor__misc-list"
+      @click.self="selectedMisc = null"
+    >
       <li>
         <label for="editor__file--misc">
           Override with
         </label>
 
-        <input id="editor__file--misc" type="file" @change="loadMisc">
+        <input
+          id="editor__file--misc"
+          type="file"
+          @change="loadMisc"
+        >
         <button @click="saveMisc">
           Save
         </button>
@@ -239,22 +336,39 @@
         @click="selectMisc(miscEntry)"
       >
         <span>{{ miscEntry.id }}</span>
-        <button :disabled="isLinked('misc', miscEntry.id)" @click.stop="deleteMisc(index)">
+        <button
+          :disabled="isLinked('misc', miscEntry.id)"
+          @click.stop="deleteMisc(index)"
+        >
           Delete
         </button>
       </li>
     </ul>
-    <div v-else-if="mode === 'tags'" class="editor__tags" @click.self="selectedTag = null">
+    <div
+      v-else-if="mode === 'tags'"
+      class="editor__tags"
+      @click.self="selectedTag = null"
+    >
       <div class="editor__tags-actions">
         <label for="editor__file--tags">
           Override with
         </label>
 
-        <input id="editor__file--tags" type="file" @change="loadTags">
+        <input
+          id="editor__file--tags"
+          type="file"
+          @change="loadTags"
+        >
       </div>
       <template v-if="uncategorizedTags.length > 0">
         <h3>Uncategorized</h3>
-        <Draggable tag="ul" :list="uncategorizedTags" group="tags" class="editor__tags-list" item-key="id">
+        <Draggable
+          tag="ul"
+          :list="uncategorizedTags"
+          group="tags"
+          class="editor__tags-list"
+          item-key="id"
+        >
           <template #item="{ element: tag }">
             <li class="editor__tags-list-item--invalid">
               {{ tag.id }}
@@ -273,7 +387,13 @@
             </button>
           </li>
         </ul>
-        <Draggable tag="ul" :list="tagCategories" group="tag-categories" class="editor__tags-categories" item-key="id">
+        <Draggable
+          tag="ul"
+          :list="tagCategories"
+          group="tag-categories"
+          class="editor__tags-categories"
+          item-key="id"
+        >
           <template #item="{ element: tagCategory }">
             <li
               :class="selectedTag === tagCategory && categorySelected ? 'editor__tags-item--selected' : undefined"
@@ -283,7 +403,13 @@
               <button @click.stop="deleteTagCategory(tagCategory)">
                 Delete
               </button>
-              <Draggable tag="ul" :list="tagCategory.tags" group="tags" class="editor__tags-list" item-key="id">
+              <Draggable
+                tag="ul"
+                :list="tagCategory.tags"
+                group="tags"
+                class="editor__tags-list"
+                item-key="id"
+              >
                 <template #item="{ element: tag }">
                   <li
                     :class="{

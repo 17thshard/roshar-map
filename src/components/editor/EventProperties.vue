@@ -22,13 +22,21 @@
       >
 
       <label for="event-properties__id">ID</label>
-      <input id="event-properties__id" v-model="event.id" type="text">
+      <input
+        id="event-properties__id"
+        v-model="event.id"
+        type="text"
+      >
 
       <div class="event-properties__coordinates">
         <h3>
           Coordinates
           <label for="event-properties__hide-marker">
-            <input id="event-properties__hide-marker" v-model="event.hideMarker" type="checkbox">
+            <input
+              id="event-properties__hide-marker"
+              v-model="event.hideMarker"
+              type="checkbox"
+            >
 
             Hide marker
           </label>
@@ -68,24 +76,39 @@
 
       <div class="event-properties__checkboxes">
         <label for="event-properties__circa">
-          <input id="event-properties__circa" v-model="event.circa" type="checkbox">
+          <input
+            id="event-properties__circa"
+            v-model="event.circa"
+            type="checkbox"
+          >
 
           Circa
         </label>
         <label for="event-properties__shadesmar">
-          <input id="event-properties__shadesmar" v-model="event.shadesmar" type="checkbox">
+          <input
+            id="event-properties__shadesmar"
+            v-model="event.shadesmar"
+            type="checkbox"
+          >
 
           Shadesmar
         </label>
         <label for="event-properties__perpendicularity">
-          <input id="event-properties__perpendicularity" v-model="event.perpendicularity" type="checkbox">
+          <input
+            id="event-properties__perpendicularity"
+            v-model="event.perpendicularity"
+            type="checkbox"
+          >
 
           Perpendicularity
         </label>
       </div>
 
       <label for="event-properties__special-effect">Special Effect</label>
-      <select id="event-properties__special-effect" v-model="event.specialEffect">
+      <select
+        id="event-properties__special-effect"
+        v-model="event.specialEffect"
+      >
         <option :value="undefined">
           None
         </option>
@@ -123,7 +146,10 @@
         <li v-if="linked.length === 0">
           Nothing
         </li>
-        <li v-for="item in linked" :key="item">
+        <li
+          v-for="item in linked"
+          :key="item"
+        >
           {{ item }}
         </li>
       </ul>

@@ -14,7 +14,11 @@
       <h2 class="event-preview__name">
         {{ displayName }}
       </h2>
-      <Markdown class="event-preview__text" :content="displayBlurb" :inline="true">
+      <Markdown
+        class="event-preview__text"
+        :content="displayBlurb"
+        :inline="true"
+      >
         <span v-if="event.details === true">Read more</span>
       </Markdown>
     </div>
