@@ -42,9 +42,24 @@ export default ({ mode }) => {
           enabled: true,
           dir: './node_modules/.cache/imagetools',
         },
+        extendTransforms: () => {
+          return [
+            function minWidth (config, ctx) {
+              const minWidth = Number.parseInt(config.minWidth)
+              return async function enforceMinWidth (image) {
+                const metadata = await image.metadata()
+                if (metadata.width < minWidth) {
+                  ctx.logger.error(`Image must be at least ${minWidth}px wide`)
+                }
+                return image
+              }
+            }
+          ]
+        },
         defaultDirectives: () => {
           return new URLSearchParams({
             format: 'webp',
+            minWidth: '500'
           })
         }
       }),
