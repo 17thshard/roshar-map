@@ -40,14 +40,14 @@ export default class Measurement extends Group {
     this.geodesic = null
     this.distance = null
     this.store = useMeasurementStore()
-    
+
     this.syncFromStore()
   }
 
   syncFromStore() {
-    this.reset(false) 
+    this.reset(false)
     const points = this.store.points
-    
+
     if (points.length === 0) return
 
     points.forEach(geo => {

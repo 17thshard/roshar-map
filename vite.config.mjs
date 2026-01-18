@@ -142,7 +142,7 @@ export default ({ mode }) => {
       target: 'es2018',
       // Limit the size of chunks to 4MB to avoid warnings (language files, esp tr.lang.json is a chunky boy)
       chunkSizeWarningLimit: 4000,
-      
+
       rollupOptions: {
         output: {
           manualChunks(id) {

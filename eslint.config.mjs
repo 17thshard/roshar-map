@@ -17,6 +17,14 @@ export default [
   // Equivalent to `extends: ['eslint:recommended']` from .eslintrc
   js.configs.recommended,
 
+  // Global rules for all files, code preference discussed in PR #181
+  {
+    rules: {
+      'no-trailing-spaces': 'warn'
+      // 'no-multiple-empty-lines': ['warn', { max: 1, maxEOF: 0, maxBOF: 0 }]
+    }
+  },
+
   // Vue 3 recommended rules
   ...vue.configs['flat/recommended'],
 
@@ -86,5 +94,3 @@ export default [
     }
   }
 ]
-
-

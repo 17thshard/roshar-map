@@ -213,7 +213,7 @@ export default {
     },
     onError (error) {
       this.errored = true
-       
+
       console.error(error)
       if (this.$gtag) {
         this.$gtag.exception({

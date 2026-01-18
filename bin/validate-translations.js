@@ -1,4 +1,4 @@
- 
+
 const fs = require('fs')
 
 const events = JSON.parse(fs.readFileSync('./src/stores/events.json', 'utf8')).map(e => e.id)

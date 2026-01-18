@@ -191,7 +191,7 @@ export default {
           return undefined
       }
 
-       
+
       console.error('Could not map Markdown element', node)
 
       return h('span')

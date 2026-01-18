@@ -37,7 +37,7 @@ import {
   Vector2,
   Vector3,
   WebGLRenderer,
-   
+
   RGB_S3TC_DXT1_Format, RedFormat
 } from 'three'
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
@@ -134,7 +134,7 @@ export default {
       } else {
         this.measurementResult = null
       }
-      
+
       if (!active) {
         this.measurement.reset()
       }
@@ -617,7 +617,7 @@ export default {
 
       return false
     },
-    
+
     updateCompassRotation () {
       // Get button
       if (this.compassBtn === undefined || !document.body.contains(this.compassBtn)) {

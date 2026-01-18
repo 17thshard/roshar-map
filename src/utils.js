@@ -148,7 +148,7 @@ export function getEntryImageSrcSet (path, gtag) {
     }
     return parseSrcSet(srcSet)
   } catch (e) {
-     
+
     console.error(`Could not retrieve entry image '${path}'`)
     if (gtag) {
       gtag.exception({
