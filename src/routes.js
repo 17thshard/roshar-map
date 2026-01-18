@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import { i18n, loadLanguageAsync } from '@/i18n'
 import { useMainStore } from '@/stores/main'
 import Map from '@/components/map/Map.vue'
@@ -27,7 +27,7 @@ const detailRoutes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(),
   routes: [
     {
       name: 'root',
