@@ -8,9 +8,57 @@ const require = createRequire(import.meta.url)
 const markdown = require('simple-markdown')
 const lunr = require('lunr')
 require('lunr-languages/lunr.stemmer.support')(lunr)
-const parseSections = require('./loaders/parse-markdown-sections')
 
 lunr.tokenizer.separator = /[\s-[\](){}]+/
+
+/**
+ * Parse markdown content into sections based on headings.
+ * Level 1 headings become the root section, level 2+ become named sections.
+ */
+function parseSections(content, ignoreOutsideOfSections) {
+  let root
+  const sections = {}
+  const lines = content.split('\n')
+
+  let currentSection
+  lines.forEach((line) => {
+    const headerMatch = line.trim().match(/^(#+)\s+(.*?)$/)
+    if (headerMatch != null) {
+      const [, hashes, name] = headerMatch
+
+      if (hashes.length === 1) {
+        currentSection = { name: name.trim(), content: '' }
+        root = currentSection
+      } else {
+        currentSection = { content: '' }
+        sections[name.toLowerCase().trim()] = currentSection
+      }
+
+      return
+    }
+
+    if (currentSection === undefined && ignoreOutsideOfSections === true) {
+      return
+    } else if (currentSection === undefined) {
+      throw new Error('Line found outside of section: ' + line)
+    }
+
+    currentSection.content += line + '\n'
+  })
+
+  const metadata = {}
+  if (sections.metadata) {
+    sections.metadata.content.split('\n').filter(line => line.trim().startsWith('|')).slice(2).forEach((line) => {
+      const match = line.trim().match(/^\|([^|]+)\|([^|]+)\|$/)
+
+      if (match !== null) {
+        metadata[match[1].trim()] = match[2].trim()
+      }
+    })
+  }
+
+  return { root, sections, metadata }
+}
 
 function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true })
@@ -315,7 +363,6 @@ export function generatedAssetsPlugin() {
         path.join(rootDir, 'translations'),
         path.join(rootDir, 'src', 'stores'),
         path.join(rootDir, 'README.md'),
-        path.join(rootDir, 'build', 'loaders', 'parse-markdown-sections.js'),
       ]
 
       server.watcher.add(watchTargets)
@@ -332,7 +379,7 @@ export function generatedAssetsPlugin() {
           queue(new Set(['search']), server)
           return
         }
-        if ((normalized.includes('/src/lang/') && normalized.endsWith('.lang.json')) || normalized.includes('/translations/') || normalized.endsWith('/parse-markdown-sections.js')) {
+        if ((normalized.includes('/src/lang/') && normalized.endsWith('.lang.json')) || normalized.includes('/translations/')) {
           queue(new Set(['lang']), server)
           return
         }

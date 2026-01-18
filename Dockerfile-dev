@@ -13,7 +13,6 @@ RUN yarn install --immutable
 COPY vite.config.mjs index.html README.md /app/
 
 COPY ./bin /app/bin
-COPY ./build/loaders /app/build/loaders
 COPY ./build/vite-plugin-generated-assets.mjs /app/build/vite-plugin-generated-assets.mjs
 COPY ./public /app/public
 COPY ./translations /app/translations
