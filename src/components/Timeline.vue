@@ -1,13 +1,19 @@
 <template>
-  <transition-group tag="div" name="timeline__event" :class="['timeline', { 'timeline--excluded-by-lock': excludedByLock }]">
+  <transition-group
+    tag="div"
+    name="timeline__event"
+    :class="['timeline', { 'timeline--excluded-by-lock': excludedByLock }]"
+  >
     <div
       key="bar"
       :style="{ [offsetStyle]: `${barOffset + offset}px`, ...(tag === 'all' ? { [endStyle]: 0 } : { width: `${width}px` }), ...barStyles }"
       :class="['timeline__bar', { 'timeline__bar--separate': tag !== 'all' }]"
     />
-    <template v-for="event in events">
+    <template
+      v-for="event in events"
+      :key="event.id"
+    >
       <button
-        :key="event.id"
         :title="$t(`events.${event.id}.name`)"
         :class="['timeline__event', { 'timeline__event--active': activeEvent !== null && activeEvent.id === event.id }]"
         :style="{ [offsetStyle]: `${event.offset + offset}px` }"
@@ -19,7 +25,8 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from 'vuex'
+import { mapState } from 'pinia'
+import { useMainStore } from '@/stores/main'
 import { parseColorToCssVar } from '@/utils'
 
 export default {
@@ -46,9 +53,14 @@ export default {
       type: Boolean
     }
   },
+  emits: ['event-selected'],
+  setup () {
+    const store = useMainStore()
+    return { store }
+  },
   computed: {
-    ...mapGetters(['isDisabled']),
-    ...mapState({ tagProperties: state => state.mappings.tags }),
+    ...mapState(useMainStore, ['isDisabled']),
+    ...mapState(useMainStore, { tagProperties: state => state.mappings.tags }),
     barStyles () {
       const props = this.tagProperties[this.tag]
 
@@ -68,10 +80,10 @@ export default {
       return Math.max(...this.events.map(e => e.offset)) - Math.min(...this.events.map(e => e.offset))
     },
     offsetStyle () {
-      return this.$store.state.flipTimeline ? 'right' : 'left'
+      return this.store.flipTimeline ? 'right' : 'left'
     },
     endStyle () {
-      return this.$store.state.flipTimeline ? 'left' : 'right'
+      return this.store.flipTimeline ? 'left' : 'right'
     }
   }
 }
@@ -194,9 +206,9 @@ export default {
     }
 
     @mixin diamond($base-color) {
-      border-top-color: lighten($base-color, 10%);
-      border-left-color: saturate(lighten($base-color, 20%), 10%);
-      border-bottom-color: lighten($base-color, 15%);
+      border-top-color: color.adjust($base-color, $lightness: 10%);
+      border-left-color: color.adjust(color.adjust($base-color, $lightness: 20%), $saturation: 10%);
+      border-bottom-color: color.adjust($base-color, $lightness: 15%);
       border-right-color: $base-color;
     }
 
@@ -234,7 +246,7 @@ export default {
       transition: opacity 1s;
     }
 
-    &-enter, &-leave-to {
+    &-enter-from, &-leave-to {
       opacity: 0;
     }
   }

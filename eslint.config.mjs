@@ -1,0 +1,96 @@
+import globals from 'globals'
+import js from '@eslint/js'
+import vue from 'eslint-plugin-vue'
+import vueParser from 'vue-eslint-parser'
+
+export default [
+  {
+    ignores: [
+      '**/dist/**',
+      '**/node_modules/**',
+      '**/.yarn/**',
+      '**/coverage/**',
+      'build/generated/**',
+    ]
+  },
+
+  // Equivalent to `extends: ['eslint:recommended']` from .eslintrc
+  js.configs.recommended,
+
+  // Global rules for all files, code preference discussed in PR #181
+  {
+    rules: {
+      'no-trailing-spaces': 'warn'
+      // 'no-multiple-empty-lines': ['warn', { max: 1, maxEOF: 0, maxBOF: 0 }]
+    }
+  },
+
+  // Vue 3 recommended rules
+  ...vue.configs['flat/recommended'],
+
+  // Browser app code (Vue SFCs + JS modules)
+  {
+    files: ['src/**/*.{js,vue}'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: {
+        ...globals.browser
+      },
+      parser: vueParser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module'
+      }
+    },
+    plugins: { vue },
+    rules: {
+      // keep legacy behavior
+      'no-param-reassign': 'off',
+      // keep historical lenience for existing code (warn instead of error)
+      'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+
+      // Legacy Vue codebase compatibility
+      'vue/multi-word-component-names': 'off',
+      'vue/no-reserved-component-names': 'off'
+    }
+  },
+  // Editor components (dev tools) - allow prop mutation pattern
+  {
+    files: ['src/components/editor/**/*.vue'],
+    rules: {
+      'vue/no-mutating-props': 'off'
+    }
+  },
+  // Node scripts / tooling
+  {
+    files: ['bin/**/*.js', 'build/**/*.js', '*.config.cjs', '*.config.js', '*.config.ts'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'commonjs',
+      globals: {
+        ...globals.node
+      }
+    },
+    rules: {
+      'no-console': 'off',
+      'no-empty': ['error', { allowEmptyCatch: true }]
+    }
+  }
+  ,
+  // ESM config files
+  {
+    files: ['*.mjs', 'build/**/*.mjs', 'vite.config.mjs', 'eslint.config.mjs'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: {
+        ...globals.node
+      }
+    },
+    rules: {
+      'no-console': 'off',
+      'no-empty': ['error', { allowEmptyCatch: true }]
+    }
+  }
+]

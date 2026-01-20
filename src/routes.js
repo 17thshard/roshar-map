@@ -1,31 +1,33 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import { i18n, loadLanguageAsync } from '@/i18n'
-import store from '@/store'
+import { useMainStore } from '@/stores/main'
 import Map from '@/components/map/Map.vue'
 
-Vue.use(VueRouter)
+const EmptyComponent = {
+  render: () => null
+}
 
 const detailRoutes = [
   {
     name: 'events',
-    specialAction: event => store.commit('selectEvent', event)
+    specialAction: event => useMainStore().selectEvent(event)
   },
   {
     name: 'locations',
-    specialAction: () => store.commit('unselectEvent')
+    specialAction: () => useMainStore().unselectEvent()
   },
   {
     name: 'characters',
-    specialAction: () => store.commit('unselectEvent')
+    specialAction: () => useMainStore().unselectEvent()
   },
   {
     name: 'misc',
-    specialAction: () => store.commit('unselectEvent')
+    specialAction: () => useMainStore().unselectEvent()
   }
 ]
 
-const router = new VueRouter({
+const router = createRouter({
+  history: createWebHashHistory(),
   routes: [
     {
       name: 'root',
@@ -34,11 +36,13 @@ const router = new VueRouter({
       children: detailRoutes.map(({ name, specialAction }) => ({
         name,
         path: `${name}/:id`,
+        component: EmptyComponent,
         meta: {
           details: true
         },
         beforeEnter (to, from, next) {
-          const entry = store.state.mappings[name][to.params.id]
+          const store = useMainStore()
+          const entry = store.mappings[name][to.params.id]
 
           if (to.params.id === undefined || entry === undefined) {
             next(false)
@@ -76,19 +80,27 @@ router.afterEach((to, from) => {
   const oldLocale = from.params.locale
   const newLocale = to.params.locale
 
-  if (oldLocale !== undefined && i18n.t('texture-locale', newLocale) !== i18n.t('texture-locale', oldLocale)) {
-    location.reload()
+  if (oldLocale !== undefined) {
+    const oldTextureLocale = i18n.global.getLocaleMessage(oldLocale)?.['texture-locale']
+    const newTextureLocale = i18n.global.getLocaleMessage(newLocale)?.['texture-locale']
+
+    if (oldTextureLocale !== newTextureLocale) {
+      location.reload()
+    }
   }
 })
 
 router.afterEach((to) => {
-  let pageName = i18n.t('name')
+  let pageName = i18n.global.t('name')
 
   if (to.name !== 'root') {
-    pageName = i18n.t(`${to.name}.${to.params.id}.name`)
+    pageName = i18n.global.t(`${to.name}.${to.params.id}.name`)
   }
 
-  document.querySelector('title').innerHTML = i18n.t('title', { page: pageName })
+  document.querySelector('title').innerHTML = i18n.global.t('title', { page: pageName })
 })
 
+/**
+ * The Vue Router instance.
+ */
 export { router }

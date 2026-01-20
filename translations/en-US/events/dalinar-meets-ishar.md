@@ -1,0 +1,12 @@
+# Dalinar confronts Ishar
+Dalinar confronts Ishar in Tukar, who has a brief moment of sanity before retreating to Shinovar. Ishar's experiments with spren are discovered.
+
+## Details
+#[Dalinar](characters/dalinar) returns from his vision with the Stormfather as he, #[Szeth](characters/szeth), and a group of Windrunners are flying to #[Tukar](locations/tukar). The group hovers over Ishar's pavilion as Sigzil descends to speak with the Herald; detecting no trap, they land and face Ishar. Ishar accuses Dalinar of being #[Odium's](characters/odium) champion despite Dalinar speaking to him reasonably about the other Heralds. As Ishar draws his weapon to attack, Szeth recognizes it as the Honorblade his father had previously held. The Windrunners do their best to fight Ishar, but the Herald defends himself against the five with ease. When Ishar manages to Connect them to the ground and drain away their Stormlight, Dalinar opens a perpendicularity and tries to reason with him within it. Instead, Ishar begins to transfer the Stormfather's bond with Dalinar to himself. They are saved by Szeth, who cuts the connection between Dalinar and Ishar and collapses the perpendicularity with Nightblood. Ishar tells Szeth how he got his Honorblade back from the Shin, angering him enough that he attacks; when the swords meet, Nightblood chips the Honorblade. Ishar opens a perpendicularity to retreat, but he gains a moment of sanity as #[Navani](characters/navani) bonds the Sibling; he invites Dalinar to come to him in #[Shinovar](locations/shinovar) and restore his sanity, after which he can help Dalinar. Dalinar and the others watch from the air as Ishar and his forces retreat into Shadesmar.
+
+The group from the coalition waits to be sure Ishar is not returning before landing again to inspect his tent. As they wait, Dalinar speaks with the Stormfather about Ishar's Bondsmith abilities and with Szeth and Nightblood about Shinovar and the Honorblades. Dalinar, Szeth, and the Windrunners enter Ishar's pavilion and find strange corpses that appear to have been experimented on. When the Stormfather recognizes one of the bodies to be a Cryptic, they realize that all of the corpses are from spren in bodies that should only exist in the Cognitive Realm. They find ledgers detailing Ishar's experiments and decide to leave after grabbing everything that looks useful.
+
+## Metadata
+| Field | Value |
+| ----- | ----- |
+| chapter | *Rhythm of War* 111|

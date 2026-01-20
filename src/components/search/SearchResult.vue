@@ -2,7 +2,7 @@
   <router-link
     class="search-result"
     :to="{ name: details.type, params: { locale: $route.params.locale, id: details.id } }"
-    @click.native="$emit('use')"
+    @click="$emit('use')"
   >
     <div class="search-result__icon">
       <div
@@ -14,7 +14,7 @@
       <img
         v-else
         class="search-result__icon-placeholder"
-        src="@/assets/logos/search-placeholder.svg"
+        src="@/assets/logos/knight-radiant-ancient.svg"
         alt=""
       >
     </div>
@@ -31,6 +31,7 @@
 
 <script>
 import { getEntryImageSrcSet } from '@/utils.js'
+import { useMainStore } from '@/stores/main'
 
 export default {
   name: 'SearchResult',
@@ -40,10 +41,15 @@ export default {
       required: true
     }
   },
+  emits: ['use'],
+  setup () {
+    const store = useMainStore()
+    return { store }
+  },
   computed: {
     details () {
       const [type, id] = this.entry.split('/', 2)
-      return this.$store.state.mappings[type][id]
+      return this.store.mappings[type][id]
     },
     baseTranslationKey () {
       return `${this.details.type}.${this.details.id}`
@@ -52,7 +58,7 @@ export default {
       let image
       if (this.details.image !== undefined) {
         image = {
-          backgroundImage: getEntryImageSrcSet(this.details.image.file, this.$gtag).css
+          backgroundImage: getEntryImageSrcSet(this.details.image.file, this.$gtag || undefined).css
         }
 
         if (this.details.image.offset !== undefined) {

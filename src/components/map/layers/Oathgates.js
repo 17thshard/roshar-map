@@ -1,4 +1,4 @@
-import { Group, Mesh, PlaneBufferGeometry, ShaderMaterial, Vector2 } from 'three'
+import { Group, Mesh, PlaneGeometry, ShaderMaterial, Vector2 } from 'three'
 import { clamp01, inverseLerp } from '@/utils'
 import oathgateTextFragmentShader from '@/components/map/layers/oathgateTextFragmentShader'
 import OathgateLine from '@/components/map/layers/OathgateLine'
@@ -21,7 +21,7 @@ export default class Oathgates extends Group {
   }
 
   init (textures) {
-    const geo = new PlaneBufferGeometry(2, 2, 1, 1)
+    const geo = new PlaneGeometry(2, 2, 1, 1)
     const mat = new ShaderMaterial({
       // language=GLSL
       vertexShader: `

@@ -1,8 +1,8 @@
 import { Group } from 'three'
 import { clamp01 } from '@/utils'
 import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial'
-import { LineGeometry } from 'three/examples/jsm/lines/LineGeometry'
-import { Line2 } from 'three/examples/jsm/lines/Line2'
+import { LineSegmentsGeometry } from 'three/examples/jsm/lines/LineSegmentsGeometry'
+import { LineSegments2 } from 'three/examples/jsm/lines/LineSegments2'
 import { project } from '@/projection'
 
 const MIN_LAT = -40
@@ -10,9 +10,29 @@ const MAX_LAT = 22
 const MIN_LNG = -55
 const MAX_LNG = 55
 
+/**
+ * Builds the graticule lines.
+ * @param {LineMaterial} largeMaterial - Material for major lines.
+ * @param {LineMaterial} smallMaterial - Material for minor lines.
+ * @returns {Array<LineSegments2>} - Array of line meshes.
+ */
 function buildLines (largeMaterial, smallMaterial) {
-  const lines = []
+  const largePositions = []
+  const smallPositions = []
 
+  // Helper: Converts strip [x1,y1,z1, x2,y2,z2...] to segments [x1,y1,z1, x2,y2,z2, x2,y2,z2, x3...]
+  const toSegments = (strip) => {
+    const segments = []
+    for (let i = 0; i < strip.length - 3; i += 3) {
+      segments.push(
+        strip[i], strip[i + 1], strip[i + 2],
+        strip[i + 3], strip[i + 4], strip[i + 5]
+      )
+    }
+    return segments
+  }
+
+  // latitude lines
   for (let latD = MIN_LAT; latD < MAX_LAT; latD++) {
     const points = []
 
@@ -23,16 +43,11 @@ function buildLines (largeMaterial, smallMaterial) {
       points.push(projected.x, projected.y, 0.001)
     }
 
-    const geometry = new LineGeometry()
-    geometry.setPositions(points)
-
-    const line = new Line2(geometry, latD % 10 === 0 ? largeMaterial : smallMaterial)
-    line.computeLineDistances()
-    line.scale.set(1, 1, 1)
-
-    lines.push(line)
+    const target = (latD % 10 === 0) ? largePositions : smallPositions
+    target.push(...toSegments(points))
   }
 
+  //  longitude lines
   for (let lngD = MIN_LNG; lngD < MAX_LNG; lngD++) {
     const points = []
 
@@ -43,20 +58,42 @@ function buildLines (largeMaterial, smallMaterial) {
       points.push(projected.x, projected.y, 0)
     }
 
-    const geometry = new LineGeometry()
-    geometry.setPositions(points)
-
-    const line = new Line2(geometry, lngD % 10 === 0 ? largeMaterial : smallMaterial)
-    line.computeLineDistances()
-    line.scale.set(1, 1, 1)
-
-    lines.push(line)
+    const target = (lngD % 10 === 0) ? largePositions : smallPositions
+    target.push(...toSegments(points))
   }
 
-  return lines
+  const meshes = []
+
+  // large mesh
+  if (largePositions.length > 0) {
+    const geo = new LineSegmentsGeometry()
+    geo.setPositions(largePositions)
+
+    const mesh = new LineSegments2(geo, largeMaterial)
+    mesh.scale.set(1, 1, 1)
+    meshes.push(mesh)
+  }
+
+  // small mesh
+  if (smallPositions.length > 0) {
+    const geo = new LineSegmentsGeometry()
+    geo.setPositions(smallPositions)
+
+    const mesh = new LineSegments2(geo, smallMaterial)
+    mesh.scale.set(1, 1, 1)
+    meshes.push(mesh)
+  }
+
+  return meshes
 }
 
+/**
+ * Renders the latitude and longitude lines (graticule) on the map.
+ */
 export default class Graticule extends Group {
+  /**
+   * Creates a new Graticule layer.
+   */
   constructor () {
     super()
 
@@ -71,10 +108,15 @@ export default class Graticule extends Group {
     this.init()
   }
 
-  init (textures) {
+  /**
+   * Initializes the graticule lines.
+   * @param {object} _textures - Not used.
+   */
+  init (_textures) {
     this.largeMaterial = new LineMaterial({
       color: 0x000000,
-      linewidth: 0.002,
+      linewidth: 0.8,
+      worldUnits: true,
       vertexColors: false,
       dashed: false,
       alphaToCoverage: false,
@@ -84,7 +126,8 @@ export default class Graticule extends Group {
     })
     this.smallMaterial = new LineMaterial({
       color: 0x000000,
-      linewidth: 0.001,
+      linewidth: 0.3,
+      worldUnits: true,
       vertexColors: false,
       dashed: false,
       alphaToCoverage: false,
@@ -96,17 +139,29 @@ export default class Graticule extends Group {
     this.add(...buildLines(this.largeMaterial, this.smallMaterial))
   }
 
+  /**
+   * Enters the scene (starts fading in).
+   */
   enter () {
     this.entering = true
     this.enabled = true
     this.visible = true
   }
 
+  /**
+   * Leaves the scene (starts fading out).
+   */
   leave () {
     this.entering = false
     this.enabled = true
   }
 
+  /**
+   * Updates the graticule animation.
+   * @param {object} camera - The Three.js camera.
+   * @param {number} timestamp - Current timestamp.
+   * @param {number} delta - Time delta since last frame.
+   */
   update (camera, timestamp, delta) {
     if (!this.enabled) {
       return

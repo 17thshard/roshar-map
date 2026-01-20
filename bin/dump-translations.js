@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+
 const fs = require('fs')
 
 const events = JSON.parse(fs.readFileSync('./src/store/events.json', 'utf8'))
@@ -19,7 +19,7 @@ events.forEach((event) => {
 })
 
 function dump (type) {
-  const entries = JSON.parse(fs.readFileSync(`./src/store/${type}.json`, 'utf8'))
+  const entries = JSON.parse(fs.readFileSync(`./src/stores/${type}.json`, 'utf8'))
   fs.mkdirSync(`./translations/en/${type}`, { recursive: true })
   entries.forEach((entry) => {
     const path = `./translations/en/${type}/${entry.id}.md`

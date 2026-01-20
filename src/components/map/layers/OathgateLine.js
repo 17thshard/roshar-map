@@ -2,7 +2,7 @@ import {
   AdditiveBlending,
   Group,
   Mesh,
-  PlaneBufferGeometry,
+  PlaneGeometry,
   ShaderMaterial, Vector2,
   Vector3
 } from 'three'
@@ -24,7 +24,7 @@ export default class OathgateLine extends Group {
   }
 
   init (length, angle) {
-    const geo = new PlaneBufferGeometry(length, 10, 1, 1)
+    const geo = new PlaneGeometry(length, 10, 1, 1)
     const mat = new ShaderMaterial({
       // language=GLSL
       vertexShader: `

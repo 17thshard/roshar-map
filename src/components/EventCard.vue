@@ -16,7 +16,7 @@
         {{ $t(`events.${event.id}.name`) }}
       </h2>
       <Markdown
-        :content="$te(`events.${event.id}.blurb`, 'en') ? $t(`events.${event.id}.blurb`) : ''"
+        :content="$te(`events.${event.id}.blurb`) ? $t(`events.${event.id}.blurb`) : ''"
         inline
         class="event-card__text"
       >
@@ -47,13 +47,13 @@ export default {
   },
   computed: {
     imageBaseUrl () {
-      return `${process.env.BASE_URL}img`
+      return `${import.meta.env.BASE_URL}img`
     }
   },
   methods: {
     buildImageStyles (image) {
       const styles = {
-        backgroundImage: getEntryImageSrcSet(image.file, this.$gtag).css
+        backgroundImage: getEntryImageSrcSet(image.file, this.$gtag || undefined).css
       }
 
       if (image.offset !== undefined) {
@@ -126,7 +126,7 @@ export default {
     transition: transform 0.5s ease-in;
   }
 
-  &-enter, &-leave-to {
+  &-enter-from, &-leave-to {
     transform: translateY(calc(100% + 2rem));
   }
 

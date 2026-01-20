@@ -2,7 +2,7 @@
   <div
     :class="[
       'event-preview',
-      { 'event-preview--image': event.image !== undefined, 'event-preview--details-visible': $store.state.details !== null }
+      { 'event-preview--image': event.image !== undefined, 'event-preview--details-visible': store.details !== null }
     ]"
   >
     <div class="event-preview__content">
@@ -14,7 +14,11 @@
       <h2 class="event-preview__name">
         {{ displayName }}
       </h2>
-      <Markdown class="event-preview__text" :content="displayBlurb" :inline="true">
+      <Markdown
+        class="event-preview__text"
+        :content="displayBlurb"
+        :inline="true"
+      >
         <span v-if="event.details === true">Read more</span>
       </Markdown>
     </div>
@@ -24,6 +28,7 @@
 <script>
 import Markdown from '@/components/Markdown.vue'
 import { getEntryImageSrcSet } from '@/utils'
+import { useMainStore } from '@/stores/main'
 
 export default {
   name: 'EventPreview',
@@ -43,9 +48,13 @@ export default {
       required: true
     }
   },
+  setup () {
+    const store = useMainStore()
+    return { store }
+  },
   computed: {
     imageBaseUrl () {
-      return `${process.env.BASE_URL}img`
+      return `${import.meta.env.BASE_URL}img`
     },
     selectedMessages () {
       return this.selectedLanguage !== null ? this.languages[this.selectedLanguage] : null
@@ -60,7 +69,7 @@ export default {
   methods: {
     buildImageStyles (image) {
       const styles = {
-        backgroundImage: getEntryImageSrcSet(image.file, this.$gtag).css
+        backgroundImage: getEntryImageSrcSet(image.file, this.$gtag || undefined).css
       }
 
       if (image.offset !== undefined) {
@@ -135,7 +144,7 @@ export default {
     transition: transform 0.5s ease-in;
   }
 
-  &-enter, &-leave-to {
+  &-enter-from, &-leave-to {
     transform: translateY(calc(100% + 2rem));
   }
 

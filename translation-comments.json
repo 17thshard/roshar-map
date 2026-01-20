@@ -1,7 +1,7 @@
 {
     "texture-locale": {
         "name": "Texture Locale",
-        "context": "This refers to a directory in *src/assets/textures/localized*. Only change this away from 'en' if you already had the textures translated!"
+        "context": "This refers to a directory in *src/assets/textures/localized*. Only change this away from 'en-US' if you already had the textures translated!"
     },
     "text-direction": {
         "name": "Text Direction",

@@ -22,13 +22,21 @@
       >
 
       <label for="event-properties__id">ID</label>
-      <input id="event-properties__id" v-model="event.id" type="text">
+      <input
+        id="event-properties__id"
+        v-model="event.id"
+        type="text"
+      >
 
       <div class="event-properties__coordinates">
         <h3>
           Coordinates
           <label for="event-properties__hide-marker">
-            <input id="event-properties__hide-marker" v-model="event.hideMarker" type="checkbox">
+            <input
+              id="event-properties__hide-marker"
+              v-model="event.hideMarker"
+              type="checkbox"
+            >
 
             Hide marker
           </label>
@@ -68,24 +76,39 @@
 
       <div class="event-properties__checkboxes">
         <label for="event-properties__circa">
-          <input id="event-properties__circa" v-model="event.circa" type="checkbox">
+          <input
+            id="event-properties__circa"
+            v-model="event.circa"
+            type="checkbox"
+          >
 
           Circa
         </label>
         <label for="event-properties__shadesmar">
-          <input id="event-properties__shadesmar" v-model="event.shadesmar" type="checkbox">
+          <input
+            id="event-properties__shadesmar"
+            v-model="event.shadesmar"
+            type="checkbox"
+          >
 
           Shadesmar
         </label>
         <label for="event-properties__perpendicularity">
-          <input id="event-properties__perpendicularity" v-model="event.perpendicularity" type="checkbox">
+          <input
+            id="event-properties__perpendicularity"
+            v-model="event.perpendicularity"
+            type="checkbox"
+          >
 
           Perpendicularity
         </label>
       </div>
 
       <label for="event-properties__special-effect">Special Effect</label>
-      <select id="event-properties__special-effect" v-model="event.specialEffect">
+      <select
+        id="event-properties__special-effect"
+        v-model="event.specialEffect"
+      >
         <option :value="undefined">
           None
         </option>
@@ -99,20 +122,23 @@
 
       <label>Tags</label>
       <VueTagsInput
+        ref="tagsInput"
         v-model="newTag"
         :tags="event.tags.map(t => ({ text: t }))"
-        :autocomplete-items="availableTags.map(t => ({ text: t }))"
+        :autocomplete-items="tagAutocompletions"
         @tags-changed="newTags => event.tags = newTags.map(t => t.text)"
+        @input="onTagsInput"
       />
 
       <label>Related</label>
       <VueTagsInput
+        ref="linkInput"
         v-model="newLink"
         :tags="(event.related || []).map(t => ({ text: t }))"
         :autocomplete-items="linkAutocompletions"
         add-only-from-autocomplete
         placeholder="Add Link"
-        @tags-changed="newLinks => $set(event, 'related', newLinks.map(t => t.text).sort((a, b) => a.localeCompare(b)))"
+        @tags-changed="newLinks => event.related = newLinks.map(t => t.text).sort((a, b) => a.localeCompare(b))"
       />
 
       <span>Linked to by</span>
@@ -120,7 +146,10 @@
         <li v-if="linked.length === 0">
           Nothing
         </li>
-        <li v-for="item in linked" :key="item">
+        <li
+          v-for="item in linked"
+          :key="item"
+        >
           {{ item }}
         </li>
       </ul>
@@ -207,7 +236,7 @@
 </template>
 
 <script>
-import VueTagsInput from '@johmun/vue-tags-input'
+import { VueTagsInput } from '@vojtechlanka/vue-tags-input'
 import { getEntryImageSrcSet } from '@/utils'
 
 export default {
@@ -236,15 +265,29 @@ export default {
     return {
       dateText: this.event.date.join('.'),
       newTag: '',
-      newLink: ''
+      newLink: '',
+      showAllTags: false
     }
   },
   computed: {
     imageBaseUrl () {
-      return `${process.env.BASE_URL}img`
+      return `${import.meta.env.BASE_URL}img`
+    },
+    tagAutocompletions () {
+      const searchText = this.newTag ? this.newTag.trim() : ''
+      if (!searchText) {
+        return [...this.availableTags]
+          .sort((a, b) => a.localeCompare(b))
+          .map(t => ({ text: t }))
+      }
+      return this.availableTags
+        .filter(t => t.toLowerCase().includes(searchText.toLowerCase()))
+        .sort((a, b) => a.localeCompare(b))
+        .map(t => ({ text: t }))
     },
     linkAutocompletions () {
-      return this.linkables.filter(l => l.startsWith(this.newLink) && l !== `events/${this.event.id}`)
+      const search = (this.newLink || '').trim().toLowerCase()
+      return this.linkables.filter(l => l.toLowerCase().includes(search) && l !== `events/${this.event.id}`)
         .sort((a, b) => a.localeCompare(b))
         .map(l => ({ text: l }))
     },
@@ -254,7 +297,7 @@ export default {
       }
 
       const styles = {
-        backgroundImage: getEntryImageSrcSet(this.event.image.file, this.$gtag).css
+        backgroundImage: getEntryImageSrcSet(this.event.image.file, this.$gtag || undefined).css
       }
 
       if (this.event.image.offset !== undefined) {
@@ -268,6 +311,42 @@ export default {
       return styles
     }
   },
+  mounted () {
+    this.$nextTick(() => {
+      if (this.$refs.tagsInput && this.$refs.tagsInput.$el) {
+        const input = this.$refs.tagsInput.$el.querySelector('input')
+        if (input) {
+          input.addEventListener('focus', () => {
+            this.showAllTags = true
+            if (!this.newTag || this.newTag.trim() === '') {
+              this.newTag = ' '
+            }
+          })
+          input.addEventListener('blur', () => {
+            if (this.newTag === ' ') {
+              this.newTag = ''
+            }
+            this.showAllTags = false
+          })
+        }
+      }
+      if (this.$refs.linkInput && this.$refs.linkInput.$el) {
+        const input = this.$refs.linkInput.$el.querySelector('input')
+        if (input) {
+          input.addEventListener('focus', () => {
+            if (!this.newLink || this.newLink.trim() === '') {
+              this.newLink = ' '
+            }
+          })
+          input.addEventListener('blur', () => {
+            if (this.newLink === ' ') {
+              this.newLink = ''
+            }
+          })
+        }
+      }
+    })
+  },
   methods: {
     updateDate ({ target: { value } }) {
       if (value.match(/^-?\d+(\.\d+)*$/) !== null) {
@@ -278,32 +357,32 @@ export default {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.event, 'tieBreaker')
+        delete this.event.tieBreaker
         return
       }
 
-      this.$set(this.event, 'tieBreaker', Number.parseInt(trimmed, 10))
+      this.event.tieBreaker = Number.parseInt(trimmed, 10)
     },
     updateZoom ({ target: { value } }) {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.event.coordinates, 'zoom')
+        delete this.event.coordinates.zoom
         return
       }
 
-      this.$set(this.event.coordinates, 'zoom', Number.parseFloat(trimmed))
+      this.event.coordinates.zoom = Number.parseFloat(trimmed)
     },
     updateImageFile ({ target: { value } }) {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.event, 'image')
+        delete this.event.image
         return
       }
 
       if (this.event.image === undefined) {
-        this.$set(this.event, 'image', {})
+        this.event.image = {}
       }
 
       this.event.image.file = trimmed
@@ -312,43 +391,51 @@ export default {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.event.image, 'offset')
+        delete this.event.image.offset
         return
       }
 
       if (this.event.image.offset === undefined) {
-        this.$set(this.event.image, 'offset', { x: 0, y: 0 })
+        this.event.image.offset = { x: 0, y: 0 }
       }
 
-      this.$set(this.event.image.offset, prop, Number.parseInt(trimmed, 10))
+      this.event.image.offset[prop] = Number.parseInt(trimmed, 10)
 
       if (this.event.image.offset.x === 0 && this.event.image.offset.y === 0) {
-        this.$delete(this.event.image, 'offset')
+        delete this.event.image.offset
       }
     },
     updateImageSize ({ target: { value } }) {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.event.image, 'size')
+        delete this.event.image.size
         return
       }
 
-      this.$set(this.event.image, 'size', Number.parseInt(trimmed, 10))
+      this.event.image.size = Number.parseInt(trimmed, 10)
 
       if (this.event.image.size === 100) {
-        this.$delete(this.event.image, 'size')
+        delete this.event.image.size
       }
     },
     update (property, { target: { value } }) {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.location, property)
+        delete this.event[property]
         return
       }
 
-      this.$set(this.event, property, trimmed)
+      this.event[property] = trimmed
+    },
+    onTagsInput (value) {
+      const text = typeof value === 'string' ? value : ''
+      if (text.trim().length > 0) {
+        this.showAllTags = false
+      } else {
+        this.showAllTags = true
+      }
     }
   }
 }

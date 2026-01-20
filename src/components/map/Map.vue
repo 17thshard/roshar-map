@@ -6,13 +6,17 @@
       :style="{ left: `${tutorialReferencePosition.x}%`, top: `${tutorialReferencePosition.y}%` }"
     />
     <transition name="map__factions-legend">
-      <FactionsLegend v-if="layers.factions !== undefined && layers.factions.t > 0.5" class="map__factions-legend" />
+      <FactionsLegend
+        v-if="layers.factions !== undefined && layers.factions.t > 0.5"
+        class="map__factions-legend"
+      />
     </transition>
     <transition name="map__measurement-result">
       <MeasurementResult
         v-if="measurementActive && measurementResult !== null"
         :measurement="measurementResult"
         class="map__measurement-result"
+        @close="measurementStore.toggle()"
       />
     </transition>
   </div>
@@ -24,22 +28,24 @@ import {
   Mesh,
   NearestFilter,
   PerspectiveCamera,
-  PlaneBufferGeometry,
+  Plane,
+  PlaneGeometry,
+  Raycaster,
   RepeatWrapping,
   Scene,
   ShaderMaterial,
   Vector2,
   Vector3,
   WebGLRenderer,
-  // eslint-disable-next-line camelcase
+
   RGB_S3TC_DXT1_Format, RedFormat
 } from 'three'
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
-import { mapState } from 'vuex'
-// #ifdef MAP_DEBUG
-import Stats from 'stats.js'
-// #endif
+import { markRaw } from 'vue'
+import { useMainStore } from '@/stores/main'
+import { useSettingsStore } from '@/stores/settings'
+import { useMeasurementStore } from '@/stores/measurement'
 import MapControls from '@/components/map/MapControls'
 import Highlight from '@/components/map/layers/Highlight'
 import fragmentShader from '@/components/map/mapFragmentShader'
@@ -47,6 +53,7 @@ import textFragmentShader from '@/components/map/mapTextFragmentShader'
 import ShatteringPass from '@/components/map/ShatteringPass'
 import TextureManager from '@/components/map/TextureManager'
 import { clamp01, lerp } from '@/utils'
+import { project, unproject } from '@/projection'
 import Factions from '@/components/map/layers/Factions'
 import Graticule from '@/components/map/layers/Graticule'
 import SilverKingdoms from '@/components/map/layers/SilverKingdoms'
@@ -63,6 +70,13 @@ export default {
     transitions: {
       type: Boolean
     }
+  },
+  emits: ['ready', 'error'],
+  setup () {
+    const store = useMainStore()
+    const settings = useSettingsStore()
+    const measurementStore = useMeasurementStore()
+    return { store, settings, measurementStore }
   },
   data () {
     return {
@@ -81,12 +95,17 @@ export default {
     }
   },
   computed: {
-    ...mapState(['layersActive', 'measurementActive']),
+    layersActive () {
+      return this.store.layersActive
+    },
+    measurementActive () {
+      return this.measurementStore.active
+    },
     activeLocation () {
-      return this.transitions && this.$route.name === 'locations' ? this.$store.state.mappings.locations[this.$route.params.id] : null
+      return this.transitions && this.$route.name === 'locations' ? this.store.mappings.locations[this.$route.params.id] : null
     },
     activeEvent () {
-      return this.transitions ? this.$store.state.activeEvent : null
+      return this.transitions ? this.store.activeEvent : null
     }
   },
   watch: {
@@ -110,14 +129,24 @@ export default {
     measurementActive (active) {
       if (active) {
         this.measurementResult = {}
+        // Sync visuals if activating
+        this.measurement.syncFromStore()
+      } else {
+        this.measurementResult = null
       }
 
-      this.measurement.reset()
+      if (!active) {
+        this.measurement.reset()
+      }
     }
   },
   mounted () {
+    if (this.measurementActive) {
+      this.measurementResult = {}
+    }
+
     try {
-      this.renderer = new WebGLRenderer({ antialias: false, alpha: true })
+      this.renderer = new WebGLRenderer({ antialias: true, alpha: true })
       this.renderer.setPixelRatio(window.devicePixelRatio)
       this.renderer.setSize(window.innerWidth, window.innerHeight)
       this.renderer.sortObjects = false
@@ -130,12 +159,14 @@ export default {
       return
     }
 
-    // #ifdef MAP_DEBUG
-    this.stats = new Stats()
-    this.stats.dom.style.width = '80px'
-    this.stats.dom.style.right = '0px'
-    document.body.appendChild(this.stats.dom)
-    // #endif
+    if (import.meta.env.MAP_DEBUG === 'true') {
+      import('stats.js').then(({ default: Stats }) => {
+        this.stats = new Stats()
+        this.stats.dom.style.width = '80px'
+        this.stats.dom.style.right = '0px'
+        document.body.appendChild(this.stats.dom)
+      })
+    }
 
     this.loadTextures()
       .then(this.setupScene)
@@ -163,13 +194,13 @@ export default {
         this.$emit('error', error)
       })
   },
-  destroyed () {
+  unmounted () {
     this.renderer.dispose()
     cancelAnimationFrame(this.latestAnimationFrame)
 
-    // #ifdef MAP_DEBUG
-    this.stats.dom.remove()
-    // #endif
+    if (this.stats && this.stats.dom) {
+      this.stats.dom.remove()
+    }
   },
   methods: {
     loadTextures () {
@@ -190,15 +221,15 @@ export default {
       return this.textureManager.load(textures)
     },
     async setupScene (textures) {
-      this.camera = new PerspectiveCamera(
+      this.camera = markRaw(new PerspectiveCamera(
         60,
         window.innerWidth / window.innerHeight,
         0.01,
         1e3
-      )
+      ))
       this.camera.position.set(30, -10, 40)
 
-      this.controls = new MapControls(this.camera, this.renderer.domElement)
+      this.controls = markRaw(new MapControls(this.camera, this.renderer.domElement))
       this.controls.addEventListener('click', ({ position, ctrlKey }) => {
         if (this.measurementActive) {
           this.measurementResult = this.measurement.click(position, ctrlKey)
@@ -214,12 +245,12 @@ export default {
         const location = this.queryHover(position.x, position.y)
 
         if (location !== null && (this.activeLocation === null || location !== this.activeLocation.mapId)) {
-          this.$router.push(`/${this.$route.params.locale}/locations/${this.$store.state.locationsByMapId[location].id}`)
+          this.$router.push(`/${this.$route.params.locale}/locations/${this.store.locationsByMapId[location].id}`)
         } else if (location === null) {
           if (this.$route.name !== 'root') {
             this.$router.push(`/${this.$route.params.locale}`)
           } else {
-            this.$store.commit('unselectEvent')
+            this.store.unselectEvent()
           }
         }
       })
@@ -238,7 +269,7 @@ export default {
 
       this.highlights = new Group()
 
-      const [cityDots, shadesmarCityDots] = Object.values(this.$store.state.mappings.locations)
+      const [cityDots, shadesmarCityDots] = Object.values(this.store.mappings.locations)
         .filter(l => l.cityDot)
         .reduce(
           (result, l) => {
@@ -247,8 +278,8 @@ export default {
           },
           [[], []]
         )
-      const geo = new PlaneBufferGeometry(2, 2, 1, 1)
-      this.mapMaterial = new ShaderMaterial({
+      const geo = new PlaneGeometry(2, 2, 1, 1)
+      this.mapMaterial = markRaw(new ShaderMaterial({
         // language=GLSL
         vertexShader: `
           varying vec2 vUv;
@@ -279,13 +310,13 @@ export default {
         extensions: {
           derivatives: true
         }
-      })
+      }))
 
       textures.text_pattern.wrapS = RepeatWrapping
       textures.text_pattern.wrapT = RepeatWrapping
       textures.text_pattern.magFilter = NearestFilter
 
-      const textMaterial = new ShaderMaterial({
+      const textMaterial = markRaw(new ShaderMaterial({
         // language=GLSL
         vertexShader: `
           varying vec2 vUv;
@@ -314,25 +345,25 @@ export default {
         },
         transparent: true,
         depthTest: false
-      })
+      }))
 
-      this.plane = new Mesh(geo, this.mapMaterial)
+      this.plane = markRaw(new Mesh(geo, this.mapMaterial))
       this.plane.frustumCulled = false
 
-      this.textPlane = new Mesh(geo, textMaterial)
+      this.textPlane = markRaw(new Mesh(geo, textMaterial))
       this.textPlane.position.z = 1
       this.textPlane.frustumCulled = false
 
       this.layers = {
-        shadesmar: new Shadesmar(),
-        graticule: new Graticule(),
-        silverKingdoms: new SilverKingdoms(textures),
-        oathgates: new Oathgates(textures),
-        factions: new Factions(textures.factions)
+        shadesmar: markRaw(new Shadesmar()),
+        graticule: markRaw(new Graticule()),
+        silverKingdoms: markRaw(new SilverKingdoms(textures)),
+        oathgates: markRaw(new Oathgates(textures)),
+        factions: markRaw(new Factions(textures.factions))
       }
-      this.measurement = new Measurement()
+      this.measurement = markRaw(new Measurement())
 
-      this.scene = new Scene()
+      this.scene = markRaw(new Scene())
       this.scene.add(
         this.plane,
         this.layers.graticule,
@@ -345,7 +376,7 @@ export default {
       )
 
       this.composer.addPass(new RenderPass(this.scene, this.camera))
-      this.shatteringPass = new ShatteringPass()
+      this.shatteringPass = markRaw(new ShatteringPass())
       this.composer.addPass(this.shatteringPass)
 
       this.hoverTexture = await this.textureManager.loadData('hover_text', false, true, false, 'gb')
@@ -416,9 +447,9 @@ export default {
       this.controls.transitionTo(target, newPosition.zoom !== undefined ? newPosition.zoom : 0.7)
     },
     update (timestamp) {
-      // #ifdef MAP_DEBUG
-      this.stats.begin()
-      // #endif
+      if (this.stats) {
+        this.stats.begin()
+      }
       this.resizeCanvasToDisplaySize()
 
       let delta = 0
@@ -474,13 +505,15 @@ export default {
       this.textPlane.material.uniforms.ActiveItem.value = this.lastActiveLocation !== null ? this.lastActiveLocation : 0
       this.textPlane.material.uniforms.ActiveProgress.value = this.textActiveProgress
 
+      this.updateCompassRotation()
+
       this.composer.render(delta)
 
       this.lastTimestamp = timestamp
 
-      // #ifdef MAP_DEBUG
-      this.stats.end()
-      // #endif
+      if (this.stats) {
+        this.stats.end()
+      }
 
       this.latestAnimationFrame = requestAnimationFrame(this.update)
     },
@@ -526,11 +559,13 @@ export default {
     },
     resizeCanvasToDisplaySize () {
       const canvas = this.renderer.domElement
+      const pixelRatio = window.devicePixelRatio
       // look up the size the canvas is being displayed
       const width = canvas.clientWidth
       const height = canvas.clientHeight
       // adjust displayBuffer size to match
-      if (canvas.width !== width || canvas.height !== height) {
+      if (canvas.width !== Math.floor(width * pixelRatio) || canvas.height !== Math.floor(height * pixelRatio)) {
+        this.renderer.setPixelRatio(pixelRatio)
         // you must pass false here or three.js sadly fights the browser
         this.renderer.setSize(width, height, false)
         this.camera.aspect = width / height
@@ -581,6 +616,55 @@ export default {
       }
 
       return false
+    },
+
+    updateCompassRotation () {
+      // Get button
+      if (this.compassBtn === undefined || !document.body.contains(this.compassBtn)) {
+        this.compassBtn = document.querySelector('[data-tutorial-id="measure-button"]')
+      }
+
+      const btn = this.compassBtn
+
+      if (btn === null) {
+        return
+      }
+      //Get Midpoint
+      const rect = btn.getBoundingClientRect()
+      const x = rect.left + rect.width / 2
+      const y = rect.top + rect.height / 2
+
+      const ndc = new Vector2(
+        (x / window.innerWidth) * 2 - 1,
+        -(y / window.innerHeight) * 2 + 1
+      )
+
+      //Cast ray from camera to midpoint
+      const raycaster = new Raycaster()
+      raycaster.setFromCamera(ndc, this.camera)
+
+      //Intersect ray with plane
+      const planeZ = new Plane(new Vector3(0, 0, 1), 0)
+      const target = new Vector3()
+      raycaster.ray.intersectPlane(planeZ, target)
+
+      if (target === null) {
+        return
+      }
+
+      //Find North Pole
+      const geo = unproject(target)
+      const northGeo = { lat: geo.lat + 0.01, lng: geo.lng }
+      const northPos = project(northGeo)
+      const dx = northPos.x - target.x
+      const dy = northPos.y - target.y
+
+      //Calculate angle and apply
+      const angle = 90 - (Math.atan2(dy, dx) * 180 / Math.PI) - 45 //the icon is 45° by default
+      const svg = btn.querySelector('.feather-compass')
+      if (svg) {
+        svg.style.transform = `rotate(${angle}deg)`
+      }
     }
   }
 }
@@ -653,11 +737,11 @@ export default {
       transition: opacity 0.3s ease-in-out;
     }
 
-    &-enter, &-leave-to {
+    &-enter-from, &-leave-to {
       opacity: 0;
     }
 
-    &-enter-to, &-leave {
+    &-enter-to, &-leave-from {
       opacity: 1;
     }
   }

@@ -1,7 +1,17 @@
 <template>
   <div class="tutorial">
     <transition name="tutorial">
-      <div v-if="!hideWindow" class="tutorial__window">
+      <div
+        v-if="!hideWindow"
+        class="tutorial__window"
+      >
+        <button
+          class="tutorial__window-close"
+          :title="$t('ui.dismiss')"
+          @click="dismiss"
+        >
+          <VueFeather type="x" />
+        </button>
         <div class="tutorial__window-text">
           <h2>{{ $t('ui.tutorial.title') }}</h2>
           <p>{{ $t('ui.tutorial.explanation') }}</p>
@@ -16,7 +26,11 @@
         </div>
       </div>
     </transition>
-    <transition-group tag="div" name="tutorial__marker" class="tutorial__markers">
+    <transition-group
+      tag="div"
+      name="tutorial__marker"
+      class="tutorial__markers"
+    >
       <div
         v-for="{ id, marker } in Object.keys(markers).filter(k => markers[k].visible).map(k => ({ id: k, marker: markers[k] }))"
         :id="`tutorial__marker--${id}`"
@@ -28,24 +42,41 @@
       />
     </transition-group>
     <transition name="tutorial__details">
-      <div v-if="activeMarker !== null && markers[activeMarker].visible" :key="activeMarker" ref="details" class="tutorial__details">
-        <Markdown tag="div" class="tutorial__details-text" :content="$t(`ui.tutorial.hints.${activeMarker}.text`)" inline />
+      <div
+        v-if="activeMarker !== null && markers[activeMarker].visible"
+        :key="activeMarker"
+        ref="details"
+        class="tutorial__details"
+      >
+        <Markdown
+          tag="div"
+          class="tutorial__details-text"
+          :content="$t(`ui.tutorial.hints.${activeMarker}.text`)"
+          inline
+        />
       </div>
     </transition>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState } from 'pinia'
+import { useMainStore } from '@/stores/main'
 import { createPopper } from '@popperjs/core/lib/popper-lite'
 import preventOverflow from '@popperjs/core/lib/modifiers/preventOverflow'
 import flip from '@popperjs/core/lib/modifiers/flip'
 import offset from '@popperjs/core/lib/modifiers/offset'
 import Markdown from '@/components/Markdown.vue'
+import VueFeather from 'vue-feather'
 
 export default {
   name: 'Tutorial',
-  components: { Markdown },
+  components: { Markdown, VueFeather },
+  emits: ['close'],
+  setup () {
+    const store = useMainStore()
+    return { store }
+  },
   data () {
     return {
       markers: {
@@ -129,8 +160,8 @@ export default {
     }
   },
   computed: {
-    ...mapState(['openedMenu']),
-    ...mapState({ eventActive: state => state.activeEvent !== null })
+    ...mapState(useMainStore, ['openedMenu']),
+    ...mapState(useMainStore, { eventActive: state => state.activeEvent !== null })
   },
   watch: {
     activeMarker (value) {
@@ -174,7 +205,7 @@ export default {
     document.addEventListener('touchstart', this.handleOutsideClick)
     this.update()
   },
-  destroyed () {
+  unmounted () {
     document.removeEventListener('click', this.handleOutsideClick)
     document.removeEventListener('touchstart', this.handleOutsideClick)
     cancelAnimationFrame(this.lastAnimationRequest)
@@ -238,7 +269,7 @@ export default {
       }
     },
     explainDates () {
-      this.$store.commit('openCalendarGuide')
+      this.store.openCalendarGuide()
       if (this.$gtag) {
         this.$gtag.pageview({ page_title: 'Calendar Guide', page_path: '/calendar-guide', page_location: '' })
       }
@@ -267,11 +298,11 @@ export default {
     transition: opacity 0.2s ease-in;
   }
 
-  &-enter, &-leave-to {
+  &-enter-from, &-leave-to {
     opacity: 0;
   }
 
-  &-enter-to, &-leave {
+  &-enter-to, &-leave-from {
     opacity: 1;
   }
 
@@ -306,11 +337,11 @@ export default {
       transition: opacity 0.2s ease-in;
     }
 
-    &-enter, &-leave-to {
+    &-enter-from, &-leave-to {
       opacity: 0;
     }
 
-    &-enter-to, &-leave {
+    &-enter-to, &-leave-from {
       opacity: 1;
     }
 
@@ -360,7 +391,7 @@ export default {
       }
     }
 
-    &-enter, &-leave-to {
+    &-enter-from, &-leave-to {
       opacity: 0;
 
       .tutorial__details-text {
@@ -368,7 +399,7 @@ export default {
       }
     }
 
-    &-enter-to, &-leave {
+    &-enter-to, &-leave-from {
       opacity: 1;
 
       .tutorial__details-text {
@@ -438,6 +469,7 @@ export default {
 
       h2 {
         margin: 0;
+        font-variant: small-caps;
       }
     }
 
@@ -473,6 +505,23 @@ export default {
           color: #f6f8fa;
           background-size: 100% 100%;
         }
+      }
+    }
+
+    &-close {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #242629;
+      padding: 0.25rem;
+      z-index: 2;
+      transition: color 0.2s ease-in-out;
+
+      &:hover, &:active, &:focus {
+        color: #0f3562;
       }
     }
   }

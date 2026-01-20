@@ -1,0 +1,2 @@
+# Salavashi Trench
+**Salavashi Trench** is a body of water in the #[Sea of Lost Lights](locations/sea-of-lost-lights) and the #[Sea of Oracles](locations/sea-of-oracles). The trench is the reflection of the Sunmaker Mountains in the Physical Realm, hence, no rivers in the Sea of Lost Lights move past the Trench. It appears to be named after the town Savalashi just south of the Sunmaker Mountains.

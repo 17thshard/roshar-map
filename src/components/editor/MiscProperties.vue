@@ -3,16 +3,21 @@
     <h2>Misc properties</h2>
     <div class="misc-properties__form">
       <label for="misc-properties__slug">ID</label>
-      <input id="misc-properties__slug" v-model="misc.id" type="text">
+      <input
+        id="misc-properties__slug"
+        v-model="misc.id"
+        type="text"
+      >
 
       <label>Related</label>
       <VueTagsInput
+        ref="tagsInput"
         v-model="newLink"
         :tags="(misc.related || []).map(t => ({ text: t }))"
         :autocomplete-items="linkAutocompletions"
         add-only-from-autocomplete
         placeholder="Add Link"
-        @tags-changed="newLinks => $set(misc, 'related', newLinks.map(t => t.text).sort((a, b) => a.localeCompare(b)))"
+        @tags-changed="newLinks => misc.related = newLinks.map(t => t.text).sort((a, b) => a.localeCompare(b))"
       />
 
       <span>Linked to by</span>
@@ -20,7 +25,10 @@
         <li v-if="linked.length === 0">
           Nothing
         </li>
-        <li v-for="item in linked" :key="item">
+        <li
+          v-for="item in linked"
+          :key="item"
+        >
           {{ item }}
         </li>
       </ul>
@@ -107,7 +115,7 @@
 </template>
 
 <script>
-import VueTagsInput from '@johmun/vue-tags-input'
+import { VueTagsInput } from '@vojtechlanka/vue-tags-input'
 import { getEntryImageSrcSet } from '@/utils'
 
 export default {
@@ -135,10 +143,11 @@ export default {
   },
   computed: {
     imageBaseUrl () {
-      return `${process.env.BASE_URL}img`
+      return `${import.meta.env.BASE_URL}img`
     },
     linkAutocompletions () {
-      return this.linkables.filter(l => l.startsWith(this.newLink) && l !== `misc/${this.misc.id}`)
+      const search = (this.newLink || '').trim().toLowerCase()
+      return this.linkables.filter(l => l.toLowerCase().includes(search) && l !== `misc/${this.misc.id}`)
         .sort((a, b) => a.localeCompare(b))
         .map(l => ({ text: l }))
     },
@@ -148,7 +157,7 @@ export default {
       }
 
       const styles = {
-        backgroundImage: getEntryImageSrcSet(this.misc.image.file, this.$gtag).css
+        backgroundImage: getEntryImageSrcSet(this.misc.image.file, this.$gtag || undefined).css
       }
 
       if (this.misc.image.offset !== undefined) {
@@ -162,17 +171,36 @@ export default {
       return styles
     }
   },
+  mounted () {
+    this.$nextTick(() => {
+      if (this.$refs.tagsInput && this.$refs.tagsInput.$el) {
+        const input = this.$refs.tagsInput.$el.querySelector('input')
+        if (input) {
+          input.addEventListener('focus', () => {
+            if (!this.newLink || this.newLink.trim() === '') {
+              this.newLink = ' '
+            }
+          })
+          input.addEventListener('blur', () => {
+            if (this.newLink === ' ') {
+              this.newLink = ''
+            }
+          })
+        }
+      }
+    })
+  },
   methods: {
     updateImageFile ({ target: { value } }) {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.misc, 'image')
+        delete this.misc.image
         return
       }
 
       if (this.misc.image === undefined) {
-        this.$set(this.misc, 'image', {})
+        this.misc.image = {}
       }
 
       this.misc.image.file = trimmed
@@ -181,43 +209,43 @@ export default {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.misc.image, 'offset')
+        delete this.misc.image.offset
         return
       }
 
       if (this.misc.image.offset === undefined) {
-        this.$set(this.misc.image, 'offset', { x: 0, y: 0 })
+        this.misc.image.offset = { x: 0, y: 0 }
       }
 
-      this.$set(this.misc.image.offset, prop, Number.parseInt(trimmed, 10))
+      this.misc.image.offset[prop] = Number.parseInt(trimmed, 10)
 
       if (this.misc.image.offset.x === 0 && this.misc.image.offset.y === 0) {
-        this.$delete(this.misc.image, 'offset')
+        delete this.misc.image.offset
       }
     },
     updateImageSize ({ target: { value } }) {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.misc.image, 'size')
+        delete this.misc.image.size
         return
       }
 
-      this.$set(this.misc.image, 'size', Number.parseInt(trimmed, 10))
+      this.misc.image.size = Number.parseInt(trimmed, 10)
 
       if (this.misc.image.size === 100) {
-        this.$delete(this.misc.image, 'size')
+        delete this.misc.image.size
       }
     },
     update (property, { target: { value } }) {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.misc, property)
+        delete this.misc[property]
         return
       }
 
-      this.$set(this.misc, property, trimmed)
+      this.misc[property] = trimmed
     }
   }
 }

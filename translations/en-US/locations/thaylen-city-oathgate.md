@@ -1,0 +1,4 @@
+# Thaylen City Oathgate
+The **Thaylen City Oathgate** in Shadesmar marks the Cognitive Realm reflection of the Oathgate located in #[Thaylen City](locations/thaylen-city). The Thaylen City Oathgate is located on the northern edge of the #[Thaylen Sea](locations/thaylen-sea), with a bridge connecting to it from the nearby land.
+
+The Oathgate is represented by a flat platform of a material akin to white marble, the size of the control building. The platform itself is watched over by a pair of enormous spren, both the size of buildings, each wearing a set of armor and holding a spear. One of the spren is white, while the other is shimmering black. 

@@ -1,24 +1,42 @@
 <template>
-  <div id="app" :class="{ 'app--details': details !== null, 'app--sidebar-active': sidebarActive }">
+  <div
+    id="app"
+    :class="{ 'app--details': details !== null, 'app--sidebar-active': sidebarActive }"
+  >
     <router-view
-      :transitions="mapTransitions"
+      :transitions="mapTransitions ? true : undefined"
       @ready="onReady"
       @error="onError"
     />
     <transition name="details">
-      <Details v-if="details !== null" :key="details.id" :details="details" />
+      <Details
+        v-if="details !== null"
+        :key="details.id"
+        :details="details"
+      />
     </transition>
-    <transition name="scrubber" duration="1500" @after-enter="onScrubberLoaded">
+    <transition
+      name="scrubber"
+      duration="1500"
+      @after-enter="onScrubberLoaded"
+    >
       <Scrubber v-if="ready" />
     </transition>
     <div class="app__actions">
-      <Search :open="openedMenu === 'search'" @open="openMenu('search')" @close="closeMenu" />
+      <Search
+        :open="openedMenu === 'search' ? true : undefined"
+        @open="openMenu('search')"
+        @close="closeMenu"
+      />
       <button
         data-tutorial-id="settings-button"
         :class="['app__actions-button', 'app__actions-button--wide', {'app__actions-button--hidden': openedMenu === 'settings'}]"
         @click="openMenu('settings')"
       >
-        <SlidersIcon size="1x" />
+        <VueFeather
+          type="sliders"
+          :size="20"
+        />
         {{ $t('ui.settings') }}
       </button>
       <button
@@ -27,19 +45,39 @@
         :title="$t('ui.menu')"
         @click="openMenu('info')"
       >
-        <MenuIcon size="1x" />
+        <VueFeather
+          type="menu"
+          :size="20"
+        />
       </button>
     </div>
-    <Info :open="openedMenu === 'info'" @open-tutorial="openTutorial" @close="closeMenu" />
-    <Settings :open="openedMenu === 'settings'" @close="closeMenu" />
+    <Info
+      :open="openedMenu === 'info' ? true : undefined"
+      @open-tutorial="openTutorial"
+      @close="closeMenu"
+    />
+    <Settings
+      :open="openedMenu === 'settings' ? true : undefined"
+      @close="closeMenu"
+    />
     <transition name="calendar-guide">
-      <CalendarGuide v-if="$store.state.calendarGuideOpen" />
+      <CalendarGuide v-if="store.calendarGuideOpen" />
     </transition>
-    <transition name="first-visit-window" appear>
-      <FirstVisitWindow v-if="ready && firstVisit" @open-tutorial="openTutorial" @close="firstVisit = false" />
+    <transition
+      name="first-visit-window"
+      appear
+    >
+      <FirstVisitWindow
+        v-if="ready && firstVisit"
+        @open-tutorial="openTutorial"
+        @close="firstVisit = false"
+      />
     </transition>
     <transition name="tutorial">
-      <Tutorial v-if="ready && tutorialActive" @close="tutorialActive = false" />
+      <Tutorial
+        v-if="ready && tutorialActive"
+        @close="tutorialActive = false"
+      />
     </transition>
     <transition name="loading__fade">
       <LoadingIndicator v-if="!ready && !errored" />
@@ -47,14 +85,20 @@
     <transition name="loading__fade">
       <ErrorScreen v-if="errored" />
     </transition>
-    <transition name="changelog" :duration="{ enter: 1000, leave: 300 }">
-      <Changelog v-if="ready && showChangelog" @close="showChangelog = false" />
+    <transition
+      name="changelog"
+      :duration="{ enter: 1000, leave: 300 }"
+    >
+      <Changelog
+        v-if="ready && showChangelog"
+        @close="showChangelog = false"
+      />
     </transition>
   </div>
 </template>
 
 <script>
-import { MenuIcon, SlidersIcon } from 'vue-feather-icons'
+import VueFeather from 'vue-feather'
 import Scrubber from '@/components/Scrubber.vue'
 import Settings from '@/components/Settings.vue'
 import LoadingIndicator from '@/components/LoadingIndicator.vue'
@@ -68,11 +112,14 @@ import Changelog, { VERSION as CHANGELOG_VERSION } from '@/components/Changelog.
 import '@/assets/fonts/baskerville.scss'
 import '@/assets/fonts/hebrew.scss'
 import Search from '@/components/search/Search.vue'
-import { mapMutations, mapState } from 'vuex'
+import { mapActions, mapState } from 'pinia'
+import { useMainStore } from '@/stores/main'
+import { useI18n } from 'vue-i18n'
 
 export default {
   name: 'App',
   components: {
+    VueFeather,
     Search,
     ErrorScreen,
     FirstVisitWindow,
@@ -83,9 +130,12 @@ export default {
     LoadingIndicator,
     Settings,
     Scrubber,
-    MenuIcon,
-    SlidersIcon,
     Changelog
+  },
+  setup () {
+    const { t } = useI18n({ useScope: 'global' })
+    const store = useMainStore()
+    return { t, store }
   },
   data () {
     return {
@@ -100,20 +150,20 @@ export default {
   computed: {
     details () {
       if (this.mapTransitions && this.$route.meta.details) {
-        const entry = this.$store.state.mappings[this.$route.name][this.$route.params.id]
+        const entry = this.store.mappings[this.$route.name][this.$route.params.id]
 
         return entry !== undefined ? entry : null
       }
 
       return null
     },
-    ...mapState(['openedMenu']),
+    ...mapState(useMainStore, ['openedMenu']),
     sidebarActive () {
       return this.openedMenu === 'settings' || this.openedMenu === 'info'
     }
   },
   watch: {
-    '$store.state.activeEvent' (newEvent) {
+    'store.activeEvent' (newEvent) {
       if (newEvent === null || this.$route.name === 'root') {
         return
       }
@@ -130,9 +180,9 @@ export default {
       }
 
       if (newDetails.type === 'events') {
-        this.$store.commit('selectEvent', newDetails)
+        this.store.selectEvent(newDetails)
       } else {
-        this.$store.commit('unselectEvent')
+        this.store.unselectEvent()
       }
     }
   },
@@ -141,16 +191,16 @@ export default {
       this.ready = true
 
       if (window.localStorage.getItem('activeEvent')) {
-        this.$store.commit('selectEvent', this.$store.state.mappings.events[localStorage.getItem('activeEvent')])
+        this.store.selectEvent(this.store.mappings.events[localStorage.getItem('activeEvent')])
       }
       if (window.localStorage.getItem('layersActive')) {
         const layersActive = JSON.parse(localStorage.getItem('layersActive'))
         Object.entries(layersActive).forEach(([layer, value]) => {
-          this.$store.commit('toggleLayer', { layer, value })
+          this.store.toggleLayer({ layer, value })
         })
       }
       if (window.localStorage.getItem('filter')) {
-        this.$store.commit('updateFilter', JSON.parse(localStorage.getItem('filter')))
+        this.store.updateFilter(JSON.parse(localStorage.getItem('filter')))
       }
 
       if (this.$gtag) {
@@ -163,7 +213,7 @@ export default {
     },
     onError (error) {
       this.errored = true
-      // eslint-disable-next-line no-console
+
       console.error(error)
       if (this.$gtag) {
         this.$gtag.exception({
@@ -182,7 +232,7 @@ export default {
 
       this.tutorialActive = true
     },
-    ...mapMutations(['openMenu', 'closeMenu'])
+    ...mapActions(useMainStore, ['openMenu', 'closeMenu'])
   }
 }
 </script>
@@ -281,7 +331,7 @@ body {
       box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.5);
 
       &:hover, &:active, &:focus {
-        background: saturate(darken(#F5ECDA, 10%), 5%);
+        background: color.adjust(color.adjust(#F5ECDA, $lightness: -10%), $saturation: 5%);
       }
 
       &--wide {

@@ -1,14 +1,24 @@
 <template>
-  <div class="calendar-guide__wrapper" @click.self="close">
+  <div
+    class="calendar-guide__wrapper"
+    @click.self="close"
+  >
     <section class="calendar-guide">
       <header class="calendar-guide__header">
         <h2>{{ $t('ui.calendar-guide.title') }}</h2>
 
-        <button class="calendar-guide__close" :title="$t('ui.close')" @click="close">
-          <XIcon />
+        <button
+          class="calendar-guide__close"
+          :title="$t('ui.close')"
+          @click="close"
+        >
+          <VueFeather type="x" />
         </button>
       </header>
-      <Markdown class="calendar-guide__explanation" :content="explanation" />
+      <Markdown
+        class="calendar-guide__explanation"
+        :content="explanation"
+      />
       <Calendar
         class="calendar-guide__calendar"
         :highlight-range="highlightRange"
@@ -17,9 +27,23 @@
         @date-click="highlightedDate = $event"
       />
       <nav class="calendar-guide__navigation">
-        <button class="calendar-guide__button calendar-guide__button--prev" :title="$t('ui.previous')" @click="prevStep">
-          <ChevronRightIcon v-if="$store.state.flipDirectionalIcons" size="1x" :stroke-width="3" />
-          <ChevronLeftIcon v-else size="1x" :stroke-width="3" />
+        <button
+          class="calendar-guide__button calendar-guide__button--prev"
+          :title="$t('ui.previous')"
+          @click="prevStep"
+        >
+          <VueFeather
+            v-if="store.flipDirectionalIcons"
+            type="chevron-right"
+            :size="24"
+            :stroke-width="3"
+          />
+          <VueFeather
+            v-else
+            type="chevron-left"
+            :size="24"
+            :stroke-width="3"
+          />
         </button>
         <ul class="calendar-guide__dots">
           <li
@@ -30,9 +54,23 @@
             @click="step = s"
           />
         </ul>
-        <button class="calendar-guide__button calendar-guide__button--next" :title="$t('ui.next')" @click="nextStep">
-          <ChevronLeftIcon v-if="$store.state.flipDirectionalIcons" size="1x" :stroke-width="3" />
-          <ChevronRightIcon v-else size="1x" :stroke-width="3" />
+        <button
+          class="calendar-guide__button calendar-guide__button--next"
+          :title="$t('ui.next')"
+          @click="nextStep"
+        >
+          <VueFeather
+            v-if="store.flipDirectionalIcons"
+            type="chevron-left"
+            :size="24"
+            :stroke-width="3"
+          />
+          <VueFeather
+            v-else
+            type="chevron-right"
+            :size="24"
+            :stroke-width="3"
+          />
         </button>
       </nav>
     </section>
@@ -40,16 +78,21 @@
 </template>
 
 <script>
-import { ChevronLeftIcon, ChevronRightIcon, XIcon } from 'vue-feather-icons'
+import VueFeather from 'vue-feather'
 import Calendar from '@/components/Calendar.vue'
 import Markdown from '@/components/Markdown.vue'
 import { formatDate } from '@/utils'
+import { useMainStore } from '@/stores/main'
 
 const STEPS = ['start', 'day', 'week', 'month', 'year', 'date']
 
 export default {
   name: 'CalendarGuide',
-  components: { Markdown, Calendar, ChevronLeftIcon, ChevronRightIcon, XIcon },
+  components: { VueFeather, Markdown, Calendar },
+  setup () {
+    const store = useMainStore()
+    return { store }
+  },
   data () {
     return {
       step: 'start',
@@ -86,7 +129,7 @@ export default {
   mounted () {
     document.addEventListener('keyup', this.closeOnEscape)
   },
-  destroyed () {
+  unmounted () {
     document.removeEventListener('keyup', this.closeOnEscape)
   },
   methods: {
@@ -96,7 +139,7 @@ export default {
       }
     },
     close () {
-      this.$store.commit('closeCalendarGuide')
+      this.store.closeCalendarGuide()
     },
     prevStep () {
       this.step = STEPS[Math.max(this.stepIndex - 1, 0)]
@@ -130,11 +173,11 @@ export default {
     transition: opacity 0.5s ease-in;
   }
 
-  &-enter, &-leave-to {
+  &-enter-from, &-leave-to {
     opacity: 0;
   }
 
-  &-enter-to, &-leave {
+  &-enter-to, &-leave-from {
     opacity: 1;
   }
 
@@ -247,7 +290,7 @@ export default {
 
     &:hover, &:active, &:focus {
       cursor: pointer;
-      color: lighten(#0f3562, 10%);
+      color: color.adjust(#0f3562, $lightness: 10%);
     }
 
     [dir=ltr] & {

@@ -2,28 +2,26 @@
   <Draggable
     v-model="separateTags"
     :animation="200"
-    tag="div"
+    tag="ul"
     handle=".separate-timeline-overview__timeline-drag-handle"
+    class="separate-timeline-overview"
+    :style="{ height: `${height}px` }"
+    :item-key="(item) => item"
     @start="dragging = true"
     @end="dragging = false"
   >
-    <transition-group
-      :name="dragging ? 'separate-timeline-overview__timeline--dragging' : 'separate-timeline-overview__timeline'"
-      tag="ul"
-      type="transition"
-      class="separate-timeline-overview"
-      :style="{ height: `${height}px` }"
-    >
+    <template #item="{ element: tag }">
       <li
-        v-for="tag in separateTags"
-        :key="tag"
         :class="[
           'separate-timeline-overview__timeline',
           { 'separate-timeline-overview__timeline--excluded': lockedTag !== null && lockedTag !== tag }
         ]"
       >
         <span class="separate-timeline-overview__timeline-drag-handle" />
-        <span class="separate-timeline-overview__timeline-icon" :style="{ background: $store.state.mappings.tags[tag].color }" />
+        <span
+          class="separate-timeline-overview__timeline-icon"
+          :style="{ background: store.mappings.tags[tag].color }"
+        />
         {{ $t(`tags.${tag}`) }}
         <div class="separate-timeline-overview__timeline-actions">
           <button
@@ -31,34 +29,52 @@
             :title="lockedTag === tag ? $t('ui.unlock-timeline') : $t('ui.lock-timeline')"
             @click="toggleLock(tag)"
           >
-            <LockIcon v-if="lockedTag === tag" size="1x" />
-            <UnlockIcon v-else size="1x" />
+            <VueFeather
+              v-if="lockedTag === tag"
+              type="lock"
+              :size="20"
+            />
+            <VueFeather
+              v-else
+              type="unlock"
+              :size="20"
+            />
           </button>
           <button
             class="separate-timeline-overview__timeline-action"
             :title="$t('ui.stop-display-separately')"
             @click="disableTagSeparation(tag)"
           >
-            <XIcon size="1x" />
+            <VueFeather
+              type="x"
+              :size="20"
+            />
           </button>
         </div>
       </li>
-    </transition-group>
+    </template>
   </Draggable>
 </template>
 
 <script>
-import Draggable from 'vuedraggable'
-import { LockIcon, UnlockIcon, XIcon } from 'vue-feather-icons'
+import Draggable from '@marshallswain/vuedraggable'
+import VueFeather from 'vue-feather'
+import { useI18n } from 'vue-i18n'
+import { useMainStore } from '@/stores/main'
 
 export default {
   name: 'SeparateTimelineOverview',
-  components: { Draggable, LockIcon, UnlockIcon, XIcon },
+  components: { VueFeather, Draggable },
   props: {
     height: {
       type: Number,
       required: true
     }
+  },
+  setup () {
+    const { t } = useI18n({ useScope: 'global' })
+    const store = useMainStore()
+    return { t, store }
   },
   data () {
     return {
@@ -68,26 +84,26 @@ export default {
   computed: {
     separateTags: {
       get () {
-        return this.$store.state.filter.separateTags
+        return this.store.filter.separateTags
       },
       set (value) {
-        this.$store.commit('updateSeparateTags', value)
+        this.store.updateSeparateTags(value)
       }
     },
     lockedTag () {
-      return this.$store.state.filter.lockedTag
+      return this.store.filter.lockedTag
     }
   },
   methods: {
     toggleLock (tag) {
       if (this.lockedTag === tag) {
-        this.$store.commit('unlockTag')
+        this.store.unlockTag()
       } else {
-        this.$store.commit('lockTag', tag)
+        this.store.lockTag(tag)
       }
     },
     disableTagSeparation (tag) {
-      this.$store.commit('disableTagSeparation', tag)
+      this.store.disableTagSeparation(tag)
     }
   }
 }
@@ -130,7 +146,7 @@ export default {
       right: 0;
     }
 
-    &-enter, &-leave-to {
+    &-enter-from, &-leave-to {
       opacity: 0;
       transform: translateY(30px);
     }

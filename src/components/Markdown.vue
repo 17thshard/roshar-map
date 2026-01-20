@@ -1,4 +1,6 @@
 <script>
+import { h, resolveComponent } from 'vue'
+import { useI18n } from 'vue-i18n'
 import markdown from 'simple-markdown'
 
 const LINK_INSIDE = '(?:\\[[^\\]]*\\]|[^\\[\\]]|\\](?=[^\\[]*\\]))*'
@@ -89,20 +91,30 @@ export default {
       type: Boolean
     }
   },
+  setup () {
+    const { t } = useI18n({ useScope: 'global' })
+    return { t }
+  },
+  // Beware: this.$route is not available in the editor, so we need to use a fallback
+  computed: {
+    $route () {
+      return this.$root.$route || { params: { locale: 'en-US' } }
+    }
+  },
   methods: {
-    renderNode (node, h, route) {
+    renderNode (node, h, route, RouterLink) {
       switch (node.type) {
         case 'strong':
         case 'em':
         case 'strike':
         case 'u':
-          return h(node.type, node.content.map(child => this.renderNode(child, h, route)))
+          return h(node.type, node.content.map(child => this.renderNode(child, h, route, RouterLink)))
         case 'blockQuote':
-          return h('blockquote', node.content.map(child => this.renderNode(child, h, route)))
+          return h('blockquote', node.content.map(child => this.renderNode(child, h, route, RouterLink)))
         case 'paragraph':
-          return h('p', node.content.map(child => this.renderNode(child, h, route)))
+          return h('p', node.content.map(child => this.renderNode(child, h, route, RouterLink)))
         case 'smallCaps':
-          return h('span', { class: 'markdown__small-caps' }, node.content.map(child => this.renderNode(child, h, route)))
+          return h('span', { class: 'markdown__small-caps' }, node.content.map(child => this.renderNode(child, h, route, RouterLink)))
         case 'translatorNote':
           return h(
             'div',
@@ -110,10 +122,10 @@ export default {
             [
               h(
                 'span',
-                { class: 'markdown__translator-note-marker', attrs: { title: this.$t('ui.translatorNote.full') } },
-                this.$t('ui.translatorNote.full')
+                { class: 'markdown__translator-note-marker', attrs: { title: this.t('ui.translatorNote.full') } },
+                this.t('ui.translatorNote.full')
               ),
-              ...node.content.map(child => this.renderNode(child, h, route))
+              ...node.content.map(child => this.renderNode(child, h, route, RouterLink))
             ]
           )
         case 'inlineTranslatorNote':
@@ -124,23 +136,34 @@ export default {
               '(',
               h(
                 'abbr',
-                { class: 'markdown__inline-translator-note-marker', attrs: { title: this.$t('ui.translatorNote.full') } },
-                this.$t('ui.translatorNote.abbreviation')
+                { class: 'markdown__inline-translator-note-marker', attrs: { title: this.t('ui.translatorNote.full') } },
+                this.t('ui.translatorNote.abbreviation')
               ),
               ' ',
-              h('span', { class: 'markdown__inline-translator-note-content' }, node.content.map(child => this.renderNode(child, h, route))),
+              h('span', { class: 'markdown__inline-translator-note-content' }, node.content.map(child => this.renderNode(child, h, route, RouterLink))),
               ')'
             ]
           )
         case 'internalLink':
+          // This is needed if Markdown.vue is called from editor, which is router-linked but not actually routed, so we need to prevent the default behavior
+          if (typeof RouterLink === 'string') {
+            return h(
+              'a',
+              {
+                href: '#',
+                onClick: (e) => e.preventDefault()
+              },
+              node.content.map(child => this.renderNode(child, h, route, RouterLink))
+            )
+          }
           return h(
-            'router-link',
+            RouterLink,
             {
-              props: {
-                to: `/${route.params.locale}/${node.target}`
-              }
+              to: `/${route.params.locale}/${node.target}`
             },
-            node.content.map(child => this.renderNode(child, h, route))
+            {
+              default: () => node.content.map(child => this.renderNode(child, h, route, RouterLink))
+            }
           )
         case 'link':
           return h(
@@ -153,12 +176,12 @@ export default {
                 rel: 'noopener'
               }
             },
-            node.content.map(child => this.renderNode(child, h, route))
+            node.content.map(child => this.renderNode(child, h, route, RouterLink))
           )
         case 'list':
-          return h(node.ordered ? 'ol' : 'ul', node.items.map(item => h('li', item.map(child => this.renderNode(child, h, route)))))
+          return h(node.ordered ? 'ol' : 'ul', node.items.map(item => h('li', item.map(child => this.renderNode(child, h, route, RouterLink)))))
         case 'heading':
-          return h(`h${node.level}`, node.content.map(child => this.renderNode(child, h, route)))
+          return h(`h${node.level}`, node.content.map(child => this.renderNode(child, h, route, RouterLink)))
         case 'text':
           return node.content
         case 'forceBr':
@@ -168,21 +191,33 @@ export default {
           return undefined
       }
 
-      // eslint-disable-next-line no-console
+
       console.error('Could not map Markdown element', node)
 
       return h('span')
     }
   },
-  render (h) {
+  render () {
+    // Only try to resolve router-link if the router is actually installed/available
+    // In editor dev mode, app.use(router) is not called, so resolveComponent would warn
+    const hasRouter = !!this.$root.$router || !!this.$root.$options?.router
+    const RouterLink = hasRouter ? resolveComponent('router-link') : 'router-link'
+    const route = this.$route
+
     const parsed = (this.advanced ? advancedParser : parser)(this.content, { inline: this.inline })
-    const children = parsed.map(node => this.renderNode(node, h, this.$route))
+    const children = parsed.map(node => this.renderNode(node, h, route, RouterLink))
 
     if (this.$slots.prefix) {
-      children.unshift(this.$slots.prefix, ' ')
+      const prefixSlot = this.$slots.prefix()
+      children.unshift(...(Array.isArray(prefixSlot) ? prefixSlot : [prefixSlot]), ' ')
     }
 
-    children.push(' ', ...(this.$slots.default || this.$slots.suffix || []))
+    const defaultSlot = this.$slots.default || this.$slots.suffix
+    if (defaultSlot) {
+      const slotContent = defaultSlot()
+      const slotArray = Array.isArray(slotContent) ? slotContent : [slotContent]
+      children.push(' ', ...slotArray)
+    }
 
     return h(this.tag, { class: 'markdown' }, children)
   }
@@ -274,7 +309,7 @@ export default {
       top: 0.5rem;
       line-height: 1;
       font-size: 3rem;
-      color: lighten(#1c1d26, 40%);
+      color: color.adjust(#1c1d26, $lightness: 40%);
 
       [dir=ltr] & {
         left: -1.7rem;
@@ -291,7 +326,7 @@ export default {
       bottom: -1.5rem;
       line-height: 1;
       font-size: 3rem;
-      color: lighten(#1c1d26, 40%);
+      color: color.adjust(#1c1d26, $lightness: 40%);
 
       [dir=ltr] & {
         right: -1rem;

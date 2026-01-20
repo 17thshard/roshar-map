@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '16'
+          node-version: '24'
 
       - name: Cache node modules
         uses: actions/cache@v4
@@ -32,7 +32,13 @@ jobs:
             ${{ runner.OS }}-build-
             ${{ runner.OS }}-
       - name: Install build dependencies
-        run: sudo apt-get install autoconf libtool pkg-config nasm build-essential libpng-dev
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y autoconf libtool pkg-config nasm build-essential libpng-dev
+      - name: Setup Yarn
+        run: |
+          corepack enable
+          corepack prepare yarn@4.12.0 --activate
       - name: Install dependencies
         run: yarn install --immutable
       - name: Validate translations

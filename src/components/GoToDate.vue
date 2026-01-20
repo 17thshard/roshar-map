@@ -1,11 +1,22 @@
 <template>
-  <div class="go-to-date__wrapper" @click.self="close">
-    <form class="go-to-date" @submit.prevent="submit">
+  <div
+    class="go-to-date__wrapper"
+    @click.self="close"
+  >
+    <form
+      class="go-to-date"
+      @submit.prevent="submit"
+    >
       <h2>
         {{ $t('ui.go-to-date.heading') }}
 
-        <button type="button" class="go-to-date__close" :title="$t('ui.close')" @click="close">
-          <XIcon />
+        <button
+          type="button"
+          class="go-to-date__close"
+          :title="$t('ui.close')"
+          @click="close"
+        >
+          <VueFeather type="x" />
         </button>
       </h2>
       <section class="go-to-date__fields">
@@ -64,11 +75,20 @@
           <div class="go-to-date__field-focus" />
         </div>
         <button type="submit">
-          <ArrowLeftIcon v-if="$store.state.flipDirectionalIcons" />
-          <ArrowRightIcon v-else />
+          <VueFeather
+            v-if="store.flipDirectionalIcons"
+            type="arrow-left"
+          />
+          <VueFeather
+            v-else
+            type="arrow-right"
+          />
         </button>
       </section>
-      <section v-if="error !== null" class="go-to-date__error">
+      <section
+        v-if="error !== null"
+        class="go-to-date__error"
+      >
         {{ $t(`ui.go-to-date.errors.${error}`) }}
       </section>
     </form>
@@ -76,11 +96,17 @@
 </template>
 
 <script>
-import { ArrowRightIcon, ArrowLeftIcon, XIcon } from 'vue-feather-icons'
+import VueFeather from 'vue-feather'
+import { useMainStore } from '@/stores/main'
 
 export default {
   name: 'GoToDate',
-  components: { ArrowRightIcon, ArrowLeftIcon, XIcon },
+  components: { VueFeather },
+  emits: ['submit'],
+  setup () {
+    const store = useMainStore()
+    return { store }
+  },
   data () {
     return {
       year: null,
@@ -94,7 +120,7 @@ export default {
     this.$refs.year.focus()
     document.addEventListener('keyup', this.closeOnEscape)
   },
-  destroyed () {
+  unmounted () {
     document.removeEventListener('keyup', this.closeOnEscape)
   },
   methods: {
@@ -104,7 +130,7 @@ export default {
       }
     },
     close () {
-      this.$store.commit('closeGoToDate')
+      this.store.closeGoToDate()
     },
     submit () {
       const year = this.parseValue(this.year)
@@ -193,7 +219,7 @@ export default {
     }
   }
 
-  &-enter, &-leave-to {
+  &-enter-from, &-leave-to {
     opacity: 0;
 
     .go-to-date {
@@ -201,7 +227,7 @@ export default {
     }
   }
 
-  &-enter-to, &-leave {
+  &-enter-to, &-leave-from {
     opacity: 1;
 
     .go-to-date {
@@ -302,7 +328,7 @@ export default {
       border-radius: 100%;
       appearance: none;
       border: none;
-      background: lighten(#0f3562, 10%);
+      background: color.adjust(#0f3562, $lightness: 10%);
       color: #f6f8fa;
       padding: 0;
       margin: 0.5rem;
@@ -314,7 +340,7 @@ export default {
       transition: 0.2s ease-in-out background;
 
       &:hover, &:active, &:focus {
-        background: lighten(#0f3562, 20%);
+        background: color.adjust(#0f3562, $lightness: 20%);
       }
 
       @media (max-width: 500px) {
@@ -340,7 +366,7 @@ export default {
     }
 
     $focus-height: 0.3rem;
-    $focus-color: lighten(#0f3562, 20%);
+    $focus-color: color.adjust(#0f3562, $lightness: 20%);
     $focus-diagonal-size: $focus-height + 0.353rem;
 
     label {

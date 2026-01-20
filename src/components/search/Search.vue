@@ -5,12 +5,24 @@
     :class="['search', { 'search--open': open, 'search--closing': closing }]"
     :style="{ '--left': `${left}px`, '--right': `${right}px` }"
     @animationend="onAnimationEnd"
+    @click="onBackgroundClick"
   >
-    <button :disabled="open" class="search__button" :title="$t('ui.search.title')" @click="$emit('open')">
-      <SearchIcon size="1x" />
+    <button
+      :disabled="open"
+      class="search__button"
+      :title="$t('ui.search.title')"
+      @click="$emit('open')"
+    >
+      <VueFeather
+        type="search"
+        :size="20"
+      />
     </button>
     <transition name="search__content">
-      <div v-if="open" class="search__content">
+      <div
+        v-if="open"
+        class="search__content"
+      >
         <input
           key="field"
           ref="field"
@@ -21,8 +33,16 @@
           @focusin="fieldFocused = true"
           @focusout="fieldFocused = false"
         >
-        <button key="close-button" class="search__button" :title="$t('ui.close')" @click="$emit('close')">
-          <XIcon size="1x" />
+        <button
+          key="close-button"
+          class="search__button"
+          :title="$t('ui.close')"
+          @click="$emit('close')"
+        >
+          <VueFeather
+            type="x"
+            :size="20"
+          />
         </button>
       </div>
     </transition>
@@ -40,15 +60,23 @@
 </template>
 
 <script>
-import { SearchIcon, XIcon } from 'vue-feather-icons'
+import VueFeather from 'vue-feather'
 import SearchResults from '@/components/search/SearchResults.vue'
 import { debounce } from '@/utils'
+import { useI18n } from 'vue-i18n'
+import { useSearchStore } from '@/stores/search'
 
 export default {
   name: 'Search',
-  components: { SearchResults, SearchIcon, XIcon },
+  components: { VueFeather, SearchResults },
   props: {
     open: Boolean
+  },
+  emits: ['open', 'close'],
+  setup () {
+    const { t } = useI18n({ useScope: 'global' })
+    const searchStore = useSearchStore()
+    return { t, searchStore }
   },
   data () {
     return {
@@ -72,7 +100,7 @@ export default {
         this.$nextTick(() => {
           this.$refs.field.focus()
         })
-        await this.$store.dispatch('search/loadIndex', this.$t('sourceFile'))
+        await this.searchStore.loadIndex(this.t('sourceFile'))
         this.loadingIndex = false
         this.search(this.query)
       } else {
@@ -95,7 +123,7 @@ export default {
         return
       }
 
-      const index = this.$store.state.search.loadedIndices[this.$t('sourceFile')]
+      const index = this.searchStore.loadedIndices[this.t('sourceFile')]
       this.searchResults = index.search(query).map(result => result.ref)
 
       if (this.$gtag) {
@@ -111,6 +139,11 @@ export default {
     onAnimationEnd (event) {
       if (event.animationName === 'search--closing') {
         this.closing = false
+      }
+    },
+    onBackgroundClick (event) {
+      if (this.open && event.target === event.currentTarget) {
+        this.$emit('close')
       }
     },
     track: debounce((gtag, query) => gtag.event('search', { event_category: 'engagement', search_term: query }))
@@ -157,7 +190,7 @@ export default {
     z-index: 63;
 
     &:hover, &:active, &:focus, &:disabled {
-      background: saturate(darken(#F5ECDA, 10%), 5%);
+      background: color.adjust(color.adjust(#F5ECDA, $lightness: -10%), $saturation: 5%);
     }
 
     &:disabled {
@@ -187,7 +220,7 @@ export default {
       transition-delay: 0.3s;
     }
 
-    &-enter, &-leave-to {
+    &-enter-from, &-leave-to {
       max-width: 0;
 
       .search__button {
@@ -195,7 +228,7 @@ export default {
       }
     }
 
-    &-enter-to, &-leave {
+    &-enter-to, &-leave-from {
       max-width: 300px;
     }
   }
@@ -241,12 +274,12 @@ export default {
       transition-delay: 0.4s;
     }
 
-    &-enter, &-leave-to {
+    &-enter-from, &-leave-to {
       transform: translateY(-3.25rem);
       max-height: 0 !important;
     }
 
-    &-enter-to, &-leave {
+    &-enter-to, &-leave-from {
       transform: translateY(0);
     }
 

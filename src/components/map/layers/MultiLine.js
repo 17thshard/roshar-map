@@ -1,4 +1,4 @@
-import { AdditiveBlending, BufferAttribute, Group, Mesh, PlaneBufferGeometry, ShaderMaterial, Vector2, Vector3 } from 'three'
+import { AdditiveBlending, BufferAttribute, Group, Mesh, PlaneGeometry, ShaderMaterial, Vector2, Vector3 } from 'three'
 
 export default class MultiLine extends Group {
   constructor (points) {
@@ -147,7 +147,7 @@ export default class MultiLine extends Group {
       const end = points[i + 1]
       const ref = new Vector2()
       ref.subVectors(end, start)
-      const geo = new PlaneBufferGeometry(ref.length(), 10, 1, 1)
+      const geo = new PlaneGeometry(ref.length(), 10, 1, 1)
       const contribution = ref.length() / totalLength
       geo.setAttribute(
         'uv',

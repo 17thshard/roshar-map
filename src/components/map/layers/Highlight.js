@@ -2,7 +2,7 @@ import {
   AdditiveBlending,
   Group,
   Mesh,
-  PlaneBufferGeometry,
+  PlaneGeometry,
   ShaderMaterial,
   Vector3
 } from 'three'
@@ -27,7 +27,7 @@ export default class Highlight extends Group {
   }
 
   init (color) {
-    const geo = new PlaneBufferGeometry(1, 1, 1, 1)
+    const geo = new PlaneGeometry(1, 1, 1, 1)
     const mat = new ShaderMaterial({
       // language=GLSL
       vertexShader: `

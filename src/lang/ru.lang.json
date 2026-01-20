@@ -15,6 +15,7 @@
     "close": "Закрыть",
     "back": "Назад",
     "separate-timelines": "Отдельные временные линии",
+    "add-timeline": "Добавьте временную шкалу, нажав {timeline-icon}, чтобы сравнить.",
     "enable": "Включить",
     "disable": "Выключить",
     "display-separately": "Отображать отдельно",
@@ -194,8 +195,17 @@
   "sharing": {
     "title": "Поделиться",
     "global-message": "Смотрите, интерактивная карта Рошара!",
+    "general": {
+      "button-text": "Поделиться…",
+      "copied": "Скопировано!",
+      "entry-template": "Смотрите \"{entry}\" на интерактивной карте Рошара!"
+    },
     "twitter": {
-      "button-text": "Twitter",
+      "button-text": "Twitter/X",
+      "entry-template": "Смотрите \"{entry}\" на интерактивной карте Рошара!"
+    },
+    "instagram": {
+      "button-text": "Instagram",
       "entry-template": "Смотрите \"{entry}\" на интерактивной карте Рошара!"
     },
     "facebook": {
@@ -234,7 +244,7 @@
   ],
   "layers": {
     "shadesmar": "Шейдсмар",
-    "graticule": "Линии широты и долготы",
+    "graticule": "Линии Широты и Долготы",
     "silverKingdoms": "Серебряные королевства",
     "oathgates": "Клятвенные врата",
     "factions": "Текущее состояние в мире"

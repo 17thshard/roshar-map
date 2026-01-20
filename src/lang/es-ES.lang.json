@@ -1,9 +1,10 @@
 {
-    "texture-locale": "es",
+    "texture-locale": "es-ES",
     "text-direction": "ltr",
-    "search-language": "es",
+    "search-language": "es-ES",
     "name": "Mapa de Roshar",
     "title": "{page} | El archivo de las tormentas",
+    "logo": "roshar.png",
     "meta": {
         "translator": {
             "url": "https://cosmere.es",
@@ -21,6 +22,7 @@
         "close": "Cerrar",
         "back": "Atrás",
         "separate-timelines": "Líneas temporales separadas",
+        "add-timeline": "Añade una línea de tiempo haciendo clic en {timeline-icon} para comparar.",
         "enable": "Activar",
         "disable": "Desactivar",
         "display-separately": "Mostrar por separado",
@@ -200,8 +202,17 @@
     "sharing": {
         "title": "Compartir",
         "global-message": "¡Echa un vistazo al mapa y línea temporal interactiva de Roshar!",
+        "general": {
+            "button-text": "Compartir…",
+            "copied": "¡Copiado!",
+            "entry-template": "Echa un ojo a \"{entry}\" en el mapa y línea temporal interactiva de Roshar!"
+        },
         "twitter": {
-            "button-text": "Tweet",
+            "button-text": "Twitter/X",
+            "entry-template": "Echa un ojo a \"{entry}\" en el mapa y línea temporal interactiva de Roshar!"
+        },
+        "instagram": {
+            "button-text": "Instagram",
             "entry-template": "Echa un ojo a \"{entry}\" en el mapa y línea temporal interactiva de Roshar!"
         },
         "facebook": {
@@ -240,7 +251,7 @@
     ],
     "layers": {
         "shadesmar": "Shadesmar",
-        "graticule": "Líneas de latidud y longitud",
+        "graticule": "Líneas de Latidud y Longitud",
         "silverKingdoms": "Reinos Plateados",
         "oathgates": "Ubicación de las Puertas Juradas",
         "factions": "Estado actual del mundo"

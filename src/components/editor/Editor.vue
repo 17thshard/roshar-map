@@ -1,49 +1,97 @@
 <template>
   <div :class="['editor', { 'editor--loading': loading }]">
     <div class="editor__menu">
-      <img src="@/assets/logos/roshar.png" alt="Logo">
+      <img
+        src="@/assets/logos/roshar.png"
+        alt="Logo"
+      >
       <button @click="save">
         Save to disk
       </button>
       Mode:
       <label for="editor__mode--locations">
-        <input id="editor__mode--locations" v-model="mode" type="radio" value="locations">
+        <input
+          id="editor__mode--locations"
+          v-model="mode"
+          type="radio"
+          value="locations"
+        >
         Locations
       </label>
       <label for="editor__mode--events">
-        <input id="editor__mode--events" v-model="mode" type="radio" value="events">
+        <input
+          id="editor__mode--events"
+          v-model="mode"
+          type="radio"
+          value="events"
+        >
         Events
       </label>
       <label for="editor__mode--characters">
-        <input id="editor__mode--characters" v-model="mode" type="radio" value="characters">
+        <input
+          id="editor__mode--characters"
+          v-model="mode"
+          type="radio"
+          value="characters"
+        >
         Characters
       </label>
       <label for="editor__mode--misc">
-        <input id="editor__mode--misc" v-model="mode" type="radio" value="misc">
+        <input
+          id="editor__mode--misc"
+          v-model="mode"
+          type="radio"
+          value="misc"
+        >
         Misc
       </label>
       <label for="editor__mode--tags">
-        <input id="editor__mode--tags" v-model="mode" type="radio" value="tags">
+        <input
+          id="editor__mode--tags"
+          v-model="mode"
+          type="radio"
+          value="tags"
+        >
         Tags
       </label>
 
       <div class="editor__file">
         <label for="editor__selected-language">Edited Language</label>
-        <select id="editor__selected-language" v-model="selectedLanguage">
+        <select
+          id="editor__selected-language"
+          v-model="selectedLanguage"
+        >
           <option :value="null">
             None
           </option>
-          <option v-for="language in availableLanguages" :key="language" :value="language">
+          <option
+            v-for="language in availableLanguages"
+            :key="language"
+            :value="language"
+          >
             {{ language }}
           </option>
         </select>
 
         <label for="editor__selected-language">Override with</label>
-        <input id="editor__file--language" :disabled="selectedLanguage === null" type="file" @change="loadLanguage">
+        <input
+          id="editor__file--language"
+          :disabled="selectedLanguage === null"
+          type="file"
+          @change="loadLanguage"
+        >
       </div>
       <label for="editor__texture-locale">Texture Locale</label>
-      <select id="editor__texture-locale" v-model="textureLocale" @change="resetRenderer">
-        <option v-for="language in ['en', 'es', 'ru', 'tr', 'zh']" :key="language" :value="language">
+      <select
+        id="editor__texture-locale"
+        v-model="textureLocale"
+        @change="resetRenderer"
+      >
+        <option
+          v-for="language in ['en-US', 'es-ES', 'ru', 'tr', 'zh']"
+          :key="language"
+          :value="language"
+        >
           {{ language }}
         </option>
       </select>
@@ -57,15 +105,14 @@
       @mousemove="drag"
       @mouseup="endDrag"
       @mouseleave="endDrag"
-      @mousewheel="onZoom"
-      @DOMMouseScroll="onZoom"
+      @wheel.passive="onZoom"
     >
       <svg v-if="mode === 'locations'">
-        <template
+        <g
           v-for="(location, index) in locations.filter(l => l.points[textureLocale] !== undefined && (selectedLocation !== null && selectedLocation.shadesmar ? l.shadesmar : l.shadesmar !== true))"
+          :key="`polygon${index}`"
         >
           <polygon
-            :key="`polygon${index}`"
             :points="buildPolygonPoints(location)"
             :class="selectedLocation === location ? 'editor__surface-polygon--selected' : undefined"
             @click="clickLocationPolygon(location, $event)"
@@ -79,7 +126,7 @@
             @click="clickPoint($event, location, index, pointIndex)"
             @mousedown="startDrag($event, point)"
           />
-        </template>
+        </g>
       </svg>
       <div
         v-if="mode === 'events' && selectedEvent !== null"
@@ -99,13 +146,26 @@
         {{ `(${markerPosition.x}, ${markerPosition.y})` }}
       </div>
     </div>
-    <canvas ref="referenceCanvas" class="editor__reference" width="1024" height="512" />
-    <ul v-if="mode === 'locations'" class="editor__location-list" @click.self="selectedLocation = null">
+    <canvas
+      ref="referenceCanvas"
+      class="editor__reference"
+      width="1024"
+      height="512"
+    />
+    <ul
+      v-if="mode === 'locations'"
+      class="editor__location-list"
+      @click.self="selectedLocation = null"
+    >
       <li>
         <label for="editor__file--locations">
           Override with
         </label>
-        <input id="editor__file--locations" type="file" @change="loadLocations">
+        <input
+          id="editor__file--locations"
+          type="file"
+          @change="loadLocations"
+        >
         <button @click="saveLocations">
           Save
         </button>
@@ -141,18 +201,29 @@
       >
         <span>{{ location.mapId }}</span>
         <span>{{ location.id }}</span>
-        <button :disabled="isLinked('locations', location.id)" @click.stop="deleteLocation(index)">
+        <button
+          :disabled="isLinked('locations', location.id)"
+          @click.stop="deleteLocation(index)"
+        >
           Delete
         </button>
       </li>
     </ul>
-    <ul v-else-if="mode === 'events'" class="editor__event-list" @click.self="selectedEvent = null">
+    <ul
+      v-else-if="mode === 'events'"
+      class="editor__event-list"
+      @click.self="selectedEvent = null"
+    >
       <li>
         <label for="editor__file--events">
           Override with
         </label>
 
-        <input id="editor__file--events" type="file" @change="loadEvents">
+        <input
+          id="editor__file--events"
+          type="file"
+          @change="loadEvents"
+        >
         <button @click="saveEvents">
           Save
         </button>
@@ -177,23 +248,37 @@
             {{ event.date[0] }}
           </span>
           {{ event.date.length > 1 ? '.' : '' }}
-          <span v-if="event.date.length > 1" class="editor__event-list-date-rest">
+          <span
+            v-if="event.date.length > 1"
+            class="editor__event-list-date-rest"
+          >
             {{ event.date.slice(1).join('.') }}
           </span>
         </span>
         <span>{{ event.id }}</span>
-        <button :disabled="isLinked('events', event.id)" @click.stop="deleteEvent(index)">
+        <button
+          :disabled="isLinked('events', event.id)"
+          @click.stop="deleteEvent(index)"
+        >
           Delete
         </button>
       </li>
     </ul>
-    <ul v-else-if="mode === 'characters'" class="editor__character-list" @click.self="selectedCharacter = null">
+    <ul
+      v-else-if="mode === 'characters'"
+      class="editor__character-list"
+      @click.self="selectedCharacter = null"
+    >
       <li>
         <label for="editor__file--characters">
           Override with
         </label>
 
-        <input id="editor__file--characters" type="file" @change="loadCharacters">
+        <input
+          id="editor__file--characters"
+          type="file"
+          @change="loadCharacters"
+        >
         <button @click="saveCharacters">
           Save
         </button>
@@ -211,18 +296,29 @@
         @click="selectCharacter(character)"
       >
         <span>{{ character.id }}</span>
-        <button :disabled="isLinked('characters', character.id)" @click.stop="deleteCharacter(index)">
+        <button
+          :disabled="isLinked('characters', character.id)"
+          @click.stop="deleteCharacter(index)"
+        >
           Delete
         </button>
       </li>
     </ul>
-    <ul v-else-if="mode === 'misc'" class="editor__misc-list" @click.self="selectedMisc = null">
+    <ul
+      v-else-if="mode === 'misc'"
+      class="editor__misc-list"
+      @click.self="selectedMisc = null"
+    >
       <li>
         <label for="editor__file--misc">
           Override with
         </label>
 
-        <input id="editor__file--misc" type="file" @change="loadMisc">
+        <input
+          id="editor__file--misc"
+          type="file"
+          @change="loadMisc"
+        >
         <button @click="saveMisc">
           Save
         </button>
@@ -240,64 +336,95 @@
         @click="selectMisc(miscEntry)"
       >
         <span>{{ miscEntry.id }}</span>
-        <button :disabled="isLinked('misc', miscEntry.id)" @click.stop="deleteMisc(index)">
+        <button
+          :disabled="isLinked('misc', miscEntry.id)"
+          @click.stop="deleteMisc(index)"
+        >
           Delete
         </button>
       </li>
     </ul>
-    <div v-else-if="mode === 'tags'" class="editor__tags" @click.self="selectedTag = null">
+    <div
+      v-else-if="mode === 'tags'"
+      class="editor__tags"
+      @click.self="selectedTag = null"
+    >
       <div class="editor__tags-actions">
         <label for="editor__file--tags">
           Override with
         </label>
 
-        <input id="editor__file--tags" type="file" @change="loadTags">
+        <input
+          id="editor__file--tags"
+          type="file"
+          @change="loadTags"
+        >
       </div>
       <template v-if="uncategorizedTags.length > 0">
         <h3>Uncategorized</h3>
-        <Draggable tag="ul" :value="uncategorizedTags" group="tags" class="editor__tags-list">
-          <li
-            v-for="tag in uncategorizedTags"
-            :key="tag.id"
-            class="editor__tags-list-item--invalid"
-          >
-            {{ tag.id }}
-          </li>
-        </Draggable>
-      </template>
-      <Draggable tag="ul" :list="tagCategories" group="tag-categories" class="editor__tags-categories">
-        <li>
-          <button @click="addTagCategory">
-            New Category
-          </button>
-          <button @click="selectedTag = null">
-            Clear selection
-          </button>
-        </li>
-        <li
-          v-for="tagCategory in tagCategories"
-          :key="tagCategory.id"
-          :class="selectedTag === tagCategory && categorySelected ? 'editor__tags-item--selected' : undefined"
-          @click.self="selectTag(tagCategory, true)"
+        <Draggable
+          tag="ul"
+          :list="uncategorizedTags"
+          group="tags"
+          class="editor__tags-list"
+          item-key="id"
         >
-          <span>{{ tagCategory.id }}</span>
-          <button @click.stop="deleteTagCategory(tagCategory)">
-            Delete
-          </button>
-          <Draggable tag="ul" :list="tagCategory.tags" group="tags" class="editor__tags-list">
-            <li
-              v-for="tag in tagCategory.tags"
-              :key="tag.id"
-              :class="{
-                'editor__tags-item--selected': selectedTag === tag && !categorySelected
-              }"
-              @click.stop="selectTag(tag, false)"
-            >
+          <template #item="{ element: tag }">
+            <li class="editor__tags-list-item--invalid">
               {{ tag.id }}
             </li>
-          </Draggable>
-        </li>
-      </Draggable>
+          </template>
+        </Draggable>
+      </template>
+      <div>
+        <ul class="editor__tags-categories">
+          <li>
+            <button @click="addTagCategory">
+              New Category
+            </button>
+            <button @click="selectedTag = null">
+              Clear selection
+            </button>
+          </li>
+        </ul>
+        <Draggable
+          tag="ul"
+          :list="tagCategories"
+          group="tag-categories"
+          class="editor__tags-categories"
+          item-key="id"
+        >
+          <template #item="{ element: tagCategory }">
+            <li
+              :class="selectedTag === tagCategory && categorySelected ? 'editor__tags-item--selected' : undefined"
+              @click.self="selectTag(tagCategory, true)"
+            >
+              <span>{{ tagCategory.id }}</span>
+              <button @click.stop="deleteTagCategory(tagCategory)">
+                Delete
+              </button>
+              <Draggable
+                tag="ul"
+                :list="tagCategory.tags"
+                group="tags"
+                class="editor__tags-list"
+                item-key="id"
+              >
+                <template #item="{ element: tag }">
+                  <li
+                    :class="{
+                      'editor__tags-item--selected': selectedTag === tag && !categorySelected
+                    }"
+                    @click.stop="selectTag(tag, false)"
+                  >
+                    {{ tag.id }}
+                  </li>
+                </template>
+              </Draggable>
+            </li>
+          </template>
+        </Draggable>
+      </div>
     </div>
     <template
       v-if="mode === 'events' && selectedEvent !== null"
@@ -354,8 +481,8 @@
 </template>
 
 <script>
-import { Mesh, OrthographicCamera, PlaneBufferGeometry, Scene, ShaderMaterial, Vector2, WebGLRenderer } from 'three'
-import Draggable from 'vuedraggable'
+import { Mesh, OrthographicCamera, PlaneGeometry, Scene, ShaderMaterial, Vector2, WebGLRenderer } from 'three'
+import Draggable from '@marshallswain/vuedraggable'
 import DeepDiff from 'deep-diff'
 import Zip from 'jszip'
 import mapFragmentShader from '@/components/map/mapFragmentShader'
@@ -363,16 +490,18 @@ import textFragmentShader from '@/components/editor/editorTextFragmentShader'
 import TextureManager from '@/components/map/TextureManager'
 import EventProperties from '@/components/editor/EventProperties.vue'
 import EventPreview from '@/components/editor/EventPreview.vue'
-import originalLocations from '@/store/locations.json'
-import originalEvents from '@/store/events.json'
-import originalCharacters from '@/store/characters.json'
-import originalMisc from '@/store/misc.json'
-import originalTagCategories from '@/store/tags.json'
+import originalLocations from '@/stores/locations.json'
+import originalEvents from '@/stores/events.json'
+import originalCharacters from '@/stores/characters.json'
+import originalMisc from '@/stores/misc.json'
+import originalTagCategories from '@/stores/tags.json'
 import LocationProperties from '@/components/editor/LocationProperties.vue'
 import CharacterProperties from '@/components/editor/CharacterProperties.vue'
 import MiscProperties from '@/components/editor/MiscProperties.vue'
 import TagProperties from '@/components/editor/TagProperties.vue'
 import languageMenu from '@/lang/menu.json'
+
+const generatedLangModules = import.meta.glob('/build/generated/lang/*.lang.json')
 
 function saveAs (blob, name) {
   const a = document.createElement('a')
@@ -395,7 +524,7 @@ export default {
   components: { TagProperties, LocationProperties, EventPreview, EventProperties, CharacterProperties, MiscProperties, Draggable },
   data () {
     return {
-      textureLocale: 'en',
+      textureLocale: 'en-US',
       loading: true,
       mode: 'events',
       locations: JSON.parse(JSON.stringify(originalLocations)),
@@ -545,10 +674,18 @@ export default {
     }
   },
   created () {
-    Promise.all(this.availableLanguages.map(lang =>
-      import(/* webpackChunkName: "lang-[request]" */ '@/lang/' + lang + '.lang.json').then((messages) => {
-        this.$set(this.loadedLanguages, lang, messages.default)
-      }))).then(() => {
+    Promise.all(this.availableLanguages.map((lang) => {
+      const loader = generatedLangModules[`/build/generated/lang/${lang}.lang.json`]
+      if (!loader) {
+        throw new Error(
+          `Missing generated language pack for '${lang}'. ` +
+          `Run: yarn dev (or yarn build) to generate it.`
+        )
+      }
+      return loader().then((messages) => {
+        this.loadedLanguages[lang] = messages.default
+      })
+    })).then(() => {
       this.languagesLoaded = true
     })
   },
@@ -557,7 +694,7 @@ export default {
 
     this.setupRenderer()
   },
-  destroyed () {
+  unmounted () {
     window.removeEventListener('beforeunload', this.onLeave)
     this.renderer.dispose()
     cancelAnimationFrame(this.latestAnimationFrame)
@@ -616,7 +753,7 @@ export default {
         1
       )
 
-      const geo = new PlaneBufferGeometry(2, 2, 1, 1)
+      const geo = new PlaneGeometry(2, 2, 1, 1)
 
       const mapMaterial = new ShaderMaterial({
         // language=GLSL
@@ -906,8 +1043,8 @@ export default {
     addTagCategory () {
       const name = window.prompt('New category name')
 
-      if (name !== null && this.tagCategories[name] === undefined) {
-        this.$set(this.tagCategories, name, [])
+      if (name !== null && !this.tagCategories.some(c => c.id === name)) {
+        this.tagCategories.push({ id: name, tags: [] })
       }
     },
     selectTag (tag, category) {
@@ -916,7 +1053,10 @@ export default {
       this.categorySelected = category
     },
     deleteTagCategory (category) {
-      this.$delete(this.tagCategories, category)
+      const index = this.tagCategories.indexOf(category)
+      if (index !== -1) {
+        this.tagCategories.splice(index, 1)
+      }
     },
     click (event) {
       if (this.draggedPoint !== null || event.altKey || this.panning || event.button === 1) {
@@ -1011,7 +1151,7 @@ export default {
     },
     ensureLocalePoints (location) {
       if (location.points[this.textureLocale] === undefined) {
-        this.$set(location.points, this.textureLocale, [])
+        location.points[this.textureLocale] = []
       }
     },
     buildPolygonPoints (polygon) {

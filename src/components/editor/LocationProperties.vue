@@ -3,7 +3,11 @@
     <h2>Location properties</h2>
     <div class="location-properties__form">
       <label for="location-properties__slug">ID</label>
-      <input id="location-properties__slug" v-model="location.id" type="text">
+      <input
+        id="location-properties__slug"
+        v-model="location.id"
+        type="text"
+      >
 
       <div class="location-properties__coordinates">
         <h3>Coordinates</h3>
@@ -44,9 +48,8 @@
         <label for="location-properties__shadesmar">
           <input
             id="location-properties__shadesmar"
-            :checked="location.shadesmar"
+            v-model="location.shadesmar"
             type="checkbox"
-            @input="$event.target.checked ? $set(location, 'shadesmar', true) : $delete(location, 'shadesmar')"
           >
 
           Shadesmar
@@ -54,9 +57,8 @@
         <label for="location-properties__city-dot">
           <input
             id="location-properties__city-dot"
-            :checked="location.cityDot"
+            v-model="location.cityDot"
             type="checkbox"
-            @input="$event.target.checked ? $set(location, 'cityDot', true) : $delete(location, 'cityDot')"
           >
 
           City Dot
@@ -75,12 +77,13 @@
 
       <label>Related</label>
       <VueTagsInput
+        ref="tagsInput"
         v-model="newLink"
         :tags="(location.related || []).map(t => ({ text: t }))"
         :autocomplete-items="linkAutocompletions"
         add-only-from-autocomplete
         placeholder="Add Link"
-        @tags-changed="newLinks => $set(location, 'related', newLinks.map(t => t.text).sort((a, b) => a.localeCompare(b)))"
+        @tags-changed="newLinks => location.related = newLinks.map(t => t.text).sort((a, b) => a.localeCompare(b))"
       />
 
       <span>Linked to by</span>
@@ -88,7 +91,10 @@
         <li v-if="linked.length === 0">
           Nothing
         </li>
-        <li v-for="item in linked" :key="item">
+        <li
+          v-for="item in linked"
+          :key="item"
+        >
           {{ item }}
         </li>
       </ul>
@@ -175,7 +181,7 @@
 </template>
 
 <script>
-import VueTagsInput from '@johmun/vue-tags-input'
+import { VueTagsInput } from '@vojtechlanka/vue-tags-input'
 import { getEntryImageSrcSet } from '@/utils'
 
 export default {
@@ -203,10 +209,11 @@ export default {
   },
   computed: {
     imageBaseUrl () {
-      return `${process.env.BASE_URL}img`
+      return `${import.meta.env.BASE_URL}img`
     },
     linkAutocompletions () {
-      return this.linkables.filter(l => l.startsWith(this.newLink) && l !== `locations/${this.location.id}`)
+      const search = (this.newLink || '').trim().toLowerCase()
+      return this.linkables.filter(l => l.toLowerCase().includes(search) && l !== `locations/${this.location.id}`)
         .sort((a, b) => a.localeCompare(b))
         .map(l => ({ text: l }))
     },
@@ -216,7 +223,7 @@ export default {
       }
 
       const styles = {
-        backgroundImage: getEntryImageSrcSet(this.location.image.file, this.$gtag).css
+        backgroundImage: getEntryImageSrcSet(this.location.image.file, this.$gtag || undefined).css
       }
 
       if (this.location.image.offset !== undefined) {
@@ -230,42 +237,61 @@ export default {
       return styles
     }
   },
+  mounted () {
+    this.$nextTick(() => {
+      if (this.$refs.tagsInput && this.$refs.tagsInput.$el) {
+        const input = this.$refs.tagsInput.$el.querySelector('input')
+        if (input) {
+          input.addEventListener('focus', () => {
+            if (!this.newLink || this.newLink.trim() === '') {
+              this.newLink = ' '
+            }
+          })
+          input.addEventListener('blur', () => {
+            if (this.newLink === ' ') {
+              this.newLink = ''
+            }
+          })
+        }
+      }
+    })
+  },
   methods: {
     updateMapId ({ target: { value } }) {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.location, 'mapId')
-        this.$delete(this.location, 'points')
+        delete this.location.mapId
+        delete this.location.points
         return
       }
 
-      this.$set(this.location, 'mapId', Number.parseInt(trimmed))
+      this.location.mapId = Number.parseInt(trimmed)
 
       if (this.location.points === undefined) {
-        this.$set(this.location, 'points', {})
+        this.location.points = {}
       }
     },
     updateZoom ({ target: { value } }) {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.location.coordinates, 'zoom')
+        delete this.location.coordinates.zoom
         return
       }
 
-      this.$set(this.location.coordinates, 'zoom', Number.parseFloat(trimmed))
+      this.location.coordinates.zoom = Number.parseFloat(trimmed)
     },
     updateImageFile ({ target: { value } }) {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.location, 'image')
+        delete this.location.image
         return
       }
 
       if (this.location.image === undefined) {
-        this.$set(this.location, 'image', {})
+        this.location.image = {}
       }
 
       this.location.image.file = trimmed
@@ -274,43 +300,43 @@ export default {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.location.image, 'offset')
+        delete this.location.image.offset
         return
       }
 
       if (this.location.image.offset === undefined) {
-        this.$set(this.location.image, 'offset', { x: 0, y: 0 })
+        this.location.image.offset = { x: 0, y: 0 }
       }
 
-      this.$set(this.location.image.offset, prop, Number.parseInt(trimmed, 10))
+      this.location.image.offset[prop] = Number.parseInt(trimmed, 10)
 
       if (this.location.image.offset.x === 0 && this.location.image.offset.y === 0) {
-        this.$delete(this.location.image, 'offset')
+        delete this.location.image.offset
       }
     },
     updateImageSize ({ target: { value } }) {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.location.image, 'size')
+        delete this.location.image.size
         return
       }
 
-      this.$set(this.location.image, 'size', Number.parseInt(trimmed, 10))
+      this.location.image.size = Number.parseInt(trimmed, 10)
 
       if (this.location.image.size === 100) {
-        this.$delete(this.location.image, 'size')
+        delete this.location.image.size
       }
     },
     update (property, { target: { value } }) {
       const trimmed = value.trim()
 
       if (trimmed.length === 0) {
-        this.$delete(this.location, property)
+        delete this.location[property]
         return
       }
 
-      this.$set(this.location, property, trimmed)
+      this.location[property] = trimmed
     }
   }
 }

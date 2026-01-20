@@ -22,6 +22,7 @@
         "close": "关闭",
         "back": "返回",
         "separate-timelines": "单独时间轴",
+        "add-timeline": "点击 {timeline-icon} 添加时间线以进行比较。",
         "enable": "允许",
         "disable": "不允许",
         "display-separately": "单独显示",
@@ -201,8 +202,17 @@
     "sharing": {
         "title": "分享",
         "global-message": "快来体验《飓光志》饭制互动地图吧！",
+        "general": {
+            "button-text": "分享…",
+            "copied": "已复制！",
+            "entry-template": "快来《飓光志》饭制互动地图查看\"{entry}\"吧！"
+        },
         "twitter": {
-            "button-text": "Tweet",
+            "button-text": "Twitter/X",
+            "entry-template": "快来《飓光志》饭制互动地图查看\"{entry}\"吧！"
+        },
+        "instagram": {
+            "button-text": "Instagram",
             "entry-template": "快来《飓光志》饭制互动地图查看\"{entry}\"吧！"
         },
         "facebook": {

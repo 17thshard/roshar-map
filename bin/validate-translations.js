@@ -1,10 +1,10 @@
-/* eslint-disable no-console */
+
 const fs = require('fs')
 
-const events = JSON.parse(fs.readFileSync('./src/store/events.json', 'utf8')).map(e => e.id)
-const locations = JSON.parse(fs.readFileSync('./src/store/locations.json', 'utf8')).map(l => l.id)
-const characters = JSON.parse(fs.readFileSync('./src/store/characters.json', 'utf8')).map(l => l.id)
-const misc = JSON.parse(fs.readFileSync('./src/store/misc.json', 'utf8')).map(l => l.id)
+const events = JSON.parse(fs.readFileSync('./src/stores/events.json', 'utf8')).map(e => e.id)
+const locations = JSON.parse(fs.readFileSync('./src/stores/locations.json', 'utf8')).map(l => l.id)
+const characters = JSON.parse(fs.readFileSync('./src/stores/characters.json', 'utf8')).map(l => l.id)
+const misc = JSON.parse(fs.readFileSync('./src/stores/misc.json', 'utf8')).map(l => l.id)
 const allReference = new Set([
   ...events.map(name => `events/${name}`),
   ...locations.map(name => `locations/${name}`),

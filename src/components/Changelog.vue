@@ -1,29 +1,42 @@
 <template>
-  <div class="changelog" @click.self="dismiss">
+  <div
+    class="changelog"
+    @click.self="dismiss"
+  >
     <div class="changelog__window">
       <div class="changelog__window-content">
-        <Scrollbar
+        <CustomScrollbar
+          ref="scroller"
           :class="['changelog__scroller', { 'changelog__scroller--bottom': scrolledToBottom }]"
-          :ops="$store.state.scrollbarOptions"
-          @handle-scroll="onScroll"
+          @scroll="onScroll"
         >
-          <Markdown :content="$t('changelog')" advanced />
-        </Scrollbar>
-        <Markdown tag="button" :content="$t('ui.dismiss')" inline class="changelog__confirm" @click.native="dismiss" />
+          <Markdown
+            :content="$t('changelog')"
+            advanced
+          />
+        </CustomScrollbar>
+        <Markdown
+          tag="button"
+          :content="$t('ui.dismiss')"
+          inline
+          class="changelog__confirm"
+          @click="dismiss"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Scrollbar from 'vuescroll/dist/vuescroll-native'
 import Markdown from '@/components/Markdown.vue'
+import CustomScrollbar from '@/components/CustomScrollbar.vue'
 
 export const VERSION = 'row-ds'
 
 export default {
   name: 'Changelog',
-  components: { Markdown, Scrollbar },
+  components: { Markdown, CustomScrollbar },
+  emits: ['close'],
   data () {
     return {
       scrolledToBottom: false
@@ -32,7 +45,7 @@ export default {
   mounted () {
     document.querySelector('#app').classList.add('changelog__blur')
   },
-  destroyed () {
+  unmounted () {
     document.querySelector('#app').classList.remove('changelog__blur')
   },
   methods: {
@@ -41,7 +54,10 @@ export default {
       this.$emit('close')
     },
     onScroll (event) {
-      this.scrolledToBottom = event.process >= 0.99
+      const element = event.target
+      const threshold = 0.01
+      const scrollPercentage = (element.scrollTop + element.clientHeight) / element.scrollHeight
+      this.scrolledToBottom = scrollPercentage >= (1 - threshold)
     }
   }
 }
@@ -102,7 +118,7 @@ export default {
     }
   }
 
-  &-enter, &-leave-to {
+  &-enter-from, &-leave-to {
     opacity: 0;
     backdrop-filter: blur(0px);
 
@@ -112,7 +128,7 @@ export default {
     }
   }
 
-  &-enter-to, &-leave {
+  &-enter-to, &-leave-from {
     opacity: 1;
     backdrop-filter: blur(50px);
 
@@ -164,24 +180,12 @@ export default {
     min-height: 0;
     flex: 1;
     width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
 
-    .__panel {
-      min-width: 100%;
-      height: auto !important;
-      z-index: 3;
-    }
 
-    .__view {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: auto !important;
-      z-index: 3;
-      padding-right: 1rem;
-    }
-
-    .__rail-is-vertical {
-      z-index: 10 !important;
+    [dir=rtl] & {
+      direction: rtl;
     }
 
     &:after {
@@ -199,12 +203,19 @@ export default {
       border-bottom: 0.25rem solid #F5ECDA;
     }
 
-    &.hasVBar:after {
+    &:not(&--bottom):after {
       opacity: 1;
     }
 
     &--bottom:after {
       opacity: 0 !important;
+    }
+
+    > * {
+      padding-right: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
 
@@ -237,7 +248,7 @@ export default {
     border-radius: 0.5rem;
     appearance: none;
     border: none;
-    background: lighten(#0f3562, 10%);
+    background: color.adjust(#0f3562, $lightness: 10%);
     color: #f6f8fa;
     padding: 0.75rem;
     margin: 0.5rem auto;
@@ -248,7 +259,7 @@ export default {
     transition: 0.2s ease-in-out background;
 
     &:hover, &:active, &:focus {
-      background: lighten(#0f3562, 20%);
+      background: color.adjust(#0f3562, $lightness: 20%);
     }
   }
 }

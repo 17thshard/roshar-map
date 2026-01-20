@@ -1,31 +1,43 @@
-import Vue from 'vue'
-import VueI18n from 'vue-i18n'
-import messages from '@/lang/en.lang.json'
-import store from '@/store'
+import { createI18n } from 'vue-i18n'
+import messages from '@generated/lang/en-US.lang.json'
+import { useMainStore } from '@/stores/main'
 
-Vue.use(VueI18n)
-
-export const i18n = new VueI18n({
+export const i18n = createI18n({
+  legacy: false, // Use Composition API mode (Vue I18n v11+)
+  globalInjection: true, // Enable $t, $tc, etc. in templates
   locale: 'en-US',
   fallbackLocale: 'en-US',
-  messages: { en: { ...messages, sourceFile: 'en' } },
-  silentFallbackWarn: true
+  messages: { 'en-US': { ...messages, sourceFile: 'en-US' } },
+  silentFallbackWarn: true,
+  warnHtmlMessage: false
 })
 
-const loadedLanguages = ['en', 'en-US'] // our default language that is preloaded
+const loadedLanguages = ['en-US'] // our default language that is preloaded
+const generatedLangModules = import.meta.glob(['/build/generated/lang/*.lang.json', '!/build/generated/lang/en-US.lang.json'])
 
+/**
+ * Sets the i18n language and updates the document attributes.
+ * @param {string} lang - The language code.
+ * @returns {string} - The language code.
+ */
 function setI18nLanguage (lang) {
-  i18n.locale = lang
+  i18n.global.locale.value = lang
   document.querySelector('html').setAttribute('lang', lang)
-  const textDirection = i18n.t('text-direction')
+  const textDirection = i18n.global.t('text-direction')
   document.querySelector('html').setAttribute('dir', textDirection)
-  store.commit('setTextDirection', textDirection)
+  useMainStore().setTextDirection(textDirection)
   return lang
 }
 
+/**
+ * Asynchronously loads a language pack.
+ * @param {string} lang - The language file name.
+ * @param {string} locale - The locale code.
+ * @returns {Promise<string>} - The loaded language code.
+ */
 export function loadLanguageAsync (lang, locale) {
   // If the same language
-  if (i18n.locale === locale) {
+  if (i18n.global.locale.value === locale) {
     return Promise.resolve(setI18nLanguage(locale))
   }
 
@@ -35,12 +47,15 @@ export function loadLanguageAsync (lang, locale) {
   }
 
   // If the language hasn't been loaded yet
-  return import(/* webpackChunkName: "lang-[request]" */ '@/lang/' + lang + '.lang.json').then(
-    (messages) => {
-      messages.default.sourceFile = lang
-      i18n.setLocaleMessage(lang, messages.default)
-      loadedLanguages.push(lang)
-      return setI18nLanguage(locale)
-    }
-  )
+  const loader = generatedLangModules[`/build/generated/lang/${lang}.lang.json`]
+  if (!loader) {
+    return Promise.reject(new Error(`Unknown language pack: ${lang}`))
+  }
+
+  return loader().then((mod) => {
+    mod.default.sourceFile = lang
+    i18n.global.setLocaleMessage(lang, mod.default)
+    loadedLanguages.push(lang)
+    return setI18nLanguage(locale)
+  })
 }
