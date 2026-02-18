@@ -485,6 +485,7 @@ import { Mesh, OrthographicCamera, PlaneGeometry, Scene, ShaderMaterial, Vector2
 import Draggable from '@marshallswain/vuedraggable'
 import DeepDiff from 'deep-diff'
 import Zip from 'jszip'
+import { encode } from 'fast-png'
 import mapFragmentShader from '@/components/map/mapFragmentShader'
 import textFragmentShader from '@/components/editor/editorTextFragmentShader'
 import TextureManager from '@/components/map/TextureManager'
@@ -1248,6 +1249,15 @@ export default {
     async renderHover (fileAction) {
       await this.renderPng(this.locations, undefined, fileAction)
     },
+    arrayBufferToBase64 (buffer) {
+      let binary = ''
+      const bytes = new Uint8Array(buffer)
+      const chunkSize = 8192
+      for (let i = 0; i < bytes.length; i += chunkSize) {
+        binary += String.fromCharCode.apply(null, bytes.subarray(i, i + chunkSize))
+      }
+      return window.btoa(binary)
+    },
     async renderPng (locations, base, fileAction) {
       const { width, height, data: baseData } = base !== undefined
         ? (await this.textureManager.loadData(base, false, true, false, 'rgba'))
@@ -1281,7 +1291,7 @@ export default {
       return new Promise((resolve) => {
         const img = new Image()
 
-        img.onload = function () {
+        img.onload = () => {
           ctx.clearRect(0, 0, width, height)
           ctx.drawImage(img, 0, 0)
           const hoverData = ctx.getImageData(0, 0, width, height).data
@@ -1298,7 +1308,12 @@ export default {
           }
 
           const fileName = `${base !== undefined ? base : 'hover_text'}.png`
-          const png = canvas.toDataURL('image/png')
+          // Use fast-png instead of canvas.toDataURL - browser PNG encoders (e.g. Chrome)
+          // can produce invalid ADLER32 checksums that break zopflipng
+          const imageData = ctx.getImageData(0, 0, width, height)
+          const pngBytes = encode(imageData)
+          const base64 = this.arrayBufferToBase64(pngBytes.buffer)
+          const png = `data:image/png;base64,${base64}`
 
           if (fileAction !== undefined) {
             fileAction(fileName, png)
@@ -1312,7 +1327,6 @@ export default {
             a.remove()
           }
 
-          window.URL.revokeObjectURL(png)
           canvas.remove()
 
           resolve()
