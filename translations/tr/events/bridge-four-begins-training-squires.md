@@ -1,8 +1,8 @@
 # Köprü Dört Antrenmanlara Başlar
-Kaladin Urithuru'ya döndükten sonra Köprü Dört, Rüzgarkoşucu Parlayan askerler için antremanlara başladı. Aynı zamanda Kaya'nın ailesi Harap Ovalar'a varıyor.
+Kaladin Urithuru'ya döndükten sonra Köprü Dört, Rüzgârkoşucu Parlayan askerler için antremanlara başladı. Aynı zamanda Kaya'nın ailesi Harap Ovalar'a varıyor.
 
 ## Details
-#[Kaladin](characters/kaladin) #[Alethkar'daki](locations/alethkar) görevinden döndükten sonra, büyüyen Rüzgarkoşucular'ın gelişimiyle ilgilenmeye başladı. Birçok Köprü Dört üyesi Kaladin'in askeri olma yönünde sinyaller gösterdi ve gelecek haftalarda tayfanın çoğu, yeni gelenlerle birlikte tam bir Rüzgarkoşucu olma yolunda adım attı.
+#[Kaladin](characters/kaladin) #[Alethkar'daki](locations/alethkar) görevinden döndükten sonra, büyüyen Rüzgârkoşucular'ın gelişimiyle ilgilenmeye başladı. Birçok Köprü Dört üyesi Kaladin'in askeri olma yönünde sinyaller gösterdi ve gelecek haftalarda tayfanın çoğu, yeni gelenlerle birlikte tam bir Rüzgârkoşucu olma yolunda adım attı.
 
 ## Metadata
 | Field | Value |

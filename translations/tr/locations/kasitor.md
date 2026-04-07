@@ -1,3 +1,4 @@
 # Kasitor
 
-**Kasitor**, Roshar'daki #[Iri'de](locations/iri) bulunan bir sahil şehridir ve Cusicesh, Koruyucu olarak bilinen önemli bir spren'in evidir.
+**Kasitor**, Roshar'daki #[İri'de](locations/iri) bulunan bir sahil şehridir ve Koruyucu Cusicesh olarak bilinen önemli bir sprenin evidir.
+
