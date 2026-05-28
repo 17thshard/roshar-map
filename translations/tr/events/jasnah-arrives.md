@@ -1,4 +1,4 @@
-# Jasnah Urithuru'ya Varır
+# Jasnah Urithiru'ya Varır
 Buzdiyar'ın kıyılarındaki gemi kazasında öldüğü düşünülen Jasnah, Urithur'ya dönüşü ile herkesi şoka uğrattı.
 
 ## Details

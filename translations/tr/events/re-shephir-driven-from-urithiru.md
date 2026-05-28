@@ -1,4 +1,4 @@
-# Re-Shephir Urithuru'dan Kaçar
+# Re-Shephir Urithiru'dan Kaçar
 Adolin ve Köprü Dört'ün yardımıyla Shallan, Re-Shephir'i Urithiru'nun kütüphanelerinden çıkardı, yüzleşti ve kovdu.
 
 ## Details
