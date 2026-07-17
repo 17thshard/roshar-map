@@ -76,7 +76,7 @@
         </div>
         <button type="submit">
           <VueFeather
-            v-if="store.flipDirectionalIcons"
+            v-if="settings.flipDirectionalIcons"
             type="arrow-left"
           />
           <VueFeather
@@ -98,6 +98,7 @@
 <script>
 import VueFeather from 'vue-feather'
 import { useMainStore } from '@/stores/main'
+import { useSettingsStore } from '@/stores/settings'
 
 export default {
   name: 'GoToDate',
@@ -105,7 +106,8 @@ export default {
   emits: ['submit'],
   setup () {
     const store = useMainStore()
-    return { store }
+    const settings = useSettingsStore()
+    return { store, settings }
   },
   data () {
     return {
@@ -130,7 +132,7 @@ export default {
       }
     },
     close () {
-      this.store.closeGoToDate()
+      this.settings.closeGoToDate()
     },
     submit () {
       const year = this.parseValue(this.year)
