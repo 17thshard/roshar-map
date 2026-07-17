@@ -135,7 +135,8 @@ export default {
   setup () {
     const { t } = useI18n({ useScope: 'global' })
     const store = useMainStore()
-    return { t, store }
+    const settings = useSettingsStore()
+    return { t, store, settings }
   },
   data () {
     return {
