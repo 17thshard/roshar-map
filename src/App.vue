@@ -114,6 +114,7 @@ import '@/assets/fonts/hebrew.scss'
 import Search from '@/components/search/Search.vue'
 import { mapActions, mapState } from 'pinia'
 import { useMainStore } from '@/stores/main'
+import { useSettingsStore } from '@/stores/settings'
 import { useI18n } from 'vue-i18n'
 
 export default {
