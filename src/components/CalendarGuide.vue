@@ -33,7 +33,7 @@
           @click="prevStep"
         >
           <VueFeather
-            v-if="store.flipDirectionalIcons"
+            v-if="settings.flipDirectionalIcons"
             type="chevron-right"
             :size="24"
             :stroke-width="3"
@@ -60,7 +60,7 @@
           @click="nextStep"
         >
           <VueFeather
-            v-if="store.flipDirectionalIcons"
+            v-if="settings.flipDirectionalIcons"
             type="chevron-left"
             :size="24"
             :stroke-width="3"
@@ -83,6 +83,7 @@ import Calendar from '@/components/Calendar.vue'
 import Markdown from '@/components/Markdown.vue'
 import { formatDate } from '@/utils'
 import { useMainStore } from '@/stores/main'
+import { useSettingsStore } from '@/stores/settings'
 
 const STEPS = ['start', 'day', 'week', 'month', 'year', 'date']
 
@@ -91,7 +92,8 @@ export default {
   components: { VueFeather, Markdown, Calendar },
   setup () {
     const store = useMainStore()
-    return { store }
+    const settings = useSettingsStore()
+    return { store, settings }
   },
   data () {
     return {
@@ -139,7 +141,7 @@ export default {
       }
     },
     close () {
-      this.store.closeCalendarGuide()
+      this.settings.closeCalendarGuide()
     },
     prevStep () {
       this.step = STEPS[Math.max(this.stepIndex - 1, 0)]

@@ -27,6 +27,7 @@
 <script>
 import { mapState } from 'pinia'
 import { useMainStore } from '@/stores/main'
+import { useSettingsStore } from '@/stores/settings'
 import { parseColorToCssVar } from '@/utils'
 
 export default {
@@ -56,7 +57,8 @@ export default {
   emits: ['event-selected'],
   setup () {
     const store = useMainStore()
-    return { store }
+    const settings = useSettingsStore()
+    return { store, settings }
   },
   computed: {
     ...mapState(useMainStore, ['isDisabled']),
@@ -80,10 +82,10 @@ export default {
       return Math.max(...this.events.map(e => e.offset)) - Math.min(...this.events.map(e => e.offset))
     },
     offsetStyle () {
-      return this.store.flipTimeline ? 'right' : 'left'
+      return this.settings.flipTimeline ? 'right' : 'left'
     },
     endStyle () {
-      return this.store.flipTimeline ? 'left' : 'right'
+      return this.settings.flipTimeline ? 'left' : 'right'
     }
   }
 }

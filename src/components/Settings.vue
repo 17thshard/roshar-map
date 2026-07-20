@@ -133,6 +133,7 @@
 import VueFeather from 'vue-feather'
 import { mapState } from 'pinia'
 import { useMainStore } from '@/stores/main'
+import { useSettingsStore } from '@/stores/settings'
 import { useI18n } from 'vue-i18n'
 import tagCategories from '@/stores/tags.json'
 import SeparateTimelineOverview from '@/components/SeparateTimelineOverview.vue'
@@ -148,7 +149,8 @@ export default {
   setup () {
     const { t } = useI18n({ useScope: 'global' })
     const store = useMainStore()
-    return { t, store }
+    const settings = useSettingsStore()
+    return { t, store, settings }
   },
   data () {
     return {
@@ -157,7 +159,8 @@ export default {
     }
   },
   computed: {
-    ...mapState(useMainStore, ['events', 'filter', 'openedMenu']),
+    ...mapState(useMainStore, ['events', 'filter']),
+    ...mapState(useSettingsStore, ['openedMenu']),
     separateHeight () {
       return Math.max(92, (this.filter.separateTags.length + 1) * 24 + 64)
     }

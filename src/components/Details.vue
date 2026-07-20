@@ -56,7 +56,7 @@
               <button
                 class="details__date-help"
                 :title="$t('ui.date-help')"
-                @click="store.openCalendarGuide()"
+                @click="settings.openCalendarGuide()"
               >
                 <VueFeather
                   type="help-circle"
@@ -275,6 +275,7 @@ import redditLogo from '@/assets/logos/reddit.svg'
 import tumblrLogo from '@/assets/logos/tumblr.svg'
 import shareLogo from '@/assets/logos/share-svgrepo-com.svg'
 import { useMainStore } from '@/stores/main'
+import { useSettingsStore } from '@/stores/settings'
 
 export default {
   name: 'Details',
@@ -291,7 +292,8 @@ export default {
   },
   setup () {
     const store = useMainStore()
-    return { store }
+    const settings = useSettingsStore()
+    return { store, settings }
   },
   data () {
     return {

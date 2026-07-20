@@ -16,7 +16,7 @@
             @click="subPage = null"
           >
             <VueFeather
-              v-if="store.flipDirectionalIcons"
+              v-if="settings.flipDirectionalIcons"
               type="chevron-right"
             />
             <VueFeather
@@ -245,6 +245,7 @@ import creditsHtml from '@generated/credits.js'
 import { escapeCssPath } from '@/utils'
 import { mapState } from 'pinia'
 import { useMainStore } from '@/stores/main'
+import { useSettingsStore } from '@/stores/settings'
 
 const logoUrls = import.meta.glob('/src/assets/logos/*', {
   eager: true,
@@ -266,7 +267,8 @@ export default {
   setup () {
     const { t, te } = useI18n({ useScope: 'global' })
     const store = useMainStore()
-    return { t, te, store }
+    const settings = useSettingsStore()
+    return { t, te, store, settings }
   },
   data () {
     return {
@@ -296,7 +298,7 @@ export default {
       const fileName = this.t('meta.translator.logo')
       return logoUrls[`/src/assets/logos/${fileName}`]
     },
-    ...mapState(useMainStore, ['openedMenu'])
+    ...mapState(useSettingsStore, ['openedMenu'])
   },
   watch: {
     active (value) {
