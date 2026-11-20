@@ -450,14 +450,21 @@ export default {
 
           image.onload = () => {
             this.imageAspect = image.height / image.width
-            const actualHeight = this.imageAspect * this.$el.clientWidth
 
-            if (actualHeight >= window.innerHeight) {
-              const instance = this.$refs.scroller?.osInstance()
-              if (instance) {
-                const { viewport } = instance.elements()
-                viewport.scrollTop = actualHeight * 0.5
+            // Scrolling while the panel still slides in leaves the fixed background
+            // painted at the wrong offset in Chrome until the next scroll
+            if (this.$el.classList.contains('details-enter-active')) {
+              const onEntered = (event) => {
+                if (event.target === this.$el) {
+                  this.$el.removeEventListener('transitionend', onEntered)
+                  this.$el.removeEventListener('transitioncancel', onEntered)
+                  this.scrollIntoTallImage()
+                }
               }
+              this.$el.addEventListener('transitionend', onEntered)
+              this.$el.addEventListener('transitioncancel', onEntered)
+            } else {
+              this.scrollIntoTallImage()
             }
           }
         }
@@ -493,6 +500,17 @@ export default {
   methods: {
     onResize () {
       this.width = this.$el.clientWidth
+    },
+    scrollIntoTallImage () {
+      const actualHeight = this.imageAspect * this.$el.clientWidth
+
+      if (actualHeight >= window.innerHeight) {
+        const instance = this.$refs.scroller?.osInstance()
+        if (instance) {
+          const { viewport } = instance.elements()
+          viewport.scrollTo({ top: actualHeight * 0.5, behavior: 'smooth' })
+        }
+      }
     },
     async copyToClipboard (text) {
       try {
