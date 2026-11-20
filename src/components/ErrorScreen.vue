@@ -12,7 +12,7 @@
     </div>
     <Markdown
       class="error-screen__text"
-      :content="$t('ui.error-screen.message')"
+      :content="$t(webglAvailable ? 'ui.error-screen.message' : 'ui.error-screen.webgl-message')"
     />
     <Markdown
       class="error-screen__report"
@@ -34,11 +34,17 @@
 
 <script>
 import VueFeather from 'vue-feather'
+import WebGL from 'three/examples/jsm/capabilities/WebGL'
 import Markdown from '@/components/Markdown.vue'
 
 export default {
   name: 'ErrorScreen',
-  components: { VueFeather, Markdown }
+  components: { VueFeather, Markdown },
+  data () {
+    return {
+      webglAvailable: WebGL.isWebGL2Available()
+    }
+  }
 }
 </script>
 

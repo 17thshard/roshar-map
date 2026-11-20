@@ -128,6 +128,7 @@
         },
         "error-screen": {
             "message": "Whoops... Looks like the app cannot be loaded in your browser for some reason.\n\nPlease consider visiting using a [modern browser](https://browsehappy.com).",
+            "webgl-message": "Whoops... Looks like WebGL is disabled or unavailable in your browser, and the map needs it to be drawn.\n\nPlease check that WebGL and hardware acceleration are enabled in your browser settings, or try a [modern browser](https://browsehappy.com).",
             "report-intro": "Think this is an actual error?",
             "report-button": "Report on GitHub"
         },
