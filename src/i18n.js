@@ -1,6 +1,6 @@
 import { createI18n } from 'vue-i18n'
 import messages from '@generated/lang/en-US.lang.json'
-import { useMainStore } from '@/stores/main'
+import { useSettingsStore } from '@/stores/settings'
 
 export const i18n = createI18n({
   legacy: false, // Use Composition API mode (Vue I18n v11+)
@@ -25,7 +25,7 @@ function setI18nLanguage (lang) {
   document.querySelector('html').setAttribute('lang', lang)
   const textDirection = i18n.global.t('text-direction')
   document.querySelector('html').setAttribute('dir', textDirection)
-  useMainStore().setTextDirection(textDirection)
+  useSettingsStore().setTextDirection(textDirection)
   return lang
 }
 

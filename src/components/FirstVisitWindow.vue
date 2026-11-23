@@ -36,6 +36,7 @@
 import VueFeather from 'vue-feather'
 import Markdown from '@/components/Markdown.vue'
 import { useMainStore } from '@/stores/main'
+import { useSettingsStore } from '@/stores/settings'
 
 export default {
   name: 'FirstVisitWindow',
@@ -43,7 +44,8 @@ export default {
   emits: ['close', 'open-tutorial'],
   setup () {
     const store = useMainStore()
-    return { store }
+    const settings = useSettingsStore()
+    return { store, settings }
   },
   methods: {
     dismiss () {
@@ -51,7 +53,7 @@ export default {
       this.$emit('close')
     },
     explainDates () {
-      this.store.openCalendarGuide()
+      this.settings.openCalendarGuide()
       if (this.$gtag) {
         this.$gtag.event('first_visit_done', { event_category: 'engagement', event_label: 'calendar_guide' })
         this.$gtag.pageview({ page_title: 'Calendar Guide', page_path: '/calendar-guide', page_location: '' })

@@ -230,6 +230,7 @@ export const useMainStore = defineStore('main', {
     locationsByMapId: markRaw(locationsByMapId),
     mappings: markRaw(mappings),
     activeEvent: null,
+    activeEventId: null,
     filter: {
       tags: [],
       separateTags: [],
@@ -242,12 +243,7 @@ export const useMainStore = defineStore('main', {
       silverKingdoms: false,
       oathgates: false
     },
-    calendarGuideOpen: false,
-    goToDateOpen: false,
-    openedMenu: null,
-    flipTimeline: false,
-    flipDirectionalIcons: false,
-    measurementActive: false
+    measurementActive: false,
   }),
   getters: {
     /**
@@ -278,14 +274,14 @@ export const useMainStore = defineStore('main', {
      */
     selectEvent (event) {
       this.activeEvent = event
-      window.localStorage.setItem('activeEvent', this.activeEvent.id)
+      this.activeEventId = event.id
     },
     /**
      * Unselects the current event.
      */
     unselectEvent () {
       this.activeEvent = null
-      window.localStorage.setItem('activeEvent', '')
+      this.activeEventId = null
     },
     /**
      * Updates the filter state.
@@ -306,7 +302,6 @@ export const useMainStore = defineStore('main', {
       }
 
       this.disableTagSeparation(tag)
-      window.localStorage.setItem('filter', JSON.stringify(this.filter))
     },
     /**
      * Disables a tag filter (adds it to disabled tags).
@@ -318,7 +313,6 @@ export const useMainStore = defineStore('main', {
       }
 
       this.disableTagSeparation(tag)
-      window.localStorage.setItem('filter', JSON.stringify(this.filter))
     },
     /**
      * Enables tag separation.
@@ -332,7 +326,6 @@ export const useMainStore = defineStore('main', {
       }
 
       this.filter.latestSeparatedTag = tag
-      window.localStorage.setItem('filter', JSON.stringify(this.filter))
     },
     /**
      * Disables tag separation.
@@ -350,8 +343,6 @@ export const useMainStore = defineStore('main', {
       if (this.filter.lockedTag === tag) {
         this.unlockTag()
       }
-
-      window.localStorage.setItem('filter', JSON.stringify(this.filter))
     },
     /**
      * Updates the separated tags list.
@@ -368,44 +359,6 @@ export const useMainStore = defineStore('main', {
      */
     toggleLayer ({ layer, value }) {
       this.layersActive[layer] = value
-      window.localStorage.setItem('layersActive', JSON.stringify(this.layersActive))
-    },
-    /**
-     * Opens the calendar guide.
-     */
-    openCalendarGuide () {
-      this.calendarGuideOpen = true
-    },
-    /**
-     * Closes the calendar guide.
-     */
-    closeCalendarGuide () {
-      this.calendarGuideOpen = false
-    },
-    /**
-     * Opens the go to date dialog.
-     */
-    openGoToDate () {
-      this.goToDateOpen = true
-    },
-    /**
-     * Closes the go to date dialog.
-     */
-    closeGoToDate () {
-      this.goToDateOpen = false
-    },
-    /**
-     * Opens a specific menu.
-     * @param {string} name - The name of the menu.
-     */
-    openMenu (name) {
-      this.openedMenu = name
-    },
-    /**
-     * Closes the currently open menu.
-     */
-    closeMenu () {
-      this.openedMenu = null
     },
     /**
      * Locks a tag.
@@ -421,19 +374,42 @@ export const useMainStore = defineStore('main', {
       this.filter.lockedTag = null
     },
     /**
-     * Sets the text direction and flips the timeline if needed.
-     * @param {string} direction - The text direction ('ltr' or 'rtl').
-     */
-    setTextDirection (direction) {
-      this.flipTimeline = direction === 'rtl'
-      this.flipDirectionalIcons = direction === 'rtl'
-    },
-    /**
      * Toggles the measurement tool.
      */
     toggleMeasurement () {
       this.measurementActive = !this.measurementActive
     }
-  }
+  },
+  persist: [
+    {
+      pick: ['filter'],
+      key: 'filter',
+      serializer: {
+        serialize: (state) => JSON.stringify(state.filter),
+        deserialize: (value) => ({ filter: JSON.parse(value) })
+      }
+    },
+    {
+      pick: ['layersActive'],
+      key: 'layersActive',
+      serializer: {
+        serialize: (state) => JSON.stringify(state.layersActive),
+        deserialize: (value) => ({ layersActive: JSON.parse(value) })
+      }
+    },
+    {
+      pick: ['activeEventId'],
+      key: 'activeEvent',
+      serializer: {
+        serialize: (state) => state.activeEventId ?? '',
+        deserialize: (value) => ({ activeEventId: value || null })
+      },
+      afterHydrate: (ctx) => {
+        if (ctx.store.activeEventId) {
+          ctx.store.activeEvent = ctx.store.mappings.events[ctx.store.activeEventId] ?? null
+        }
+      }
+    }
+  ]
 })
 

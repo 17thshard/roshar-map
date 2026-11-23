@@ -61,7 +61,7 @@
       @close="closeMenu"
     />
     <transition name="calendar-guide">
-      <CalendarGuide v-if="store.calendarGuideOpen" />
+      <CalendarGuide v-if="settings.calendarGuideOpen" />
     </transition>
     <transition
       name="first-visit-window"
@@ -114,6 +114,7 @@ import '@/assets/fonts/hebrew.scss'
 import Search from '@/components/search/Search.vue'
 import { mapActions, mapState } from 'pinia'
 import { useMainStore } from '@/stores/main'
+import { useSettingsStore } from '@/stores/settings'
 import { useI18n } from 'vue-i18n'
 
 export default {
@@ -135,7 +136,8 @@ export default {
   setup () {
     const { t } = useI18n({ useScope: 'global' })
     const store = useMainStore()
-    return { t, store }
+    const settings = useSettingsStore()
+    return { t, store, settings }
   },
   data () {
     return {
@@ -157,7 +159,7 @@ export default {
 
       return null
     },
-    ...mapState(useMainStore, ['openedMenu']),
+    ...mapState(useSettingsStore, ['openedMenu']),
     sidebarActive () {
       return this.openedMenu === 'settings' || this.openedMenu === 'info'
     }
@@ -190,19 +192,6 @@ export default {
     onReady () {
       this.ready = true
 
-      if (window.localStorage.getItem('activeEvent')) {
-        this.store.selectEvent(this.store.mappings.events[localStorage.getItem('activeEvent')])
-      }
-      if (window.localStorage.getItem('layersActive')) {
-        const layersActive = JSON.parse(localStorage.getItem('layersActive'))
-        Object.entries(layersActive).forEach(([layer, value]) => {
-          this.store.toggleLayer({ layer, value })
-        })
-      }
-      if (window.localStorage.getItem('filter')) {
-        this.store.updateFilter(JSON.parse(localStorage.getItem('filter')))
-      }
-
       if (this.$gtag) {
         this.$gtag.time({
           name: 'load',
@@ -232,7 +221,7 @@ export default {
 
       this.tutorialActive = true
     },
-    ...mapActions(useMainStore, ['openMenu', 'closeMenu'])
+    ...mapActions(useSettingsStore, ['openMenu', 'closeMenu'])
   }
 }
 </script>

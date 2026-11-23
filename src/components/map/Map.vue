@@ -44,7 +44,6 @@ import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
 import { markRaw } from 'vue'
 import { useMainStore } from '@/stores/main'
-import { useSettingsStore } from '@/stores/settings'
 import { useMeasurementStore } from '@/stores/measurement'
 import MapControls from '@/components/map/MapControls'
 import Highlight from '@/components/map/layers/Highlight'
@@ -74,9 +73,8 @@ export default {
   emits: ['ready', 'error'],
   setup () {
     const store = useMainStore()
-    const settings = useSettingsStore()
     const measurementStore = useMeasurementStore()
-    return { store, settings, measurementStore }
+    return { store, measurementStore }
   },
   data () {
     return {

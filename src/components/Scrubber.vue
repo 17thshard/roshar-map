@@ -21,10 +21,10 @@
     </transition>
     <transition name="scrubber__jump">
       <button
-        v-if="leftOverflowVisible && (!store.flipTimeline || filter.separateTags.length === 0)"
+        v-if="leftOverflowVisible && (!settings.flipTimeline || filter.separateTags.length === 0)"
         class="scrubber__jump scrubber__jump--left"
-        :title="store.flipTimeline ? $t('ui.jump-to-end') : $t('ui.jump-to-start')"
-        @click="store.flipTimeline ? jumpToEnd() : jumpToStart()"
+        :title="settings.flipTimeline ? $t('ui.jump-to-end') : $t('ui.jump-to-start')"
+        @click="settings.flipTimeline ? jumpToEnd() : jumpToStart()"
       >
         <VueFeather type="chevrons-left" />
       </button>
@@ -32,7 +32,7 @@
     <div class="scrubber__bar">
       <div class="scrubber__indicator">
         <div class="scrubber__indicator-actions">
-          <template v-if="store.flipTimeline">
+          <template v-if="settings.flipTimeline">
             <button
               class="scrubber__indicator-button scrubber__indicator-button--left"
               :title="$t('ui.next-event')"
@@ -126,10 +126,10 @@
     </div>
     <transition name="scrubber__jump">
       <button
-        v-if="rightOverflowVisible && (filter.separateTags.length === 0 || store.flipTimeline)"
+        v-if="rightOverflowVisible && (filter.separateTags.length === 0 || settings.flipTimeline)"
         class="scrubber__jump scrubber__jump--right"
-        :title="store.flipTimeline ? $t('ui.jump-to-start') : $t('ui.jump-to-end')"
-        @click="store.flipTimeline ? jumpToStart() : jumpToEnd()"
+        :title="settings.flipTimeline ? $t('ui.jump-to-start') : $t('ui.jump-to-end')"
+        @click="settings.flipTimeline ? jumpToStart() : jumpToEnd()"
       >
         <VueFeather type="chevrons-right" />
       </button>
@@ -140,13 +140,13 @@
     >
       <transition name="scrubber__jump">
         <button
-          v-if="(!store.flipTimeline && rightOverflowVisible) || (store.flipTimeline && leftOverflowVisible)"
+          v-if="(!settings.flipTimeline && rightOverflowVisible) || (settings.flipTimeline && leftOverflowVisible)"
           class="scrubber__jump scrubber__jump--separated"
           :title="$t('ui.jump-to-end')"
           @click="jumpToEnd"
         >
           <VueFeather
-            v-if="store.flipTimeline"
+            v-if="settings.flipTimeline"
             type="chevrons-left"
           />
           <VueFeather
@@ -161,7 +161,7 @@
         @click="separateVisible = !separateVisible"
       >
         <VueFeather
-          v-if="separateVisible ^ store.flipDirectionalIcons"
+          v-if="separateVisible ^ settings.flipDirectionalIcons"
           type="chevron-right"
           :size="24"
         />
@@ -200,7 +200,7 @@
     </button>
     <transition name="go-to-date">
       <GoToDate
-        v-if="store.goToDateOpen"
+        v-if="settings.goToDateOpen"
         @submit="scrollToDate"
       />
     </transition>
@@ -282,7 +282,7 @@ export default {
       return this.events.filter(event => this.store.isIncludedInNavigation(event))
     },
     offsetStyle () {
-      return this.store.flipTimeline ? 'right' : 'left'
+      return this.settings.flipTimeline ? 'right' : 'left'
     }
   },
   watch: {
@@ -356,13 +356,13 @@ export default {
     scrollHorizontally (event) {
       const e = window.event || event
       const delta = Math.max(-1, Math.min(1, e.wheelDelta || -e.detail))
-      this.$refs.container.scrollLeft -= delta * 40 * (this.store.flipTimeline ? -1 : 1)
+      this.$refs.container.scrollLeft -= delta * 40 * (this.settings.flipTimeline ? -1 : 1)
       e.preventDefault()
     },
     onScroll () {
       this.updateOverflow()
 
-      const scroll = this.store.flipTimeline ? -this.$refs.container.scrollLeft : this.$refs.container.scrollLeft
+      const scroll = this.settings.flipTimeline ? -this.$refs.container.scrollLeft : this.$refs.container.scrollLeft
       const event = this.events.find(event => Math.abs(event.offset - scroll) <= 1)
       if (event !== undefined) {
         this.currentDate = formatDate(event.date)
@@ -409,18 +409,18 @@ export default {
     },
     updateOverflow () {
       const { container } = this.$refs
-      const scroll = this.store.flipTimeline ? -container.scrollLeft : container.scrollLeft
+      const scroll = this.settings.flipTimeline ? -container.scrollLeft : container.scrollLeft
       this.leftOverflowVisible = scroll > this.timelineOffset
       this.rightOverflowVisible = scroll + container.clientWidth < container.scrollWidth - this.timelineOffset
 
-      if (this.store.flipTimeline) {
+      if (this.settings.flipTimeline) {
         const tmp = this.leftOverflowVisible
         this.leftOverflowVisible = this.rightOverflowVisible
         this.rightOverflowVisible = tmp
       }
     },
     gotoEvent (dir) {
-      const scroll = this.store.flipTimeline ? -this.$refs.container.scrollLeft : this.$refs.container.scrollLeft
+      const scroll = this.settings.flipTimeline ? -this.$refs.container.scrollLeft : this.$refs.container.scrollLeft
 
       const gotoAndScroll = (id) => {
         let index = Math.max(0, Math.min(id, this.events.length - 1))
@@ -548,14 +548,14 @@ export default {
       this.scrollToEvent(lastEvent)
     },
     scrollTo (offset) {
-      this.$refs.container.scrollTo({ left: this.store.flipTimeline ? -offset : offset, behavior: 'smooth' })
+      this.$refs.container.scrollTo({ left: this.settings.flipTimeline ? -offset : offset, behavior: 'smooth' })
     },
     openGoToDate () {
       if (this.$gtag) {
         this.$gtag.pageview({ page_title: 'Go To Date', page_path: '/go-to-date', page_location: '' })
       }
 
-      this.store.openGoToDate()
+      this.settings.openGoToDate()
     },
     toggleMeasurement () {
       if (!this.measurementStore.active && this.$gtag) {

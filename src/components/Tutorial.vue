@@ -62,6 +62,7 @@
 <script>
 import { mapState } from 'pinia'
 import { useMainStore } from '@/stores/main'
+import { useSettingsStore } from '@/stores/settings'
 import { createPopper } from '@popperjs/core/lib/popper-lite'
 import preventOverflow from '@popperjs/core/lib/modifiers/preventOverflow'
 import flip from '@popperjs/core/lib/modifiers/flip'
@@ -75,7 +76,8 @@ export default {
   emits: ['close'],
   setup () {
     const store = useMainStore()
-    return { store }
+    const settings = useSettingsStore()
+    return { store, settings }
   },
   data () {
     return {
@@ -160,7 +162,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(useMainStore, ['openedMenu']),
+    ...mapState(useSettingsStore, ['openedMenu']),
     ...mapState(useMainStore, { eventActive: state => state.activeEvent !== null })
   },
   watch: {
@@ -269,7 +271,7 @@ export default {
       }
     },
     explainDates () {
-      this.store.openCalendarGuide()
+      this.settings.openCalendarGuide()
       if (this.$gtag) {
         this.$gtag.pageview({ page_title: 'Calendar Guide', page_path: '/calendar-guide', page_location: '' })
       }
