@@ -1,5 +1,5 @@
 # Urithiru'nun İşgali
-Taravangian'ın ihanetinin ardından Urithuru işgal edilir. Navani ise Kule tamamen ele geçirilmeden Kardeş'in savunmalarını saptamaya çalışır.
+Taravangian'ın ihanetinin ardından Urithiru işgal edilir. Navani ise Kule tamamen ele geçirilmeden Kardeş'in savunmalarını saptamaya çalışır.
 
 ## Details
 #[Taravangian'ın](characters/taravangian) parlayanı sayesinde gizlice #[Urithiru'ya](locations/urithiru) giren Raboniel önderliğindeki Şarkıcılar, kristal sütunu yokışık ile bozarak Kule'nin savunmasını tersine çevirerek parlayanların bayılmasına sebep olur.

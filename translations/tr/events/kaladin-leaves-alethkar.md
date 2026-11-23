@@ -1,5 +1,5 @@
 # Kaladin Alethkar'dan Ayrılır
-Kaladin birlikte yolculuk ettiği Şarkıcılara Parlayan kimliğini açık etti ve bir yücefırtına ile Urithuru'ya döndü.
+Kaladin birlikte yolculuk ettiği Şarkıcılara Parlayan kimliğini açık etti ve bir yücefırtına ile Urithiru'ya döndü.
 
 ## Details
 Alethi şarkıcılarının peşinden #[Revolar](locations/revolar) şehrine kadar giden #[Kaladin](characters/kaladin) ve Syl, öğrendiklerinin yeterli olduğuna karar verdiler ve bir köylü kılığına girmenin artık riske değmeyeceğine kanaat getirdiler. Kaladin, yaklaşan bir yücefırtınadan faydalanarak kaçışını gerçekleştirdi ve fırtına eşliğinde #[Urithiru'ya](locations/urithiru) kadar yol aldı.

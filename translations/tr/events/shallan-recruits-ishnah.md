@@ -1,10 +1,16 @@
 # Shallan İshnah'yı İşe Alır
-Shallan, İshinah'ın işe yararlığını kanıtlamak için yaptığı onca denemeden sonra onu yanına almaya karar verir.
+
+Shallan, İshinah'nın işe yararlığını kanıtlamak için yaptığı onca denemeden sonra onu yanına almaya karar verdi.
 
 ## Details
-İshnah, Herkesin Sokağı'nda #[Hayaletkanlar'ın](misc/ghostbloods) bir üyesi olduğunu ima ettikten sonra sonra Peçe’yi takip etmeye başladı, kendisi de bir üye olmayı umuyordu. #[Shallan](characters/shallan), ilk karşılaşmalarında onu reddetti. Daha sonra askerlerin faydası hakkında konuşurken, Peçe yakında bir çamaşırcının onları izlediğini fark etti. Kadını İshnah olarak tanıyan Peçe, onu sorguladı. Kısa süre içinde İshnah'nın bir zamanlar casus olduğunu ve kendini kanıtlayarak Hayaletkanlar’a katılmayı umduğunu öğrendi. Bunu casusluk hakkında daha fazla şey öğrenmek için bir fırsat olarak gören Peçe, İshnah'ya adamlarına casusluğu öğretmesi karşılığında, Hayaletkanlar’a katılmaya layık olup olmadığını değerlendirme sözü verdi.
+
+İshnah, Herkesin Sokağı'nda #[Hayaletkanlar'ın](misc/ghostbloods) bir üyesi olduğunu ima ettikten sonra Peçe’yi takip etmeye başladı, kendisi de bir üye olmayı umuyordu. #[Shallan](characters/shallan), ilk karşılaşmalarında onu reddetti. Daha sonra askerlerin faydası hakkında konuşurken, Peçe yakında bir çamaşırcının onları izlediğini fark etti. Kadını İshnah olarak tanıyan Peçe, onu sorguladı. Kısa süre içinde İshnah'nın bir zamanlar casus olduğunu ve kendini kanıtlayarak Hayaletkanlar’a katılmayı umduğunu öğrendi. Bunu casusluk hakkında daha fazla şey öğrenmek için bir fırsat olarak gören Peçe, İshnah'ya adamlarına casusluğu öğretmesi karşılığında, Hayaletkanlar’a katılmaya layık olup olmadığını değerlendirme sözü verdi.
 
 ## Metadata
-| Field | Value |
-| ----- | ----- |
-| chapter | *Oathbringer* Böl. 40 |
+
+|Field|Value|
+|-|-|
+|chapter|*Oathbringer* Böl. 40|
+
+
+

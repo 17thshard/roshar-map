@@ -1,5 +1,5 @@
 # Dördüncü Köprü Varır
-*Dördüncü Köprü* Narak'a varır ve mülteciler Urithuru'ya gönderilir. Kaladin ise babası ile bir cerrah olarak çalışmakta karar kılar.
+*Dördüncü Köprü* Narak'a varır ve mülteciler Urithiru'ya gönderilir. Kaladin ise babası ile bir cerrah olarak çalışmakta karar kılar.
 
 ## Details
 *Dördüncü Köprü*, dört haftalık yolculuğun ardından #[Harap Ovalar’a](locations/shattered-plains) varır ve #[Kaladin](characters/kaladin), Yeminkapısı’nı kullanarak oraya seyahat edip gemiyi karşılar. Bir saat sonra, ebeveynlerini #[Urithiru’nun](locations/urithiru) altıncı katına götürerek eski #[Hearthstone](locations/hearthstone) sakinleri için düzenlenen mahalleyi onlara gösterir. Syl, Hesina ve Lirin koridorlarda şakalaşır ve ardından odalara ulaşırlar. Kaladin, onları etrafı gezdirirken Lirin’in sessizliğini onaylamama olarak yorumlar.  
