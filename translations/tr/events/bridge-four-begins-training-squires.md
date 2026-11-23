@@ -4,7 +4,7 @@ Kaladin Urithiru'ya döndükten sonra Köprü Dört, Rüzgârkoşucu Parlayan as
 
 ## Details
 
-\#[Kaladin](characters/kaladin) #[Alethkar'daki](locations/alethkar) görevinden döndükten sonra, büyüyen Rüzgârkoşucular'ın gelişimiyle ilgilenmeye başladı. Birçok Köprü Dört üyesi Kaladin'in askeri olma yönünde sinyaller gösterdi ve gelecek haftalarda tayfanın çoğu, yeni gelenlerle birlikte tam bir Rüzgârkoşucu olma yolunda adım attı.
+#[Kaladin](characters/kaladin) #[Alethkar'daki](locations/alethkar) görevinden döndükten sonra, büyüyen Rüzgârkoşucular'ın gelişimiyle ilgilenmeye başladı. Birçok Köprü Dört üyesi Kaladin'in askeri olma yönünde sinyaller gösterdi ve gelecek haftalarda tayfanın çoğu, yeni gelenlerle birlikte tam bir Rüzgârkoşucu olma yolunda adım attı.
 
 ## Metadata
 
